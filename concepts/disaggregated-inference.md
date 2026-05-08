@@ -1,10 +1,10 @@
 ---
 title: Disaggregated Inference
 created: 2026-04-17
-updated: 2026-04-17
+updated: 2026-05-08
 type: concept
 tags: [inference, serving-system, moe, disaggregated-inference]
-sources: [arXiv:2504.02263]
+sources: [arXiv:2504.02263, raw/articles/GTC 2026 – The Inference Kingdom Expands.md]
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -39,10 +39,19 @@ Attention Nodes (M个)          Expert Nodes (N个)
 - **Expert nodes**：每个 GPU 存一个 expert，用 expert parallelism 扩展
 - **通信**：M2N（dispatch tokens）+ N2M（collect results）
 
+## NVIDIA LPX 产品化（AFD）
+
+NVIDIA 在 [[nvidia-groq-3-lpx]] 中将 AFD（Attention FFN Disaggregation）产品化：
+- **GPU 运行 attention**（stateful，需要 HBM 存 KV cache）
+- **LPU 运行 FFN/MoE expert**（stateless，确定性架构适配静态工作负载）
+- Token routing 通过 Spectrum-X Ethernet scale-out fabric
+- Ping-pong pipeline 掩盖通信延迟
+- 这是 M2N 通信模式在 GPU+LPU 异构场景的具体实现
+
 ## 关键优势
 
 1. **独立扩展**：attention 和 expert 各自选择 parallelism 策略
-2. **异构部署**：attention 用 HBM 大的 GPU，expert 用算力强的 GPU
+2. **异构部署**：attention 用 HBM 大的 GPU，expert 用 SRAM 快的 LPU
 3. **Batch 聚合**：多个 attention replica 聚合请求 → expert 的 effective batch 增大 → MoE FFN 回到 compute-intensive
 4. **资源利用率**：每种硬件只做自己擅长的事
 
@@ -86,5 +95,5 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 
 - [[megascale-infer-2504.02263]] — 首个大规模 disaggregated expert parallelism 系统
 - [[m2n-communication]] — disaggregation 产生的通信模式
-- [[heterogeneous-inference]] — GPU + LPU 异构推理（另一种解耦思路）
-- [[moe]] — MoE 模型（disaggregation 的主要受益者）
+- [[heterogeneous-inference]] — GPU + LPU 异构推理
+- [[nvidia-groq-3-lpx]] — LPX 产品化 AFD

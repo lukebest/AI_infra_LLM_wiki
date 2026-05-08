@@ -1,64 +1,109 @@
 ---
 title: NVIDIA Groq 3 LPX
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-08
 type: entity
 tags: [nvidia, groq, lpu, accelerator, inference, deterministic, scale-up]
-sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
+sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md, raw/articles/GTC 2026 – The Inference Kingdom Expands.md]
 ---
 
 # NVIDIA Groq 3 LPX
 
-Rack-scale 低延迟推理加速器，NVIDIA Vera Rubin 平台的第七颗芯片。256 个 Groq 3 LPU 互联，专注确定性、低延迟的 agentic 推理。
+Rack-scale 低延迟推理加速器，NVIDIA Vera Rubin 平台的第七颗芯片。256 个 Groq 3 LPU（LP30）互联，专注确定性、低延迟的 agentic 推理。
 
-## 核心规格
+## Groq 收购背景
 
-| 指标 | 数值 |
-|------|------|
-| 推理算力 | 315 PFLOPS |
-| SRAM 总量 | 128 GB（256 × 500 MB） |
-| SRAM 带宽 | 40 PB/s |
-| 芯片数 | 256 LPU |
-| Scale-up 带宽 | 640 TB/s |
-| 机柜 | 32 × 1U compute tray（每 tray 8 LPU） |
+NVIDIA 以 $20B 向 Groq 授权 IP 并聘用大部分团队（法律结构上非完整收购，规避反垄断审查）。交易宣布后不到 4 个月，NVIDIA 已有系统概念集成进 Vera Rubin 推理栈。
 
-## 架构特点
+## LP30 芯片规格
 
-### Groq 3 LPU 核心设计
-- **320-byte 向量**为基本工作单元，计算/内存/通信统一
-- **MXM**（矩阵执行模块）：密集 MAC 运算
-- **VXM**（向量执行模块）：逐元素运算、激活函数
-- **SXM**（交换执行模块）：排列、旋转、分发、转置
-- **MEM 块**：500 MB 片上 SRAM，150 TB/s 带宽/LPU
-- **无硬件缓存**：编译器显式管理数据放置
+| 指标 | LP30（LPU Gen 3） | LPU Gen 1 |
+|------|-------------------|-----------|
+| 制程 | Samsung SF4（Austin fab，美国制造） | GF 14nm |
+| SRAM | 500 MB on-chip | 230 MB |
+| FP8 算力 | 1.2 PFLOPs | 750 TFLOPs (INT8) |
+| 封装 | 单片 monolithic die（无需先进封装） | — |
+| C2C SerDes | Groq C2C（非 NVLink） | — |
 
-### C2C 互联
-- 96 条 chip-to-chip link/LPU，每条 112 Gbps
-- 聚合双向带宽 2.5 TB/s/LPU
-- **Plesiosynchronous 协议**：消除时钟漂移，实现确定性多芯片协调
+### LPU Gen 2 跳过原因
+- 设计用于 Samsung SF4X（Austin fab）
+- C2C SerDes 无法达到 112G → 芯片功能异常
+- 从未量产
 
-### 确定性执行模型
-- 编译器显式调度计算、数据搬运、同步
-- 无运行时硬件调度器
-- 空间执行模型（spatial execution）
-- 目标：TTFT 和 per-token 延迟在小 batch 下仍稳定
+### 路线图
+- **LP35**：LP30 小改版，仍 SF4，新增 NVFP4 格式支持
+- **LP40**：TSMC N3P + CoWoS-R，**首次采用 NVLink 协议**（替代 Groq C2C）
+  - NVIDIA 自主导入更多 IP
+  - Hybrid bonded DRAM（SK Hynix 供应）扩展片上存储
+  - 与 Feynman 平台深度协同设计
 
-## 异构推理架构
+### 供应链优势
+- SF4 不受 TSMC N3 产能限制（AI 芯片生产瓶颈）
+- 无 HBM（另一产能瓶颈）
+- 对 NVIDIA 而言是**增量收入和产能**，不侵蚀 TSMC/HBM 分配
 
-LPX 不是独立运行——与 [[nvidia-vera-rubin-nvl72]] 配合：
-- **LPX 负责**：FFN / MoE expert 执行（decode 阶段的计算密集部分）
-- **Rubin GPU 负责**：prefill + decode attention（memory-bandwidth 密集部分）
-- 两者组成异构推理流水线
+## LPX Rack 系统
 
-## 关键数据
-- vs 前代：35× 更高推理吞吐/MW
-- 万亿参数模型：10× 更多收入机会
-- 目标：1000+ tokens/sec/user（agentic AI 场景）
-- MGX ETL 机柜架构集成，cableless 设计
+### Compute Tray
+- **16× LP30 / tray**（belly-to-belly 封装：上 8 + 下 8）
+- **2× Altera FPGA**（"Fabric Expansion Logic"）
+- **1× Intel Granite Rapids host CPU**
+- **1× BlueField-4** front-end module（超大规模客户可用自选 NIC）
+
+### Fabric Expansion Logic（FPGA）角色
+1. **NIC 功能**：C2C → Ethernet 协议转换，连接 Spectrum-X scale-out fabric（LPX ↔ GPU）
+2. **PCIe bridge**：C2C → PCIe，LPU 通过 FPGA 连接 host CPU（LPU 无 PCIe PHY）
+3. **Backplane 通信**：FPGA 间通过 backplane 互联，管理控制流和时序
+4. **扩展 DRAM**：每个 FPGA 最多 256 GB DDR5 → 可用于 KV cache
+5. **Speculative decoding**：256 GB DDR5 足以部署 draft model 或 MTP layer
+
+### Front Panel
+- 8× OSFP cage：cross-rack C2C
+- 2× QSFP-DD（预计）：→ Spectrum-X switch（连接 GPU）
+
+## LPU C2C 网络拓扑
+
+Rack 总 scale-up 带宽：256 LPU × 90 lanes × 112G / 8 × 2 directions ≈ **640 TB/s**
+
+### Intra-Tray（node 内）
+- 16 LPU **all-to-all mesh**（PCB trace）
+- 每 LPU 连接其他 15 个 LPU：4×100G C2C
+- Belly-to-belly 减少 PCB trace 长度
+- 每 LPU 1×100G → FPGA（8 LPU / FPGA）
+
+### Inter-Node / Intra-Rack
+- 每 LPU 连接其他 15 node 中各 1 个 LPU：2×100G/link
+- Copper cable backplane
+- FPGA 间：15×25G/50G per FPGA
+- Backplane：**8,160 差分对**
+
+### Inter-Rack
+- 每 LPU 4×100G → OSFP cage → 跨 rack LPU
+- Daisy chain 拓扑，100G AEC reach 内可实现
+
+## Attention FFN Disaggregation（AFD）
+
+LPX 的核心使用模式，源自 [[megascale-infer-2504.02263]] 和 Step-3：
+
+- **Attention → GPU**（stateful，动态 KV cache）
+- **FFN / MoE Expert → LPU**（stateless，确定性架构适配静态工作负载）
+- Token routing：dispatch（All-to-All GPU→LPU）+ combine（反向 All-to-All）
+- **Ping-pong pipeline**：micro-batch 在 GPU 和 LPU 之间乒乓传递，掩盖通信延迟
+
+## Speculative Decoding on LPU
+
+另一种 LPX 使用模式：
+- Draft model 或 MTP layer 部署在 LPU
+- 利用 LPU 低延迟加速 draft token 生成
+- 主模型只需一次 warm prefill 验证 k 个 draft tokens
+- 通常提升 1.5-2× output tokens per decode step
+- 与 AFD 区别：draft model 需要 KV cache（数 GB 级）→ 利用 FPGA 附加的 256 GB DDR5
 
 ## 相关页面
 - [[nvidia-vera-rubin-nvl72]] — 同平台 GPU 系统
 - [[deterministic-execution]] — 确定性执行模型概念
 - [[lpu-architecture]] — LPU 架构概念
-- [[scale-up-fabric]] — Scale-up 网络互联
-- [[groq-original]] — Groq 公司及原始 LPU 架构
+- [[disaggregated-inference]] — 解耦推理概念
+- [[heterogeneous-inference]] — 异构推理概念
+- [[kyber-rack]] — Kyber rack 架构
+- [[megascale-infer-2504.02263]] — AFD 技术来源
