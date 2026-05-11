@@ -22,15 +22,15 @@ sources:
 - Putnam-2025 hybrid formal-informal: 120/120 满分
 
 ## 架构创新
-1. [[CSA-HCA]] — 两级压缩注意力，KV cache 降至基线 2%
-2. [[mHC]] — 流形约束超连接，残差映射非扩张，6.7% 额外训练开销
+1. [[csa-hca]] — 两级压缩注意力，KV cache 降至基线 2%
+2. [[mhc]] — 流形约束超连接，残差映射非扩张，6.7% 额外训练开销
 3. [[muon-optimizer]] — 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
 
 ## 系统工程
-- [[MegaMoE-kernel]] — EP 通信-计算全重叠，1.5-1.96× 加速
-- [[TileLang]] — DSL kernel 开发，Z3 形式化分析，bitwise reproducibility
-- [[FP4-QAT]] — 无损 FP4→FP8 反量化，MoE expert 权重 + indexer QK path
-- [[DSec-sandbox]] — 4 种执行基板，数十万并发沙箱
+- [[megamoe-kernel]] — EP 通信-计算全重叠，1.5-1.96× 加速
+- [[tilelang]] — DSL kernel 开发，Z3 形式化分析，bitwise reproducibility
+- [[fp4-qat]] — 无损 FP4→FP8 反量化，MoE expert 权重 + indexer QK path
+- [[dsec-sandbox]] — 4 种执行基板，数十万并发沙箱
 - 确定性训练：end-to-end batch-invariant + deterministic kernels
 
 ## 后训练
@@ -42,11 +42,11 @@ sources:
 架构复杂、训练稳定性理论不清、缺多模态、长上下文延迟待优化
 
 ## Wiki Pages Created
-- [[DeepSeek-V4]] (entity)
-- [[CSA-HCA]] (concept)
-- [[mHC]] (concept)
+- [[deepseek-v4]] (entity)
+- [[csa-hca]] (concept)
+- [[mhc]] (concept)
 - [[muon-optimizer]] (concept)
-- [[FP4-QAT]] (concept)
-- [[MegaMoE-kernel]] (concept)
-- [[TileLang]] (concept)
-- [[DSec-sandbox]] (concept)
+- [[fp4-qat]] (concept)
+- [[megamoe-kernel]] (concept)
+- [[tilelang]] (concept)
+- [[dsec-sandbox]] (concept)

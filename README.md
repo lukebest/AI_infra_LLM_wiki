@@ -34,7 +34,79 @@
 
 ---
 
+## 快速开始：克隆本仓库并用 `llm-wiki` 增量扩展
+
+下面是一条完整路径：**先把本 Wiki 仓库拉到本地 → 让 Hermes 的 `WIKI_PATH` 指向该目录 → 用 `llm-wiki` skill 在已有页面与结构上持续 ingest（增量），而不是从零新建一套 wiki。**
+
+### 1. 克隆本 Wiki 仓库
+
+在你希望存放知识库的目录执行（将 URL 换成你 fork 后的地址亦可）：
+
+```bash
+git clone https://github.com/lukebest/llm_wiki.git
+cd llm_wiki
+```
+
+若使用 SSH：
+
+```bash
+git clone git@github.com:lukebest/llm_wiki.git
+cd llm_wiki
+```
+
+确认仓库根目录下已有 `SCHEMA.md`、`index.md`、`log.md` 以及 `raw/`、`entities/`、`concepts/` 等结构——说明这是一份**已有内容**的 Wiki，后续只做增量。
+
+### 2. 把 `WIKI_PATH` 固定到该克隆目录
+
+`llm-wiki` skill 只认 **`WIKI_PATH`** 指向的目录（未设置时默认为 `~/wiki`）。必须指向**当前克隆的根目录**（包含 `SCHEMA.md` 的那一层），例如：
+
+```bash
+# 临时（当前终端会话）
+export WIKI_PATH="$(pwd)"          # 在 llm_wiki 根目录下执行时
+
+# 或写绝对路径（推荐给 Hermes / 定时任务）
+export WIKI_PATH=/home/you/projects/llm_wiki
+```
+
+把同一行写入 **`~/.hermes/.env`**（或你运行 Hermes 的环境配置文件），避免每次手动 export。
+
+### 3. 安装并启用 `llm-wiki` skill
+
+见下文 **「使用 `llm-wiki` skill 生成与维护知识库」**：从 Hub 安装或将上游 skill 放入 `~/.hermes/skills/`，确保会话加载该 skill。
+
+### 4. 增量扩展的典型流程（每次有新资料）
+
+1. **同步团队最新内容（可选但推荐）**  
+   ```bash
+   cd "$WIKI_PATH"   # 即你的克隆目录
+   git pull
+   ```
+
+2. **定向（每次开干前）**  
+   让 Agent 先读 `SCHEMA.md`、`index.md`、`log.md` 末尾若干条，避免重复建页、遵守标签与命名。
+
+3. **摄取（增量核心）**  
+   向 Agent 提供 URL、文件或粘贴正文，并明确：「按 llm-wiki **在本 wiki 上 ingest**，不要新建空白 SCHEMA。」Agent 会把原文落入 `raw/`（含 frontmatter），按 `SCHEMA.md` 里的阈值 **新建或更新** `entities/`、`concepts/` 等，并更新 `index.md`、`log.md`。
+
+4. **自检（可选）**  
+   请求「对 wiki 做 lint」，修复断链、孤儿页等问题后再提交。
+
+5. **提交并推送（团体协作）**  
+   ```bash
+   cd "$WIKI_PATH"
+   git status
+   git add -A
+   git commit -m "wiki: ingest <简短说明>"
+   git push
+   ```
+
+这样，**下载（克隆）的是完整知识库快照**，**增量**体现在：新资料进入 `raw/`、Wiki 页与索引在原有基础上追加与修订，并通过 Git 与他人合并。
+
+---
+
 ## 使用 `llm-wiki` skill 生成与维护知识库
+
+**前提：** 若使用本仓库作为团队 Wiki，请先完成上一节 **「快速开始」**（克隆本仓库并设置 `WIKI_PATH`）。从零新建空 wiki 的场景仍可直接参考上游 SKILL。
 
 以下流程与上游 [**`llm-wiki` SKILL**](https://github.com/NousResearch/hermes-agent/blob/main/skills/research/llm-wiki/SKILL.md) 一致；细节以该文档为准。
 

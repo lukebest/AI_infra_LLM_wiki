@@ -38,7 +38,7 @@ KV cache 缩到原来的 1/10 ~ 1/14。
 继承 DeepSeek-V3 的 Transformer + MoE + MTP 框架，三大升级：
 
 1. **Hybrid Attention**: [[csa-hca]] — 交替使用 Compressed Sparse Attention 和 Heavily Compressed Attention
-2. **[[mHC]]** (Manifold-Constrained Hyper-Connections) — 升级残差连接
+2. **[[mhc]]** (Manifold-Constrained Hyper-Connections) — 升级残差连接
 3. **[[muon-optimizer]]** — 替代 AdamW，更快收敛
 
 ### MoE Changes (vs V3)
@@ -63,10 +63,10 @@ KV cache 缩到原来的 1/10 ~ 1/14。
 
 ## Infrastructure
 
-- [[MegaMoE-kernel]]: 单一 fused kernel 实现专家并行通信-计算重叠，1.5-1.96× 加速
-- [[TileLang]]: DSL 用于 kernel 开发，平衡开发效率与运行时性能
+- [[megamoe-kernel]]: 单一 fused kernel 实现专家并行通信-计算重叠，1.5-1.96× 加速
+- [[tilelang]]: DSL 用于 kernel 开发，平衡开发效率与运行时性能
 - **Batch-invariant + deterministic** kernels: 用 DeepGEMM 替代 cuBLAS，端到端 bitwise 一致
-- [[DSec-sandbox]]: 生产级沙箱平台，4 种执行基板，管理数十万并发实例
+- [[dsec-sandbox]]: 生产级沙箱平台，4 种执行基板，管理数十万并发实例
 - **On-disk KV cache**: 共享前缀复用，3 种 SWA 缓存策略
 
 ## Training Stability
@@ -104,5 +104,5 @@ KV cache 缩到原来的 1/10 ~ 1/14。
 
 ## Relations
 - Predecessor: DeepSeek-V3
-- Key technique: [[csa-hca]], [[mHC]], [[muon-optimizer]], [[fp4-qat]]
-- Infra: [[MegaMoE-kernel]], [[TileLang]], [[DSec-sandbox]]
+- Key technique: [[csa-hca]], [[mhc]], [[muon-optimizer]], [[fp4-qat]]
+- Infra: [[megamoe-kernel]], [[tilelang]], [[dsec-sandbox]]

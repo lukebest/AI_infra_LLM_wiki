@@ -29,3 +29,5 @@ sources: []
 - [[deterministic-execution]] — 共同使用的确定性范式
 - [[nvidia-groq-3-lpx]] — 对比参照
 - [[lpu-architecture]] — LPU 架构
+- [[wse-nom-contradiction-analysis]] — 矛盾论六步框架分析 NoW
+- [[cerebras-wse-vs-groq-network-comparison]] — WSE vs Groq 全面对比
