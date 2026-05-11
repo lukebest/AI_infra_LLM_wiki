@@ -34,6 +34,71 @@
 
 ---
 
+## 使用 `llm-wiki` skill 生成与维护知识库
+
+以下流程与上游 [**`llm-wiki` SKILL**](https://github.com/NousResearch/hermes-agent/blob/main/skills/research/llm-wiki/SKILL.md) 一致；细节以该文档为准。
+
+### 1. 安装与启用 skill（Hermes Agent）
+
+- **获取 skill**：从 [Hermes Skills Hub](https://hermes-agent.nousresearch.com/docs/skills/) 用 `hermes skills` CLI 浏览/安装对应条目，或将上游仓库中的 [`skills/research/llm-wiki/`](https://github.com/NousResearch/hermes-agent/tree/main/skills/research/llm-wiki) 放入本机的 `~/.hermes/skills/`，并在 `~/.hermes/config.yaml` 里通过 `external_dirs` 指向团队共享的 skill 目录（见 [Hermes Agent Skills 指南](https://openclawlaunch.com/guides/hermes-agent-skills)）。
+- **生效方式**：确保会话会加载该 skill（Hub 安装或本地路径注册后，按 Hermes 文档执行 `hermes skills configure` 等步骤）。
+
+### 2. 把 Wiki 路径指向本仓库
+
+Skill 通过 **`WIKI_PATH`** 定位知识库目录（未设置时默认为 `~/wiki`）。本仓库若clone在其它路径，请在 **`~/.hermes/.env`** 或运行环境中设置，例如：
+
+```bash
+export WIKI_PATH=/path/to/this/wiki/repo   # 指向包含 SCHEMA.md 的目录
+```
+
+团队共用同一克隆路径或 NFS/Git 工作副本时，全员使用相同的 `WIKI_PATH`，避免 Agent 写到错误目录。
+
+### 3. 三类核心操作（由你在对话里发起）
+
+| 操作 | 你对 Agent 说什么（示例） | Agent 按 SKILL 做的事 |
+|------|---------------------------|------------------------|
+| **新建/初始化** | 「按 llm-wiki 新建 wiki，领域是 …」 | 建立目录结构，写 `SCHEMA.md`、`index.md`、`log.md` |
+| **摄取 ingest** | 「把这篇 URL/文件收进 wiki」「处理附件里的原文」 | 原文写入 `raw/`（带 `source_url` / `ingested` / `sha256`），按阈值新建或更新 `entities/`、`concepts/` 等，更新 `index.md` 与 `log.md` |
+| **审计 lint** | 「对 wiki 做 lint / 健康检查」 | 检查断链、孤儿页、索引完整性、frontmatter、陈旧页等，并记入 `log.md` |
+
+**注意：** `raw/` 内正文摄取后视为不可原地改写；修订结论应在 Wiki 页完成。
+
+### 4. 每次会话开始前的「定向」（避免重复建页）
+
+在已有 wiki 上继续工作时，应先让 Agent **阅读** `SCHEMA.md`、`index.md` 和 `log.md` 近期条目（SKILL 要求如此），再执行 ingest 或大规模更新。你可直接提示：「先按 llm-wiki 定向：读 SCHEMA、index、最近 30 条 log。」
+
+---
+
+## 使用 OpenClaw、Hermes 与其它 Agent 查询知识库
+
+查询的本质是：**先从已编译的 Markdown 页面作答**，必要时再补充外部检索；高价值回答可回填到 `queries/` 或 `comparisons/`（见 SKILL 的 Query 流程）。
+
+### Hermes Agent（含通过 OpenClaw Launch 托管的 Hermes）
+
+- **同一套 skill**：查询前同样应加载 `llm-wiki`，且 `WIKI_PATH` 指向本仓库根目录。
+- **自然语言即可**：例如「根据 wiki 总结 [[某概念]] 与 [[另一实体]] 的关系」「wiki 里对某某硬件的结论是什么？请引用页面」。
+- Agent 侧应按 SKILL 执行：**读 `index.md` →（页面多时）在 wiki 目录内搜索关键词 → `read_file` 相关页 → 综合回答并标注依据的 `[[wikilink]]`**；值得保留的深度对比可新建页面并写 `log.md`。
+- 若在 **[OpenClaw Launch](https://openclawlaunch.com/)** 上部署 Hermes，工具与技能仍属 Hermes 体系；配置 wiki 路径与环境变量的方式以实例 Dashboard / 文档为准（参见 [OpenClaw 上的 Hermes Skills 说明](https://openclawlaunch.com/guides/hermes-agent-skills)）。OpenClaw 与 Hermes 的「skill」来自不同生态（ClawHub vs Hermes Hub），**自带 OpenClaw skill 不等于自带 `llm-wiki`**；要以 LLM Wiki 工作流查询本仓库，仍需 Hermes + `llm-wiki` 或下文「通用 Agent」做法。
+
+### OpenClaw 或其它未内置 llm-wiki 的 Agent
+
+将 **本仓库作为工作区挂载**（克隆到本地、容器卷、或通过 MCP/文件工具可读），然后在系统提示或首轮对话中固定下列约束：
+
+1. 知识库根目录即 `WIKI_PATH`，必须先读 `SCHEMA.md`、`index.md`、近期 `log.md`。
+2. 用仓库内搜索或文件名定位相关 `.md`，只读 `entities/`、`concepts/`、`comparisons/`、`queries/`（以及团队约定的 `analyses/`、`summaries/` 等），**勿改写 `raw/` 原文**。
+3. 回答须引用实际读到的页面标题或路径；需要持久保存的结论写入 Wiki 层并更新 `index.md` / `log.md`。
+
+### Cursor、Claude Code、CLI Agent 等开发类 Agent
+
+- **打开本仓库为当前项目**，在对话里说明：「遵循 Karpathy LLM Wiki / llm-wiki：先定向再问答。」
+- 可选：在 `.cursor/rules` 或项目 `AGENTS.md` 中摘录 SKILL 的「Resuming」「Query」「Lint」要点，减少每次手动复述。
+
+### 人工快速查阅（不经过 Agent）
+
+直接用编辑器或 Obsidian 打开本目录，从 `index.md` 跳转；复杂主题可用全文搜索 `*.md`。这与 Agent 查询互补，适合抽查与审稿。
+
+---
+
 ## 仓库导航（简要）
 
 | 路径 | 作用 |
@@ -44,7 +109,7 @@
 | `raw/` | 原始资料（摄取后原则上不改写正文） |
 | `entities/`、`concepts/` 等 | Wiki 工作层页面 |
 
-本地可与 Obsidian 等 Markdown 工具配合使用；环境与路径约定可参考 Hermes skill 中的 `WIKI_PATH` 说明。
+本地可与 Obsidian 等 Markdown 工具配合使用；`WIKI_PATH` 与 Agent 查询方式见上文「把 Wiki 路径指向本仓库」及「使用 OpenClaw、Hermes 与其它 Agent 查询知识库」。
 
 ---
 
