@@ -1,3 +1,12 @@
+---
+title: Cerebras NoW vs Groq Switched 对比
+created: 2026-04-16
+updated: 2026-04-16
+type: concept
+tags: [architecture, wse, cerebras, groq, interconnect, deterministic]
+sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
+---
+
 # Cerebras NoW vs Groq Switched Architecture — 对比分析
 
 > 对比两种确定性执行的 AI 加速器互联架构：WSE 2D Mesh 和 Groq Switched Network。

@@ -53,5 +53,5 @@ M = { M ∈ R^{n×n} | M·1 = 1, 1^T·M = 1^T, M ≥ 0 }
   - Recompute 大部分隐藏状态和所有 normalized layer inputs
 
 ## Relations
-- Used in: [[DeepSeek-V4]]
+- Used in: [[deepseek-v4]]
 - Enhances: residual connections in Transformer

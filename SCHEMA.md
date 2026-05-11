@@ -25,16 +25,16 @@ sources: [raw/articles/source-name.md]
 
 ## Tag Taxonomy
 - 架构: accelerator, gpu, lpu, tpu, wse, chiplet, noc, interconnect
-- 网络: scale-up, scale-out, ocs, tdm, wdm, routing, deterministic, fabric
-- 推理: inference, decode, prefill, latency, throughput, serving, batching
-- 编译器: compiler, scheduling, spatial-execution, deterministic-execution
-- 公司: nvidia, cerebras, groq, amd, google, lightmatter, celestial-ai, deepseek
-- 技术: sram, hbm, photonic, cpo, optical, mesh, memory-bandwidth
-- AI系统: agentic-ai, moe, transformer, llm, training, attention, quantization
-- 方法论: comparison, timeline, benchmark, architecture
+- 网络: scale-up, scale-out, ocs, tdm, wdm, routing, deterministic, fabric, transport, data-link, physical-layer, link-training, serdes, fec, retransmission, flow-control, congestion-control, switch, protocol, communication
+- 推理: inference, decode, prefill, latency, throughput, serving, batching, disaggregated-inference, serving-system, kv-cache
+- 编译器: compiler, scheduling, spatial-execution, deterministic-execution, programming-model
+- 公司: nvidia, cerebras, groq, amd, google, lightmatter, celestial-ai, deepseek, huawei, bytedance
+- 技术: sram, hbm, photonic, cpo, optical, mesh, memory-bandwidth, memory, rack, cpu, rpc, virtualization
+- AI系统: agentic-ai, ai-agent, moe, transformer, llm, training, attention, quantization, expert-parallelism
+- 方法论: comparison, timeline, benchmark, architecture, information-theory, knowledge-management, formal-analysis
 - 模型: model, architecture, benchmark, training-system, inference-system
 - 技术: compression, sparse, optimization, routing, parallelism, kernel
-- 系统: sandbox, storage, hardware, networking, topology
+- 系统: sandbox, storage, hardware, networking, topology, infrastructure
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 
