@@ -36,7 +36,7 @@
 
 ## 快速开始：克隆本仓库并用 `llm-wiki` 增量扩展
 
-下面是一条完整路径：**先把本 Wiki 仓库拉到本地 → 让 Hermes 的 `WIKI_PATH` 指向该目录 → 用 `llm-wiki` skill 在已有页面与结构上持续 ingest（增量），而不是从零新建一套 wiki。**
+下面是一条完整路径：**先把本 Wiki 仓库拉到本地 → 让 Hermes 的 `WIKI_PATH` 指向该目录 → 用 `llm-wiki` skill 在已有页面与结构上持续 ingest（增量）。**
 
 ### 1. 克隆本 Wiki 仓库
 
@@ -86,7 +86,7 @@ export WIKI_PATH=/home/you/projects/llm_wiki
    让 Agent 先读 `SCHEMA.md`、`index.md`、`log.md` 末尾若干条，避免重复建页、遵守标签与命名。
 
 3. **摄取（增量核心）**  
-   向 Agent 提供 URL、文件或粘贴正文，并明确：「按 llm-wiki **在本 wiki 上 ingest**，不要新建空白 SCHEMA。」Agent 会把原文落入 `raw/`（含 frontmatter），按 `SCHEMA.md` 里的阈值 **新建或更新** `entities/`、`concepts/` 等，并更新 `index.md`、`log.md`。
+   向 Agent 提供 URL、文件或粘贴正文，并说明按 llm-wiki **在本仓库现有结构下 ingest**，遵守 `SCHEMA.md`。Agent 会把原文落入 `raw/`（含 frontmatter），按阈值 **新增或更新** `entities/`、`concepts/` 等页面，并更新 `index.md`、`log.md`。
 
 4. **自检（可选）**  
    请求「对 wiki 做 lint」，修复断链、孤儿页等问题后再提交。
@@ -106,9 +106,9 @@ export WIKI_PATH=/home/you/projects/llm_wiki
 
 ## 使用 `llm-wiki` skill 生成与维护知识库
 
-**前提：** 若使用本仓库作为团队 Wiki，请先完成上一节 **「快速开始」**（克隆本仓库并设置 `WIKI_PATH`）。从零新建空 wiki 的场景仍可直接参考上游 SKILL。
+**前提：** 请先完成上一节 **「快速开始」**（克隆本仓库并设置 `WIKI_PATH`）。
 
-以下流程与上游 [**`llm-wiki` SKILL**](https://github.com/NousResearch/hermes-agent/blob/main/skills/research/llm-wiki/SKILL.md) 一致；细节以该文档为准。
+以下说明聚焦在本仓库上的 **摄取与维护**；上游 [**`llm-wiki` SKILL**](https://github.com/NousResearch/hermes-agent/blob/main/skills/research/llm-wiki/SKILL.md) 文档另有完整操作列表，可自行查阅。
 
 ### 1. 安装与启用 skill（Hermes Agent）
 
@@ -125,11 +125,10 @@ export WIKI_PATH=/path/to/this/wiki/repo   # 指向包含 SCHEMA.md 的目录
 
 团队共用同一克隆路径或 NFS/Git 工作副本时，全员使用相同的 `WIKI_PATH`，避免 Agent 写到错误目录。
 
-### 3. 三类核心操作（由你在对话里发起）
+### 3. 核心操作：摄取与审计（由你在对话里发起）
 
 | 操作 | 你对 Agent 说什么（示例） | Agent 按 SKILL 做的事 |
 |------|---------------------------|------------------------|
-| **新建/初始化** | 「按 llm-wiki 新建 wiki，领域是 …」 | 建立目录结构，写 `SCHEMA.md`、`index.md`、`log.md` |
 | **摄取 ingest** | 「把这篇 URL/文件收进 wiki」「处理附件里的原文」 | 原文写入 `raw/`（带 `source_url` / `ingested` / `sha256`），按阈值新建或更新 `entities/`、`concepts/` 等，更新 `index.md` 与 `log.md` |
 | **审计 lint** | 「对 wiki 做 lint / 健康检查」 | 检查断链、孤儿页、索引完整性、frontmatter、陈旧页等，并记入 `log.md` |
 

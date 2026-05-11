@@ -173,3 +173,20 @@
   - entities/unifiedbus-ub.md — 添加 source 引用
 - Updated: index.md (41 pages total)
 - Key: QDLWS 是 UB 独特功能（IB/PCIe 不支持不中断数据的动态宽度切换）；eBCH-16 对 AMCTL 提供比标准协议更强的独立保护；非对称 TX/RX 宽度支持功耗优化；最大 118 Gbit/s/lane
+
+## [2026-05-11] lint | Wiki 健康检查
+- 检查范围：39 页 + 15 raw + 2 PDF
+- 修复项：
+  - 修复 6 个 broken wikilinks（DeepSeek-V3, Muon Optimizer, spatial-execution, plesiosynchronous-protocol, scale-up, scale-up-fabric）
+  - 修复 index.md 7 个大小写不匹配（CSA-HCA→csa-hca 等）
+  - 修复 deepseek-v4 entity/summary 中 10+ 个 PascalCase wikilinks→lowercase
+  - 补充 2 个 analysis 页面 frontmatter（wse-nom-contradiction-analysis, cerebras-wse-vs-groq-network-comparison）
+  - 为 16 个 orphan 页面添加入站链接（UB 5 层交叉引用、DeepSeek V4 技术交叉引用、CASSINI→M2N、信息论→LPU）
+  - 更新 SCHEMA.md taxonomy 新增 29 个 tag（transport, data-link, physical-layer, serdes, fec, huawei 等）
+- 残余：
+  - 0 broken wikilinks
+  - 0 missing frontmatter
+  - 0 index/filesystem 不一致
+  - 3 个 residual orphan（cerebras-wse-vs-groq-comparison 分析页、ub-transaction-layer 伪孤儿、ub-physical-layer 新页待后续页面引用）
+  - 4 个 oversize 页面（ub-resource-management 239行, ub-transaction-layer 249行, cerebras-wse-vs-groq 300行, wse-nom-contradiction 215行）
+- Tag: 29 新 tag 加入 taxonomy，0 个未注册 tag
