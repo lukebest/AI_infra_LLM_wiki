@@ -1,3 +1,12 @@
+---
+title: WSE NoW 矛盾论分析
+created: 2026-04-16
+updated: 2026-04-16
+type: concept
+tags: [architecture, wse, cerebras, deterministic, mesh]
+sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
+---
+
 # WSE Network-on-Wafer — 矛盾分析法
 
 > 基于毛泽东《矛盾论》六步框架，对 Cerebras WSE 片上网络进行系统分析。
