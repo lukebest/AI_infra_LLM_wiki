@@ -40,18 +40,18 @@
 
 ### 1. 克隆本 Wiki 仓库
 
-在你希望存放知识库的目录执行（将 URL 换成你 fork 后的地址亦可）：
+在你希望存放知识库的目录执行（将 URL 换成你 fork 后的地址亦可）。在 **`git clone` 末尾写上目录名 `wiki`**，本地文件夹即为 `wiki`，与 Hermes / `llm-wiki` 常用的 `~/wiki` 约定一致：
 
 ```bash
-git clone https://github.com/lukebest/AI_infra_LLM_wiki.git
-cd AI_infra_LLM_wiki
+git clone https://github.com/lukebest/AI_infra_LLM_wiki.git wiki
+cd wiki
 ```
 
 若使用 SSH：
 
 ```bash
-git clone git@github.com:lukebest/AI_infra_LLM_wiki.git
-cd AI_infra_LLM_wiki
+git clone git@github.com:lukebest/AI_infra_LLM_wiki.git wiki
+cd wiki
 ```
 
 确认仓库根目录下已有 `SCHEMA.md`、`index.md`、`log.md` 以及 `raw/`、`entities/`、`concepts/` 等结构——说明这是一份**已有内容**的 Wiki，后续只做增量。
@@ -62,10 +62,10 @@ cd AI_infra_LLM_wiki
 
 ```bash
 # 临时（当前终端会话）
-export WIKI_PATH="$(pwd)"          # 在 AI_infra_LLM_wiki 根目录下执行时
+export WIKI_PATH="$(pwd)"          # 在 wiki 目录（clone 时指定的目录名）下执行时
 
 # 或写绝对路径（推荐给 Hermes / 定时任务）
-export WIKI_PATH=/home/you/projects/AI_infra_LLM_wiki
+export WIKI_PATH=/home/you/projects/wiki
 ```
 
 把同一行写入 **`~/.hermes/.env`**（或你运行 Hermes 的环境配置文件），避免每次手动 export。
@@ -120,7 +120,7 @@ export WIKI_PATH=/home/you/projects/AI_infra_LLM_wiki
 Skill 通过 **`WIKI_PATH`** 定位知识库目录（未设置时默认为 `~/wiki`）。本仓库若clone在其它路径，请在 **`~/.hermes/.env`** 或运行环境中设置，例如：
 
 ```bash
-export WIKI_PATH=/path/to/this/wiki/repo   # 指向包含 SCHEMA.md 的目录
+export WIKI_PATH=/path/to/wiki             # 克隆并重命名后的 wiki 根目录（含 SCHEMA.md）
 ```
 
 团队共用同一克隆路径或 NFS/Git 工作副本时，全员使用相同的 `WIKI_PATH`，避免 Agent 写到错误目录。
