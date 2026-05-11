@@ -41,5 +41,5 @@ sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
 ## 相关页面
 - [[nvidia-groq-3-lpx]] — LPU 确定性执行实例
 - [[cerebras-wse]] — WSE color-based 确定性路由
-- [[spatial-execution]] — 空间执行模型
-- [[plesiosynchronous-protocol]] — 准同步协议
+- [[deterministic-execution]] — 空间执行模型
+- [[deterministic-execution]] — 准同步协议

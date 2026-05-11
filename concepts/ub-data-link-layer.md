@@ -168,6 +168,12 @@ CRC ↔ Non-CRC 通过 Block_Mode_Chg Block 协调：
 3. 双端 flush 待发 ACK → 发 Block_Mode_Chg_ACK
 4. 物理层 retrain → 新模式生效 → 解除反压
 
+## 协议栈关联
+
+- [[ub-physical-layer]] — 物理层提供 FEC 和 SerDes 服务，数据链路层在此基础上构建可靠性
+- [[ub-network-layer]] — 数据链路层为网络层提供 VL 通道和点到点可靠传输
+- [[unifiedbus-ub]] — UB 协议整体架构
+
 ## 与其他协议对比
 
 | 特性 | UB | InfiniBand | PCIe |

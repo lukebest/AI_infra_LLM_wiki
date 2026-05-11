@@ -35,17 +35,17 @@ KV cache 缩到原来的 1/10 ~ 1/14。
 
 ## Architecture
 
-继承 [[DeepSeek-V3]] 的 Transformer + MoE + MTP 框架，三大升级：
+继承 DeepSeek-V3 的 Transformer + MoE + MTP 框架，三大升级：
 
-1. **Hybrid Attention**: [[CSA-HCA]] — 交替使用 Compressed Sparse Attention 和 Heavily Compressed Attention
+1. **Hybrid Attention**: [[csa-hca]] — 交替使用 Compressed Sparse Attention 和 Heavily Compressed Attention
 2. **[[mHC]]** (Manifold-Constrained Hyper-Connections) — 升级残差连接
-3. **[[Muon Optimizer]]** — 替代 AdamW，更快收敛
+3. **[[muon-optimizer]]** — 替代 AdamW，更快收敛
 
 ### MoE Changes (vs V3)
 - 激活函数：Sigmoid → **Sqrt(Softplus)**（计算 affinity scores）
 - 前 3 层用 Hash Routing 替代 dense FFN
 - 去掉路由目标节点数限制
-- [[FP4-QAT]]: expert weights + indexer QK path 用 FP4 (MXFP4)
+- [[fp4-qat]]: expert weights + indexer QK path 用 FP4 (MXFP4)
 
 ### Attention 配置
 
@@ -103,6 +103,6 @@ KV cache 缩到原来的 1/10 ~ 1/14。
 5. 未探索 embedding 稀疏等新维度
 
 ## Relations
-- Predecessor: [[DeepSeek-V3]]
-- Key technique: [[CSA-HCA]], [[mHC]], [[Muon Optimizer]], [[FP4-QAT]]
+- Predecessor: DeepSeek-V3
+- Key technique: [[csa-hca]], [[mHC]], [[muon-optimizer]], [[fp4-qat]]
 - Infra: [[MegaMoE-kernel]], [[TileLang]], [[DSec-sandbox]]

@@ -176,6 +176,11 @@ Link_Idle → Probe → Discovery → Config → Send_NullBlock → Link_Active
 | AMCTL 保护 | eBCH-16（纠 3-bit） | 无独立 AM 保护 | 无 |
 | 低功耗 | PRBS23 保持 CDR | 类似 | L0s/L1 |
 
+## 协议栈关联
+
+- [[ub-data-link-layer]] — 物理层直接服务的数据链路层（FEC/CRC 模式切换由数据链路层协调触发）
+- [[unifiedbus-ub]] — UB 协议整体架构（§3 物理层是协议栈最底层）
+
 ## 来源
 
 - UB Base Specification Rev 2.0, §3 Physical Layer（完整章节）

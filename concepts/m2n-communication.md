@@ -59,4 +59,4 @@ M2N 是 disaggregated architecture 的典型通信模式，对 scale-up fabric �
 
 - [[megascale-infer-2504.02263]] — 提出 M2N 库的论文
 - [[disaggregated-inference]] — 产生 M2N 通信需求的架构范式
-- [[scale-up]] — M2N 运行的网络层次
+- [[switching-networks]] — M2N 运行的网络层次

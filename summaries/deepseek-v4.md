@@ -24,7 +24,7 @@ sources:
 ## 架构创新
 1. [[CSA-HCA]] — 两级压缩注意力，KV cache 降至基线 2%
 2. [[mHC]] — 流形约束超连接，残差映射非扩张，6.7% 额外训练开销
-3. [[Muon Optimizer]] — 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
+3. [[muon-optimizer]] — 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
 
 ## 系统工程
 - [[MegaMoE-kernel]] — EP 通信-计算全重叠，1.5-1.96× 加速
@@ -45,7 +45,7 @@ sources:
 - [[DeepSeek-V4]] (entity)
 - [[CSA-HCA]] (concept)
 - [[mHC]] (concept)
-- [[Muon Optimizer]] (concept)
+- [[muon-optimizer]] (concept)
 - [[FP4-QAT]] (concept)
 - [[MegaMoE-kernel]] (concept)
 - [[TileLang]] (concept)

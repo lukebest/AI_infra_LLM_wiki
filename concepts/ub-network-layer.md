@@ -111,6 +111,12 @@ Credit-based 流控的 hop-by-hop 反压可能形成环形缓冲依赖导致死�
 - SL→VL 映射在网络层，传输层 TPG 跨 channel 聚合在 VL 之上
 - ICRC 保护跨网络层端到端完整性，传输层重传处理丢包恢复
 
+## 协议栈关联
+
+- [[ub-data-link-layer]] — 网络层的 VL 概念建立在数据链路层 VL 之上，SL→VL 映射向下传递
+- [[ub-transport-layer]] — 网络层的 LBF/CCI 字段被传输层使用，拥塞标记联动
+- [[unifiedbus-ub]] — UB 协议整体架构
+
 ## 与其他协议对比
 
 | 特性 | UB | InfiniBand | Ethernet/RoCE |

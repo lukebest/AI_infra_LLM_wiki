@@ -212,4 +212,4 @@ WSE 的确定性路线在**训练**和**大 batch 推理**场景下是优势；�
 - [[cerebras-wse]] — WSE 实体
 - [[deterministic-execution]] — 确定性执行概念
 - [[nvidia-groq-3-lpx]] — 对比：Groq 的确定性执行路线
-- [[spatial-execution]] — 空间执行模型
+- [[deterministic-execution]] — 空间执行模型

@@ -54,4 +54,4 @@ NVIDIA 第二种 rack 架构（继 Oberon 之后），首次以原型亮相于 G
 - [[nvidia-vera-rubin-nvl72]] — Oberon rack 架构
 - [[nvidia-cpo-roadmap]] — CPO 路线图
 - [[nvidia-groq-3-lpx]] — LPX rack（另一种 rack 架构）
-- [[scale-up-fabric]] — Scale-up 互联概念
+- [[switching-networks]] — Scale-up 互联概念

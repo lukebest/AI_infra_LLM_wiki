@@ -244,6 +244,12 @@ Message 事务通过 MTETAH 指定 Target 端接收队列 (TGT_TC_ID)，支持 T
 - [[ub-resource-management]] — Management 事务携带管理命令；ROT 模式的 SC 资源由资源管理分配
 - [[ub-urpc]] — URPC 建立在事务层消息语义之上
 
+## 协议栈关联
+
+- [[ub-transport-layer]] — 事务层依赖传输层的可靠/不可靠传输服务
+- [[ub-programming-models]] — 事务层消息语义被 URPC 和 Jetty 编程模型使用
+- [[unifiedbus-ub]] — UB 协议整体架构
+
 ## 来源
 
 - UB Base Specification Rev 2.0, §7 Transaction Layer
