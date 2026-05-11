@@ -88,9 +88,88 @@
 - Updated: index.md (30 pages total)
 - Note: 交换原理系列第3篇。CLOS 是理解 scale-up fabric 多级交换的基础（NVLink switch ≈ CLOS），TST 对应时分+空分组合（C2C 确定性调度）。
 
+## [2026-05-09] ingest | UnifiedBus (UB) Base Specification Rev 2.0
+- Source: /home/luke/workspace/Vibe-UB-Switch/docs/UB-overview.md
+- Created:
+  - entities/unifiedbus-ub.md — Huawei UB 高性能互连协议（SuperPoD-scale, 统一协议栈, 全资源池化, 6层协议栈）
+  - concepts/ub-transport-layer.md — UB 传输层机制（RTP/CTP/UTP, TP Channel, 多路径LB, 拥塞控制）
+  - concepts/ub-programming-models.md — UB 编程模型（Load/Store, URMA, URPC, Jetty）
+- Updated: index.md (34 pages total)
+- Note: UB 规范 45KB，6层完整协议栈。与 NVLink 对比：统一协议（vs 多协议）、内置 RPC（URPC）、跨 domain Ethernet 互连（UBoE）。
+
+## [2026-05-09] ingest | UB Transaction Layer (UB-TA.md)
+- Source: /home/luke/workspace/Vibe-UB/docs/UB-TA.md (2355 lines, §7 Transaction Layer full chapter)
+- Created:
+  - concepts/ub-transaction-layer.md — 四类事务（Memory/Message/Maintenance/Management）、Full vs Compact 包头体系（BTAH/ATAH/MAETAH/MTETAH/TVETAH 等）、安全 Token 验证、TEO/TCO 排序机制、四种服务模式（ROI/ROT/ROL/UNO）、Atomic 9 种原子操作、Write_with_notify 即时通知、Prefetch_tgt 预取
+- Updated:
+  - entities/unifiedbus-ub.md — 添加 source 引用
+- Updated: index.md (38 pages total)
+- Key: ROT 模式通过 Target 端 Sequence Context 实现无等待排序，比 ROI 省一次 RTT；Atomic 保证单包原子性和仅执行一次；Writeback 强制非阻塞防止死锁
+
+## [2026-05-09] ingest | UB Resource Management (UB-RSC.md)
+- Source: /home/luke/workspace/Vibe-UB/docs/UB-RSC.md (2689 lines, §10 Resource Management full chapter)
+- Created:
+  - concepts/ub-resource-management.md — UBFM domain 管理、Entity 模型（EID/GUID/Partition 隔离）、配置空间（CFG0/CFG1 slice 结构）、管理命令（枚举/配置/池化资源）、Entity 注册/注销/替换、通信控制、远程内存注册、硬件辅助虚拟化、RAS（三级复位 + A/B/C 三级错误分类）
+- Updated:
+  - entities/unifiedbus-ub.md — 添加 source 引用
+- Updated: index.md (37 pages total)
+- Key: UB Partition (UPI) 隔离 + Token 认证双保险；Entity 池化支持动态分配/迁移/替换；三阶段错误分级（A→事务/B→Entity/C→设备）对应不同处理路径
+
+## [2026-05-09] ingest | UB Memory Management (UB-MEM.md)
+- Source: /home/luke/workspace/Vibe-UB/docs/UB-MEM.md (1648 lines, §9 Memory Management full chapter)
+- Created:
+  - concepts/ub-memory-management.md — UB 内存管理：Home-User 模型、UBMD、UMMU 4步处理流程（配置查找→上下文查找→两阶段地址翻译→权限检查）、MAPT 独立于 MATT 的权限表设计、UB Decoder PA→UBMD 翻译、与 ARM SMMU/Intel VT-d 对比
+- Updated:
+  - entities/unifiedbus-ub.md — 内存管理引用更新
+- Updated: index.md (36 pages total)
+- Key insight: UB MAPT 独立于 MATT（权限与地址翻译解耦），支持非特权软件安全委托权限管理，双 TokenValue 机制
+
+## [2026-05-09] ingest | UB Function Layer (UB-FUN.md)
+- Source: /home/luke/workspace/Vibe-UB/docs/UB-FUN.md (982 lines, §8 Function Layer full chapter)
+- Updated:
+  - concepts/ub-programming-models.md — 大幅扩展：Jetty 类型/状态机/通信模式、事务队列 (SQ/RQ/CQ/EQ)、内存段管理、内存借入/共享 (cache coherence + ownership)、通信管理 (Known Jetty/UBFM/TCP)、死锁避免 (内存访问 3 场景 + 消息通信 3 机制)
+  - entities/unifiedbus-ub.md — 添加 Multi-Entity Coordination (Fusion/Collective/Global Maintenance)
+- Created:
+  - concepts/ub-urpc.md — URPC 远程过程调用（Client/Server/Worker 角色、3 种参数传递方法 inline/external/by-reference、P2P 架构）
+- Updated: index.md (35 pages total)
+
 ## [2026-05-08] ingest | CASSINI (arXiv:2308.00852)
 - Source: raw/papers/cassini-network-aware-scheduling-2308.00852.pdf
 - Created:
   - entities/cassini.md — Network-aware ML 集群调度器（几何抽象、统一圆、兼容性评分、Affinity 图、time-shift 交错）
 - Updated: index.md (31 pages total)
 - Key: 利用 DNN 训练周期性通信模式，通过 time-shift 交错不同 job 的 Up/Down 相位。vs Themis 1.5× avg / 2.2× tail，vs Pollux 1.6× avg / 2.5× tail。ECN 标记降低 33×。
+
+## [2026-05-11] ingest | UB Transport Layer Full Chapter (UB-TP.md)
+- Source: raw/articles/UB-TP-ch6.md (§6 Transport Layer 完整章节)
+- Updated:
+  - concepts/ub-transport-layer.md — 大幅扩展：PSN 24-bit 机制（半空间约束、乱序范围）、Go-Back-N 重传（±fast retransmission 场景图解）、Selective 重传（BitMap + MarkPSN + HighRtxPSN）、RTO 静态/动态策略、TPG 机制与 per-flow/per-packet 负载均衡、window-based (LDCP) / rate-based / CAQM / DCQCN 拥塞控制、RTP/CTP 传输流程、ROI/ROT/ROL 模式事务层交互、互连协议对比分析
+- Updated: index.md (38 pages, 传输层摘要更新)
+- Key: MarkPSN 机制区分新包发送与丢失包重传阶段，快速检测非首次丢包；CAQM 逐跳审批制窗口增长；ROL 模式 TPACK 承载 TAACK 节省 RTT
+
+## [2026-05-11] ingest | UB Network Layer Full Chapter (UB-NETWORK.md)
+- Source: raw/articles/UB-NETWORK-ch5.md (§5 Network Layer 完整章节)
+- Created:
+  - concepts/ub-network-layer.md — 网络层核心机制（CNA/IP 双格式寻址、NTH 包头三种格式、RT 路由 2-bit 四模式、SL-VL QoS 映射、CAQM/FECN/FECN_RTT 三种拥塞标记、NPI 网络隔离（Strict/Loose 模式）、死锁避免四种机制、ICRC CRC-32 完整性保护、与 IB/Ethernet 协议对比表）
+- Updated:
+  - entities/unifiedbus-ub.md — 添加 source 引用
+- Updated: index.md (39 pages total)
+- Key: NPI 隔离比 IB PKey 更细粒度（25-bit + Permission 层级）；FECN_RTT 时间戳回传是独特功能；CAQM 逐跳审批与传输层联动
+
+## [2026-05-11] ingest | UB Data Link Layer Full Chapter (UB-DL.md)
+- Source: raw/articles/UB-DL-ch4.md (§4 Data Link Layer 完整章节)
+- Created:
+  - concepts/ub-data-link-layer.md — 数据链路层核心机制（Flit/DLLDP/DLLCB 封装体系、CRC/Non-CRC 双模式动态切换、4 阶段链路状态机、Init Block 参数协商表、16 VL 虚通道、Credit 流控 Exclusive/Sharing 双模式、Go-Back-N 重传 + Retry Buffer 管理 + RETRY_REQ_SM/RETRY_ACK_SM 双状态机、异常处理与链路断连恢复）
+- Updated:
+  - entities/unifiedbus-ub.md — 添加 source 引用
+- Updated: index.md (40 pages total)
+- Key: Credit Sharing 模式允许 VL 间动态共享接收 buffer，比 IB 更灵活；封装模式可运行时切换（BER 触发物理层 retrain）；Retry Buffer 死锁预防通过优先发 Crd_Ack Block 解决互锁
+
+## [2026-05-11] ingest | UB Physical Layer Full Chapter (UB-PHY.md)
+- Source: raw/articles/UB-PHY-ch3.md (§3 Physical Layer 完整章节)
+- Created:
+  - concepts/ub-physical-layer.md — 物理层核心机制（PCS FEC RS(128,120) T=2/4 双模式、eBCH-16 AMCTL 40-symbol 控制结构、PMA SerDes NRZ/PAM4 + Gray 编码 + Precoding、LMSM 10 态链路训练状态机、QDLWS 快速动态宽度切换不中断数据、3 种均衡模式 Skip/Only_Highest/Full、FEC/CRC 运行时动态切换、低功耗 PRBS23 CDR 保持、端口类型随机数协商）
+- Updated:
+  - entities/unifiedbus-ub.md — 添加 source 引用
+- Updated: index.md (41 pages total)
+- Key: QDLWS 是 UB 独特功能（IB/PCIe 不支持不中断数据的动态宽度切换）；eBCH-16 对 AMCTL 提供比标准协议更强的独立保护；非对称 TX/RX 宽度支持功耗优化；最大 118 Gbit/s/lane

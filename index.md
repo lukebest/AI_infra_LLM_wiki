@@ -2,7 +2,7 @@
 
 > 内容目录。每个 wiki 页面按类型分区列出，附一行摘要。
 > 先读此文件找到相关页面。
-> Last updated: 2026-05-08 | Total pages: 31
+> Last updated: 2026-05-11 | Total pages: 41
 
 ## Entities
 - [[cerebras-wse]] — Cerebras 晶圆级 AI 加速器，24 color 确定性路由，900K 核心
@@ -12,12 +12,17 @@
 - [[kyber-rack]] — NVIDIA 第二种 rack 架构，144 GPU/rack，NVLink 7 switch，支持 NVL144/288/1152
 - [[cassini]] — CASSINI 网络感知 ML 集群调度器：几何抽象交错通信相位，Affinity 图，1.6× 吞吐改善
 - [[vera-etl256]] — 256 CPU 独立 rack，Spectrum-6 ETL switch，液冷，全 copper 互联
+- [[unifiedbus-ub]] — Huawei UnifiedBus 高性能互连协议，SuperPoD-scale AI/HPC，统一协议栈，全资源池化
 
 ## Analyses
 - [[wse-nom-contradiction-analysis]] — WSE NoW 矛盾分析：均匀性 vs 异构通信（主要矛盾），附六步框架 + 解决方案
 - [[cerebras-wse-vs-groq-network-comparison]] — WSE 2D Mesh vs Groq High-radix Switched：拓扑、规模、MoE 场景、矛盾对比
 
 ## Concepts
+
+- [[ub-physical-layer]] — UB 物理层：PCS FEC RS(128,120) T=2/4、eBCH-16 AMCTL、PMA SerDes NRZ/PAM4、LMSM 10 态链路训练、QDLWS 动态宽度切换、3 种均衡模式、FEC/CRC 动态切换
+- [[ub-data-link-layer]] — UB 数据链路层：Flit/DLLDP/DLLCB 封装、CRC/Non-CRC 双模式、4 阶段链路状态机、Init Block 参数协商、16 VL 虚通道、Credit 流控（Exclusive/Sharing）、Go-Back-N 重传 + Retry Buffer 管理、双状态机（RETRY_REQ_SM/RETRY_ACK_SM）
+- [[ub-network-layer]] — UB 网络层：CNA/IP 双格式寻址、RT 路由（per-flow/per-packet）、SL-VL QoS、CAQM/FECN/FECN_RTT 拥塞标记、NPI 网络隔离、死锁避免、ICRC 完整性保护
 - [[nvidia-cpo-roadmap]] — NVIDIA CPO 用于 scale-up 的路线图：Rubin NVL576 测试 → Feynman NVL1152 volume ramp
 - [[cmx-stx]] — NVIDIA 推理存储平台：CMX（Tier G3.5 NVMe KV cache）+ STX（BF-4 存储 rack 参考架构）
 - [[deterministic-execution]] — 编译器控制时序、消除 jitter 的执行范式
@@ -44,5 +49,12 @@
 - [[deepseek-v4-summary]] — DeepSeek-V4 技术报告全文摘要，含 wiki 交叉链接
 
 ## Comparisons
+
+- [[ub-transport-layer]] — UB 传输层：四种模式（RTP/CTP/UTP/TP Bypass）、PSN 机制、Go-Back-N/Selective 重传、TPG 多路径负载均衡、LDCP/CAQM/DCQCN 拥塞控制、ROL 模式事务-传输联动
+- [[ub-programming-models]] — UB 编程模型：Load/Store 同步、URMA 异步访问（Jetty/事务队列/内存池化/死锁避免）
+- [[ub-urpc]] — URPC 远程过程调用：Client/Server/Worker，pass-by-value/reference，P2P 架构
+- [[ub-memory-management]] — UB 内存管理：Home-User 模型、UBMD、UMMU 两阶段地址翻译+权限检查、UB Decoder
+- [[ub-resource-management]] — UB 资源管理：UBFM、Entity 模型/池化/虚拟化、配置空间、管理命令、三级复位+三级错误 RAS
+- [[ub-transaction-layer]] — UB 事务层：四类事务（Memory/Message/Maintenance/Management）、Full/Compact 包头、安全 Token 验证、四种服务模式（ROI/ROT/ROL/UNO）
 
 ## Queries
