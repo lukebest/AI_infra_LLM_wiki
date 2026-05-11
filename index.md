@@ -31,16 +31,16 @@
 - [[information-theoretic-value-model]] — 智能体辅助编程的信息论价值模型：V ∝ I(S;K)，知识与任务的匹配度决定 Agent 价值
 - [[lpu-architecture]] — Groq LPU 推理专用架构：SRAM-first、显式数据搬运、编译器调度
 - [[m2n-communication]] — M2N 不对称通信模式，disaggregated inference 核心，4.2× NCCL 优化
-- [[CSA-HCA]] — 两级压缩注意力：CSA 温和压缩+稀疏选择，HCA 激进压缩+dense attention
-- [[DSec-sandbox]] — DeepSeek Elastic Compute 沙箱平台，4 种执行基板，数十万并发
-- [[FP4-QAT]] — FP4 量化感知训练，无损 FP4→FP8 反量化
-- [[MegaMoE-kernel]] — MoE 专家并行 mega-kernel，wave-based 通信计算全重叠
-- [[mHC]] — 流形约束超连接，Birkhoff polytope 约束残差映射
-- [[Muon-optimizer]] — 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
+- [[csa-hca]] — 两级压缩注意力：CSA 温和压缩+稀疏选择，HCA 激进压缩+dense attention
+- [[dsec-sandbox]] — DeepSeek Elastic Compute 沙箱平台，4 种执行基板，数十万并发
+- [[fp4-qat]] — FP4 量化感知训练，无损 FP4→FP8 反量化
+- [[megamoe-kernel]] — MoE 专家并行 mega-kernel，wave-based 通信计算全重叠
+- [[mhc]] — 流形约束超连接，Birkhoff polytope 约束残差映射
+- [[muon-optimizer]] — 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
 - [[switching-principles]] — 交换原理基础：电路交换/分组交换，三对基本概念，交换系统结构
 - [[switching-elements]] — 交换单元：空分/时分交换，开关阵列与共享存储器/总线，性能指标
 - [[switching-networks]] — 交换网络：CLOS 三级网络（严格/可重排无阻塞），TST 网络，Banyan 网络
-- [[TileLang]] — Kernel 开发 DSL，Z3 形式化分析，bitwise reproducibility
+- [[tilelang]] — Kernel 开发 DSL，Z3 形式化分析，bitwise reproducibility
 
 ## Papers
 - [[megascale-infer-2504.02263]] — MegaScale-Infer：MoE disaggregated attention/FFN serving，ping-pong pipeline + M2N 通信库，1.90× 吞吐提升
