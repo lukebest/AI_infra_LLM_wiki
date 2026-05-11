@@ -43,15 +43,15 @@
 在你希望存放知识库的目录执行（将 URL 换成你 fork 后的地址亦可）：
 
 ```bash
-git clone https://github.com/lukebest/llm_wiki.git
-cd llm_wiki
+git clone https://github.com/lukebest/AI_infra_LLM_wiki.git
+cd AI_infra_LLM_wiki
 ```
 
 若使用 SSH：
 
 ```bash
-git clone git@github.com:lukebest/llm_wiki.git
-cd llm_wiki
+git clone git@github.com:lukebest/AI_infra_LLM_wiki.git
+cd AI_infra_LLM_wiki
 ```
 
 确认仓库根目录下已有 `SCHEMA.md`、`index.md`、`log.md` 以及 `raw/`、`entities/`、`concepts/` 等结构——说明这是一份**已有内容**的 Wiki，后续只做增量。
@@ -62,10 +62,10 @@ cd llm_wiki
 
 ```bash
 # 临时（当前终端会话）
-export WIKI_PATH="$(pwd)"          # 在 llm_wiki 根目录下执行时
+export WIKI_PATH="$(pwd)"          # 在 AI_infra_LLM_wiki 根目录下执行时
 
 # 或写绝对路径（推荐给 Hermes / 定时任务）
-export WIKI_PATH=/home/you/projects/llm_wiki
+export WIKI_PATH=/home/you/projects/AI_infra_LLM_wiki
 ```
 
 把同一行写入 **`~/.hermes/.env`**（或你运行 Hermes 的环境配置文件），避免每次手动 export。
