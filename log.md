@@ -190,3 +190,16 @@
   - 3 个 residual orphan（cerebras-wse-vs-groq-comparison 分析页、ub-transaction-layer 伪孤儿、ub-physical-layer 新页待后续页面引用）
   - 4 个 oversize 页面（ub-resource-management 239行, ub-transaction-layer 249行, cerebras-wse-vs-groq 300行, wse-nom-contradiction 215行）
 - Tag: 29 新 tag 加入 taxonomy，0 个未注册 tag
+
+## [2026-05-13] ingest | Resilient AI Supercomputer Networking using MRC and SRv6
+- Source: raw/papers/resilient-ai-supercomputer-networking-using-mrc-and-srv6.pdf
+- Created:
+  - raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md — 全文摘要与结构化笔记
+  - entities/mrc.md — MRC 多路径 RDMA 传输协议实体（EV spraying、禁用 PFC、SACK/NACK、packet trimming、ECN 负载均衡、路径故障自动恢复）
+  - concepts/srv6-source-routing.md — SRv6 静态源路由概念（uSID uN 转发、EV→SRv6 映射、禁用动态路由、Clustermapper 探测）
+  - concepts/multi-plane-clos-topology.md — 多平面 CLOS 拓扑概念（2-tier 131K GPU、8×100G vs 3-tier 800G 对比、故障影响分析）
+  - papers/resilient-ai-supercomputer-networking-mrc-srv6.md — 论文页
+- Updated:
+  - concepts/switching-networks.md — 添加 MRC 和 multi-plane CLOS 交叉链接
+- Updated: index.md (45 pages total)
+- Key: MRC 1 QP spraying > RoCE 16 QPs ECMP；静态 SRv6 禁用动态路由与 MRC 协同；T0-T1 link flap 不需急修；T1 reboot 不中断 job

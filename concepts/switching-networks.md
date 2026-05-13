@@ -132,3 +132,5 @@ T 接线器 (×32) → S 接线器 (32×32) → T 接线器 (×32)
 - [[kyber-rack]] — 多级 NVLink 交换网络
 - [[nvidia-groq-3-lpx]] — C2C 网络拓扑
 - [[cerebras-wse]] — WSE NoC 路由
+- [[multi-plane-clos-topology]] — 100K+ GPU 的多平面 CLOS 实践
+- [[mrc]] — 配合 multi-plane CLOS 的多路径传输协议
