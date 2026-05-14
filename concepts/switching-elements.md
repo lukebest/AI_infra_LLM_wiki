@@ -102,3 +102,4 @@ sources: [raw/articles/浅谈交换原理（2）——交换单元.md]
 - [[nvidia-groq-3-lpx]] — LPX C2C 网络拓扑
 - [[kyber-rack]] — NVLink 7 switch 多级交换
 - [[disaggregated-inference]] — M:N 通信模式
+- [[noc-router-microarchitecture]] — NoC Router 微架构（片上交换单元的电路级实现）

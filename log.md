@@ -156,6 +156,13 @@
 - Updated: index.md (39 pages total)
 - Key: NPI 隔离比 IB PKey 更细粒度（25-bit + Permission 层级）；FECN_RTT 时间戳回传是独特功能；CAQM 逐跳审批与传输层联动
 
+## [2026-05-14] ingest | 片上网络 Router 微架构——设计师视角
+- Source: raw/articles/片上网络Router的微架构---设计师视角.md
+- Created:
+  - concepts/noc-router-microarchitecture.md — NoC Router 微架构（EB/Credit 流控、Switch 模块、仲裁逻辑、WH/VC 流水线 Router、VA/SA 分配器、前瞻路由）
+- Updated: index.md (46 pages total)
+- Note: 9 章系统教材级文章，从链路级流控到 VC-based 4 级流水线 Router。VA 阶段不能用 EB（死锁风险）是关键设计约束。与现代 UB Credit 流控、WSE 24-color 路由、CLOS 多级交换均有交叉。
+
 ## [2026-05-11] ingest | UB Data Link Layer Full Chapter (UB-DL.md)
 - Source: raw/articles/UB-DL-ch4.md (§4 Data Link Layer 完整章节)
 - Created:

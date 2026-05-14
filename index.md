@@ -2,7 +2,7 @@
 
 > 内容目录。每个 wiki 页面按类型分区列出，附一行摘要。
 > 先读此文件找到相关页面。
-> Last updated: 2026-05-13 | Total pages: 45
+> Last updated: 2026-05-14 | Total pages: 46
 
 ## Entities
 - [[mrc]] — Multipath Reliable Connection：OpenAI/Microsoft/AMD/NVIDIA/Broadcom 联合设计的多路径 RDMA 传输协议，包 spraying + 选择性重传，100K+ GPU 训练集群生产部署
@@ -40,6 +40,7 @@
 - [[muon-optimizer]] — 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
 - [[switching-principles]] — 交换原理基础：电路交换/分组交换，三对基本概念，交换系统结构
 - [[switching-elements]] — 交换单元：空分/时分交换，开关阵列与共享存储器/总线，性能指标
+- [[noc-router-microarchitecture]] — NoC Router 微架构：链路级流控/EB/credit、Switch/仲裁器（RR/2D 矩阵）、WH/VC 流水线 Router、VA/SA 分配器优化
 - [[switching-networks]] — 交换网络：CLOS 三级网络（严格/可重排无阻塞），TST 网络，Banyan 网络
 - [[tilelang]] — Kernel 开发 DSL
 - [[srv6-source-routing]] — AI 超算静态源路由：SRv6 uSID uN 转发，禁用动态路由，与 MRC 协同

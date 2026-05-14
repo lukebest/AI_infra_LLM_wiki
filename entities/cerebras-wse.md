@@ -31,3 +31,4 @@ sources: []
 - [[lpu-architecture]] — LPU 架构
 - [[wse-nom-contradiction-analysis]] — 矛盾论六步框架分析 NoW
 - [[cerebras-wse-vs-groq-network-comparison]] — WSE vs Groq 全面对比
+- [[noc-router-microarchitecture]] — WSE NoC Router 的理论基础

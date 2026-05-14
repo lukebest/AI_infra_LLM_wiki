@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "3b2ae16175aac979",
+        "id": "141ebd810d0b839f",
         "type": "tabs",
         "children": [
           {
-            "id": "9e1c00a513558078",
+            "id": "7488bf679b039cd8",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -179,8 +179,9 @@
       "bases:新建数据库": false
     }
   },
-  "active": "9e1c00a513558078",
+  "active": "7488bf679b039cd8",
   "lastOpenFiles": [
+    "raw/articles/片上网络Router的微架构---设计师视角.md",
     "entities/cassini.md",
     "raw/papers/cassini-network-aware-scheduling-2308.00852.pdf",
     "concepts/switching-networks.md",
