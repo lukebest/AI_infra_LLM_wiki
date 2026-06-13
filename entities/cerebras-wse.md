@@ -1,7 +1,7 @@
 ---
 title: Cerebras WSE
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-29
 type: entity
 tags: [cerebras, wse, accelerator, deterministic, inference, mesh]
 sources: []
@@ -15,6 +15,7 @@ sources: []
 - 24 个 color（虚拟通道），编译时静态路由
 - 每跳 ~0.4ns，color 之间互不阻塞
 - 与 [[nvidia-groq-3-lpx]] 的 plesiosynchronous C2C 是不同路径实现确定性
+- Color 机制详见 [[cerebras-color-mechanism]]
 
 ## 与 Groq LPU 的对比
 | 维度 | Cerebras WSE | Groq 3 LPU |
@@ -31,4 +32,5 @@ sources: []
 - [[lpu-architecture]] — LPU 架构
 - [[wse-nom-contradiction-analysis]] — 矛盾论六步框架分析 NoW
 - [[cerebras-wse-vs-groq-network-comparison]] — WSE vs Groq 全面对比
+- [[cerebras-color-mechanism]] — Color 虚拟通道机制的完整解析
 - [[noc-router-microarchitecture]] — WSE NoC Router 的理论基础

@@ -175,6 +175,7 @@ sources: [raw/articles/片上网络Router的微架构---设计师视角.md]
 - **[[switching-networks]]**：CLOS 多级网络是 scale-up fabric 的基础，Router 是其中的节点
 - **[[switching-principles]]**：电路交换/分组交换的基本概念在 NoC 中的体现
 - **[[cerebras-wse]]**：WSE 900K 核心的 NoC 使用 24-color 确定性路由，直接应用本文描述的 Router 微架构
+- **[[cerebras-color-mechanism]]**：WSE Color 机制的完整解析——虚拟通道+静态路由+任务调度
 - **[[ub-data-link-layer]]**：UB 的 Credit 流控/Go-Back-N 与 NoC credit-based 流控原理一致
 - **[[ub-transport-layer]]**：UB 传输层的 PSN/重传机制是 NoC router 流控在网络层的扩展
 - **[[deterministic-execution]]**：编译器确定性调度依赖 NoC Router 的确定性行为

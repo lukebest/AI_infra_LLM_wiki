@@ -210,3 +210,14 @@
   - concepts/switching-networks.md — 添加 MRC 和 multi-plane CLOS 交叉链接
 - Updated: index.md (45 pages total)
 - Key: MRC 1 QP spraying > RoCE 16 QPs ECMP；静态 SRv6 禁用动态路由与 MRC 协同；T0-T1 link flap 不需急修；T1 reboot 不中断 job
+
+## [2026-05-29] ingest | US10515303B2 — Wavelet Representation for Accelerated Deep Learning
+- Source: US10515303B2 (Cerebras patent, Sean Lie)
+- Created:
+  - concepts/cerebras-color-mechanism.md — WSE Color 虚拟通道机制完整解析（静态路由、Router 实现、任务调度、反压、软件接口）
+- Updated:
+  - entities/cerebras-wse.md — 添加 Color 机制交叉链接
+  - concepts/deterministic-execution.md — 扩展 Color-based Routing 描述，添加交叉链接
+  - concepts/noc-router-microarchitecture.md — 添加 Cerebras Color 交叉链接
+  - index.md (47 pages total)
+- Key: Color 同时充当虚拟通道 ID + 任务选择器（Color×4=指令地址偏移）；静态固定路由；每 Color 2 entry buffer + 独立反压通道；Picker/Active/Block 三级调度状态机

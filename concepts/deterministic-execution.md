@@ -1,7 +1,7 @@
 ---
 title: Deterministic Execution
 created: 2026-04-16
-updated: 2026-04-16
+updated: 2026-05-29
 type: concept
 tags: [deterministic, compiler, spatial-execution, scheduling, inference]
 sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
@@ -21,7 +21,8 @@ sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
 
 ### WSE Color-based Routing
 - 24 个 color 编译时静态路由，运行时零决策
-- 详见 [[cerebras-wse]]
+- Color 同时充当虚拟通道 ID 和任务选择器（Color×4 → 指令地址）
+- 详见 [[cerebras-wse]] 和 [[cerebras-color-mechanism]]
 
 ### Groq LPU Spatial Execution
 - 编译器显式调度 MXM/VXM/SXM 操作
