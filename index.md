@@ -25,6 +25,7 @@
 - [[ub-data-link-layer]] — UB 数据链路层：Flit/DLLDP/DLLCB 封装、CRC/Non-CRC 双模式、4 阶段链路状态机、Init Block 参数协商、16 VL 虚通道、Credit 流控（Exclusive/Sharing）、Go-Back-N 重传 + Retry Buffer 管理、双状态机（RETRY_REQ_SM/RETRY_ACK_SM）
 - [[ub-network-layer]] — UB 网络层：CNA/IP 双格式寻址、RT 路由（per-flow/per-packet）、SL-VL QoS、CAQM/FECN/FECN_RTT 拥塞标记、NPI 网络隔离、死锁避免、ICRC 完整性保护
 - [[nvidia-cpo-roadmap]] — NVIDIA CPO 用于 scale-up 的路线图：Rubin NVL576 测试 → Feynman NVL1152 volume ramp
+- [[cerebras-color-mechanism]] — WSE Color 虚拟通道机制：静态路由+独立缓冲+Color×4任务调度+独立反压，Fabric/Local Color 双类型
 - [[cmx-stx]] — NVIDIA 推理存储平台：CMX（Tier G3.5 NVMe KV cache）+ STX（BF-4 存储 rack 参考架构）
 - [[deterministic-execution]] — 编译器控制时序、消除 jitter 的执行范式
 - [[disaggregated-inference]] — 解耦推理：attention/FFN 分离部署，独立扩展，batch 聚合
