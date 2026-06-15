@@ -134,4 +134,5 @@ T 接线器 (×32) → S 接线器 (32×32) → T 接线器 (×32)
 - [[cerebras-wse]] — WSE NoC 路由
 - [[multi-plane-clos-topology]] — 100K+ GPU 的多平面 CLOS 实践
 - [[mrc]] — 配合 multi-plane CLOS 的多路径传输协议
+- [[flattened-butterfly-topology]] — Flattened Butterfly 片上拓扑（高基数路由器降低直径）
 - [[noc-router-microarchitecture]] — NoC Router 微架构（Router 是多级交换网络中的节点）

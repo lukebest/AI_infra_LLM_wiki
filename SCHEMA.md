@@ -26,7 +26,7 @@ sources: [raw/articles/source-name.md]
 ## Tag Taxonomy
 - 架构: accelerator, gpu, lpu, tpu, wse, chiplet, noc, interconnect
 - 网络: scale-up, scale-out, ocs, tdm, wdm, routing, deterministic, fabric, transport, data-link, physical-layer, link-training, serdes, fec, retransmission, flow-control, congestion-control, switch, protocol, communication
-- 推理: inference, decode, prefill, latency, throughput, serving, batching, disaggregated-inference, serving-system, kv-cache
+- 推理: inference, decode, prefill, latency, throughput, serving, batching, disaggregated-inference, serving-system, kv-cache, reasoning, capacity-trap, parallelism
 - 编译器: compiler, scheduling, spatial-execution, deterministic-execution, programming-model
 - 公司: nvidia, cerebras, groq, amd, google, lightmatter, celestial-ai, deepseek, huawei, bytedance
 - 技术: sram, hbm, photonic, cpo, optical, mesh, memory-bandwidth, memory, rack, cpu, rpc, virtualization

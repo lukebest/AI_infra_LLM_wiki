@@ -4,7 +4,7 @@ created: 2026-04-17
 updated: 2026-05-08
 type: concept
 tags: [inference, serving-system, moe, disaggregated-inference]
-sources: [arXiv:2504.02263, raw/articles/GTC 2026 – The Inference Kingdom Expands.md]
+sources: [arXiv:2504.02263, raw/articles/GTC 2026 – The Inference Kingdom Expands.md, raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf]
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -91,9 +91,18 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 2. Prefill/Decode 解耦 + Attn/FFN 解耦能否叠加？
 3. 光交换/可重构网络能否简化 M2N 的复杂性？
 
+## 实证支持
+
+[[understanding-inference-scaling-for-llms]] 通过 8B-671B 模型的系统实验为 prefill/decode 解耦提供了实证基础：
+- Prefill 是 compute-bound（低 HBM BW util），Decode 是 bandwidth-bound（高 HBM BW saturation）
+- Reasoning >99% wall-clock 在 decode → 硬件应物理解耦
+- [[prefill-decode-divergence]] 量化了两阶段的正交资源需求
+
 ## 相关页面
 
 - [[megascale-infer-2504.02263]] — 首个大规模 disaggregated expert parallelism 系统
 - [[m2n-communication]] — disaggregation 产生的通信模式
 - [[heterogeneous-inference]] — GPU + LPU 异构推理
 - [[nvidia-groq-3-lpx]] — LPX 产品化 AFD
+- [[prefill-decode-divergence]] — Prefill vs Decode 的资源特性分歧
+- [[understanding-inference-scaling-for-llms]] — 系统性推理 scaling 瓶颈分析

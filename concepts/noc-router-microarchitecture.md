@@ -179,3 +179,4 @@ sources: [raw/articles/片上网络Router的微架构---设计师视角.md]
 - **[[ub-transport-layer]]**：UB 传输层的 PSN/重传机制是 NoC router 流控在网络层的扩展
 - **[[deterministic-execution]]**：编译器确定性调度依赖 NoC Router 的确定性行为
 - **[[lpu-architecture]]**：LPU 的 SRAM-first 架构中片上互联设计参考了 NoC Router 微架构
+- **[[flattened-butterfly-topology]]**：FBFLY 拓扑利用高基数 Router 降低片上网络直径，bypass channel 减少非最小路由开销

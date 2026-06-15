@@ -46,8 +46,17 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 - 稳定的 per-token 性能和强 tail-latency 表现至关重要
 - 需要 ~1000+ tokens/sec/user
 
+## 实证基础
+
+[[understanding-inference-scaling-for-llms]] 系统量化了 prefill/decode 的正交资源需求，为异构推理提供了实证基础：
+- Prefill: compute-bound, 适合高 TFLOP GPU
+- Decode: bandwidth-bound, 适合 memory-centric 架构（如 LPU SRAM）
+- 见 [[prefill-decode-divergence]] 的详细分析
+
 ## 相关页面
 - [[nvidia-groq-3-lpx]] — LPX 实体
 - [[nvidia-vera-rubin-nvl72]] — GPU 侧
 - [[disaggregated-inference]] — 解耦推理概念
 - [[lpu-architecture]] — LPU 架构
+- [[prefill-decode-divergence]] — Prefill vs Decode 资源分歧
+- [[understanding-inference-scaling-for-llms]] — 推理 scaling 系统分析

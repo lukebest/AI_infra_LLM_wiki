@@ -198,6 +198,17 @@
   - 4 个 oversize 页面（ub-resource-management 239行, ub-transaction-layer 249行, cerebras-wse-vs-groq 300行, wse-nom-contradiction 215行）
 - Tag: 29 新 tag 加入 taxonomy，0 个未注册 tag
 
+## [2026-06-12] ingest | Flattened Butterfly Topology for On-Chip Networks (MICRO 2007)
+- Source: raw/papers/MICRO_FBFLY.pdf
+- Created:
+  - concepts/flattened-butterfly-topology.md — Flattened Butterfly 片上拓扑（高基数路由器、concentration、bypass channel、UGAL 路由、yield arbiter）
+  - raw/papers/micro-fbfly-flattened-butterfly.md — 论文结构化笔记
+- Updated:
+  - concepts/switching-networks.md — 添加 FBFLY 交叉链接
+  - concepts/noc-router-microarchitecture.md — 添加 FBFLY 关联
+  - index.md (47 pages total)
+- Key: FBFLY 通过高基数路由器将 64 节点 NoC 直径降至 2 hop，bypass channel + mux 使非最小路由物理距离接近最小路径；vs MESH 功耗 −38%、面积 1/4、throughput +50% vs CMESH
+
 ## [2026-05-13] ingest | Resilient AI Supercomputer Networking using MRC and SRv6
 - Source: raw/papers/resilient-ai-supercomputer-networking-using-mrc-and-srv6.pdf
 - Created:
@@ -210,3 +221,26 @@
   - concepts/switching-networks.md — 添加 MRC 和 multi-plane CLOS 交叉链接
 - Updated: index.md (45 pages total)
 - Key: MRC 1 QP spraying > RoCE 16 QPs ECMP；静态 SRv6 禁用动态路由与 MRC 协同；T0-T1 link flap 不需急修；T1 reboot 不中断 job
+
+## [2026-06-15] ingest | Understanding Inference Scaling for LLMs (arXiv:2605.19775)
+- Source: raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
+- Authors: Moiz Arif, Avinash Maurya, Sudharshan Vazhkudai, Bogdan Nicolae (Micron + Argonne)
+- Files created:
+  - raw/papers/understanding-inference-scaling-for-llms.md — 结构化笔记
+  - papers/understanding-inference-scaling-for-llms.md — 论文 wiki 页
+  - concepts/inference-capacity-trap.md — 容量陷阱（KV 饱和 → preemption → recomputation → throughput 崩溃）
+  - concepts/reasoning-cliff.md — 推理悬崖（KV 线性增长使饱和提前到 prefill）
+  - concepts/parallelism-transition-point.md — 并行度切换点（32B inflection, Dense vs MoE 分歧）
+  - concepts/prefill-decode-divergence.md — Prefill（compute-bound）vs Decode（bandwidth-bound）资源分歧
+- Files updated:
+  - concepts/disaggregated-inference.md — 添加 prefill/decode 物理解耦实证引用
+  - concepts/heterogeneous-inference.md — 添加 prefill/decode 分歧对异构推理的实证基础
+  - SCHEMA.md — 新增 tag: reasoning, capacity-trap, parallelism
+  - index.md (51 pages total)
+- Key findings:
+  - 9 个 observations: Capacity Trap, TTFT-TPOT tradeoff, DP memory 不池化, tail latency, 32B inflection, Dense vs MoE 分歧, decode dominance >99%, reasoning cliff, scheduler = traffic shaping
+  - 32B 是 DP→TP inflection point: TP 收益来自释放 KV capacity（非加速 kernel）
+  - Llama-405B: TP=8 (986s), PP=8 灾难性 (7537s)
+  - DeepSeek-R1-671B: PP=4+TP=2 (1663s) beats TP=8 (2047s) — MoE sync latency + MLA advantage
+  - MLA Anomaly: 671B KV consumption rate 远低于 70B dense model
+  - 硬件方向: prefill/decode 物理解耦, tiered memory (HBM→DDR→CXL→NVMe), HBF, agentic AI 乘数效应

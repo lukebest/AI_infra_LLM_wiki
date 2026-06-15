@@ -2,7 +2,7 @@
 
 > 内容目录。每个 wiki 页面按类型分区列出，附一行摘要。
 > 先读此文件找到相关页面。
-> Last updated: 2026-05-14 | Total pages: 46
+> Last updated: 2026-06-15 | Total pages: 50
 
 ## Entities
 - [[mrc]] — Multipath Reliable Connection：OpenAI/Microsoft/AMD/NVIDIA/Broadcom 联合设计的多路径 RDMA 传输协议，包 spraying + 选择性重传，100K+ GPU 训练集群生产部署
@@ -43,12 +43,18 @@
 - [[noc-router-microarchitecture]] — NoC Router 微架构：链路级流控/EB/credit、Switch/仲裁器（RR/2D 矩阵）、WH/VC 流水线 Router、VA/SA 分配器优化
 - [[switching-networks]] — 交换网络：CLOS 三级网络（严格/可重排无阻塞），TST 网络，Banyan 网络
 - [[tilelang]] — Kernel 开发 DSL
+- [[inference-capacity-trap]] — 推理容量陷阱：KV cache 饱和导致 preemption + recomputation，throughput 崩溃
+- [[reasoning-cliff]] — 推理悬崖：KV 线性增长使 HBM 饱和，scheduler 进入 convoy mode
+- [[parallelism-transition-point]] — 并行度切换点：32B 是 DP→TP inflection，MoE 需 hybrid PP+TP
+- [[prefill-decode-divergence]] — Prefill（compute-bound）vs Decode（bandwidth-bound）资源需求正交，>99% 时间在 decode
 - [[srv6-source-routing]] — AI 超算静态源路由：SRv6 uSID uN 转发，禁用动态路由，与 MRC 协同
+- [[flattened-butterfly-topology]] — Flattened Butterfly 片上拓扑：高基数路由器降低直径，concentration + bypass channel，2-hop 直径，38% 功耗降低
 - [[multi-plane-clos-topology]] — 多平面 CLOS 拓扑：2-tier 131K GPU，低延迟高冗余，MRC 容错，Z3 形式化分析，bitwise reproducibility
 
 ## Papers
 - [[resilient-ai-supercomputer-networking-mrc-srv6]] — MRC+SRv6+multi-plane Clos：三管齐下的 100K+ GPU AI 训练网络容错方案，OpenAI/Microsoft 生产验证
 - [[megascale-infer-2504.02263]] — MegaScale-Infer：MoE disaggregated attention/FFN serving，ping-pong pipeline + M2N 通信库，1.90× 吞吐提升
+- [[understanding-inference-scaling-for-llms]] — Reasoning-centric LLM 推理系统瓶颈分析：Capacity Trap, Reasoning Cliff, DP→TP Transition, Prefill-Decode Divergence（8B-671B H200 实测）
 
 ## Summaries
 - [[deepseek-v4-summary]] — DeepSeek-V4 技术报告全文摘要，含 wiki 交叉链接
