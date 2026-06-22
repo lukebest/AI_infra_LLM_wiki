@@ -39,8 +39,12 @@ sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
 - 灵活性降低（动态 workload 需要重新编译或过度配置）
 - 资源利用率可能低于自适应调度
 
+## WSE 上的性能可预测性
+
+确定性执行使 WSE 的 collective 通信可以用解析模型精确预测：< 4% 误差（CS-2 实测）。详见 [[wse-performance-model]] 和 [[wse-reduce-algorithms]]。
+
 ## 相关页面
 - [[nvidia-groq-3-lpx]] — LPU 确定性执行实例
 - [[cerebras-wse]] — WSE color-based 确定性路由
-- [[deterministic-execution]] — 空间执行模型
-- [[deterministic-execution]] — 准同步协议
+- [[wse-performance-model]] — WSE 通信性能模型
+- [[wse-reduce-algorithms]] — WSE Reduce/AllReduce 算法族

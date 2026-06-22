@@ -4,7 +4,7 @@ created: 2026-05-29
 updated: 2026-05-29
 type: concept
 tags: [cerebras, wse, fabric, routing, noc, deterministic, virtual-channel, communication]
-sources: [US10515303B2]
+sources: [US10515303B2, raw/papers/Near-optimal_wafer-scale_reduce.pdf]
 ---
 
 # Cerebras Color 机制

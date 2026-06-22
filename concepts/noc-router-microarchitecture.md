@@ -4,7 +4,7 @@ created: 2026-05-14
 updated: 2026-05-14
 type: concept
 tags: [noc, routing, flow-control, arbitration, router, switch, virtual-channel, wormhole, credit]
-sources: [raw/articles/片上网络Router的微架构---设计师视角.md]
+sources: [raw/articles/片上网络Router的微架构---设计师视角.md, raw/papers/Near-optimal_wafer-scale_reduce.pdf]
 ---
 
 # NoC Router 微架构

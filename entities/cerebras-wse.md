@@ -4,7 +4,7 @@ created: 2026-04-16
 updated: 2026-05-29
 type: entity
 tags: [cerebras, wse, accelerator, deterministic, inference, mesh]
-sources: []
+sources: [raw/papers/Near-optimal_wafer-scale_reduce.pdf]
 ---
 
 # Cerebras WSE (Wafer-Scale Engine)
@@ -25,6 +25,11 @@ sources: []
 | 路由 | 24 color 静态 | 96 C2C plesiosynchronous |
 | 编程 | CSL（数据流） | Compiler spatial |
 | 模型 | 分布式内存 | 分布式内存 |
+
+## Reduce/AllReduce Collective
+- HPDC 2024 论文建立了 WSE 上 Reduce/AllReduce 的性能模型和算法体系
+- Auto-Gen Reduce 距下界 ≤1.4×，比 vendor 方案快 3.27×
+- 详见 [[wse-performance-model]]、[[wse-reduce-algorithms]]、[[near-optimal-wafer-scale-reduce]]
 
 ## 相关页面
 - [[deterministic-execution]] — 共同使用的确定性范式

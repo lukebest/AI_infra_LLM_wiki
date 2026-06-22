@@ -2,7 +2,7 @@
 
 > 内容目录。每个 wiki 页面按类型分区列出，附一行摘要。
 > 先读此文件找到相关页面。
-> Last updated: 2026-06-15 | Total pages: 50
+> Last updated: 2026-06-20 | Total pages: 53
 
 ## Entities
 - [[mrc]] — Multipath Reliable Connection：OpenAI/Microsoft/AMD/NVIDIA/Broadcom 联合设计的多路径 RDMA 传输协议，包 spraying + 选择性重传，100K+ GPU 训练集群生产部署
@@ -51,11 +51,14 @@
 - [[srv6-source-routing]] — AI 超算静态源路由：SRv6 uSID uN 转发，禁用动态路由，与 MRC 协同
 - [[flattened-butterfly-topology]] — Flattened Butterfly 片上拓扑：高基数路由器降低直径，concentration + bypass channel，2-hop 直径，38% 功耗降低
 - [[multi-plane-clos-topology]] — 多平面 CLOS 拓扑：2-tier 131K GPU，低延迟高冗余，MRC 容错，Z3 形式化分析，bitwise reproducibility
+- [[wse-performance-model]] — WSE 通信性能模型：T=max(C,E/N)+L+(2TR+1)D，四瓶颈项（contention/energy/distance/depth），<4% 预测误差
+- [[wse-reduce-algorithms]] — WSE Reduce/AllReduce 算法族：Star/Chain/Tree/Two-Phase/Auto-Gen，模型驱动选择，Auto-Gen ≤1.4× 下界
 
 ## Papers
 - [[resilient-ai-supercomputer-networking-mrc-srv6]] — MRC+SRv6+multi-plane Clos：三管齐下的 100K+ GPU AI 训练网络容错方案，OpenAI/Microsoft 生产验证
 - [[megascale-infer-2504.02263]] — MegaScale-Infer：MoE disaggregated attention/FFN serving，ping-pong pipeline + M2N 通信库，1.90× 吞吐提升
 - [[understanding-inference-scaling-for-llms]] — Reasoning-centric LLM 推理系统瓶颈分析：Capacity Trap, Reasoning Cliff, DP→TP Transition, Prefill-Decode Divergence（8B-671B H200 实测）
+- [[near-optimal-wafer-scale-reduce]] — WSE Reduce/AllReduce 首次系统研究：性能模型（<4% 误差）、5 种算法（Auto-Gen ≤1.4× 下界）、3.27× 快于 vendor
 
 ## Summaries
 - [[deepseek-v4-summary]] — DeepSeek-V4 技术报告全文摘要，含 wiki 交叉链接

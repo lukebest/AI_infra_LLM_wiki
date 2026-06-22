@@ -256,3 +256,25 @@
   - MLA Anomaly: 671B KV consumption rate 远低于 70B dense model
   - 硬件方向: prefill/decode 物理解耦, tiered memory (HBM→DDR→CXL→NVMe), HBF, agentic AI 乘数效应
 
+
+## [2026-06-20] ingest | Near-Optimal Wafer-Scale Reduce (arXiv:2404.15888v4, HPDC 2024)
+- Source: raw/papers/Near-optimal_wafer-scale_reduce.pdf
+- Authors: Luczynski, Gianinazzi, Iff, Wilson, De Sensi, Hoefler (ETH Zurich + Cerebras + Sapienza)
+- Files created:
+  - raw/papers/near-optimal-wafer-scale-reduce.md — 结构化笔记
+  - papers/near-optimal-wafer-scale-reduce.md — 论文 wiki 页
+  - concepts/wse-performance-model.md — WSE 通信性能模型（T=max(C,E/N)+L+(2TR+1)D，四瓶颈项）
+  - concepts/wse-reduce-algorithms.md — Reduce/AllReduce 算法族（Star/Chain/Tree/Two-Phase/Auto-Gen + 1D/2D AllReduce）
+- Files updated:
+  - entities/cerebras-wse.md — 添加 Reduce collective 交叉引用 + source
+  - concepts/cerebras-color-mechanism.md — 添加 source 引用
+  - concepts/noc-router-microarchitecture.md — 添加 source 引用
+  - concepts/deterministic-execution.md — 添加 WSE 性能可预测性段落 + 交叉引用
+  - index.md (53 pages total)
+- Key findings:
+  - 性能模型 T=max(C,E/N)+L+(2TR+1)D 预测误差 <4%
+  - Auto-Gen Reduce 距下界 ≤1.4×，O(P⁴) 自动搜索 + 代码生成
+  - Two-Phase Reduce 兼顾低 depth (2√P) 和低 contention (2B)
+  - Multicast 使 flooding broadcast 最优；Reduce-then-Broadcast 常优于 Ring AllReduce
+  - 比 Cerebras vendor 方案快 3.27× (Reduce) / 2.56× (AllReduce)
+  - TR ≈ 2 cycles (WSE-2)，修正之前文献的 TR ≈ 7
