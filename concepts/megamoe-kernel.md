@@ -1,11 +1,16 @@
 ---
+type: Concept
 title: MegaMoE Kernel (Expert Parallelism Overlap)
+description: MoE 专家并行 mega-kernel，wave-based 通信计算全重叠
+tags:
+- communication
+- kernel
+- parallelism
+- moe
+timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
-updated: 2026-04-28
-type: concept
-tags: [communication, kernel, parallelism, moe]
 sources:
-  - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
 ---
 
 # MegaMoE Kernel: Fine-Grained EP Communication-Computation Overlap
@@ -51,5 +56,9 @@ MoE 层的通信时间 < 计算时间 → 融合成 pipeline 后，通信可被�
 建议用低成本 element-wise activation 替代 SwiGLU（无指数/除法），去掉 gate projection 后可增大中间维度 d。
 
 ## Relations
-- Used in: [[DeepSeek-V4]]
-- Related: [[TileLang]], [[CSA-HCA]]
+- Used in: [Deepseek V4](#DeepSeek-V4)
+- Related: [Tilelang](#TileLang), [Csa Hca](#CSA-HCA)
+
+# Citations
+
+[1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)

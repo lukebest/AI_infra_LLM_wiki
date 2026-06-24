@@ -1,15 +1,23 @@
 ---
+type: Concept
 title: UB 事务层
+description: UB 事务层：四类事务（Memory/Message/Maintenance/Management）、Full/Compact 包头、安全
+  Token 验证、四种服务模式（ROI/ROT/ROL/UNO）
+tags:
+- interconnect
+- scale-up
+- fabric
+- protocol
+- hardware
+timestamp: '2026-05-09T00:00:00Z'
 created: 2026-05-09
-updated: 2026-05-09
-type: concept
-tags: [interconnect, scale-up, fabric, protocol, hardware]
-sources: [raw/articles/UB-TA.md]
+sources:
+- raw/articles/UB-TA.md
 ---
 
 # UB 事务层
 
-[[unifiedbus-ub]] §7 Transaction Layer。位于传输层之上，为上层编程模型（load/store 同步访问和 [[ub-programming-models|URMA]] 异步访问）提供事务服务和事务操作。
+[Unifiedbus Ub](/entities/unifiedbus-ub.md) §7 Transaction Layer。位于传输层之上，为上层编程模型（load/store 同步访问和 [URMA](/concepts/ub-programming-models.md) 异步访问）提供事务服务和事务操作。
 
 ## 概览
 
@@ -27,7 +35,7 @@ sources: [raw/articles/UB-TA.md]
 | **Memory** | Write(0x3), Read(0x6), Atomic(0x7-0xF), Write_with_notify(0x5), Write_with_be(0x14), Writeback(0x17), Writeback_with_be(0x18) | 对 Target 内存段的读写和原子操作 |
 | **Message** | Send(0x0), Send_with_immediate(0x1), Write_with_immediate(0x4) | 基于 Jetty 消息队列的通信 |
 | **Maintenance** | Prefetch_tgt(0x15) | 目标端数据预取，优化后续 Read 延迟 |
-| **Management** | Management(0x10) | 携带管理命令，见 [[ub-resource-management]] |
+| **Management** | Management(0x10) | 携带管理命令，见 [Ub Resource Management](/concepts/ub-resource-management.md) |
 
 每种事务操作由唯一 TAOpcode 标识，包含至少一个请求包，可选一个响应包。
 
@@ -237,19 +245,23 @@ Message 事务通过 MTETAH 指定 Target 端接收队列 (TGT_TC_ID)，支持 T
 
 ## 与其他概念关联
 
-- [[unifiedbus-ub]] — UB 整体架构，事务层是协议栈核心层
-- [[ub-transport-layer]] — 事务层位于传输层之上，使用 TP Channel/TPG 等传输服务
-- [[ub-programming-models]] — load/store 和 URMA 编程模型直接调用事务层操作
-- [[ub-memory-management]] — Memory 事务的地址翻译和权限检查由 UMMU 完成
-- [[ub-resource-management]] — Management 事务携带管理命令；ROT 模式的 SC 资源由资源管理分配
-- [[ub-urpc]] — URPC 建立在事务层消息语义之上
+- [Unifiedbus Ub](/entities/unifiedbus-ub.md) — UB 整体架构，事务层是协议栈核心层
+- [Ub Transport Layer](/concepts/ub-transport-layer.md) — 事务层位于传输层之上，使用 TP Channel/TPG 等传输服务
+- [Ub Programming Models](/concepts/ub-programming-models.md) — load/store 和 URMA 编程模型直接调用事务层操作
+- [Ub Memory Management](/concepts/ub-memory-management.md) — Memory 事务的地址翻译和权限检查由 UMMU 完成
+- [Ub Resource Management](/concepts/ub-resource-management.md) — Management 事务携带管理命令；ROT 模式的 SC 资源由资源管理分配
+- [Ub Urpc](/concepts/ub-urpc.md) — URPC 建立在事务层消息语义之上
 
 ## 协议栈关联
 
-- [[ub-transport-layer]] — 事务层依赖传输层的可靠/不可靠传输服务
-- [[ub-programming-models]] — 事务层消息语义被 URPC 和 Jetty 编程模型使用
-- [[unifiedbus-ub]] — UB 协议整体架构
+- [Ub Transport Layer](/concepts/ub-transport-layer.md) — 事务层依赖传输层的可靠/不可靠传输服务
+- [Ub Programming Models](/concepts/ub-programming-models.md) — 事务层消息语义被 URPC 和 Jetty 编程模型使用
+- [Unifiedbus Ub](/entities/unifiedbus-ub.md) — UB 协议整体架构
 
 ## 来源
 
 - UB Base Specification Rev 2.0, §7 Transaction Layer
+
+# Citations
+
+[1] [raw/articles/UB-TA.md](raw/articles/UB-TA.md)

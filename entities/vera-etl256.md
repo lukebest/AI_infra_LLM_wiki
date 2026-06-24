@@ -1,10 +1,17 @@
 ---
+type: Entity
 title: Vera ETL256
+description: 256 CPU 独立 rack，Spectrum-6 ETL switch，液冷，全 copper 互联
+tags:
+- nvidia
+- cpu
+- storage
+- hardware
+- networking
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
-updated: 2026-05-08
-type: entity
-tags: [nvidia, cpu, storage, hardware, networking]
-sources: [raw/articles/GTC 2026 – The Inference Kingdom Expands.md]
+sources:
+- raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 ---
 
 # Vera ETL256
@@ -41,6 +48,10 @@ NVIDIA 256-CPU 独立 rack，应对 AI workloads 日益增长的 CPU 需求。�
 与 NVL rack 一致：紧密打包使 copper 可达一切，copper 节省的成本远超额外冷却开销。
 
 ## 相关页面
-- [[nvidia-vera-rubin-nvl72]] — 同平台 GPU 系统
-- [[cmx-stx]] — 推理存储平台
-- [[kyber-rack]] — 另一种 rack 架构
+- [Nvidia Vera Rubin Nvl72](/entities/nvidia-vera-rubin-nvl72.md) — 同平台 GPU 系统
+- [Cmx Stx](/concepts/cmx-stx.md) — 推理存储平台
+- [Kyber Rack](/entities/kyber-rack.md) — 另一种 rack 架构
+
+# Citations
+
+[1] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)

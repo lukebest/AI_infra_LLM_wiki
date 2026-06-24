@@ -1,10 +1,18 @@
 ---
+type: Concept
 title: Reasoning Cliff
+description: 推理悬崖：KV 线性增长使 HBM 饱和，scheduler 进入 convoy mode
+tags:
+- inference
+- reasoning
+- capacity-trap
+- kv-cache
+- decode
+- latency
+timestamp: '2026-06-15T00:00:00Z'
 created: 2026-06-15
-updated: 2026-06-15
-type: concept
-tags: [inference, reasoning, capacity-trap, kv-cache, decode, latency]
-sources: [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf]
+sources:
+- raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 ---
 
 # Reasoning Cliff（推理悬崖）
@@ -54,7 +62,7 @@ sources: [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf]
 
 ## 与 Capacity Trap 的区分
 
-- [[inference-capacity-trap]] 描述 **throughput 崩溃的因果链**（preemption → recomputation → collapse）
+- [Inference Capacity Trap](/concepts/inference-capacity-trap.md) 描述 **throughput 崩溃的因果链**（preemption → recomputation → collapse）
 - Reasoning Cliff 描述 **KV saturation 的时间点和行为**（何时饱和、scheduler 如何反应）
 
 两者是同一现象的不同视角：capacity trap 是"为什么"，reasoning cliff 是"什么时候"。
@@ -68,7 +76,11 @@ sources: [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf]
 
 ## 相关概念
 
-- [[inference-capacity-trap]] — 容量陷阱的完整因果机制
-- [[prefill-decode-divergence]] — decode 阶段是 reasoning cliff 的主战场
-- [[parallelism-transition-point]] — TP 通过释放 KV capacity 延缓 cliff 到来
-- [[disaggregated-inference]] — tiered memory 超越单卡 HBM 限制
+- [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — 容量陷阱的完整因果机制
+- [Prefill Decode Divergence](/concepts/prefill-decode-divergence.md) — decode 阶段是 reasoning cliff 的主战场
+- [Parallelism Transition Point](/concepts/parallelism-transition-point.md) — TP 通过释放 KV capacity 延缓 cliff 到来
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — tiered memory 超越单卡 HBM 限制
+
+# Citations
+
+[1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)

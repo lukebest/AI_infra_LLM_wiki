@@ -1,11 +1,20 @@
 ---
+type: Entity
 title: DeepSeek-V4
+description: V4 模型系列：1.6T/284B MoE，百万 token 上下文，CSA+HCA 混合注意力
+tags:
+- model
+- architecture
+- training
+- inference
+- quantization
+- attention
+- moe
+- compression
+timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
-updated: 2026-04-28
-type: entity
-tags: [model, architecture, training, inference, quantization, attention, moe, compression]
 sources:
-  - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
 ---
 
 # DeepSeek-V4
@@ -37,15 +46,15 @@ KV cache 缩到原来的 1/10 ~ 1/14。
 
 继承 DeepSeek-V3 的 Transformer + MoE + MTP 框架，三大升级：
 
-1. **Hybrid Attention**: [[csa-hca]] — 交替使用 Compressed Sparse Attention 和 Heavily Compressed Attention
-2. **[[mhc]]** (Manifold-Constrained Hyper-Connections) — 升级残差连接
-3. **[[muon-optimizer]]** — 替代 AdamW，更快收敛
+1. **Hybrid Attention**: [Csa Hca](/concepts/csa-hca.md) — 交替使用 Compressed Sparse Attention 和 Heavily Compressed Attention
+2. **[Mhc](/concepts/mhc.md)** (Manifold-Constrained Hyper-Connections) — 升级残差连接
+3. **[Muon Optimizer](/concepts/muon-optimizer.md)** — 替代 AdamW，更快收敛
 
 ### MoE Changes (vs V3)
 - 激活函数：Sigmoid → **Sqrt(Softplus)**（计算 affinity scores）
 - 前 3 层用 Hash Routing 替代 dense FFN
 - 去掉路由目标节点数限制
-- [[fp4-qat]]: expert weights + indexer QK path 用 FP4 (MXFP4)
+- [Fp4 Qat](/concepts/fp4-qat.md): expert weights + indexer QK path 用 FP4 (MXFP4)
 
 ### Attention 配置
 
@@ -63,10 +72,10 @@ KV cache 缩到原来的 1/10 ~ 1/14。
 
 ## Infrastructure
 
-- [[megamoe-kernel]]: 单一 fused kernel 实现专家并行通信-计算重叠，1.5-1.96× 加速
-- [[tilelang]]: DSL 用于 kernel 开发，平衡开发效率与运行时性能
+- [Megamoe Kernel](/concepts/megamoe-kernel.md): 单一 fused kernel 实现专家并行通信-计算重叠，1.5-1.96× 加速
+- [Tilelang](/concepts/tilelang.md): DSL 用于 kernel 开发，平衡开发效率与运行时性能
 - **Batch-invariant + deterministic** kernels: 用 DeepGEMM 替代 cuBLAS，端到端 bitwise 一致
-- [[dsec-sandbox]]: 生产级沙箱平台，4 种执行基板，管理数十万并发实例
+- [Dsec Sandbox](/concepts/dsec-sandbox.md): 生产级沙箱平台，4 种执行基板，管理数十万并发实例
 - **On-disk KV cache**: 共享前缀复用，3 种 SWA 缓存策略
 
 ## Training Stability
@@ -104,5 +113,9 @@ KV cache 缩到原来的 1/10 ~ 1/14。
 
 ## Relations
 - Predecessor: DeepSeek-V3
-- Key technique: [[csa-hca]], [[mhc]], [[muon-optimizer]], [[fp4-qat]]
-- Infra: [[megamoe-kernel]], [[tilelang]], [[dsec-sandbox]]
+- Key technique: [Csa Hca](/concepts/csa-hca.md), [Mhc](/concepts/mhc.md), [Muon Optimizer](/concepts/muon-optimizer.md), [Fp4 Qat](/concepts/fp4-qat.md)
+- Infra: [Megamoe Kernel](/concepts/megamoe-kernel.md), [Tilelang](/concepts/tilelang.md), [Dsec Sandbox](/concepts/dsec-sandbox.md)
+
+# Citations
+
+[1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)

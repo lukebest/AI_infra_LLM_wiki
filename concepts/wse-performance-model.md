@@ -1,10 +1,19 @@
 ---
+type: Concept
 title: WSE Performance Model
+description: WSE 通信性能模型：T=max(C,E/N)+L+(2TR+1)D，四瓶颈项（contention/energy/distance/depth），<4%
+  预测误差
+tags:
+- cerebras
+- wse
+- performance-model
+- communication
+- mesh
+- noc
+timestamp: '2026-06-20T00:00:00Z'
 created: 2026-06-20
-updated: 2026-06-20
-type: concept
-tags: [cerebras, wse, performance-model, communication, mesh, noc]
-sources: [raw/papers/Near-optimal_wafer-scale_reduce.pdf]
+sources:
+- raw/papers/Near-optimal_wafer-scale_reduce.pdf
 confidence: high
 ---
 
@@ -58,8 +67,12 @@ T = max(C, E/N) + L + (2·TR + 1)·D
 - 证明了 1D 场景下模型预测可达到 ≤1.4× 最优
 
 ## 相关页面
-- [[near-optimal-wafer-scale-reduce]] — 提出此模型的论文
-- [[wse-reduce-algorithms]] — 用此模型分析的算法族
-- [[cerebras-wse]] — 目标硬件
-- [[cerebras-color-mechanism]] — Color 路由是模型有效的基础（确定性路由）
-- [[noc-router-microarchitecture]] — NoC 路由器微架构理论基础
+- [Near Optimal Wafer Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md) — 提出此模型的论文
+- [Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — 用此模型分析的算法族
+- [Cerebras Wse](/entities/cerebras-wse.md) — 目标硬件
+- [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — Color 路由是模型有效的基础（确定性路由）
+- [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — NoC 路由器微架构理论基础
+
+# Citations
+
+[1] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)

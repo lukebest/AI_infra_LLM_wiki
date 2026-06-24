@@ -1,11 +1,16 @@
 ---
+type: Concept
 title: CSA and HCA (Hybrid Attention)
+description: 两级压缩注意力：CSA 温和压缩+稀疏选择，HCA 激进压缩+dense attention
+tags:
+- attention
+- compression
+- sparse
+- architecture
+timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
-updated: 2026-04-28
-type: concept
-tags: [attention, compression, sparse, architecture]
 sources:
-  - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
 ---
 
 # CSA and HCA (Compressed Sparse Attention / Heavily Compressed Attention)
@@ -81,5 +86,9 @@ DeepSeek-V4 的核心注意力创新，用于解决长上下文的计算和存�
 | 适用 | 中距离精确检索 | 极远距离粗粒度记忆 |
 
 ## Relations
-- Used in: [[DeepSeek-V4]]
-- Related: [[FP4-QAT]], [[MegaMoE-kernel]]
+- Used in: [Deepseek V4](#DeepSeek-V4)
+- Related: [Fp4 Qat](#FP4-QAT), [Megamoe Kernel](#MegaMoE-kernel)
+
+# Citations
+
+[1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)

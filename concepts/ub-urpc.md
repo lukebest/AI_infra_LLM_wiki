@@ -1,15 +1,22 @@
 ---
+type: Concept
 title: URPC (UB 远程过程调用)
+description: URPC 远程过程调用：Client/Server/Worker，pass-by-value/reference，P2P 架构
+tags:
+- interconnect
+- scale-up
+- rpc
+- memory
+- programming-model
+timestamp: '2026-05-09T00:00:00Z'
 created: 2026-05-09
-updated: 2026-05-09
-type: concept
-tags: [interconnect, scale-up, rpc, memory, programming-model]
-sources: [raw/articles/UB-FUN.md]
+sources:
+- raw/articles/UB-FUN.md
 ---
 
 # URPC (Unified Remote Procedure Call)
 
-[[unifiedbus-ub]] 基于 UB 事务层能力和直接内存访问的 RPC 协议，支持任意 UBPU 间直接 P2P 远程函数调用。
+[Unifiedbus Ub](/entities/unifiedbus-ub.md) 基于 UB 事务层能力和直接内存访问的 RPC 协议，支持任意 UBPU 间直接 P2P 远程函数调用。
 
 ## 功能角色
 
@@ -76,9 +83,13 @@ Client/Server/Worker 均可实现在不同 UBPU 的 Entity 上。利用 UB 的 P
 
 - **vs gRPC**：URPC 绕过 OS 内核栈，基于硬件直接内存访问，延迟极低
 - **vs RDMA RPC**：URPC 原生支持 pass-by-reference，Worker 可控制数据拉取时机，实现计算-通信重叠
-- **vs [[m2n-communication]]**：M2N 专用于 disaggregated inference 的 M:N 通信，URPC 更通用
-- 类似于 [[unifiedbus-ub]] 的 UBoE 跨 domain 场景，URPC 也可扩展到跨 domain 调用
+- **vs [M2N Communication](/concepts/m2n-communication.md)**：M2N 专用于 disaggregated inference 的 M:N 通信，URPC 更通用
+- 类似于 [Unifiedbus Ub](/entities/unifiedbus-ub.md) 的 UBoE 跨 domain 场景，URPC 也可扩展到跨 domain 调用
 
 ## 来源
 
 - UB Base Specification Rev 2.0, §8.5 URPC
+
+# Citations
+
+[1] [raw/articles/UB-FUN.md](raw/articles/UB-FUN.md)

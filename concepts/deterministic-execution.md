@@ -1,10 +1,17 @@
 ---
+type: Concept
 title: Deterministic Execution
+description: 编译器控制时序、消除 jitter 的执行范式
+tags:
+- deterministic
+- compiler
+- spatial-execution
+- scheduling
+- inference
+timestamp: '2026-05-29T00:00:00Z'
 created: 2026-04-16
-updated: 2026-05-29
-type: concept
-tags: [deterministic, compiler, spatial-execution, scheduling, inference]
-sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
+sources:
+- raw/articles/nvidia-groq3-lpx-blog-2026-04.md
 ---
 
 # Deterministic Execution（确定性执行）
@@ -22,12 +29,12 @@ sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
 ### WSE Color-based Routing
 - 24 个 color 编译时静态路由，运行时零决策
 - Color 同时充当虚拟通道 ID 和任务选择器（Color×4 → 指令地址）
-- 详见 [[cerebras-wse]] 和 [[cerebras-color-mechanism]]
+- 详见 [Cerebras Wse](/entities/cerebras-wse.md) 和 [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md)
 
 ### Groq LPU Spatial Execution
 - 编译器显式调度 MXM/VXM/SXM 操作
 - Plesiosynchronous C2C 协议消除多芯片时钟漂移
-- 详见 [[nvidia-groq-3-lpx]]
+- 详见 [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md)
 
 ## 为什么重要
 - Agentic AI 需要 ~1000 tokens/sec/user，延迟 jitter 直接影响用户体验
@@ -41,10 +48,14 @@ sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
 
 ## WSE 上的性能可预测性
 
-确定性执行使 WSE 的 collective 通信可以用解析模型精确预测：< 4% 误差（CS-2 实测）。详见 [[wse-performance-model]] 和 [[wse-reduce-algorithms]]。
+确定性执行使 WSE 的 collective 通信可以用解析模型精确预测：< 4% 误差（CS-2 实测）。详见 [Wse Performance Model](/concepts/wse-performance-model.md) 和 [Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md)。
 
 ## 相关页面
-- [[nvidia-groq-3-lpx]] — LPU 确定性执行实例
-- [[cerebras-wse]] — WSE color-based 确定性路由
-- [[wse-performance-model]] — WSE 通信性能模型
-- [[wse-reduce-algorithms]] — WSE Reduce/AllReduce 算法族
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPU 确定性执行实例
+- [Cerebras Wse](/entities/cerebras-wse.md) — WSE color-based 确定性路由
+- [Wse Performance Model](/concepts/wse-performance-model.md) — WSE 通信性能模型
+- [Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — WSE Reduce/AllReduce 算法族
+
+# Citations
+
+[1] [raw/articles/nvidia-groq3-lpx-blog-2026-04.md](raw/articles/nvidia-groq3-lpx-blog-2026-04.md)

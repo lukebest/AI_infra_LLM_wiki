@@ -1,15 +1,25 @@
 ---
+type: Concept
 title: UB 物理层机制
+description: UB 物理层：PCS FEC RS(128,120) T=2/4、eBCH-16 AMCTL、PMA SerDes NRZ/PAM4、LMSM
+  10 态链路训练、QDLWS 动态宽度切换、3 种均衡模式、FEC/CRC 动态切换
+tags:
+- interconnect
+- scale-up
+- fabric
+- physical-layer
+- serdes
+- fec
+- link-training
+timestamp: '2026-05-11T00:00:00Z'
 created: 2026-05-11
-updated: 2026-05-11
-type: concept
-tags: [interconnect, scale-up, fabric, physical-layer, serdes, fec, link-training]
-sources: [raw/articles/UB-PHY-ch3.md]
+sources:
+- raw/articles/UB-PHY-ch3.md
 ---
 
 # UB 物理层机制
 
-[[unifiedbus-ub]] 协议栈物理层（§3），由 PCS（物理编码子层）、PMA（物理介质附件）、链路状态管理三部分组成。核心功能：FEC 编解码、加扰、链路训练、均衡协商、动态模式切换。
+[Unifiedbus Ub](/entities/unifiedbus-ub.md) 协议栈物理层（§3），由 PCS（物理编码子层）、PMA（物理介质附件）、链路状态管理三部分组成。核心功能：FEC 编解码、加扰、链路训练、均衡协商、动态模式切换。
 
 ## 端口/通道/链路模型
 
@@ -178,9 +188,13 @@ Link_Idle → Probe → Discovery → Config → Send_NullBlock → Link_Active
 
 ## 协议栈关联
 
-- [[ub-data-link-layer]] — 物理层直接服务的数据链路层（FEC/CRC 模式切换由数据链路层协调触发）
-- [[unifiedbus-ub]] — UB 协议整体架构（§3 物理层是协议栈最底层）
+- [Ub Data Link Layer](/concepts/ub-data-link-layer.md) — 物理层直接服务的数据链路层（FEC/CRC 模式切换由数据链路层协调触发）
+- [Unifiedbus Ub](/entities/unifiedbus-ub.md) — UB 协议整体架构（§3 物理层是协议栈最底层）
 
 ## 来源
 
 - UB Base Specification Rev 2.0, §3 Physical Layer（完整章节）
+
+# Citations
+
+[1] [raw/articles/UB-PHY-ch3.md](raw/articles/UB-PHY-ch3.md)

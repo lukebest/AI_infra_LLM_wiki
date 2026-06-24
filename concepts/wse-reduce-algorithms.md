@@ -1,10 +1,22 @@
 ---
+type: Concept
 title: WSE Reduce Algorithms
+description: WSE Reduce/AllReduce 算法族：Star/Chain/Tree/Two-Phase/Auto-Gen，模型驱动选择，Auto-Gen
+  ≤1.4× 下界
+tags:
+- cerebras
+- wse
+- reduce
+- allreduce
+- collective
+- communication
+- mesh
+- multicast
+- routing
+timestamp: '2026-06-20T00:00:00Z'
 created: 2026-06-20
-updated: 2026-06-20
-type: concept
-tags: [cerebras, wse, reduce, allreduce, collective, communication, mesh, multicast, routing]
-sources: [raw/papers/Near-optimal_wafer-scale_reduce.pdf]
+sources:
+- raw/papers/Near-optimal_wafer-scale_reduce.pdf
 confidence: high
 ---
 
@@ -89,7 +101,7 @@ Luczynski et al. (HPDC 2024) 系统性设计和分析的 Cerebras WSE 通信 col
 | 2D 各算法 | ≤ 5 |
 | WSE 总共 | 24 |
 
-剩余 color 留给应用使用。Color 是 [[cerebras-color-mechanism | Color 机制]]的虚拟通道。
+剩余 color 留给应用使用。Color 是 [ Color 机制](/concepts/cerebras-color-mechanism.md)的虚拟通道。
 
 ## 算法选择决策图
 
@@ -102,10 +114,14 @@ B ≫ TR·P?  → Chain
 ```
 
 ## 相关页面
-- [[near-optimal-wafer-scale-reduce]] — 原始论文
-- [[wse-performance-model]] — 指导算法设计的性能模型
-- [[cerebras-wse]] — 目标硬件
-- [[cerebras-color-mechanism]] — Color 路由机制
-- [[noc-router-microarchitecture]] — NoC Router 微架构
-- [[switching-networks]] — mesh 网络与 collective 算法的关系
-- [[deterministic-execution]] — 确定性数据流使精确模型预测成为可能
+- [Near Optimal Wafer Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md) — 原始论文
+- [Wse Performance Model](/concepts/wse-performance-model.md) — 指导算法设计的性能模型
+- [Cerebras Wse](/entities/cerebras-wse.md) — 目标硬件
+- [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — Color 路由机制
+- [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — NoC Router 微架构
+- [Switching Networks](/concepts/switching-networks.md) — mesh 网络与 collective 算法的关系
+- [Deterministic Execution](/concepts/deterministic-execution.md) — 确定性数据流使精确模型预测成为可能
+
+# Citations
+
+[1] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)

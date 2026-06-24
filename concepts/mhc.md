@@ -1,11 +1,15 @@
 ---
+type: Concept
 title: Manifold-Constrained Hyper-Connections (mHC)
+description: 流形约束超连接，Birkhoff polytope 约束残差映射
+tags:
+- architecture
+- optimization
+- training
+timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
-updated: 2026-04-28
-type: concept
-tags: [architecture, optimization, training]
 sources:
-  - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
 ---
 
 # Manifold-Constrained Hyper-Connections (mHC)
@@ -53,5 +57,9 @@ M = { M ∈ R^{n×n} | M·1 = 1, 1^T·M = 1^T, M ≥ 0 }
   - Recompute 大部分隐藏状态和所有 normalized layer inputs
 
 ## Relations
-- Used in: [[deepseek-v4]]
+- Used in: [Deepseek V4](/summaries/deepseek-v4.md)
 - Enhances: residual connections in Transformer
+
+# Citations
+
+[1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)

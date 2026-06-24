@@ -1,10 +1,19 @@
 ---
+type: Concept
 title: NVIDIA CPO Roadmap
+description: NVIDIA CPO 用于 scale-up 的路线图：Rubin NVL576 测试 → Feynman NVL1152 volume
+  ramp
+tags:
+- nvidia
+- cpo
+- optical
+- photonic
+- scale-up
+- fabric
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
-updated: 2026-05-08
-type: concept
-tags: [nvidia, cpo, optical, photonic, scale-up, fabric]
-sources: [raw/articles/GTC 2026 – The Inference Kingdom Expands.md]
+sources:
+- raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 ---
 
 # NVIDIA CPO Roadmap（Co-Packaged Optics）
@@ -49,6 +58,10 @@ NVIDIA 在 GTC 2026 公布了 CPO 用于 scale-up 网络的路线图。核心原
 - CPO 首先用于 switch-to-switch（rack 间），非 GPU-to-switch
 
 ## 相关页面
-- [[kyber-rack]] — Kyber rack 架构（CPO 的主要载体）
-- [[nvidia-vera-rubin-nvl72]] — Oberon rack
-- [[nvidia-groq-3-lpx]] — LPX rack
+- [Kyber Rack](/entities/kyber-rack.md) — Kyber rack 架构（CPO 的主要载体）
+- [Nvidia Vera Rubin Nvl72](/entities/nvidia-vera-rubin-nvl72.md) — Oberon rack
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX rack
+
+# Citations
+
+[1] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)

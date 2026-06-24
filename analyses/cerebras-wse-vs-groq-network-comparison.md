@@ -1,10 +1,18 @@
 ---
+type: Analysis
 title: Cerebras NoW vs Groq Switched 对比
+description: WSE 2D Mesh vs Groq High-radix Switched：拓扑、规模、MoE 场景、矛盾对比
+tags:
+- architecture
+- wse
+- cerebras
+- groq
+- interconnect
+- deterministic
+timestamp: '2026-04-16T00:00:00Z'
 created: 2026-04-16
-updated: 2026-04-16
-type: concept
-tags: [architecture, wse, cerebras, groq, interconnect, deterministic]
-sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
+sources:
+- raw/articles/nvidia-groq3-lpx-blog-2026-04.md
 ---
 
 # Cerebras NoW vs Groq Switched Architecture — 对比分析
@@ -301,9 +309,13 @@ Ping-pong pipeline 中：
 ---
 
 ## 相关页面
-- [[cerebras-wse]] — WSE 实体
-- [[nvidia-groq-3-lpx]] — Groq LPX 实体
-- [[wse-nom-contradiction-analysis]] — WSE NoW 矛盾分析（更深入）
-- [[deterministic-execution]] — 确定性执行概念
-- [[heterogeneous-inference]] — 异构推理（与 MegaScale-Infer 的关联）
-- [[megascale-infer-2504.02263]] — MegaScale-Infer（Groq 天然适合此场景）
+- [Cerebras Wse](/entities/cerebras-wse.md) — WSE 实体
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — Groq LPX 实体
+- [Wse Nom Contradiction Analysis](/analyses/wse-nom-contradiction-analysis.md) — WSE NoW 矛盾分析（更深入）
+- [Deterministic Execution](/concepts/deterministic-execution.md) — 确定性执行概念
+- [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构推理（与 MegaScale-Infer 的关联）
+- [Megascale Infer 2504.02263](/papers/megascale-infer-2504.02263.md) — MegaScale-Infer（Groq 天然适合此场景）
+
+# Citations
+
+[1] [raw/articles/nvidia-groq3-lpx-blog-2026-04.md](raw/articles/nvidia-groq3-lpx-blog-2026-04.md)

@@ -1,10 +1,18 @@
 ---
+type: Concept
 title: Prefill-Decode Resource Divergence
+description: Prefill（compute-bound）vs Decode（bandwidth-bound）资源需求正交，>99% 时间在 decode
+tags:
+- inference
+- prefill
+- decode
+- kv-cache
+- latency
+- throughput
+timestamp: '2026-06-15T00:00:00Z'
 created: 2026-06-15
-updated: 2026-06-15
-type: concept
-tags: [inference, prefill, decode, kv-cache, latency, throughput]
-sources: [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf]
+sources:
+- raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 ---
 
 # Prefill-Decode Resource Divergence（Prefill vs Decode 资源分歧）
@@ -85,16 +93,20 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 这一发现为以下已有 wiki 概念提供了**实证基础**：
 
-- [[disaggregated-inference]] — Prefill/Decode 解耦是该概念的阶段层变体
-- [[heterogeneous-inference]] — 不同阶段用不同硬件是异构推理的核心动机
-- [[inference-capacity-trap]] — Decode 阶段是 capacity trap 的主战场
-- [[reasoning-cliff]] — Decode 的 KV 线性增长导致 cliff
-- [[parallelism-transition-point]] — 不同阶段的 optimal parallelism 不同（prefill: DP; decode: TP）
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — Prefill/Decode 解耦是该概念的阶段层变体
+- [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 不同阶段用不同硬件是异构推理的核心动机
+- [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — Decode 阶段是 capacity trap 的主战场
+- [Reasoning Cliff](/concepts/reasoning-cliff.md) — Decode 的 KV 线性增长导致 cliff
+- [Parallelism Transition Point](/concepts/parallelism-transition-point.md) — 不同阶段的 optimal parallelism 不同（prefill: DP; decode: TP）
 
 ## 相关概念
 
-- [[disaggregated-inference]] — 模块层和阶段层的解耦推理
-- [[heterogeneous-inference]] — 异构硬件针对不同推理阶段
-- [[inference-capacity-trap]] — Decode 阶段的 KV 饱和问题
-- [[reasoning-cliff]] — KV 增长的时序行为
-- [[kv-cache]] — KV cache 是 decode 阶段的核心资源
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — 模块层和阶段层的解耦推理
+- [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构硬件针对不同推理阶段
+- [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — Decode 阶段的 KV 饱和问题
+- [Reasoning Cliff](/concepts/reasoning-cliff.md) — KV 增长的时序行为
+- [Kv Cache](#kv-cache) — KV cache 是 decode 阶段的核心资源
+
+# Citations
+
+[1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)

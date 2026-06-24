@@ -1,11 +1,15 @@
 ---
+type: Concept
 title: FP4 Quantization-Aware Training
+description: FP4 量化感知训练，无损 FP4→FP8 反量化
+tags:
+- quantization
+- training
+- inference
+timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
-updated: 2026-04-28
-type: concept
-tags: [quantization, training, inference]
 sources:
-  - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
 ---
 
 # FP4 Quantization-Aware Training
@@ -43,4 +47,8 @@ FP32 master weights → quantize to FP4 → dequantize to FP8 (lossless) → com
 - 现有 FP8 训练框架零修改即可复用
 
 ## Relations
-- Used in: [[DeepSeek-V4]], [[CSA-HCA]]
+- Used in: [Deepseek V4](#DeepSeek-V4), [Csa Hca](#CSA-HCA)
+
+# Citations
+
+[1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)

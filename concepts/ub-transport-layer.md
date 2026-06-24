@@ -1,15 +1,25 @@
 ---
+type: Concept
 title: UB 传输层机制
+description: UB 传输层：四种模式（RTP/CTP/UTP/TP Bypass）、PSN 机制、Go-Back-N/Selective 重传、TPG
+  多路径负载均衡、LDCP/CAQM/DCQCN 拥塞控制、ROL 模式事务-传输联动
+tags:
+- interconnect
+- scale-up
+- fabric
+- transport
+- congestion-control
+- routing
+timestamp: '2026-05-11T00:00:00Z'
 created: 2026-05-09
-updated: 2026-05-11
-type: concept
-tags: [interconnect, scale-up, fabric, transport, congestion-control, routing]
-sources: [raw/articles/UB-overview.md, raw/articles/UB-TP-ch6.md]
+sources:
+- raw/articles/UB-overview.md
+- raw/articles/UB-TP-ch6.md
 ---
 
 # UB 传输层机制
 
-[[unifiedbus-ub]] 协议栈传输层（§6），位于事务层与网络层之间。提供端到端可靠/不可靠传输、多路径负载均衡、拥塞控制。
+[Unifiedbus Ub](/entities/unifiedbus-ub.md) 协议栈传输层（§6），位于事务层与网络层之间。提供端到端可靠/不可靠传输、多路径负载均衡、拥塞控制。
 
 ## 四种传输模式
 
@@ -117,7 +127,7 @@ sources: [raw/articles/UB-overview.md, raw/articles/UB-TP-ch6.md]
 - 每个 TP Packet 携带完整事务操作（不分段）
 - 无传输层确认，事务层响应（TAACK）作为数据包发送
 
-## 与事务层交互（[[ub-transaction-layer|事务层]] 关联）
+## 与事务层交互（[事务层](/concepts/ub-transaction-layer.md) 关联）
 
 ### ROI/ROT 模式
 - 传输层响应（TPACK）与事务层响应（TAACK）分离
@@ -133,10 +143,15 @@ sources: [raw/articles/UB-overview.md, raw/articles/UB-TP-ch6.md]
 
 - UB RTP ↔ Infiniiband RC QP（类似 PSN + 确认机制），但 UB 额外提供 TPG 多 channel 聚合
 - UB CTP ↔ RoCE v2 DCT（轻量连接），依赖链路层可靠性
-- UB per-packet LB + 乱序接收 ↔ [[switching-networks|CLOS]] 多路径 + 自路由设计思想
+- UB per-packet LB + 乱序接收 ↔ [CLOS](/concepts/switching-networks.md) 多路径 + 自路由设计思想
 - CAQM ↔ Quantized Congestion Notification (QCN, IEEE 802.1Qau)，但 CAQM 是逐跳审批制
 - MarkPSN 机制在标准 RDMA 中无对应，是 UB 针对 non-initial loss 的创新优化
 
 ## 来源
 
 - UB Base Specification Rev 2.0, §6 Transport Layer (完整章节，~250 行规范 + 大量场景图解)
+
+# Citations
+
+[1] [raw/articles/UB-overview.md](raw/articles/UB-overview.md)
+[2] [raw/articles/UB-TP-ch6.md](raw/articles/UB-TP-ch6.md)

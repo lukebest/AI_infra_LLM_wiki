@@ -1,10 +1,23 @@
 ---
+type: Concept
 title: NoC Router 微架构
+description: NoC Router 微架构：链路级流控/EB/credit、Switch/仲裁器（RR/2D 矩阵）、WH/VC 流水线 Router、VA/SA
+  分配器优化
+tags:
+- noc
+- routing
+- flow-control
+- arbitration
+- router
+- switch
+- virtual-channel
+- wormhole
+- credit
+timestamp: '2026-05-14T00:00:00Z'
 created: 2026-05-14
-updated: 2026-05-14
-type: concept
-tags: [noc, routing, flow-control, arbitration, router, switch, virtual-channel, wormhole, credit]
-sources: [raw/articles/片上网络Router的微架构---设计师视角.md, raw/papers/Near-optimal_wafer-scale_reduce.pdf]
+sources:
+- raw/articles/片上网络Router的微架构---设计师视角.md
+- raw/papers/Near-optimal_wafer-scale_reduce.pdf
 ---
 
 # NoC Router 微架构
@@ -171,13 +184,18 @@ sources: [raw/articles/片上网络Router的微架构---设计师视角.md, raw/
 
 ## 与 Wiki 其他概念的关系
 
-- **[[switching-elements]]**：Router 是交换单元在片上的具体实现，空分交换 ↔ crossbar，时分交换 ↔ 共享 buffer
-- **[[switching-networks]]**：CLOS 多级网络是 scale-up fabric 的基础，Router 是其中的节点
-- **[[switching-principles]]**：电路交换/分组交换的基本概念在 NoC 中的体现
-- **[[cerebras-wse]]**：WSE 900K 核心的 NoC 使用 24-color 确定性路由，直接应用本文描述的 Router 微架构
-- **[[cerebras-color-mechanism]]**：WSE Color 机制的完整解析——虚拟通道+静态路由+任务调度
-- **[[ub-data-link-layer]]**：UB 的 Credit 流控/Go-Back-N 与 NoC credit-based 流控原理一致
-- **[[ub-transport-layer]]**：UB 传输层的 PSN/重传机制是 NoC router 流控在网络层的扩展
-- **[[deterministic-execution]]**：编译器确定性调度依赖 NoC Router 的确定性行为
-- **[[lpu-architecture]]**：LPU 的 SRAM-first 架构中片上互联设计参考了 NoC Router 微架构
-- **[[flattened-butterfly-topology]]**：FBFLY 拓扑利用高基数 Router 降低片上网络直径，bypass channel 减少非最小路由开销
+- **[Switching Elements](/concepts/switching-elements.md)**：Router 是交换单元在片上的具体实现，空分交换 ↔ crossbar，时分交换 ↔ 共享 buffer
+- **[Switching Networks](/concepts/switching-networks.md)**：CLOS 多级网络是 scale-up fabric 的基础，Router 是其中的节点
+- **[Switching Principles](/concepts/switching-principles.md)**：电路交换/分组交换的基本概念在 NoC 中的体现
+- **[Cerebras Wse](/entities/cerebras-wse.md)**：WSE 900K 核心的 NoC 使用 24-color 确定性路由，直接应用本文描述的 Router 微架构
+- **[Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md)**：WSE Color 机制的完整解析——虚拟通道+静态路由+任务调度
+- **[Ub Data Link Layer](/concepts/ub-data-link-layer.md)**：UB 的 Credit 流控/Go-Back-N 与 NoC credit-based 流控原理一致
+- **[Ub Transport Layer](/concepts/ub-transport-layer.md)**：UB 传输层的 PSN/重传机制是 NoC router 流控在网络层的扩展
+- **[Deterministic Execution](/concepts/deterministic-execution.md)**：编译器确定性调度依赖 NoC Router 的确定性行为
+- **[Lpu Architecture](/concepts/lpu-architecture.md)**：LPU 的 SRAM-first 架构中片上互联设计参考了 NoC Router 微架构
+- **[Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md)**：FBFLY 拓扑利用高基数 Router 降低片上网络直径，bypass channel 减少非最小路由开销
+
+# Citations
+
+[1] [raw/articles/片上网络Router的微架构---设计师视角.md](raw/articles/片上网络Router的微架构---设计师视角.md)
+[2] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)

@@ -1,15 +1,24 @@
 ---
+type: Concept
 title: UB 网络层机制
+description: UB 网络层：CNA/IP 双格式寻址、RT 路由（per-flow/per-packet）、SL-VL QoS、CAQM/FECN/FECN_RTT
+  拥塞标记、NPI 网络隔离、死锁避免、ICRC 完整性保护
+tags:
+- interconnect
+- scale-up
+- fabric
+- routing
+- congestion-control
+- networking
+timestamp: '2026-05-11T00:00:00Z'
 created: 2026-05-11
-updated: 2026-05-11
-type: concept
-tags: [interconnect, scale-up, fabric, routing, congestion-control, networking]
-sources: [raw/articles/UB-NETWORK-ch5.md]
+sources:
+- raw/articles/UB-NETWORK-ch5.md
 ---
 
 # UB 网络层机制
 
-[[unifiedbus-ub]] 协议栈网络层（§5），位于数据链路层之上，为传输层和事务层提供服务。核心功能：寻址、路由、QoS、拥塞标记、网络隔离、死锁避免、ICRC 完整性保护。
+[Unifiedbus Ub](/entities/unifiedbus-ub.md) 协议栈网络层（§5），位于数据链路层之上，为传输层和事务层提供服务。核心功能：寻址、路由、QoS、拥塞标记、网络隔离、死锁避免、ICRC 完整性保护。
 
 ## 网络地址管理
 
@@ -65,7 +74,7 @@ sources: [raw/articles/UB-NETWORK-ch5.md]
 - 发送端设 I bit 请求增带宽 + Hint 字段指示增量
 - 交换机逐跳审批：C bit 标拥塞、I bit 批准/拒绝增量、可修改 Hint
 - LoC 标识拥塞位置（中间交换机 vs 最后跳交换机）
-- 与 [[ub-transport-layer|传输层]] CAQM 拥塞控制联动
+- 与 [传输层](/concepts/ub-transport-layer.md) CAQM 拥塞控制联动
 
 ### FECN（CCI.Mode=100）
 - 2-bit FECN 字段：00=不可标记、01=轻度拥塞、10=无拥塞、11=严重拥塞
@@ -95,7 +104,7 @@ Credit-based 流控的 hop-by-hop 反压可能形成环形缓冲依赖导致死�
 3. **VL 切换**：在特定节点配置 Input VL→Output VL 映射，打破环形依赖
 4. **超时丢包**：队列超时未调度则丢弃所有包，解除死锁
 
-此模型与 [[switching-networks|CLOS 网络]] 中多级交换的缓冲依赖问题同源——InfiniBand 也使用 VL 切换+自适应路由防死锁。
+此模型与 [CLOS 网络](/concepts/switching-networks.md) 中多级交换的缓冲依赖问题同源——InfiniBand 也使用 VL 切换+自适应路由防死锁。
 
 ## ICRC 完整性保护
 
@@ -113,9 +122,9 @@ Credit-based 流控的 hop-by-hop 反压可能形成环形缓冲依赖导致死�
 
 ## 协议栈关联
 
-- [[ub-data-link-layer]] — 网络层的 VL 概念建立在数据链路层 VL 之上，SL→VL 映射向下传递
-- [[ub-transport-layer]] — 网络层的 LBF/CCI 字段被传输层使用，拥塞标记联动
-- [[unifiedbus-ub]] — UB 协议整体架构
+- [Ub Data Link Layer](/concepts/ub-data-link-layer.md) — 网络层的 VL 概念建立在数据链路层 VL 之上，SL→VL 映射向下传递
+- [Ub Transport Layer](/concepts/ub-transport-layer.md) — 网络层的 LBF/CCI 字段被传输层使用，拥塞标记联动
+- [Unifiedbus Ub](/entities/unifiedbus-ub.md) — UB 协议整体架构
 
 ## 与其他协议对比
 
@@ -132,3 +141,7 @@ Credit-based 流控的 hop-by-hop 反压可能形成环形缓冲依赖导致死�
 ## 来源
 
 - UB Base Specification Rev 2.0, §5 Network Layer（完整章节）
+
+# Citations
+
+[1] [raw/articles/UB-NETWORK-ch5.md](raw/articles/UB-NETWORK-ch5.md)

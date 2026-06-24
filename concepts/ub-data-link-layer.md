@@ -1,15 +1,24 @@
 ---
+type: Concept
 title: UB 数据链路层机制
+description: UB 数据链路层：Flit/DLLDP/DLLCB 封装、CRC/Non-CRC 双模式、4 阶段链路状态机、Init Block 参数协商、16
+  VL 虚通道、Credit 流控（Exclusive/Sharing）、Go-Back-N 重传 + Retry Buffer 管理、双状态机（RETRY_REQ_SM/RETRY_ACK_SM）
+tags:
+- interconnect
+- scale-up
+- fabric
+- data-link
+- flow-control
+- retransmission
+timestamp: '2026-05-11T00:00:00Z'
 created: 2026-05-11
-updated: 2026-05-11
-type: concept
-tags: [interconnect, scale-up, fabric, data-link, flow-control, retransmission]
-sources: [raw/articles/UB-DL-ch4.md]
+sources:
+- raw/articles/UB-DL-ch4.md
 ---
 
 # UB 数据链路层机制
 
-[[unifiedbus-ub]] 协议栈数据链路层（§4），位于物理层与网络层之间。提供可靠的、保序的、点到点包传输。核心功能：封装/解析、CRC 校验、VL 虚通道、Credit 流控、点到点重传。
+[Unifiedbus Ub](/entities/unifiedbus-ub.md) 协议栈数据链路层（§4），位于物理层与网络层之间。提供可靠的、保序的、点到点包传输。核心功能：封装/解析、CRC 校验、VL 虚通道、Credit 流控、点到点重传。
 
 ## 链路状态机
 
@@ -93,7 +102,7 @@ DLL_Param_Init 状态下交换 Init Block，协商以下参数（取两端支持
 - 同一 DLLDP 的所有 DLLDB 走同一 VL
 - 同 VL 内 FCFS；跨 VL 调度由实现决定
 - DLLCB 不消耗 credit，不需要指定 VL
-- 与 [[ub-network-layer|网络层]] SL→VL 映射配合实现端到端 QoS
+- 与 [网络层](/concepts/ub-network-layer.md) SL→VL 映射配合实现端到端 QoS
 
 ## Credit 流控
 
@@ -170,9 +179,9 @@ CRC ↔ Non-CRC 通过 Block_Mode_Chg Block 协调：
 
 ## 协议栈关联
 
-- [[ub-physical-layer]] — 物理层提供 FEC 和 SerDes 服务，数据链路层在此基础上构建可靠性
-- [[ub-network-layer]] — 数据链路层为网络层提供 VL 通道和点到点可靠传输
-- [[unifiedbus-ub]] — UB 协议整体架构
+- [Ub Physical Layer](/concepts/ub-physical-layer.md) — 物理层提供 FEC 和 SerDes 服务，数据链路层在此基础上构建可靠性
+- [Ub Network Layer](/concepts/ub-network-layer.md) — 数据链路层为网络层提供 VL 通道和点到点可靠传输
+- [Unifiedbus Ub](/entities/unifiedbus-ub.md) — UB 协议整体架构
 
 ## 与其他协议对比
 
@@ -189,3 +198,7 @@ CRC ↔ Non-CRC 通过 Block_Mode_Chg Block 协调：
 ## 来源
 
 - UB Base Specification Rev 2.0, §4 Data Link Layer（完整章节）
+
+# Citations
+
+[1] [raw/articles/UB-DL-ch4.md](raw/articles/UB-DL-ch4.md)

@@ -1,15 +1,22 @@
 ---
+type: Concept
 title: UB 内存管理
+description: UB 内存管理：Home-User 模型、UBMD、UMMU 两阶段地址翻译+权限检查、UB Decoder
+tags:
+- interconnect
+- scale-up
+- memory
+- hardware
+- virtualization
+timestamp: '2026-05-09T00:00:00Z'
 created: 2026-05-09
-updated: 2026-05-09
-type: concept
-tags: [interconnect, scale-up, memory, hardware, virtualization]
-sources: [raw/articles/UB-MEM.md]
+sources:
+- raw/articles/UB-MEM.md
 ---
 
 # UB 内存管理
 
-[[unifiedbus-ub]] §9 Memory Management。定义了跨 UBPU 的内存共享、地址翻译和权限验证机制。
+[Unifiedbus Ub](/entities/unifiedbus-ub.md) §9 Memory Management。定义了跨 UBPU 的内存共享、地址翻译和权限验证机制。
 
 ## 核心设计目标
 
@@ -172,11 +179,15 @@ UB 的 MAPT 独立于 MATT 是独特设计——权限和地址翻译解耦，�
 
 ## 与 Wiki 其他页面的关联
 
-- [[unifiedbus-ub]] — UB 整体架构
-- [[ub-programming-models]] — 内存段的创建/使用/访问方式
-- [[disaggregated-inference]] — UB 内存池化与解耦推理的内存共享理念类似
-- [[switching-principles]] — UMMU 的地址翻译本质上是一种"交换"（UBA → PA 空间映射）
+- [Unifiedbus Ub](/entities/unifiedbus-ub.md) — UB 整体架构
+- [Ub Programming Models](/concepts/ub-programming-models.md) — 内存段的创建/使用/访问方式
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — UB 内存池化与解耦推理的内存共享理念类似
+- [Switching Principles](/concepts/switching-principles.md) — UMMU 的地址翻译本质上是一种"交换"（UBA → PA 空间映射）
 
 ## 来源
 
 - UB Base Specification Rev 2.0, §9 Memory Management
+
+# Citations
+
+[1] [raw/articles/UB-MEM.md](raw/articles/UB-MEM.md)

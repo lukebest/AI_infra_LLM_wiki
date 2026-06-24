@@ -1,22 +1,30 @@
 ---
+type: Concept
 title: UB 编程模型与 URMA
+description: UB 编程模型：Load/Store 同步、URMA 异步访问（Jetty/事务队列/内存池化/死锁避免）
+tags:
+- interconnect
+- scale-up
+- rpc
+- memory
+- programming-model
+timestamp: '2026-05-09T00:00:00Z'
 created: 2026-05-09
-updated: 2026-05-09
-type: concept
-tags: [interconnect, scale-up, rpc, memory, programming-model]
-sources: [raw/articles/UB-overview.md, raw/articles/UB-FUN.md]
+sources:
+- raw/articles/UB-overview.md
+- raw/articles/UB-FUN.md
 ---
 
 # UB 编程模型与 URMA
 
-[[unifiedbus-ub]] Function Layer 提供的两种编程模型及其上层抽象。
+[Unifiedbus Ub](/entities/unifiedbus-ub.md) Function Layer 提供的两种编程模型及其上层抽象。
 
 ## 编程抽象层次
 
 ```
 Application
     │
-    ├── [[ub-urpc|URPC]] (远程过程调用)
+    ├── [URPC](/concepts/ub-urpc.md) (远程过程调用)
     │      └── Client/Server/Worker, Pass-by-reference
     │
     ├── Multi-Entity Coordination (融合/集合通信/全局维护)
@@ -177,8 +185,13 @@ Initiator 和 target 交换 Jetty/内存段信息的三种方式：
 
 ## 与其他互连对比
 
-UB 的 URMA 类似 RDMA 但更通用（支持 many-to-many、Jetty Group 硬件分发）。Load/Store 的 TP bypass 类似 [[deterministic-execution]] 中短路径优化。内存池化所有权机制类似 [[disaggregated-inference]] 中内存解耦，但 UB 在硬件层面提供 cache coherence 支持。
+UB 的 URMA 类似 RDMA 但更通用（支持 many-to-many、Jetty Group 硬件分发）。Load/Store 的 TP bypass 类似 [Deterministic Execution](/concepts/deterministic-execution.md) 中短路径优化。内存池化所有权机制类似 [Disaggregated Inference](/concepts/disaggregated-inference.md) 中内存解耦，但 UB 在硬件层面提供 cache coherence 支持。
 
 ## 来源
 
 - UB Base Specification Rev 2.0, §8 Function Layer
+
+# Citations
+
+[1] [raw/articles/UB-overview.md](raw/articles/UB-overview.md)
+[2] [raw/articles/UB-FUN.md](raw/articles/UB-FUN.md)

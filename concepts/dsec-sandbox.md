@@ -1,11 +1,15 @@
 ---
+type: Concept
 title: DSec Sandbox Platform
+description: DeepSeek Elastic Compute 沙箱平台，4 种执行基板，数十万并发
+tags:
+- sandbox
+- training-system
+- inference-system
+timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
-updated: 2026-04-28
-type: concept
-tags: [sandbox, training-system, inference-system]
 sources:
-  - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
 ---
 
 # DSec (DeepSeek Elastic Compute) Sandbox
@@ -45,5 +49,9 @@ DeepSeek-V4 的生产级沙箱平台，用于后训练和评估中的 agentic �
 - 支持：client fast-forwarding（抢占后快速恢复）、provenance 追溯、deterministic replay
 
 ## Relations
-- Used in: [[DeepSeek-V4]]
-- Related: [[TileLang]]
+- Used in: [Deepseek V4](#DeepSeek-V4)
+- Related: [Tilelang](#TileLang)
+
+# Citations
+
+[1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)

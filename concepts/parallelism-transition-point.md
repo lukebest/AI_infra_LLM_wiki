@@ -1,10 +1,17 @@
 ---
+type: Concept
 title: Parallelism Transition Point
+description: 并行度切换点：32B 是 DP→TP inflection，MoE 需 hybrid PP+TP
+tags:
+- inference
+- parallelism
+- serving
+- kv-cache
+- gpu
+timestamp: '2026-06-15T00:00:00Z'
 created: 2026-06-15
-updated: 2026-06-15
-type: concept
-tags: [inference, parallelism, serving, kv-cache, gpu]
-sources: [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf]
+sources:
+- raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 ---
 
 # Parallelism Transition Point（并行度切换点）
@@ -32,7 +39,7 @@ sources: [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf]
 | TP=8 | 6.15× | Weights shard to 8 GB/GPU, releases 133 GB KV |
 | **DP=4+TP=2** | **Optimal** | Min TP degree (reduce comm) + DP concurrency |
 
-**核心洞察**: TP 的收益来自**释放 KV capacity**（缓解 [[inference-capacity-trap]]），而非加速 kernel 执行。性能 inflection 与 DP replicas 达到 KV-capacity-bound 的点对齐。
+**核心洞察**: TP 的收益来自**释放 KV capacity**（缓解 [Inference Capacity Trap](/concepts/inference-capacity-trap.md)），而非加速 kernel 执行。性能 inflection 与 DP replicas 达到 KV-capacity-bound 的点对齐。
 
 ### 3. Frontier (405B-671B): Architecture-Dependent
 
@@ -77,8 +84,8 @@ if MoE and active_params/token is low:
 
 ## MLA 的关键角色
 
-DeepSeek-R1 的 [[csa-hca|MLA]]（Multi-Head Latent Attention）在推理优化中起到双重作用：
-1. **压缩 KV cache** → 延缓 [[reasoning-cliff]] 到来
+DeepSeek-R1 的 [MLA](/concepts/csa-hca.md)（Multi-Head Latent Attention）在推理优化中起到双重作用：
+1. **压缩 KV cache** → 延缓 [Reasoning Cliff](/concepts/reasoning-cliff.md) 到来
 2. **使 PP 可行** → reduced KV 允许更高 micro-batch depth → 填满 pipeline bubbles
 
 这是 MoE + MLA 天然适配 PP 架构的根本原因。
@@ -96,8 +103,12 @@ DeepSeek-R1 的 [[csa-hca|MLA]]（Multi-Head Latent Attention）在推理优化�
 
 ## 相关概念
 
-- [[inference-capacity-trap]] — TP 通过释放 KV capacity 解决 capacity trap
-- [[reasoning-cliff]] — 并行度选择影响 cliff 到来时机
-- [[disaggregated-inference]] — 超越单一并行策略的解耦方案
-- [[heterogeneous-inference]] — 异构硬件下的并行度选择
-- [[deepseek-v4]] — MLA 架构使 PP 在 MoE 场景下可行
+- [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — TP 通过释放 KV capacity 解决 capacity trap
+- [Reasoning Cliff](/concepts/reasoning-cliff.md) — 并行度选择影响 cliff 到来时机
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — 超越单一并行策略的解耦方案
+- [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构硬件下的并行度选择
+- [Deepseek V4](/summaries/deepseek-v4.md) — MLA 架构使 PP 在 MoE 场景下可行
+
+# Citations
+
+[1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)

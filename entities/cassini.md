@@ -1,10 +1,19 @@
 ---
+type: Entity
 title: CASSINI
+description: CASSINI 网络感知 ML 集群调度器：几何抽象交错通信相位，Affinity 图，1.6× 吞吐改善
+tags:
+- nvidia
+- inference
+- serving
+- scheduling
+- fabric
+- deterministic
+- routing
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
-updated: 2026-05-08
-type: entity
-tags: [nvidia, inference, serving, scheduling, fabric, deterministic, routing]
-sources: [raw/papers/cassini-network-aware-scheduling-2308.00852.pdf]
+sources:
+- raw/papers/cassini-network-aware-scheduling-2308.00852.pdf
 ---
 
 # CASSINI — Network-Aware Job Scheduling in ML Clusters
@@ -103,14 +112,18 @@ VGG11/16/19, ResNet50, WideResNet101, BERT, RoBERTa, XLM, CamemBERT, GPT-1/2/3, 
 
 ## 与 AI 基础设施的关联
 
-- **[[switching-networks]] 的实际应用**：CASSINI 在多级交换网络上做流量感知调度，是 CLOS 网络流量工程的具体案例
-- **[[deterministic-execution]]**：CASSINI 利用 DNN 训练的确定性/周期性通信模式 → 类似 [[nvidia-groq-3-lpx]] 利用确定性执行做精确调度
-- **[[disaggregated-inference]]**：AFD 中 token routing 的 dispatch/combine 也有周期性通信模式 → CASSINI 的交错思想可应用于 disaggregated inference 的流量调度
+- **[Switching Networks](/concepts/switching-networks.md) 的实际应用**：CASSINI 在多级交换网络上做流量感知调度，是 CLOS 网络流量工程的具体案例
+- **[Deterministic Execution](/concepts/deterministic-execution.md)**：CASSINI 利用 DNN 训练的确定性/周期性通信模式 → 类似 [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) 利用确定性执行做精确调度
+- **[Disaggregated Inference](/concepts/disaggregated-inference.md)**：AFD 中 token routing 的 dispatch/combine 也有周期性通信模式 → CASSINI 的交错思想可应用于 disaggregated inference 的流量调度
 - **Scale-up fabric 流量工程**：NVLink/C2C 网络中多 job 并存时的链路竞争问题 → CASSINI 的几何抽象提供了一种流量交错框架
 - **部分兼容性阈值**：Score 0.6 以下收益衰减 → 对设计 scale-up 网络的 oversubscription 比例有参考价值
 
 ## 相关页面
-- [[switching-networks]] — 交换网络拓扑基础
-- [[deterministic-execution]] — 确定性执行（周期性通信模式）
-- [[nvidia-groq-3-lpx]] — LPX 确定性调度
-- [[disaggregated-inference]] — 解耦推理通信模式
+- [Switching Networks](/concepts/switching-networks.md) — 交换网络拓扑基础
+- [Deterministic Execution](/concepts/deterministic-execution.md) — 确定性执行（周期性通信模式）
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX 确定性调度
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — 解耦推理通信模式
+
+# Citations
+
+[1] [raw/papers/cassini-network-aware-scheduling-2308.00852.pdf](raw/papers/cassini-network-aware-scheduling-2308.00852.pdf)

@@ -1,15 +1,22 @@
 ---
+type: Concept
 title: UB 资源管理
+description: UB 资源管理：UBFM、Entity 模型/池化/虚拟化、配置空间、管理命令、三级复位+三级错误 RAS
+tags:
+- interconnect
+- scale-up
+- fabric
+- virtualization
+- hardware
+timestamp: '2026-05-09T00:00:00Z'
 created: 2026-05-09
-updated: 2026-05-09
-type: concept
-tags: [interconnect, scale-up, fabric, virtualization, hardware]
-sources: [raw/articles/UB-RSC.md]
+sources:
+- raw/articles/UB-RSC.md
 ---
 
 # UB 资源管理
 
-[[unifiedbus-ub]] §10 Resource Management。定义 UBFM 如何管理 UB domain 内的互连、通信和计算资源，以及 Entity 生命周期、虚拟化和 RAS 机制。
+[Unifiedbus Ub](/entities/unifiedbus-ub.md) §10 Resource Management。定义 UBFM 如何管理 UB domain 内的互连、通信和计算资源，以及 Entity 生命周期、虚拟化和 RAS 机制。
 
 ## UBFM (UB Fabric Manager)
 
@@ -80,7 +87,7 @@ Initiator Entity → Request (SEID + DEID + Token + UBA) → Target Entity
 |------|------|
 | **MMIO** | 将 Entity 资源空间映射到处理器 MMIO 地址空间，通过读写 MMIO 调用函数 |
 | **消息通信** | 通过本地 UB Controller 的消息接口发送命令，Entity 解析执行 |
-| **[[ub-urpc\|URPC]]** | 通过 URPC 直接调用远程函数 |
+| **[URPC](#ub-urpc\)** | 通过 URPC 直接调用远程函数 |
 
 UBPU 可将访问凭证授予其他 Entity，使其通过 DMA 等方式远程调用。
 
@@ -228,12 +235,16 @@ Class-C 进一步分为：Correctable（自恢复不影响服务）和 Uncorrect
 
 ## 与其他概念关联
 
-- [[unifiedbus-ub]] — UB 整体架构，资源管理是其核心子系统
-- [[ub-memory-management]] — UMMU 地址翻译和权限检查
-- [[ub-programming-models]] — Jetty/队列/URMA 是资源管理的用户面
-- [[switching-networks]] — UB Switch 的路由服务对应多级交换网络
-- [[deterministic-execution]] — RAS 机制确保确定性执行的基础
+- [Unifiedbus Ub](/entities/unifiedbus-ub.md) — UB 整体架构，资源管理是其核心子系统
+- [Ub Memory Management](/concepts/ub-memory-management.md) — UMMU 地址翻译和权限检查
+- [Ub Programming Models](/concepts/ub-programming-models.md) — Jetty/队列/URMA 是资源管理的用户面
+- [Switching Networks](/concepts/switching-networks.md) — UB Switch 的路由服务对应多级交换网络
+- [Deterministic Execution](/concepts/deterministic-execution.md) — RAS 机制确保确定性执行的基础
 
 ## 来源
 
 - UB Base Specification Rev 2.0, §10 Resource Management
+
+# Citations
+
+[1] [raw/articles/UB-RSC.md](raw/articles/UB-RSC.md)

@@ -1,10 +1,16 @@
 ---
+type: Concept
 title: M2N Communication
+description: M2N 不对称通信模式，disaggregated inference 核心，4.2× NCCL 优化
+tags:
+- scale-up
+- fabric
+- serving-system
+- moe
+timestamp: '2026-04-17T00:00:00Z'
 created: 2026-04-17
-updated: 2026-04-17
-type: concept
-tags: [scale-up, fabric, serving-system, moe]
-sources: [arXiv:2504.02263]
+sources:
+- arXiv:2504.02263
 ---
 
 # M2N Communication
@@ -57,6 +63,10 @@ M2N 是 disaggregated architecture 的典型通信模式，对 scale-up fabric �
 
 ## 相关页面
 
-- [[megascale-infer-2504.02263]] — 提出 M2N 库的论文
-- [[disaggregated-inference]] — 产生 M2N 通信需求的架构范式
-- [[switching-networks]] — M2N 运行的网络层次
+- [Megascale Infer 2504.02263](/papers/megascale-infer-2504.02263.md) — 提出 M2N 库的论文
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — 产生 M2N 通信需求的架构范式
+- [Switching Networks](/concepts/switching-networks.md) — M2N 运行的网络层次
+
+# Citations
+
+[1] [arXiv:2504.02263](arXiv:2504.02263)

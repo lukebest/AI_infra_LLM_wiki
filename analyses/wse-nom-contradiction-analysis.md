@@ -1,10 +1,17 @@
 ---
+type: Analysis
 title: WSE NoW 矛盾论分析
+description: WSE NoW 矛盾分析：均匀性 vs 异构通信（主要矛盾），附六步框架 + 解决方案
+tags:
+- architecture
+- wse
+- cerebras
+- deterministic
+- mesh
+timestamp: '2026-04-16T00:00:00Z'
 created: 2026-04-16
-updated: 2026-04-16
-type: concept
-tags: [architecture, wse, cerebras, deterministic, mesh]
-sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md]
+sources:
+- raw/articles/nvidia-groq3-lpx-blog-2026-04.md
 ---
 
 # WSE Network-on-Wafer — 矛盾分析法
@@ -218,7 +225,11 @@ WSE 的确定性路线在**训练**和**大 batch 推理**场景下是优势；�
 ---
 
 ## 相关页面
-- [[cerebras-wse]] — WSE 实体
-- [[deterministic-execution]] — 确定性执行概念
-- [[nvidia-groq-3-lpx]] — 对比：Groq 的确定性执行路线
-- [[deterministic-execution]] — 空间执行模型
+- [Cerebras Wse](/entities/cerebras-wse.md) — WSE 实体
+- [Deterministic Execution](/concepts/deterministic-execution.md) — 确定性执行概念
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — 对比：Groq 的确定性执行路线
+- [Deterministic Execution](/concepts/deterministic-execution.md) — 空间执行模型
+
+# Citations
+
+[1] [raw/articles/nvidia-groq3-lpx-blog-2026-04.md](raw/articles/nvidia-groq3-lpx-blog-2026-04.md)

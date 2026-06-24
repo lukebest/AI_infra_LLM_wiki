@@ -1,10 +1,18 @@
 ---
+type: Entity
 title: Kyber Rack
+description: NVIDIA 第二种 rack 架构，144 GPU/rack，NVLink 7 switch，支持 NVL144/288/1152
+tags:
+- nvidia
+- scale-up
+- fabric
+- rack
+- architecture
+- cpo
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
-updated: 2026-05-08
-type: entity
-tags: [nvidia, scale-up, fabric, rack, architecture, cpo]
-sources: [raw/articles/GTC 2026 – The Inference Kingdom Expands.md]
+sources:
+- raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 ---
 
 # Kyber Rack
@@ -51,7 +59,11 @@ NVIDIA 第二种 rack 架构（继 Oberon 之后），首次以原型亮相于 G
 - 448G SerDes 挑战（shoreline, reach, power）使得 copper-to-switch 仍为必要
 
 ## 相关页面
-- [[nvidia-vera-rubin-nvl72]] — Oberon rack 架构
-- [[nvidia-cpo-roadmap]] — CPO 路线图
-- [[nvidia-groq-3-lpx]] — LPX rack（另一种 rack 架构）
-- [[switching-networks]] — Scale-up 互联概念
+- [Nvidia Vera Rubin Nvl72](/entities/nvidia-vera-rubin-nvl72.md) — Oberon rack 架构
+- [Nvidia Cpo Roadmap](/concepts/nvidia-cpo-roadmap.md) — CPO 路线图
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX rack（另一种 rack 架构）
+- [Switching Networks](/concepts/switching-networks.md) — Scale-up 互联概念
+
+# Citations
+
+[1] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)

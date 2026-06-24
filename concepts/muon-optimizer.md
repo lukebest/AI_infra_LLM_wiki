@@ -1,11 +1,14 @@
 ---
+type: Concept
 title: Muon Optimizer
+description: 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
+tags:
+- optimization
+- training
+timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
-updated: 2026-04-28
-type: concept
-tags: [optimization, training]
 sources:
-  - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
 ---
 
 # Muon Optimizer
@@ -49,5 +52,9 @@ Muon 需要完整梯度矩阵，与传统 ZeRO 冲突：
 - 连续同形状参数自动合并，批量执行 Newton-Schulz
 
 ## Relations
-- Used in: [[DeepSeek-V4]]
-- Related: [[FP4-QAT]]
+- Used in: [Deepseek V4](#DeepSeek-V4)
+- Related: [Fp4 Qat](#FP4-QAT)
+
+# Citations
+
+[1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)

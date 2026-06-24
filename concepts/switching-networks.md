@@ -1,10 +1,17 @@
 ---
+type: Concept
 title: Switching Networks
+description: 交换网络：CLOS 三级网络（严格/可重排无阻塞），TST 网络，Banyan 网络
+tags:
+- fabric
+- topology
+- routing
+- scale-up
+- deterministic
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
-updated: 2026-05-08
-type: concept
-tags: [fabric, topology, routing, scale-up, deterministic]
-sources: [raw/articles/浅谈交换原理（3）——交换网络.md]
+sources:
+- raw/articles/浅谈交换原理（3）——交换网络.md
 ---
 
 # Switching Networks（交换网络）
@@ -116,23 +123,27 @@ T 接线器 (×32) → S 接线器 (32×32) → T 接线器 (×32)
 - **容错**：冗余路径提高可靠性
 
 ### 典型应用
-超级计算机、数据中心、[[switching-networks]] 中的蝶形/胖树拓扑变体。
+超级计算机、数据中心、[Switching Networks](/concepts/switching-networks.md) 中的蝶形/胖树拓扑变体。
 
 ## 与 AI 基础设施的关联
 
 - **CLOS 与 scale-up fabric**：NVIDIA NVL72/144 的 NVLink switch 网络本质是多级 CLOS——多级 crossbar switch 互联 GPU，用 radix 适当的 switch 组合替代超大单级 crossbar
-- **[[kyber-rack]] 的两级 all-to-all**：NVL576 中 8 个 Oberon rack 通过 CPO 互联 → 中间级 = CPO switch，input/output 级 = rack 内 NVLink switch → 类似 CLOS 三级结构
+- **[Kyber Rack](/entities/kyber-rack.md) 的两级 all-to-all**：NVL576 中 8 个 Oberon rack 通过 CPO 互联 → 中间级 = CPO switch，input/output 级 = rack 内 NVLink switch → 类似 CLOS 三级结构
 - **严格无阻塞 vs 可重排无阻塞**：训练 workload 对 all-to-all 带宽有严格需求 → 倾向严格无阻塞；推理 workload 可能容忍可重排无阻塞（利用时间维度的 traffic reshaping）
-- **TST 与 [[nvidia-groq-3-lpx]]**：C2C 网络在时间维度的确定性调度 + 空间的 mesh 拓扑 → 类似 TST 的时分+空分组合思想
-- **Banyan 与 NoC**：Cerebras WSE 的 2D mesh 路由、[[cerebras-wse]] 的 24-color 路由与 Banyan 的自路由思想有关联
+- **TST 与 [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md)**：C2C 网络在时间维度的确定性调度 + 空间的 mesh 拓扑 → 类似 TST 的时分+空分组合思想
+- **Banyan 与 NoC**：Cerebras WSE 的 2D mesh 路由、[Cerebras Wse](/entities/cerebras-wse.md) 的 24-color 路由与 Banyan 的自路由思想有关联
 
 ## 相关页面
-- [[switching-principles]] — 交换原理概述
-- [[switching-elements]] — 交换单元（S/T 接线器）
-- [[kyber-rack]] — 多级 NVLink 交换网络
-- [[nvidia-groq-3-lpx]] — C2C 网络拓扑
-- [[cerebras-wse]] — WSE NoC 路由
-- [[multi-plane-clos-topology]] — 100K+ GPU 的多平面 CLOS 实践
-- [[mrc]] — 配合 multi-plane CLOS 的多路径传输协议
-- [[flattened-butterfly-topology]] — Flattened Butterfly 片上拓扑（高基数路由器降低直径）
-- [[noc-router-microarchitecture]] — NoC Router 微架构（Router 是多级交换网络中的节点）
+- [Switching Principles](/concepts/switching-principles.md) — 交换原理概述
+- [Switching Elements](/concepts/switching-elements.md) — 交换单元（S/T 接线器）
+- [Kyber Rack](/entities/kyber-rack.md) — 多级 NVLink 交换网络
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — C2C 网络拓扑
+- [Cerebras Wse](/entities/cerebras-wse.md) — WSE NoC 路由
+- [Multi Plane Clos Topology](/concepts/multi-plane-clos-topology.md) — 100K+ GPU 的多平面 CLOS 实践
+- [Mrc](/entities/mrc.md) — 配合 multi-plane CLOS 的多路径传输协议
+- [Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md) — Flattened Butterfly 片上拓扑（高基数路由器降低直径）
+- [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — NoC Router 微架构（Router 是多级交换网络中的节点）
+
+# Citations
+
+[1] [raw/articles/浅谈交换原理（3）——交换网络.md](raw/articles/浅谈交换原理（3）——交换网络.md)

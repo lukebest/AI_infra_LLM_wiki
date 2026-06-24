@@ -1,10 +1,22 @@
 ---
+type: Summary
 title: Near-Optimal Wafer-Scale Reduce
+description: WSE Reduce/AllReduce 首次系统研究：性能模型（<4% 误差）、5 种算法（Auto-Gen ≤1.4× 下界）、3.27×
+  快于 vendor
+tags:
+- cerebras
+- wse
+- reduce
+- allreduce
+- collective
+- mesh
+- multicast
+- performance-model
+- communication
+timestamp: '2026-06-20T00:00:00Z'
 created: 2026-06-20
-updated: 2026-06-20
-type: summary
-tags: [cerebras, wse, reduce, allreduce, collective, mesh, multicast, performance-model, communication]
-sources: [raw/papers/Near-optimal_wafer-scale_reduce.pdf]
+sources:
+- raw/papers/Near-optimal_wafer-scale_reduce.pdf
 ---
 
 # Near-Optimal Wafer-Scale Reduce
@@ -17,14 +29,14 @@ Luczynski, Gianinazzi, Iff, Wilson, De Sensi, Hoefler (ETH Zurich + Cerebras + S
 ## 核心贡献
 
 ### 1. WSE 性能模型
-详见 [[wse-performance-model]]。
+详见 [Wse Performance Model](/concepts/wse-performance-model.md)。
 
 `T = max(C, E/N) + L + (2*TR+1)*D`
 
 四个瓶颈项：Contention（PE 瓶颈）、Energy/N（网络拥塞）、Distance（延迟）、Depth（串行依赖）。模型预测误差 < 4%。
 
 ### 2. Reduce 算法谱系
-详见 [[wse-reduce-algorithms]]。
+详见 [Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md)。
 
 | 算法 | 最优区间 | 距下界 |
 |------|---------|--------|
@@ -51,10 +63,14 @@ Luczynski, Gianinazzi, Iff, Wilson, De Sensi, Hoefler (ETH Zurich + Cerebras + S
 
 ## 与现有 wiki 的交叉
 
-- [[cerebras-wse]] — 目标硬件平台
-- [[cerebras-color-mechanism]] — Color 用于路由配置（论文用 ≤3/5 colors）
-- [[wse-performance-model]] — 论文提出的性能模型独立概念页
-- [[wse-reduce-algorithms]] — Reduce/AllReduce 算法族独立概念页
-- [[deterministic-execution]] — WSE 确定性数据流架构使模型精确预测成为可能
-- [[noc-router-microarchitecture]] — WSE router 的 5-link 架构与 NoC 理论关联
-- [[switching-networks]] — mesh 拓扑下的 collective 算法设计
+- [Cerebras Wse](/entities/cerebras-wse.md) — 目标硬件平台
+- [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — Color 用于路由配置（论文用 ≤3/5 colors）
+- [Wse Performance Model](/concepts/wse-performance-model.md) — 论文提出的性能模型独立概念页
+- [Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — Reduce/AllReduce 算法族独立概念页
+- [Deterministic Execution](/concepts/deterministic-execution.md) — WSE 确定性数据流架构使模型精确预测成为可能
+- [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — WSE router 的 5-link 架构与 NoC 理论关联
+- [Switching Networks](/concepts/switching-networks.md) — mesh 拓扑下的 collective 算法设计
+
+# Citations
+
+[1] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)

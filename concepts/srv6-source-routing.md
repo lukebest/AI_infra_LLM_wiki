@@ -1,17 +1,25 @@
 ---
+type: Concept
 title: SRv6 Source Routing for AI Supercomputers
+description: AI 超算静态源路由：SRv6 uSID uN 转发，禁用动态路由，与 MRC 协同
+tags:
+- routing
+- protocol
+- scale-up
+- switch
+- fabric
+- retransmission
+timestamp: '2026-05-13T00:00:00Z'
 created: 2026-05-13
-updated: 2026-05-13
-type: concept
-tags: [routing, protocol, scale-up, switch, fabric, retransmission]
-sources: [raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md]
+sources:
+- raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md
 ---
 
 # SRv6 Source Routing for AI Supercomputers
 
 ## 定义
 
-在 AI 训练集群后端网络中，使用 IPv6 Segment Routing (SRv6) 的 micro-segment ID (uSID) 格式做**静态源路由**，替代传统动态路由协议（BGP/ECMP）。与 [[mrc]] 协同设计部署。
+在 AI 训练集群后端网络中，使用 IPv6 Segment Routing (SRv6) 的 micro-segment ID (uSID) 格式做**静态源路由**，替代传统动态路由协议（BGP/ECMP）。与 [Mrc](/entities/mrc.md) 协同设计部署。
 
 ## 核心机制
 
@@ -47,7 +55,11 @@ sources: [raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md]
 
 ## 关系
 
-- 为 [[mrc]] 提供确定性的路径映射
-- 与 [[multi-plane-clos-topology]] 拓扑结构共同设计
-- 相比传统 [[switching-networks]] 中的动态路由，追求极简控制面
-- 参见 [[switching-principles]] 中电路交换/分组交换的基础对比
+- 为 [Mrc](/entities/mrc.md) 提供确定性的路径映射
+- 与 [Multi Plane Clos Topology](/concepts/multi-plane-clos-topology.md) 拓扑结构共同设计
+- 相比传统 [Switching Networks](/concepts/switching-networks.md) 中的动态路由，追求极简控制面
+- 参见 [Switching Principles](/concepts/switching-principles.md) 中电路交换/分组交换的基础对比
+
+# Citations
+
+[1] [raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md](raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md)

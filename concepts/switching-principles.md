@@ -1,10 +1,17 @@
 ---
+type: Concept
 title: Switching Principles
+description: 交换原理基础：电路交换/分组交换，三对基本概念，交换系统结构
+tags:
+- fabric
+- routing
+- deterministic
+- tdm
+- topology
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
-updated: 2026-05-08
-type: concept
-tags: [fabric, routing, deterministic, tdm, topology]
-sources: [raw/articles/浅谈交换原理（1）——概述.md]
+sources:
+- raw/articles/浅谈交换原理（1）——概述.md
 ---
 
 # Switching Principles（交换原理）
@@ -83,13 +90,17 @@ sources: [raw/articles/浅谈交换原理（1）——概述.md]
 
 ## 与 AI 基础设施的关联
 
-- **[[deterministic-execution]]**：电路交换的确定性通路思想与 LPU 确定性执行一脉相承
+- **[Deterministic Execution](/concepts/deterministic-execution.md)**：电路交换的确定性通路思想与 LPU 确定性执行一脉相承
 - **Scale-up fabric**：NVLink/C2C 网络本质上是高速电路交换/虚电路（固定路径、低 jitter）
 - **Scale-out fabric**：Ethernet/IP 网络是数据报模式（无连接、逐跳路由）
-- **TDM 概念**：同步 TDM 对应固定时隙调度，统计 TDM 对应 packet switching → 理解 [[nvidia-groq-3-lpx]] 中 C2C 确定性互联 vs Spectrum-X Ethernet 的设计选择
+- **TDM 概念**：同步 TDM 对应固定时隙调度，统计 TDM 对应 packet switching → 理解 [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) 中 C2C 确定性互联 vs Spectrum-X Ethernet 的设计选择
 - **虚电路 vs 数据报**：AFD 中 token routing 的 dispatch/combine 操作需要在确定性路径（虚电路式）和灵活路由（数据报式）之间权衡
 
 ## 相关页面
-- [[deterministic-execution]] — 确定性执行（与电路交换思想对应）
-- [[nvidia-groq-3-lpx]] — LPX C2C 网络（确定性互联）
-- [[disaggregated-inference]] — AFD token routing
+- [Deterministic Execution](/concepts/deterministic-execution.md) — 确定性执行（与电路交换思想对应）
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX C2C 网络（确定性互联）
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — AFD token routing
+
+# Citations
+
+[1] [raw/articles/浅谈交换原理（1）——概述.md](raw/articles/浅谈交换原理（1）——概述.md)

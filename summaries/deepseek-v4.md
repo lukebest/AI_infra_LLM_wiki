@@ -1,11 +1,20 @@
 ---
-title: "DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence"
+type: Summary
+title: 'DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence'
+description: V4 模型系列：1.6T/284B MoE，百万 token 上下文，CSA+HCA 混合注意力
+tags:
+- model
+- architecture
+- attention
+- moe
+- compression
+- training
+- inference
+- quantization
+timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
-updated: 2026-04-28
-type: summary
-tags: [model, architecture, attention, moe, compression, training, inference, quantization]
 sources:
-  - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
 ---
 
 # DeepSeek-V4 Technical Report Summary
@@ -22,15 +31,15 @@ sources:
 - Putnam-2025 hybrid formal-informal: 120/120 满分
 
 ## 架构创新
-1. [[csa-hca]] — 两级压缩注意力，KV cache 降至基线 2%
-2. [[mhc]] — 流形约束超连接，残差映射非扩张，6.7% 额外训练开销
-3. [[muon-optimizer]] — 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
+1. [Csa Hca](/concepts/csa-hca.md) — 两级压缩注意力，KV cache 降至基线 2%
+2. [Mhc](/concepts/mhc.md) — 流形约束超连接，残差映射非扩张，6.7% 额外训练开销
+3. [Muon Optimizer](/concepts/muon-optimizer.md) — 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
 
 ## 系统工程
-- [[megamoe-kernel]] — EP 通信-计算全重叠，1.5-1.96× 加速
-- [[tilelang]] — DSL kernel 开发，Z3 形式化分析，bitwise reproducibility
-- [[fp4-qat]] — 无损 FP4→FP8 反量化，MoE expert 权重 + indexer QK path
-- [[dsec-sandbox]] — 4 种执行基板，数十万并发沙箱
+- [Megamoe Kernel](/concepts/megamoe-kernel.md) — EP 通信-计算全重叠，1.5-1.96× 加速
+- [Tilelang](/concepts/tilelang.md) — DSL kernel 开发，Z3 形式化分析，bitwise reproducibility
+- [Fp4 Qat](/concepts/fp4-qat.md) — 无损 FP4→FP8 反量化，MoE expert 权重 + indexer QK path
+- [Dsec Sandbox](/concepts/dsec-sandbox.md) — 4 种执行基板，数十万并发沙箱
 - 确定性训练：end-to-end batch-invariant + deterministic kernels
 
 ## 后训练
@@ -42,11 +51,15 @@ sources:
 架构复杂、训练稳定性理论不清、缺多模态、长上下文延迟待优化
 
 ## Wiki Pages Created
-- [[deepseek-v4]] (entity)
-- [[csa-hca]] (concept)
-- [[mhc]] (concept)
-- [[muon-optimizer]] (concept)
-- [[fp4-qat]] (concept)
-- [[megamoe-kernel]] (concept)
-- [[tilelang]] (concept)
-- [[dsec-sandbox]] (concept)
+- [Deepseek V4](/summaries/deepseek-v4.md) (entity)
+- [Csa Hca](/concepts/csa-hca.md) (concept)
+- [Mhc](/concepts/mhc.md) (concept)
+- [Muon Optimizer](/concepts/muon-optimizer.md) (concept)
+- [Fp4 Qat](/concepts/fp4-qat.md) (concept)
+- [Megamoe Kernel](/concepts/megamoe-kernel.md) (concept)
+- [Tilelang](/concepts/tilelang.md) (concept)
+- [Dsec Sandbox](/concepts/dsec-sandbox.md) (concept)
+
+# Citations
+
+[1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)

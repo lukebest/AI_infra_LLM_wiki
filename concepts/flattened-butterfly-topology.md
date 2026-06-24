@@ -1,10 +1,21 @@
 ---
+type: Concept
 title: Flattened Butterfly 拓扑
+description: Flattened Butterfly 片上拓扑：高基数路由器降低直径，concentration + bypass channel，2-hop
+  直径，38% 功耗降低
+tags:
+- topology
+- noc
+- high-radix
+- on-chip
+- butterfly
+- mesh
+- routing
+- switch
+timestamp: '2026-06-12T00:00:00Z'
 created: 2026-06-12
-updated: 2026-06-12
-type: concept
-tags: [topology, noc, high-radix, on-chip, butterfly, mesh, routing, switch]
-sources: [raw/papers/micro-fbfly-flattened-butterfly.md]
+sources:
+- raw/papers/micro-fbfly-flattened-butterfly.md
 ---
 
 # Flattened Butterfly 拓扑
@@ -34,9 +45,9 @@ Flattened butterfly（FBFLY）是一种利用**高基数路由器**降低网络�
 | 通道宽度 | 宽 | 中 | 窄 | 很窄 |
 | 布线复杂度 | 低 | 中 | 中 | **高** |
 
-- 与 [[switching-networks|CLOS]] 的区别：FBFLY 是 flat 全互连（每维度），CLOS 是多级交换
-- 与 [[noc-router-microarchitecture|NoC Router]] 的关系：FBFLY 的高基数路由器需要更复杂的 switch 和仲裁器
-- 与 [[switching-principles|交换原理]] 的联系：体现了"减少中间级"→ 降低延迟和功耗的原则
+- 与 [CLOS](/concepts/switching-networks.md) 的区别：FBFLY 是 flat 全互连（每维度），CLOS 是多级交换
+- 与 [NoC Router](/concepts/noc-router-microarchitecture.md) 的关系：FBFLY 的高基数路由器需要更复杂的 switch 和仲裁器
+- 与 [交换原理](/concepts/switching-principles.md) 的联系：体现了"减少中间级"→ 降低延迟和功耗的原则
 
 ## 路由
 
@@ -82,8 +93,12 @@ FBFLY 行/列内全互连产生大量 bypass channel（跨过中间路由器的�
 
 ## 相关概念
 
-- [[switching-networks]] — 交换网络基础（CLOS、Banyan）
-- [[switching-elements]] — 交换单元（crossbar、共享存储器）
-- [[noc-router-microarchitecture]] — NoC Router 微架构（VC、仲裁器、流水线）
-- [[switching-principles]] — 交换原理基础
-- [[deterministic-execution]] — 确定性执行与拓扑选择
+- [Switching Networks](/concepts/switching-networks.md) — 交换网络基础（CLOS、Banyan）
+- [Switching Elements](/concepts/switching-elements.md) — 交换单元（crossbar、共享存储器）
+- [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — NoC Router 微架构（VC、仲裁器、流水线）
+- [Switching Principles](/concepts/switching-principles.md) — 交换原理基础
+- [Deterministic Execution](/concepts/deterministic-execution.md) — 确定性执行与拓扑选择
+
+# Citations
+
+[1] [raw/papers/micro-fbfly-flattened-butterfly.md](raw/papers/micro-fbfly-flattened-butterfly.md)

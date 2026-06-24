@@ -1,10 +1,18 @@
 ---
+type: Concept
 title: LPU Architecture
+description: Groq LPU 推理专用架构：SRAM-first、显式数据搬运、编译器调度
+tags:
+- lpu
+- accelerator
+- architecture
+- deterministic
+- inference
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-04-16
-updated: 2026-05-08
-type: concept
-tags: [lpu, accelerator, architecture, deterministic, inference]
-sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md, raw/articles/GTC 2026 – The Inference Kingdom Expands.md]
+sources:
+- raw/articles/nvidia-groq3-lpx-blog-2026-04.md
+- raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 ---
 
 # LPU Architecture（Language Processing Unit）
@@ -65,7 +73,12 @@ LPU 将架构重组为**单功能单元组 "slice"**，slice 间通过 streaming
 | 适用负载 | Prefill、attention（stateful） | FFN/MoE expert（stateless） |
 
 ## 相关页面
-- [[nvidia-groq-3-lpx]] — Groq 3 LPX 实体（含 rack 级架构）
-- [[deterministic-execution]] — 确定性执行概念
-- [[heterogeneous-inference]] — GPU+LPU 异构推理
-- [[disaggregated-inference]] — Attention/FFN 解耦推理
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — Groq 3 LPX 实体（含 rack 级架构）
+- [Deterministic Execution](/concepts/deterministic-execution.md) — 确定性执行概念
+- [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — GPU+LPU 异构推理
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — Attention/FFN 解耦推理
+
+# Citations
+
+[1] [raw/articles/nvidia-groq3-lpx-blog-2026-04.md](raw/articles/nvidia-groq3-lpx-blog-2026-04.md)
+[2] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)

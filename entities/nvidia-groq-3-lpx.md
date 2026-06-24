@@ -1,10 +1,20 @@
 ---
+type: Entity
 title: NVIDIA Groq 3 LPX
+description: NVIDIA rack-scale 低延迟推理加速器，256 LPU，LP30 Samsung SF4，AFD，C2C 三级拓扑
+tags:
+- nvidia
+- groq
+- lpu
+- accelerator
+- inference
+- deterministic
+- scale-up
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-04-16
-updated: 2026-05-08
-type: entity
-tags: [nvidia, groq, lpu, accelerator, inference, deterministic, scale-up]
-sources: [raw/articles/nvidia-groq3-lpx-blog-2026-04.md, raw/articles/GTC 2026 – The Inference Kingdom Expands.md]
+sources:
+- raw/articles/nvidia-groq3-lpx-blog-2026-04.md
+- raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 ---
 
 # NVIDIA Groq 3 LPX
@@ -83,7 +93,7 @@ Rack 总 scale-up 带宽：256 LPU × 90 lanes × 112G / 8 × 2 directions ≈ *
 
 ## Attention FFN Disaggregation（AFD）
 
-LPX 的核心使用模式，源自 [[megascale-infer-2504.02263]] 和 Step-3：
+LPX 的核心使用模式，源自 [Megascale Infer 2504.02263](/papers/megascale-infer-2504.02263.md) 和 Step-3：
 
 - **Attention → GPU**（stateful，动态 KV cache）
 - **FFN / MoE Expert → LPU**（stateless，确定性架构适配静态工作负载）
@@ -100,10 +110,15 @@ LPX 的核心使用模式，源自 [[megascale-infer-2504.02263]] 和 Step-3：
 - 与 AFD 区别：draft model 需要 KV cache（数 GB 级）→ 利用 FPGA 附加的 256 GB DDR5
 
 ## 相关页面
-- [[nvidia-vera-rubin-nvl72]] — 同平台 GPU 系统
-- [[deterministic-execution]] — 确定性执行模型概念
-- [[lpu-architecture]] — LPU 架构概念
-- [[disaggregated-inference]] — 解耦推理概念
-- [[heterogeneous-inference]] — 异构推理概念
-- [[kyber-rack]] — Kyber rack 架构
-- [[megascale-infer-2504.02263]] — AFD 技术来源
+- [Nvidia Vera Rubin Nvl72](/entities/nvidia-vera-rubin-nvl72.md) — 同平台 GPU 系统
+- [Deterministic Execution](/concepts/deterministic-execution.md) — 确定性执行模型概念
+- [Lpu Architecture](/concepts/lpu-architecture.md) — LPU 架构概念
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — 解耦推理概念
+- [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构推理概念
+- [Kyber Rack](/entities/kyber-rack.md) — Kyber rack 架构
+- [Megascale Infer 2504.02263](/papers/megascale-infer-2504.02263.md) — AFD 技术来源
+
+# Citations
+
+[1] [raw/articles/nvidia-groq3-lpx-blog-2026-04.md](raw/articles/nvidia-groq3-lpx-blog-2026-04.md)
+[2] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)

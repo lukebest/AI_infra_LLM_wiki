@@ -1,10 +1,23 @@
 ---
-title: "Resilient AI Supercomputer Networking using MRC and SRv6"
+type: Paper
+title: Resilient AI Supercomputer Networking using MRC and SRv6
+description: MRC+SRv6+multi-plane Clos：三管齐下的 100K+ GPU AI 训练网络容错方案，OpenAI/Microsoft
+  生产验证
+tags:
+- scale-up
+- routing
+- transport
+- switch
+- protocol
+- fabric
+- load-balancing
+- congestion-control
+- nvidia
+- amd
+timestamp: '2026-05-13T00:00:00Z'
 created: 2026-05-13
-updated: 2026-05-13
-type: paper
-tags: [scale-up, routing, transport, switch, protocol, fabric, load-balancing, congestion-control, nvidia, amd]
-sources: [raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md]
+sources:
+- raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md
 ---
 
 # Resilient AI Supercomputer Networking using MRC and SRv6
@@ -13,9 +26,9 @@ sources: [raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md]
 
 **核心贡献**: 三管齐下解决 100K+ GPU 同步预训练的网络可靠性和性能问题：
 
-1. **[[mrc]]** — 多路径 RDMA 传输，包 spraying + 自适应负载均衡 + 选择性重传
-2. **[[multi-plane-clos-topology]]** — 2 层 multi-plane Clos 拓扑，高冗余低成本
-3. **[[srv6-source-routing]]** — 静态源路由，禁用动态路由，简化控制面
+1. **[Mrc](/entities/mrc.md)** — 多路径 RDMA 传输，包 spraying + 自适应负载均衡 + 选择性重传
+2. **[Multi Plane Clos Topology](/concepts/multi-plane-clos-topology.md)** — 2 层 multi-plane Clos 拓扑，高冗余低成本
+3. **[Srv6 Source Routing](/concepts/srv6-source-routing.md)** — 静态源路由，禁用动态路由，简化控制面
 
 **生产验证**: 已在 OpenAI/Microsoft 最大训练集群用于训练 ChatGPT 和 Codex 前沿模型。
 
@@ -28,8 +41,12 @@ sources: [raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md]
 
 ## 关系
 
-- [[mrc]] 协议实体页
-- [[multi-plane-clos-topology]] 概念页
-- [[srv6-source-routing]] 概念页
-- 与 [[switching-networks]] 的 CLOS 理论相关
-- 与 [[switching-principles]] 中分组交换/电路交换对比相关
+- [Mrc](/entities/mrc.md) 协议实体页
+- [Multi Plane Clos Topology](/concepts/multi-plane-clos-topology.md) 概念页
+- [Srv6 Source Routing](/concepts/srv6-source-routing.md) 概念页
+- 与 [Switching Networks](/concepts/switching-networks.md) 的 CLOS 理论相关
+- 与 [Switching Principles](/concepts/switching-principles.md) 中分组交换/电路交换对比相关
+
+# Citations
+
+[1] [raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md](raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md)

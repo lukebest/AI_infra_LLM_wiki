@@ -1,17 +1,26 @@
 ---
+type: Concept
 title: Multi-plane Clos Topology for AI Training
+description: 多平面 CLOS 拓扑：2-tier 131K GPU，低延迟高冗余，MRC 容错，Z3 形式化分析，bitwise reproducibility
+tags:
+- scale-up
+- fabric
+- topology
+- switch
+- infrastructure
+- networking
+timestamp: '2026-05-13T00:00:00Z'
 created: 2026-05-13
-updated: 2026-05-13
-type: concept
-tags: [scale-up, fabric, topology, switch, infrastructure, networking]
-sources: [raw/articles/resilient-ai-supercomputer-networking-using-mrc-and-srv6.pdf, raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md]
+sources:
+- raw/articles/resilient-ai-supercomputer-networking-using-mrc-and-srv6.pdf
+- raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md
 ---
 
 # Multi-plane Clos Topology for AI Training
 
 ## 定义
 
-将高带宽 NIC（如 800 Gb/s）按 lane 拆分为多条低速链路（8×100 Gb/s 或 4×200 Gb/s），构建多个并行的 Clos 平面，从而在 100K+ GPU 规模下实现两层拓扑。与 [[mrc]] 和 [[srv6-source-routing]] 协同设计。
+将高带宽 NIC（如 800 Gb/s）按 lane 拆分为多条低速链路（8×100 Gb/s 或 4×200 Gb/s），构建多个并行的 Clos 平面，从而在 100K+ GPU 规模下实现两层拓扑。与 [Mrc](/entities/mrc.md) 和 [Srv6 Source Routing](/concepts/srv6-source-routing.md) 协同设计。
 
 ## 拓扑对比
 
@@ -41,8 +50,8 @@ sources: [raw/articles/resilient-ai-supercomputer-networking-using-mrc-and-srv6.
 
 ## 挑战与解决
 
-1. **NIC 端口故障**：[[mrc]] 自动重映射 EV 到其他平面
-2. **平面间负载均衡**：[[mrc]] 的 EV set 等分到各平面，ECN 反馈微调
+1. **NIC 端口故障**：[Mrc](/entities/mrc.md) 自动重映射 EV 到其他平面
+2. **平面间负载均衡**：[Mrc](/entities/mrc.md) 的 EV set 等分到各平面，ECN 反馈微调
 3. **Incast 拥塞**：MRC packet trimming + 禁用 PFC
 
 ## 部署实例
@@ -55,7 +64,12 @@ sources: [raw/articles/resilient-ai-supercomputer-networking-using-mrc-and-srv6.
 
 ## 关系
 
-- 拓扑基础与 [[switching-networks]] 中的 CLOS 网络理论一致
-- 与 [[nvidia-vera-rubin-nvl72]] 的 NVLink 拓扑不同层面（scale-out vs scale-up）
-- [[cerebras-wse]] 的 2D Mesh 是另一种拓扑选择
-- 对比 [[csa-hca]] 中的注意力压缩，这里优化的是通信基础设施
+- 拓扑基础与 [Switching Networks](/concepts/switching-networks.md) 中的 CLOS 网络理论一致
+- 与 [Nvidia Vera Rubin Nvl72](/entities/nvidia-vera-rubin-nvl72.md) 的 NVLink 拓扑不同层面（scale-out vs scale-up）
+- [Cerebras Wse](/entities/cerebras-wse.md) 的 2D Mesh 是另一种拓扑选择
+- 对比 [Csa Hca](/concepts/csa-hca.md) 中的注意力压缩，这里优化的是通信基础设施
+
+# Citations
+
+[1] [raw/articles/resilient-ai-supercomputer-networking-using-mrc-and-srv6.pdf](raw/articles/resilient-ai-supercomputer-networking-using-mrc-and-srv6.pdf)
+[2] [raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md](raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md)

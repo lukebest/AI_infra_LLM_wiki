@@ -1,11 +1,15 @@
 ---
+type: Concept
 title: TileLang DSL
+description: Kernel 开发 DSL
+tags:
+- kernel
+- infrastructure
+- training-system
+timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
-updated: 2026-04-28
-type: concept
-tags: [kernel, infrastructure, training-system]
 sources:
-  - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
 ---
 
 # TileLang DSL
@@ -34,5 +38,9 @@ V4 的复杂架构（CSA/HCA/mHC/MoE）会导致数百个细粒度 Torch ATen op
 - **Bitwise reproducibility**：algebra simplification 与 NVCC 对齐，layout annotation 固定计算顺序
 
 ## Relations
-- Used in: [[DeepSeek-V4]], [[MegaMoE-kernel]]
-- Related: [[DSec-sandbox]]
+- Used in: [Deepseek V4](#DeepSeek-V4), [Megamoe Kernel](#MegaMoE-kernel)
+- Related: [Dsec Sandbox](#DSec-sandbox)
+
+# Citations
+
+[1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)

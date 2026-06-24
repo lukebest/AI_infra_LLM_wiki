@@ -1,10 +1,22 @@
 ---
+type: Entity
 title: MRC (Multipath Reliable Connection)
+description: Multipath Reliable Connection：OpenAI/Microsoft/AMD/NVIDIA/Broadcom 联合设计的多路径
+  RDMA 传输协议，包 spraying + 选择性重传，100K+ GPU 训练集群生产部署
+tags:
+- transport
+- protocol
+- routing
+- load-balancing
+- congestion-control
+- nvidia
+- amd
+- retransmission
+- scale-up
+timestamp: '2026-05-13T00:00:00Z'
 created: 2026-05-13
-updated: 2026-05-13
-type: entity
-tags: [transport, protocol, routing, load-balancing, congestion-control, nvidia, amd, retransmission, scale-up]
-sources: [raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md]
+sources:
+- raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md
 ---
 
 # MRC (Multipath Reliable Connection)
@@ -74,7 +86,11 @@ MRC 是 OpenAI、Microsoft、AMD、NVIDIA、Broadcom 联合设计的多路径 RD
 
 ## 关系
 
-- 扩展 [[roce]] 协议族，借鉴 [[ultra-ethernet-transport]] 设计
-- 与 [[multi-plane-clos-topology]] 和 [[srv6-source-routing]] 协同设计
-- [[clustermapper]] 提供网络健康探测和 denylist 管理
-- 与 [[nvidia-spectrum]] 交换机、[[nvidia-connectx-8]] NIC 协同部署
+- 扩展 [Roce](#roce) 协议族，借鉴 [Ultra Ethernet Transport](#ultra-ethernet-transport) 设计
+- 与 [Multi Plane Clos Topology](/concepts/multi-plane-clos-topology.md) 和 [Srv6 Source Routing](/concepts/srv6-source-routing.md) 协同设计
+- [Clustermapper](#clustermapper) 提供网络健康探测和 denylist 管理
+- 与 [Nvidia Spectrum](#nvidia-spectrum) 交换机、[Nvidia Connectx 8](#nvidia-connectx-8) NIC 协同部署
+
+# Citations
+
+[1] [raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md](raw/articles/resilient-ai-supercomputer-networking-mrc-srv6.md)

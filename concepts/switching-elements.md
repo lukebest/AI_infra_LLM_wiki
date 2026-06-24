@@ -1,10 +1,17 @@
 ---
+type: Concept
 title: Switching Elements
+description: 交换单元：空分/时分交换，开关阵列与共享存储器/总线，性能指标
+tags:
+- fabric
+- topology
+- tdm
+- deterministic
+- routing
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
-updated: 2026-05-08
-type: concept
-tags: [fabric, topology, tdm, deterministic, routing]
-sources: [raw/articles/浅谈交换原理（2）——交换单元.md]
+sources:
+- raw/articles/浅谈交换原理（2）——交换单元.md
 ---
 
 # Switching Elements（交换单元）
@@ -92,14 +99,18 @@ sources: [raw/articles/浅谈交换原理（2）——交换单元.md]
 
 - **空分 ↔ NVLink 交叉开关**：NVIDIA NVLink switch 本质是大型空分交换单元——N 入 N 出的 crossbar，控制逻辑决定哪个 GPU 连哪个
 - **时分 ↔ 共享总线/fabric**：PCIe bus、早期共享内存交换属于时分模式
-- **[[kyber-rack]] 中 NVLink 7 switch**：72 个 switch × 144 GPU 的全连接 = 多级空分交换网络
-- **[[nvidia-groq-3-lpx]] C2C mesh**：16 LPU all-to-all mesh 即空分交叉矩阵的 PCB 实现
-- **集中型/扩散型**：对应推理集群中 attention node（多副本 → 扩散型）和 expert node（聚合 → 集中型）的 [[disaggregated-inference]] 架构
+- **[Kyber Rack](/entities/kyber-rack.md) 中 NVLink 7 switch**：72 个 switch × 144 GPU 的全连接 = 多级空分交换网络
+- **[Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) C2C mesh**：16 LPU all-to-all mesh 即空分交叉矩阵的 PCB 实现
+- **集中型/扩散型**：对应推理集群中 attention node（多副本 → 扩散型）和 expert node（聚合 → 集中型）的 [Disaggregated Inference](/concepts/disaggregated-inference.md) 架构
 - **S+T 组合**：传统电信交换用 S-T-S 或 T-S-T 多级结构降低交叉点数——同理，大规模 scale-up fabric 用多级拓扑（fat-tree, dragonfly）降低单级 radix 要求
 
 ## 相关页面
-- [[switching-principles]] — 交换原理概述（交换方式、基本概念）
-- [[nvidia-groq-3-lpx]] — LPX C2C 网络拓扑
-- [[kyber-rack]] — NVLink 7 switch 多级交换
-- [[disaggregated-inference]] — M:N 通信模式
-- [[noc-router-microarchitecture]] — NoC Router 微架构（片上交换单元的电路级实现）
+- [Switching Principles](/concepts/switching-principles.md) — 交换原理概述（交换方式、基本概念）
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX C2C 网络拓扑
+- [Kyber Rack](/entities/kyber-rack.md) — NVLink 7 switch 多级交换
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — M:N 通信模式
+- [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — NoC Router 微架构（片上交换单元的电路级实现）
+
+# Citations
+
+[1] [raw/articles/浅谈交换原理（2）——交换单元.md](raw/articles/浅谈交换原理（2）——交换单元.md)

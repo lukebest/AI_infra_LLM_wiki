@@ -1,10 +1,18 @@
 ---
+type: Concept
 title: Disaggregated Inference
+description: 解耦推理：attention/FFN 分离部署，独立扩展，batch 聚合
+tags:
+- inference
+- serving-system
+- moe
+- disaggregated-inference
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-04-17
-updated: 2026-05-08
-type: concept
-tags: [inference, serving-system, moe, disaggregated-inference]
-sources: [arXiv:2504.02263, raw/articles/GTC 2026 – The Inference Kingdom Expands.md, raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf]
+sources:
+- arXiv:2504.02263
+- raw/articles/GTC 2026 – The Inference Kingdom Expands.md
+- raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -41,7 +49,7 @@ Attention Nodes (M个)          Expert Nodes (N个)
 
 ## NVIDIA LPX 产品化（AFD）
 
-NVIDIA 在 [[nvidia-groq-3-lpx]] 中将 AFD（Attention FFN Disaggregation）产品化：
+NVIDIA 在 [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) 中将 AFD（Attention FFN Disaggregation）产品化：
 - **GPU 运行 attention**（stateful，需要 HBM 存 KV cache）
 - **LPU 运行 FFN/MoE expert**（stateless，确定性架构适配静态工作负载）
 - Token routing 通过 Spectrum-X Ethernet scale-out fabric
@@ -66,7 +74,7 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - m ≥ 2 × (1 + Tc/Tf)
 
 ### 2. M2N 通信
-见 [[m2n-communication]]
+见 [M2N Communication](/concepts/m2n-communication.md)
 
 ### 3. 部署规划
 给定模型 + workload + SLO → 自动确定 parallelism 策略、micro-batch 数、硬件配置。优化目标：throughput per dollar。
@@ -93,16 +101,22 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 
 ## 实证支持
 
-[[understanding-inference-scaling-for-llms]] 通过 8B-671B 模型的系统实验为 prefill/decode 解耦提供了实证基础：
+[Understanding Inference Scaling For Llms](/papers/understanding-inference-scaling-for-llms.md) 通过 8B-671B 模型的系统实验为 prefill/decode 解耦提供了实证基础：
 - Prefill 是 compute-bound（低 HBM BW util），Decode 是 bandwidth-bound（高 HBM BW saturation）
 - Reasoning >99% wall-clock 在 decode → 硬件应物理解耦
-- [[prefill-decode-divergence]] 量化了两阶段的正交资源需求
+- [Prefill Decode Divergence](/concepts/prefill-decode-divergence.md) 量化了两阶段的正交资源需求
 
 ## 相关页面
 
-- [[megascale-infer-2504.02263]] — 首个大规模 disaggregated expert parallelism 系统
-- [[m2n-communication]] — disaggregation 产生的通信模式
-- [[heterogeneous-inference]] — GPU + LPU 异构推理
-- [[nvidia-groq-3-lpx]] — LPX 产品化 AFD
-- [[prefill-decode-divergence]] — Prefill vs Decode 的资源特性分歧
-- [[understanding-inference-scaling-for-llms]] — 系统性推理 scaling 瓶颈分析
+- [Megascale Infer 2504.02263](/papers/megascale-infer-2504.02263.md) — 首个大规模 disaggregated expert parallelism 系统
+- [M2N Communication](/concepts/m2n-communication.md) — disaggregation 产生的通信模式
+- [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — GPU + LPU 异构推理
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX 产品化 AFD
+- [Prefill Decode Divergence](/concepts/prefill-decode-divergence.md) — Prefill vs Decode 的资源特性分歧
+- [Understanding Inference Scaling For Llms](/papers/understanding-inference-scaling-for-llms.md) — 系统性推理 scaling 瓶颈分析
+
+# Citations
+
+[1] [arXiv:2504.02263](arXiv:2504.02263)
+[2] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)
+[3] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)

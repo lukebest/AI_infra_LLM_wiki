@@ -1,10 +1,21 @@
 ---
+type: Concept
 title: Cerebras Color Mechanism
+description: WSE Color 虚拟通道机制：静态路由+独立缓冲+Color×4任务调度+独立反压，Fabric/Local Color 双类型
+tags:
+- cerebras
+- wse
+- fabric
+- routing
+- noc
+- deterministic
+- virtual-channel
+- communication
+timestamp: '2026-05-29T00:00:00Z'
 created: 2026-05-29
-updated: 2026-05-29
-type: concept
-tags: [cerebras, wse, fabric, routing, noc, deterministic, virtual-channel, communication]
-sources: [US10515303B2, raw/papers/Near-optimal_wafer-scale_reduce.pdf]
+sources:
+- US10515303B2
+- raw/papers/Near-optimal_wafer-scale_reduce.pdf
 ---
 
 # Cerebras Color 机制
@@ -146,12 +157,17 @@ Data Structure Descriptor 中与 Color 相关的字段：
 
 ## 与其他系统的对比
 
-- vs [[noc-router-microarchitecture|传统 NoC VC]]：传统 VC 用于避免死锁和 QoS，Color 同时驱动路由+任务调度
-- vs [[ub-data-link-layer|UB 16 VL]]：UB VL 是传输层抽象，Color 是物理+计算层联合抽象
-- vs [[nvidia-groq-3-lpx|Groq C2C]]：Groq 用 plesiosynchronous 确定性，Color 用静态路由确定性，异曲同工
+- vs [传统 NoC VC](/concepts/noc-router-microarchitecture.md)：传统 VC 用于避免死锁和 QoS，Color 同时驱动路由+任务调度
+- vs [UB 16 VL](/concepts/ub-data-link-layer.md)：UB VL 是传输层抽象，Color 是物理+计算层联合抽象
+- vs [Groq C2C](/entities/nvidia-groq-3-lpx.md)：Groq 用 plesiosynchronous 确定性，Color 用静态路由确定性，异曲同工
 
 ## 相关页面
-- [[cerebras-wse]] — Color 所在的晶圆级加速器
-- [[deterministic-execution]] — Color 静态路由是确定性执行的物理实现
-- [[noc-router-microarchitecture]] — Color 路由器的 NoC 理论基础
-- [[switching-principles]] — 电路交换 vs 分组交换，Color 本质是电路交换思想
+- [Cerebras Wse](/entities/cerebras-wse.md) — Color 所在的晶圆级加速器
+- [Deterministic Execution](/concepts/deterministic-execution.md) — Color 静态路由是确定性执行的物理实现
+- [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — Color 路由器的 NoC 理论基础
+- [Switching Principles](/concepts/switching-principles.md) — 电路交换 vs 分组交换，Color 本质是电路交换思想
+
+# Citations
+
+[1] [US10515303B2](US10515303B2)
+[2] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)

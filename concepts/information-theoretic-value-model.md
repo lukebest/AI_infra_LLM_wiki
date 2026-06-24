@@ -1,10 +1,16 @@
 ---
+type: Concept
 title: 智能体辅助编程的信息论价值模型
+description: 智能体辅助编程的信息论价值模型：V ∝ I(S;K)，知识与任务的匹配度决定 Agent 价值
+tags:
+- ai-agent
+- information-theory
+- knowledge-management
+- formal-analysis
+timestamp: '2026-04-20T00:00:00Z'
 created: 2026-04-20
-updated: 2026-04-20
-type: concept
-tags: [ai-agent, information-theory, knowledge-management, formal-analysis]
-sources: [raw/papers/information-theory-ai-agents-2026-04.md]
+sources:
+- raw/papers/information-theory-ai-agents-2026-04.md
 ---
 
 # 智能体辅助编程的信息论价值模型
@@ -83,10 +89,14 @@ $$\sum_{t=1}^{T} H(m_t) = H(S | K)$$
 
 ## 与现有 Wiki 概念的关联
 
-本文属于 **AI Agent 基础理论**，与 [[lpu-architecture]]（LPU 推理架构）、[[disaggregated-inference]]（解耦推理）在主题上都属于 AI 基础设施研究范畴，但本文更偏理论层面，为 [[heterogeneous-inference]] 等系统设计提供理论支撑。
+本文属于 **AI Agent 基础理论**，与 [Lpu Architecture](/concepts/lpu-architecture.md)（LPU 推理架构）、[Disaggregated Inference](/concepts/disaggregated-inference.md)（解耦推理）在主题上都属于 AI 基础设施研究范畴，但本文更偏理论层面，为 [Heterogeneous Inference](/concepts/heterogeneous-inference.md) 等系统设计提供理论支撑。
 
 ## 开放问题
 
 1. **I(S;K) 如何测量？** 公式优美，但实践中难以直接计算
 2. **α 的经验值？** 不同场景下歧义开销因子不同
 3. **迭代终止条件？** 如何主动判断 agent 是否在原地踏步
+
+# Citations
+
+[1] [raw/papers/information-theory-ai-agents-2026-04.md](raw/papers/information-theory-ai-agents-2026-04.md)

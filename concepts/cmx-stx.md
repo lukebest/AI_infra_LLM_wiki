@@ -1,10 +1,17 @@
 ---
+type: Concept
 title: CMX & STX
+description: NVIDIA 推理存储平台：CMX（Tier G3.5 NVMe KV cache）+ STX（BF-4 存储 rack 参考架构）
+tags:
+- nvidia
+- storage
+- inference
+- kv-cache
+- hardware
+timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
-updated: 2026-05-08
-type: concept
-tags: [nvidia, storage, inference, kv-cache, hardware]
-sources: [raw/articles/GTC 2026 – The Inference Kingdom Expands.md]
+sources:
+- raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 ---
 
 # CMX & STX（Context Memory Storage Platform）
@@ -52,6 +59,10 @@ NVIDIA 逐步标准化集群各层：
 - 🔄 Infrastructure operations（BlueField DPU）
 
 ## 相关页面
-- [[nvidia-vera-rubin-nvl72]] — 推理计算侧
-- [[nvidia-groq-3-lpx]] — LPX 推理加速器
-- [[disaggregated-inference]] — 解耦推理架构
+- [Nvidia Vera Rubin Nvl72](/entities/nvidia-vera-rubin-nvl72.md) — 推理计算侧
+- [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX 推理加速器
+- [Disaggregated Inference](/concepts/disaggregated-inference.md) — 解耦推理架构
+
+# Citations
+
+[1] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)

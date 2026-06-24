@@ -1,10 +1,26 @@
 ---
+type: Entity
 title: UnifiedBus (UB)
+description: Huawei UnifiedBus 高性能互连协议，SuperPoD-scale AI/HPC，统一协议栈，全资源池化
+tags:
+- interconnect
+- scale-up
+- fabric
+- huawei
+- protocol
+- switch
+timestamp: '2026-05-11T00:00:00Z'
 created: 2026-05-09
-updated: 2026-05-11
-type: entity
-tags: [interconnect, scale-up, fabric, huawei, protocol, switch]
-sources: [raw/articles/UB-overview.md, raw/articles/UB-FUN.md, raw/articles/UB-MEM.md, raw/articles/UB-RSC.md, raw/articles/UB-TA.md, raw/articles/UB-TP-ch6.md, raw/articles/UB-NETWORK-ch5.md, raw/articles/UB-DL-ch4.md, raw/articles/UB-PHY-ch3.md]
+sources:
+- raw/articles/UB-overview.md
+- raw/articles/UB-FUN.md
+- raw/articles/UB-MEM.md
+- raw/articles/UB-RSC.md
+- raw/articles/UB-TA.md
+- raw/articles/UB-TP-ch6.md
+- raw/articles/UB-NETWORK-ch5.md
+- raw/articles/UB-DL-ch4.md
+- raw/articles/UB-PHY-ch3.md
 ---
 
 # UnifiedBus (UB)
@@ -13,7 +29,7 @@ sources: [raw/articles/UB-overview.md, raw/articles/UB-FUN.md, raw/articles/UB-M
 
 ## 核心定位
 
-UB 是一种 **SuperPoD-scale 互连技术**，目标是从单服务器无缝扩展到数万处理单元，同时保持 P2P 语义和动态资源池化。与 [[nvidia-vera-rubin-nvl72]] 的 NVLink 生态不同，UB 强调统一协议（无需协议转换）和全资源池化。
+UB 是一种 **SuperPoD-scale 互连技术**，目标是从单服务器无缝扩展到数万处理单元，同时保持 P2P 语义和动态资源池化。与 [Nvidia Vera Rubin Nvl72](/entities/nvidia-vera-rubin-nvl72.md) 的 NVLink 生态不同，UB 强调统一协议（无需协议转换）和全资源池化。
 
 ## 系统组成
 
@@ -61,7 +77,7 @@ UB 是一种 **SuperPoD-scale 互连技术**，目标是从单服务器无缝扩
 
 1. **Load/Store 同步访问**：UB Controller 与 NoC 协作，将 load/store 指令转换为事务操作
 2. **URMA 异步访问**：通过 Jetty API 建立通信对，提交事务操作，查询响应（支持 many-to-many）
-3. **URPC**：基于内存对象的远程过程调用，支持任意 UBPU 间直接 P2P 调用（详见 [[ub-urpc]]）
+3. **URPC**：基于内存对象的远程过程调用，支持任意 UBPU 间直接 P2P 调用（详见 [Ub Urpc](/concepts/ub-urpc.md)）
 
 ## 事务服务模式
 
@@ -74,11 +90,11 @@ UB 是一种 **SuperPoD-scale 互连技术**，目标是从单服务器无缝扩
 
 ## 内存管理
 
-采用 **Home-User 访问模型**：Home 是内存拥有者，User 是访问者。UBMD (UB Memory Descriptor) 包含 EID + TokenID + UB Address，UMMU 将 UB Address 翻译为 Home 的物理地址。详见 [[ub-memory-management]]。
+采用 **Home-User 访问模型**：Home 是内存拥有者，User 是访问者。UBMD (UB Memory Descriptor) 包含 EID + TokenID + UB Address，UMMU 将 UB Address 翻译为 Home 的物理地址。详见 [Ub Memory Management](/concepts/ub-memory-management.md)。
 
 ## 与其他互连技术对比
 
-UB 的定位可类比 [[switching-principles]] 和 [[switching-networks]] 中描述的交换原理，但在 SuperPoD 规模上提供统一的 memory+messaging+RPC 语义。与 NVIDIA NVLink/NVSwitch 生态相比：
+UB 的定位可类比 [Switching Principles](/concepts/switching-principles.md) 和 [Switching Networks](/concepts/switching-networks.md) 中描述的交换原理，但在 SuperPoD 规模上提供统一的 memory+messaging+RPC 语义。与 NVIDIA NVLink/NVSwitch 生态相比：
 - UB 强调 **统一协议栈**（NVLink 分为 NVLink + NVSwitch + NVLink-C2C 多种协议）
 - UB 提供 **内置 RPC**（URPC），NVLink 不直接支持
 - UB 支持 **跨 domain Ethernet 互连**（UBoE）
@@ -102,3 +118,15 @@ UB 的定位可类比 [[switching-principles]] 和 [[switching-networks]] 中描
 
 - UnifiedBus™ (UB) Base Specification Revision 2.0, 2025-12-31, Huawei Technologies
 - <https://www.unifiedbus.com>
+
+# Citations
+
+[1] [raw/articles/UB-overview.md](raw/articles/UB-overview.md)
+[2] [raw/articles/UB-FUN.md](raw/articles/UB-FUN.md)
+[3] [raw/articles/UB-MEM.md](raw/articles/UB-MEM.md)
+[4] [raw/articles/UB-RSC.md](raw/articles/UB-RSC.md)
+[5] [raw/articles/UB-TA.md](raw/articles/UB-TA.md)
+[6] [raw/articles/UB-TP-ch6.md](raw/articles/UB-TP-ch6.md)
+[7] [raw/articles/UB-NETWORK-ch5.md](raw/articles/UB-NETWORK-ch5.md)
+[8] [raw/articles/UB-DL-ch4.md](raw/articles/UB-DL-ch4.md)
+[9] [raw/articles/UB-PHY-ch3.md](raw/articles/UB-PHY-ch3.md)
