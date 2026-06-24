@@ -46,7 +46,7 @@ sources:
 | 内存空间 | 全局统一、近均匀延迟 | 分布式、非均匀访问延迟 |
 | 带宽扩展 | Perimeter 受限 | 随 die 面积扩展 |
 | 利用率机制 | Inter-bank 调度隐藏 row conflict | 专用 bus stall 时无 bank 可共享 → 利用率难维持 |
-| 典型 BW 密度 | — | ~**400 GB/s per 0.02 mm²**（当前工艺 [7]） |
+| 典型 BW 密度 | — | ~**400 GB/s per 0.02 mm²**（当前工艺 [1]） |
 
 ## 效率挑战
 
