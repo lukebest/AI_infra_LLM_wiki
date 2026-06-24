@@ -28,7 +28,7 @@ sources: [raw/articles/source-name.md]
 - 网络: scale-up, scale-out, ocs, tdm, wdm, routing, deterministic, fabric, transport, data-link, physical-layer, link-training, serdes, fec, retransmission, flow-control, congestion-control, switch, protocol, communication
 - 推理: inference, decode, prefill, latency, throughput, serving, batching, disaggregated-inference, serving-system, kv-cache, reasoning, capacity-trap, parallelism
 - 编译器: compiler, scheduling, spatial-execution, deterministic-execution, programming-model
-- 公司: nvidia, cerebras, groq, amd, google, lightmatter, celestial-ai, deepseek, huawei, bytedance
+- 公司: nvidia, cerebras, groq, amd, google, lightmatter, celestial-ai, deepseek, huawei, bytedance, graphcore
 - 技术: sram, hbm, photonic, cpo, optical, mesh, memory-bandwidth, memory, rack, cpu, rpc, virtualization
 - AI系统: agentic-ai, ai-agent, moe, transformer, llm, training, attention, quantization, expert-parallelism
 - 方法论: comparison, timeline, benchmark, architecture, information-theory, knowledge-management, formal-analysis

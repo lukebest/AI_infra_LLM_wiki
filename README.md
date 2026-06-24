@@ -1,8 +1,8 @@
 # LLM Wiki
 
-本仓库是一个基于 [**Hermes Agent 的 `llm-wiki` skill**](https://github.com/NousResearch/hermes-agent/blob/main/skills/research/llm-wiki/SKILL.md) 搭建的 **LLM Wiki**：用互相链接的 Markdown 页面持续沉淀知识，而不是把结论留在单次对话里。
+本仓库是一个 **Open Knowledge Format (OKF)** 知识库：在 Karpathy LLM Wiki 的沉淀理念之上，用带 YAML frontmatter 的 Markdown 概念页持续编译 AI 基础设施领域知识。日常 **摄取、更新与查询** 通过仓库自带的 [`.cursor/skills/okf-knowledge-base`](.cursor/skills/okf-knowledge-base/SKILL.md) skill 在 Cursor 等 Agent 中执行。
 
-入门思路与整体叙事可参考 [**Karpathy Wiki（中文导读）**](https://karpathy-wiki.lol/zh)，它与 Andrej Karpathy 提出的「LLM Wiki」工作方式一脉相承；原始gist见 [LLM Wiki by Andrej Karpathy](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)。
+理念来源：[Karpathy Wiki（中文导读）](https://karpathy-wiki.lol/zh) / [LLM Wiki gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)；格式参考 [Google Knowledge Catalog OKF](https://github.com/google/knowledge-catalog)。上游 Hermes [`llm-wiki` skill](https://github.com/NousResearch/hermes-agent/blob/main/skills/research/llm-wiki/SKILL.md) 仍是相近工作流的参考实现。
 
 ---
 
@@ -27,7 +27,7 @@
 本 Wiki 面向 **团队共同维护与使用**：
 
 - **共享同一套结构与术语**（见 `SCHEMA.md`、`index.md`），减少各人笔记孤岛与重复劳动。
-- **协作增量**：新成员可通过索引与图谱快速定位主题； ingest / 更新 / lint 式的维护可由人或 Agent 按约定执行，变更记录在 `log.md`。
+- **协作增量**：新成员可通过索引与图谱快速定位主题；ingest / 更新 / 校验可由 Cursor Agent 按 OKF skill 执行，变更记录在 `log.md`。
 - **知识归属清晰**：资料来源与页面引用可追溯，便于评审、对齐与后续迭代。
 
 仓库内的领域范围与标签体系以 `SCHEMA.md` 为准；若你希望扩展领域或协作流程（分支策略、评审门槛），建议在 Schema 或团队约定中显式写明，以便人机协作一致。

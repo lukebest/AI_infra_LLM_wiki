@@ -2,6 +2,7 @@
 
 * [MegaScale-Infer](megascale-infer-2504.02263.md) - MegaScale-Infer：MoE disaggregated attention/FFN serving，ping-pong pipeline + M2N 通信库，1.90× 吞吐提升
 * [Resilient AI Supercomputer Networking using MRC and SRv6](resilient-ai-supercomputer-networking-mrc-srv6.md) - MRC+SRv6+multi-plane Clos：三管齐下的 100K+ GPU AI 训练网络容错方案，OpenAI/Microsoft 生产验证
+* [Voxel 3D-Stacked AI Chip LLM Inference](voxel-3d-stacked-ai-chip-llm-inference.md) - Voxel 框架探索 3D 堆叠 AI 芯片 LLM prefill/decode 效率：compute-shift、mapping、DRAM 利用率，IPU 验证 ≤6.8% 误差
 
 # Summary
 

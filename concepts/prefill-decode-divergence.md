@@ -9,10 +9,11 @@ tags:
 - kv-cache
 - latency
 - throughput
-timestamp: '2026-06-15T00:00:00Z'
+timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-15
 sources:
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
+- raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
 ---
 
 # Prefill-Decode Resource Divergence（Prefill vs Decode 资源分歧）
@@ -85,6 +86,18 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - 3D-stacked memory（如 D-Matrix SRAM-based）缓解 KV read bandwidth
 - HBF (High-Bandwidth Flash)：增容但有 read/write asymmetry + power 挑战
 
+### 3D-stacked AI chip 视角（Voxel 论文）
+
+[Voxel](/papers/voxel-3d-stacked-ai-chip-llm-inference.md) 在 [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) 上量化了两阶段对设计旋钮的不同响应：
+
+| 设计旋钮 | Prefill（compute/NoC-bound） | Decode（memory-bound） |
+|----------|------------------------------|------------------------|
+| DRAM 带宽 | 扩 BW 收益有限 | 显著降 latency，~10 TBps 后平台 |
+| NoC 带宽 | 低于 32 B/cycle 显著拖慢 | 不敏感 |
+| Per-core SRAM | 大 SRAM 收益有限（FLOPS 已饱和） | 大 SRAM 利于 prefetch，BW 饱和后递减 |
+| Compute paradigm | compute-shift 相对 SPMD **46.73%** 提升 | paradigm 差异仍存在但 NoC 非主瓶颈 |
+| Core 数量 | 过多 core 加剧 bank 冲突 | 同上，能效可能下降 |
+
 ### 绑定互连
 - NVLink + optical interconnects 跨 tier 低延迟
 - Explicit KV placement, migration, proactive eviction
@@ -98,6 +111,7 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — Decode 阶段是 capacity trap 的主战场
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — Decode 的 KV 线性增长导致 cliff
 - [Parallelism Transition Point](/concepts/parallelism-transition-point.md) — 不同阶段的 optimal parallelism 不同（prefill: DP; decode: TP）
+- [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — 3D 堆叠缓解 BW wall，prefill/decode 对 DRAM/NoC/SRAM 响应不同
 
 ## 相关概念
 
