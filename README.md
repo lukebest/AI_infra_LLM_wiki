@@ -34,13 +34,15 @@
 
 ---
 
-## 快速开始：克隆本仓库并用 `llm-wiki` 增量扩展
+## 快速开始：克隆仓库并用 OKF skill 增量维护
 
-下面是一条完整路径：**先把本 Wiki 仓库拉到本地 → 让 Hermes 的 `WIKI_PATH` 指向该目录 → 用 `llm-wiki` skill 在已有页面与结构上持续 ingest（增量）。**
+下面是一条完整路径：**克隆本仓库 → 用 Cursor 打开 → 让 Agent 加载 `.cursor/skills/okf-knowledge-base` → 在已有 OKF bundle 上 ingest 新资料**。
 
-### 1. 克隆本 Wiki 仓库
+Skill 定义见 [`.cursor/skills/okf-knowledge-base/SKILL.md`](.cursor/skills/okf-knowledge-base/SKILL.md)；本仓库本身即是一个 OKF bundle（`entities/`、`concepts/`、`papers/` 等目录 + 各目录 `index.md` + 根目录 `log.md`）。
 
-在你希望存放知识库的目录执行（将 URL 换成你 fork 后的地址亦可）。在 **`git clone` 末尾写上目录名 `wiki`**，本地文件夹即为 `wiki`，与 Hermes / `llm-wiki` 常用的 `~/wiki` 约定一致：
+### 1. 克隆本仓库
+
+在你希望存放知识库的目录执行（将 URL 换成你 fork 后的地址亦可）。在 **`git clone` 末尾写上目录名 `wiki`**：
 
 ```bash
 git clone https://github.com/lukebest/AI_infra_LLM_wiki.git wiki
@@ -54,119 +56,131 @@ git clone git@github.com:lukebest/AI_infra_LLM_wiki.git wiki
 cd wiki
 ```
 
-确认仓库根目录下已有 `SCHEMA.md`、`index.md`、`log.md` 以及 `raw/`、`entities/`、`concepts/` 等结构——说明这是一份**已有内容**的 Wiki，后续只做增量。
+确认根目录下已有 `SCHEMA.md`、`index.md`、`log.md` 以及 `entities/`、`concepts/`、`raw/` 等——说明这是**已有内容**的知识库，后续只做增量 enrich。
 
-### 2. 把 `WIKI_PATH` 固定到该克隆目录
+### 2. 用 Cursor 打开并启用 OKF skill
 
-`llm-wiki` skill 只认 **`WIKI_PATH`** 指向的目录（未设置时默认为 `~/wiki`）。必须指向**当前克隆的根目录**（包含 `SCHEMA.md` 的那一层），例如：
+1. 在 Cursor 中 **Open Folder**，选择刚克隆的 `wiki` 目录。
+2. Skill 已随仓库位于 **`.cursor/skills/okf-knowledge-base/`**，Cursor 会在本项目中自动发现；无需单独安装 Hermes Hub 或配置 `WIKI_PATH`。
+3. 新开 Agent 对话时，可直接说明：「按 OKF knowledge base skill 操作本仓库。」
 
-```bash
-# 临时（当前终端会话）
-export WIKI_PATH="$(pwd)"          # 在 wiki 目录（clone 时指定的目录名）下执行时
+可选：将 [`SKILL.md`](.cursor/skills/okf-knowledge-base/SKILL.md) 中的「Enrich Existing OKF Bundle」要点写入项目 `.cursor/rules`，减少每次重复说明。
 
-# 或写绝对路径（推荐给 Hermes / 定时任务）
-export WIKI_PATH=/home/you/projects/wiki
-```
+### 3. 增量维护的典型流程（每次有新资料）
 
-把同一行写入 **`~/.hermes/.env`**（或你运行 Hermes 的环境配置文件），避免每次手动 export。
+对应 skill 中的 **Workflow 3: Enrich Existing OKF Bundle**：
 
-### 3. 安装并启用 `llm-wiki` skill
-
-见下文 **「使用 `llm-wiki` skill 生成与维护知识库」**：从 Hub 安装或将上游 skill 放入 `~/.hermes/skills/`，确保会话加载该 skill。
-
-### 4. 增量扩展的典型流程（每次有新资料）
-
-1. **同步团队最新内容（可选但推荐）**  
+1. **同步团队最新内容（可选但推荐）**
    ```bash
-   cd "$WIKI_PATH"   # 即你的克隆目录
+   cd wiki
    git pull
    ```
 
-2. **定向（每次开干前）**  
-   让 Agent 先读 `SCHEMA.md`、`index.md`、`log.md` 末尾若干条，避免重复建页、遵守标签与命名。
+2. **定向（Orient）**  
+   让 Agent 先读 `SCHEMA.md`、各目录 `index.md`（或根 `index.md`）、`log.md` 近期条目，并搜索是否已有相关 concept，避免重复建页。
 
-3. **摄取（增量核心）**  
-   向 Agent 提供 URL、文件或粘贴正文，并说明按 llm-wiki **在本仓库现有结构下 ingest**，遵守 `SCHEMA.md`。Agent 会把原文落入 `raw/`（含 frontmatter），按阈值 **新增或更新** `entities/`、`concepts/` 等页面，并更新 `index.md`、`log.md`。
+3. **摄取（Ingest）**  
+   向 Agent 提供 URL、PDF、文件路径或粘贴正文，示例话术：
+   - 「采用 OKF skill，把 `raw/papers/xxx.pdf` 加入本知识库」
+   - 「按 OKF skill ingest 这篇资料，更新相关 entities/concepts」
 
-4. **自检（可选）**  
-   请求「对 wiki 做 lint」，修复断链、孤儿页等问题后再提交。
+   Agent 应按 skill 执行：
+   - 原文保留在 `raw/`（或 `references/raw/`，原则上不改写正文）
+   - 按 `SCHEMA.md` 阈值 **新建或更新** concept 页（frontmatter 含 `type`、`title`、`description`、`tags`、`timestamp`）
+   - 页面内至少 **2 条** bundle 相对路径交叉链接，并写 `# Citations`
+   - 更新对应目录的 `index.md` 与根 `log.md`
 
-5. **提交并推送（团体协作）**  
+4. **校验（Validate，可选）**
    ```bash
-   cd "$WIKI_PATH"
+   python .cursor/skills/okf-knowledge-base/scripts/validate_bundle.py .
+   python .cursor/skills/okf-knowledge-base/scripts/generate_indexes.py .
+   ```
+   修复缺失 `type`、frontmatter 解析错误等问题后再提交。
+
+5. **提交并推送（团体协作）**
+   ```bash
    git status
    git add -A
    git commit -m "wiki: ingest <简短说明>"
    git push
    ```
 
-这样，**下载（克隆）的是完整知识库快照**，**增量**体现在：新资料进入 `raw/`、Wiki 页与索引在原有基础上追加与修订，并通过 Git 与他人合并。
+**增量**体现在：新资料进入 `raw/`，concept 页与索引在原有基础上追加与修订，并通过 Git 与他人合并。
 
 ---
 
-## 使用 `llm-wiki` skill 生成与维护知识库
+## 使用 OKF knowledge base skill 维护知识库
 
-**前提：** 请先完成上一节 **「快速开始」**（克隆本仓库并设置 `WIKI_PATH`）。
+**前提：** 请先完成上一节 **「快速开始」**（克隆仓库并在 Cursor 中打开）。
 
-以下说明聚焦在本仓库上的 **摄取与维护**；上游 [**`llm-wiki` SKILL**](https://github.com/NousResearch/hermes-agent/blob/main/skills/research/llm-wiki/SKILL.md) 文档另有完整操作列表，可自行查阅。
+Skill 路径：[`.cursor/skills/okf-knowledge-base/SKILL.md`](.cursor/skills/okf-knowledge-base/SKILL.md)。以下聚焦本仓库上的 **摄取、enrich 与校验**；OKF 规范摘要见 skill 内 [`references/okf-spec-summary.md`](.cursor/skills/okf-knowledge-base/references/okf-spec-summary.md)。
 
-### 1. 安装与启用 skill（Hermes Agent）
+### 1. Skill 何时激活
 
-- **获取 skill**：从 [Hermes Skills Hub](https://hermes-agent.nousresearch.com/docs/skills/) 用 `hermes skills` CLI 浏览/安装对应条目，或将上游仓库中的 [`skills/research/llm-wiki/`](https://github.com/NousResearch/hermes-agent/tree/main/skills/research/llm-wiki) 放入本机的 `~/.hermes/skills/`，并在 `~/.hermes/config.yaml` 里通过 `external_dirs` 指向团队共享的 skill 目录（见 [Hermes Agent Skills 指南](https://openclawlaunch.com/guides/hermes-agent-skills)）。
-- **生效方式**：确保会话会加载该 skill（Hub 安装或本地路径注册后，按 Hermes 文档执行 `hermes skills configure` 等步骤）。
+在 Cursor 对话中提到以下意图时，Agent 应读取并遵循该 skill：
 
-### 2. 把 Wiki 路径指向本仓库
+- ingest / 加入 / 更新知识库、处理 `raw/` 下新资料
+- OKF、Knowledge Bundle、concept 页创建或 enrich
+- 校验 bundle、生成 index、知识库健康检查
 
-Skill 通过 **`WIKI_PATH`** 定位知识库目录（未设置时默认为 `~/wiki`）。本仓库若clone在其它路径，请在 **`~/.hermes/.env`** 或运行环境中设置，例如：
+### 2. 核心操作（由你在对话里发起）
+
+| 操作 | 示例话术 | Agent 按 skill 做的事 |
+|------|----------|------------------------|
+| **摄取 ingest** | 「用 OKF skill 把这篇 PDF 加入 wiki」 | 读 `SCHEMA.md` + index → 写/更新 `entities/`、`concepts/`、`papers/` 等 → 更新 `index.md`、`log.md` |
+| **Enrich 已有页** | 「把新来源合并进 [[某 concept]]」 | 更新 frontmatter `timestamp`、正文与 `# Citations`，补交叉链接 |
+| **校验 validate** | 「对 bundle 做 OKF 校验」 | 运行 `validate_bundle.py`，报告缺失 `type` 等问题 |
+| **查询 query** | 「根据 wiki 回答…并引用页面」 | 读 index → 定位 concept → 综合回答；高价值结论可新建 `papers/` 或 `analyses/` 页并记 log |
+
+**注意：** `raw/` 摄取后视为不可原地改写；修订结论写在 concept 工作层。
+
+### 3. Concept 页约定（OKF + 本仓库 SCHEMA）
+
+- **必填 frontmatter（OKF）：** `type`（如 `Entity`、`Concept`、`Summary`）
+- **推荐：** `title`、`description`、`tags`、`timestamp`（ISO 8601）；扩展字段 `sources`、`created` 可保留
+- **交叉链接：** 使用 bundle 相对路径，如 `[Cerebras WSE](/entities/cerebras-wse.md)`
+- **标签：** 须出现在 `SCHEMA.md` 的 taxonomy 中；新标签先写入 SCHEMA 再使用
+
+### 4. 实用脚本（skill 自带）
+
+在仓库根目录执行：
 
 ```bash
-export WIKI_PATH=/path/to/wiki             # 克隆并重命名后的 wiki 根目录（含 SCHEMA.md）
+# 校验 frontmatter / type
+python .cursor/skills/okf-knowledge-base/scripts/validate_bundle.py .
+
+# 重新生成各目录 index.md
+python .cursor/skills/okf-knowledge-base/scripts/generate_indexes.py .
+
+# 生成交互式概念关系图 viz.html（可选）
+python .cursor/skills/okf-knowledge-base/scripts/generate_viz.py .
 ```
-
-团队共用同一克隆路径或 NFS/Git 工作副本时，全员使用相同的 `WIKI_PATH`，避免 Agent 写到错误目录。
-
-### 3. 核心操作：摄取与审计（由你在对话里发起）
-
-| 操作 | 你对 Agent 说什么（示例） | Agent 按 SKILL 做的事 |
-|------|---------------------------|------------------------|
-| **摄取 ingest** | 「把这篇 URL/文件收进 wiki」「处理附件里的原文」 | 原文写入 `raw/`（带 `source_url` / `ingested` / `sha256`），按阈值新建或更新 `entities/`、`concepts/` 等，更新 `index.md` 与 `log.md` |
-| **审计 lint** | 「对 wiki 做 lint / 健康检查」 | 检查断链、孤儿页、索引完整性、frontmatter、陈旧页等，并记入 `log.md` |
-
-**注意：** `raw/` 内正文摄取后视为不可原地改写；修订结论应在 Wiki 页完成。
-
-### 4. 每次会话开始前的「定向」（避免重复建页）
-
-在已有 wiki 上继续工作时，应先让 Agent **阅读** `SCHEMA.md`、`index.md` 和 `log.md` 近期条目（SKILL 要求如此），再执行 ingest 或大规模更新。你可直接提示：「先按 llm-wiki 定向：读 SCHEMA、index、最近 30 条 log。」
 
 ---
 
-## 使用 OpenClaw、Hermes 与其它 Agent 查询知识库
+## 使用 Agent 查询知识库
 
-查询的本质是：**先从已编译的 Markdown 页面作答**，必要时再补充外部检索；高价值回答可回填到 `queries/` 或 `comparisons/`（见 SKILL 的 Query 流程）。
+查询的本质：**先从已编译的 OKF concept 页作答**，必要时再补充外部检索；高价值回答可回填为 `papers/`、`analyses/` 等页面并记入 `log.md`。
 
-### Hermes Agent（含通过 OpenClaw Launch 托管的 Hermes）
+### Cursor（推荐）
 
-- **同一套 skill**：查询前同样应加载 `llm-wiki`，且 `WIKI_PATH` 指向本仓库根目录。
-- **自然语言即可**：例如「根据 wiki 总结 [[某概念]] 与 [[另一实体]] 的关系」「wiki 里对某某硬件的结论是什么？请引用页面」。
-- Agent 侧应按 SKILL 执行：**读 `index.md` →（页面多时）在 wiki 目录内搜索关键词 → `read_file` 相关页 → 综合回答并标注依据的 `[[wikilink]]`**；值得保留的深度对比可新建页面并写 `log.md`。
-- 若在 **[OpenClaw Launch](https://openclawlaunch.com/)** 上部署 Hermes，工具与技能仍属 Hermes 体系；配置 wiki 路径与环境变量的方式以实例 Dashboard / 文档为准（参见 [OpenClaw 上的 Hermes Skills 说明](https://openclawlaunch.com/guides/hermes-agent-skills)）。OpenClaw 与 Hermes 的「skill」来自不同生态（ClawHub vs Hermes Hub），**自带 OpenClaw skill 不等于自带 `llm-wiki`**；要以 LLM Wiki 工作流查询本仓库，仍需 Hermes + `llm-wiki` 或下文「通用 Agent」做法。
+- **打开本仓库为工作区**，对话中说明：「先读 SCHEMA、index、近期 log，再按 OKF skill 查询。」
+- 示例：「根据 wiki 总结 [某概念] 与 [另一实体] 的关系，引用 `/concepts/` 与 `/entities/` 页面。」
+- Agent 流程：**读 `index.md` → 搜索关键词 → 读相关 concept → 回答并标注路径链接**。
 
-### OpenClaw 或其它未内置 llm-wiki 的 Agent
+### OpenClaw、Hermes 与其它 Agent
 
-将 **本仓库作为工作区挂载**（克隆到本地、容器卷、或通过 MCP/文件工具可读），然后在系统提示或首轮对话中固定下列约束：
+将 **本仓库挂载为可读工作区**，在系统提示中固定：
 
-1. 知识库根目录即 `WIKI_PATH`，必须先读 `SCHEMA.md`、`index.md`、近期 `log.md`。
-2. 用仓库内搜索或文件名定位相关 `.md`，只读 `entities/`、`concepts/`、`comparisons/`、`queries/`（以及团队约定的 `analyses/`、`summaries/` 等），**勿改写 `raw/` 原文**。
-3. 回答须引用实际读到的页面标题或路径；需要持久保存的结论写入 Wiki 层并更新 `index.md` / `log.md`。
+1. 先读 `SCHEMA.md`、各目录 `index.md`、近期 `log.md`。
+2. 只读/写工作层（`entities/`、`concepts/`、`papers/` 等），**勿改写 `raw/` 原文**。
+3. 回答须引用实际读到的 concept；持久结论写入 bundle 并更新 `index.md` / `log.md`。
 
-### Cursor、Claude Code、CLI Agent 等开发类 Agent
+若使用 Hermes，也可额外加载上游 [`llm-wiki` skill](https://github.com/NousResearch/hermes-agent/blob/main/skills/research/llm-wiki/SKILL.md) 并将 `WIKI_PATH` 指向克隆目录；Cursor 用户**无需**此步骤。
 
-- **打开本仓库为当前项目**，在对话里说明：「遵循 Karpathy LLM Wiki / llm-wiki：先定向再问答。」
-- 可选：在 `.cursor/rules` 或项目 `AGENTS.md` 中摘录 SKILL 的「Resuming」「Query」「Lint」要点，减少每次手动复述。
+### 人工快速查阅
 
-### 人工快速查阅（不经过 Agent）
-
-直接用编辑器或 Obsidian 打开本目录，从 `index.md` 跳转；复杂主题可用全文搜索 `*.md`。这与 Agent 查询互补，适合抽查与审稿。
+用编辑器或 Obsidian 打开本目录，从各目录 `index.md` 跳转；复杂主题可全文搜索 `*.md`。
 
 ---
 
@@ -174,17 +188,18 @@ export WIKI_PATH=/path/to/wiki             # 克隆并重命名后的 wiki 根�
 
 | 路径 | 作用 |
 |------|------|
+| `.cursor/skills/okf-knowledge-base/` | OKF 维护 skill（`SKILL.md` + 校验/索引脚本） |
 | `SCHEMA.md` | 领域、命名、标签与更新策略 |
-| `index.md` | 内容目录与一页摘要 |
+| `index.md` | 根目录与子目录内容索引 |
 | `log.md` | 按时间记录的操作日志 |
 | `raw/` | 原始资料（摄取后原则上不改写正文） |
-| `entities/`、`concepts/` 等 | Wiki 工作层页面 |
+| `entities/`、`concepts/`、`papers/` 等 | OKF concept 工作层页面 |
 
-本地可与 Obsidian 等 Markdown 工具配合使用；`WIKI_PATH` 与 Agent 查询方式见上文「把 Wiki 路径指向本仓库」及「使用 OpenClaw、Hermes 与其它 Agent 查询知识库」。
+本地可与 Obsidian 等 Markdown 工具配合使用；维护与查询流程见上文 **「快速开始」** 与 **「使用 OKF knowledge base skill」**。
 
 ---
 
 ## 许可证与致谢
 
-- Wiki **工作方法**来自 Karpathy 的 LLM Wiki 理念及 Hermes **`llm-wiki`** skill 的实践整理。
+- 知识沉淀理念来自 Karpathy LLM Wiki；**OKF 格式与维护流程**见 [`.cursor/skills/okf-knowledge-base`](.cursor/skills/okf-knowledge-base/SKILL.md) 与 [Google Knowledge Catalog](https://github.com/google/knowledge-catalog)。
 - 本 README 仅描述仓库用途与哲学背景；具体页面的版权声明与引用请以各 `raw/` 文件及页面 `sources` 为准。
