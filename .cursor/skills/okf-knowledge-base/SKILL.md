@@ -109,7 +109,7 @@ Use when the user provides URLs, PDFs, pasted text, or a directory of documents.
 
 **Step 2 — Capture sources**
 
-Save immutable originals under `references/raw/` (or a sibling `raw/` directory):
+Save immutable originals under the bundle-root **`raw/`** directory (this repository's convention; OKF also allows `references/raw/` in other bundles):
 
 ```yaml
 ---
@@ -118,7 +118,7 @@ ingested: 2026-06-24
 ---
 ```
 
-Name files: lowercase, hyphens, descriptive (`references/raw/nvidia-groq3-lpx-blog-2026-04.md`).
+Name files: lowercase, hyphens, descriptive (`raw/articles/nvidia-groq3-lpx-blog-2026-04.md`).
 
 **Step 3 — Synthesize concepts**
 
@@ -173,7 +173,7 @@ Use when the user has a Karpathy-style LLM wiki (e.g. `/home/luke/wiki`) and wan
 | `updated: YYYY-MM-DD` | `timestamp: YYYY-MM-DDT00:00:00Z` |
 | `index.md` one-liners | `description` in frontmatter |
 | `sources:` frontmatter | Keep as extension key or move to `# Citations` |
-| `raw/` immutable layer | Copy to `references/raw/` as `type: Raw Source` concepts |
+| `raw/` immutable layer | Keep at bundle root (`raw/articles/`, `raw/papers/`); do not duplicate under `references/raw/` |
 | `SCHEMA.md` | Optional bundle-root concept or README — not required by OKF |
 
 **Run conversion:**

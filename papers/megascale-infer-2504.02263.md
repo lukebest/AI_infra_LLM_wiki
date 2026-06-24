@@ -13,6 +13,7 @@ timestamp: '2026-04-16T00:00:00Z'
 created: 2026-04-16
 sources:
 - arXiv:2504.02263
+- raw/papers/megascale-infer-2504.02263.pdf
 ---
 
 # MegaScale-Infer: Serving Mixture-of-Experts at Scale with Disaggregated Expert Parallelism
@@ -137,4 +138,5 @@ MegaScale-Infer 的 M2N 库优化：
 
 # Citations
 
-[1] [arXiv:2504.02263](arXiv:2504.02263)
+[1] [arXiv:2504.02263](https://arxiv.org/abs/2504.02263)
+[2] [raw/papers/megascale-infer-2504.02263.pdf](raw/papers/megascale-infer-2504.02263.pdf)

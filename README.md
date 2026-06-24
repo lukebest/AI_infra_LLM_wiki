@@ -85,7 +85,7 @@ cd wiki
    - 「按 OKF skill ingest 这篇资料，更新相关 entities/concepts」
 
    Agent 应按 skill 执行：
-   - 原文保留在 `raw/`（或 `references/raw/`，原则上不改写正文）
+   - 原文保留在 `raw/`（`articles/`、`papers/` 等子目录；摄取后原则上不改写正文）
    - 按 `SCHEMA.md` 阈值 **新建或更新** concept 页（frontmatter 含 `type`、`title`、`description`、`tags`、`timestamp`）
    - 页面内至少 **2 条** bundle 相对路径交叉链接，并写 `# Citations`
    - 更新对应目录的 `index.md` 与根 `log.md`
