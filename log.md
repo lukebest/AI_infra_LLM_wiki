@@ -1,8 +1,7 @@
 # Bundle Update Log
 
 ## 2026-06-24
-* **Cleanup**: 删除重复的 `references/raw/`（OKF 转换副本）；唯一原始资料目录为 `raw/`。
-* **Migration**: `megascale-infer-2504.02263.pdf`、`cassini-network-aware-scheduling-2308.00852.pdf` 迁入 `raw/papers/`。
+* **Cleanup**: 删除重复的 `references/raw/`（OKF 转换副本）；唯一原始资料目录为 `raw/`。`megascale-infer-2504.02263.pdf`、`cassini-network-aware-scheduling-2308.00852.pdf` 本就位于 `raw/papers/`（与 `references/raw/papers/` 为同内容副本），无需迁移。
 * **Docs**: README 与 OKF skill 统一为仅使用 `raw/`。
 
 ## 2026-06-24
