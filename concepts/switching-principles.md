@@ -1,17 +1,18 @@
 ---
 type: Concept
 title: Switching Principles
-description: 交换原理基础：电路交换/分组交换，三对基本概念，交换系统结构
+description: 交换原理基础：电路/报文/分组/虫孔交换，历史演进，三对基本概念，交换系统结构
 tags:
 - fabric
 - routing
 - deterministic
 - tdm
 - topology
-timestamp: '2026-05-08T00:00:00Z'
+timestamp: '2026-06-24T00:00:00Z'
 created: 2026-05-08
 sources:
 - raw/articles/浅谈交换原理（1）——概述.md
+- raw/articles/interconn-study-21d-day-02.md
 ---
 
 # Switching Principles（交换原理）
@@ -20,21 +21,16 @@ sources:
 
 通信网三要素：**终端设备、交换设备、传输设备**。
 
-## 三对基本概念
+## 交换方式演进
 
-### 1. 面向连接 vs 无连接
-- **面向连接**：先建连接 → 传信息 → 释放连接。又分物理连接（独占通路）和逻辑连接（虚电路）
-- **无连接**：边选路边传递，每个分组独立路由
+从电路到虫孔，本质是用**更多中间状态换更短延迟**：
 
-### 2. 同步时分复用 vs 统计时分复用
-- **同步 TDM**（位置化信道）：按时间轴位置区分信道，无信息时也占位，子信道速率恒定
-- **统计 TDM**（标志化信道）：用标志码标识信道，与时间位置无关，统计复用提高利用率
-
-### 3. 固定带宽 vs 动态带宽
-- 固定分配：每信道带宽恒定
-- 动态分配：按需分配（类似潮汐车道）
-
-## 交换方式
+| 交换方式 | 状态位置 | 延迟特征 | 典型场景 |
+|----------|----------|----------|----------|
+| **电路交换** | 端点（专用通路） | 传输期确定、无争用 | 电话网、NVLink 虚电路 |
+| **报文交换** | 每跳整包缓冲 | 跳数 × 整包传输时间 | 早期 MIN |
+| **分组交换** | 每跳固定大小包 | 平衡利用率与延迟 | IP/Ethernet |
+| **虫孔交换** | head flit 路径上流水 | 跳数 × 单 flit 时间 + 填充 | NoC、[Cerebras WSE](/entities/cerebras-wse.md) |
 
 ### 电路交换（Circuit Switching）
 
@@ -49,6 +45,12 @@ sources:
 | 差错控制 | 无 |
 | 信息处理 | 透明传输（不作处理） |
 | 流量控制 | 呼叫损失制（拒绝超额请求） |
+
+电路交换下 N 跳通路**独占沿途全部物理链路**——对 WSE 级高并发短消息流量不可行（见 [Cerebras WSE](/entities/cerebras-wse.md)）。
+
+### 报文交换（Message Switching）
+
+整报文**存储-转发**：必须完整到达下一节点才转发。简单、容错好，但大报文阻塞链路、延迟高。
 
 ### 分组交换（Packet Switching）
 
@@ -72,6 +74,42 @@ sources:
 | 顺序 | 保序 | 可能失序 |
 | 故障敏感性 | 敏感（连接中断需重建） | 不敏感（自动重路由） |
 | 适用 | 连续数据流 | 询问/响应型 |
+
+### 虫孔交换（Wormhole Switching）
+
+包拆成 **flit**：head flit 选路并流水前进，body flit 跟随。延迟 ≈ 跳数 × 单 flit 传输 + 流水线填充，缓冲需求远小于报文交换。
+
+| 优势 | 劣势 |
+|------|------|
+| 极低延迟、小 buffer | 头阻塞（HoL blocking）锁住物理通道 |
+| 适合短突发消息 | 需 VC 避免路由死锁 |
+
+WSE 选用虫孔变体：LLM 推理的 activation/gradient 为**短突发、高并发**流量；电路交换建路开销远大于数据本身。详见 [NoC Router 微架构](/concepts/noc-router-microarchitecture.md)。
+
+## 历史里程碑
+
+| 年份 | 里程碑 | 意义 |
+|------|--------|------|
+| 1960s | Clos Network | 严格无阻塞三级结构 → [Switching Networks](/concepts/switching-networks.md) |
+| 1987 | Wormhole Routing (Dally & Seitz) | 极低延迟 NoC 基础 |
+| 2001 | "Route Packets, Not Wires" (Dally) | NoC 概念正式提出 |
+| 2019+ | Cerebras WSE-2/WSE-3 | 90 万 PE 晶圆级虫孔 Mesh |
+
+时代脉络：电话网（电路/TDM）→ ARPANET（分组）→ HPC MIN/Mesh → SAN/LAN → SoC/NoC → 晶圆级/CXL。每层对应新物理介质与新优化目标，见 [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md)。
+
+## 三对基本概念
+
+### 1. 面向连接 vs 无连接
+- **面向连接**：先建连接 → 传信息 → 释放连接。又分物理连接（独占通路）和逻辑连接（虚电路）
+- **无连接**：边选路边传递，每个分组独立路由
+
+### 2. 同步时分复用 vs 统计时分复用
+- **同步 TDM**（位置化信道）：按时间轴位置区分信道，无信息时也占位，子信道速率恒定
+- **统计 TDM**（标志化信道）：用标志码标识信道，与时间位置无关，统计复用提高利用率
+
+### 3. 固定带宽 vs 动态带宽
+- 固定分配：每信道带宽恒定
+- 动态分配：按需分配（类似潮汐车道）
 
 ## 交换系统基本结构
 
@@ -101,6 +139,10 @@ sources:
 - [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX C2C 网络（确定性互联）
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — AFD token routing
 
+- [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
+- [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md) — 协议栈与 NI 边界
+
 # Citations
 
 [1] [raw/articles/浅谈交换原理（1）——概述.md](raw/articles/浅谈交换原理（1）——概述.md)
+[2] [raw/articles/interconn-study-21d-day-02.md](raw/articles/interconn-study-21d-day-02.md) — Dally & Towles Ch.2 学习笔记

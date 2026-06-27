@@ -1,6 +1,8 @@
 # Other
 
 * [log](log.md)
+* [README](README.md)
+* [SCHEMA](SCHEMA.md)
 
 # Subdirectories
 

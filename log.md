@@ -1,6 +1,12 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 1–2 → `raw/articles/interconn-study-21d-day-01.md`, `interconn-study-21d-day-02.md`.
+* **Creation**: [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md).
+* **Update**: [Switching Principles](/concepts/switching-principles.md) — 报文/虫孔交换、历史里程碑；[Cerebras WSE](/entities/cerebras-wse.md) — Mesh 度量与虫孔选型。
+* **Schema**: 标签 taxonomy 新增 `interconnect`。
+
+## 2026-06-24
 * **Cleanup**: 删除重复的 `references/raw/`（OKF 转换副本）；唯一原始资料目录为 `raw/`。`megascale-infer-2504.02263.pdf`、`cassini-network-aware-scheduling-2308.00852.pdf` 本就位于 `raw/papers/`（与 `references/raw/papers/` 为同内容副本），无需迁移。
 * **Docs**: README 与 OKF skill 统一为仅使用 `raw/`。
 

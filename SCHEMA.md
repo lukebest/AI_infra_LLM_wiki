@@ -34,7 +34,7 @@ sources: [raw/articles/source-name.md]
 - 方法论: comparison, timeline, benchmark, architecture, information-theory, knowledge-management, formal-analysis
 - 模型: model, architecture, benchmark, training-system, inference-system
 - 技术: compression, sparse, optimization, routing, parallelism, kernel
-- 系统: sandbox, storage, hardware, networking, topology, infrastructure
+- 系统: sandbox, storage, hardware, networking, topology, infrastructure, interconnect
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 
