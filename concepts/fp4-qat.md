@@ -46,8 +46,9 @@ FP32 master weights → quantize to FP4 → dequantize to FP8 (lossless) → com
 - 加速长上下文 attention score 计算
 - 现有 FP8 训练框架零修改即可复用
 
-## Relations
-- Used in: [Deepseek V4](#DeepSeek-V4), [Csa Hca](#CSA-HCA)
+## 相关页面
+- [Numeric Formats for AI Hardware](/concepts/numeric-formats-ai-hardware.md) — FP8/BF16/FP4 格式权衡背景
+- [Deepseek V4](/entities/deepseek-v4.md) — FP4 QAT 应用实例
 
 # Citations
 

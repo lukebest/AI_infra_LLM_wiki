@@ -1,6 +1,12 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: Hennessy & Patterson 30 天体系结构学习笔记 Day 1–14 → `raw/articles/arch-study-30d-day-*.md`（14 文件）。
+* **Creation**: [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md), [ISA Design Principles](/concepts/isa-design-principles.md), [Numeric Formats for AI Hardware](/concepts/numeric-formats-ai-hardware.md), [Architecture Benchmark Methodology](/concepts/architecture-benchmark-methodology.md), [CPU Pipeline Fundamentals](/concepts/cpu-pipeline-fundamentals.md), [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md), [Out-of-Order Execution](/concepts/out-of-order-execution.md), [Branch Prediction](/concepts/branch-prediction.md), [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md).
+* **Update**: [Cerebras WSE](/entities/cerebras-wse.md), [Deterministic Execution](/concepts/deterministic-execution.md), [FP4 Quantization-Aware Training](/concepts/fp4-qat.md) — 与 CPU 体系结构概念交叉引用。
+* **Schema**: 标签 taxonomy 新增 `isa`, `pipeline`, `cache`, `power`。
+
+## 2026-06-24
 * **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 1–2 → `raw/articles/interconn-study-21d-day-01.md`, `interconn-study-21d-day-02.md`.
 * **Creation**: [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md).
 * **Update**: [Switching Principles](/concepts/switching-principles.md) — 报文/虫孔交换、历史里程碑；[Cerebras WSE](/entities/cerebras-wse.md) — Mesh 度量与虫孔选型。

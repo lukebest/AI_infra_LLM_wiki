@@ -50,6 +50,10 @@ sources:
 
 确定性执行使 WSE 的 collective 通信可以用解析模型精确预测：< 4% 误差（CS-2 实测）。详见 [Wse Performance Model](/concepts/wse-performance-model.md) 和 [Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md)。
 
+## 与通用 CPU 的对比
+
+确定性执行是 **OoO CPU 的反面**：不依赖 [Branch Prediction](/concepts/branch-prediction.md)、[Out-of-Order Execution](/concepts/out-of-order-execution.md) 或 Cache 推测（[Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md)）。编译器在 [ISA Design Principles](/concepts/isa-design-principles.md) 层之上直接编排时序与数据放置。
+
 ## 相关页面
 - [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPU 确定性执行实例
 - [Cerebras Wse](/entities/cerebras-wse.md) — WSE color-based 确定性路由
