@@ -64,7 +64,7 @@ Store Buffer 高性能实现多为 **Speculative + Replay**（地址消歧）；
 | RISC-V | FENCE.I | I/D cache 一致性（自修改代码） |
 | RISC-V | FENCE.VMA | 页表变更 + [TLB Shootdown](/concepts/virtual-memory-tlb.md) |
 
-RISC-V **FENCE.VMA** 路径：排空 outstanding 访存 → TLB shootdown IPI → 等全核 ack——众核下可达 **30–50 μs**（64 核量级）。
+RISC-V **FENCE.VMA** 路径：排空 outstanding 访存 → TLB shootdown IPI → 等全核 ack——64 核量级 **~30–100 μs**（与 [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) 一致；FENCE.VMA 还可能叠加排空 outstanding 访存的开销）。
 
 ## NoC 与多核延迟
 
@@ -73,7 +73,7 @@ RISC-V **FENCE.VMA** 路径：排空 outstanding 访存 → TLB shootdown IPI �
 | 单核 SBUF drain | ~5–20 cycles | ROB → L1 hit |
 | 同 socket directory | ~100–500 ns | Directory 双跳 + Owner |
 | DSB（最严） | ~500–2000 ns | 远端 IQ + 全局可见 |
-| TLB Shootdown | ~30–50 μs | IPI + 远端 TLB flush |
+| TLB Shootdown（64 核） | ~30–100 μs | IPI + 全核 TLB flush/ack（见 [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md)） |
 
 多核 fence 延迟 ≈ **max(本核 SBUF drain, 最远核 IQ 处理)**；全局 MFENCE 触发 **O(N)** coherence 消息——众核需 **tree barrier** 或硬件聚合。
 

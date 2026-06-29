@@ -71,11 +71,11 @@ Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Toru
 | N | ~900,000 |
 | 度 d | 4（边界略少） |
 | 直径 D | ≈ **1896** hops |
-| 平均距离 d̄ | ≈ **949** |
+| 平均距离 d̄ | ≈ **632** hops（公式 nk/3 − n/6，k≈949） |
 | 二分带宽 B_b | ≈ **949** 条链路 |
 | 总链路 | ≈ **1.8M** |
 
-平均通信需经 ~500 个 router → 必须优化单跳延迟（见 [NoC Router 微架构](/concepts/noc-router-microarchitecture.md)）。
+典型随机 PE 对通信需经 **~632** 个 router（与 d̄ 一致）。**勿将 d̄ 与网格边长 k≈949 或直径 D≈1896 混为一谈**——早期笔记曾误写 ~949 / ~500。必须优化单跳延迟（见 [NoC Router 微架构](/concepts/noc-router-microarchitecture.md)）。
 
 ### 为何 WSE 不用 Torus？
 

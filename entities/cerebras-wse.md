@@ -50,7 +50,7 @@ WSE-3 ~900K PE 排列为 **~949×949 2D Mesh**，每 PE **4 端口**（上下左
 |------|-----|
 | 度 | 4 |
 | 直径 | ≈ 2×948 = **1896** hops |
-| 平均距离 | ≈ **949** hops |
+| 平均距离 | ≈ **632** hops（d̄，见 [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md)） |
 | 二分带宽 B_b | ≈ **949** 条链路（~3.8 TB/s @ 4 GB/s/link） |
 
 相对 N 节点全连接，Mesh 以多跳换低端口数——约 **145×** 链路节省。**未选 Torus**：环绕长 wire 在晶圆上不可行（[Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md)）。满注入带宽 vs B_b 差 **~947×** → 必须算子融合与通信局部性（[Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md)）。
