@@ -5,6 +5,7 @@
 
 # Summary
 
+* [DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation](dspark-speculative-decoding.md) - DeepSeek 半自回归 speculative decoding + 负载感知 confidence verify；离线 τ +16–31%，V4 生产 per-user +57–85% vs MTP-1，开源 DeepSpec
 * [Near-Optimal Wafer-Scale Reduce](near-optimal-wafer-scale-reduce.md) - WSE Reduce/AllReduce 首次系统研究：性能模型（<4% 误差）、5 种算法（Auto-Gen ≤1.4× 下界）、3.27× 快于 vendor
 * [Understanding Inference Scaling for LLMs](understanding-inference-scaling-for-llms.md) - Reasoning-centric LLM 推理系统瓶颈分析：Capacity Trap, Reasoning Cliff, DP→TP Transition, Prefill-Decode Divergence（8B-671B H200 实测）
 * [Voxel: 3D-Stacked AI Chip Efficiency for LLM Inference](voxel-3d-stacked-ai-chip-llm-inference.md) - Voxel 编译器感知 3D AI 芯片仿真框架：LLM prefill/decode 软硬件协同探索，Graphcore IPU 验证误差 ≤6.8%

@@ -1,6 +1,11 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: DSpark 论文 PDF → `raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf`（Zotero: Cheng et al. 2026）。
+* **Creation**: [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md), [papers/dspark-speculative-decoding.md](/papers/dspark-speculative-decoding.md), `raw/papers/dspark-speculative-decoding.md`.
+* **Update**: [DeepSeek-V4](/entities/deepseek-v4.md), [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md), [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — speculative decode 交叉引用。
+
+## 2026-06-24
 * **Ingest**: Memory Fence 深度研究报告 → `raw/articles/memory-fence-hardware-2026-06-28.md`（源：`openclawdata/.../notes/reports/`）。
 * **Creation**: [Memory Fence and Barrier](/concepts/memory-fence-barrier.md).
 * **Update**: [Out-of-Order Execution](/concepts/out-of-order-execution.md), [Deterministic Execution](/concepts/deterministic-execution.md), [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [ISA Design Principles](/concepts/isa-design-principles.md), [Cerebras WSE](/entities/cerebras-wse.md) — fence/coherence 交叉引用。

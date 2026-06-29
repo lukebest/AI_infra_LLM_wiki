@@ -111,6 +111,7 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — Decode 阶段是 capacity trap 的主战场
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — Decode 的 KV 线性增长导致 cliff
 - [Parallelism Transition Point](/concepts/parallelism-transition-point.md) — 不同阶段的 optimal parallelism 不同（prefill: DP; decode: TP）
+- [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md) — decode 步 speculative 提高有效 τ（DeepSeek-V4 生产 +57–85% tok/s/user）
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — 3D 堆叠缓解 BW wall，prefill/decode 对 DRAM/NoC/SRAM 响应不同
 
 ## 相关概念

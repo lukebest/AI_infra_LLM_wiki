@@ -15,6 +15,7 @@ timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
 sources:
 - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf
 ---
 
 # DeepSeek-V4
@@ -77,6 +78,7 @@ KV cache 缩到原来的 1/10 ~ 1/14。
 - **Batch-invariant + deterministic** kernels: 用 DeepGEMM 替代 cuBLAS，端到端 bitwise 一致
 - [Dsec Sandbox](/concepts/dsec-sandbox.md): 生产级沙箱平台，4 种执行基板，管理数十万并发实例
 - **On-disk KV cache**: 共享前缀复用，3 种 SWA 缓存策略
+- **[DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md)**：生产 serving 层 speculative decode（替代 MTP-1 单 token baseline），per-user 生成 +57–85%
 
 ## Training Stability
 
@@ -115,6 +117,7 @@ KV cache 缩到原来的 1/10 ~ 1/14。
 - Predecessor: DeepSeek-V3
 - Key technique: [Csa Hca](/concepts/csa-hca.md), [Mhc](/concepts/mhc.md), [Muon Optimizer](/concepts/muon-optimizer.md), [Fp4 Qat](/concepts/fp4-qat.md)
 - Infra: [Megamoe Kernel](/concepts/megamoe-kernel.md), [Tilelang](/concepts/tilelang.md), [Dsec Sandbox](/concepts/dsec-sandbox.md)
+- Serving: [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md)
 
 # Citations
 

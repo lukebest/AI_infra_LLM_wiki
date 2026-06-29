@@ -46,6 +46,7 @@ sources:
 - **GPU 验证**：Main model warm prefill k 个 draft tokens
 - 通常 1.5-2× output tokens per decode step
 - Draft model 需要 KV cache → 使用 FPGA 附加 DDR5（256 GB/FPGA）
+- GPU 侧负载感知调度见 [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md)（confidence + batch 容量动态截断 verify）
 
 ### AFD 为什么 work
 MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给 KV cache → 更多 token → expert batch 增大 → FFN 回到 compute-intensive
