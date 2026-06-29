@@ -1,6 +1,11 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 3–4 → `raw/articles/interconn-study-21d-day-03.md`, `interconn-study-21d-day-04.md`.
+* **Creation**: [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md), [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md).
+* **Update**: [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Cerebras WSE](/entities/cerebras-wse.md) — 拓扑度量、延迟/B_b 模型、Mesh vs Torus 权衡。
+
+## 2026-06-24
 * **Ingest**: 体系结构 30 天学习笔记 Day 15–16 → `raw/articles/arch-study-30d-day-15.md`, `arch-study-30d-day-16.md`.
 * **Creation**: [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md).
 * **Update**: [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md), [Cerebras WSE](/entities/cerebras-wse.md), [Deterministic Execution](/concepts/deterministic-execution.md) — TLB/核心篇总结交叉引用。

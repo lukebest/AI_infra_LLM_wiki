@@ -21,6 +21,8 @@
 
 * [互连网络晨报 — Day 1](interconn-study-21d-day-01.md)
 * [互连网络晨报 — Day 2](interconn-study-21d-day-02.md)
+* [📰 互连网络晨报 — Day 3](interconn-study-21d-day-03.md)
+* [📰 互连网络晨报 — Day 4](interconn-study-21d-day-04.md)
 * [📰 体系结构晨报 — Day 1](arch-study-30d-day-01.md)
 * [📰 体系结构晨报 — Day 10](arch-study-30d-day-10.md)
 * [📰 体系结构晨报 — Day 11](arch-study-30d-day-11.md)

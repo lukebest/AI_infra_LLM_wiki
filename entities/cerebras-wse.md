@@ -15,6 +15,8 @@ sources:
 - raw/papers/Near-optimal_wafer-scale_reduce.pdf
 - raw/articles/interconn-study-21d-day-01.md
 - raw/articles/interconn-study-21d-day-02.md
+- raw/articles/interconn-study-21d-day-03.md
+- raw/articles/interconn-study-21d-day-04.md
 - raw/articles/arch-study-30d-day-02.md
 - raw/articles/arch-study-30d-day-13.md
 - raw/articles/arch-study-30d-day-14.md
@@ -47,8 +49,9 @@ WSE-3 ~900K PE 排列为 **~949×949 2D Mesh**，每 PE **4 端口**（上下左
 | 度 | 4 |
 | 直径 | ≈ 2×948 = **1896** hops |
 | 平均距离 | ≈ **949** hops |
+| 二分带宽 B_b | ≈ **949** 条链路（~3.8 TB/s @ 4 GB/s/link） |
 
-相对 N 节点全连接，Mesh 以多跳换低端口数——约 **145×** 链路节省，保留单晶圆可制造性；代价是 PE 间平均需经 ~500 个 router。详见 [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md)。
+相对 N 节点全连接，Mesh 以多跳换低端口数——约 **145×** 链路节省。**未选 Torus**：环绕长 wire 在晶圆上不可行（[Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md)）。满注入带宽 vs B_b 差 **~947×** → 必须算子融合与通信局部性（[Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md)）。
 
 ## 虫孔交换与流量匹配
 
@@ -91,16 +94,20 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 - [Cerebras Wse Vs Groq Network Comparison](/analyses/cerebras-wse-vs-groq-network-comparison.md) — WSE vs Groq 全面对比
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — Color 虚拟通道机制
 - [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — WSE NoC Router 理论基础
-- [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — Mesh 拓扑度量
+- [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — Mesh 度量与 Torus 对比
+- [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与 B_b 瓶颈
+- [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
 - [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md) — NI 与协议栈
 - [Switching Principles](/concepts/switching-principles.md) — 虫孔 vs 电路交换
 
 # Citations
 
 [1] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)
-[2] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — WSE Mesh 拓扑（互连 Day 1）
+[2] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — WSE Mesh 引入（互连 Day 1）
 [3] [raw/articles/interconn-study-21d-day-02.md](raw/articles/interconn-study-21d-day-02.md) — WSE 虫孔选型（互连 Day 2）
-[4] [raw/articles/arch-study-30d-day-02.md](raw/articles/arch-study-30d-day-02.md) — 功耗/良率（体系结构 Day 2）
-[5] [raw/articles/arch-study-30d-day-14.md](raw/articles/arch-study-30d-day-14.md) — 无 Cache 对比（Day 14）
-[6] [raw/articles/arch-study-30d-day-15.md](raw/articles/arch-study-30d-day-15.md) — 无 MMU/TLB（Day 15）
-[7] [raw/articles/arch-study-30d-day-16.md](raw/articles/arch-study-30d-day-16.md) — DSA 能力矩阵（Day 16）
+[4] [raw/articles/interconn-study-21d-day-03.md](raw/articles/interconn-study-21d-day-03.md) — Mesh 拓扑度量（互连 Day 3）
+[5] [raw/articles/interconn-study-21d-day-04.md](raw/articles/interconn-study-21d-day-04.md) — 成本/延迟模型（互连 Day 4）
+[6] [raw/articles/arch-study-30d-day-02.md](raw/articles/arch-study-30d-day-02.md) — 功耗/良率（体系结构 Day 2）
+[7] [raw/articles/arch-study-30d-day-14.md](raw/articles/arch-study-30d-day-14.md) — 无 Cache 对比（Day 14）
+[8] [raw/articles/arch-study-30d-day-15.md](raw/articles/arch-study-30d-day-15.md) — 无 MMU/TLB（Day 15）
+[9] [raw/articles/arch-study-30d-day-16.md](raw/articles/arch-study-30d-day-16.md) — DSA 能力矩阵（Day 16）

@@ -15,6 +15,8 @@ timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/articles/interconn-study-21d-day-01.md
+- raw/articles/interconn-study-21d-day-03.md
+- raw/articles/interconn-study-21d-day-04.md
 ---
 
 # Interconnection Network Design Space（互连网络设计空间）
@@ -62,7 +64,7 @@ sources:
 | **I/O 互连** | 数百–数千 | 可靠性 + 延迟 | Fibre Channel、SAS |
 | **片上互连 (NoC)** | 4–1000+ 节点 | 面积 + 功耗 + 延迟 | [Cerebras WSE](/entities/cerebras-wse.md) Mesh、TileLink Ring |
 
-**拓扑选择约束**：全连接 N 节点需 C(N,2) 条链路与 N−1 端口/节点——1024 节点全连接约 52 万条链路，不可制造。Mesh 以多跳换低端口数：WSE-3 ~949×949 Mesh，度=4，直径≈1896，相对全连接节省约 **145×** 链路，代价是平均 ~500 跳路由深度。
+**拓扑选择约束**：全连接不可制造。WSE-3 为 ~949×949 **2D Mesh**（度=4，直径≈1896，B_b≈949 条链路）——详见 [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) 与 [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md)。
 
 ## Mesh vs Fat Tree 的域差异
 
@@ -82,6 +84,8 @@ sources:
 
 ## 相关页面
 
+- [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 度/直径/二分带宽
+- [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与成本公式
 - [Switching Principles](/concepts/switching-principles.md) — 电路/分组/虫孔交换演进
 - [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md) — 物理→传输四层接口
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — 微架构层实现
@@ -90,4 +94,6 @@ sources:
 
 # Citations
 
-[1] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — Dally & Towles Ch.1 学习笔记（21 天互连研究 Day 1）
+[1] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — Dally & Towles Ch.1（Day 1）
+[2] [raw/articles/interconn-study-21d-day-03.md](raw/articles/interconn-study-21d-day-03.md) — Ch.3.1–3.2（Day 3）
+[3] [raw/articles/interconn-study-21d-day-04.md](raw/articles/interconn-study-21d-day-04.md) — Ch.3.3–3.5（Day 4）
