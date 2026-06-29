@@ -22,6 +22,7 @@ sources:
 - raw/articles/arch-study-30d-day-14.md
 - raw/articles/arch-study-30d-day-15.md
 - raw/articles/arch-study-30d-day-16.md
+- raw/articles/memory-fence-hardware-2026-06-28.md
 ---
 
 # Cerebras WSE (Wafer-Scale Engine)
@@ -36,6 +37,7 @@ sources:
 | 内存 | L1/L2/L3 + DRAM | **44 GB 片上 SRAM**，无传统 Cache（[Memory Hierarchy](/concepts/memory-hierarchy-cache.md)） |
 | 地址 | MMU + TLB + 虚拟内存 | **无 MMU/TLB**，物理/SRAM 直寻（[Virtual Memory and TLB](/concepts/virtual-memory-tlb.md)） |
 | 互连 | 片外总线/NoC + coherence | 晶圆级 2D Mesh + 虫孔，无 coherence/shootdown |
+| 同步 | MFENCE + coherence 链 | PE barrier / 显式消息（[Memory Fence and Barrier](/concepts/memory-fence-barrier.md)） |
 | 经济 | 小 die 高良率 | 整晶圆良率约束（[Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md)） |
 
 完整能力/代价矩阵见 [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md)。
@@ -84,6 +86,7 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 ## 相关页面
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 无 MMU/TLB
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — SLA vs Golden Cove 矩阵
+- [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — 无 coherence 时 fence 退化
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 共同使用的确定性范式
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — 无 L1/L2/L3 的设计对比
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 暗硅、良率、专用 PE

@@ -43,7 +43,7 @@ OoO: 重命名 → ROB/RS → Issue Queue → 调度
 | L1 Cache | ~1.5× | ~1× | **无**（48 KB SRAM 直用） |
 | L2/L3 | ~1.3× | ~5× | **无** |
 | TLB/MMU | ~1.05× | ~1× | **无**（[Virtual Memory](/concepts/virtual-memory-tlb.md)） |
-| Cache 一致性 | — | ~2× | **无**（无共享地址空间） |
+| Cache 一致性 + Memory Fence | — | ~2× | **无**（无共享地址空间；见 [Memory Fence and Barrier](/concepts/memory-fence-barrier.md)） |
 
 **WSE 交换**：失去通用性与单核峰值 GHz → 获得 **900K PE**、**21 PB/s** 片上带宽、确定性延迟。
 
@@ -74,7 +74,7 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 |------------------|-----------------|
 | malloc + TLB | 编译时 PE 数据映射 |
 | 乱序 + 分支预测 | 数据流图 / CSL |
-| Cache 定位 | 显式 NoC 消息 |
+| Cache 定位 + MFENCE | 显式 NoC 消息 / PE barrier |
 
 设计原则：**避免硬件猜测** → 固定可建模延迟 → 复杂性上移到编译器（[Deterministic Execution](/concepts/deterministic-execution.md)）。
 

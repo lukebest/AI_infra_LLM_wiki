@@ -64,6 +64,7 @@ OoO CPU 用 **寄存器重命名 + 分支预测** 掩盖条件码成本；[Deter
 - [CPU Pipeline Fundamentals](/concepts/cpu-pipeline-fundamentals.md) — ISA 如何影响流水线友好性
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 专用 SLA vs 通用 RISC
 - [LPU Architecture](/concepts/lpu-architecture.md) — 编译器调度替代复杂 ISA
+- [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — RISC-V FENCE / FENCE.VMA 语义
 
 # Citations
 

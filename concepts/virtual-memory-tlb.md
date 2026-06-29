@@ -69,6 +69,8 @@ LLM 训练（参数 + 优化器 + 梯度 数十 GB）**必须** 2 MB/1 GB 巨页
 
 多核共享页表时，一核改 PTE → 其他核 TLB  stale → **IPI 广播 flush**。64 核单次可达 50–100 μs；系统调用密集 workload 可占 **5–10%** 时间。众核/WSE 规模下传统 IPI 方案不可行。
 
+RISC-V **FENCE.VMA** 是页表变更的硬件入口：排空 outstanding 访存 → shootdown IPI → 等全核 ack；详见 [Memory Fence and Barrier](/concepts/memory-fence-barrier.md)。
+
 ## WSE：无 MMU/TLB 的权衡
 
 ```

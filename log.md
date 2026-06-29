@@ -1,6 +1,11 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: Memory Fence 深度研究报告 → `raw/articles/memory-fence-hardware-2026-06-28.md`（源：`openclawdata/.../notes/reports/`）。
+* **Creation**: [Memory Fence and Barrier](/concepts/memory-fence-barrier.md).
+* **Update**: [Out-of-Order Execution](/concepts/out-of-order-execution.md), [Deterministic Execution](/concepts/deterministic-execution.md), [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [ISA Design Principles](/concepts/isa-design-principles.md), [Cerebras WSE](/entities/cerebras-wse.md) — fence/coherence 交叉引用。
+
+## 2026-06-24
 * **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 3–4 → `raw/articles/interconn-study-21d-day-03.md`, `interconn-study-21d-day-04.md`.
 * **Creation**: [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md), [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md).
 * **Update**: [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Cerebras WSE](/entities/cerebras-wse.md) — 拓扑度量、延迟/B_b 模型、Mesh vs Torus 权衡。
