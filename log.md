@@ -4,49 +4,31 @@
 * **Ingest**: DSpark 论文 PDF → `raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf`（Zotero: Cheng et al. 2026）。
 * **Creation**: [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md), [papers/dspark-speculative-decoding.md](/papers/dspark-speculative-decoding.md), `raw/papers/dspark-speculative-decoding.md`.
 * **Update**: [DeepSeek-V4](/entities/deepseek-v4.md), [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md), [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — speculative decode 交叉引用。
-
-## 2026-06-24
 * **Ingest**: Memory Fence 深度研究报告 → `raw/articles/memory-fence-hardware-2026-06-28.md`（源：`openclawdata/.../notes/reports/`）。
 * **Creation**: [Memory Fence and Barrier](/concepts/memory-fence-barrier.md).
 * **Update**: [Out-of-Order Execution](/concepts/out-of-order-execution.md), [Deterministic Execution](/concepts/deterministic-execution.md), [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [ISA Design Principles](/concepts/isa-design-principles.md), [Cerebras WSE](/entities/cerebras-wse.md) — fence/coherence 交叉引用。
-
-## 2026-06-24
 * **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 3–4 → `raw/articles/interconn-study-21d-day-03.md`, `interconn-study-21d-day-04.md`.
 * **Creation**: [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md), [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md).
 * **Update**: [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Cerebras WSE](/entities/cerebras-wse.md) — 拓扑度量、延迟/B_b 模型、Mesh vs Torus 权衡。
-
-## 2026-06-24
 * **Ingest**: 体系结构 30 天学习笔记 Day 15–16 → `raw/articles/arch-study-30d-day-15.md`, `arch-study-30d-day-16.md`.
 * **Creation**: [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md).
 * **Update**: [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md), [Cerebras WSE](/entities/cerebras-wse.md), [Deterministic Execution](/concepts/deterministic-execution.md) — TLB/核心篇总结交叉引用。
-
-## 2026-06-24
 * **Ingest**: Hennessy & Patterson 30 天体系结构学习笔记 Day 1–14 → `raw/articles/arch-study-30d-day-*.md`（14 文件）。
 * **Creation**: [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md), [ISA Design Principles](/concepts/isa-design-principles.md), [Numeric Formats for AI Hardware](/concepts/numeric-formats-ai-hardware.md), [Architecture Benchmark Methodology](/concepts/architecture-benchmark-methodology.md), [CPU Pipeline Fundamentals](/concepts/cpu-pipeline-fundamentals.md), [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md), [Out-of-Order Execution](/concepts/out-of-order-execution.md), [Branch Prediction](/concepts/branch-prediction.md), [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md).
 * **Update**: [Cerebras WSE](/entities/cerebras-wse.md), [Deterministic Execution](/concepts/deterministic-execution.md), [FP4 Quantization-Aware Training](/concepts/fp4-qat.md) — 与 CPU 体系结构概念交叉引用。
 * **Schema**: 标签 taxonomy 新增 `isa`, `pipeline`, `cache`, `power`。
-
-## 2026-06-24
 * **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 1–2 → `raw/articles/interconn-study-21d-day-01.md`, `interconn-study-21d-day-02.md`.
 * **Creation**: [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md).
 * **Update**: [Switching Principles](/concepts/switching-principles.md) — 报文/虫孔交换、历史里程碑；[Cerebras WSE](/entities/cerebras-wse.md) — Mesh 度量与虫孔选型。
 * **Schema**: 标签 taxonomy 新增 `interconnect`。
-
-## 2026-06-24
 * **Cleanup**: 删除重复的 `references/raw/`（OKF 转换副本）；唯一原始资料目录为 `raw/`。`megascale-infer-2504.02263.pdf`、`cassini-network-aware-scheduling-2308.00852.pdf` 本就位于 `raw/papers/`（与 `references/raw/papers/` 为同内容副本），无需迁移。
 * **Docs**: README 与 OKF skill 统一为仅使用 `raw/`。
-
-## 2026-06-24
 * **Creation**: [Graphcore IPU](/entities/graphcore-ipu.md), [Core Group (DRAM Access Synchronization)](/concepts/core-group-dram-access.md).
 * **Update**: [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md), [Voxel Simulator](/concepts/voxel-simulator.md), [Voxel 3D-Stacked AI Chip LLM Inference](/papers/voxel-3d-stacked-ai-chip-llm-inference.md) — 交叉引用拆分页。
 * **Schema**: 标签 taxonomy 新增 `graphcore`。
-
-## 2026-06-24
 * **Ingest**: [Voxel 3D-Stacked AI Chip LLM Inference](/papers/voxel-3d-stacked-ai-chip-llm-inference.md) from `raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf` (arXiv:2604.26821).
 * **Creation**: [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md), [Voxel Simulator](/concepts/voxel-simulator.md).
 * **Update**: [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — 3D chip prefill/decode 设计空间差异。
-
-## 2026-06-24
 * **Creation**: Converted LLM wiki at `/home/luke/wiki` to OKF v0.1 bundle (54 work pages + raw sources).
 * **Source**: Karpathy-style LLM wiki (entities, concepts, papers, summaries, analyses).
 * **Update**: Generated interactive `viz.html` (74 concepts, 237 cross-links).

@@ -17,7 +17,7 @@ sources:
 
 # DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation
 
-**Authors:** Xin Cheng, Xingkai Yu, Chenze Shao, Jiashi Li, Yunfan Xiong, et al. | **Affiliations:** Peking University + DeepSeek-AI | **PDF:** [raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf](../raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf)
+**Authors:** Xin Cheng, Xingkai Yu, Chenze Shao, Jiashi Li, Yunfan Xiong, et al. | **Affiliations:** Peking University + DeepSeek-AI | **PDF:** [raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf](raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf)
 
 ## 一句话总结
 
@@ -67,4 +67,4 @@ L = (T_draft + T_verify) / τ
 
 # Citations
 
-[1] [raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf](../raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf) — Cheng et al. (2026)
+[1] [raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf](raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf) — Cheng et al. (2026)
