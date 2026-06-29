@@ -18,6 +18,8 @@ sources:
 - raw/articles/arch-study-30d-day-02.md
 - raw/articles/arch-study-30d-day-13.md
 - raw/articles/arch-study-30d-day-14.md
+- raw/articles/arch-study-30d-day-15.md
+- raw/articles/arch-study-30d-day-16.md
 ---
 
 # Cerebras WSE (Wafer-Scale Engine)
@@ -30,8 +32,11 @@ sources:
 |------|-------------|-----|
 | ILP | 硬件 Tomasulo + 分支预测 | 编译器静态调度（[Deterministic Execution](/concepts/deterministic-execution.md)） |
 | 内存 | L1/L2/L3 + DRAM | **44 GB 片上 SRAM**，无传统 Cache（[Memory Hierarchy](/concepts/memory-hierarchy-cache.md)） |
-| 互连 | 片外总线/NoC | 晶圆级 2D Mesh + 虫孔 |
+| 地址 | MMU + TLB + 虚拟内存 | **无 MMU/TLB**，物理/SRAM 直寻（[Virtual Memory and TLB](/concepts/virtual-memory-tlb.md)） |
+| 互连 | 片外总线/NoC + coherence | 晶圆级 2D Mesh + 虫孔，无 coherence/shootdown |
 | 经济 | 小 die 高良率 | 整晶圆良率约束（[Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md)） |
+
+完整能力/代价矩阵见 [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md)。
 
 ## 2D Mesh 拓扑
 
@@ -74,6 +79,8 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 - 详见 [Wse Performance Model](/concepts/wse-performance-model.md)、[Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md)、[Near Optimal Wafer Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md)
 
 ## 相关页面
+- [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 无 MMU/TLB
+- [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — SLA vs Golden Cove 矩阵
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 共同使用的确定性范式
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — 无 L1/L2/L3 的设计对比
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 暗硅、良率、专用 PE
@@ -94,4 +101,6 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 [2] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — WSE Mesh 拓扑（互连 Day 1）
 [3] [raw/articles/interconn-study-21d-day-02.md](raw/articles/interconn-study-21d-day-02.md) — WSE 虫孔选型（互连 Day 2）
 [4] [raw/articles/arch-study-30d-day-02.md](raw/articles/arch-study-30d-day-02.md) — 功耗/良率（体系结构 Day 2）
-[5] [raw/articles/arch-study-30d-day-14.md](raw/articles/arch-study-30d-day-14.md) — 无 Cache 对比（体系结构 Day 14）
+[5] [raw/articles/arch-study-30d-day-14.md](raw/articles/arch-study-30d-day-14.md) — 无 Cache 对比（Day 14）
+[6] [raw/articles/arch-study-30d-day-15.md](raw/articles/arch-study-30d-day-15.md) — 无 MMU/TLB（Day 15）
+[7] [raw/articles/arch-study-30d-day-16.md](raw/articles/arch-study-30d-day-16.md) — DSA 能力矩阵（Day 16）

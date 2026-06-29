@@ -1,6 +1,11 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: 体系结构 30 天学习笔记 Day 15–16 → `raw/articles/arch-study-30d-day-15.md`, `arch-study-30d-day-16.md`.
+* **Creation**: [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md).
+* **Update**: [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md), [Cerebras WSE](/entities/cerebras-wse.md), [Deterministic Execution](/concepts/deterministic-execution.md) — TLB/核心篇总结交叉引用。
+
+## 2026-06-24
 * **Ingest**: Hennessy & Patterson 30 天体系结构学习笔记 Day 1–14 → `raw/articles/arch-study-30d-day-*.md`（14 文件）。
 * **Creation**: [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md), [ISA Design Principles](/concepts/isa-design-principles.md), [Numeric Formats for AI Hardware](/concepts/numeric-formats-ai-hardware.md), [Architecture Benchmark Methodology](/concepts/architecture-benchmark-methodology.md), [CPU Pipeline Fundamentals](/concepts/cpu-pipeline-fundamentals.md), [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md), [Out-of-Order Execution](/concepts/out-of-order-execution.md), [Branch Prediction](/concepts/branch-prediction.md), [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md).
 * **Update**: [Cerebras WSE](/entities/cerebras-wse.md), [Deterministic Execution](/concepts/deterministic-execution.md), [FP4 Quantization-Aware Training](/concepts/fp4-qat.md) — 与 CPU 体系结构概念交叉引用。

@@ -27,6 +27,8 @@
 * [📰 体系结构晨报 — Day 12](arch-study-30d-day-12.md)
 * [📰 体系结构晨报 — Day 13](arch-study-30d-day-13.md)
 * [📰 体系结构晨报 — Day 14](arch-study-30d-day-14.md)
+* [📰 体系结构晨报 — Day 15](arch-study-30d-day-15.md)
+* [📰 体系结构晨报 — Day 16](arch-study-30d-day-16.md)
 * [📰 体系结构晨报 — Day 2](arch-study-30d-day-02.md)
 * [📰 体系结构晨报 — Day 3](arch-study-30d-day-03.md)
 * [📰 体系结构晨报 — Day 4](arch-study-30d-day-04.md)

@@ -14,11 +14,20 @@ created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-13.md
 - raw/articles/arch-study-30d-day-14.md
+- raw/articles/arch-study-30d-day-15.md
 ---
 
 # Memory Hierarchy and Cache（存储层次与 Cache）
 
 **内存墙 (Memory Wall)**：CPU 算力增速 >> DRAM 延迟改善（~7%/年）→ Cache 层次是过去 30 年 CPU 设计的核心。
+
+## 完整访存路径（含 TLB）
+
+```
+虚拟地址 → TLB → 物理地址 → L1 → L2 → L3 → DRAM
+```
+
+TLB 在 Cache **之前**；详见 [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md)。AI 大工作集需巨页，否则 TLB Miss 代价可超过 L3 Miss。
 
 ## 存储层次（典型延迟量级）
 
@@ -78,6 +87,8 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 
 ## 相关页面
 
+- [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 地址转换层
+- [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — CPU vs WSE 能力矩阵
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — DRAM 带宽与 NoC
 - [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — memory-bound decode
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — KV/HBM 饱和
@@ -86,3 +97,4 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 
 [1] [raw/articles/arch-study-30d-day-13.md](raw/articles/arch-study-30d-day-13.md) — H&P Ch.2 存储层次（Day 13）
 [2] [raw/articles/arch-study-30d-day-14.md](raw/articles/arch-study-30d-day-14.md) — AMAT 与 Cache 优化（Day 14）
+[3] [raw/articles/arch-study-30d-day-15.md](raw/articles/arch-study-30d-day-15.md) — TLB 与访存路径（Day 15）
