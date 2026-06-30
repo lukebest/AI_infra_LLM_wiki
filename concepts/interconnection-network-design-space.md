@@ -17,6 +17,7 @@ sources:
 - raw/articles/interconn-study-21d-day-01.md
 - raw/articles/interconn-study-21d-day-03.md
 - raw/articles/interconn-study-21d-day-04.md
+- raw/articles/interconn-study-21d-day-05.md
 ---
 
 # Interconnection Network Design Space（互连网络设计空间）
@@ -62,7 +63,7 @@ sources:
 |----|----------|----------|----------|
 | **处理器互连** | 8–100k 节点 | 延迟 + 吞吐量 | InfiniBand Fat Tree、HPC Torus |
 | **I/O 互连** | 数百–数千 | 可靠性 + 延迟 | Fibre Channel、SAS |
-| **片上互连 (NoC)** | 4–1000+ 节点 | 面积 + 功耗 + 延迟 | [Cerebras WSE](/entities/cerebras-wse.md) Mesh、TileLink Ring |
+| **片上互连 (NoC)** | 4–1000+ 节点 | 面积 + 功耗 + 延迟 | [Cerebras WSE](/entities/cerebras-wse.md) Mesh、[Linear and Ring Topology](/concepts/linear-ring-topology.md)（TileLink Ring） |
 
 **拓扑选择约束**：全连接不可制造。WSE-3 为 ~949×949 **2D Mesh**（度=4，直径≈1896，B_b≈949 条链路）——详见 [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) 与 [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md)。
 
@@ -85,6 +86,7 @@ sources:
 ## 相关页面
 
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 度/直径/二分带宽
+- [Linear and Ring Topology](/concepts/linear-ring-topology.md) — 1-D 基线拓扑
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与成本公式
 - [Switching Principles](/concepts/switching-principles.md) — 电路/分组/虫孔交换演进
 - [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md) — 物理→传输四层接口
@@ -97,3 +99,4 @@ sources:
 [1] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — Dally & Towles Ch.1（Day 1）
 [2] [raw/articles/interconn-study-21d-day-03.md](raw/articles/interconn-study-21d-day-03.md) — Ch.3.1–3.2（Day 3）
 [3] [raw/articles/interconn-study-21d-day-04.md](raw/articles/interconn-study-21d-day-04.md) — Ch.3.3–3.5（Day 4）
+[4] [raw/articles/interconn-study-21d-day-05.md](raw/articles/interconn-study-21d-day-05.md) — Ch.3 线性/Ring（Day 5）

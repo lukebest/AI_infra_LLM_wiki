@@ -22,6 +22,7 @@ sources:
 - raw/articles/arch-study-30d-day-14.md
 - raw/articles/arch-study-30d-day-15.md
 - raw/articles/arch-study-30d-day-16.md
+- raw/articles/arch-study-30d-day-17.md
 - raw/articles/memory-fence-hardware-2026-06-28.md
 ---
 
@@ -34,7 +35,7 @@ sources:
 | 维度 | 通用 OoO CPU | WSE |
 |------|-------------|-----|
 | ILP | 硬件 Tomasulo + 分支预测 | 编译器静态调度（[Deterministic Execution](/concepts/deterministic-execution.md)） |
-| 内存 | L1/L2/L3 + DRAM | **44 GB 片上 SRAM**，无传统 Cache（[Memory Hierarchy](/concepts/memory-hierarchy-cache.md)） |
+| 内存 | L1/L2/L3 + DRAM/HBM | **44 GB 片上 SRAM**，无 DRAM（[DRAM and Memory System](/concepts/dram-memory-system.md)、[Memory Hierarchy](/concepts/memory-hierarchy-cache.md)） |
 | 地址 | MMU + TLB + 虚拟内存 | **无 MMU/TLB**，物理/SRAM 直寻（[Virtual Memory and TLB](/concepts/virtual-memory-tlb.md)） |
 | 互连 | 片外总线/NoC + coherence | 晶圆级 2D Mesh + 虫孔，无 coherence/shootdown |
 | 同步 | MFENCE + coherence 链 | PE barrier / 显式消息（[Memory Fence and Barrier](/concepts/memory-fence-barrier.md)） |
@@ -87,6 +88,7 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 无 MMU/TLB
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — SLA vs Golden Cove 矩阵
 - [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — 无 coherence 时 fence 退化
+- [DRAM and Memory System](/concepts/dram-memory-system.md) — 无 DRAM、21 PB/s SRAM 带宽
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 共同使用的确定性范式
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — 无 L1/L2/L3 的设计对比
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 暗硅、良率、专用 PE

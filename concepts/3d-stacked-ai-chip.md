@@ -87,6 +87,7 @@ Core FLOPS、DRAM BW、NoC BW、SRAM 容量必须协同配置；单纯 scale 任
 
 ## 相关
 
+- [DRAM and Memory System](/concepts/dram-memory-system.md) — HBM/TSV 带宽与内存墙
 - [Voxel Simulator](/concepts/voxel-simulator.md) — 3D AI 芯片设计空间探索工具
 - [Voxel 3D-Stacked AI Chip LLM Inference](/papers/voxel-3d-stacked-ai-chip-llm-inference.md) — 来源论文摘要
 - [Core Group (DRAM Access Synchronization)](/concepts/core-group-dram-access.md) — core scaling 时的 DRAM 访问同步优化

@@ -1,6 +1,12 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: 体系结构 30 天学习笔记 Day 17 → `raw/articles/arch-study-30d-day-17.md`.
+* **Creation**: [DRAM and Memory System](/concepts/dram-memory-system.md).
+* **Update**: [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md), [Cerebras WSE](/entities/cerebras-wse.md) — DRAM/HBM/内存墙交叉引用。
+* **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 5 → `raw/articles/interconn-study-21d-day-05.md`.
+* **Creation**: [Linear and Ring Topology](/concepts/linear-ring-topology.md).
+* **Update**: [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md), [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 1-D 基线、TileLink Ring 交叉引用。
 * **Ingest**: DSpark 论文 PDF → `raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf`（Zotero: Cheng et al. 2026）。
 * **Creation**: [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md), [papers/dspark-speculative-decoding.md](/papers/dspark-speculative-decoding.md), `raw/papers/dspark-speculative-decoding.md`.
 * **Update**: [DeepSeek-V4](/entities/deepseek-v4.md), [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md), [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — speculative decode 交叉引用。

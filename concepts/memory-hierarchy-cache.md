@@ -15,11 +15,12 @@ sources:
 - raw/articles/arch-study-30d-day-13.md
 - raw/articles/arch-study-30d-day-14.md
 - raw/articles/arch-study-30d-day-15.md
+- raw/articles/arch-study-30d-day-17.md
 ---
 
 # Memory Hierarchy and Cache（存储层次与 Cache）
 
-**内存墙 (Memory Wall)**：CPU 算力增速 >> DRAM 延迟改善（~7%/年）→ Cache 层次是过去 30 年 CPU 设计的核心。
+**内存墙 (Memory Wall)**：CPU 算力增速 >> DRAM 延迟改善（~7%/年）→ Cache 层次是过去 30 年 CPU 设计的核心。DRAM 物理层时序、HBM 带宽与 Roofline 见 [DRAM and Memory System](/concepts/dram-memory-system.md)。
 
 ## 完整访存路径（含 TLB）
 
@@ -87,6 +88,7 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 
 ## 相关页面
 
+- [DRAM and Memory System](/concepts/dram-memory-system.md) — Row Buffer、HBM、内存墙
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 地址转换层
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — CPU vs WSE 能力矩阵
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — DRAM 带宽与 NoC
@@ -98,3 +100,4 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 [1] [raw/articles/arch-study-30d-day-13.md](raw/articles/arch-study-30d-day-13.md) — H&P Ch.2 存储层次（Day 13）
 [2] [raw/articles/arch-study-30d-day-14.md](raw/articles/arch-study-30d-day-14.md) — AMAT 与 Cache 优化（Day 14）
 [3] [raw/articles/arch-study-30d-day-15.md](raw/articles/arch-study-30d-day-15.md) — TLB 与访存路径（Day 15）
+[4] [raw/articles/arch-study-30d-day-17.md](raw/articles/arch-study-30d-day-17.md) — DRAM/HBM（Day 17）

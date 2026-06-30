@@ -13,11 +13,12 @@ timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/articles/interconn-study-21d-day-03.md
+- raw/articles/interconn-study-21d-day-05.md
 ---
 
 # Interconnection Topology Metrics（互连拓扑度量）
 
-评估 Mesh、Torus、Fat-Tree、Hypercube 等拓扑不能凭直觉，需用**度量指标**——它们决定性能上界，也决定**能否制造**（端口、布线、功耗）。
+评估 Mesh、Torus、Fat-Tree、Hypercube 等拓扑不能凭直觉，需用**度量指标**——它们决定性能上界，也决定**能否制造**（端口、布线、功耗）。一维基线见 [Linear and Ring Topology](/concepts/linear-ring-topology.md)。
 
 ## 直连 vs 间接网络
 
@@ -62,7 +63,7 @@ Torus 环绕链路穿过 bisection cut → B_b 为 Mesh 的 **2×**。
 | 总链路 | 24 | 32 (+33%) |
 | 对称性 | 否（角/边/内） | 是 |
 
-Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Torus 的原因；代价是环绕**长 wire**。
+Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Torus 的原因；代价是环绕**长 wire**。双向环即 **n=1** 的 k-ary n-cube（见 [Linear and Ring Topology](/concepts/linear-ring-topology.md)）。
 
 ## WSE-3 ~949×949 Mesh（估算）
 
@@ -86,6 +87,7 @@ Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Toru
 ## 相关页面
 
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 指标→延迟/成本公式
+- [Linear and Ring Topology](/concepts/linear-ring-topology.md) — 1-D 基线与 1-D Torus
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
 - [Cerebras WSE](/entities/cerebras-wse.md) — Mesh 实例
 - [WSE Performance Model](/concepts/wse-performance-model.md) — 距离/contention 瓶颈
@@ -93,3 +95,4 @@ Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Toru
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-03.md](raw/articles/interconn-study-21d-day-03.md) — D&T Ch.3.1–3.2（Day 3）
+[2] [raw/articles/interconn-study-21d-day-05.md](raw/articles/interconn-study-21d-day-05.md) — 1-D Ring 基线（Day 5）
