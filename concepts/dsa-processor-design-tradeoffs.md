@@ -76,7 +76,7 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 | 乱序 + 分支预测 | 数据流图 / CSL |
 | Cache 定位 + MFENCE | 显式 NoC 消息 / PE barrier |
 
-设计原则：**避免硬件猜测** → 固定可建模延迟 → 复杂性上移到编译器（[Deterministic Execution](/concepts/deterministic-execution.md)）。
+设计原则：**避免硬件猜测** → 固定可建模延迟 → 复杂性上移到编译器（[Deterministic Execution](/concepts/deterministic-execution.md)）。通用 DNN 加速器若保留可编程性，则通过 per-layer **(dataflow, layout) co-switch** 换利用率——见 [FEATHER Accelerator](/concepts/feather-accelerator.md)（与 WSE 固定 spatial 编排不同路径）。
 
 ## 相关页面
 

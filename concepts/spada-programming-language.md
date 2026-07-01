@@ -78,7 +78,7 @@ Tree reduce **无 task 优化无法编译**——SpaDA 让 async/await 语义与
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — SpaDA 复用/对比 Luczynski HPDC'24 near-optimal collectives
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — relative_stream 在 2-D mesh 上路由
 
-SpaDA 同时是**通用 SDA 语言**与 **DSL IR**——架构无关的语言设计，当前 backend 专 targeting WSE/CSL。
+SpaDA 同时是**通用 SDA 语言**与 **DSL IR**——架构无关的语言设计，当前 backend 专 targeting WSE/CSL。DNN 片上 buffer 的 dataflow-layout 可重构见 [FEATHER Accelerator](/concepts/feather-accelerator.md)。
 
 ## 相关页面
 

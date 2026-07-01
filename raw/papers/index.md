@@ -8,4 +8,5 @@
 # Raw Source
 
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md)
+* [FEATHER Reconfigurable Accelerator Dataflow Switching](feather-reconfigurable-accelerator.md)
 * [SpaDA Spatial Dataflow Architecture Programming Language](spada-spatial-dataflow-architecture.md)

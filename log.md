@@ -1,6 +1,9 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: FEATHER 论文 PDF → `raw/papers/FEATHER_Reconfigurable_Accelerator_Dataflow_Switching_2024.pdf`（Zotero: Tong et al. 2024, arXiv:2405.13170）。
+* **Creation**: [FEATHER Accelerator](/concepts/feather-accelerator.md), [papers/feather-reconfigurable-accelerator.md](/papers/feather-reconfigurable-accelerator.md), `raw/papers/feather-reconfigurable-accelerator.md`.
+* **Update**: [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [SpaDA Programming Language](/concepts/spada-programming-language.md) — dataflow/layout 可重构交叉引用。
 * **Ingest**: SpaDA 论文 PDF → `raw/papers/SpaDA_Spatial_Dataflow_Architecture_Programming_Language_2026.pdf`（Zotero: Gianinazzi et al. 2026, arXiv:2511.09447）。
 * **Creation**: [SpaDA Programming Language](/concepts/spada-programming-language.md), [papers/spada-spatial-dataflow-architecture.md](/papers/spada-spatial-dataflow-architecture.md), `raw/papers/spada-spatial-dataflow-architecture.md`.
 * **Update**: [Cerebras WSE](/entities/cerebras-wse.md), [Deterministic Execution](/concepts/deterministic-execution.md), [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md), [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md), [Cache Coherence](/concepts/cache-coherence.md) — SpaDA/CSL 编程模型交叉引用。
