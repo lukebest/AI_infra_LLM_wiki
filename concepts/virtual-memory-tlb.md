@@ -86,7 +86,7 @@ WSE:  编译器/CSL → 物理地址 → SRAM（必然命中）
 | 通用指针追逐 | 可建模延迟（[WSE Performance Model](/concepts/wse-performance-model.md)） |
 | | 省 MMU/TLB 面积；NoC 无 coherence/shootdown traffic |
 
-NoC 无需 Cache coherence、TLB shootdown IPI、共享内存 ordering——协议大幅简化。
+NoC 无需 [Cache Coherence](/concepts/cache-coherence.md)、TLB shootdown IPI、共享内存 ordering——协议大幅简化。
 
 ## 相关页面
 

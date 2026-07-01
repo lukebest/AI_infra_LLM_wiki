@@ -91,6 +91,7 @@ RISC-V **FENCE.VMA** 路径：排空 outstanding 访存 → TLB shootdown IPI �
 
 - [Out-of-Order Execution](/concepts/out-of-order-execution.md) — ROB Barrier、推测与 fence
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — FENCE.VMA 与 shootdown
+- [Cache Coherence](/concepts/cache-coherence.md) — MESI、Invalidate Queue 协议层
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — coherence miss
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — fence 消息的 NoC 延迟
 - [UB Transaction Layer](/concepts/ub-transaction-layer.md) — 事务层 Fence 机制

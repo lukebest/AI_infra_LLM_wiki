@@ -43,7 +43,7 @@ OoO: 重命名 → ROB/RS → Issue Queue → 调度
 | L1 Cache | ~1.5× | ~1× | **无**（48 KB SRAM 直用） |
 | L2/L3 | ~1.3× | ~5× | **无** |
 | TLB/MMU | ~1.05× | ~1× | **无**（[Virtual Memory](/concepts/virtual-memory-tlb.md)） |
-| Cache 一致性 + Memory Fence | — | ~2× | **无**（无共享地址空间；见 [Memory Fence and Barrier](/concepts/memory-fence-barrier.md)） |
+| Cache 一致性 + Memory Fence | — | ~2× | **无**（无共享地址空间；见 [Cache Coherence](/concepts/cache-coherence.md)、[Memory Fence and Barrier](/concepts/memory-fence-barrier.md)） |
 
 **WSE 交换**：失去通用性与单核峰值 GHz → 获得 **900K PE**、**21 PB/s** 片上带宽、确定性延迟。
 

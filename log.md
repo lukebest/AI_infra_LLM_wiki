@@ -1,6 +1,9 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: 体系结构 30 天学习笔记 Day 18 → `raw/articles/arch-study-30d-day-18.md`.
+* **Creation**: [Cache Coherence](/concepts/cache-coherence.md).
+* **Update**: [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [Memory Fence and Barrier](/concepts/memory-fence-barrier.md), [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md), [Cerebras WSE](/entities/cerebras-wse.md) — MESI/Snooping/Directory/False Sharing 交叉引用。
 * **Ingest**: 体系结构 30 天学习笔记 Day 17 → `raw/articles/arch-study-30d-day-17.md`.
 * **Creation**: [DRAM and Memory System](/concepts/dram-memory-system.md).
 * **Update**: [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md), [Cerebras WSE](/entities/cerebras-wse.md) — DRAM/HBM/内存墙交叉引用。

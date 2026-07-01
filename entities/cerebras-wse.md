@@ -87,6 +87,7 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 ## 相关页面
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 无 MMU/TLB
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — SLA vs Golden Cove 矩阵
+- [Cache Coherence](/concepts/cache-coherence.md) — 900K PE 无 MESI/Directory
 - [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — 无 coherence 时 fence 退化
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — 无 DRAM、21 PB/s SRAM 带宽
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 共同使用的确定性范式

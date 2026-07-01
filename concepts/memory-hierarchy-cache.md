@@ -82,12 +82,13 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 |--|----------|-------------------------------------------|
 | 层次 | Register → L1/L2/L3 → DRAM | PE + **片上 SRAM**，无 L1/L2/L3 |
 | 动机 | 隐藏 DRAM 延迟 | 44 GB SRAM + 编译器 placement |
-| 代价 | Cache 一致性、AMAT 调优复杂 | SRAM 容量上限、编程模型约束 |
+| 代价 | [Cache Coherence](/concepts/cache-coherence.md)、AMAT 调优复杂 | SRAM 容量上限、编程模型约束 |
 
 理解 CPU Cache 优化「工具箱」，才能评估 **SRAM-first**（[LPU](/concepts/lpu-architecture.md)、WSE）放弃 Cache 的权衡。
 
 ## 相关页面
 
+- [Cache Coherence](/concepts/cache-coherence.md) — MESI、Snooping/Directory、False Sharing
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — Row Buffer、HBM、内存墙
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 地址转换层
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — CPU vs WSE 能力矩阵

@@ -3,6 +3,7 @@
 * [3D-Stacked AI Chip](3d-stacked-ai-chip.md) - 3D 堆叠 AI 芯片：TSV 垂直堆叠 DRAM bank 于 AI core 之上，分布式内存与专用总线带来带宽扩展与利用率新挑战
 * [Architecture Benchmark Methodology](architecture-benchmark-methodology.md) - 体系结构量化评估方法论：几何均值、Speedup 计算、SPEC/MLPerf 原则与常见数据陷阱
 * [Branch Prediction](branch-prediction.md) - 分支预测：1-bit/2-bit 饱和计数器、局部与全局历史、TAGE/BTB、分支惩罚对 CPI 的量化影响
+* [Cache Coherence](cache-coherence.md) - 多核 Cache 一致性：MESI/MOESI 状态机、Snooping vs Directory、False Sharing，与 WSE 无共享地址空间的对比
 * [Cerebras Color Mechanism](cerebras-color-mechanism.md) - WSE Color 虚拟通道机制：静态路由+独立缓冲+Color×4任务调度+独立反压，Fabric/Local Color 双类型
 * [CMX & STX](cmx-stx.md) - NVIDIA 推理存储平台：CMX（Tier G3.5 NVMe KV cache）+ STX（BF-4 存储 rack 参考架构）
 * [Core Group (DRAM Access Synchronization)](core-group-dram-access.md) - 3D AI 芯片 core group：物理相邻 core 组内通过 hardware tracker 同步 DRAM 访问，缓解 row-buffer 冲突
