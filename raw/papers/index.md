@@ -8,3 +8,4 @@
 # Raw Source
 
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md)
+* [SpaDA Spatial Dataflow Architecture Programming Language](spada-spatial-dataflow-architecture.md)

@@ -114,6 +114,7 @@ B ≫ TR·P?  → Chain
 ```
 
 ## 相关页面
+- [SpaDA Programming Language](/concepts/spada-programming-language.md) — Chain/Tree/Two-Phase 的 SpaDA 实现（1.04× HPDC'24 CSL）
 - [Near Optimal Wafer Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md) — 原始论文
 - [Wse Performance Model](/concepts/wse-performance-model.md) — 指导算法设计的性能模型
 - [Cerebras Wse](/entities/cerebras-wse.md) — 目标硬件

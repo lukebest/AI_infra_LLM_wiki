@@ -162,6 +162,7 @@ Data Structure Descriptor 中与 Color 相关的字段：
 - vs [Groq C2C](/entities/nvidia-groq-3-lpx.md)：Groq 用 plesiosynchronous 确定性，Color 用静态路由确定性，异曲同工
 
 ## 相关页面
+- [SpaDA Programming Language](/concepts/spada-programming-language.md) — checkerboard pass 自动 color 分配
 - [Cerebras Wse](/entities/cerebras-wse.md) — Color 所在的晶圆级加速器
 - [Deterministic Execution](/concepts/deterministic-execution.md) — Color 静态路由是确定性执行的物理实现
 - [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — Color 路由器的 NoC 理论基础

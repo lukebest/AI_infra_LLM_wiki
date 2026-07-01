@@ -90,6 +90,7 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 - [Cache Coherence](/concepts/cache-coherence.md) — 900K PE 无 MESI/Directory
 - [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — 无 coherence 时 fence 退化
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — 无 DRAM、21 PB/s SRAM 带宽
+- [SpaDA Programming Language](/concepts/spada-programming-language.md) — place/dataflow/compute 高级 CSL 抽象
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 共同使用的确定性范式
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — 无 L1/L2/L3 的设计对比
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 暗硅、良率、专用 PE
@@ -109,11 +110,12 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 # Citations
 
 [1] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)
-[2] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — WSE Mesh 引入（互连 Day 1）
-[3] [raw/articles/interconn-study-21d-day-02.md](raw/articles/interconn-study-21d-day-02.md) — WSE 虫孔选型（互连 Day 2）
-[4] [raw/articles/interconn-study-21d-day-03.md](raw/articles/interconn-study-21d-day-03.md) — Mesh 拓扑度量（互连 Day 3）
-[5] [raw/articles/interconn-study-21d-day-04.md](raw/articles/interconn-study-21d-day-04.md) — 成本/延迟模型（互连 Day 4）
-[6] [raw/articles/arch-study-30d-day-02.md](raw/articles/arch-study-30d-day-02.md) — 功耗/良率（体系结构 Day 2）
-[7] [raw/articles/arch-study-30d-day-14.md](raw/articles/arch-study-30d-day-14.md) — 无 Cache 对比（Day 14）
-[8] [raw/articles/arch-study-30d-day-15.md](raw/articles/arch-study-30d-day-15.md) — 无 MMU/TLB（Day 15）
-[9] [raw/articles/arch-study-30d-day-16.md](raw/articles/arch-study-30d-day-16.md) — DSA 能力矩阵（Day 16）
+[2] [raw/papers/SpaDA_Spatial_Dataflow_Architecture_Programming_Language_2026.pdf](raw/papers/SpaDA_Spatial_Dataflow_Architecture_Programming_Language_2026.pdf) — SpaDA 语言与编译器（Gianinazzi et al. 2026）
+[3] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — WSE Mesh 引入（互连 Day 1）
+[4] [raw/articles/interconn-study-21d-day-02.md](raw/articles/interconn-study-21d-day-02.md) — WSE 虫孔选型（互连 Day 2）
+[5] [raw/articles/interconn-study-21d-day-03.md](raw/articles/interconn-study-21d-day-03.md) — Mesh 拓扑度量（互连 Day 3）
+[6] [raw/articles/interconn-study-21d-day-04.md](raw/articles/interconn-study-21d-day-04.md) — 成本/延迟模型（互连 Day 4）
+[7] [raw/articles/arch-study-30d-day-02.md](raw/articles/arch-study-30d-day-02.md) — 功耗/良率（体系结构 Day 2）
+[8] [raw/articles/arch-study-30d-day-14.md](raw/articles/arch-study-30d-day-14.md) — 无 Cache 对比（Day 14）
+[9] [raw/articles/arch-study-30d-day-15.md](raw/articles/arch-study-30d-day-15.md) — 无 MMU/TLB（Day 15）
+[10] [raw/articles/arch-study-30d-day-16.md](raw/articles/arch-study-30d-day-16.md) — DSA 能力矩阵（Day 16）

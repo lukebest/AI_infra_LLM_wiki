@@ -1,6 +1,9 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: SpaDA 论文 PDF → `raw/papers/SpaDA_Spatial_Dataflow_Architecture_Programming_Language_2026.pdf`（Zotero: Gianinazzi et al. 2026, arXiv:2511.09447）。
+* **Creation**: [SpaDA Programming Language](/concepts/spada-programming-language.md), [papers/spada-spatial-dataflow-architecture.md](/papers/spada-spatial-dataflow-architecture.md), `raw/papers/spada-spatial-dataflow-architecture.md`.
+* **Update**: [Cerebras WSE](/entities/cerebras-wse.md), [Deterministic Execution](/concepts/deterministic-execution.md), [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md), [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md), [Cache Coherence](/concepts/cache-coherence.md) — SpaDA/CSL 编程模型交叉引用。
 * **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 6 → `raw/articles/interconn-study-21d-day-06.md`.
 * **Creation**: [Mesh and Torus Topology](/concepts/mesh-torus-topology.md).
 * **Update**: [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md), [Linear and Ring Topology](/concepts/linear-ring-topology.md), [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 2-D Mesh/Torus、k-ary n-cube、Dally d_opt 交叉引用。

@@ -92,7 +92,7 @@ Cache 替换算法无法缓解——由**数据布局**决定；与 Row Buffer �
 |--|----------|-------------------------------------------|
 | 地址空间 | 全局共享 | **无共享**；PE 独占 48KB SRAM |
 | 协议 | MESI + Directory/Snoop | **无**；显式 NoC 消息 |
-| 编程 | pthread 共享变量 | CSL/SpaDA 数据流 |
+| 编程 | pthread 共享变量 | [SpaDA Programming Language](/concepts/spada-programming-language.md) 数据流 |
 | 扩展 | 64 核 Directory 极限 | 900K PE |
 
 900K PE × MESI metadata 粗估 **~170 GB** 目录状态 + mesh 广播 → 硬件不可行（[DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md)）。
