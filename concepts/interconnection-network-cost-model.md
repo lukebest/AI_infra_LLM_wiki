@@ -14,6 +14,7 @@ timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/articles/interconn-study-21d-day-04.md
+- raw/articles/interconn-study-21d-day-06.md
 ---
 
 # Interconnection Network Cost Model（互连网络成本与性能模型）
@@ -73,6 +74,8 @@ B_b 是**必要条件非充分条件**：热点 all-to-one（如 AllReduce 末�
 | 优势 | 少端口、短局部连线 | 小直径、大 B_b |
 | 劣势 | 大直径、B_b 受限 | 多端口、长跨维连线 |
 
+**Dally 1990**：固定度 d=2n，最优吞吐量维度 **d_opt ≈ 2√N**——详见 [Mesh and Torus Topology](/concepts/mesh-torus-topology.md)。
+
 **Dally 经验**：NoC → 低维 Mesh；HPC 机柜 → 3-D Torus；超算 → 高维 Torus + 高基数 Switch。
 
 ## 设计原则（带宽优先）
@@ -96,6 +99,7 @@ WSE 选 2-D Mesh：4 端口可造；3-D Torus 要 6 端口+长环绕；Hypercube
 
 ## 相关页面
 
+- [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — 维度-延迟-吞吐量权衡
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 度/直径/B_b 公式
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层空间
 - [Cerebras WSE](/entities/cerebras-wse.md) — Mesh 设计实例
@@ -104,3 +108,4 @@ WSE 选 2-D Mesh：4 端口可造；3-D Torus 要 6 端口+长环绕；Hypercube
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-04.md](raw/articles/interconn-study-21d-day-04.md) — D&T Ch.3.3–3.5（Day 4）
+[2] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — D&T Ch.3 Mesh/Torus（Day 6）

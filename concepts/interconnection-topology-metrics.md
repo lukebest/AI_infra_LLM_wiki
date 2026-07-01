@@ -14,11 +14,12 @@ created: 2026-06-24
 sources:
 - raw/articles/interconn-study-21d-day-03.md
 - raw/articles/interconn-study-21d-day-05.md
+- raw/articles/interconn-study-21d-day-06.md
 ---
 
 # Interconnection Topology Metrics（互连拓扑度量）
 
-评估 Mesh、Torus、Fat-Tree、Hypercube 等拓扑不能凭直觉，需用**度量指标**——它们决定性能上界，也决定**能否制造**（端口、布线、功耗）。一维基线见 [Linear and Ring Topology](/concepts/linear-ring-topology.md)。
+评估 Mesh、Torus、Fat-Tree、Hypercube 等拓扑不能凭直觉，需用**度量指标**——它们决定性能上界，也决定**能否制造**（端口、布线、功耗）。2-D 结构与 Mesh/Torus 选型见 [Mesh and Torus Topology](/concepts/mesh-torus-topology.md)；一维基线见 [Linear and Ring Topology](/concepts/linear-ring-topology.md)。
 
 ## 直连 vs 间接网络
 
@@ -84,8 +85,11 @@ Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Toru
 - Mesh 全是**局部短连线** → 物理可制造
 - 教科书最优 ≠ 硅片可实现的最优
 
+- **最优维度** d_opt ≈ **2√N** 时直连网络吞吐量最大（Dally 1990）——见 [Mesh and Torus Topology](/concepts/mesh-torus-topology.md)
+
 ## 相关页面
 
+- [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — 2-D Mesh/Torus 与维度权衡
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 指标→延迟/成本公式
 - [Linear and Ring Topology](/concepts/linear-ring-topology.md) — 1-D 基线与 1-D Torus
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
@@ -96,3 +100,4 @@ Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Toru
 
 [1] [raw/articles/interconn-study-21d-day-03.md](raw/articles/interconn-study-21d-day-03.md) — D&T Ch.3.1–3.2（Day 3）
 [2] [raw/articles/interconn-study-21d-day-05.md](raw/articles/interconn-study-21d-day-05.md) — 1-D Ring 基线（Day 5）
+[3] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — 2-D Mesh/Torus（Day 6）

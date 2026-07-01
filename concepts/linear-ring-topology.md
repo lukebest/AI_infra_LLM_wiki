@@ -84,10 +84,11 @@ Ring ─────────────────────────
 （度=2，B_b=1–2，D=O(N)）              （度↑，B_b↑，D=O(√N)…）
 ```
 
-**维度提升**（1-D Ring → 2-D Mesh）将直径从 O(N) 降到 O(√N)——WSE 选 2-D Mesh 而非 Ring 的根因之一（见 [Cerebras WSE](/entities/cerebras-wse.md)）。
+**维度提升**（1-D Ring → 2-D Mesh）将直径从 O(N) 降到 O(√N)——WSE 选 2-D Mesh 而非 Ring 的根因之一（见 [Mesh and Torus Topology](/concepts/mesh-torus-topology.md)、[Cerebras WSE](/entities/cerebras-wse.md)）。
 
 ## 相关页面
 
+- [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — Ring → Mesh/Torus 演进
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — k-ary n-cube 公式（n=1 即 Ring）
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟/成本权衡
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — NoC 域 TileLink Ring vs WSE Mesh

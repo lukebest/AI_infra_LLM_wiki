@@ -32,6 +32,7 @@
 * [MegaMoE Kernel (Expert Parallelism Overlap)](megamoe-kernel.md) - MoE 专家并行 mega-kernel，wave-based 通信计算全重叠
 * [Memory Fence and Barrier](memory-fence-barrier.md) - 内存屏障：ISA 顺序语义、Store Buffer/Invalidate Queue 排空、NoC coherence 路径、x86/ARM/RISC-V 变体与 WSE 无 coherence 对照
 * [Memory Hierarchy and Cache](memory-hierarchy-cache.md) - 内存墙、存储层次、Cache 映射与 3C 模型、AMAT 优化框架、与 WSE SRAM-only 设计的对比
+* [Mesh and Torus Topology](mesh-torus-topology.md) - 2-D Mesh/Torus 与 k-ary n-cube：度/直径/二分带宽、Dally 维度-延迟-吞吐量权衡、XY 维序路由，及 WSE/Blue Gene 选型
 * [Multi-plane Clos Topology for AI Training](multi-plane-clos-topology.md) - 多平面 CLOS 拓扑：2-tier 131K GPU，低延迟高冗余，MRC 容错，Z3 形式化分析，bitwise reproducibility
 * [Muon Optimizer](muon-optimizer.md) - 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
 * [NoC Router 微架构](noc-router-microarchitecture.md) - NoC Router 微架构：链路级流控/EB/credit、Switch/仲裁器（RR/2D 矩阵）、WH/VC 流水线 Router、VA/SA 分配器优化

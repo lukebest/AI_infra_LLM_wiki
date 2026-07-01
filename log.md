@@ -1,6 +1,9 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 6 → `raw/articles/interconn-study-21d-day-06.md`.
+* **Creation**: [Mesh and Torus Topology](/concepts/mesh-torus-topology.md).
+* **Update**: [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md), [Linear and Ring Topology](/concepts/linear-ring-topology.md), [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 2-D Mesh/Torus、k-ary n-cube、Dally d_opt 交叉引用。
 * **Ingest**: 体系结构 30 天学习笔记 Day 18 → `raw/articles/arch-study-30d-day-18.md`.
 * **Creation**: [Cache Coherence](/concepts/cache-coherence.md).
 * **Update**: [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [Memory Fence and Barrier](/concepts/memory-fence-barrier.md), [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md), [Cerebras WSE](/entities/cerebras-wse.md) — MESI/Snooping/Directory/False Sharing 交叉引用。
