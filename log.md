@@ -1,6 +1,9 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: Hong et al. 2024 FlashDecoding++ PDF → `raw/papers/FlashDecoding_PlusPlus_LLM_Inference_GPUs_2024.pdf`（Zotero: arXiv:2311.01282）。
+* **Creation**: [FlashDecoding++](/concepts/flashdecoding-plus-plus.md), [papers/flashdecoding-plus-plus-llm-gpu-inference.md](/papers/flashdecoding-plus-plus-llm-gpu-inference.md), `raw/papers/flashdecoding-plus-plus-llm-gpu-inference.md`.
+* **Update**: [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md), [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md), [Heterogeneous Inference](/concepts/heterogeneous-inference.md), [papers/dspark-speculative-decoding.md](/papers/dspark-speculative-decoding.md) — decode kernel vs speculative/异构推理交叉引用。
 * **Ingest**: Prabhakar et al. 2017 Plasticine ISCA PDF → `raw/papers/Plasticine_Reconfigurable_Parallel_Patterns_2017.pdf`（Zotero: ISCA 2017, DOI 10.1145/3079856.3080256）。
 * **Creation**: [Plasticine Accelerator](/concepts/plasticine-accelerator.md), [papers/plasticine-reconfigurable-parallel-patterns.md](/papers/plasticine-reconfigurable-parallel-patterns.md), `raw/papers/plasticine-reconfigurable-parallel-patterns.md`.
 * **Update**: [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md), [SpaDA Programming Language](/concepts/spada-programming-language.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [FEATHER Accelerator](/concepts/feather-accelerator.md), [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — parallel patterns CGRA、dataflow 谱系交叉引用。

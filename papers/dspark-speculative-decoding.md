@@ -63,6 +63,7 @@ L = (T_draft + T_verify) / τ
 - [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md) — 机制与调度细节
 - [DeepSeek-V4](/entities/deepseek-v4.md) — 部署模型与 MTP 架构背景
 - [Prefill Decode Divergence](/concepts/prefill-decode-divergence.md) — decode 主导 wall-clock，speculative 直接优化 decode step
+- [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — kernel 层 decode 加速（与 speculative 正交）
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — draft/MTP 与 LPU 异构部署讨论
 
 # Citations

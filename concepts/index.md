@@ -20,6 +20,7 @@
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md) - DeepSeek 半自回归 speculative decoding：并行 DFlash backbone + Markov sequential head、confidence-scheduled 负载感知 verify，V4 生产 +60–85% 单用户速度
 * [Eyeriss Accelerator](eyeriss-accelerator.md) - MIT 65nm CNN 加速器：168 PE 空间阵列、Row Stationary (RS) 可重构 dataflow、四级存储层次、GIN 单周期组播 NoC、RLC 压缩与 PE data gating；AlexNet 83.1 GMAC/s/W
 * [FEATHER Accelerator](feather-accelerator.md) - 可重构 DNN 加速器：NEST 2D PE 阵列 + BIRRD 蝶形归约/重排网络，RIR 在归约中隐藏 layout 切换，Layoutloop 联合 dataflow-layout 搜索
+* [FlashDecoding++](flashdecoding-plus-plus.md) - GPU LLM 推理引擎：统一 max 值的异步 partial softmax、M 维 pad-8 flat GEMM+双缓冲、FastGEMV/CUTLASS 启发式 dataflow；相对 FlashDecoding 平均 1.37×、HF 最高 4.86×
 * [Flattened Butterfly 拓扑](flattened-butterfly-topology.md) - Flattened Butterfly 片上拓扑：高基数路由器降低直径，concentration + bypass channel，2-hop 直径，38% 功耗降低
 * [FP4 Quantization-Aware Training](fp4-qat.md) - FP4 量化感知训练，无损 FP4→FP8 反量化
 * [Heterogeneous Inference](heterogeneous-inference.md) - GPU + LPU 异构推理，分别优化 prefill/decode

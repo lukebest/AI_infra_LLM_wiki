@@ -112,6 +112,7 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — Decode 的 KV 线性增长导致 cliff
 - [Parallelism Transition Point](/concepts/parallelism-transition-point.md) — 不同阶段的 optimal parallelism 不同（prefill: DP; decode: TP）
 - [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md) — decode 步 speculative 提高有效 τ（DeepSeek-V4 生产 +57–85% tok/s/user）
+- [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — GPU kernel 层：异步 partial softmax + flat GEMM + 启发式 GEMV/GEMM dataflow（相对 FlashDecoding ~1.37×）
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — 3D 堆叠缓解 BW wall，prefill/decode 对 DRAM/NoC/SRAM 响应不同
 
 ## 相关概念
@@ -120,6 +121,7 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构硬件针对不同推理阶段
 - [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — Decode 阶段的 KV 饱和问题
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — KV 增长的时序行为
+- [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — decode kernel 层（attention/flat GEMM）
 - [Kv Cache](#kv-cache) — KV cache 是 decode 阶段的核心资源
 
 # Citations

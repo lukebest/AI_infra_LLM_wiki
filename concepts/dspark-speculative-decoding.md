@@ -76,6 +76,7 @@ Sequential stage (Markov/RNN head): 采样 x_k ~ p_k(·|x_0, x_<k)
 - [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — decode 阶段带宽/算力瓶颈
 - [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — 高并发 batch 容量
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — GPU/LPU 上 MTP 与 draft 模型
+- [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — 正交：kernel 降每步 decode latency
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 对比：编译器调度 vs serving 层 speculative 加速
 
 # Citations

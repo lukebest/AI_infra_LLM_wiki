@@ -69,6 +69,7 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 解耦推理概念
 - [Lpu Architecture](/concepts/lpu-architecture.md) — LPU 架构
 - [Prefill Decode Divergence](/concepts/prefill-decode-divergence.md) — Prefill vs Decode 资源分歧
+- [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — 单 GPU decode kernel 优化（与异构分 tier 互补）
 - [Understanding Inference Scaling For Llms](/papers/understanding-inference-scaling-for-llms.md) — 推理 scaling 系统分析
 
 # Citations
