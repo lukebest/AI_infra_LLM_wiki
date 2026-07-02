@@ -1,6 +1,12 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: Prabhakar et al. 2017 Plasticine ISCA PDF → `raw/papers/Plasticine_Reconfigurable_Parallel_Patterns_2017.pdf`（Zotero: ISCA 2017, DOI 10.1145/3079856.3080256）。
+* **Creation**: [Plasticine Accelerator](/concepts/plasticine-accelerator.md), [papers/plasticine-reconfigurable-parallel-patterns.md](/papers/plasticine-reconfigurable-parallel-patterns.md), `raw/papers/plasticine-reconfigurable-parallel-patterns.md`.
+* **Update**: [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md), [SpaDA Programming Language](/concepts/spada-programming-language.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [FEATHER Accelerator](/concepts/feather-accelerator.md), [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — parallel patterns CGRA、dataflow 谱系交叉引用。
+* **Ingest**: Chen et al. 2017 Eyeriss JSSC PDF → `raw/papers/Eyeriss_Energy_Efficient_CNN_Accelerator_2017.pdf`（Zotero: JSSC 2017, DOI 10.1109/JSSC.2016.2616357）。
+* **Creation**: [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md), [papers/eyeriss-energy-efficient-cnn-accelerator.md](/papers/eyeriss-energy-efficient-cnn-accelerator.md), `raw/papers/eyeriss-energy-efficient-cnn-accelerator.md`.
+* **Update**: [FEATHER Accelerator](/concepts/feather-accelerator.md), [papers/feather-reconfigurable-accelerator.md](/papers/feather-reconfigurable-accelerator.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [Collective-Capable NoC](/concepts/collective-capable-noc.md), [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — RS dataflow、GIN 组播 NoC、FEATHER 固定基线交叉引用。
 * **Ingest**: Dennis & Misunas 1975 basic data-flow processor PDF → `raw/papers/Dennis_Misunas_Basic_Data_Flow_Processor_1975.pdf`（Zotero: ISCA 1975, ACM 641675.642111）。
 * **Creation**: [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md), [papers/dennis-misunas-basic-data-flow-processor.md](/papers/dennis-misunas-basic-data-flow-processor.md), `raw/papers/dennis-misunas-basic-data-flow-processor.md`.
 * **Update**: [Deterministic Execution](/concepts/deterministic-execution.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [CPU Pipeline Fundamentals](/concepts/cpu-pipeline-fundamentals.md), [SpaDA Programming Language](/concepts/spada-programming-language.md), [Cerebras WSE](/entities/cerebras-wse.md) — 数据流架构历史交叉引用。

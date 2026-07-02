@@ -62,6 +62,7 @@ Fixed → Line Rotation → Transpose → Row Reorder → **Arbitrary**（FEATHE
 ## 与 wiki 交叉引用
 
 - [FEATHER Accelerator](/concepts/feather-accelerator.md) — 架构与 Layoutloop
+- [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — 固定 Eyeriss-like RS 基线
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — 片上 memory bank 利用率
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 固定 vs 可重构 dataflow
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — 另一 dataflow 抽象层（WSE/CSL）

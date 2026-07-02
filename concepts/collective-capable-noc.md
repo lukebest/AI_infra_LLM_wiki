@@ -159,6 +159,7 @@ Parallel reduction（CollectB/LsbAnd）处理窄网 bitwise/AXI 语义；**宽�
 
 ## 相关页面
 
+- [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — **GIN 单周期 (row,col) tag 组播** NoC；CNN 固定映射下的 custom multicast（非 hop-by-hop mesh）
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — wormhole/仲裁/流控基线
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — XY 路由前提
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — 另一 mesh collective 设计空间

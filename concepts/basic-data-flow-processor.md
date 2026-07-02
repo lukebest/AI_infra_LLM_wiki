@@ -16,7 +16,7 @@ sources:
 
 # Basic Data-Flow Processor（基本数据流处理器）
 
-Jack B. Dennis 与 David P. Misunas（MIT Project MAC, 1975）在 **elementary data-flow processor** 之上提出 **basic data-flow processor**：执行带 **条件与迭代** 的数据流程序（Dennis & Fosseen 模型），并引入 **Instruction Cell 作活跃指令 cache** 的两级存储——避免 Von Neumann 式 **processor switching** 与 **processor/memory 互连** 瓶颈。这是现代 [Deterministic Execution](/concepts/deterministic-execution.md) / 空间数据流（[SpaDA](/concepts/spada-programming-language.md)、[Cerebras WSE](/entities/cerebras-wse.md)）的重要历史源头。
+Jack B. Dennis 与 David P. Misunas（MIT Project MAC, 1975）在 **elementary data-flow processor** 之上提出 **basic data-flow processor**：执行带 **条件与迭代** 的数据流程序（Dennis & Fosseen 模型），并引入 **Instruction Cell 作活跃指令 cache** 的两级存储——避免 Von Neumann 式 **processor switching** 与 **processor/memory 互连** 瓶颈。这是现代 [Deterministic Execution](/concepts/deterministic-execution.md) / 空间数据流（[SpaDA](/concepts/spada-programming-language.md)、[Plasticine](/concepts/plasticine-accelerator.md)、[Cerebras WSE](/entities/cerebras-wse.md)）的重要历史源头。
 
 ## 数据流执行模型
 
@@ -118,6 +118,7 @@ Basic 程序节点 **fire 频率不均**（分支/迭代使子图活跃或静默
 - [CPU Pipeline Fundamentals](/concepts/cpu-pipeline-fundamentals.md) — Von Neumann 顺序控制对比
 - [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md) — 动态 ILP vs 静态数据流并行
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — 现代空间数据流语言
+- [Plasticine Accelerator](/concepts/plasticine-accelerator.md) — parallel patterns CGRA（Map/Fold/HashReduce → PCU/PMU）
 - [Cerebras WSE](/entities/cerebras-wse.md) — 晶圆级数据流加速器
 
 # Citations

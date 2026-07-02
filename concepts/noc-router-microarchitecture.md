@@ -194,6 +194,7 @@ sources:
 - **[Ub Transport Layer](/concepts/ub-transport-layer.md)**：UB 传输层的 PSN/重传机制是 NoC router 流控在网络层的扩展
 - **[Deterministic Execution](/concepts/deterministic-execution.md)**：编译器确定性调度依赖 NoC Router 的确定性行为
 - **[Collective-Capable NoC](/concepts/collective-capable-noc.md)** — FlooNoC 扩展：XY fork 组播、in-network reduction、**DCA 借 FPU**（MLSys 2026）
+- **[Eyeriss Accelerator](/concepts/eyeriss-accelerator.md)** — CNN 加速器 **GIN/GON/LN** custom multicast（单周期 tag 组播 vs 通用 mesh router）
 - **[WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md)** — WSE mesh collective 算法与性能模型
 - **[Lpu Architecture](/concepts/lpu-architecture.md)**：LPU 的 SRAM-first 架构中片上互联设计参考了 NoC Router 微架构
 - **[Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md)**：FBFLY 拓扑利用高基数 Router 降低片上网络直径，bypass channel 减少非最小路由开销

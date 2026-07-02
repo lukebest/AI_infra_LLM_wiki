@@ -76,7 +76,7 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 | 乱序 + 分支预测 | 数据流图 / CSL |
 | Cache 定位 + MFENCE | 显式 NoC 消息 / PE barrier |
 
-设计原则：**避免硬件猜测** → 固定可建模延迟 → 复杂性上移到编译器（[Deterministic Execution](/concepts/deterministic-execution.md)）。WSE 单时钟域近似 [Memory Consistency Model](/concepts/memory-consistency-model.md) 的 SC，以频率与弹性换取软件无需 fence。通用 DNN 加速器若保留可编程性，则通过 per-layer **(dataflow, layout) co-switch** 换利用率——见 [FEATHER Accelerator](/concepts/feather-accelerator.md)（与 WSE 固定 spatial 编排不同路径）。
+设计原则：**避免硬件猜测** → 固定可建模延迟 → 复杂性上移到编译器（[Deterministic Execution](/concepts/deterministic-execution.md)）。WSE 单时钟域近似 [Memory Consistency Model](/concepts/memory-consistency-model.md) 的 SC，以频率与弹性换取软件无需 fence。通用 DNN 加速器若保留可编程性，则通过 per-layer **(dataflow, layout) co-switch** 换利用率——见 [FEATHER Accelerator](/concepts/feather-accelerator.md)（与 WSE 固定 spatial 编排不同路径）；固定 **Row Stationary** 流片基线见 [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md)（AlexNet 0.0029 DRAM access/MAC）。更广 workload 的 **parallel patterns CGRA** 见 [Plasticine Accelerator](/concepts/plasticine-accelerator.md)（ISCA 2017，相对 FPGA 最高 76.9× Perf/W）。
 
 ## 相关页面
 
@@ -87,6 +87,9 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 - [Memory Consistency Model](/concepts/memory-consistency-model.md) — WSE 近似 SC vs 通用 TSO
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md)
 - [LPU Architecture](/concepts/lpu-architecture.md) — 同类 SME 路径
+- [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — 固定 RS dataflow CNN 加速器
+- [FEATHER Accelerator](/concepts/feather-accelerator.md) — 可重构 dataflow-layout
+- [Plasticine Accelerator](/concepts/plasticine-accelerator.md) — parallel patterns CGRA
 
 # Citations
 

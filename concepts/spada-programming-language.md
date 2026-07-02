@@ -78,7 +78,7 @@ Tree reduce **无 task 优化无法编译**——SpaDA 让 async/await 语义与
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — SpaDA 复用/对比 Luczynski HPDC'24 near-optimal collectives
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — relative_stream 在 2-D mesh 上路由
 
-SpaDA 同时是**通用 SDA 语言**与 **DSL IR**——架构无关的语言设计，当前 backend 专 targeting WSE/CSL。DNN 片上 buffer 的 dataflow-layout 可重构见 [FEATHER Accelerator](/concepts/feather-accelerator.md)。
+SpaDA 同时是**通用 SDA 语言**与 **DSL IR**——架构无关的语言设计，当前 backend 专 targeting WSE/CSL。DNN 片上 buffer 的 dataflow-layout 可重构见 [FEATHER Accelerator](/concepts/feather-accelerator.md)。**Parallel patterns** 驱动的 CGRA 见 [Plasticine Accelerator](/concepts/plasticine-accelerator.md)（ISCA 2017，DHDL → PCU/PMU 映射）。
 
 ## 相关页面
 
@@ -86,6 +86,7 @@ SpaDA 同时是**通用 SDA 语言**与 **DSL IR**——架构无关的语言设
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — checkerboard pass 分配的 color 资源
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 数据流 vs 通用 CPU 编程模型
 - [papers/spada-spatial-dataflow-architecture.md](/papers/spada-spatial-dataflow-architecture.md) — 论文摘要
+- [Plasticine Accelerator](/concepts/plasticine-accelerator.md) — parallel patterns 抽象的另一实现路径
 
 # Citations
 
