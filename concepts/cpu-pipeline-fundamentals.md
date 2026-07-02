@@ -56,7 +56,7 @@ sources:
 ## 与 AI 加速器的对比
 
 - **通用 CPU**：深流水线 + 预测 + OoO 换 IPC
-- **[Groq LPU](/concepts/lpu-architecture.md) / [WSE](/entities/cerebras-wse.md)**：编译器静态调度、确定性数据流，**避免分支与动态冒险**
+- **[Groq LPU](/concepts/lpu-architecture.md) / [WSE](/entities/cerebras-wse.md)**：编译器静态调度、确定性数据流，**避免分支与动态冒险**（对比 [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md) 的 token 驱动 fire）
 - **[Deterministic Execution](/concepts/deterministic-execution.md)**：用编译器可见时序替代硬件推测
 
 ## 相关页面

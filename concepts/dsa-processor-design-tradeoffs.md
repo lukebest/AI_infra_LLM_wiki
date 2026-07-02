@@ -17,7 +17,7 @@ sources:
 
 # DSA Processor Design Tradeoffs（领域专用处理器设计取舍）
 
-H&P 核心篇（Day 8–15）覆盖现代 CPU 的**传统武器**；Day 16 将其与 [Cerebras WSE](/entities/cerebras-wse.md) 的 **「无武器」SLA 核** 对照——体系结构本质是**在关键路径上做杠杆最大的取舍**，而非堆功能。
+H&P 核心篇（Day 8–15）覆盖现代 CPU 的**传统武器**；Day 16 将其与 [Cerebras WSE](/entities/cerebras-wse.md) 的 **「无武器」SLA 核** 对照——体系结构本质是**在关键路径上做杠杆最大的取舍**，而非堆功能。Von Neumann 控制流 vs 数据流见 [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md)。
 
 ## 超标量 CPU 完整数据通路
 

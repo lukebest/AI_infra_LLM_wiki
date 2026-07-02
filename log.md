@@ -1,7 +1,10 @@
 # Bundle Update Log
 
 ## 2026-06-24
-* **Update**: [Collective-Capable NoC](/concepts/collective-capable-noc.md), [papers/collective-capable-noc-ml-accelerators.md](/papers/collective-capable-noc-ml-accelerators.md) — 扩充 DCA 范式：DMA 对称、三层归约、数据路径、软件基线对比、2-input 限制与能效。
+* **Ingest**: Dennis & Misunas 1975 basic data-flow processor PDF → `raw/papers/Dennis_Misunas_Basic_Data_Flow_Processor_1975.pdf`（Zotero: ISCA 1975, ACM 641675.642111）。
+* **Creation**: [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md), [papers/dennis-misunas-basic-data-flow-processor.md](/papers/dennis-misunas-basic-data-flow-processor.md), `raw/papers/dennis-misunas-basic-data-flow-processor.md`.
+* **Update**: [Deterministic Execution](/concepts/deterministic-execution.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [CPU Pipeline Fundamentals](/concepts/cpu-pipeline-fundamentals.md), [SpaDA Programming Language](/concepts/spada-programming-language.md), [Cerebras WSE](/entities/cerebras-wse.md) — 数据流架构历史交叉引用。
+* **Update**: [Collective-Capable NoC](/concepts/collective-capable-noc.md), [papers/collective-capable-noc-ml-accelerators.md](/papers/collective-capable-noc-ml-accelerators.md) — 扩充 DCA 范式。
 * **Ingest**: Colagrande et al. 2026 collective-capable NoC PDF → `raw/papers/Collective_Capable_NoC_ML_Accelerators_2026.pdf`（Zotero: MLSys 2026, arXiv:2603.26438）。
 * **Creation**: [Collective-Capable NoC](/concepts/collective-capable-noc.md), [papers/collective-capable-noc-ml-accelerators.md](/papers/collective-capable-noc-ml-accelerators.md), `raw/papers/collective-capable-noc-ml-accelerators.md`.
 * **Update**: [NoC Router 微架构](/concepts/noc-router-microarchitecture.md), [Mesh and Torus Topology](/concepts/mesh-torus-topology.md), [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md), [Memory Consistency Model](/concepts/memory-consistency-model.md), [Cerebras WSE](/entities/cerebras-wse.md) — FlooNoC multicast/reduction/DCA/barrier 交叉引用。

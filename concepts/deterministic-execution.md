@@ -16,7 +16,7 @@ sources:
 
 # Deterministic Execution（确定性执行）
 
-在 AI 推理语境下，确定性执行指编译器完全控制计算时序、数据搬运和同步，而非依赖运行时硬件调度器。目标是可预测的延迟，减少 jitter。
+在 AI 推理语境下，确定性执行指编译器完全控制计算时序、数据搬运和同步，而非依赖运行时硬件调度器。目标是可预测的延迟，减少 jitter。思想谱系可追溯到 Dennis & Misunas 的 **data-driven** 数据流架构（[Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md)）：操作在操作数就绪时发射，无 Von Neumann 式 PC/隐式控制流。
 
 ## 核心原则
 1. **编译器编排**：所有操作时序在编译时确定
@@ -60,6 +60,7 @@ sources:
 - [Cerebras Wse](/entities/cerebras-wse.md) — WSE color-based 确定性路由
 - [Wse Performance Model](/concepts/wse-performance-model.md) — WSE 通信性能模型
 - [Memory Consistency Model](/concepts/memory-consistency-model.md) — WSE 近似 SC vs 通用 TSO/ARM
+- [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md) — 数据驱动执行历史源头（1975 ISCA）
 - [Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — WSE Reduce/AllReduce 算法族
 
 # Citations

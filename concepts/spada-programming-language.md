@@ -17,7 +17,7 @@ sources:
 
 # SpaDA Programming Language
 
-**SpaDA**（Spatial Dataflow Abstraction）是面向 [Cerebras WSE](/entities/cerebras-wse.md) 等空间数据流架构（SDA）的高级编程语言与编译 IR：无共享内存、电路交换 [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) NoC、[Color 虚拟通道](/concepts/cerebras-color-mechanism.md) 与异步 task 驱动执行——抽象 CSL 低层细节，同时保留对数据放置与通信结构的显式控制。
+**SpaDA**（Spatial Dataflow Abstraction）是面向 [Cerebras WSE](/entities/cerebras-wse.md) 等空间数据流架构（SDA）的高级编程语言与编译 IR：无共享内存、电路交换 [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) NoC、[Color 虚拟通道](/concepts/cerebras-color-mechanism.md) 与异步 task 驱动执行——抽象 CSL 低层细节，同时保留对数据放置与通信结构的显式控制。数据流执行模型谱系见 [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md)（Dennis & Misunas, 1975）。
 
 **Authors:** Lukas Gianinazzi, Tal Ben-Nun, Torsten Hoefler | **arXiv:** [2511.09447](https://arxiv.org/abs/2511.09447) (v2, Apr 2026) | **Code:** https://github.com/spcl/spada/
 

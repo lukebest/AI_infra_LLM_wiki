@@ -92,6 +92,7 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 - [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — 无 coherence 时 fence 退化
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — 无 DRAM、21 PB/s SRAM 带宽
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — place/dataflow/compute 高级 CSL 抽象
+- [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md) — 数据流架构历史（Dennis & Misunas 1975）
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 共同使用的确定性范式
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — 无 L1/L2/L3 的设计对比
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 暗硅、良率、专用 PE
