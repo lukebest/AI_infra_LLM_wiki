@@ -70,6 +70,7 @@ Luczynski et al. (HPDC 2024) 系统性设计和分析的 Cerebras WSE 通信 col
 
 ### Ring AllReduce
 - reduce-scatter (P−1 轮) → allgather (P−1 轮)
+- 经典 MPI 环算法见 [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md)（Rabenseifner 2004：pairwise reduce-scatter + ring allgather）
 - 两种 mesh 映射: simple（最长 link = P−1）vs distance-preserving（≤2 hop）
 - 预测性能相同（因 bidirectional links: 2(P−1) links）
 - T = 2(P−1)B/P + 4P − 6 + 2(P−1)(2TR+1)
@@ -116,6 +117,7 @@ B ≫ TR·P?  → Chain
 ## 相关页面
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — Chain/Tree/Two-Phase 的 SpaDA 实现（1.04× HPDC'24 CSL）
 - [Near Optimal Wafer Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md) — 原始论文
+- [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — MPI 经典五算法与 (p,n) 选择（Rabenseifner 2004）
 - [Wse Performance Model](/concepts/wse-performance-model.md) — 指导算法设计的性能模型
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — Mesh 上 collective
 - [Collective-Capable NoC](/concepts/collective-capable-noc.md) — FlooNoC 片上 multicast/reduction/barrier

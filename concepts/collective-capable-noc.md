@@ -163,6 +163,7 @@ Parallel reduction（CollectB/LsbAnd）处理窄网 bitwise/AXI 语义；**宽�
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — wormhole/仲裁/流控基线
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — XY 路由前提
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — 另一 mesh collective 设计空间
+- [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — 软件 AllReduce 经典算法（Ring/RHD）
 - [Memory Consistency Model](/concepts/memory-consistency-model.md) — 大规模 barrier 硬件必要性
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — WSE multicast 对照
 

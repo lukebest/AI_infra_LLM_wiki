@@ -106,6 +106,7 @@ WSE 选 2-D Mesh：4 端口可造；3-D Torus 要 6 端口+长环绕；Hypercube
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层空间
 - [Cerebras WSE](/entities/cerebras-wse.md) — Mesh 设计实例
 - [Multi-plane Clos Topology for AI Training](/concepts/multi-plane-clos-topology.md) — 间接网络扩展
+- [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — α+nβ 集体通信代价模型（MPI AllReduce）
 
 # Citations
 

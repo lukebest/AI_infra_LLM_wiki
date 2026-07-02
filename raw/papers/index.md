@@ -12,6 +12,7 @@
 * [information-theory-ai-agents-2026-04](information-theory-ai-agents-2026-04.md)
 * [near-optimal-wafer-scale-reduce](near-optimal-wafer-scale-reduce.md)
 * [plasticine-reconfigurable-parallel-patterns](plasticine-reconfigurable-parallel-patterns.md)
+* [rabenseifner-collective-reduction-operations](rabenseifner-collective-reduction-operations.md)
 * [understanding-inference-scaling-for-llms](understanding-inference-scaling-for-llms.md)
 
 # Raw Source

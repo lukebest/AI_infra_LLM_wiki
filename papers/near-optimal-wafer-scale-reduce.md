@@ -67,6 +67,7 @@ Luczynski, Gianinazzi, Iff, Wilson, De Sensi, Hoefler (ETH Zurich + Cerebras + S
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — Color 用于路由配置（论文用 ≤3/5 colors）
 - [Wse Performance Model](/concepts/wse-performance-model.md) — 论文提出的性能模型独立概念页
 - [Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — Reduce/AllReduce 算法族独立概念页
+- [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — MPI 经典归约算法（Ring/RHD 前身）
 - [Deterministic Execution](/concepts/deterministic-execution.md) — WSE 确定性数据流架构使模型精确预测成为可能
 - [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — WSE router 的 5-link 架构与 NoC 理论关联
 - [Switching Networks](/concepts/switching-networks.md) — mesh 拓扑下的 collective 算法设计

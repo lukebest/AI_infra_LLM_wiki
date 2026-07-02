@@ -1,6 +1,9 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: Rabenseifner 2004 MPI collective reduction ICCS PDF → `raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf`（Zotero: ICCS 2004, LNCS 3036）。
+* **Creation**: [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md), [papers/rabenseifner-collective-reduction-operations.md](/papers/rabenseifner-collective-reduction-operations.md), `raw/papers/rabenseifner-collective-reduction-operations.md`.
+* **Update**: [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md), [Linear and Ring Topology](/concepts/linear-ring-topology.md), [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md), [Parallelism Transition Point](/concepts/parallelism-transition-point.md), [Near-Optimal Wafer-Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md) — MPI Ring/RHD 与 WSE collective 谱系交叉引用。
 * **Ingest**: Aimuyo et al. 2025 FlashMoE NeurIPS PDF → `raw/papers/FlashMoE_Fast_Distributed_MoE_Single_Kernel_2025.pdf`（Zotero: arXiv:2506.04667）。
 * **Creation**: [FlashMoE Kernel](/concepts/flashmoe-kernel.md), [papers/flashmoe-fast-distributed-moe-single-kernel.md](/papers/flashmoe-fast-distributed-moe-single-kernel.md), `raw/papers/flashmoe-fast-distributed-moe-single-kernel.md`.
 * **Update**: [MegaMoE Kernel](/concepts/megamoe-kernel.md), [M2N Communication](/concepts/m2n-communication.md), [Disaggregated Inference](/concepts/disaggregated-inference.md), [Parallelism Transition Point](/concepts/parallelism-transition-point.md), [MegaScale-Infer](/papers/megascale-infer-2504.02263.md) — MoE EP kernel 栈交叉引用。
