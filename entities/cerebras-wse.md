@@ -102,6 +102,7 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 - [Cerebras Wse Vs Groq Network Comparison](/analyses/cerebras-wse-vs-groq-network-comparison.md) — WSE vs Groq 全面对比
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — Color 虚拟通道机制
 - [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — WSE NoC Router 理论基础
+- [Collective-Capable NoC](/concepts/collective-capable-noc.md) — 通用 tile mesh 片上 collective 对照（FlooNoC/DCA）
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — Mesh 度量与 Torus 对比
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与 B_b 瓶颈
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间

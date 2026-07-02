@@ -18,6 +18,7 @@ created: 2026-05-14
 sources:
 - raw/articles/片上网络Router的微架构---设计师视角.md
 - raw/papers/Near-optimal_wafer-scale_reduce.pdf
+- raw/papers/Collective_Capable_NoC_ML_Accelerators_2026.pdf
 ---
 
 # NoC Router 微架构
@@ -192,6 +193,8 @@ sources:
 - **[Ub Data Link Layer](/concepts/ub-data-link-layer.md)**：UB 的 Credit 流控/Go-Back-N 与 NoC credit-based 流控原理一致
 - **[Ub Transport Layer](/concepts/ub-transport-layer.md)**：UB 传输层的 PSN/重传机制是 NoC router 流控在网络层的扩展
 - **[Deterministic Execution](/concepts/deterministic-execution.md)**：编译器确定性调度依赖 NoC Router 的确定性行为
+- **[Collective-Capable NoC](/concepts/collective-capable-noc.md)** — FlooNoC 扩展：XY fork 组播、in-network reduction、**DCA 借 FPU**（MLSys 2026）
+- **[WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md)** — WSE mesh collective 算法与性能模型
 - **[Lpu Architecture](/concepts/lpu-architecture.md)**：LPU 的 SRAM-first 架构中片上互联设计参考了 NoC Router 微架构
 - **[Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md)**：FBFLY 拓扑利用高基数 Router 降低片上网络直径，bypass channel 减少非最小路由开销
 
@@ -199,3 +202,4 @@ sources:
 
 [1] [raw/articles/片上网络Router的微架构---设计师视角.md](raw/articles/片上网络Router的微架构---设计师视角.md)
 [2] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)
+[3] [raw/papers/Collective_Capable_NoC_ML_Accelerators_2026.pdf](raw/papers/Collective_Capable_NoC_ML_Accelerators_2026.pdf) — FlooNoC collective + DCA（MLSys 2026）

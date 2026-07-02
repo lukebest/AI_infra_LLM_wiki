@@ -117,6 +117,8 @@ B ≫ TR·P?  → Chain
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — Chain/Tree/Two-Phase 的 SpaDA 实现（1.04× HPDC'24 CSL）
 - [Near Optimal Wafer Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md) — 原始论文
 - [Wse Performance Model](/concepts/wse-performance-model.md) — 指导算法设计的性能模型
+- [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — Mesh 上 collective
+- [Collective-Capable NoC](/concepts/collective-capable-noc.md) — FlooNoC 片上 multicast/reduction/barrier
 - [Cerebras Wse](/entities/cerebras-wse.md) — 目标硬件
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — Color 路由机制
 - [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — NoC Router 微架构

@@ -1,6 +1,10 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Update**: [Collective-Capable NoC](/concepts/collective-capable-noc.md), [papers/collective-capable-noc-ml-accelerators.md](/papers/collective-capable-noc-ml-accelerators.md) — 扩充 DCA 范式：DMA 对称、三层归约、数据路径、软件基线对比、2-input 限制与能效。
+* **Ingest**: Colagrande et al. 2026 collective-capable NoC PDF → `raw/papers/Collective_Capable_NoC_ML_Accelerators_2026.pdf`（Zotero: MLSys 2026, arXiv:2603.26438）。
+* **Creation**: [Collective-Capable NoC](/concepts/collective-capable-noc.md), [papers/collective-capable-noc-ml-accelerators.md](/papers/collective-capable-noc-ml-accelerators.md), `raw/papers/collective-capable-noc-ml-accelerators.md`.
+* **Update**: [NoC Router 微架构](/concepts/noc-router-microarchitecture.md), [Mesh and Torus Topology](/concepts/mesh-torus-topology.md), [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md), [Memory Consistency Model](/concepts/memory-consistency-model.md), [Cerebras WSE](/entities/cerebras-wse.md) — FlooNoC multicast/reduction/DCA/barrier 交叉引用。
 * **Ingest**: 体系结构 30 天学习笔记 Day 19 → `raw/articles/arch-study-30d-day-19.md`.
 * **Creation**: [Memory Consistency Model](/concepts/memory-consistency-model.md).
 * **Update**: [Cache Coherence](/concepts/cache-coherence.md), [Memory Fence and Barrier](/concepts/memory-fence-barrier.md), [Out-of-Order Execution](/concepts/out-of-order-execution.md), [Deterministic Execution](/concepts/deterministic-execution.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [Cerebras WSE](/entities/cerebras-wse.md), [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — SC/TSO/ARM、fence、CAS/MCS 锁、WSE barrier 交叉引用。

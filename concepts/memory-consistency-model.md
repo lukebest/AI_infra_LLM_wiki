@@ -112,7 +112,7 @@ MCS (1991)：32 核实测吞吐 ~**12×** Ticket Lock，invalidate **~1000×** �
 | 硬件 fabric barrier | ~670 ns（对角 ~670 hop） |
 | 软件 MCS Lock | ~**1.8 ms**（排队 + mesh 消息） |
 
-**>~10K 核**：硬件 barrier 为唯一可行路径（[WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md)）。
+**>~10K 核**：硬件 barrier 为唯一可行路径（[WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md)、[Collective-Capable NoC](/concepts/collective-capable-noc.md) LsbAnd in-network barrier）。
 
 NPU dataflow 主路径无需 coherence/consistency；**reduction / control-plane / 统计** 需 mesh-aware barrier、tree reduce、fetch-and-add。
 
