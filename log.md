@@ -1,6 +1,12 @@
 # Bundle Update Log
 
 ## 2026-06-24
+* **Ingest**: 体系结构 30 天学习笔记 Day 19 → `raw/articles/arch-study-30d-day-19.md`.
+* **Creation**: [Memory Consistency Model](/concepts/memory-consistency-model.md).
+* **Update**: [Cache Coherence](/concepts/cache-coherence.md), [Memory Fence and Barrier](/concepts/memory-fence-barrier.md), [Out-of-Order Execution](/concepts/out-of-order-execution.md), [Deterministic Execution](/concepts/deterministic-execution.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [Cerebras WSE](/entities/cerebras-wse.md), [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — SC/TSO/ARM、fence、CAS/MCS 锁、WSE barrier 交叉引用。
+* **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 7 → `raw/articles/interconn-study-21d-day-07.md`.
+* **Creation**: [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md).
+* **Update**: [Mesh and Torus Topology](/concepts/mesh-torus-topology.md), [Linear and Ring Topology](/concepts/linear-ring-topology.md), [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md), [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md), [Switching Networks](/concepts/switching-networks.md), [Multi-plane Clos Topology for AI Training](/concepts/multi-plane-clos-topology.md) — Clos 定理、Fat-Tree、间接网络交叉引用。
 * **Ingest**: FEATHER 论文 PDF → `raw/papers/FEATHER_Reconfigurable_Accelerator_Dataflow_Switching_2024.pdf`（Zotero: Tong et al. 2024, arXiv:2405.13170）。
 * **Creation**: [FEATHER Accelerator](/concepts/feather-accelerator.md), [papers/feather-reconfigurable-accelerator.md](/papers/feather-reconfigurable-accelerator.md), `raw/papers/feather-reconfigurable-accelerator.md`.
 * **Update**: [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [SpaDA Programming Language](/concepts/spada-programming-language.md) — dataflow/layout 可重构交叉引用。

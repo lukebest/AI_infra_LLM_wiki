@@ -15,6 +15,7 @@ sources:
 - raw/articles/interconn-study-21d-day-03.md
 - raw/articles/interconn-study-21d-day-05.md
 - raw/articles/interconn-study-21d-day-06.md
+- raw/articles/interconn-study-21d-day-07.md
 ---
 
 # Interconnection Topology Metrics（互连拓扑度量）
@@ -27,7 +28,7 @@ sources:
 |--|---------------|-----------------|
 | 节点角色 | 计算 + 路由 | 终端仅计算；路由在 Switch |
 | 端口约束 | 度 d = PE 引脚上限 | Switch 可高基数 |
-| 例子 | [Cerebras WSE](/entities/cerebras-wse.md) Mesh | Fat Tree、CLOS |
+| 例子 | [Cerebras WSE](/entities/cerebras-wse.md) Mesh | [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md)、CLOS |
 
 WSE：~900K PE **全部参与路由**，每 PE **4 端口**。
 
@@ -89,6 +90,7 @@ Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Toru
 
 ## 相关页面
 
+- [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md) — 间接网络与 Clos 定理
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — 2-D Mesh/Torus 与维度权衡
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 指标→延迟/成本公式
 - [Linear and Ring Topology](/concepts/linear-ring-topology.md) — 1-D 基线与 1-D Torus
@@ -101,3 +103,4 @@ Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Toru
 [1] [raw/articles/interconn-study-21d-day-03.md](raw/articles/interconn-study-21d-day-03.md) — D&T Ch.3.1–3.2（Day 3）
 [2] [raw/articles/interconn-study-21d-day-05.md](raw/articles/interconn-study-21d-day-05.md) — 1-D Ring 基线（Day 5）
 [3] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — 2-D Mesh/Torus（Day 6）
+[4] [raw/articles/interconn-study-21d-day-07.md](raw/articles/interconn-study-21d-day-07.md) — Clos/Fat-Tree（Day 7）

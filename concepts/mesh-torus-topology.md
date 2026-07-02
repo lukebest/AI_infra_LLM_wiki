@@ -105,7 +105,7 @@ Dally 用 **k（基数）× n（维度）** 表达所有直连网络（N = kⁿ�
 | 64k | 3-D Torus（Blue Gene/L 64×32×32） |
 | ~900K (WSE-3) | **2-D Mesh** (k≈949) — 高维需 TSV/堆叠，硅片物理限制 |
 
-N=64k 若用 256×256 Mesh：D=510 跳；3-D Torus 直径 ~64 跳——**8× 延迟差距**是 HPC 弃 Mesh 的根因。维度加不上去时 → 间接网络（Clos/Fat-Tree，Day 7）。
+N=64k 若用 256×256 Mesh：D=510 跳；3-D Torus 直径 ~64 跳——**8× 延迟差距**是 HPC 弃 Mesh 的根因。维度加不上去时 → [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md)（间接网络）。
 
 ## XY 维序路由
 

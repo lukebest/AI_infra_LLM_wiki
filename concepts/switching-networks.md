@@ -12,6 +12,7 @@ timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
 sources:
 - raw/articles/浅谈交换原理（3）——交换网络.md
+- raw/articles/interconn-study-21d-day-07.md
 ---
 
 # Switching Networks（交换网络）
@@ -134,6 +135,7 @@ T 接线器 (×32) → S 接线器 (32×32) → T 接线器 (×32)
 - **Banyan 与 NoC**：Cerebras WSE 的 2D mesh 路由、[Cerebras Wse](/entities/cerebras-wse.md) 的 24-color 路由与 Banyan 的自路由思想有关联
 
 ## 相关页面
+- [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md) — D&T 间接网络：C(n,m,r)、Fat-Tree 代价等价
 - [Switching Principles](/concepts/switching-principles.md) — 交换原理概述
 - [Switching Elements](/concepts/switching-elements.md) — 交换单元（S/T 接线器）
 - [Kyber Rack](/entities/kyber-rack.md) — 多级 NVLink 交换网络
@@ -147,3 +149,4 @@ T 接线器 (×32) → S 接线器 (32×32) → T 接线器 (×32)
 # Citations
 
 [1] [raw/articles/浅谈交换原理（3）——交换网络.md](raw/articles/浅谈交换原理（3）——交换网络.md)
+[2] [raw/articles/interconn-study-21d-day-07.md](raw/articles/interconn-study-21d-day-07.md) — D&T Clos/Fat-Tree（Day 7）

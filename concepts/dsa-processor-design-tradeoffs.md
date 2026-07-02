@@ -43,7 +43,7 @@ OoO: 重命名 → ROB/RS → Issue Queue → 调度
 | L1 Cache | ~1.5× | ~1× | **无**（48 KB SRAM 直用） |
 | L2/L3 | ~1.3× | ~5× | **无** |
 | TLB/MMU | ~1.05× | ~1× | **无**（[Virtual Memory](/concepts/virtual-memory-tlb.md)） |
-| Cache 一致性 + Memory Fence | — | ~2× | **无**（无共享地址空间；见 [Cache Coherence](/concepts/cache-coherence.md)、[Memory Fence and Barrier](/concepts/memory-fence-barrier.md)） |
+| Cache 一致性 + Memory Fence | — | ~2× | **无**（无共享地址空间；见 [Cache Coherence](/concepts/cache-coherence.md)、[Memory Consistency Model](/concepts/memory-consistency-model.md)、[Memory Fence and Barrier](/concepts/memory-fence-barrier.md)） |
 
 **WSE 交换**：失去通用性与单核峰值 GHz → 获得 **900K PE**、**21 PB/s** 片上带宽、确定性延迟。
 
@@ -76,7 +76,7 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 | 乱序 + 分支预测 | 数据流图 / CSL |
 | Cache 定位 + MFENCE | 显式 NoC 消息 / PE barrier |
 
-设计原则：**避免硬件猜测** → 固定可建模延迟 → 复杂性上移到编译器（[Deterministic Execution](/concepts/deterministic-execution.md)）。通用 DNN 加速器若保留可编程性，则通过 per-layer **(dataflow, layout) co-switch** 换利用率——见 [FEATHER Accelerator](/concepts/feather-accelerator.md)（与 WSE 固定 spatial 编排不同路径）。
+设计原则：**避免硬件猜测** → 固定可建模延迟 → 复杂性上移到编译器（[Deterministic Execution](/concepts/deterministic-execution.md)）。WSE 单时钟域近似 [Memory Consistency Model](/concepts/memory-consistency-model.md) 的 SC，以频率与弹性换取软件无需 fence。通用 DNN 加速器若保留可编程性，则通过 per-layer **(dataflow, layout) co-switch** 换利用率——见 [FEATHER Accelerator](/concepts/feather-accelerator.md)（与 WSE 固定 spatial 编排不同路径）。
 
 ## 相关页面
 
@@ -84,6 +84,7 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 - [Out-of-Order Execution](/concepts/out-of-order-execution.md)
 - [Branch Prediction](/concepts/branch-prediction.md)
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md)
+- [Memory Consistency Model](/concepts/memory-consistency-model.md) — WSE 近似 SC vs 通用 TSO
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md)
 - [LPU Architecture](/concepts/lpu-architecture.md) — 同类 SME 路径
 

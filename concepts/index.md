@@ -5,6 +5,7 @@
 * [Branch Prediction](branch-prediction.md) - 分支预测：1-bit/2-bit 饱和计数器、局部与全局历史、TAGE/BTB、分支惩罚对 CPI 的量化影响
 * [Cache Coherence](cache-coherence.md) - 多核 Cache 一致性：MESI/MOESI 状态机、Snooping vs Directory、False Sharing，与 WSE 无共享地址空间的对比
 * [Cerebras Color Mechanism](cerebras-color-mechanism.md) - WSE Color 虚拟通道机制：静态路由+独立缓冲+Color×4任务调度+独立反压，Fabric/Local Color 双类型
+* [Clos and Fat-Tree Topology](clos-fat-tree-topology.md) - 间接网络：终端/交换分离、Clos C(n,m,r) 无阻塞条件、Fat-Tree 代价等价与 Beneš RNB，及 InfiniBand/Jupiter 与 WSE 规模分界
 * [CMX & STX](cmx-stx.md) - NVIDIA 推理存储平台：CMX（Tier G3.5 NVMe KV cache）+ STX（BF-4 存储 rack 参考架构）
 * [Core Group (DRAM Access Synchronization)](core-group-dram-access.md) - 3D AI 芯片 core group：物理相邻 core 组内通过 hardware tracker 同步 DRAM 访问，缓解 row-buffer 冲突
 * [CPU Pipeline Fundamentals](cpu-pipeline-fundamentals.md) - 五级流水线（IF/ID/EX/MEM/WB）、三大冒险（结构/数据/控制）、Forwarding 与分支惩罚
@@ -31,6 +32,7 @@
 * [M2N Communication](m2n-communication.md) - M2N 不对称通信模式，disaggregated inference 核心，4.2× NCCL 优化
 * [Manifold-Constrained Hyper-Connections (mHC)](mhc.md) - 流形约束超连接，Birkhoff polytope 约束残差映射
 * [MegaMoE Kernel (Expert Parallelism Overlap)](megamoe-kernel.md) - MoE 专家并行 mega-kernel，wave-based 通信计算全重叠
+* [Memory Consistency Model](memory-consistency-model.md) - 内存一致性模型：Coherence vs Consistency、SC/TSO/ARM 重排规则、fence 契约、CAS/LL-SC 与 MCS 锁，及 WSE/NPU 同步设计
 * [Memory Fence and Barrier](memory-fence-barrier.md) - 内存屏障：ISA 顺序语义、Store Buffer/Invalidate Queue 排空、NoC coherence 路径、x86/ARM/RISC-V 变体与 WSE 无 coherence 对照
 * [Memory Hierarchy and Cache](memory-hierarchy-cache.md) - 内存墙、存储层次、Cache 映射与 3C 模型、AMAT 优化框架、与 WSE SRAM-only 设计的对比
 * [Mesh and Torus Topology](mesh-torus-topology.md) - 2-D Mesh/Torus 与 k-ary n-cube：度/直径/二分带宽、Dally 维度-延迟-吞吐量权衡、XY 维序路由，及 WSE/Blue Gene 选型

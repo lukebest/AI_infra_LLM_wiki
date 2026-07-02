@@ -52,13 +52,14 @@ sources:
 
 ## 与通用 CPU 的对比
 
-确定性执行是 **OoO CPU 的反面**：不依赖 [Branch Prediction](/concepts/branch-prediction.md)、[Out-of-Order Execution](/concepts/out-of-order-execution.md)、Cache 推测（[Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md)）、[Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) 或 [Memory Fence and Barrier](/concepts/memory-fence-barrier.md)（无 coherence/Store Buffer 链）。即 **Software-Managed Everything**——编译器在 [ISA Design Principles](/concepts/isa-design-principles.md) 之上直接编排时序、地址与数据流；详见 [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md)。
+确定性执行是 **OoO CPU 的反面**：不依赖 [Branch Prediction](/concepts/branch-prediction.md)、[Out-of-Order Execution](/concepts/out-of-order-execution.md)、Cache 推测（[Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md)）、[Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) 或 [Memory Fence and Barrier](/concepts/memory-fence-barrier.md)（无 coherence/Store Buffer 链）。WSE 单时钟域近似 [Memory Consistency Model](/concepts/memory-consistency-model.md) 的 **SC**——即 **Software-Managed Everything**：编译器在 [ISA Design Principles](/concepts/isa-design-principles.md) 之上直接编排时序、地址与数据流；详见 [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md)。
 
 ## 相关页面
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — WSE 高级编程与编译时 spatial 编排
 - [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPU 确定性执行实例
 - [Cerebras Wse](/entities/cerebras-wse.md) — WSE color-based 确定性路由
 - [Wse Performance Model](/concepts/wse-performance-model.md) — WSE 通信性能模型
+- [Memory Consistency Model](/concepts/memory-consistency-model.md) — WSE 近似 SC vs 通用 TSO/ARM
 - [Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — WSE Reduce/AllReduce 算法族
 
 # Citations

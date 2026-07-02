@@ -121,6 +121,7 @@ B ≫ TR·P?  → Chain
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — Color 路由机制
 - [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — NoC Router 微架构
 - [Switching Networks](/concepts/switching-networks.md) — mesh 网络与 collective 算法的关系
+- [Memory Consistency Model](/concepts/memory-consistency-model.md) — >10K 核硬件 barrier vs MCS 锁
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 确定性数据流使精确模型预测成为可能
 
 # Citations

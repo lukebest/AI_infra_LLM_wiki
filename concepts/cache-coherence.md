@@ -17,7 +17,7 @@ sources:
 
 # Cache Coherence（Cache 一致性）
 
-多核各自持有 [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) 副本时，**P0 写入何时对 P1 可见**？Coherence 协议保证**同一地址**上的 propagation + serialization（Goodman 1983）。**跨地址顺序**由内存一致性模型 + [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) 管辖（Day 19）。
+多核各自持有 [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) 副本时，**P0 写入何时对 P1 可见**？Coherence 协议保证**同一地址**上的 propagation + serialization（Goodman 1983）。**跨地址顺序**由 [Memory Consistency Model](/concepts/memory-consistency-model.md) + [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) 管辖。
 
 ## 问题定义
 
@@ -102,6 +102,7 @@ Cache 替换算法无法缓解——由**数据布局**决定；与 Row Buffer �
 ## 相关页面
 
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — Cache 层与 coherence miss
+- [Memory Consistency Model](/concepts/memory-consistency-model.md) — SC/TSO/ARM、atomics、MCS 锁
 - [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — coherence 链上的 fence/invalidate
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 无 TLB shootdown/coherence traffic
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 无共享内存的数据流替代

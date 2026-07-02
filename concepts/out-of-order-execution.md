@@ -12,6 +12,7 @@ created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-10.md
 - raw/articles/arch-study-30d-day-12.md
+- raw/articles/arch-study-30d-day-19.md
 ---
 
 # Out-of-Order Execution（乱序执行）
@@ -57,7 +58,7 @@ OoO + [Branch Prediction](/concepts/branch-prediction.md)：在分支结果前�
 
 ## Memory Fence
 
-Fence 进入 ROB 后设 **Barrier bit**，排空 Store Buffer 并 stall 后续 store，直到屏障前指令 retire。多核路径经 coherence/NoC 排空 Invalidate Queue——详见 [Memory Fence and Barrier](/concepts/memory-fence-barrier.md)。
+Fence 进入 ROB 后设 **Barrier bit**，排空 Store Buffer 并 stall 后续 store，直到屏障前指令 retire。多核路径经 coherence/NoC 排空 Invalidate Queue——详见 [Memory Fence and Barrier](/concepts/memory-fence-barrier.md)、[Memory Consistency Model](/concepts/memory-consistency-model.md)（TSO Store→Load 重排）。
 
 ## 与 AI 加速器
 
@@ -67,6 +68,7 @@ OoO 是 **通用 CPU 高 IPC 的灵魂**，也是 **功耗与面积的主要来�
 
 - [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md) — ILP 与依赖
 - [Branch Prediction](/concepts/branch-prediction.md) — 控制推测
+- [Memory Consistency Model](/concepts/memory-consistency-model.md) — Store Buffer 与 TSO
 - [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — ROB/SBUF 排空与 coherence
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 暗硅与功耗墙
 
@@ -74,3 +76,4 @@ OoO 是 **通用 CPU 高 IPC 的灵魂**，也是 **功耗与面积的主要来�
 
 [1] [raw/articles/arch-study-30d-day-10.md](raw/articles/arch-study-30d-day-10.md) — Tomasulo 算法（Day 10）
 [2] [raw/articles/arch-study-30d-day-12.md](raw/articles/arch-study-30d-day-12.md) — 指令窗口量化（Day 12）
+[3] [raw/articles/arch-study-30d-day-19.md](raw/articles/arch-study-30d-day-19.md) — Store Buffer / TSO（Day 19）

@@ -19,6 +19,7 @@ sources:
 - raw/articles/interconn-study-21d-day-04.md
 - raw/articles/interconn-study-21d-day-05.md
 - raw/articles/interconn-study-21d-day-06.md
+- raw/articles/interconn-study-21d-day-07.md
 ---
 
 # Interconnection Network Design Space（互连网络设计空间）
@@ -73,7 +74,7 @@ sources:
 | | NoC / HPC 机柜 | 数据中心 scale-out |
 |--|----------------|-------------------|
 | 约束 | 端口数、片上面积、布线密度 | 机架规模、bisection BW、成本 |
-| 常见拓扑 | Mesh、Torus、k-ary n-cube | Fat Tree、CLOS（见 [Switching Networks](/concepts/switching-networks.md)） |
+| 常见拓扑 | Mesh、Torus、k-ary n-cube | [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md)、CLOS（见 [Switching Networks](/concepts/switching-networks.md)） |
 | 原因 | 固定端口预算下 Mesh 可单片实现 | 高基数交换 + 多级结构提供可扩展 bisection BW |
 
 ## 性能瓶颈三视角
@@ -87,6 +88,7 @@ sources:
 ## 相关页面
 
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 度/直径/二分带宽
+- [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md) — Clos 定理与 Fat-Tree 代价等价
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — 2-D Mesh/Torus 与 k-ary n-cube
 - [Linear and Ring Topology](/concepts/linear-ring-topology.md) — 1-D 基线拓扑
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与成本公式
@@ -103,3 +105,4 @@ sources:
 [3] [raw/articles/interconn-study-21d-day-04.md](raw/articles/interconn-study-21d-day-04.md) — Ch.3.3–3.5（Day 4）
 [4] [raw/articles/interconn-study-21d-day-05.md](raw/articles/interconn-study-21d-day-05.md) — Ch.3 线性/Ring（Day 5）
 [5] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — Ch.3 Mesh/Torus（Day 6）
+[6] [raw/articles/interconn-study-21d-day-07.md](raw/articles/interconn-study-21d-day-07.md) — Ch.3 间接网络（Day 7）

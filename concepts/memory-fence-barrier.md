@@ -13,11 +13,12 @@ timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/articles/memory-fence-hardware-2026-06-28.md
+- raw/articles/arch-study-30d-day-19.md
 ---
 
 # Memory Fence and Barrier（内存屏障）
 
-**Memory fence** 是一条同步指令：排空处理器内部缓冲（Store Buffer、Invalidate Queue、Write Combining Buffer），并强制后续访存排在屏障之后。ISA 层 1 条指令，硬件路径却穿透 **ROB → LSQ → SBUF → L1 → Coherence/NoC → Directory → 远端 L1/IQ**——跨核同步链。
+**Memory fence** 是一条同步指令：排空处理器内部缓冲（Store Buffer、Invalidate Queue、Write Combining Buffer），并强制后续访存排在屏障之后。它是 [Memory Consistency Model](/concepts/memory-consistency-model.md) 在 ISA 层的实现手段——ISA 层 1 条指令，硬件路径却穿透 **ROB → LSQ → SBUF → L1 → Coherence/NoC → Directory → 远端 L1/IQ**——跨核同步链。
 
 ## 五种「看不见的缓冲」
 
@@ -91,6 +92,7 @@ RISC-V **FENCE.VMA** 路径：排空 outstanding 访存 → TLB shootdown IPI �
 
 - [Out-of-Order Execution](/concepts/out-of-order-execution.md) — ROB Barrier、推测与 fence
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — FENCE.VMA 与 shootdown
+- [Memory Consistency Model](/concepts/memory-consistency-model.md) — TSO Store→Load、SC/ARM 对比
 - [Cache Coherence](/concepts/cache-coherence.md) — MESI、Invalidate Queue 协议层
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — coherence miss
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — fence 消息的 NoC 延迟
@@ -100,3 +102,4 @@ RISC-V **FENCE.VMA** 路径：排空 outstanding 访存 → TLB shootdown IPI �
 # Citations
 
 [1] [raw/articles/memory-fence-hardware-2026-06-28.md](raw/articles/memory-fence-hardware-2026-06-28.md) — Memory Fence 深度研究报告（2026-06-28）
+[2] [raw/articles/arch-study-30d-day-19.md](raw/articles/arch-study-30d-day-19.md) — H&P Ch.5.4–5.6 一致性模型（Day 19）

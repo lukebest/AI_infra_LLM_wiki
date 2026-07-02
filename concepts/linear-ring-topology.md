@@ -88,6 +88,7 @@ Ring ─────────────────────────
 
 ## 相关页面
 
+- [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md) — 大规模间接网络
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — Ring → Mesh/Torus 演进
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — k-ary n-cube 公式（n=1 即 Ring）
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟/成本权衡

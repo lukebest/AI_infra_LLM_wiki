@@ -38,7 +38,7 @@ sources:
 | 内存 | L1/L2/L3 + DRAM/HBM | **44 GB 片上 SRAM**，无 DRAM（[DRAM and Memory System](/concepts/dram-memory-system.md)、[Memory Hierarchy](/concepts/memory-hierarchy-cache.md)） |
 | 地址 | MMU + TLB + 虚拟内存 | **无 MMU/TLB**，物理/SRAM 直寻（[Virtual Memory and TLB](/concepts/virtual-memory-tlb.md)） |
 | 互连 | 片外总线/NoC + coherence | 晶圆级 2D Mesh + 虫孔，无 coherence/shootdown |
-| 同步 | MFENCE + coherence 链 | PE barrier / 显式消息（[Memory Fence and Barrier](/concepts/memory-fence-barrier.md)） |
+| 同步 | MFENCE + coherence 链 | PE barrier / 显式消息（[Memory Consistency Model](/concepts/memory-consistency-model.md)、[Memory Fence and Barrier](/concepts/memory-fence-barrier.md)） |
 | 经济 | 小 die 高良率 | 整晶圆良率约束（[Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md)） |
 
 完整能力/代价矩阵见 [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md)。
@@ -88,6 +88,7 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 无 MMU/TLB
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — SLA vs Golden Cove 矩阵
 - [Cache Coherence](/concepts/cache-coherence.md) — 900K PE 无 MESI/Directory
+- [Memory Consistency Model](/concepts/memory-consistency-model.md) — 无共享内存、PE barrier 近似 SC
 - [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — 无 coherence 时 fence 退化
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — 无 DRAM、21 PB/s SRAM 带宽
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — place/dataflow/compute 高级 CSL 抽象

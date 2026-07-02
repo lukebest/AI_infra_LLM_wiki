@@ -15,6 +15,7 @@ created: 2026-06-24
 sources:
 - raw/articles/interconn-study-21d-day-04.md
 - raw/articles/interconn-study-21d-day-06.md
+- raw/articles/interconn-study-21d-day-07.md
 ---
 
 # Interconnection Network Cost Model（互连网络成本与性能模型）
@@ -59,7 +60,7 @@ B_b 是**必要条件非充分条件**：热点 all-to-one（如 AllReduce 末�
 
 ## 直连网络最优度 d ≈ O(log N)
 
-百万节点直连需 d≈20 端口 → **不可制造**。百万级系统需**间接网络 + 高基数 Switch**（Fat Tree/CLOS，见 [Switching Networks](/concepts/switching-networks.md)）。
+百万节点直连需 d≈20 端口 → **不可制造**。百万级系统需**间接网络 + 高基数 Switch**（见 [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md)、[Switching Networks](/concepts/switching-networks.md)）。
 
 | N | 最优 d（量级） | 典型拓扑 |
 |---|----------------|----------|
@@ -99,6 +100,7 @@ WSE 选 2-D Mesh：4 端口可造；3-D Torus 要 6 端口+长环绕；Hypercube
 
 ## 相关页面
 
+- [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md) — 间接网络规模扩展
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — 维度-延迟-吞吐量权衡
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 度/直径/B_b 公式
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层空间
@@ -109,3 +111,4 @@ WSE 选 2-D Mesh：4 端口可造；3-D Torus 要 6 端口+长环绕；Hypercube
 
 [1] [raw/articles/interconn-study-21d-day-04.md](raw/articles/interconn-study-21d-day-04.md) — D&T Ch.3.3–3.5（Day 4）
 [2] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — D&T Ch.3 Mesh/Torus（Day 6）
+[3] [raw/articles/interconn-study-21d-day-07.md](raw/articles/interconn-study-21d-day-07.md) — D&T Ch.3 间接网络（Day 7）

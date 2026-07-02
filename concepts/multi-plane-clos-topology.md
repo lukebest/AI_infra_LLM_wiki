@@ -64,7 +64,7 @@ sources:
 
 ## 关系
 
-- 拓扑基础与 [Switching Networks](/concepts/switching-networks.md) 中的 CLOS 网络理论一致
+- 拓扑基础与 [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md)、[Switching Networks](/concepts/switching-networks.md) 中的 CLOS 理论一致
 - 与 [Nvidia Vera Rubin Nvl72](/entities/nvidia-vera-rubin-nvl72.md) 的 NVLink 拓扑不同层面（scale-out vs scale-up）
 - [Cerebras Wse](/entities/cerebras-wse.md) 的 2D Mesh 是另一种拓扑选择
 - 对比 [Csa Hca](/concepts/csa-hca.md) 中的注意力压缩，这里优化的是通信基础设施
