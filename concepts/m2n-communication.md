@@ -64,6 +64,7 @@ M2N 是 disaggregated architecture 的典型通信模式，对 scale-up fabric �
 ## 相关页面
 
 - [Megascale Infer 2504.02263](/papers/megascale-infer-2504.02263.md) — 提出 M2N 库的论文
+- [FlashMoE Kernel](/concepts/flashmoe-kernel.md) — 单 kernel EP；设备端 RDMA 替代 AlltoAll（同机 EP 栈）
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 产生 M2N 通信需求的架构范式
 - [Switching Networks](/concepts/switching-networks.md) — M2N 运行的网络层次
 

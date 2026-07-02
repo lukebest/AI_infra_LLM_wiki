@@ -106,6 +106,8 @@ DeepSeek-R1 的 [MLA](/concepts/csa-hca.md)（Multi-Head Latent Attention）在�
 - [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — TP 通过释放 KV capacity 解决 capacity trap
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — 并行度选择影响 cliff 到来时机
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 超越单一并行策略的解耦方案
+- [FlashMoE Kernel](/concepts/flashmoe-kernel.md) — MoE EP 单 kernel 算子层优化
+- [MegaMoE Kernel](/concepts/megamoe-kernel.md) — DeepSeek wave EP overlap
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构硬件下的并行度选择
 - [Deepseek V4](/summaries/deepseek-v4.md) — MLA 架构使 PP 在 MoE 场景下可行
 

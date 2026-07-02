@@ -20,7 +20,11 @@
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md) - DeepSeek 半自回归 speculative decoding：并行 DFlash backbone + Markov sequential head、confidence-scheduled 负载感知 verify，V4 生产 +60–85% 单用户速度
 * [Eyeriss Accelerator](eyeriss-accelerator.md) - MIT 65nm CNN 加速器：168 PE 空间阵列、Row Stationary (RS) 可重构 dataflow、四级存储层次、GIN 单周期组播 NoC、RLC 压缩与 PE data gating；AlexNet 83.1 GMAC/s/W
 * [FEATHER Accelerator](feather-accelerator.md) - 可重构 DNN 加速器：NEST 2D PE 阵列 + BIRRD 蝶形归约/重排网络，RIR 在归约中隐藏 layout 切换，Layoutloop 联合 dataflow-layout 搜索
+* [FlashAttention](flashattention.md) - IO-aware 精确 attention：SRAM tiling + online softmax + 反向重算；O(N) 内存、HBM 访问 IO-optimal；GPT-2 attention 7.6×、训练最高 3×
+* [FlashAttention-2](flashattention-2.md) - IO-aware 精确 attention 第二代：减 non-matmul FLOP、序列维并行、warp 级 split-Q；相对 FlashAttention ~2×，A100 最高 73% 峰值 TFLOPs/s、训练 225 TFLOPs/s
+* [FlashAttention-3](flashattention-3.md) - Hopper H100 IO-aware attention 第三代：TMA/WGMMA 异步 producer-consumer、GEMM-softmax 流水线、FP8 block quant+incoherent processing；FP16 740 TFLOPs/s、相对 FA2 1.5–2×
 * [FlashDecoding++](flashdecoding-plus-plus.md) - GPU LLM 推理引擎：统一 max 值的异步 partial softmax、M 维 pad-8 flat GEMM+双缓冲、FastGEMV/CUTLASS 启发式 dataflow；相对 FlashDecoding 平均 1.37×、HF 最高 4.86×
+* [FlashMoE Kernel](flashmoe-kernel.md) - NeurIPS 2025 单 persistent GPU kernel 融合分布式 MoE：actor 调度、NVSHMEM 设备端 RDMA、payload-efficient dispatch；8×H100 相对 SOTA 最高 6× 延迟、5.7× 吞吐、93% SM 利用率
 * [Flattened Butterfly 拓扑](flattened-butterfly-topology.md) - Flattened Butterfly 片上拓扑：高基数路由器降低直径，concentration + bypass channel，2-hop 直径，38% 功耗降低
 * [FP4 Quantization-Aware Training](fp4-qat.md) - FP4 量化感知训练，无损 FP4→FP8 反量化
 * [Heterogeneous Inference](heterogeneous-inference.md) - GPU + LPU 异构推理，分别优化 prefill/decode

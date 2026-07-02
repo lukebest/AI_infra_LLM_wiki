@@ -34,6 +34,7 @@ MoE 层的通信时间 < 计算时间 → 融合成 pipeline 后，通信可被�
 - **Naive**: 无重叠，串行
 - **Comet**: Dispatch||Linear-1, Linear-2||Combine（部分重叠），理论加速 1.42×
 - **MegaMoE**: Wave-level 全重叠，理论加速 **1.92×**
+- **[FlashMoE](/concepts/flashmoe-kernel.md)**: 单 persistent kernel + 设备端 RDMA（NeurIPS 2025 研究栈；与 MegaMoE 正交）
 
 ## 性能
 
@@ -57,7 +58,7 @@ MoE 层的通信时间 < 计算时间 → 融合成 pipeline 后，通信可被�
 
 ## Relations
 - Used in: [Deepseek V4](#DeepSeek-V4)
-- Related: [Tilelang](#TileLang), [Csa Hca](#CSA-HCA)
+- Related: [Tilelang](#TileLang), [Csa Hca](#CSA-HCA), [FlashMoE Kernel](/concepts/flashmoe-kernel.md)
 
 # Citations
 

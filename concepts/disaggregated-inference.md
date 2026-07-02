@@ -109,6 +109,8 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 ## 相关页面
 
 - [Megascale Infer 2504.02263](/papers/megascale-infer-2504.02263.md) — 首个大规模 disaggregated expert parallelism 系统
+- [FlashMoE Kernel](/concepts/flashmoe-kernel.md) — 单节点 EP megakernel（与 disagg 正交，可叠在 expert 侧）
+- [MegaMoE Kernel](/concepts/megamoe-kernel.md) — DeepSeek wave EP overlap
 - [M2N Communication](/concepts/m2n-communication.md) — disaggregation 产生的通信模式
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — GPU + LPU 异构推理
 - [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX 产品化 AFD

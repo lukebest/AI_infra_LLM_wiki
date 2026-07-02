@@ -64,6 +64,7 @@ L = (T_draft + T_verify) / τ
 - [DeepSeek-V4](/entities/deepseek-v4.md) — 部署模型与 MTP 架构背景
 - [Prefill Decode Divergence](/concepts/prefill-decode-divergence.md) — decode 主导 wall-clock，speculative 直接优化 decode step
 - [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — kernel 层 decode 加速（与 speculative 正交）
+- [FlashAttention-2](/concepts/flashattention-2.md) — prefill/训练 attention 基线
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — draft/MTP 与 LPU 异构部署讨论
 
 # Citations

@@ -131,6 +131,8 @@ MegaScale-Infer 的 M2N 库优化：
 
 ## 相关页面
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 解耦推理：attention/FFN 分离部署的架构范式
+- [FlashMoE Kernel](/concepts/flashmoe-kernel.md) — 单 kernel 分布式 MoE（EP 算子层）
+- [MegaMoE Kernel](/concepts/megamoe-kernel.md) — DeepSeek wave EP overlap
 - [M2N Communication](/concepts/m2n-communication.md) — M2N 通信模式及其优化
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构推理（GPU + LPU）vs attention/FFN disaggregation
 - [Lpu Architecture](/concepts/lpu-architecture.md) — LPU 处理 FFN/MoE 的角色

@@ -46,6 +46,9 @@ sources:
 
 - [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — 三项机制与推理栈位置
 - [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — decode GEMV/flat GEMM 与 BW-bound
+- [FlashAttention-2](/concepts/flashattention-2.md) — prefill/训练 attention 基线（FA2 为 FlashDecoding++ prefill 对比项之一）
+- [FlashAttention-3](/concepts/flashattention-3.md) — Hopper H100 最新 FA 代际
+- [FlashAttention](/concepts/flashattention.md) — IO-aware 精确 attention 起源
 - [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md) — 算法层 decode 加速（正交）
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 系统层 prefill/decode 分硬件
 - [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — decode 吞吐与 KV 饱和

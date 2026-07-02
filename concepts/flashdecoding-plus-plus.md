@@ -31,7 +31,7 @@ sources:
 | **Prefill** | 大 GEMM（M = seq×batch） | Compute |
 | **Decode** | **GEMV / flat GEMM**（M = batch ≪ 64） | Memory BW + kernel 效率 |
 
-Transformer 层 = 线性投影（①⑤⑥ GEMM）+ Attention（②③④ softmax）。FlashAttention/FlashDecoding 将 attention 分 tile 并行，但 **跨 tile 同步更新 partial softmax max** 占 Llama2-7B attention **~18.8%**（A100, input 1024）。
+Transformer 层 = 线性投影（①⑤⑥ GEMM）+ Attention（②③④ softmax）。[FlashAttention](/concepts/flashattention.md) → [FlashAttention-2](/concepts/flashattention-2.md) → [FlashAttention-3](/concepts/flashattention-3.md) / FlashDecoding 将 attention 分 tile 并行（online softmax，O(N) 内存）；FlashDecoding++ 针对 decode 中 **跨 tile 同步更新 partial softmax max** 占 Llama2-7B attention **~18.8%**（A100, input 1024）。
 
 ## 三大优化
 
@@ -78,7 +78,7 @@ Decode 线性层 M 常为 1–8；cuBLAS/CUTLASS 将 M **pad 到 64** → **>50%
 
 **平台：** A100 / RTX 3090；MI210 / RX 7900 XTX  
 **模型：** Llama2-7B/13B, OPT-6.7B, ChatGLM2-6B  
-**对比：** HF, vLLM, DeepSpeed, TensorRT-LLM, OpenPPL, FlashAttention2/FlashDecoding
+**对比：** HF, vLLM, DeepSpeed, TensorRT-LLM, OpenPPL, [FlashAttention-2](/concepts/flashattention-2.md)/FlashDecoding
 
 | 指标 | 结果 |
 |------|------|
@@ -95,7 +95,8 @@ Figure 1（batch=1, input 1K, Llama2-7B）：相对 HF 首 token / 每 token 延
 ```
 Serving（vLLM paging / disagg） ── 调度与 KV 管理
          ↓
-Kernel（FlashDecoding++） ── attention softmax + flat GEMM 微优化
+Kernel ── [FlashAttention](/concepts/flashattention.md) → [FlashAttention-2](/concepts/flashattention-2.md) → [FlashAttention-3](/concepts/flashattention-3.md)（prefill/训练；Hopper FP8）
+       └─ [FlashDecoding++](/concepts/flashdecoding-plus-plus.md)（decode：async softmax + flat GEMM）
          ↓
 Algorithm（DSpark speculative decode 等） ── 减少 decode 步数
 ```
@@ -107,6 +108,9 @@ Algorithm（DSpark speculative decode 等） ── 减少 decode 步数
 ## 相关页面
 
 - [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — decode flat GEMM/GEMV 与 BW-bound
+- [FlashAttention](/concepts/flashattention.md) — IO-aware 精确 attention 基线（NeurIPS 2022）
+- [FlashAttention-2](/concepts/flashattention-2.md) — prefill/训练 IO-aware attention 第二代
+- [FlashAttention-3](/concepts/flashattention-3.md) — Hopper H100 异步 + FP8 第三代
 - [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md) — decode 算法层加速
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — decode memory-bound 与 HBM 利用率
 - [papers/flashdecoding-plus-plus-llm-gpu-inference.md](/papers/flashdecoding-plus-plus-llm-gpu-inference.md) — 论文摘要

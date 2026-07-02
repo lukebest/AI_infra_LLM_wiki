@@ -26,7 +26,8 @@ LLM 推理的两个阶段——Prefill 和 Decode——对硬件资源的需求*
 
 | Dimension | Prefill | Decode |
 |-----------|---------|--------|
-| **Compute Type** | Matrix-Matrix (GEMM) | Matrix-Vector (GEMV) |
+| **Compute Type** | Matrix-Matrix (GEMM) + tiled attention | Matrix-Vector (GEMV) |
+| **Attention Kernel** | [FlashAttention](/concepts/flashattention.md) / [FlashAttention-2](/concepts/flashattention-2.md) / [FlashAttention-3](/concepts/flashattention-3.md)（IO-aware prefill；H100 FP8） | FlashDecoding / [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) |
 | **Arithmetic Intensity** | High（reuse weights across all tokens） | 极低（每 token 读全部 weights + KV） |
 | **Bottleneck** | Compute (FLOPS) | Memory Bandwidth + Capacity |
 | **SM Occupancy** | High | Low / Variable |
@@ -113,6 +114,9 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [Parallelism Transition Point](/concepts/parallelism-transition-point.md) — 不同阶段的 optimal parallelism 不同（prefill: DP; decode: TP）
 - [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md) — decode 步 speculative 提高有效 τ（DeepSeek-V4 生产 +57–85% tok/s/user）
 - [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — GPU kernel 层：异步 partial softmax + flat GEMM + 启发式 GEMV/GEMM dataflow（相对 FlashDecoding ~1.37×）
+- [FlashAttention](/concepts/flashattention.md) — IO-aware 精确 attention 起源（NeurIPS 2022）
+- [FlashAttention-2](/concepts/flashattention-2.md) — prefill/训练 IO-aware attention（相对 FA ~2×，73% A100 峰值）
+- [FlashAttention-3](/concepts/flashattention-3.md) — Hopper 异步 + FP8（740 TFLOPs/s，相对 FA2 1.5–2×）
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — 3D 堆叠缓解 BW wall，prefill/decode 对 DRAM/NoC/SRAM 响应不同
 
 ## 相关概念
@@ -122,6 +126,9 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — Decode 阶段的 KV 饱和问题
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — KV 增长的时序行为
 - [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — decode kernel 层（attention/flat GEMM）
+- [FlashAttention](/concepts/flashattention.md) — IO-aware 精确 attention 起源
+- [FlashAttention-2](/concepts/flashattention-2.md) — prefill/训练 attention kernel
+- [FlashAttention-3](/concepts/flashattention-3.md) — Hopper prefill/训练 + FP8
 - [Kv Cache](#kv-cache) — KV cache 是 decode 阶段的核心资源
 
 # Citations
