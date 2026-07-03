@@ -132,6 +132,7 @@ WSE-3 ~949×949 Mesh：D≈1896 跳；T_r=1 ns + T_w=0.5 ns → 最坏 **~2.8 μ
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — NoC 域拓扑选择
 - [Cerebras WSE](/entities/cerebras-wse.md) — ~949×949 Mesh 实例
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — Mesh 上 collective
+- [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — Cannon/SUMMA 在 2D 处理器 mesh 上的经典 GEMM
 
 # Citations
 

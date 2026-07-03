@@ -1,5 +1,10 @@
 # Bundle Update Log
 
+## 2026-07-03
+* **Ingest**: 郑启航 知乎「分布式存储架构下的矩阵乘与编译器」→ `raw/articles/分布式存储架构下的矩阵乘与编译器.md`（已有 clippings；补 OKF frontmatter）。
+* **Creation**: [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md), [summaries/distributed-gemm-and-compiler.md](/summaries/distributed-gemm-and-compiler.md).
+* **Update**: [Mesh and Torus Topology](/concepts/mesh-torus-topology.md), [Linear and Ring Topology](/concepts/linear-ring-topology.md), [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md), [Parallelism Transition Point](/concepts/parallelism-transition-point.md), [Graphcore IPU](/entities/graphcore-ipu.md), [SpaDA Programming Language](/concepts/spada-programming-language.md) — Cannon/SUMMA/2.5D/3D GEMM 与 T10 rTensor 交叉引用。
+
 ## 2026-06-24
 * **Ingest**: Rabenseifner 2004 MPI collective reduction ICCS PDF → `raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf`（Zotero: ICCS 2004, LNCS 3036）。
 * **Creation**: [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md), [papers/rabenseifner-collective-reduction-operations.md](/papers/rabenseifner-collective-reduction-operations.md), `raw/papers/rabenseifner-collective-reduction-operations.md`.

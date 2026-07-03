@@ -14,6 +14,7 @@
 * [CSA and HCA (Hybrid Attention)](csa-hca.md) - 两级压缩注意力：CSA 温和压缩+稀疏选择，HCA 激进压缩+dense attention
 * [Deterministic Execution](deterministic-execution.md) - 编译器控制时序、消除 jitter 的执行范式
 * [Disaggregated Inference](disaggregated-inference.md) - 解耦推理：attention/FFN 分离部署，独立扩展，batch 聚合
+* [Distributed GEMM Algorithms](distributed-gemm-algorithms.md) - 分布式内存矩阵乘算法谱系：Cannon（2D mesh ring-shift）、SUMMA（broadcast 外积）、2.5D/3D SUMMA（通信–内存权衡）；α+β 代价模型、SBP 切分 vs 映射放置；T10 rTensor 形式化 Cannon
 * [DRAM and Memory System](dram-memory-system.md) - DRAM 访问时序与 Row Buffer、Channel/Bank 并行、DDR/HBM 带宽公式、内存墙与 Roofline Ridge Point、WSE 分布式 SRAM 对 HBM 的绕过
 * [DSA Processor Design Tradeoffs](dsa-processor-design-tradeoffs.md) - 领域专用处理器设计取舍：现代 CPU 传统武器（OoO/Cache/分支预测/TLB）的能力代价矩阵 vs WSE SLA 核
 * [DSec Sandbox Platform](dsec-sandbox.md) - DeepSeek Elastic Compute 沙箱平台，4 种执行基板，数十万并发

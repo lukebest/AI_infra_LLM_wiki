@@ -66,6 +66,7 @@ Llama2-13B、Gemma2-27B、OPT-30B、Llama3-70B、DiT-XL 上，Voxel 与带 DRAM 
 - [Voxel Simulator](/concepts/voxel-simulator.md) — 以 IPU 为验证平台的 3D AI chip 仿真器
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — IPU emulator 所模拟的目标架构
 - [Cerebras Wse](/entities/cerebras-wse.md) — 同类分布式内存 wafer-scale 加速器
+- [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — T10 rTensor 编译器（Cannon 形式化）
 - [Deterministic Execution](/concepts/deterministic-execution.md) — IPU 编译器调度与数据流执行
 
 # Citations

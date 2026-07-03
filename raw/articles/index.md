@@ -22,6 +22,7 @@
 * [Memory Fence 深度研究报告](memory-fence-hardware-2026-06-28.md)
 * [互连网络晨报 — Day 1](interconn-study-21d-day-01.md)
 * [互连网络晨报 — Day 2](interconn-study-21d-day-02.md)
+* [分布式存储架构下的矩阵乘与编译器](分布式存储架构下的矩阵乘与编译器.md) - 分布式内存下 Cannon/SUMMA/2.5D/3D GEMM、LLM 2.5D-3D 并行与 Graphcore T10 rTensor 编译器综述（知乎专栏）
 * [📰 互连网络晨报 — Day 3](interconn-study-21d-day-03.md)
 * [📰 互连网络晨报 — Day 4](interconn-study-21d-day-04.md)
 * [📰 互连网络晨报 — Day 5](interconn-study-21d-day-05.md)

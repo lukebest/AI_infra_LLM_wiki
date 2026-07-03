@@ -107,6 +107,7 @@ DeepSeek-R1 的 [MLA](/concepts/csa-hca.md)（Multi-Head Latent Attention）在�
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — 并行度选择影响 cliff 到来时机
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 超越单一并行策略的解耦方案
 - [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — TP AllReduce 经典算法与通信代价
+- [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — Cannon/SUMMA/2.5D/3D 分布式 GEMM
 - [FlashMoE Kernel](/concepts/flashmoe-kernel.md) — MoE EP 单 kernel 算子层优化
 - [MegaMoE Kernel](/concepts/megamoe-kernel.md) — DeepSeek wave EP overlap
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构硬件下的并行度选择

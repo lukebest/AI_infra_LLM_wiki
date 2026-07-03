@@ -87,6 +87,7 @@ SpaDA 同时是**通用 SDA 语言**与 **DSL IR**——架构无关的语言设
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 数据流 vs 通用 CPU 编程模型
 - [papers/spada-spatial-dataflow-architecture.md](/papers/spada-spatial-dataflow-architecture.md) — 论文摘要
 - [Plasticine Accelerator](/concepts/plasticine-accelerator.md) — parallel patterns 抽象的另一实现路径
+- [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — 分布式 GEMM 算法与 T10 rTensor 对照
 
 # Citations
 

@@ -95,6 +95,7 @@ Phase 2 — Allgather:
 | [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) | 同 **reduce-scatter + allgather** 分解；WSE 另加 Star/Chain/Auto-Gen |
 | [Collective-Capable NoC](/concepts/collective-capable-noc.md) | 硬件 offload 归约，避免软件 collective 占互连 |
 | [M2N Communication](/concepts/m2n-communication.md) | MoE disagg 用 **M2N** 而非对称 AllReduce |
+| [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) | SUMMA/Cannon 中 **broadcast**、ring shift 原语 |
 
 ## 谱系
 
@@ -114,6 +115,7 @@ Inverse broadcast / binary tree (短向量)
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — α/β 延迟带宽模型
 - [Collective-Capable NoC](/concepts/collective-capable-noc.md) — 片上 in-network reduction
 - [Parallelism Transition Point](/concepts/parallelism-transition-point.md) — TP AllReduce 通信开销
+- [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — SUMMA broadcast / Cannon ring 在 GEMM 中的用法
 - [papers/rabenseifner-collective-reduction-operations.md](/papers/rabenseifner-collective-reduction-operations.md) — 论文摘要
 
 # Citations

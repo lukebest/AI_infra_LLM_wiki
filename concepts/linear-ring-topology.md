@@ -95,6 +95,7 @@ Ring ─────────────────────────
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — NoC 域 TileLink Ring vs WSE Mesh
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — Ring AllReduce（逻辑算法，非物理 Ring 拓扑）
 - [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — Ring reduce-scatter + allgather 经典 MPI 实现
+- [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — Cannon ring shift 与 SUMMA broadcast
 
 # Citations
 
