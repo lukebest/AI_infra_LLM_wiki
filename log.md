@@ -1,5 +1,13 @@
 # Bundle Update Log
 
+## 2026-07-06
+* **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 9–11 → `raw/articles/interconn-study-21d-day-09.md`、`day-10.md`、`day-11.md`（源：`openclawdata/.../interconn-study-21d/day-09..11.md`）。
+* **Creation**: [Topology Optimization Variants](/concepts/topology-optimization-variants.md), [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md).
+* **Update**: [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 六拓扑统一比较、选型决策树（Day 10）；[Mesh and Torus Topology](/concepts/mesh-torus-topology.md), [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md), [Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md), [Collective-Capable NoC](/concepts/collective-capable-noc.md), [NoC Router 微架构](/concepts/noc-router-microarchitecture.md), [Cerebras WSE](/entities/cerebras-wse.md) — Folding/CMesh/Express、Dally 1990、XY/e-cube 路由交叉引用。
+* **Ingest**: 体系结构 30 天学习笔记 Day 21–23 → `raw/articles/arch-study-30d-day-21.md`、`day-22.md`、`day-23.md`（源：`openclawdata/.../arch-study-30d/day-21..23.md`）。
+* **Creation**: [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md), [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md), [Multicore SMT and NUCA](/concepts/multicore-smt-nuca.md).
+* **Update**: [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md), [DRAM and Memory System](/concepts/dram-memory-system.md), [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md), [Cache Coherence](/concepts/cache-coherence.md), [Memory Consistency Model](/concepts/memory-consistency-model.md), [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md), [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md), [NoC Router 微架构](/concepts/noc-router-microarchitecture.md), [Cerebras WSE](/entities/cerebras-wse.md) — 存储篇综合、NoC 五问、SMT/NUCA/Amdahl 交叉引用。
+
 ## 2026-07-03
 * **Ingest**: Constable 精读笔记 → `raw/reports/constable-deepdive.md`（源：`openclawdata/.../superscalar-cpu/constable-deepdive.md`）。
 * **Creation**: [Constable Load Elimination](/concepts/constable-load-elimination.md), [papers/constable-load-elimination.md](/papers/constable-load-elimination.md).

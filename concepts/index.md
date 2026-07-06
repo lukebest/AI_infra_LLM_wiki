@@ -15,12 +15,14 @@
 * [CPU Pipeline Fundamentals](cpu-pipeline-fundamentals.md) - 五级流水线（IF/ID/EX/MEM/WB）、三大冒险（结构/数据/控制）、Forwarding 与分支惩罚
 * [CSA and HCA (Hybrid Attention)](csa-hca.md) - 两级压缩注意力：CSA 温和压缩+稀疏选择，HCA 激进压缩+dense attention
 * [Deterministic Execution](deterministic-execution.md) - 编译器控制时序、消除 jitter 的执行范式
+* [Deterministic Routing and DOR](deterministic-routing-dor.md) - 确定性路由与维序路由（DOR）：XY/Y-first、e-cube、源路由 vs 分布式；Mesh/Hypercube 最短路径与 CDG 无死锁直觉；WSE 工业选型
 * [Disaggregated Inference](disaggregated-inference.md) - 解耦推理：attention/FFN 分离部署，独立扩展，batch 聚合
 * [Distributed GEMM Algorithms](distributed-gemm-algorithms.md) - 分布式内存矩阵乘算法谱系：Cannon（2D mesh ring-shift）、SUMMA（broadcast 外积）、2.5D/3D SUMMA（通信–内存权衡）；α+β 代价模型、SBP 切分 vs 映射放置；T10 rTensor 形式化 Cannon
 * [DRAM and Memory System](dram-memory-system.md) - DRAM 访问时序与 Row Buffer、Channel/Bank 并行、DDR/HBM 带宽公式、内存墙与 Roofline Ridge Point、WSE 分布式 SRAM 对 HBM 的绕过
 * [DSA Processor Design Tradeoffs](dsa-processor-design-tradeoffs.md) - 领域专用处理器设计取舍：现代 CPU 传统武器（OoO/Cache/分支预测/TLB）的能力代价矩阵 vs WSE SLA 核
 * [DSec Sandbox Platform](dsec-sandbox.md) - DeepSeek Elastic Compute 沙箱平台，4 种执行基板，数十万并发
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md) - DeepSeek 半自回归 speculative decoding：并行 DFlash backbone + Markov sequential head、confidence-scheduled 负载感知 verify，V4 生产 +60–85% 单用户速度
+* [End-to-End Memory Data Path](end-to-end-memory-data-path.md) - 存储篇综合（Day 17-22）：load 全路径 AMAT 层级展开、内存墙时间线、一致性决策树、同步成本量级、WSE 消除 off-chip 的简化路径
 * [Eyeriss Accelerator](eyeriss-accelerator.md) - MIT 65nm CNN 加速器：168 PE 空间阵列、Row Stationary (RS) 可重构 dataflow、四级存储层次、GIN 单周期组播 NoC、RLC 压缩与 PE data gating；AlexNet 83.1 GMAC/s/W
 * [FEATHER Accelerator](feather-accelerator.md) - 可重构 DNN 加速器：NEST 2D PE 阵列 + BIRRD 蝶形归约/重排网络，RIR 在归约中隐藏 layout 切换，Layoutloop 联合 dataflow-layout 搜索
 * [FlashAttention](flashattention.md) - IO-aware 精确 attention：SRAM tiling + online softmax + 反向重算；O(N) 内存、HBM 访问 IO-optimal；GPT-2 attention 7.6×、训练最高 3×
@@ -49,7 +51,9 @@
 * [Mesh and Torus Topology](mesh-torus-topology.md) - 2-D Mesh/Torus 与 k-ary n-cube：度/直径/二分带宽、Dally 维度-延迟-吞吐量权衡、XY 维序路由，及 WSE/Blue Gene 选型
 * [MPI Reduce/AllReduce Algorithms](mpi-reduce-allreduce-algorithms.md) - Rabenseifner ICCS 2004 五类 MPI 归约算法：二叉树、recursive doubling、halving&doubling、binary blocks、ring；α+nβ 代价模型与 (p,n) 自适应选择；MPICH-2 长向量基础
 * [Multi-plane Clos Topology for AI Training](multi-plane-clos-topology.md) - 多平面 CLOS 拓扑：2-tier 131K GPU，低延迟高冗余，MRC 容错，Z3 形式化分析，bitwise reproducibility
+* [Multicore SMT and NUCA](multicore-smt-nuca.md) - H&P Ch.5.7-5.9：Fine/Coarse/SMT 多线程、SMT 1.2-1.3× 收益、Amdahl+通信/一致性 Overhead、NUCA 非均匀 Cache、WSE 反 Amdahl 哲学
 * [Muon Optimizer](muon-optimizer.md) - 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
+* [NoC Fundamentals (H&P Appendix F)](noc-fundamentals-hp-appendix-f.md) - H&P 附录 F 互连网络五问：拓扑/路由/流控/路由器/性能；直连 vs 间接、虫孔+VC、饱和吞吐与 WSE-scale 扩展指标
 * [NoC Router 微架构](noc-router-microarchitecture.md) - NoC Router 微架构：链路级流控/EB/credit、Switch/仲裁器（RR/2D 矩阵）、WH/VC 流水线 Router、VA/SA 分配器优化
 * [Numeric Formats for AI Hardware](numeric-formats-ai-hardware.md) - IEEE 754 浮点与 AI 数据格式（FP32/FP16/BF16/FP8/INT8）的精度、动态范围与硬件面积权衡
 * [NVIDIA CPO Roadmap](nvidia-cpo-roadmap.md) - NVIDIA CPO 用于 scale-up 的路线图：Rubin NVL576 测试 → Feynman NVL1152 volume ramp
@@ -67,6 +71,7 @@
 * [Switching Networks](switching-networks.md) - 交换网络：CLOS 三级网络（严格/可重排无阻塞），TST 网络，Banyan 网络
 * [Switching Principles](switching-principles.md) - 交换原理基础：电路/报文/分组/虫孔交换，历史演进，三对基本概念，交换系统结构
 * [TileLang DSL](tilelang.md) - Kernel 开发 DSL
+* [Topology Optimization Variants](topology-optimization-variants.md) - 拓扑变体与优化：Folding、Concentrated/Collapsed Mesh、Express Cube、Dally 1990 最优维度定律、高基数路由器；Compression vs Expansion 权衡
 * [UB 事务层](ub-transaction-layer.md) - UB 事务层：四类事务（Memory/Message/Maintenance/Management）、Full/Compact 包头、安全 Token 验证、四种服务模式（ROI/ROT/ROL/UNO）
 * [UB 传输层机制](ub-transport-layer.md) - UB 传输层：四种模式（RTP/CTP/UTP/TP Bypass）、PSN 机制、Go-Back-N/Selective 重传、TPG 多路径负载均衡、LDCP/CAQM/DCQCN 拥塞控制、ROL 模式事务-传输联动
 * [UB 内存管理](ub-memory-management.md) - UB 内存管理：Home-User 模型、UBMD、UMMU 两阶段地址翻译+权限检查、UB Decoder

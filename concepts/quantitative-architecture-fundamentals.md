@@ -13,6 +13,7 @@ created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-01.md
 - raw/articles/arch-study-30d-day-02.md
+- raw/articles/arch-study-30d-day-23.md
 ---
 
 # Quantitative Architecture Fundamentals（量化体系结构基石）
@@ -82,8 +83,10 @@ Yield ≈ (1 - defects/area)^die_area
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — 局部性的工程实现
 - [Cerebras WSE](/entities/cerebras-wse.md) — 暗硅/良率/专用 PE 的实例
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 规避 OoO 功耗的替代路径
+- [Multicore SMT and NUCA](/concepts/multicore-smt-nuca.md) — Amdahl 多核版 + Overhead（Day 23）
 
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-01.md](raw/articles/arch-study-30d-day-01.md) — H&P Ch.1 导论（Day 1）
 [2] [raw/articles/arch-study-30d-day-02.md](raw/articles/arch-study-30d-day-02.md) — 功耗与成本（Day 2）
+[3] [raw/articles/arch-study-30d-day-23.md](raw/articles/arch-study-30d-day-23.md) — Amdahl 多核扩展（Day 23）

@@ -16,6 +16,7 @@ sources:
 - raw/articles/interconn-study-21d-day-04.md
 - raw/articles/interconn-study-21d-day-06.md
 - raw/articles/interconn-study-21d-day-07.md
+- raw/articles/arch-study-30d-day-21.md
 ---
 
 # Interconnection Network Cost Model（互连网络成本与性能模型）
@@ -44,6 +45,14 @@ T = H × (T_r + T_w) + L_packet / B_link
 | L_packet / B_link | 序列化延迟 | 64 B @ 16 GB/s ≈ 4 ns |
 
 低负载：H×(T_r+T_w) 主导；高负载另加排队延迟（流控/拥塞，后续主题）。
+
+**虫孔零负载**（H&P App.F / Day 21，cycle 域）：
+
+```
+t₀ = t_r × D + P/B
+```
+
+**饱和排队近似**：`t(λ) = t₀ / (1 − λ/Θ_sat)`，Θ_sat 受 [二分带宽](/concepts/interconnection-topology-metrics.md) 约束。详见 [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md)。
 
 **例**：8×8 Mesh 对角 14 跳，T_r=2 ns，T_w=1 ns → T_hops=42 ns；64 B 包 +4 ns → **46 ns** 最坏情况。
 
@@ -106,10 +115,12 @@ WSE 选 2-D Mesh：4 端口可造；3-D Torus 要 6 端口+长环绕；Hypercube
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层空间
 - [Cerebras WSE](/entities/cerebras-wse.md) — Mesh 设计实例
 - [Multi-plane Clos Topology for AI Training](/concepts/multi-plane-clos-topology.md) — 间接网络扩展
-- [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — α+nβ 集体通信代价模型（MPI AllReduce）
+- [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md) — 虫孔/VC/饱和模型（Day 21）
+- [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — NoC 在存储路径中的角色
 
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-04.md](raw/articles/interconn-study-21d-day-04.md) — D&T Ch.3.3–3.5（Day 4）
 [2] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — D&T Ch.3 Mesh/Torus（Day 6）
 [3] [raw/articles/interconn-study-21d-day-07.md](raw/articles/interconn-study-21d-day-07.md) — D&T Ch.3 间接网络（Day 7）
+[4] [raw/articles/arch-study-30d-day-21.md](raw/articles/arch-study-30d-day-21.md) — H&P App.F 性能公式（Day 21）

@@ -91,6 +91,8 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — KV/HBM 容量饱和
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 局部性与量化权衡
 - [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — DRAM 以下片外存储 tier
+- [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — Day 17–22 存储篇综合
+- [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md) — NoC 五问（Day 21）
 
 # Citations
 

@@ -16,6 +16,7 @@ sources:
 - raw/articles/interconn-study-21d-day-05.md
 - raw/articles/interconn-study-21d-day-06.md
 - raw/articles/interconn-study-21d-day-07.md
+- raw/articles/interconn-study-21d-day-10.md
 ---
 
 # Interconnection Topology Metrics（互连拓扑度量）
@@ -86,7 +87,63 @@ Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Toru
 - Mesh 全是**局部短连线** → 物理可制造
 - 教科书最优 ≠ 硅片可实现的最优
 
-- **最优维度** d_opt ≈ **2√N** 时直连网络吞吐量最大（Dally 1990）——见 [Mesh and Torus Topology](/concepts/mesh-torus-topology.md)
+- **最优维度** d_opt ≈ **2√N** 时直连网络吞吐量最大（Dally 1990）——见 [Mesh and Torus Topology](/concepts/mesh-torus-topology.md)、[Topology Optimization Variants](/concepts/topology-optimization-variants.md)
+
+## 六大度量（统一比较语）
+
+| 指标 | 反映 |
+|------|------|
+| **度 d** | 端口成本、可制造性 |
+| **直径 D** | 延迟上界 |
+| **平均距离 d̄** | 平均延迟 |
+| **二分带宽 B_b** | 吞吐量上界（**最关键**） |
+| **对称性** | 路由/算法是否简化 |
+| **等分线长** | 物理布线成本 |
+
+**Source:** [raw/articles/interconn-study-21d-day-10.md](raw/articles/interconn-study-21d-day-10.md)（拓扑篇收官，Day 10）
+
+## 主流拓扑统一比较
+
+| 拓扑 | 度 | 直径 | 平均距离 | 二分带宽 | 对称 | 典型规模 |
+|------|-----|------|----------|----------|------|----------|
+| Linear Array | 2 (1) | N−1 | (N+1)/3 | 1 | 否 | 几十 |
+| Ring | 2 | ⌊N/2⌋ | ~N/4 | 2 | 是 | 几十–几百 |
+| 2-D Mesh (k×k) | 2–4 | 2(k−1) | ~2k/3 | k | 否 | 数十–数百 |
+| 2-D Torus | 4 | 2⌊k/2⌋ | k/2 | 2k | 是 | 数百–数千 |
+| 3-D Torus / Hypercube | 2n / log₂N | n⌊k/2⌋ / log₂N | ~log N | N/k ~ N/2 | 是 | 数百–数千 |
+| k-ary n-fly MIN | k | n | n | N/(2n) | 是 | 数千 |
+| Fat Tree | 终端 1 | 2log_k N | ~log N | N/2 | 否 | 数百–数万 |
+| Clos C(n,m,r) | m | ~3 | ~3 | r·m | 否 | 数据中心 |
+
+**N=256 手算**（16×16 Mesh/Torus；8-ary 3-fly；8-ary 4-cube）：
+
+| 拓扑 | 直径 | B_b | 备注 |
+|------|------|-----|------|
+| Mesh 16×16 | 30 | 16 | 度 2–4 |
+| Torus 16×16 | 16 | 32 | 度 4 |
+| Clos 8-ary 3-fly | ~6 | 64 | 终端度 1 |
+| Hyper 8-ary 4-cube | 4 | 128 | 度 4，直径最小 |
+
+## 拓扑选择决策树
+
+```
+片上 NoC（端口 4–6）     → 2-D Mesh（+ 变体见 Topology Optimization）
+机柜内 HPC（可 3-D 堆叠） → 3-D Torus（Blue Gene/L）
+数据中心 scale-out       → Fat Tree / Clos / Dragonfly
+特殊流量 / 光互连        → Butterfly MIN、Custom
+```
+
+**三轴权衡**：端口成本（度）↔ 直径/延迟 ↔ 二分带宽。**没有最好，只有最匹配**——流量特征 + 物理约束 + 工程成本。
+
+| 对比 | NoC Mesh | HPC Fat Tree |
+|------|----------|--------------|
+| 端口 | PE 仅 4–6 pin | 机架间光模块，度不受限 |
+| 流量 | **局部**（相邻 PE） | **随机/热点**（AllReduce） |
+| 布线 | 规则、可制造 | 多级交换、高 B_b |
+
+WSE ~900K 节点若用 20 维 Hypercube：直径 20 但 **每 PE 需 20 端口**——物理不可行；故 [Cerebras WSE](/entities/cerebras-wse.md) 选 2-D Mesh + [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) XY。
+
+LLM 训练 AllReduce/AllToAll 需 B_b ≥ 流量强度；WSE 片上流量局部化（分块 attention）缓解全芯片 bisection 压力。
 
 ## 相关页面
 
@@ -95,6 +152,9 @@ Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Toru
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 指标→延迟/成本公式
 - [Linear and Ring Topology](/concepts/linear-ring-topology.md) — 1-D 基线与 1-D Torus
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
+- [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Folding/CMesh/Express（Day 9）
+- [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — Mesh XY 路由（Day 11）
+- [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — k-ary n-fly MIN
 - [Cerebras WSE](/entities/cerebras-wse.md) — Mesh 实例
 - [WSE Performance Model](/concepts/wse-performance-model.md) — 距离/contention 瓶颈
 
@@ -104,3 +164,4 @@ Torus 用 **+33% 链路**换直径↓、B_b↑——Blue Gene/L 等 HPC 选 Toru
 [2] [raw/articles/interconn-study-21d-day-05.md](raw/articles/interconn-study-21d-day-05.md) — 1-D Ring 基线（Day 5）
 [3] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — 2-D Mesh/Torus（Day 6）
 [4] [raw/articles/interconn-study-21d-day-07.md](raw/articles/interconn-study-21d-day-07.md) — Clos/Fat-Tree（Day 7）
+[5] [raw/articles/interconn-study-21d-day-10.md](raw/articles/interconn-study-21d-day-10.md) — 拓扑大综合（Day 10）

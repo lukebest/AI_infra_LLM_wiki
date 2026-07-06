@@ -125,6 +125,7 @@ NPU dataflow 主路径无需 coherence/consistency；**reduction / control-plane
 - [Cerebras WSE](/entities/cerebras-wse.md) — PE barrier / 无共享内存
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — async/await 显式顺序
 - [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — LR/SC 微架构 Gap；Constable 负面论证
+- [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 同步成本量级（Day 22）
 
 # Citations
 

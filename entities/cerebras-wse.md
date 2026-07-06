@@ -113,8 +113,14 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — WSE NoC Router 理论基础
 - [Collective-Capable NoC](/concepts/collective-capable-noc.md) — 通用 tile mesh 片上 collective 对照（FlooNoC/DCA）
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — Mesh 度量与 Torus 对比
+- [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — ~949×949 2-D Mesh 选型
+- [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — 为何未用 CMesh/Express/Hypercube
+- [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 分布式 XY 路由与 collective 延迟
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与 B_b 瓶颈
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
+- [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md) — H&P App.F 五问（Day 21）
+- [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 存储+NoC 全景（Day 22）
+- [Multicore SMT and NUCA](/concepts/multicore-smt-nuca.md) — 900K PE 扩展哲学（Day 23）
 - [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md) — NI 与协议栈
 - [Switching Principles](/concepts/switching-principles.md) — 虫孔 vs 电路交换
 

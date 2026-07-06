@@ -198,6 +198,8 @@ sources:
 - **[WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md)** — WSE mesh collective 算法与性能模型
 - **[Lpu Architecture](/concepts/lpu-architecture.md)**：LPU 的 SRAM-first 架构中片上互联设计参考了 NoC Router 微架构
 - **[Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md)**：FBFLY 拓扑利用高基数 Router 降低片上网络直径，bypass channel 减少非最小路由开销
+- **[Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md)** — XY/DOR 路由算法与 VC 死锁避免（D&T Ch.4–5）
+- **[NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md)** — 虫孔/VC/5-stage pipeline（H&P App.F）
 
 # Citations
 

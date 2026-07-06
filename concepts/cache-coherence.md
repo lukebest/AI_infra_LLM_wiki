@@ -107,6 +107,7 @@ Cache 替换算法无法缓解——由**数据布局**决定；与 Row Buffer �
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 无 TLB shootdown/coherence traffic
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 无共享内存的数据流替代
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — M 态 write-back 到 DRAM
+- [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 一致性决策树与 WSE 无 MESI（Day 22）
 
 # Citations
 

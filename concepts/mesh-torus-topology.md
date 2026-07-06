@@ -13,6 +13,8 @@ timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/articles/interconn-study-21d-day-06.md
+- raw/articles/interconn-study-21d-day-09.md
+- raw/articles/interconn-study-21d-day-10.md
 ---
 
 # Mesh and Torus Topology（网格与环面拓扑）
@@ -97,7 +99,7 @@ Dally 用 **k（基数）× n（维度）** 表达所有直连网络（N = kⁿ�
 - **延迟 ↓**——跳数减少
 - **吞吐量先升后降**——每条链路被更多 bisection 切分，瓶颈链路流量 ↑
 
-**最优维度**：d_opt ≈ **2√N** 时吞吐量最大。
+**最优维度**：d_opt ≈ **2√N** 时吞吐量最大——Dally 1990 严格证明与 wire-delay 主导下 **n=2 片上最优**见 [Topology Optimization Variants](/concepts/topology-optimization-variants.md)。
 
 | N | 典型选型 |
 |---|----------|
@@ -111,7 +113,7 @@ N=64k 若用 256×256 Mesh：D=510 跳；3-D Torus 直径 ~64 跳——**8× 延
 
 **先 X 后 Y**（或反之）：(0,0)→(3,3) 先右到 (3,0) 再上到 (3,3)。
 
-**无死锁直觉**：强制资源使用顺序（X 先于 Y），打破 Y→X 依赖环——严格证明见 CDG（后续 Day 13）。
+**无死锁直觉**：强制资源使用顺序（X 先于 Y），打破 Y→X 依赖环——严格证明、源/分布式实现、e-cube 对偶见 [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md)（Day 11）。
 
 ## 系统选型实例
 
@@ -134,7 +136,12 @@ WSE-3 ~949×949 Mesh：D≈1896 跳；T_r=1 ns + T_w=0.5 ns → 最坏 **~2.8 μ
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — Mesh 上 collective
 - [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — Cannon/SUMMA 在 2D 处理器 mesh 上的经典 GEMM
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — MIN 自路由 vs Mesh 多路径（WSE 选型）
+- [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Folding/CMesh/Express、Dally 1990
+- [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — XY 维序路由
+- [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 六拓扑统一比较（Day 10）
 
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — D&T Ch.3 Mesh & Torus（Day 6）
+[2] [raw/articles/interconn-study-21d-day-09.md](raw/articles/interconn-study-21d-day-09.md) — 拓扑变体与 Dally 1990（Day 9）
+[3] [raw/articles/interconn-study-21d-day-10.md](raw/articles/interconn-study-21d-day-10.md) — 拓扑大综合（Day 10）

@@ -95,6 +95,7 @@ FBFLY 行/列内全互连产生大量 bypass channel（跨过中间路由器的�
 
 - [Switching Networks](/concepts/switching-networks.md) — 交换网络基础（CLOS、Banyan）
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — 经典 k-ary n-fly MIN 与自路由
+- [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Compression（concentration）理论
 - [Switching Elements](/concepts/switching-elements.md) — 交换单元（crossbar、共享存储器）
 - [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — NoC Router 微架构（VC、仲裁器、流水线）
 - [Switching Principles](/concepts/switching-principles.md) — 交换原理基础

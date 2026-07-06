@@ -97,6 +97,7 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 - [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — memory-bound decode
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — KV/HBM 饱和
 - [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — 片外 SSD/NVMe tier
+- [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — load 全路径与 AMAT 层级（Day 22）
 
 # Citations
 

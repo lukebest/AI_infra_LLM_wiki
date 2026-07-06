@@ -101,6 +101,7 @@ sources:
 
 - [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md) — 间接网络「多路径」侧
 - [Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md) — k-ary n-fly 压扁 + concentration
+- [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Compression vs Expansion
 - [Switching Networks](/concepts/switching-networks.md) — CLOS、TST、Banyan 电信视角
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — 直连 vs MIN 选型
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 拓扑设计空间

@@ -136,6 +136,7 @@ Host CPU
 - [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — HBM→NVMe KV placement
 - [Cerebras WSE](/entities/cerebras-wse.md) — memoryX 外置 tier
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 软件管理存储 vs 硬件 cache
+- [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 存储篇综合与冷/热数据路径（Day 22）
 
 # Citations
 

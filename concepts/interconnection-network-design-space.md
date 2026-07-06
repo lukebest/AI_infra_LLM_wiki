@@ -20,6 +20,10 @@ sources:
 - raw/articles/interconn-study-21d-day-05.md
 - raw/articles/interconn-study-21d-day-06.md
 - raw/articles/interconn-study-21d-day-07.md
+- raw/articles/interconn-study-21d-day-08.md
+- raw/articles/interconn-study-21d-day-09.md
+- raw/articles/interconn-study-21d-day-10.md
+- raw/articles/interconn-study-21d-day-11.md
 ---
 
 # Interconnection Network Design Space（互连网络设计空间）
@@ -98,6 +102,8 @@ sources:
 - [Cerebras WSE](/entities/cerebras-wse.md) — 晶圆级 Mesh NoC 实例
 - [Multi-plane Clos Topology for AI Training](/concepts/multi-plane-clos-topology.md) — 数据中心 Fat Tree 变体
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — 自路由 MIN（Day 8）
+- [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Folding/CMesh/Express（Day 9）
+- [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 确定性路由 / XY / e-cube（Day 11）
 
 # Citations
 
@@ -108,3 +114,6 @@ sources:
 [5] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — Ch.3 Mesh/Torus（Day 6）
 [6] [raw/articles/interconn-study-21d-day-07.md](raw/articles/interconn-study-21d-day-07.md) — Ch.3 间接网络（Day 7）
 [7] [raw/articles/interconn-study-21d-day-08.md](raw/articles/interconn-study-21d-day-08.md) — Ch.3 Butterfly/MIN（Day 8）
+[8] [raw/articles/interconn-study-21d-day-09.md](raw/articles/interconn-study-21d-day-09.md) — Ch.3 拓扑变体（Day 9）
+[9] [raw/articles/interconn-study-21d-day-10.md](raw/articles/interconn-study-21d-day-10.md) — Ch.3 综合（Day 10）
+[10] [raw/articles/interconn-study-21d-day-11.md](raw/articles/interconn-study-21d-day-11.md) — Ch.4–5 Routing（Day 11）
