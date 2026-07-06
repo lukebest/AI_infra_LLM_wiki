@@ -13,6 +13,8 @@ sources:
 - raw/articles/arch-study-30d-day-10.md
 - raw/articles/arch-study-30d-day-12.md
 - raw/articles/arch-study-30d-day-19.md
+- raw/reports/superscalar-cpu-report.md
+- raw/reports/constable-deepdive.md
 ---
 
 # Out-of-Order Execution（乱序执行）
@@ -71,6 +73,8 @@ OoO 是 **通用 CPU 高 IPC 的灵魂**，也是 **功耗与面积的主要来�
 - [Memory Consistency Model](/concepts/memory-consistency-model.md) — Store Buffer 与 TSO
 - [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — ROB/SBUF 排空与 coherence
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 暗硅与功耗墙
+- [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — ROB/issue queue 边际饱和；Constable 跳过 load
+- [Constable Load Elimination](/concepts/constable-load-elimination.md) — likely-stable load 消除（ISCA'24 Best）
 
 # Citations
 

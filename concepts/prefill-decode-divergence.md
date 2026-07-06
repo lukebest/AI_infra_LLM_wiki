@@ -129,6 +129,8 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — decode kernel 层（attention/flat GEMM）
 - [FlashAttention](/concepts/flashattention.md) — IO-aware 精确 attention 起源
 - [FlashAttention-2](/concepts/flashattention-2.md) — prefill/训练 attention kernel
+- [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — Constable/Prophet 与 memory-bound decode
+- [Constable Load Elimination](/concepts/constable-load-elimination.md) — KV cache likely-stable load
 - [FlashAttention-3](/concepts/flashattention-3.md) — Hopper prefill/训练 + FP8
 - [Kv Cache](#kv-cache) — KV cache 是 decode 阶段的核心资源
 

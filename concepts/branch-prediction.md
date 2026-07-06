@@ -10,6 +10,7 @@ timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-11.md
+- raw/reports/superscalar-cpu-report.md
 ---
 
 # Branch Prediction（分支预测）
@@ -54,6 +55,7 @@ CPI ≈ 理想 CPI + 分支占比 × (1 - 准确率) × 惩罚
 - [CPU Pipeline Fundamentals](/concepts/cpu-pipeline-fundamentals.md) — 控制冒险来源
 - [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md) — 推测与 ILP
 - [Out-of-Order Execution](/concepts/out-of-order-execution.md) — 硬件推测 flush
+- [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — Bullseye H2P 旁路 TAGE（CBP-2025）
 
 # Citations
 

@@ -90,6 +90,7 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 - [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — 固定 RS dataflow CNN 加速器
 - [FEATHER Accelerator](/concepts/feather-accelerator.md) — 可重构 dataflow-layout
 - [Plasticine Accelerator](/concepts/plasticine-accelerator.md) — parallel patterns CGRA
+- [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — Golden Cove 侧 SLA 对照与 WSE 控制核 spec 参考
 
 # Citations
 

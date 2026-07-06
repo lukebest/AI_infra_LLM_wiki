@@ -24,6 +24,7 @@ sources:
 - raw/articles/arch-study-30d-day-16.md
 - raw/articles/arch-study-30d-day-17.md
 - raw/articles/arch-study-30d-day-20.md
+- raw/reports/superscalar-cpu-final-report.md
 - raw/articles/memory-fence-hardware-2026-06-28.md
 ---
 
@@ -102,6 +103,7 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 共同使用的确定性范式
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — 无 L1/L2/L3 的设计对比
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 暗硅、良率、专用 PE
+- [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — WSE-aware Constabulary、控制核 vs PE 无 BP/OoO
 - [Out-of-Order Execution](/concepts/out-of-order-execution.md) — WSE 不采用 OoO 的对比
 - [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — 对比参照
 - [Lpu Architecture](/concepts/lpu-architecture.md) — LPU 架构

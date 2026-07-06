@@ -40,7 +40,7 @@ TLB 在 Cache **之前**；详见 [Virtual Memory and TLB](/concepts/virtual-mem
 | L2 | ~3–10 ns | 256 KB–1 MB |
 | L3/LLC | ~10–20 ns | 8–64 MB |
 | DRAM | ~80–100 ns | GB 级 |
-| SSD / NVMe | **50 μs–10 ms**（GC） | TB 级 | 见 [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) |
+| [SSD / NVMe](/concepts/ssd-nvme-storage-system.md) | **50 μs–10 ms**（GC） | TB 级 |
 
 理论基础：[Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) 中的**局部性原理**。
 

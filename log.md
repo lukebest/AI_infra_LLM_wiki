@@ -1,6 +1,12 @@
 # Bundle Update Log
 
 ## 2026-07-03
+* **Ingest**: Constable 精读笔记 → `raw/reports/constable-deepdive.md`（源：`openclawdata/.../superscalar-cpu/constable-deepdive.md`）。
+* **Creation**: [Constable Load Elimination](/concepts/constable-load-elimination.md), [papers/constable-load-elimination.md](/papers/constable-load-elimination.md).
+* **Update**: [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md), [Out-of-Order Execution](/concepts/out-of-order-execution.md), [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md), [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — SLD/RMT/AMT、ISCA'24 Best Paper 交叉引用。
+* **Ingest**: OpenClaw 超标量 CPU 研究综述 → `raw/reports/superscalar-cpu-final-report.md`、`raw/reports/superscalar-cpu-report.md`（源：`openclawdata/.../superscalar-cpu/FINAL-report.md`）。
+* **Creation**: [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md), [summaries/superscalar-cpu-research-2023-2026.md](/summaries/superscalar-cpu-research-2023-2026.md).
+* **Update**: [Branch Prediction](/concepts/branch-prediction.md), [Out-of-Order Execution](/concepts/out-of-order-execution.md), [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [Cerebras WSE](/entities/cerebras-wse.md), [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md), [Memory Consistency Model](/concepts/memory-consistency-model.md) — Constable/Bullseye/Prophet/CVA6S+ 与 WSE/LLM 交叉引用。
 * **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 8 → `raw/articles/interconn-study-21d-day-08.md`（源：`openclawdata/.../interconn-study-21d/day-08.md`）。
 * **Creation**: [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md).
 * **Update**: [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md), [Switching Networks](/concepts/switching-networks.md), [Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md), [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — Butterfly/Omega/Banyan/Batcher-Banyan 与 Clos/Mesh 交叉引用。

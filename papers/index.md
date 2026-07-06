@@ -7,6 +7,7 @@
 
 * [A Lightweight High-Throughput Collective-Capable NoC for Large-Scale ML Accelerators](collective-capable-noc-ml-accelerators.md) - FlooNoC 扩展：multicast/归约/barrier + DCA 借 Snitch FPU；router +16.9% 面积，4×4 mesh 上 multicast 5.3×、reduction 2.8×，SUMMA GEMM 最高 3.8×
 * [A Preliminary Architecture for a Basic Data-Flow Processor](dennis-misunas-basic-data-flow-processor.md) - Dennis & Misunas (ISCA 1975) 基本数据流处理器：decider/T-gate/merge 条件迭代、Decision Units、Instruction Cell 两级存储作活跃指令 cache
+* [Constable: Safely Eliminating Load Instruction Execution](constable-load-elimination.md) - ISCA 2024 Best Paper：likely-stable load 识别 + RMT/AMT 监控；12.4 KB/core；+5.1% perf、-3.4% 动态功耗、SMT +8.8%；与 EVES LVP 正交至 8.5%
 * [DSpark: Confidence-Scheduled Speculative Decoding with Semi-Autoregressive Generation](dspark-speculative-decoding.md) - DeepSeek 半自回归 speculative decoding + 负载感知 confidence verify；离线 τ +16–31%，V4 生产 per-user +57–85% vs MTP-1，开源 DeepSpec
 * [Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks](eyeriss-energy-efficient-cnn-accelerator.md) - MIT 65nm 168-PE CNN 加速器：Row Stationary dataflow、四级存储、GIN 组播 NoC、RLC+data gating；AlexNet 35 frames/s @278mW、0.0029 DRAM access/MAC
 * [FEATHER: A Reconfigurable Accelerator with Data Reordering Support for Low-Cost On-Chip Dataflow Switching](feather-reconfigurable-accelerator.md) - NEST+BIRRD 可重构加速器，RIR 在归约中做 arbitrary layout reorder；Layoutloop dataflow-layout 联合搜索，ResNet-50 1.27–2.89× 延迟、FPGA 2.65–3.91× 吞吐

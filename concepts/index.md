@@ -10,6 +10,7 @@
 * [Clos and Fat-Tree Topology](clos-fat-tree-topology.md) - 间接网络：终端/交换分离、Clos C(n,m,r) 无阻塞条件、Fat-Tree 代价等价与 Beneš RNB，及 InfiniBand/Jupiter 与 WSE 规模分界
 * [CMX & STX](cmx-stx.md) - NVIDIA 推理存储平台：CMX（Tier G3.5 NVMe KV cache）+ STX（BF-4 存储 rack 参考架构）
 * [Collective-Capable NoC](collective-capable-noc.md) - FlooNoC 扩展：AXI 多地址 mask、XY fork 组播、并行/宽归约；DCA 范式（互连借 FPU 做 in-network 算术归约，router +16.9%、tile <1%）
+* [Constable Load Elimination](constable-load-elimination.md) - ISCA 2024 Best Paper：SLD/RMT/AMT 识别 likely-stable load 并跳过执行；12.4 KB/core、+5.1% perf、-3.4% 动态功耗、SMT +8.8%；与 LVP 正交
 * [Core Group (DRAM Access Synchronization)](core-group-dram-access.md) - 3D AI 芯片 core group：物理相邻 core 组内通过 hardware tracker 同步 DRAM 访问，缓解 row-buffer 冲突
 * [CPU Pipeline Fundamentals](cpu-pipeline-fundamentals.md) - 五级流水线（IF/ID/EX/MEM/WB）、三大冒险（结构/数据/控制）、Forwarding 与分支惩罚
 * [CSA and HCA (Hybrid Attention)](csa-hca.md) - 两级压缩注意力：CSA 温和压缩+稀疏选择，HCA 激进压缩+dense attention
@@ -61,6 +62,7 @@
 * [SpaDA Programming Language](spada-programming-language.md) - 空间数据流编程语言：place/dataflow/compute 三构造、async/await、GT4Py→CSL 编译管线与 checkerboard 路由/task 融合优化，WSE-2 上 14× 减码、260 TFlop/s stencil
 * [SRv6 Source Routing for AI Supercomputers](srv6-source-routing.md) - AI 超算静态源路由：SRv6 uSID uN 转发，禁用动态路由，与 MRC 协同
 * [SSD and NVMe Storage System](ssd-nvme-storage-system.md) - 片外存储：NAND/FTL/GC/写放大、RAID 0/1/5/6 写惩罚、NVMe 多队列与 PCIe 带宽、read() 延迟分解与 io_uring；WSE memoryX 与 CMX KV tier
+* [Superscalar CPU Research (2023-2026)](superscalar-cpu-research-2023-2026.md) - 2023-2026 超标量 CPU 顶会综述：异构旁路子系统（Constable/Bullseye/Prophet）、CVA6S+ 开源 baseline、OoO 边际饱和与 LLM memory-bound 优化；WSE/NPU 关联矩阵与核内同步 Gap
 * [Switching Elements](switching-elements.md) - 交换单元：空分/时分交换，开关阵列与共享存储器/总线，性能指标
 * [Switching Networks](switching-networks.md) - 交换网络：CLOS 三级网络（严格/可重排无阻塞），TST 网络，Banyan 网络
 * [Switching Principles](switching-principles.md) - 交换原理基础：电路/报文/分组/虫孔交换，历史演进，三对基本概念，交换系统结构

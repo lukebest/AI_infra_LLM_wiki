@@ -58,6 +58,8 @@ VLIW 未统治通用计算：**动态事件**（Cache miss、分支）使编译�
 - [CPU Pipeline Fundamentals](/concepts/cpu-pipeline-fundamentals.md) — 流水线前提
 - [Out-of-Order Execution](/concepts/out-of-order-execution.md) — Tomasulo 与重命名
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 规避动态 ILP 的范式
+- [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — 2024-2026 超标量顶会主线
+- [Constable Load Elimination](/concepts/constable-load-elimination.md) — load 资源依赖消除
 
 # Citations
 
