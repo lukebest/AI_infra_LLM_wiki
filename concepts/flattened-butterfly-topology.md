@@ -20,7 +20,7 @@ sources:
 
 # Flattened Butterfly 拓扑
 
-Flattened butterfly（FBFLY）是一种利用**高基数路由器**降低网络直径的拓扑结构，最初为 off-chip 高基数网络提出（Kim et al., ISCA 2007），后被适配到片上网络（NoC）场景（Kim, Balfour, Dally, MICRO 2007）。核心思想：将传统 butterfly 的每行路由器"压扁"合并，保留所有跨行连接，配合 concentration 共享网络端口，实现低直径、低功耗。
+Flattened butterfly（FBFLY）是一种利用**高基数路由器**降低网络直径的拓扑结构，最初为 off-chip 高基数网络提出（Kim et al., ISCA 2007），后被适配到片上网络（NoC）场景（Kim, Balfour, Dally, MICRO 2007）。从 k-ary n-fly [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) 出发压扁合并行路由器。
 
 ## 拓扑构造
 
@@ -94,6 +94,7 @@ FBFLY 行/列内全互连产生大量 bypass channel（跨过中间路由器的�
 ## 相关概念
 
 - [Switching Networks](/concepts/switching-networks.md) — 交换网络基础（CLOS、Banyan）
+- [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — 经典 k-ary n-fly MIN 与自路由
 - [Switching Elements](/concepts/switching-elements.md) — 交换单元（crossbar、共享存储器）
 - [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — NoC Router 微架构（VC、仲裁器、流水线）
 - [Switching Principles](/concepts/switching-principles.md) — 交换原理基础

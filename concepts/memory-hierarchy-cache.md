@@ -16,6 +16,7 @@ sources:
 - raw/articles/arch-study-30d-day-14.md
 - raw/articles/arch-study-30d-day-15.md
 - raw/articles/arch-study-30d-day-17.md
+- raw/articles/arch-study-30d-day-20.md
 ---
 
 # Memory Hierarchy and Cache（存储层次与 Cache）
@@ -39,7 +40,7 @@ TLB 在 Cache **之前**；详见 [Virtual Memory and TLB](/concepts/virtual-mem
 | L2 | ~3–10 ns | 256 KB–1 MB |
 | L3/LLC | ~10–20 ns | 8–64 MB |
 | DRAM | ~80–100 ns | GB 级 |
-| SSD | μs 级 | TB 级 |
+| SSD / NVMe | **50 μs–10 ms**（GC） | TB 级 | 见 [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) |
 
 理论基础：[Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) 中的**局部性原理**。
 
@@ -95,6 +96,7 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — DRAM 带宽与 NoC
 - [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — memory-bound decode
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — KV/HBM 饱和
+- [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — 片外 SSD/NVMe tier
 
 # Citations
 
@@ -102,3 +104,4 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 [2] [raw/articles/arch-study-30d-day-14.md](raw/articles/arch-study-30d-day-14.md) — AMAT 与 Cache 优化（Day 14）
 [3] [raw/articles/arch-study-30d-day-15.md](raw/articles/arch-study-30d-day-15.md) — TLB 与访存路径（Day 15）
 [4] [raw/articles/arch-study-30d-day-17.md](raw/articles/arch-study-30d-day-17.md) — DRAM/HBM（Day 17）
+[5] [raw/articles/arch-study-30d-day-20.md](raw/articles/arch-study-30d-day-20.md) — SSD/NVMe（Day 20）

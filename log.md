@@ -1,6 +1,12 @@
 # Bundle Update Log
 
 ## 2026-07-03
+* **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 8 → `raw/articles/interconn-study-21d-day-08.md`（源：`openclawdata/.../interconn-study-21d/day-08.md`）。
+* **Creation**: [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md).
+* **Update**: [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md), [Switching Networks](/concepts/switching-networks.md), [Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md), [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — Butterfly/Omega/Banyan/Batcher-Banyan 与 Clos/Mesh 交叉引用。
+* **Ingest**: 体系结构 30 天学习笔记 Day 20 → `raw/articles/arch-study-30d-day-20.md`（源：`openclawdata/.../arch-study-30d/day-20.md`）。
+* **Creation**: [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md).
+* **Update**: [DRAM and Memory System](/concepts/dram-memory-system.md), [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md), [Cerebras WSE](/entities/cerebras-wse.md), [CMX & STX](/concepts/cmx-stx.md), [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md), [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — FTL/RAID/NVMe/io_uring、memoryX、KV tier 交叉引用。
 * **Ingest**: 郑启航 知乎「分布式存储架构下的矩阵乘与编译器」→ `raw/articles/分布式存储架构下的矩阵乘与编译器.md`（已有 clippings；补 OKF frontmatter）。
 * **Creation**: [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md), [summaries/distributed-gemm-and-compiler.md](/summaries/distributed-gemm-and-compiler.md).
 * **Update**: [Mesh and Torus Topology](/concepts/mesh-torus-topology.md), [Linear and Ring Topology](/concepts/linear-ring-topology.md), [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md), [Parallelism Transition Point](/concepts/parallelism-transition-point.md), [Graphcore IPU](/entities/graphcore-ipu.md), [SpaDA Programming Language](/concepts/spada-programming-language.md) — Cannon/SUMMA/2.5D/3D GEMM 与 T10 rTensor 交叉引用。

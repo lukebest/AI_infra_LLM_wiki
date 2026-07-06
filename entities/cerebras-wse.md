@@ -23,6 +23,7 @@ sources:
 - raw/articles/arch-study-30d-day-15.md
 - raw/articles/arch-study-30d-day-16.md
 - raw/articles/arch-study-30d-day-17.md
+- raw/articles/arch-study-30d-day-20.md
 - raw/articles/memory-fence-hardware-2026-06-28.md
 ---
 
@@ -74,7 +75,7 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 | 维度 | Cerebras WSE | Groq 3 LPU |
 |------|-------------|------------|
 | 核心 | 900K 简单 PE | 256 复杂 LPU |
-| 内存 | 44 GB 片上 SRAM | 128 GB 片上 SRAM |
+| 内存 | 44 GB 片上 SRAM + **memoryX NVMe** | 128 GB 片上 SRAM |
 | 路由 | 24 color 静态 | 96 C2C plesiosynchronous |
 | 编程 | CSL（数据流） | Compiler spatial |
 | 模型 | 分布式内存 | 分布式内存 |
@@ -84,6 +85,10 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 - Auto-Gen Reduce 距下界 ≤1.4×，比 vendor 方案快 3.27×
 - 详见 [Wse Performance Model](/concepts/wse-performance-model.md)、[Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md)、[Near Optimal Wafer Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md)
 
+## memoryX 外置存储
+
+WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SSD**（~30 TB 顺序读 ~28 GB/s 量级）+ host DRAM 池。片上 **~21 PB/s SRAM** 与 NVMe 带宽差 **~750,000×**——适合 checkpoint/冷加载，不适合 per-token KV 从 SSD 读取。详见 [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md)。
+
 ## 相关页面
 - [Virtual Memory and TLB](/concepts/virtual-memory-tlb.md) — 无 MMU/TLB
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — SLA vs Golden Cove 矩阵
@@ -91,6 +96,7 @@ WSE 采用 **wormhole routing 变体**（非电路交换）：
 - [Memory Consistency Model](/concepts/memory-consistency-model.md) — 无共享内存、PE barrier 近似 SC
 - [Memory Fence and Barrier](/concepts/memory-fence-barrier.md) — 无 coherence 时 fence 退化
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — 无 DRAM、21 PB/s SRAM 带宽
+- [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — memoryX NVMe tier
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — place/dataflow/compute 高级 CSL 抽象
 - [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md) — 数据流架构历史（Dennis & Misunas 1975）
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 共同使用的确定性范式

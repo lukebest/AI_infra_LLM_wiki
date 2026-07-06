@@ -133,6 +133,7 @@ WSE-3 ~949×949 Mesh：D≈1896 跳；T_r=1 ns + T_w=0.5 ns → 最坏 **~2.8 μ
 - [Cerebras WSE](/entities/cerebras-wse.md) — ~949×949 Mesh 实例
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — Mesh 上 collective
 - [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — Cannon/SUMMA 在 2D 处理器 mesh 上的经典 GEMM
+- [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — MIN 自路由 vs Mesh 多路径（WSE 选型）
 
 # Citations
 

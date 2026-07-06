@@ -109,7 +109,7 @@ T 接线器 (×32) → S 接线器 (32×32) → T 接线器 (×32)
 
 ## Banyan 网络
 
-自路由交换网络，广泛用于高性能计算和分布式系统。
+自路由 **MIN** 家族；与 [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) 中 Omega/Butterfly/Delta 同构。广泛用于高性能计算和分布式系统。
 
 ### 特性
 - **L 级 Banyan**：任何输入到输出通路都经过 L 级
@@ -136,6 +136,7 @@ T 接线器 (×32) → S 接线器 (32×32) → T 接线器 (×32)
 
 ## 相关页面
 - [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md) — D&T 间接网络：C(n,m,r)、Fat-Tree 代价等价
+- [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — 自路由 MIN：Butterfly/Omega/Banyan
 - [Switching Principles](/concepts/switching-principles.md) — 交换原理概述
 - [Switching Elements](/concepts/switching-elements.md) — 交换单元（S/T 接线器）
 - [Kyber Rack](/entities/kyber-rack.md) — 多级 NVLink 交换网络
@@ -150,3 +151,4 @@ T 接线器 (×32) → S 接线器 (32×32) → T 接线器 (×32)
 
 [1] [raw/articles/浅谈交换原理（3）——交换网络.md](raw/articles/浅谈交换原理（3）——交换网络.md)
 [2] [raw/articles/interconn-study-21d-day-07.md](raw/articles/interconn-study-21d-day-07.md) — D&T Clos/Fat-Tree（Day 7）
+[3] [raw/articles/interconn-study-21d-day-08.md](raw/articles/interconn-study-21d-day-08.md) — D&T Butterfly/MIN（Day 8）

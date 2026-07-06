@@ -92,6 +92,8 @@ Capacity Trap 是**机制**（为什么 throughput 崩溃），[Reasoning Cliff]
 - [Prefill Decode Divergence](/concepts/prefill-decode-divergence.md) — decode 阶段是 capacity trap 的主战场
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — prefill/decode 物理解耦作为根本性解决方案
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构硬件针对性优化 decode
+- [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — HBM→NVMe KV tier 物理层
+- [CMX & STX](/concepts/cmx-stx.md) — NVIDIA Tier G3.5 推理存储
 
 # Citations
 

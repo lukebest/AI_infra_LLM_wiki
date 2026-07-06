@@ -118,6 +118,7 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [FlashAttention-2](/concepts/flashattention-2.md) — prefill/训练 IO-aware attention（相对 FA ~2×，73% A100 峰值）
 - [FlashAttention-3](/concepts/flashattention-3.md) — Hopper 异步 + FP8（740 TFLOPs/s，相对 FA2 1.5–2×）
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — 3D 堆叠缓解 BW wall，prefill/decode 对 DRAM/NoC/SRAM 响应不同
+- [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — KV spill 至 NVMe tier 的延迟与带宽
 
 ## 相关概念
 

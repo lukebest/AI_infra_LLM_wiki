@@ -71,7 +71,7 @@ k-port Fat-Tree 容纳 **N = k³/4** 终端；总链路 **O(N log N)**，**每�
 
 - **Beneš**：log₂(N) 级 2×2 交换 + perfect shuffle 互连
 - **RNB**：可重排后建立任意新连接
-- 应用：电信交换、洗牌网络；Day 8 蝶形/Omega/Delta 为其延伸
+- 应用：电信交换、洗牌网络；详见 [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md)（Omega/Banyan/Batcher-Banyan，Day 8）
 
 ## 系统实例
 
@@ -101,6 +101,7 @@ InfiniBand 4096 端扩展至 10 万：二级 Fat-Tree 不足 → 三级 Clos、�
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 百万节点需间接 + 高基数 switch
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 处理器互连 vs 数据中心域
 - [Switching Networks](/concepts/switching-networks.md) — CLOS 路由、TST、Banyan
+- [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — k-ary n-fly、自路由、Batcher-Banyan
 - [Switching Principles](/concepts/switching-principles.md) — Clos 历史里程碑
 
 # Citations

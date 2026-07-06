@@ -13,6 +13,7 @@ timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-17.md
+- raw/articles/arch-study-30d-day-20.md
 ---
 
 # DRAM and Memory System（DRAM 与内存系统）
@@ -89,6 +90,7 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 - [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — decode 带宽 bound
 - [Reasoning Cliff](/concepts/reasoning-cliff.md) — KV/HBM 容量饱和
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 局部性与量化权衡
+- [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — DRAM 以下片外存储 tier
 
 # Citations
 

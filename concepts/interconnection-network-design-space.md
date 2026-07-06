@@ -97,6 +97,7 @@ sources:
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — 微架构层实现
 - [Cerebras WSE](/entities/cerebras-wse.md) — 晶圆级 Mesh NoC 实例
 - [Multi-plane Clos Topology for AI Training](/concepts/multi-plane-clos-topology.md) — 数据中心 Fat Tree 变体
+- [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — 自路由 MIN（Day 8）
 
 # Citations
 
@@ -106,3 +107,4 @@ sources:
 [4] [raw/articles/interconn-study-21d-day-05.md](raw/articles/interconn-study-21d-day-05.md) — Ch.3 线性/Ring（Day 5）
 [5] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — Ch.3 Mesh/Torus（Day 6）
 [6] [raw/articles/interconn-study-21d-day-07.md](raw/articles/interconn-study-21d-day-07.md) — Ch.3 间接网络（Day 7）
+[7] [raw/articles/interconn-study-21d-day-08.md](raw/articles/interconn-study-21d-day-08.md) — Ch.3 Butterfly/MIN（Day 8）

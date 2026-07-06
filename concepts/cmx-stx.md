@@ -12,6 +12,7 @@ timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
 sources:
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
+- raw/articles/arch-study-30d-day-20.md
 ---
 
 # CMX & STX（Context Memory Storage Platform）
@@ -62,6 +63,7 @@ NVIDIA 逐步标准化集群各层：
 - [Nvidia Vera Rubin Nvl72](/entities/nvidia-vera-rubin-nvl72.md) — 推理计算侧
 - [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX 推理加速器
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 解耦推理架构
+- [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — NVMe/FTL/GC 与推理 KV tier
 
 # Citations
 
