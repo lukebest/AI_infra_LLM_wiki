@@ -20,5 +20,6 @@
 * [Optimization of Collective Reduction Operations](rabenseifner-collective-reduction-operations.md) - Rabenseifner ICCS 2004：MPI Reduce/AllReduce 五算法（tree、doubling、RHD、binary blocks、ring）与 (p,n) 选择；占 MPI 时间 >40%；长向量相对 vendor 最高 100×
 * [Plasticine: A Reconfigurable Architecture For Parallel Patterns](plasticine-reconfigurable-parallel-patterns.md) - Stanford CGRA 直接支持 Map/FlatMap/Fold/HashReduce；64 PCU+64 PMU @28nm 112.8mm²、12.3 TFLOPS；相对 Stratix V 最高 76.9× Perf/W、DHDL 数分钟编译
 * [SpaDA: A Spatial Dataflow Architecture Programming Language](spada-spatial-dataflow-architecture.md) - 空间数据流语言 place/dataflow/compute + GT4Py→CSL 优化编译；WSE-2 14× 减码、collective 1.04× 手写 CSL、260 TFlop/s stencil、82× GEMV vs A100
+* [TileLoom: Automatic Dataflow Planning for Tile-Based Languages](tileloom-automatic-dataflow-planning.md) - MLIR 编译框架：Triton/Helion → spatiotemporal dataflow planning + df 硬件模型；Tenstorrent Wormhole/Blackhole 上 FlashAttention ~2× TTNN、Mamba Scan 最高 27× unfused
 * [Understanding Inference Scaling for LLMs](understanding-inference-scaling-for-llms.md) - Reasoning-centric LLM 推理系统瓶颈分析：Capacity Trap, Reasoning Cliff, DP→TP Transition, Prefill-Decode Divergence（8B-671B H200 实测）
 * [Voxel: 3D-Stacked AI Chip Efficiency for LLM Inference](voxel-3d-stacked-ai-chip-llm-inference.md) - Voxel 编译器感知 3D AI 芯片仿真框架：LLM prefill/decode 软硬件协同探索，Graphcore IPU 验证误差 ≤6.8%

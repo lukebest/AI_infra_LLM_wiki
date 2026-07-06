@@ -66,6 +66,7 @@ Tree reduce 示例（Figure 1a）：meta-for 每 stage 一 phase，`relative_str
 - [Cerebras WSE](/entities/cerebras-wse.md) — 目标硬件
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — collective baseline 论文
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 编译时 spatial 编排范式
+- [TileLoom Compiler](/concepts/tileloom-compiler.md) — Triton/Helion scale-out planning（Tenstorrent；对照 WSE SpaDA）
 
 # Citations
 

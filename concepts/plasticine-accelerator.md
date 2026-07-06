@@ -107,6 +107,7 @@ Pipeline 层次 → virtual PCU/PMU → 贪心划分 physical unit → 控制层
 
 - [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md) — 数据驱动执行历史；Plasticine 为现代 **spatial dataflow + pattern DSL**
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — 同为高层 dataflow 抽象；SpaDA 绑 WSE NoC/CSL，Plasticine 绑 PCU/PMU CGRA
+- [TileLoom Compiler](/concepts/tileloom-compiler.md) — 固定 core + NoC tile 规划（Timeloop/Plasticine 为 PE 级 co-design）
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 可重构 vs 固定 ASIC 杠杆
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 静态配置、可建模延迟
 

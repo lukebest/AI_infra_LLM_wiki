@@ -155,7 +155,7 @@ Parallel reduction（CollectB/LsbAnd）处理窄网 bitwise/AXI 语义；**宽�
 | 编程 | Bare-metal C++ / DMA opcode | CSL / [SpaDA](/concepts/spada-programming-language.md) |
 | 开源 | FlooNoC v0.8.0 + picobello | 闭源 |
 
-工业同类（专有、机制未公开）：MTIA、SambaNova SN40L、Tenstorrent Blackhole——均具 2-D tile、片上算术、可编程 DMA/LSU。
+工业同类（专有、机制未公开）：MTIA、SambaNova SN40L、Tenstorrent Blackhole——均具 2-D tile、片上算术、可编程 DMA/LSU。Tenstorrent 上 **Triton → TileLoom** scale-out 编译见 [TileLoom Compiler](/concepts/tileloom-compiler.md)。
 
 ## 相关页面
 

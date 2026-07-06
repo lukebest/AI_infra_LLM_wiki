@@ -7,6 +7,9 @@
 * **Ingest**: 体系结构 30 天学习笔记 Day 21–23 → `raw/articles/arch-study-30d-day-21.md`、`day-22.md`、`day-23.md`（源：`openclawdata/.../arch-study-30d/day-21..23.md`）。
 * **Creation**: [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md), [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md), [Multicore SMT and NUCA](/concepts/multicore-smt-nuca.md).
 * **Update**: [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md), [DRAM and Memory System](/concepts/dram-memory-system.md), [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md), [Cache Coherence](/concepts/cache-coherence.md), [Memory Consistency Model](/concepts/memory-consistency-model.md), [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md), [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md), [NoC Router 微架构](/concepts/noc-router-microarchitecture.md), [Cerebras WSE](/entities/cerebras-wse.md) — 存储篇综合、NoC 五问、SMT/NUCA/Amdahl 交叉引用。
+* **Ingest**: TileLoom PDF → `raw/papers/TileLoom_Automatic_Dataflow_Planning_2026.pdf`（Zotero: arXiv:2512.22168v2）。
+* **Creation**: [TileLoom Compiler](/concepts/tileloom-compiler.md), [papers/tileloom-automatic-dataflow-planning.md](/papers/tileloom-automatic-dataflow-planning.md), `raw/papers/tileloom-automatic-dataflow-planning.md`.
+* **Update**: [SpaDA Programming Language](/concepts/spada-programming-language.md), [Plasticine Accelerator](/concepts/plasticine-accelerator.md), [Collective-Capable NoC](/concepts/collective-capable-noc.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — Triton/Helion dataflow planning vs WSE SpaDA 交叉引用。
 
 ## 2026-07-03
 * **Ingest**: Constable 精读笔记 → `raw/reports/constable-deepdive.md`（源：`openclawdata/.../superscalar-cpu/constable-deepdive.md`）。

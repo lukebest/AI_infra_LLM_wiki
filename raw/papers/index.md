@@ -20,3 +20,4 @@
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md)
 * [FEATHER Reconfigurable Accelerator Dataflow Switching](feather-reconfigurable-accelerator.md)
 * [SpaDA Spatial Dataflow Architecture Programming Language](spada-spatial-dataflow-architecture.md)
+* [TileLoom Automatic Dataflow Planning for Tile-Based Languages](tileloom-automatic-dataflow-planning.md)
