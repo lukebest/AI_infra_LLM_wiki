@@ -119,6 +119,7 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 分布式 XY 路由与 collective 延迟
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 为何 WSE 倾向 DOR 而非拥塞自适应
 - [WaferLLM System](/concepts/waferllm-system.md) — PLMR 模型、MeshGEMM/V、KV shift（WSE-2 E2E LLM）
+- [WaferLLM Compiler Research Gaps](/analyses/waferllm-compiler-research-gaps.md) — 6 个未解瓶颈 + MLIR pass 设计
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与 B_b 瓶颈
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
 - [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md) — H&P App.F 五问（Day 21）

@@ -17,8 +17,12 @@
 
 # Raw Source
 
+* [AI Accelerators for Large Language Model Inference: Architecture Analysis and Scaling Strategies](AI_Accelerators_LLM_Inference_2025.md)
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md)
 * [FEATHER Reconfigurable Accelerator Dataflow Switching](feather-reconfigurable-accelerator.md)
+* [Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective](LLM_Inference_Acceleration_Comprehensive_Hardware_Survey_2024.md)
+* [LoopLynx: A Scalable Dataflow Architecture for Efficient LLM Inference](LoopLynx_Scalable_Dataflow_LLM_Inference_2025.md)
+* [SambaNova SN40L: Scaling the AI Memory Wall with Dataflow and Composition of Experts](SambaNova_SN40L_Memory_Wall_Dataflow_CoE_2024.md)
 * [SpaDA Spatial Dataflow Architecture Programming Language](spada-spatial-dataflow-architecture.md)
 * [TileLoom Automatic Dataflow Planning for Tile-Based Languages](tileloom-automatic-dataflow-planning.md)
 * [WaferLLM Large Language Model Inference at Wafer Scale](waferllm-wafer-scale-llm-inference.md)

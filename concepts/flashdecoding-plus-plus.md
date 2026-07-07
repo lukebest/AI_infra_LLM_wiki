@@ -113,6 +113,7 @@ Algorithm（DSpark speculative decode 等） ── 减少 decode 步数
 - [FlashAttention-3](/concepts/flashattention-3.md) — Hopper H100 异步 + FP8 第三代
 - [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md) — decode 算法层加速
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — decode memory-bound 与 HBM 利用率
+- [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子基础（AI、Roofline、Prefill/Decode）
 - [papers/flashdecoding-plus-plus-llm-gpu-inference.md](/papers/flashdecoding-plus-plus-llm-gpu-inference.md) — 论文摘要
 
 # Citations

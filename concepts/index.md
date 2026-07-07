@@ -33,6 +33,7 @@
 * [FlashMoE Kernel](flashmoe-kernel.md) - NeurIPS 2025 单 persistent GPU kernel 融合分布式 MoE：actor 调度、NVSHMEM 设备端 RDMA、payload-efficient dispatch；8×H100 相对 SOTA 最高 6× 延迟、5.7× 吞吐、93% SM 利用率
 * [Flattened Butterfly 拓扑](flattened-butterfly-topology.md) - Flattened Butterfly 片上拓扑：高基数路由器降低直径，concentration + bypass channel，2-hop 直径，38% 功耗降低
 * [FP4 Quantization-Aware Training](fp4-qat.md) - FP4 量化感知训练，无损 FP4→FP8 反量化
+* [GEMM vs GEMV in LLM Inference](gemm-vs-gemv.md) - 矩阵乘 vs 矩阵-向量乘：算子形状、算术强度（AI）、Roofline 类别、Prefill/Decode 对应关系；GEMM compute-bound（AI~1000），GEMV bandwidth-bound（AI~2）；H100 decode <1% 峰值 FLOPS，理论时间 vs 实际时间差 100×
 * [GPU SIMT Architecture](gpu-simt-architecture.md) - H&P Ch.4 GPU/SIMT：Warp 锁步、Warp Divergence、Occupancy 延迟隐藏、H100 内存层次、Tensor Core；与 CPU OoO / WSE MIMD 对比
 * [Heterogeneous Inference](heterogeneous-inference.md) - GPU + LPU 异构推理，分别优化 prefill/decode
 * [Inference Capacity Trap](inference-capacity-trap.md) - 推理容量陷阱：KV cache 饱和导致 preemption + recomputation，throughput 崩溃
@@ -60,6 +61,7 @@
 * [Numeric Formats for AI Hardware](numeric-formats-ai-hardware.md) - IEEE 754 浮点与 AI 数据格式（FP32/FP16/BF16/FP8/INT8）的精度、动态范围与硬件面积权衡
 * [NVIDIA CPO Roadmap](nvidia-cpo-roadmap.md) - NVIDIA CPO 用于 scale-up 的路线图：Rubin NVL576 测试 → Feynman NVL1152 volume ramp
 * [Out-of-Order Execution](out-of-order-execution.md) - 乱序执行：Tomasulo 算法、保留站、ROB 顺序提交、寄存器重命名与指令窗口 IPC 收益递减
+* [PagedAttention and vLLM Serving](pagedattention-vllm.md) - vLLM 服务系统的核心 KV cache 内存管理：借鉴 OS 虚拟内存与分页机制，将 KV cache 切为 fixed-size block 跨请求共享/重映射；解决 KV cache fragmentation 与不可共享
 * [Parallelism Transition Point](parallelism-transition-point.md) - 并行度切换点：32B 是 DP→TP inflection，MoE 需 hybrid PP+TP
 * [Plasticine Accelerator](plasticine-accelerator.md) - Stanford ISCA 2017 CGRA：PCU/PMU 空间阵列直接支持 Map/FlatMap/Fold/HashReduce parallel patterns；28nm 112.8mm²、12.3 TFLOPS、相对 FPGA 最高 76.9× Perf/W
 * [Prefill-Decode Resource Divergence](prefill-decode-divergence.md) - Prefill（compute-bound）vs Decode（bandwidth-bound）资源需求正交，>99% 时间在 decode

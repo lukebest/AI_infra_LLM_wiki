@@ -95,6 +95,16 @@ Decode 瓶颈在 **局部 GEMV + 全局聚合**：
 - 离线 autotune：按模型/seq len 选 prefill vs decode **core grid**（LLaMA3-8B：660×660 / 360×360）
 - 全模型：**LLaMA3-8B、LLaMA2-13B**；34B/72B 子层（超 40 GB 片上容量）
 
+## 作者承认的未解瓶颈（compiler 视角的机会）
+
+论文 §7.5、§8 明确承认以下瓶颈**未解**，是 Direction 2（compiler-aware decode on mesh-NoC）的入口：
+
+1. **48KB SRAM 限制** → pipeline parallelism 替代 tensor parallel → **5× underutilization**
+2. **edge cores underutilization** → mesh 几何 + 算子 partition 假设未考虑
+3. **K=2 K-tree allreduce 硬编码** → 没做 cost-model 驱动的 K 搜索
+
+**完整 6 个 gap**（含作者没提的 3 个）见 [WaferLLM Compiler Research Gaps](/analyses/waferllm-compiler-research-gaps.md)。
+
 ## 评测要点（WSE-2 vs A100 7nm）
 
 - **TPR** = 1/TPOT；vs **T10 ~160×**、**Ladder ~625×**（同 WSE-2）
@@ -120,7 +130,8 @@ SpaDA 报告 WSE-2 **82× GEMV vs A100**（HPDC'24 手写 CSL baseline）；Wafe
 - [Collective-Capable NoC](/concepts/collective-capable-noc.md) — mesh 上 collective 设计空间
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — WSE 编程抽象
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 无 DRAM、编译器承担复杂性
-- [papers/waferllm-wafer-scale-llm-inference.md](/papers/waferllm-wafer-scale-llm-inference.md) — 论文摘要页
+- [paper/waferllm-wafer-scale-llm-inference.md](/papers/waferllm-wafer-scale-llm-inference.md) — 论文摘要页
+- [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子基础（AI、Roofline、Prefill/Decode）
 
 # Citations
 

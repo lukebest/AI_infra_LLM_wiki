@@ -1,6 +1,14 @@
 # Bundle Update Log
 
 ## 2026-07-07
+* **Creation**: [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子基础概念页：算术强度公式、Roofline、H100 decode <1% 峰值 FLOPS、prefill/decode 对应、编译器优化空间。
+* **Update**: [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md), [WaferLLM System](/concepts/waferllm-system.md), [FlashDecoding++](/concepts/flashdecoding-plus-plus.md), [WaferLLM Compiler Research Gaps](/analyses/waferllm-compiler-research-gaps.md) — 反向链接到新 GEMM vs GEMV 页。
+
+* **Ingest**: 4 篇 paper PDF → `raw/papers/LoopLynx_*`, `SambaNova_SN40L_*`, `LLM_Inference_Acceleration_*`, `AI_Accelerators_LLM_*`（arXiv: 2504.09561, 2405.07518, 2410.04466, 2506.00008）。
+* **Creation**: [LoopLynx](/papers/looplynx-scalable-dataflow-llm-inference.md), [SambaNova SN40L](/papers/sambanova-sn40l-dataflow-coe.md), [LLM Inference Hardware Survey](/papers/llm-inference-acceleration-comprehensive-hardware-survey.md), [AI Accelerators Cross-Architecture](/papers/ai-accelerators-llm-inference.md), [PagedAttention / vLLM](/concepts/pagedattention-vllm.md), [WaferLLM Compiler Research Gaps](/analyses/waferllm-compiler-research-gaps.md)。
+* **Update**: [WaferLLM System](/concepts/waferllm-system.md) — 补 §7.5/§8 作者承认的 3 个未解瓶颈，[Cerebras WSE](/entities/cerebras-wse.md) — 新增 compiler research gaps 链接。
+* **Validation**: `validate_bundle.py` 通过（4 个新 raw + 1 个新 analyses + 4 个新 paper 摘要 + 1 个新 concept）；11 个 index 自动重生成。
+
 * **Ingest**: WaferLLM PDF → `raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf`（Zotero: arXiv:2502.04563v3）。
 * **Creation**: [WaferLLM System](/concepts/waferllm-system.md), [papers/waferllm-wafer-scale-llm-inference.md](/papers/waferllm-wafer-scale-llm-inference.md), `raw/papers/waferllm-wafer-scale-llm-inference.md`.
 * **Update**: [Cerebras WSE](/entities/cerebras-wse.md), [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md), [SpaDA Programming Language](/concepts/spada-programming-language.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — PLMR/MeshGEMM/V、KV shift、WSE LLM serving 交叉引用。
