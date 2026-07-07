@@ -116,6 +116,7 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — ~949×949 2-D Mesh 选型
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — 为何未用 CMesh/Express/Hypercube
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 分布式 XY 路由与 collective 延迟
+- [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 为何 WSE 倾向 DOR 而非拥塞自适应
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与 B_b 瓶颈
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
 - [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md) — H&P App.F 五问（Day 21）

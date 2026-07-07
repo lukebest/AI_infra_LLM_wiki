@@ -93,6 +93,7 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 - [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — DRAM 以下片外存储 tier
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — Day 17–22 存储篇综合
 - [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md) — NoC 五问（Day 21）
+- [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) — H100 HBM Roofline 与 WSE 带宽密度对比（Day 24）
 
 # Citations
 

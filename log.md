@@ -1,5 +1,13 @@
 # Bundle Update Log
 
+## 2026-07-07
+* **Ingest**: 体系结构 30 天学习笔记 Day 24 → `raw/articles/arch-study-30d-day-24.md`（源：`openclawdata/.../arch-study-30d/day-24.md`）。
+* **Creation**: [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md).
+* **Update**: [Multicore SMT and NUCA](/concepts/multicore-smt-nuca.md), [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md), [Branch Prediction](/concepts/branch-prediction.md), [DRAM and Memory System](/concepts/dram-memory-system.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — SIMT/Warp/Tensor Core、Roofline、WSE 对照交叉引用。
+* **Ingest**: Dally & Towles 互连网络 Day 12 → `raw/articles/interconn-study-21d-day-12.md`（源：`openclawdata/.../interconn-study-21d/day-12.md`）。
+* **Creation**: [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md).
+* **Update**: [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md), [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [NoC Router 微架构](/concepts/noc-router-microarchitecture.md), [Cerebras WSE](/entities/cerebras-wse.md) — 最小/VRR/VC、Duato 预告、DOR 选型交叉引用。
+
 ## 2026-07-06
 * **Ingest**: Dally & Towles 互连网络 21 天学习笔记 Day 9–11 → `raw/articles/interconn-study-21d-day-09.md`、`day-10.md`、`day-11.md`（源：`openclawdata/.../interconn-study-21d/day-09..11.md`）。
 * **Creation**: [Topology Optimization Variants](/concepts/topology-optimization-variants.md), [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md).

@@ -138,6 +138,7 @@ WSE-3 ~949×949 Mesh：D≈1896 跳；T_r=1 ns + T_w=0.5 ns → 最坏 **~2.8 μ
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — MIN 自路由 vs Mesh 多路径（WSE 选型）
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Folding/CMesh/Express、Dally 1990
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — XY 维序路由
+- [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — Mesh 最小/非最小自适应（Day 12）
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 六拓扑统一比较（Day 10）
 
 # Citations

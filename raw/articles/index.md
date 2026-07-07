@@ -25,6 +25,7 @@
 * [分布式存储架构下的矩阵乘与编译器](分布式存储架构下的矩阵乘与编译器.md) - 分布式内存下 Cannon/SUMMA/2.5D/3D GEMM、LLM 2.5D-3D 并行与 Graphcore T10 rTensor 编译器综述（知乎专栏）
 * [📰 互连网络晨报 — Day 10](interconn-study-21d-day-10.md)
 * [📰 互连网络晨报 — Day 11](interconn-study-21d-day-11.md)
+* [📰 互连网络晨报 — Day 12](interconn-study-21d-day-12.md)
 * [📰 互连网络晨报 — Day 3](interconn-study-21d-day-03.md)
 * [📰 互连网络晨报 — Day 4](interconn-study-21d-day-04.md)
 * [📰 互连网络晨报 — Day 5](interconn-study-21d-day-05.md)
@@ -48,6 +49,7 @@
 * [📰 体系结构晨报 — Day 21](arch-study-30d-day-21.md)
 * [📰 体系结构晨报 — Day 22](arch-study-30d-day-22.md)
 * [📰 体系结构晨报 — Day 23](arch-study-30d-day-23.md)
+* [📰 体系结构晨报 — Day 24](arch-study-30d-day-24.md)
 * [📰 体系结构晨报 — Day 3](arch-study-30d-day-03.md)
 * [📰 体系结构晨报 — Day 4](arch-study-30d-day-04.md)
 * [📰 体系结构晨报 — Day 5](arch-study-30d-day-05.md)

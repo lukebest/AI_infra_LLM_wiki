@@ -125,6 +125,7 @@ WSE 900K PE 是**极度 Spatial**——[SpaDA](/concepts/spada-programming-langu
 - [Parallelism Transition Point](/concepts/parallelism-transition-point.md) — 大规模并行瓶颈
 - [Cerebras WSE](/entities/cerebras-wse.md) — 900K PE 扩展实例
 - [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md) — 核间互连（Day 21）
+- [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) — 并行篇 Day 24（SIMT vs MIMD）
 
 # Citations
 

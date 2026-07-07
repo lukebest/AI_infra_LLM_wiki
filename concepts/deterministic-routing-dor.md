@@ -42,7 +42,7 @@ sources:
 | 保序 (order-preserving) | 负载可能不均 |
 | 延迟可预测（QoS） | 单点故障即不可达 |
 
-**工程结论**：NoC 流量局部化时，**简单 = 工程最优**；自适应路由增复杂度且死锁避免更难（Day 12）。
+**工程结论**：NoC 流量局部化时，**简单 = 工程最优**；自适应详见 [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md)（Day 12）。
 
 ## DOR / XY 路由（2-D Mesh）
 
@@ -120,6 +120,7 @@ LLM 分块后流量局部化，最长路径不频繁；**芯片级 AllReduce** �
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — WSE 静态 color 路由
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Express/CMesh 变体
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — MIN 自路由（对比 DOR）
+- [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 最小/VRR/VC/Duato 预告（Day 12）
 
 # Citations
 

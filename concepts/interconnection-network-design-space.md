@@ -24,6 +24,7 @@ sources:
 - raw/articles/interconn-study-21d-day-09.md
 - raw/articles/interconn-study-21d-day-10.md
 - raw/articles/interconn-study-21d-day-11.md
+- raw/articles/interconn-study-21d-day-12.md
 ---
 
 # Interconnection Network Design Space（互连网络设计空间）
@@ -104,6 +105,7 @@ sources:
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — 自路由 MIN（Day 8）
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Folding/CMesh/Express（Day 9）
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 确定性路由 / XY / e-cube（Day 11）
+- [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 拥塞感知 / VRR / Duato 预告（Day 12）
 
 # Citations
 
@@ -117,3 +119,4 @@ sources:
 [8] [raw/articles/interconn-study-21d-day-09.md](raw/articles/interconn-study-21d-day-09.md) — Ch.3 拓扑变体（Day 9）
 [9] [raw/articles/interconn-study-21d-day-10.md](raw/articles/interconn-study-21d-day-10.md) — Ch.3 综合（Day 10）
 [10] [raw/articles/interconn-study-21d-day-11.md](raw/articles/interconn-study-21d-day-11.md) — Ch.4–5 Routing（Day 11）
+[11] [raw/articles/interconn-study-21d-day-12.md](raw/articles/interconn-study-21d-day-12.md) — Ch.6–7 Adaptive（Day 12）

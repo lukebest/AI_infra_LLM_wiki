@@ -46,7 +46,7 @@ CPI ≈ 理想 CPI + 分支占比 × (1 - 准确率) × 惩罚
 
 ## AI 加速器视角
 
-- **GPU**：warp 内分支 divergence（SIMT mask）
+- **GPU**：warp 内分支 divergence（SIMT mask）——详见 [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md)
 - **WSE/LPU**：编译器/spatial 调度 **减少或消除运行时分支** → 无需大型 BTB/TAGE
 - **Deterministic 路径**：见 [Deterministic Execution](/concepts/deterministic-execution.md)
 
@@ -56,6 +56,7 @@ CPI ≈ 理想 CPI + 分支占比 × (1 - 准确率) × 惩罚
 - [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md) — 推测与 ILP
 - [Out-of-Order Execution](/concepts/out-of-order-execution.md) — 硬件推测 flush
 - [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — Bullseye H2P 旁路 TAGE（CBP-2025）
+- [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) — CPU 分支预测 vs Warp divergence
 
 # Citations
 

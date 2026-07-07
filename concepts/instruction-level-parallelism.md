@@ -50,7 +50,7 @@ VLIW 未统治通用计算：**动态事件**（Cache miss、分支）使编译�
 | 路径 | ILP 策略 |
 |------|----------|
 | 通用 CPU | 硬件开采 ILP，功耗高 |
-| GPU | 线程级并行 (TLP) 为主，warp 内 SIMT |
+| GPU | 线程级并行 (TLP) 为主，warp 内 SIMT — 见 [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) |
 | WSE/LPU | 编译器/spatial 调度，**不依赖 OoO ILP** |
 
 ## 相关页面
@@ -60,6 +60,7 @@ VLIW 未统治通用计算：**动态事件**（Cache miss、分支）使编译�
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 规避动态 ILP 的范式
 - [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — 2024-2026 超标量顶会主线
 - [Constable Load Elimination](/concepts/constable-load-elimination.md) — load 资源依赖消除
+- [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) — TLP + Warp 调度
 
 # Citations
 
