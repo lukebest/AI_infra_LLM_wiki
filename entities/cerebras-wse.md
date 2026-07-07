@@ -26,6 +26,7 @@ sources:
 - raw/articles/arch-study-30d-day-20.md
 - raw/reports/superscalar-cpu-final-report.md
 - raw/articles/memory-fence-hardware-2026-06-28.md
+- raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf
 ---
 
 # Cerebras WSE (Wafer-Scale Engine)
@@ -117,6 +118,7 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — 为何未用 CMesh/Express/Hypercube
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 分布式 XY 路由与 collective 延迟
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 为何 WSE 倾向 DOR 而非拥塞自适应
+- [WaferLLM System](/concepts/waferllm-system.md) — PLMR 模型、MeshGEMM/V、KV shift（WSE-2 E2E LLM）
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与 B_b 瓶颈
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
 - [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md) — H&P App.F 五问（Day 21）
@@ -137,3 +139,4 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 [8] [raw/articles/arch-study-30d-day-14.md](raw/articles/arch-study-30d-day-14.md) — 无 Cache 对比（Day 14）
 [9] [raw/articles/arch-study-30d-day-15.md](raw/articles/arch-study-30d-day-15.md) — 无 MMU/TLB（Day 15）
 [10] [raw/articles/arch-study-30d-day-16.md](raw/articles/arch-study-30d-day-16.md) — DSA 能力矩阵（Day 16）
+[11] [raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf](raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf) — WaferLLM PLMR/MeshGEMM（He et al. 2025）

@@ -1,6 +1,9 @@
 # Bundle Update Log
 
 ## 2026-07-07
+* **Ingest**: WaferLLM PDF → `raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf`（Zotero: arXiv:2502.04563v3）。
+* **Creation**: [WaferLLM System](/concepts/waferllm-system.md), [papers/waferllm-wafer-scale-llm-inference.md](/papers/waferllm-wafer-scale-llm-inference.md), `raw/papers/waferllm-wafer-scale-llm-inference.md`.
+* **Update**: [Cerebras WSE](/entities/cerebras-wse.md), [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md), [SpaDA Programming Language](/concepts/spada-programming-language.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — PLMR/MeshGEMM/V、KV shift、WSE LLM serving 交叉引用。
 * **Ingest**: 体系结构 30 天学习笔记 Day 24 → `raw/articles/arch-study-30d-day-24.md`（源：`openclawdata/.../arch-study-30d/day-24.md`）。
 * **Creation**: [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md).
 * **Update**: [Multicore SMT and NUCA](/concepts/multicore-smt-nuca.md), [Instruction-Level Parallelism](/concepts/instruction-level-parallelism.md), [Branch Prediction](/concepts/branch-prediction.md), [DRAM and Memory System](/concepts/dram-memory-system.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — SIMT/Warp/Tensor Core、Roofline、WSE 对照交叉引用。

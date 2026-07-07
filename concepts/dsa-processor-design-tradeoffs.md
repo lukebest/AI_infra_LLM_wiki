@@ -91,6 +91,7 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 - [FEATHER Accelerator](/concepts/feather-accelerator.md) — 可重构 dataflow-layout
 - [Plasticine Accelerator](/concepts/plasticine-accelerator.md) — parallel patterns CGRA
 - [TileLoom Compiler](/concepts/tileloom-compiler.md) — Triton tile DSL + compile-time NoC dataflow planning（Tenstorrent）
+- [WaferLLM System](/concepts/waferllm-system.md) — 晶圆 mesh LLM：编译器/运行时承担 PLMR 复杂性
 - [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) — 通用 GPU SIMT vs WSE MIMD（Day 24）
 - [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — Golden Cove 侧 SLA 对照与 WSE 控制核 spec 参考
 

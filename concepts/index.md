@@ -86,6 +86,7 @@
 * [URPC (UB 远程过程调用)](ub-urpc.md) - URPC 远程过程调用：Client/Server/Worker，pass-by-value/reference，P2P 架构
 * [Virtual Memory and TLB](virtual-memory-tlb.md) - 虚拟内存四作用、页表与 TLB、巨页与 TLB Shootdown、AMAT 含地址转换、WSE 无 MMU 的工程权衡
 * [Voxel Simulator](voxel-simulator.md) - Voxel：编译器感知的 3D AI 芯片端到端仿真框架，支持 compute paradigm / mapping / NoC / DRAM 协同探索
+* [WaferLLM System](waferllm-system.md) - Edinburgh/MSR 晶圆级 LLM 推理：PLMR 设备模型、MeshGEMM/MeshGEMV、KV shift、prefill/decode 百万 core parallelism；WSE-2 上 10–20× SGLang/A100 集群
 * [WSE Performance Model](wse-performance-model.md) - WSE 通信性能模型：T=max(C,E/N)+L+(2TR+1)D，四瓶颈项（contention/energy/distance/depth），<4% 预测误差
 * [WSE Reduce Algorithms](wse-reduce-algorithms.md) - WSE Reduce/AllReduce 算法族：Star/Chain/Tree/Two-Phase/Auto-Gen，模型驱动选择，Auto-Gen ≤1.4× 下界
 * [智能体辅助编程的信息论价值模型](information-theoretic-value-model.md) - 智能体辅助编程的信息论价值模型：V ∝ I(S;K)，知识与任务的匹配度决定 Agent 价值

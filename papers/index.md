@@ -23,3 +23,4 @@
 * [TileLoom: Automatic Dataflow Planning for Tile-Based Languages](tileloom-automatic-dataflow-planning.md) - MLIR 编译框架：Triton/Helion → spatiotemporal dataflow planning + df 硬件模型；Tenstorrent Wormhole/Blackhole 上 FlashAttention ~2× TTNN、Mamba Scan 最高 27× unfused
 * [Understanding Inference Scaling for LLMs](understanding-inference-scaling-for-llms.md) - Reasoning-centric LLM 推理系统瓶颈分析：Capacity Trap, Reasoning Cliff, DP→TP Transition, Prefill-Decode Divergence（8B-671B H200 实测）
 * [Voxel: 3D-Stacked AI Chip Efficiency for LLM Inference](voxel-3d-stacked-ai-chip-llm-inference.md) - Voxel 编译器感知 3D AI 芯片仿真框架：LLM prefill/decode 软硬件协同探索，Graphcore IPU 验证误差 ≤6.8%
+* [WaferLLM: Large Language Model Inference at Wafer Scale](waferllm-wafer-scale-llm-inference.md) - 首个晶圆级 LLM 推理系统：PLMR 设备模型 + MeshGEMM/MeshGEMV + KV shift；WSE-2 上 E2E 10–20× SGLang/A100 集群、MeshGEMV 606× 单 A100

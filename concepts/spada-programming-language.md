@@ -88,6 +88,7 @@ SpaDA 同时是**通用 SDA 语言**与 **DSL IR**——架构无关的语言设
 - [papers/spada-spatial-dataflow-architecture.md](/papers/spada-spatial-dataflow-architecture.md) — 论文摘要
 - [Plasticine Accelerator](/concepts/plasticine-accelerator.md) — parallel patterns 抽象的另一实现路径
 - [TileLoom Compiler](/concepts/tileloom-compiler.md) — Triton/Helion → Tenstorrent scale-out dataflow planning（对照 WSE placement）
+- [WaferLLM System](/concepts/waferllm-system.md) — WSE LLM 推理：PLMR + MeshGEMM/V（vs SpaDA 通用 spatial DSL）
 - [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — 分布式 GEMM 算法与 T10 rTensor 对照
 
 # Citations
