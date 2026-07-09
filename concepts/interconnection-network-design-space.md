@@ -25,6 +25,8 @@ sources:
 - raw/articles/interconn-study-21d-day-10.md
 - raw/articles/interconn-study-21d-day-11.md
 - raw/articles/interconn-study-21d-day-12.md
+- raw/articles/interconn-study-21d-day-13.md
+- raw/articles/interconn-study-21d-day-14.md
 ---
 
 # Interconnection Network Design Space（互连网络设计空间）
@@ -105,7 +107,9 @@ sources:
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — 自路由 MIN（Day 8）
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Folding/CMesh/Express（Day 9）
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 确定性路由 / XY / e-cube（Day 11）
-- [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 拥塞感知 / VRR / Duato 预告（Day 12）
+- [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 拥塞感知 / VRR（Day 12）
+- [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — CDG / Dally 定理（Day 13）
+- [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md) — Duato / 逃逸 VC（Day 14）
 
 # Citations
 
@@ -120,3 +124,5 @@ sources:
 [9] [raw/articles/interconn-study-21d-day-10.md](raw/articles/interconn-study-21d-day-10.md) — Ch.3 综合（Day 10）
 [10] [raw/articles/interconn-study-21d-day-11.md](raw/articles/interconn-study-21d-day-11.md) — Ch.4–5 Routing（Day 11）
 [11] [raw/articles/interconn-study-21d-day-12.md](raw/articles/interconn-study-21d-day-12.md) — Ch.6–7 Adaptive（Day 12）
+[12] [raw/articles/interconn-study-21d-day-13.md](raw/articles/interconn-study-21d-day-13.md) — Ch.8.1–8.4 CDG/Dally（Day 13）
+[13] [raw/articles/interconn-study-21d-day-14.md](raw/articles/interconn-study-21d-day-14.md) — Ch.8.5–8.8 Duato（Day 14）

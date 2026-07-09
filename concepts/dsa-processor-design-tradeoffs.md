@@ -13,6 +13,7 @@ timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-16.md
+- raw/articles/arch-study-30d-day-25.md
 ---
 
 # DSA Processor Design Tradeoffs（领域专用处理器设计取舍）
@@ -93,6 +94,8 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 - [TileLoom Compiler](/concepts/tileloom-compiler.md) — Triton tile DSL + compile-time NoC dataflow planning（Tenstorrent）
 - [WaferLLM System](/concepts/waferllm-system.md) — 晶圆 mesh LLM：编译器/运行时承担 PLMR 复杂性
 - [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) — 通用 GPU SIMT vs WSE MIMD（Day 24）
+- [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — 脉动/WS·OS·RS、TPU vs SLA（Day 25）
+- [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md) — Amdahl/Roofline/Mesh 投射到 WSE（Day 26）
 - [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — Golden Cove 侧 SLA 对照与 WSE 控制核 spec 参考
 
 # Citations

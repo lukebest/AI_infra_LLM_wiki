@@ -27,6 +27,7 @@ sources:
 - raw/reports/superscalar-cpu-final-report.md
 - raw/articles/memory-fence-hardware-2026-06-28.md
 - raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf
+- raw/articles/arch-study-30d-day-26.md
 ---
 
 # Cerebras WSE (Wafer-Scale Engine)
@@ -118,7 +119,11 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — 为何未用 CMesh/Express/Hypercube
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 分布式 XY 路由与 collective 延迟
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 为何 WSE 倾向 DOR 而非拥塞自适应
+- [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — Mesh 单 VC、为何不用 Torus（Day 13）
+- [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md) — 逃逸 VC；WSE 倾向避免而非恢复（Day 14）
 - [WaferLLM System](/concepts/waferllm-system.md) — PLMR 模型、MeshGEMM/V、KV shift（WSE-2 E2E LLM）
+- [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md) — Amdahl/Roofline/Mesh/良率量化（Day 26）
+- [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — TPU 脉动 vs SLA PE（Day 25）
 - [WaferLLM Compiler Research Gaps](/analyses/waferllm-compiler-research-gaps.md) — 6 个未解瓶颈 + MLIR pass 设计
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与 B_b 瓶颈
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
@@ -141,3 +146,7 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 [9] [raw/articles/arch-study-30d-day-15.md](raw/articles/arch-study-30d-day-15.md) — 无 MMU/TLB（Day 15）
 [10] [raw/articles/arch-study-30d-day-16.md](raw/articles/arch-study-30d-day-16.md) — DSA 能力矩阵（Day 16）
 [11] [raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf](raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf) — WaferLLM PLMR/MeshGEMM（He et al. 2025）
+[12] [raw/articles/arch-study-30d-day-26.md](raw/articles/arch-study-30d-day-26.md) — WSE 量化综合（Day 26）
+[13] [raw/articles/arch-study-30d-day-25.md](raw/articles/arch-study-30d-day-25.md) — DSA/脉动 vs SLA（Day 25）
+[14] [raw/articles/interconn-study-21d-day-13.md](raw/articles/interconn-study-21d-day-13.md) — CDG/Dally、Mesh vs Torus（Day 13）
+[15] [raw/articles/interconn-study-21d-day-14.md](raw/articles/interconn-study-21d-day-14.md) — Duato / 逃逸 VC（Day 14）

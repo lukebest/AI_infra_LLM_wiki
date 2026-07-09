@@ -27,7 +27,7 @@ sources:
 | 目标 | 含义 |
 |------|------|
 | **连通性** | 任意节点对可达 |
-| **无死锁** | 无资源循环等待（CDG 无环，Day 13 形式化） |
+| **无死锁** | 无资源循环等待（[CDG 无环](/concepts/deadlock-free-routing-cdg-dally.md)） |
 | **自适应性** | 能否避让拥塞/故障（确定性路由 **否**） |
 
 附加维度：最小 vs 非最小路径；单播 vs 多播。
@@ -120,7 +120,9 @@ LLM 分块后流量局部化，最长路径不频繁；**芯片级 AllReduce** �
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — WSE 静态 color 路由
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Express/CMesh 变体
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — MIN 自路由（对比 DOR）
-- [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 最小/VRR/VC/Duato 预告（Day 12）
+- [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 最小/VRR/VC（Day 12）
+- [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — CDG / Torus≥2 VC（Day 13）
+- [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md) — 逃逸层常用 DOR（Day 14）
 
 # Citations
 

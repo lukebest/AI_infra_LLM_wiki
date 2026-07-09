@@ -104,7 +104,7 @@ Register vs HBM：**~500× 延迟、~1000× 带宽差**——一次 HBM 访问 �
 
 [FlashAttention-3](/concepts/flashattention-3.md) 利用 **TMA + WGMMA + FP8 Tensor Core**；[FlashAttention-2](/concepts/flashattention-2.md) 优化 warp 划分减少 inter-warp 归约。
 
-**NPU 对照**：Tensor Core = 小矩阵（4×4）× 多实例；Day 25 脉动阵列 = 大 MAC 网格（128×128）× 少实例——共同哲学：**空间换时间、专用换灵活**（见 [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) RS dataflow）。
+**NPU 对照**：Tensor Core = 小矩阵（4×4）× 多实例；脉动阵列 = 大 MAC 网格×少实例——共同哲学：**空间换时间、专用换灵活**（见 [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md)、[Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) RS dataflow）。
 
 ## Roofline 例题（H100 简化）
 
@@ -141,7 +141,8 @@ AI=100 FP32 GEMM → compute-bound（100 > 16.7），实测 35/50 = **70%** peak
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — HBM Roofline
 - [Cerebras WSE](/entities/cerebras-wse.md) — MIMD 对照
 - [FlashAttention-2](/concepts/flashattention-2.md) / [FlashAttention-3](/concepts/flashattention-3.md) — Tensor Core kernel
-- [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — Day 25 DNN 加速器预告
+- [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — Day 25 硬件 SIMD / 脉动
+- [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — RS dataflow 流片基线
 
 # Citations
 

@@ -231,6 +231,8 @@ H100 算力 ~989 TFLOPS (FP16) ÷ 内存带宽 ~3.35 TB/s = **ridge point ~295 F
 - [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md) — 用算法层减少 GEMV 步数
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — WSE 上 GEMV 的 82× vs A100
 - [TileLoom Compiler](/concepts/tileloom-compiler.md) — Tenstorrent 上 dataflow 编译
+- [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md) — WSE Ridge≈6、GEMV 606× 带宽边界（Day 26）
+- [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — NPU Roofline / AI 表（Day 25）
 
 # Citations
 

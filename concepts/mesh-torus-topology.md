@@ -139,6 +139,8 @@ WSE-3 ~949×949 Mesh：D≈1896 跳；T_r=1 ns + T_w=0.5 ns → 最坏 **~2.8 μ
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Folding/CMesh/Express、Dally 1990
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — XY 维序路由
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — Mesh 最小/非最小自适应（Day 12）
+- [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — Mesh 单 VC vs Torus≥2 VC / dateline（Day 13）
+- [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md) — 完全自适应逃逸层（Day 14）
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 六拓扑统一比较（Day 10）
 
 # Citations

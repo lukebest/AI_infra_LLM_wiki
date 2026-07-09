@@ -132,6 +132,7 @@ SpaDA 报告 WSE-2 **82× GEMV vs A100**（HPDC'24 手写 CSL baseline）；Wafe
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 无 DRAM、编译器承担复杂性
 - [paper/waferllm-wafer-scale-llm-inference.md](/papers/waferllm-wafer-scale-llm-inference.md) — 论文摘要页
 - [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子基础（AI、Roofline、Prefill/Decode）
+- [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md) — 606× GEMV 的带宽边界与 Amdahl（Day 26）
 
 # Citations
 

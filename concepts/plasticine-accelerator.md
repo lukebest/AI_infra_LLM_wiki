@@ -116,6 +116,7 @@ Pipeline 层次 → virtual PCU/PMU → 贪心划分 physical unit → 控制层
 - [papers/plasticine-reconfigurable-parallel-patterns.md](/papers/plasticine-reconfigurable-parallel-patterns.md) — 论文摘要
 - [FEATHER Accelerator](/concepts/feather-accelerator.md) — DNN 可重构 dataflow-layout
 - [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — 固定 CNN dataflow 流片对照
+- [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — CGRA 作为 TPU↔通用中间路线（Day 25）
 
 # Citations
 

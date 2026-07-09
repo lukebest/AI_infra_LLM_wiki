@@ -19,7 +19,7 @@ sources:
 
 # Adaptive Routing for NoC（自适应路由）
 
-**自适应路由**让报文根据**实时拥塞**在合法路径中选路，缓解 [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md)（XY/e-cube）把流量**钉死**在固定链路上的负载不均。代价：路由器读 VC/credit 状态、**死锁避免变难**（Duato 逃逸子网，Day 13 形式化）。
+**自适应路由**让报文根据**实时拥塞**在合法路径中选路，缓解 [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md)（XY/e-cube）把流量**钉死**在固定链路上的负载不均。代价：路由器读 VC/credit 状态、**死锁避免变难**（见 [CDG / Dally](/concepts/deadlock-free-routing-cdg-dally.md)、[Duato Escape VC](/concepts/duato-escape-vc-deadlock-free-routing.md)）。
 
 **Source:** [raw/articles/interconn-study-21d-day-12.md](raw/articles/interconn-study-21d-day-12.md)（D&T Ch.6–7，Day 12）
 
@@ -44,7 +44,7 @@ sources:
 | **局部 vs 全局** | 邻 hop credit vs 端到端（难） |
 | **感知 vs 不感知** | 读 VC 状态 vs 随机/轮询 |
 
-常见目标组合：**最小 + 完全 + 局部 + 感知**（完全自适应有死锁，需 Day 13）。
+常见目标组合：**最小 + 完全 + 局部 + 感知**（完全自适应有死锁，需 [Duato](/concepts/duato-escape-vc-deadlock-free-routing.md)）。
 
 ## 最小自适应 (Minimal Adaptive)
 
@@ -91,15 +91,11 @@ candidates = { out | progress(out,dst) && credits(out) > threshold }
 return argmin_congestion(candidates)
 ```
 
-## Duato 理论（预告 — Day 13 展开）
+## Duato 理论（摘要）
 
-**双子网**：
-- **Escape subnetwork**：DOR/XY，保证无死锁
-- **Adaptive subnetwork**：可绕路，可能成环
+**双子网**：Escape（DOR/XY，无环）+ Adaptive（可绕路，CDG 可有环）。逃逸子网无死锁 → **整体无死锁**（阻塞可降级到 escape VC）。
 
-**定理**：逃逸子网无死锁 → **整体无死锁**（阻塞报文可切换到 escape VC）。
-
-Mesh 经典：**degree−1 adaptive VC + 1 escape VC**（4 端口 → 3+1）。Torus DOR 需 **≥2 VC** + dateline（Day 13）。
+Mesh 经典：**3 adaptive + 1 escape**。Torus DOR 需 **≥2 VC** + dateline。完整陈述见 [Duato Escape VC](/concepts/duato-escape-vc-deadlock-free-routing.md)；CDG 基础见 [CDG / Dally](/concepts/deadlock-free-routing-cdg-dally.md)。
 
 ## DOR vs 自适应：选型决策树
 
@@ -134,6 +130,8 @@ VC0 高优先级（barrier/control），VC1 数据；**strict priority** 仲裁 
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — Mesh AllReduce 与 DOR
 - [Cerebras WSE](/entities/cerebras-wse.md) — 静态 Color + XY 推测
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 路由/流控耦合
+- [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — CDG / Dally（Day 13）
+- [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md) — 逃逸 VC（Day 14）
 
 # Citations
 

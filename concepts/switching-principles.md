@@ -141,8 +141,10 @@ WSE 选用虫孔变体：LLM 推理的 activation/gradient 为**短突发、高�
 
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 四层设计空间
 - [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md) — 协议栈与 NI 边界
+- [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — 虫孔易死锁与 CDG（Day 13）
 
 # Citations
 
 [1] [raw/articles/浅谈交换原理（1）——概述.md](raw/articles/浅谈交换原理（1）——概述.md)
 [2] [raw/articles/interconn-study-21d-day-02.md](raw/articles/interconn-study-21d-day-02.md) — Dally & Towles Ch.2 学习笔记
+[3] [raw/articles/interconn-study-21d-day-13.md](raw/articles/interconn-study-21d-day-13.md) — 虫孔死锁与 CDG（Day 13）

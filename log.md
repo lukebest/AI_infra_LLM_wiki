@@ -1,5 +1,13 @@
 # Bundle Update Log
 
+## 2026-07-09
+* **Ingest**: Dally & Towles 互连网络 Day 13–14 → `raw/articles/interconn-study-21d-day-13.md`、`day-14.md`（源：`openclawdata/.../interconn-study-21d/day-13..14.md`）。
+* **Creation**: [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md), [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md).
+* **Update**: [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md), [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md), [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Mesh and Torus Topology](/concepts/mesh-torus-topology.md), [NoC Router 微架构](/concepts/noc-router-microarchitecture.md), [Switching Principles](/concepts/switching-principles.md), [Cerebras WSE](/entities/cerebras-wse.md) — CDG/Dally、逃逸 VC、协议层死锁、Mesh vs Torus 交叉引用。
+* **Ingest**: 体系结构 30 天学习笔记 Day 25–26 → `raw/articles/arch-study-30d-day-25.md`、`day-26.md`（源：`openclawdata/.../arch-study-30d/day-25..26.md`）。
+* **Creation**: [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md), [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md).
+* **Update**: [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md), [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md), [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md), [Plasticine Accelerator](/concepts/plasticine-accelerator.md), [Cerebras WSE](/entities/cerebras-wse.md), [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md), [WaferLLM System](/concepts/waferllm-system.md) — 脉动/WS·OS·RS、Amdahl/Roofline/Mesh 量化、SLA vs TPU 交叉引用。
+
 ## 2026-07-07
 * **Creation**: [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子基础概念页：算术强度公式、Roofline、H100 decode <1% 峰值 FLOPS、prefill/decode 对应、编译器优化空间。
 * **Update**: [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md), [WaferLLM System](/concepts/waferllm-system.md), [FlashDecoding++](/concepts/flashdecoding-plus-plus.md), [WaferLLM Compiler Research Gaps](/analyses/waferllm-compiler-research-gaps.md) — 反向链接到新 GEMM vs GEMV 页。

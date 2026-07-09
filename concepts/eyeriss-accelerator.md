@@ -110,8 +110,10 @@ Y-bus（12 行）× X-bus（14 列 PE）；未匹配 bus/PE **clock gating**。�
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — mesh/router 设计基线
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — 片上 memory bank 与利用率
 - [Plasticine Accelerator](/concepts/plasticine-accelerator.md) — parallel patterns CGRA 对照
+- [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — WS/OS/RS 与脉动阵列谱系（Day 25）
 
 # Citations
 
 [1] [raw/papers/Eyeriss_Energy_Efficient_CNN_Accelerator_2017.pdf](raw/papers/Eyeriss_Energy_Efficient_CNN_Accelerator_2017.pdf) — Chen et al., JSSC 2017
 [2] [raw/papers/FEATHER_Reconfigurable_Accelerator_Dataflow_Switching_2024.pdf](raw/papers/FEATHER_Reconfigurable_Accelerator_Dataflow_Switching_2024.pdf) — FEATHER vs Eyeriss-like baseline
+[3] [raw/articles/arch-study-30d-day-25.md](raw/articles/arch-study-30d-day-25.md) — H&P Ch.7 DSA / 数据复用（Day 25）
