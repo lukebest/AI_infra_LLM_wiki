@@ -154,7 +154,12 @@ python .cursor/skills/okf-knowledge-base/scripts/generate_indexes.py .
 
 # 生成交互式概念关系图 viz.html（可选）
 python .cursor/skills/okf-knowledge-base/scripts/generate_viz.py .
+
+# 生成可部署的静态站（默认输出 site/，面向 https://lukebest.github.io/）
+python .cursor/skills/okf-knowledge-base/scripts/generate_site.py . --out site --base-path ""
 ```
+
+公开站点：<https://lukebest.github.io/>（由 `generate_site.py` 生成后推送到 [`lukebest/lukebest.github.io`](https://github.com/lukebest/lukebest.github.io) 仓库根目录，覆盖原博客）。
 
 ---
 
