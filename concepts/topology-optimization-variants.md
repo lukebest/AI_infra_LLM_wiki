@@ -125,6 +125,7 @@ William J. Dally, *Performance Analysis of k-ary n-cube Interconnection Networks
 - [Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md) — concentration + bypass
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — Mesh 上 XY 路由（Day 11）
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 拓扑/路由/流控四层
+- [NoC Router Pipeline Optimizations](/concepts/noc-router-pipeline-optimizations.md) — High-Radix / CMesh 与流水线优化（Day 18）
 - [Cerebras WSE](/entities/cerebras-wse.md) — 2-D Mesh 实例
 
 # Citations

@@ -110,6 +110,7 @@ A ──Request──→ B
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 最小/完全自适应
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 逃逸层常用基线
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — VC allocator
+- [Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md) — VC 硬件与 Credit（Day 16）
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — Mesh vs Torus VC 代价
 - [Cerebras WSE](/entities/cerebras-wse.md) — 工业选型（倾向避免 + DOR）
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 路由/流控耦合

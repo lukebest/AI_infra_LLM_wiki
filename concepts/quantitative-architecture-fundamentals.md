@@ -84,6 +84,8 @@ Yield ≈ (1 - defects/area)^die_area
 - [Cerebras WSE](/entities/cerebras-wse.md) — 暗硅/良率/专用 PE 的实例
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 规避 OoO 功耗的替代路径
 - [Multicore SMT and NUCA](/concepts/multicore-smt-nuca.md) — Amdahl 多核版 + Overhead（Day 23）
+- [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — Dennard 之后的三条路（Day 29）
+- [Arch-Study 30d Knowledge Map](/summaries/arch-study-30d-knowledge-map.md) — 十大公式速查（Day 30）
 
 # Citations
 

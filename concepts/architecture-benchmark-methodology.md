@@ -57,6 +57,7 @@ Overall Speedup = GM(Speedup₁, ..., Speedupₙ)
 ## 相关页面
 
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — Amdahl 与性能公式
+- [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md) — 论文精读 + 四大量化武器（Day 28）
 - [WSE Performance Model](/concepts/wse-performance-model.md) — collective 性能建模实例
 - [Voxel Simulator](/concepts/voxel-simulator.md) — 3D 芯片端到端仿真评估
 

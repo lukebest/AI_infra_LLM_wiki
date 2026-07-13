@@ -114,10 +114,23 @@ B ≫ TR·P?  → Chain
 任意 B?     → Auto-Gen (≤1.4× 下界，自动选择)
 ```
 
+## 笔记命名对照（Day 28）
+
+arch-study Day 28 教学笔记常用 **FRED / FREDR** 概括本族 insight（mesh-aware 路径 vs 路由器内嵌归约）：
+
+| 笔记名 | 含义 | 本页对应 |
+|--------|------|----------|
+| **FRED** | 现有路由 + 2D tree，无额外硬件 | Tree / Two-Phase / Auto-Gen（软件路径） |
+| **FREDR** | 路由器内嵌小归约单元 | 与 [Collective-Capable NoC](/concepts/collective-capable-noc.md) 同方向的硬件扩展 |
+
+精读方法见 [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md)；集群侧 Ring 对照见 [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)。
+
 ## 相关页面
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — Chain/Tree/Two-Phase 的 SpaDA 实现（1.04× HPDC'24 CSL）
 - [Near Optimal Wafer Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md) — 原始论文
 - [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — MPI 经典五算法与 (p,n) 选择（Rabenseifner 2004）
+- [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md) — Day 28 精读范例
+- [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md) — Day 27 训练侧 Ring/Tree
 - [Wse Performance Model](/concepts/wse-performance-model.md) — 指导算法设计的性能模型
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — Mesh 上 collective
 - [Collective-Capable NoC](/concepts/collective-capable-noc.md) — FlooNoC 片上 multicast/reduction/barrier

@@ -140,6 +140,7 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 - [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — AI / Roofline
 - [Cerebras WSE](/entities/cerebras-wse.md) — SLA vs 脉动 PE
 - [WaferLLM System](/concepts/waferllm-system.md) — 晶圆级 LLM 算子映射
+- [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — AI 加速器稀疏/混合精度趋势（Day 29）
 
 # Citations
 

@@ -115,6 +115,7 @@ Inverse broadcast / binary tree (短向量)
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — α/β 延迟带宽模型
 - [Collective-Capable NoC](/concepts/collective-capable-noc.md) — 片上 in-network reduction
 - [Parallelism Transition Point](/concepts/parallelism-transition-point.md) — TP AllReduce 通信开销
+- [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md) — Day 27：DP/TP/PP/EP 与 Ring 工程直觉
 - [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — SUMMA broadcast / Cannon ring 在 GEMM 中的用法
 - [papers/rabenseifner-collective-reduction-operations.md](/papers/rabenseifner-collective-reduction-operations.md) — 论文摘要
 

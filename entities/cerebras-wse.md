@@ -123,6 +123,9 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md) — 逃逸 VC；WSE 倾向避免而非恢复（Day 14）
 - [WaferLLM System](/concepts/waferllm-system.md) — PLMR 模型、MeshGEMM/V、KV shift（WSE-2 E2E LLM）
 - [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md) — Amdahl/Roofline/Mesh/良率量化（Day 26）
+- [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md) — 训练集体通信；多 wafer 限制（Day 27）
+- [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — Chiplet vs wafer 路径（Day 29）
+- [Arch-Study 30d Knowledge Map](/summaries/arch-study-30d-knowledge-map.md) — 30 天知识地图（Day 30）
 - [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — TPU 脉动 vs SLA PE（Day 25）
 - [WaferLLM Compiler Research Gaps](/analyses/waferllm-compiler-research-gaps.md) — 6 个未解瓶颈 + MLIR pass 设计
 - [Interconnection Network Cost Model](/concepts/interconnection-network-cost-model.md) — 延迟与 B_b 瓶颈
@@ -132,6 +135,10 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Multicore SMT and NUCA](/concepts/multicore-smt-nuca.md) — 900K PE 扩展哲学（Day 23）
 - [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md) — NI 与协议栈
 - [Switching Principles](/concepts/switching-principles.md) — 虫孔 vs 电路交换
+- [Flow Control Fundamentals](/concepts/flow-control-fundamentals.md) — Flit/WH/HoL（互连 Day 15）
+- [Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md) — VC + Credit（互连 Day 16）
+- [NoC Router Pipeline and Allocators](/concepts/noc-router-pipeline-allocators.md) — 五级流水（互连 Day 17）
+- [NoC Router Pipeline Optimizations](/concepts/noc-router-pipeline-optimizations.md) — 跳延迟优化动机（互连 Day 18）
 
 # Citations
 

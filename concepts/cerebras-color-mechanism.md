@@ -166,6 +166,7 @@ Data Structure Descriptor 中与 Color 相关的字段：
 - [Cerebras Wse](/entities/cerebras-wse.md) — Color 所在的晶圆级加速器
 - [Deterministic Execution](/concepts/deterministic-execution.md) — Color 静态路由是确定性执行的物理实现
 - [Noc Router Microarchitecture](/concepts/noc-router-microarchitecture.md) — Color 路由器的 NoC 理论基础
+- [Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md) — Color 与 VC 语义对照（Day 16）
 - [Switching Principles](/concepts/switching-principles.md) — 电路交换 vs 分组交换，Color 本质是电路交换思想
 
 # Citations

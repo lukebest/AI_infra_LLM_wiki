@@ -136,6 +136,8 @@ Decode GEMV：每 token 几乎整模权重从存储读出。
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 直径/双分带宽
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — HBM vs SRAM Roofline
 - [WaferLLM System](/concepts/waferllm-system.md) — E2E LLM / MeshGEMV
+- [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md) — 片上 vs 跨 wafer AllReduce（Day 27）
+- [Arch-Study 30d Knowledge Map](/summaries/arch-study-30d-knowledge-map.md) — Day 30 收束
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 砍通用性
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 虫孔 + DOR
 

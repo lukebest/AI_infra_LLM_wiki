@@ -110,6 +110,11 @@ sources:
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 拥塞感知 / VRR（Day 12）
 - [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — CDG / Dally 定理（Day 13）
 - [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md) — Duato / 逃逸 VC（Day 14）
+- [Flow Control Fundamentals](/concepts/flow-control-fundamentals.md) — 流控基础 / Flit / HoL（Day 15）
+- [Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md) — VC + Credit（Day 16）
+- [NoC Router Pipeline and Allocators](/concepts/noc-router-pipeline-allocators.md) — 五级流水 + 分配器（Day 17）
+- [NoC Router Pipeline Optimizations](/concepts/noc-router-pipeline-optimizations.md) — Speculative / look-ahead / CMesh（Day 18）
+- [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — 光互连 / 可重构 / demand-aware NoC（Day 29）
 
 # Citations
 
@@ -126,3 +131,7 @@ sources:
 [11] [raw/articles/interconn-study-21d-day-12.md](raw/articles/interconn-study-21d-day-12.md) — Ch.6–7 Adaptive（Day 12）
 [12] [raw/articles/interconn-study-21d-day-13.md](raw/articles/interconn-study-21d-day-13.md) — Ch.8.1–8.4 CDG/Dally（Day 13）
 [13] [raw/articles/interconn-study-21d-day-14.md](raw/articles/interconn-study-21d-day-14.md) — Ch.8.5–8.8 Duato（Day 14）
+[14] [raw/articles/interconn-study-21d-day-15.md](raw/articles/interconn-study-21d-day-15.md) — Ch.9 Flow Control（Day 15）
+[15] [raw/articles/interconn-study-21d-day-16.md](raw/articles/interconn-study-21d-day-16.md) — Ch.10 Virtual Channels（Day 16）
+[16] [raw/articles/interconn-study-21d-day-17.md](raw/articles/interconn-study-21d-day-17.md) — Ch.11–12 Pipeline/Allocators（Day 17）
+[17] [raw/articles/interconn-study-21d-day-18.md](raw/articles/interconn-study-21d-day-18.md) — Ch.12–13 Optimizations（Day 18）

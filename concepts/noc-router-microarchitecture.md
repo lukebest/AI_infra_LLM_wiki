@@ -202,6 +202,10 @@ sources:
 - **[Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md)** — 拥塞感知选路（D&T Ch.6–7）
 - **[Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md)** — CDG / 虫孔死锁（D&T Ch.8.1–8.4）
 - **[Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md)** — Escape VC / VC allocator（D&T Ch.8.5–8.8）
+- **[Flow Control Fundamentals](/concepts/flow-control-fundamentals.md)** — Flit/HoL、WH/VCT（D&T Ch.9 / Day 15）
+- **[Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md)** — VC + Credit/On-Off（D&T Ch.10 / Day 16）
+- **[NoC Router Pipeline and Allocators](/concepts/noc-router-pipeline-allocators.md)** — 五级流水 + iSLIP（D&T Ch.11–12 / Day 17）
+- **[NoC Router Pipeline Optimizations](/concepts/noc-router-pipeline-optimizations.md)** — Speculative SA / look-ahead / CMesh（Day 18）
 - **[NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md)** — 虫孔/VC/5-stage pipeline（H&P App.F）
 
 # Citations

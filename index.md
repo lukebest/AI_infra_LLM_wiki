@@ -10,4 +10,5 @@
 * [concepts](concepts/index.md)
 * [entities](entities/index.md)
 * [papers](papers/index.md)
+* [site](site/index.md)
 * [summaries](summaries/index.md)

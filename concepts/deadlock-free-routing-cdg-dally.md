@@ -104,6 +104,7 @@ LLM 推理强同步：丢包 → 整批卡住；片上重传缓冲/协议代价�
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 自适应与死锁张力
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — 拓扑与维序
 - [Switching Principles](/concepts/switching-principles.md) — 虫孔 vs VCT
+- [Flow Control Fundamentals](/concepts/flow-control-fundamentals.md) — 虫孔使死锁问题尖锐化（Day 15）
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — VC / wormhole
 - [Cerebras WSE](/entities/cerebras-wse.md) — Mesh + DOR 工业实例
 
