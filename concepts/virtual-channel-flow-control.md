@@ -73,6 +73,7 @@ Day 12–14 路由篇在此收束：VC 是「性能」与「正确性」的共�
 ## 相关页面
 
 - [Flow Control Fundamentals](/concepts/flow-control-fundamentals.md) — Day 15：WH / HoL
+- [Æthereal NoC](/concepts/aethereal-noc.md) — GS TDM vs BES 虫孔（Philips 2005）
 - [NoC Router Pipeline and Allocators](/concepts/noc-router-pipeline-allocators.md) — Day 17：VA/SA
 - [NoC Router Pipeline Optimizations](/concepts/noc-router-pipeline-optimizations.md) — Day 18：动态 VC / 共享缓冲
 - [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md)

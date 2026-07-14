@@ -143,6 +143,7 @@ WSE 选用虫孔变体：LLM 推理的 activation/gradient 为**短突发、高�
 - [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md) — 协议栈与 NI 边界
 - [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — 虫孔易死锁与 CDG（Day 13）
 - [Flow Control Fundamentals](/concepts/flow-control-fundamentals.md) — Message/Flit、WH/VCT 延迟与 HoL（Day 15）
+- [Æthereal NoC](/concepts/aethereal-noc.md) — TDM 电路交换 Guaranteed Services（Philips 2005）
 
 # Citations
 

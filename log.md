@@ -1,5 +1,10 @@
 # Bundle Update Log
 
+## 2026-07-14
+* **Ingest**: Goossens et al. Æthereal NoC PDF → `raw/papers/Aethereal_Network_on_Chip_Concepts_Architectures_Implementations_2005.pdf`（Zotero: 4PFJG7KE, IEEE MDT 2005, DOI 10.1109/MDT.2005.99）。
+* **Creation**: [Æthereal NoC](/concepts/aethereal-noc.md), [papers/aethereal-network-on-chip.md](/papers/aethereal-network-on-chip.md), `raw/papers/aethereal-network-on-chip.md`。
+* **Update**: [Switching Principles](/concepts/switching-principles.md), [Flow Control Fundamentals](/concepts/flow-control-fundamentals.md), [Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md), [NoC Router 微架构](/concepts/noc-router-microarchitecture.md), [Deterministic Execution](/concepts/deterministic-execution.md), [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md), [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — TDM GS / 确定性通信对照交叉引用。
+
 ## 2026-07-13
 * **Ingest**: Dally & Towles 互连网络 Day 15–18 → `raw/articles/interconn-study-21d-day-15.md` … `day-18.md`（源：`openclawdata/.../interconn-study-21d/day-15..18.md`）。
 * **Creation**: [Flow Control Fundamentals](/concepts/flow-control-fundamentals.md), [Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md), [NoC Router Pipeline and Allocators](/concepts/noc-router-pipeline-allocators.md), [NoC Router Pipeline Optimizations](/concepts/noc-router-pipeline-optimizations.md)。

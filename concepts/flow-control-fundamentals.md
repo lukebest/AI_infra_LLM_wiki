@@ -71,6 +71,7 @@ Packet ≈ head + body×N + tail。WSE 侧：用户 Memory Stream 块 ≈ Messag
 ## 相关页面
 
 - [Switching Principles](/concepts/switching-principles.md) — 电路→虫孔演进（电信视角）
+- [Æthereal NoC](/concepts/aethereal-noc.md) — TDM 电路交换硬 GS vs 虫孔 BES
 - [Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md) — Day 16：VC + Credit
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — 实现层
 - [NoC Router Pipeline and Allocators](/concepts/noc-router-pipeline-allocators.md) — Day 17

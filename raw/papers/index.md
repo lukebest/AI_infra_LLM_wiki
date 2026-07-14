@@ -1,5 +1,6 @@
 # Other
 
+* [aethereal-network-on-chip](aethereal-network-on-chip.md)
 * [collective-capable-noc-ml-accelerators](collective-capable-noc-ml-accelerators.md)
 * [dennis-misunas-basic-data-flow-processor](dennis-misunas-basic-data-flow-processor.md)
 * [eyeriss-energy-efficient-cnn-accelerator](eyeriss-energy-efficient-cnn-accelerator.md)

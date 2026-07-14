@@ -102,4 +102,5 @@
 * [WSE Performance Model](wse-performance-model.md) - WSE 通信性能模型：T=max(C,E/N)+L+(2TR+1)D，四瓶颈项（contention/energy/distance/depth），<4% 预测误差
 * [WSE Quantitative Architecture Analysis](wse-quantitative-architecture-analysis.md) - arch-study Day 26：用 Amdahl/Roofline/Mesh 指标量化 WSE-3；片上 vs 片外带宽矛盾、良率容错、WaferLLM GEMV 606× 边界
 * [WSE Reduce Algorithms](wse-reduce-algorithms.md) - WSE Reduce/AllReduce 算法族：Star/Chain/Tree/Two-Phase/Auto-Gen，模型驱动选择，Auto-Gen ≤1.4× 下界
+* [Æthereal NoC](aethereal-noc.md) - Philips Æthereal — contention-free TDM 电路交换实现 Guaranteed Services；GS+BES；slot table；分布式/集中编程与路由器代价谱系
 * [智能体辅助编程的信息论价值模型](information-theoretic-value-model.md) - 智能体辅助编程的信息论价值模型：V ∝ I(S;K)，知识与任务的匹配度决定 Agent 价值

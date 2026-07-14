@@ -111,6 +111,7 @@ sources:
 - [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — CDG / Dally 定理（Day 13）
 - [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md) — Duato / 逃逸 VC（Day 14）
 - [Flow Control Fundamentals](/concepts/flow-control-fundamentals.md) — 流控基础 / Flit / HoL（Day 15）
+- [Æthereal NoC](/concepts/aethereal-noc.md) — contention-free TDM GS（IEEE MDT 2005）
 - [Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md) — VC + Credit（Day 16）
 - [NoC Router Pipeline and Allocators](/concepts/noc-router-pipeline-allocators.md) — 五级流水 + 分配器（Day 17）
 - [NoC Router Pipeline Optimizations](/concepts/noc-router-pipeline-optimizations.md) — Speculative / look-ahead / CMesh（Day 18）

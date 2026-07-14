@@ -62,6 +62,7 @@ sources:
 - [Memory Consistency Model](/concepts/memory-consistency-model.md) — WSE 近似 SC vs 通用 TSO/ARM
 - [Basic Data-Flow Processor](/concepts/basic-data-flow-processor.md) — 数据驱动执行历史源头（1975 ISCA）
 - [Wse Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — WSE Reduce/AllReduce 算法族
+- [Æthereal NoC](/concepts/aethereal-noc.md) — 早期 SoC TDM GS 确定性通信（对照）
 
 # Citations
 
