@@ -116,6 +116,10 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX 产品化 AFD
 - [Prefill Decode Divergence](/concepts/prefill-decode-divergence.md) — Prefill vs Decode 的资源特性分歧
 - [Understanding Inference Scaling For Llms](/papers/understanding-inference-scaling-for-llms.md) — 系统性推理 scaling 瓶颈分析
+- [PRESERVE Prefetch](/papers/preserve-prefetch-weights-kv-cache.md) — 分布式 serving 中权重/KV HBM→L2 prefetch
+- [HCache State Restoration](/papers/hcache-fast-state-restoration.md) — 会话状态快速恢复（隐藏激活）
+- [FlexInfer Offloading](/papers/flexinfer-on-device-llm-offloading.md) — 端侧预算自适应 offload
+- [SuperInfer Superchips](/papers/superinfer-slo-aware-rotary-scheduling.md) — GH200 NVLink-C2C 上 SLO-aware KV 调度
 
 # Citations
 

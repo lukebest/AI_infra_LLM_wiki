@@ -71,6 +71,9 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 - [Prefill Decode Divergence](/concepts/prefill-decode-divergence.md) — Prefill vs Decode 资源分歧
 - [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — 单 GPU decode kernel 优化（与异构分 tier 互补）
 - [Understanding Inference Scaling For Llms](/papers/understanding-inference-scaling-for-llms.md) — 推理 scaling 系统分析
+- [Heterogeneous Computing for Agents](/papers/heterogeneous-computing-ai-agent-inference.md) — Agent 推理的 OI/CF 异构框架
+- [Cache-Resident LLC Inference](/papers/cache-resident-llm-inference-llc.md) — GB 级 LLC 上 cache-resident CPU 推理
+- [CXL Tiered Memory](/concepts/cxl-tiered-memory.md) — CXL 分层内存与页迁移
 
 # Citations
 

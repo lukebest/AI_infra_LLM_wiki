@@ -13,10 +13,12 @@ tags:
 - noc
 - plmr
 - kv-cache
-timestamp: '2026-07-07T00:00:00Z'
+timestamp: '2026-07-17T00:00:00Z'
 created: 2026-07-07
+updated: 2026-07-17
 sources:
 - raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf
+- raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf
 ---
 
 # WaferLLM System
@@ -131,6 +133,7 @@ SpaDA 报告 WSE-2 **82× GEMV vs A100**（HPDC'24 手写 CSL baseline）；Wafe
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — WSE 编程抽象
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 无 DRAM、编译器承担复杂性
 - [paper/waferllm-wafer-scale-llm-inference.md](/papers/waferllm-wafer-scale-llm-inference.md) — 论文摘要页
+- [MOCAP Prefill Pipelining](/papers/mocap-wafer-scale-chunked-pipelining.md) — prefill-only WSC chunked pipeline（MBKR/LBCP）
 - [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子基础（AI、Roofline、Prefill/Decode）
 - [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md) — 606× GEMV 的带宽边界与 Amdahl（Day 26）
 

@@ -95,6 +95,9 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [M2N Communication](/concepts/m2n-communication.md) — MoE 非对称通信
 - [Cerebras WSE](/entities/cerebras-wse.md) — 片上 vs 片外
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — Day 29 前沿
+- [Alibaba HPN](/papers/alibaba-hpn-datacenter-network-llm.md) — LLM 训练数据中心网络（HPN）
+- [Meta RDMA over Ethernet](/papers/rdma-over-ethernet-meta-training.md) — Meta 规模分布式训练 RoCE
+- [Comm/Comp Parallelism](/papers/optimizing-comm-comp-parallelism-training.md) — 训练平台通信-计算重叠
 
 # Citations
 
