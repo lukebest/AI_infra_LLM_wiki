@@ -103,6 +103,7 @@ InfiniBand 4096 端扩展至 10 万：二级 Fat-Tree 不足 → 三级 Clos、�
 - [Switching Networks](/concepts/switching-networks.md) — CLOS 路由、TST、Banyan
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — k-ary n-fly、自路由、Batcher-Banyan
 - [Switching Principles](/concepts/switching-principles.md) — Clos 历史里程碑
+- [NoC Research Methodology and Case Studies](/concepts/noc-research-methodology-case-studies.md) — Mesh vs Fat-Tree 哲学（Day 20）
 
 # Citations
 

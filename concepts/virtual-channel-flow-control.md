@@ -80,6 +80,7 @@ Day 12–14 路由篇在此收束：VC 是「性能」与「正确性」的共�
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md)
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — color ≈ 类 VC 语义
 - [UB Data Link Layer](/concepts/ub-data-link-layer.md) — Credit / Go-Back-N
+- [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md) — 流控 vs 拥塞控制（Day 19）
 
 # Citations
 

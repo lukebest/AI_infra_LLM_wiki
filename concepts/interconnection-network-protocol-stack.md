@@ -75,6 +75,7 @@ NI 决定：哪些 collective 可硬件卸载、哪些需软件参与、注入/e
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — 链路/网络层 Router 实现
 - [Switching Principles](/concepts/switching-principles.md) — 交换方式与历史演进
 - [UB 数据链路层机制](/concepts/ub-data-link-layer.md) — Credit 流控实例
+- [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md) — NI / E2E / 拥塞（Day 19）
 
 # Citations
 

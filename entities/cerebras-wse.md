@@ -139,6 +139,9 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md) — VC + Credit（互连 Day 16）
 - [NoC Router Pipeline and Allocators](/concepts/noc-router-pipeline-allocators.md) — 五级流水（互连 Day 17）
 - [NoC Router Pipeline Optimizations](/concepts/noc-router-pipeline-optimizations.md) — 跳延迟优化动机（互连 Day 18）
+- [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md) — 极简 PE NI（互连 Day 19）
+- [NoC Research Methodology and Case Studies](/concepts/noc-research-methodology-case-studies.md) — Polaris/WSE 反推（互连 Day 20）
+- [Interconn-Study 21d Knowledge Map](/summaries/interconn-study-21d-knowledge-map.md) — 21 天收束（互连 Day 21）
 
 # Citations
 

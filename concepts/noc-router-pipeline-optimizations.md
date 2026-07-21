@@ -75,6 +75,7 @@ interconn-study **微架构篇 Day 18**：Dally & Towles **Ch.12 进阶 + Ch.13*
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md)
 - [Cerebras WSE](/entities/cerebras-wse.md) — 低跳延迟动机
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — 集体通信对跳延迟敏感
+- [NoC Research Methodology and Case Studies](/concepts/noc-research-methodology-case-studies.md) — Polaris bypass 案例（Day 20）
 
 # Citations
 

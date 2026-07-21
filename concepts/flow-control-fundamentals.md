@@ -77,6 +77,7 @@ Packet ≈ head + body×N + tail。WSE 侧：用户 Memory Stream 块 ≈ Messag
 - [NoC Router Pipeline and Allocators](/concepts/noc-router-pipeline-allocators.md) — Day 17
 - [Cerebras WSE](/entities/cerebras-wse.md) — 虫孔 + color
 - [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md)
+- [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md) — E2E / 流控 vs 拥塞（Day 19）
 
 # Citations
 

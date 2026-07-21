@@ -115,6 +115,9 @@ sources:
 - [Virtual Channel Flow Control](/concepts/virtual-channel-flow-control.md) — VC + Credit（Day 16）
 - [NoC Router Pipeline and Allocators](/concepts/noc-router-pipeline-allocators.md) — 五级流水 + 分配器（Day 17）
 - [NoC Router Pipeline Optimizations](/concepts/noc-router-pipeline-optimizations.md) — Speculative / look-ahead / CMesh（Day 18）
+- [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md) — NI / E2E / 拥塞控制（Day 19）
+- [NoC Research Methodology and Case Studies](/concepts/noc-research-methodology-case-studies.md) — 论文反推与 Polaris/WSE（Day 20）
+- [Interconn-Study 21d Knowledge Map](/summaries/interconn-study-21d-knowledge-map.md) — 21 天收束（Day 21）
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — 光互连 / 可重构 / demand-aware NoC（Day 29）
 
 # Citations
@@ -136,3 +139,6 @@ sources:
 [15] [raw/articles/interconn-study-21d-day-16.md](raw/articles/interconn-study-21d-day-16.md) — Ch.10 Virtual Channels（Day 16）
 [16] [raw/articles/interconn-study-21d-day-17.md](raw/articles/interconn-study-21d-day-17.md) — Ch.11–12 Pipeline/Allocators（Day 17）
 [17] [raw/articles/interconn-study-21d-day-18.md](raw/articles/interconn-study-21d-day-18.md) — Ch.12–13 Optimizations（Day 18）
+[18] [raw/articles/interconn-study-21d-day-19.md](raw/articles/interconn-study-21d-day-19.md) — Ch.13–14 NI / System（Day 19）
+[19] [raw/articles/interconn-study-21d-day-20.md](raw/articles/interconn-study-21d-day-20.md) — NoC 论文与案例（Day 20）
+[20] [raw/articles/interconn-study-21d-day-21.md](raw/articles/interconn-study-21d-day-21.md) — 21 天知识地图（Day 21）

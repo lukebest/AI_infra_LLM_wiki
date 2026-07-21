@@ -75,6 +75,7 @@ arch-study **Day 30**：不读新教材——把 Day 1–29 **收束成地图、
 - [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)
 - [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md)
 - [Cerebras WSE](/entities/cerebras-wse.md)
+- [Interconn-Study 21d Knowledge Map](/summaries/interconn-study-21d-knowledge-map.md) — 互连网络侧收束
 
 # Citations
 

@@ -64,7 +64,9 @@
 * [Multi-plane Clos Topology for AI Training](multi-plane-clos-topology.md) - 多平面 CLOS 拓扑：2-tier 131K GPU，低延迟高冗余，MRC 容错，Z3 形式化分析，bitwise reproducibility
 * [Multicore SMT and NUCA](multicore-smt-nuca.md) - H&P Ch.5.7-5.9：Fine/Coarse/SMT 多线程、SMT 1.2-1.3× 收益、Amdahl+通信/一致性 Overhead、NUCA 非均匀 Cache、WSE 反 Amdahl 哲学
 * [Muon Optimizer](muon-optimizer.md) - 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
+* [Network Interface and System-Level Design](network-interface-and-system-design.md) - Dally & Towles Ch.13–14 — NI 翻译官；End-to-End；服务模型；流控 vs 拥塞控制；Max-Min Fairness；开环/闭环
 * [NoC Fundamentals (H&P Appendix F)](noc-fundamentals-hp-appendix-f.md) - H&P 附录 F 互连网络五问：拓扑/路由/流控/路由器/性能；直连 vs 间接、虫孔+VC、饱和吞吐与 WSE-scale 扩展指标
+* [NoC Research Methodology and Case Studies](noc-research-methodology-case-studies.md) - 互连 Day 20 — NoC 论文三层读法；CMP 四原则；Packets not Wires；Polaris 5GHz Mesh；Mesh vs Fat-Tree；WSE 反推
 * [NoC Router Pipeline and Allocators](noc-router-pipeline-allocators.md) - Dally & Towles Ch.11–12 — RC/VA/SA/ST/LT 五级流水；Crossbar；RR / Matrix / iSLIP / Wavefront 仲裁
 * [NoC Router Pipeline Optimizations](noc-router-pipeline-optimizations.md) - Dally & Towles Ch.12–13 — Speculative SA、Look-ahead Routing、Bypass、Shared Buffer、动态 VC、High-Radix、CMesh
 * [NoC Router 微架构](noc-router-microarchitecture.md) - NoC Router 微架构：链路级流控/EB/credit、Switch/仲裁器（RR/2D 矩阵）、WH/VC 流水线 Router、VA/SA 分配器优化
