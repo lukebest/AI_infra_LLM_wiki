@@ -122,6 +122,7 @@ VC0 高优先级（barrier/control），VC1 数据；**strict priority** 仲裁 
 
 ## 相关页面
 
+- [High-Radix Clos Adaptive Routing](/concepts/high-radix-clos-adaptive-routing.md) — Clos 上 DisPERoute（paper-deepdive Day 6）
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — XY/e-cube 基线（Day 11）
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — Mesh 路径多样性
 - [Clos and Fat-Tree Topology](/concepts/clos-fat-tree-topology.md) — 多路径 vs 自适应

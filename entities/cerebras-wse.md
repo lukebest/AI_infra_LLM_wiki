@@ -142,6 +142,9 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md) — 极简 PE NI（互连 Day 19）
 - [NoC Research Methodology and Case Studies](/concepts/noc-research-methodology-case-studies.md) — Polaris/WSE 反推（互连 Day 20）
 - [Interconn-Study 21d Knowledge Map](/summaries/interconn-study-21d-knowledge-map.md) — 21 天收束（互连 Day 21）
+- [TPU v4 OCS Reconfigurable Fabric](/concepts/tpu-v4-ocs-reconfigurable-fabric.md) — 多芯片可重构 vs 单晶圆 Mesh
+- [NVLink NVSwitch Scale-Up Fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md) — GPU fat-tree 对照
+- [Paper Deep-Dive Map](/summaries/paper-deepdive.md) — 精读 Day 1–8
 
 # Citations
 

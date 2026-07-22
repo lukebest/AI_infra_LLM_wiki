@@ -123,7 +123,7 @@ arch-study Day 28 教学笔记常用 **FRED / FREDR** 概括本族 insight（mes
 | **FRED** | 现有路由 + 2D tree，无额外硬件 | Tree / Two-Phase / Auto-Gen（软件路径） |
 | **FREDR** | 路由器内嵌小归约单元 | 与 [Collective-Capable NoC](/concepts/collective-capable-noc.md) 同方向的硬件扩展 |
 
-精读方法见 [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md)；集群侧 Ring 对照见 [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)。
+精读方法见 [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md)；完整精读笔记见 [paper-deepdive Day 1](raw/articles/paper-deepdive-day-01.md)；集群侧 Ring 对照见 [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)。
 
 ## 相关页面
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — Chain/Tree/Two-Phase 的 SpaDA 实现（1.04× HPDC'24 CSL）

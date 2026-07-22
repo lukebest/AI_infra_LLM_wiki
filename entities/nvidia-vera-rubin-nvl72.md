@@ -61,6 +61,9 @@ NVIDIA Vera Rubin 平台的核心 GPU 系统。72 个 Rubin GPU 通过 NVLink �
 详见 [Kyber Rack](/entities/kyber-rack.md)
 
 ## 相关页面
+
+- [NVLink NVSwitch Scale-Up Fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md) — Hopper/Blackwell NVLink 机制（paper-deepdive Day 8）
+- [TPU v4 OCS Reconfigurable Fabric](/concepts/tpu-v4-ocs-reconfigurable-fabric.md) — Google 可重构对照
 - [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — 异构推理搭档
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构推理概念
 - [Kyber Rack](/entities/kyber-rack.md) — Kyber rack 架构

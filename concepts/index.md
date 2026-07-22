@@ -10,6 +10,7 @@
 * [Cache Coherence](cache-coherence.md) - 多核 Cache 一致性：MESI/MOESI 状态机、Snooping vs Directory、False Sharing，与 WSE 无共享地址空间的对比
 * [Cerebras Color Mechanism](cerebras-color-mechanism.md) - WSE Color 虚拟通道机制：静态路由+独立缓冲+Color×4任务调度+独立反压，Fabric/Local Color 双类型
 * [Clos and Fat-Tree Topology](clos-fat-tree-topology.md) - 间接网络：终端/交换分离、Clos C(n,m,r) 无阻塞条件、Fat-Tree 代价等价与 Beneš RNB，及 InfiniBand/Jupiter 与 WSE 规模分界
+* [CMP NoC Pareto Design Tradeoffs](cmp-noc-pareto-design-tradeoffs.md) - Balfour & Dally MICRO 2006 — tiled CMP NoC 的 area/energy/delay Pareto；wormhole、2-stage router、buffer/flit/mesh sweet spot
 * [CMX & STX](cmx-stx.md) - NVIDIA 推理存储平台：CMX（Tier G3.5 NVMe KV cache）+ STX（BF-4 存储 rack 参考架构）
 * [Collective-Capable NoC](collective-capable-noc.md) - FlooNoC 扩展：AXI 多地址 mask、XY fork 组播、并行/宽归约；DCA 范式（互连借 FPU 做 in-network 算术归约，router +16.9%、tile <1%）
 * [Constable Load Elimination](constable-load-elimination.md) - ISCA 2024 Best Paper：SLD/RMT/AMT 识别 likely-stable load 并跳过执行；12.4 KB/core、+5.1% perf、-3.4% 动态功耗、SMT +8.8%；与 LVP 正交
@@ -42,6 +43,7 @@
 * [GEMM vs GEMV in LLM Inference](gemm-vs-gemv.md) - 矩阵乘 vs 矩阵-向量乘：算子形状、算术强度（AI）、Roofline 类别、Prefill/Decode 对应关系；GEMM compute-bound（AI~1000），GEMV bandwidth-bound（AI~2）；H100 decode <1% 峰值 FLOPS，理论时间 vs 实际时间差 100×
 * [GPU SIMT Architecture](gpu-simt-architecture.md) - H&P Ch.4 GPU/SIMT：Warp 锁步、Warp Divergence、Occupancy 延迟隐藏、H100 内存层次、Tensor Core；与 CPU OoO / WSE MIMD 对比
 * [Heterogeneous Inference](heterogeneous-inference.md) - GPU + LPU 异构推理，分别优化 prefill/decode
+* [High-Radix Clos Adaptive Routing](high-radix-clos-adaptive-routing.md) - Kim/Dally/Abts SC 2006 — high-radix Clos + DisPERoute 自适应；挑战 mesh+DOR 普适最优；负载均衡与死锁自由
 * [Inference Capacity Trap](inference-capacity-trap.md) - 推理容量陷阱：KV cache 饱和导致 preemption + recomputation，throughput 崩溃
 * [Instruction-Level Parallelism](instruction-level-parallelism.md) - 指令级并行 ILP：超标量 vs VLIW、真依赖与名称依赖、静态/动态多发射权衡
 * [Interconnection Network Cost Model](interconnection-network-cost-model.md) - 互连网络开销与性能模型：节点/链路/交换成本、零负载延迟公式、注入带宽与二分带宽上界、直连网络 d≈O(log N)
@@ -72,6 +74,7 @@
 * [NoC Router 微架构](noc-router-microarchitecture.md) - NoC Router 微架构：链路级流控/EB/credit、Switch/仲裁器（RR/2D 矩阵）、WH/VC 流水线 Router、VA/SA 分配器优化
 * [Numeric Formats for AI Hardware](numeric-formats-ai-hardware.md) - IEEE 754 浮点与 AI 数据格式（FP32/FP16/BF16/FP8/INT8）的精度、动态范围与硬件面积权衡
 * [NVIDIA CPO Roadmap](nvidia-cpo-roadmap.md) - NVIDIA CPO 用于 scale-up 的路线图：Rubin NVL576 测试 → Feynman NVL1152 volume ramp
+* [NVLink NVSwitch Scale-Up Fabric](nvlink-nvswitch-scale-up-fabric.md) - Hopper/Blackwell NVLink + NVSwitch — 固定 fat-tree、极高每链路带宽、NVL72；与 TPU v4 OCS 可重构哲学对照
 * [Out-of-Order Execution](out-of-order-execution.md) - 乱序执行：Tomasulo 算法、保留站、ROB 顺序提交、寄存器重命名与指令窗口 IPC 收益递减
 * [PagedAttention and vLLM Serving](pagedattention-vllm.md) - vLLM 服务系统的核心 KV cache 内存管理：借鉴 OS 虚拟内存与分页机制，将 KV cache 切为 fixed-size block 跨请求共享/重映射；解决 KV cache fragmentation 与不可共享
 * [Parallelism Transition Point](parallelism-transition-point.md) - 并行度切换点：32B 是 DP→TP inflection，MoE 需 hybrid PP+TP
@@ -90,6 +93,7 @@
 * [TileLang DSL](tilelang.md) - Kernel 开发 DSL
 * [TileLoom Compiler](tileloom-compiler.md) - NUS TileLoom：MLIR 端到端 dataflow planning，Triton/Helion → spatiotemporal mapping + df 硬件模型；Tenstorrent 2-D mesh 上 FlashAttention ~2× TTNN
 * [Topology Optimization Variants](topology-optimization-variants.md) - 拓扑变体与优化：Folding、Concentrated/Collapsed Mesh、Express Cube、Dally 1990 最优维度定律、高基数路由器；Compression vs Expansion 权衡
+* [TPU v4 OCS Reconfigurable Fabric](tpu-v4-ocs-reconfigurable-fabric.md) - Jouppi et al. ISCA 2023 — TPU v4 pod 光电路交换（OCS）可重构拓扑；4096-chip；topology-as-software；vs 固定 torus/mesh
 * [UB 事务层](ub-transaction-layer.md) - UB 事务层：四类事务（Memory/Message/Maintenance/Management）、Full/Compact 包头、安全 Token 验证、四种服务模式（ROI/ROT/ROL/UNO）
 * [UB 传输层机制](ub-transport-layer.md) - UB 传输层：四种模式（RTP/CTP/UTP/TP Bypass）、PSN 机制、Go-Back-N/Selective 重传、TPG 多路径负载均衡、LDCP/CAQM/DCQCN 拥塞控制、ROL 模式事务-传输联动
 * [UB 内存管理](ub-memory-management.md) - UB 内存管理：Home-User 模型、UBMD、UMMU 两阶段地址翻译+权限检查、UB Decoder

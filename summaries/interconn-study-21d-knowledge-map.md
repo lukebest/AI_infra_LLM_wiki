@@ -80,6 +80,7 @@ interconn-study **Day 21 收官**：不读新章——把 Day 1–20 **压成地
 - [NoC Research Methodology and Case Studies](/concepts/noc-research-methodology-case-studies.md)
 - [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md)
 - [Arch-Study 30d Knowledge Map](/summaries/arch-study-30d-knowledge-map.md) — 体系结构侧收束
+- [Paper Deep-Dive Map](/summaries/paper-deepdive.md) — 论文精读专项
 - [Cerebras WSE](/entities/cerebras-wse.md)
 
 # Citations

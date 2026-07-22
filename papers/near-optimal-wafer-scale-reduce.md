@@ -63,6 +63,8 @@ Luczynski, Gianinazzi, Iff, Wilson, De Sensi, Hoefler (ETH Zurich + Cerebras + S
 
 ## 与现有 wiki 的交叉
 
+- [paper-deepdive Day 1 精读](raw/articles/paper-deepdive-day-01.md) — 5 步精读 + 量化武器实战
+- [Paper Deep-Dive Map](/summaries/paper-deepdive.md)
 - [Cerebras Wse](/entities/cerebras-wse.md) — 目标硬件平台
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — Color 用于路由配置（论文用 ≤3/5 colors）
 - [Wse Performance Model](/concepts/wse-performance-model.md) — 论文提出的性能模型独立概念页

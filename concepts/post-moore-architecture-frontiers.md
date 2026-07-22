@@ -80,6 +80,8 @@ arch-study **研究篇 Day 29**：经典（H&P）之后，**单核主频、单�
 - [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md) — Day 27
 - [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md) — Day 28
 - [Arch-Study 30d Knowledge Map](/summaries/arch-study-30d-knowledge-map.md) — Day 30
+- [TPU v4 OCS Reconfigurable Fabric](/concepts/tpu-v4-ocs-reconfigurable-fabric.md) — 工业光可重构
+- [NVLink NVSwitch Scale-Up Fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md) — 胖链路固定拓扑
 - [Cerebras WSE](/entities/cerebras-wse.md) / [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md)
 
 # Citations

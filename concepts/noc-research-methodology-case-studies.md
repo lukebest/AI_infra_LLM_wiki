@@ -21,7 +21,8 @@ sources:
 
 interconn-study **应用篇 Day 20**：教材读完后的**方法论实战**——用四层设计空间反推论文与工业芯片。体系结构通读法见 [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md)；本页偏 **NoC 五决策 + 案例坐标**。
 
-**Source:** [raw/articles/interconn-study-21d-day-20.md](raw/articles/interconn-study-21d-day-20.md)
+**Source:** [raw/articles/interconn-study-21d-day-20.md](raw/articles/interconn-study-21d-day-20.md)  
+扩展精读：paper-deepdive [Day 2](raw/articles/paper-deepdive-day-02.md)（Route Packets）、[Day 3](raw/articles/paper-deepdive-day-03.md)（Polaris）、[Day 4](raw/articles/paper-deepdive-day-04.md)（Balfour）→ [Paper Deep-Dive Map](/summaries/paper-deepdive.md)。
 
 ## 论文「读三层」
 
@@ -87,6 +88,8 @@ WSE：**Mesh 哲学 + 规模带宽密度**——链路数×单链路带宽可超
 - [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md)
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md)
 - [Flattened Butterfly Topology](/concepts/flattened-butterfly-topology.md) — 高基数另一条路
+- [CMP NoC Pareto Design Tradeoffs](/concepts/cmp-noc-pareto-design-tradeoffs.md) — Day 4 展开
+- [Paper Deep-Dive Map](/summaries/paper-deepdive.md)
 
 # Citations
 

@@ -20,6 +20,7 @@
 # Raw Source
 
 * [Memory Fence 深度研究报告](memory-fence-hardware-2026-06-28.md)
+* [Paper Deep-Dive Overview](paper-deepdive-overview.md)
 * [互连网络晨报 — Day 1](interconn-study-21d-day-01.md)
 * [互连网络晨报 — Day 2](interconn-study-21d-day-02.md)
 * [分布式存储架构下的矩阵乘与编译器](分布式存储架构下的矩阵乘与编译器.md) - 分布式内存下 Cannon/SUMMA/2.5D/3D GEMM、LLM 2.5D-3D 并行与 Graphcore T10 rTensor 编译器综述（知乎专栏）
@@ -72,3 +73,11 @@
 * [📰 体系结构晨报 — Day 7](arch-study-30d-day-07.md)
 * [📰 体系结构晨报 — Day 8](arch-study-30d-day-08.md)
 * [📰 体系结构晨报 — Day 9](arch-study-30d-day-09.md)
+* [📰 论文精读 — Day 1](paper-deepdive-day-01.md)
+* [📰 论文精读 — Day 2](paper-deepdive-day-02.md)
+* [📰 论文精读 — Day 3](paper-deepdive-day-03.md)
+* [📰 论文精读 — Day 4](paper-deepdive-day-04.md)
+* [📰 论文精读 — Day 5](paper-deepdive-day-05.md)
+* [📰 论文精读 — Day 6](paper-deepdive-day-06.md)
+* [📰 论文精读 — Day 7](paper-deepdive-day-07.md)
+* [📰 论文精读 — Day 8](paper-deepdive-day-08.md)

@@ -19,7 +19,8 @@ sources:
 
 interconn-study **流控篇 Day 16**：Dally & Towles **Ch.10**——把一条物理链路切成多条逻辑车道，打破虫孔 [HoL](/concepts/flow-control-fundamentals.md)。电路级细节亦见 [NoC Router 微架构](/concepts/noc-router-microarchitecture.md)。
 
-**Source:** [raw/articles/interconn-study-21d-day-16.md](raw/articles/interconn-study-21d-day-16.md)
+**Source:** [raw/articles/interconn-study-21d-day-16.md](raw/articles/interconn-study-21d-day-16.md)  
+原典精读：Dally TPDS 1992 — [paper-deepdive Day 5](raw/articles/paper-deepdive-day-05.md)、[papers/dally-virtual-channel-flow-control.md](/papers/dally-virtual-channel-flow-control.md)。
 
 ## VC 是什么
 
@@ -81,7 +82,9 @@ Day 12–14 路由篇在此收束：VC 是「性能」与「正确性」的共�
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — color ≈ 类 VC 语义
 - [UB Data Link Layer](/concepts/ub-data-link-layer.md) — Credit / Go-Back-N
 - [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md) — 流控 vs 拥塞控制（Day 19）
+- [papers/dally-virtual-channel-flow-control.md](/papers/dally-virtual-channel-flow-control.md) — 1992 原典摘要
 
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-16.md](raw/articles/interconn-study-21d-day-16.md) — D&T Ch.10 Virtual Channels（Day 16）
+[2] [raw/articles/paper-deepdive-day-05.md](raw/articles/paper-deepdive-day-05.md) — Dally TPDS'92 精读（paper-deepdive Day 5）
