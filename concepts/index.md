@@ -51,6 +51,7 @@
 * [Interconnection Network Protocol Stack](interconnection-network-protocol-stack.md) - 互连网络四层协议栈（物理/链路/网络/传输）、Network Interface 边界，与 NoC 及 UB 的对应关系
 * [Interconnection Topology Metrics](interconnection-topology-metrics.md) - 互连拓扑度量：度/直径/平均距离/二分带宽/对称性，k-ary n-cube 公式，Mesh vs Torus 对比
 * [ISA Design Principles](isa-design-principles.md) - 指令集设计原则：Load/Store、RISC-V 编码、CISC vs RISC 历史教训、寄存器与条件码权衡
+* [Layout-Aware NoC and Flexible Dataflow Accelerators](layout-aware-noc-flexible-dataflow.md) - NoC 感知 / 转换 / 消除矩阵数据 layout 的 4 类技术路线：L1 raw bytes / L2 multicast 隐式 / L3 reorder network 显式 / L4 runtime fission-fusion + L5 反向（编译期消除）；代表工作 MAERI / SIGMA / FEATHER(BIRRD+RIR) / Venus / SmartMem
 * [Linear and Ring Topology](linear-ring-topology.md) - 线形阵列与环形拓扑：度/直径/二分带宽度量，双向环即 1-D Torus，NoC/SAN/Die-to-Die 应用与 Chordal Ring 扩展
 * [LLM Distributed Training Collectives](llm-distributed-training-collectives.md) - H&P Ch.6/10 语境下 LLM 训练集体通信：AllReduce/AllGather/All-to-All；Ring vs Tree；DP/TP/PP/EP 配方；通信-计算重叠与 WSE 片上 vs 跨 wafer
 * [LPU Architecture](lpu-architecture.md) - Groq LPU 推理专用架构：SRAM-first、显式数据搬运、编译器调度

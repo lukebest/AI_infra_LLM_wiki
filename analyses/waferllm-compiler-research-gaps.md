@@ -108,6 +108,33 @@ sources:
 - (ii) edge cores → 见 Gap 2
 - (iii) NoC long-range → **编译器做通信 schedule 重排**，把长程通信隐藏在短程计算中（类 LoopLynx head-wise pipelining）
 
+### Gap 7: layout-aware mesh GEMV — 编译器视角的第 7 个 research gap
+
+**WaferLLM 论文完全没讨论的问题**：mesh-NoC 上矩阵数据的 **layout mismatch**。
+
+**问题分析**：WSE 上每个 mesh GEMV 算子都涉及**两种物理 layout**：
+- **weight streaming layout**：per-row 流过 SRAM
+- **KV cache layout**：按 head × seq 在 mesh 上分布
+
+但**算法期望的 layout**：
+- GEMV reduction 期望按 column-aligned
+- K-tree allreduce 期望 logical-center root
+- KV cache shift 期望 head-aware distribution
+
+**这中间没有 alignment** → **explicit transpose / reshape 开销**存在 mesh 数据通路里 → **作者没意识到 / 没量化**。
+
+**借鉴 FEATHER（BIRRD + RIR）的解法**：
+- **RIR（Reorder In Reduction）思想**：把 layout 转换塞进 K-tree allreduce 的 reduction 路径
+- **Layoutloop 思想**：per-decode-step co-search best (mesh routing, data layout) pair
+- **MAERI 思想**：编译器把 model layout 映射进 fabric，让 layout mismatch 在编译期就消除
+
+**Compiler 视角的 3 个新 pass**（加到下面"阶段 B"）：
+- Pass 4：**Layout-aware Mesh Routing** —— 在 mesh cyclic shifting 中塞 layout 转换
+- Pass 5：**RIR-style Reorder in K-tree Allreduce** —— reduction 路径上重排 partial sums
+- Pass 6：**Per-decode-step Layout Co-Search** —— 类 Layoutloop
+
+**关联资产**：见 [Layout-Aware NoC and Flexible Dataflow Accelerators](/concepts/layout-aware-noc-flexible-dataflow.md) — 5 篇核心 paper（MAERI / SIGMA / FEATHER / Venus / SmartMem）+ 5 类技术路线。
+
 ## Direction 2 的具体技术路径
 
 ### 阶段 A（1-2 月）：搭 PLMR-aware MLIR dialect
@@ -118,15 +145,24 @@ plmr.mesh_tile {row=0, col=0, sramb_kb=48} : !plmr.tile
 plmr.interleave_shift %A, %B {k=2} : (!plmr.tile, !plmr.tile) -> !plmr.tile
 plmr.k_tree_allreduce %C {k=2, n_groups=4} : !plmr.tile
 plmr.kv_shift %kv {direction="up", stride=1} : !plmr.kv_block
+// 新增（Gap 7）：
+plmr.layout_transform %data {from="NHWC", to="NCHW"} : !plmr.tile
+plmr.rir_reorder %psum {pattern="swap"} : !plmr.partial_sum
 ```
 
 **目标**：在 MLIR 中表达所有 PLMR-aware 操作
 
-### 阶段 B（2-3 月）：3 个核心 pass
+### 阶段 B（2-3 月）：6 个核心 pass（原 3 个 + 新 3 个）
 
+**原 3 个 pass**：
 1. **Routing-Aware Placement Pass** —— 输入算子图 + mesh 拓扑 + 路由预算，输出 placement + routing plan
 2. **K-Tree Auto-Search Pass** —— 输入 N + R，cost model 搜最优 K（覆盖 Gap 3）
 3. **2D KV Cache Shift Pass** —— 输入 GQA/MQA head layout + KV 大小，输出二维 shift plan（覆盖 Gap 4）
+
+**新 3 个 pass（覆盖 Gap 7）**：
+4. **Layout-Aware Mesh Routing Pass** —— 在 INTERLEAVE cyclic shifting 中塞 layout 转换（FEATHER 思想）
+5. **RIR-style Reorder In K-tree Allreduce Pass** —— reduction 路径上重排 partial sums（FEATHER 思想）
+6. **Per-decode-step Layout Co-Search Pass** —— 类 Layoutloop，自动选 best (mesh routing, data layout) pair
 
 ### 阶段 C（2-3 月）：仿真评估 + paper
 
@@ -147,6 +183,7 @@ plmr.kv_shift %kv {direction="up", stride=1} : !plmr.kv_block
 - [SambaNova SN40L](/papers/sambanova-sn40l-dataflow-coe.md) — dataflow 编译器全自动融合
 - [PagedAttention / vLLM](/concepts/pagedattention-vllm.md) — GPU 上的同类 KV 解法
 - [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子基础（AI、Roofline、Prefill/Decode）
+- [Layout-Aware NoC and Flexible Dataflow Accelerators](/concepts/layout-aware-noc-flexible-dataflow.md) — MAERI/SIGMA/FEATHER/Venus/SmartMem 5 篇核心 paper + Gap 7 来源
 
 # Citations
 

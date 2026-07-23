@@ -88,7 +88,8 @@ Insight：weights 可 offline reorder；**iActs 须 online reorder**——RIR �
 ## 与 wiki 的关系
 
 - [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — FEATHER 对比的 **固定 Eyeriss-like RS dataflow** 基线（+6% 面积换 co-switch）；同作者 Krishna
-- [Plasticine Accelerator](/concepts/plasticine-accelerator.md) — 更广 parallel patterns CGRA；同为空间可重构、编译时映射
+- [Plasticine Accelerator](/concepts/plasticine-accelerator.md) — 同期 CGRA 路线（parallel patterns）
+- [Layout-Aware NoC and Flexible Dataflow Accelerators](/concepts/layout-aware-noc-flexible-dataflow.md) — 5 类柔性 NoC 路线 + 5 篇核心 paper
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — 片上 distributed memory / bank 利用率问题同类
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 固定 dataflow（DPU/Gemmini）vs 可重构
 - [SpaDA Programming Language](/concepts/spada-programming-language.md) — 同为 dataflow 编程抽象，FEATHER 面向 DNN 片上 buffer，SpaDA 面向 WSE NoC

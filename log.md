@@ -30,6 +30,13 @@
 * **Creation**: [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md), [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md), [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md), [Arch-Study 30d Knowledge Map](/summaries/arch-study-30d-knowledge-map.md)。
 * **Update**: [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md), [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md)（补 FRED/FREDR 笔记命名对照）, [Parallelism Transition Point](/concepts/parallelism-transition-point.md), [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md), [Cerebras WSE](/entities/cerebras-wse.md), [Architecture Benchmark Methodology](/concepts/architecture-benchmark-methodology.md), [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md), [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md), [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — Day 27–30 交叉引用。
 
+## 2026-07-22
+* **Ingest**: 4 篇 layout/NoC paper PDF → `raw/papers/MAERI_*`, `SIGMA_*`, `SmartMem_*`, `Venus_*`。
+* **Creation**: [MAERI](/papers/maeri-flexible-dataflow-reconfigurable-interconnects.md), [SIGMA](/papers/sigma-sparse-gemm-flexible-interconnects.md), [SmartMem](/papers/smartmem-layout-transformation-elimination.md), [Venus](/papers/venus-versatile-reconfigurable-accelerator.md), [Layout-Aware NoC and Flexible Dataflow Accelerators](/concepts/layout-aware-noc-flexible-dataflow.md)。
+* **Update**: [WaferLLM Compiler Research Gaps](/analyses/waferllm-compiler-research-gaps.md) — 新增 Gap 7 (layout-aware mesh GEMV) + 阶段 B 加 3 个新 pass。
+* **Update**: [Cerebras WSE](/entities/cerebras-wse.md), [FEATHER Accelerator](/concepts/feather-accelerator.md) — 反向链接到新概念页。
+* **Validation**: `validate_bundle.py` 通过；11 个 index 自动重生成。
+
 ## 2026-07-09
 * **Ingest**: Dally & Towles 互连网络 Day 13–14 → `raw/articles/interconn-study-21d-day-13.md`、`day-14.md`（源：`openclawdata/.../interconn-study-21d/day-13..14.md`）。
 * **Creation**: [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md), [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md).
