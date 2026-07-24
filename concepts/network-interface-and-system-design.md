@@ -88,6 +88,7 @@ Credit **不解**全局拥塞——全网饱和时只会拖慢所有流并加剧
 - [NoC Research Methodology and Case Studies](/concepts/noc-research-methodology-case-studies.md) — Day 20
 - [Interconn-Study 21d Knowledge Map](/summaries/interconn-study-21d-knowledge-map.md) — Day 21
 - [Cerebras WSE](/entities/cerebras-wse.md) / [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md)
+- [Cybernetics and Scientific Methodology](/concepts/cybernetics-and-scientific-methodology.md) — 负反馈 / 通道容量方法论
 
 # Citations
 

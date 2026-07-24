@@ -86,6 +86,7 @@ Yield ≈ (1 - defects/area)^die_area
 - [Multicore SMT and NUCA](/concepts/multicore-smt-nuca.md) — Amdahl 多核版 + Overhead（Day 23）
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — Dennard 之后的三条路（Day 29）
 - [Arch-Study 30d Knowledge Map](/summaries/arch-study-30d-knowledge-map.md) — 十大公式速查（Day 30）
+- [Cybernetics and Scientific Methodology](/concepts/cybernetics-and-scientific-methodology.md) — 控制/稳态方法论对照
 
 # Citations
 

@@ -73,6 +73,7 @@ arch-study **研究篇 Day 28**：把教材式输入转为**从论文挖矿**。
 - [Arch-Study 30d Knowledge Map](/summaries/arch-study-30d-knowledge-map.md) — Day 30 收束
 - [NoC Research Methodology and Case Studies](/concepts/noc-research-methodology-case-studies.md) — NoC 五决策读法（互连 Day 20）
 - [Paper Deep-Dive Map](/summaries/paper-deepdive.md) — Day 1–8 实战精读地图
+- [Black-Box Epistemology](/concepts/black-box-epistemology.md) — 可观察/可控制变量与认识负反馈
 
 # Citations
 

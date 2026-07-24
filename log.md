@@ -1,5 +1,10 @@
 # Bundle Update Log
 
+## 2026-07-24
+* **Ingest**: 金观涛、华国凡《控制论与科学方法论》→ `raw/books/控制论与科学方法论-金观涛-华国凡.mobi` + 结构化摘录 `raw/books/cybernetics-and-scientific-methodology.md`（源：`/home/luke/下载/控制论与科学方法论.mobi`）。
+* **Creation**: [Cybernetics and Scientific Methodology](/concepts/cybernetics-and-scientific-methodology.md), [Black-Box Epistemology](/concepts/black-box-epistemology.md)。
+* **Update**: [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md), [Architecture Benchmark Methodology](/concepts/architecture-benchmark-methodology.md), [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md), [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 黑箱/负反馈方法论交叉引用。
+
 ## 2026-07-22
 * **Ingest**: 论文精读专项 paper-deepdive Day 1–8 + OVERVIEW → `raw/articles/paper-deepdive-day-01.md` … `day-08.md`、`paper-deepdive-overview.md`（源：`openclawdata/.../paper-deepdive/`）。
 * **Creation**: [CMP NoC Pareto Design Tradeoffs](/concepts/cmp-noc-pareto-design-tradeoffs.md), [High-Radix Clos Adaptive Routing](/concepts/high-radix-clos-adaptive-routing.md), [TPU v4 OCS Reconfigurable Fabric](/concepts/tpu-v4-ocs-reconfigurable-fabric.md), [NVLink NVSwitch Scale-Up Fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md), [Paper Deep-Dive Map](/summaries/paper-deepdive.md)；papers：`route-packets-not-wires`, `hoskote-5ghz-mesh-polaris`, `balfour-tiled-cmp-noc-tradeoffs`, `dally-virtual-channel-flow-control`, `kim-adaptive-routing-high-radix-clos`, `tpu-v4-optically-reconfigurable`, `nvidia-nvlink-hopper-blackwell`。

@@ -58,6 +58,7 @@ Overall Speedup = GM(Speedup₁, ..., Speedupₙ)
 
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — Amdahl 与性能公式
 - [Architecture Paper Reading Methodology](/concepts/architecture-paper-reading-methodology.md) — 论文精读 + 四大量化武器（Day 28）
+- [Black-Box Epistemology](/concepts/black-box-epistemology.md) — 基准即选择可观察变量
 - [WSE Performance Model](/concepts/wse-performance-model.md) — collective 性能建模实例
 - [Voxel Simulator](/concepts/voxel-simulator.md) — 3D 芯片端到端仿真评估
 

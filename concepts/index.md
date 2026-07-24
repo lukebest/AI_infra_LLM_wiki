@@ -5,6 +5,7 @@
 * [Architecture Benchmark Methodology](architecture-benchmark-methodology.md) - 体系结构量化评估方法论：几何均值、Speedup 计算、SPEC/MLPerf 原则与常见数据陷阱
 * [Architecture Paper Reading Methodology](architecture-paper-reading-methodology.md) - 体系结构论文 5 步精读法 + 四大量化武器（归因/Roofline/敏感性/Pareto）；以 Luczynski HPDC'24 Wafer-Scale Reduce 为范例
 * [Basic Data-Flow Processor](basic-data-flow-processor.md) - Dennis & Misunas (1975) 基本数据流处理器：token/actor 图、Instruction Cell + 仲裁/分发网络、decider/T-gate/merge 条件与迭代、Cell Block 两级存储作活跃指令 cache
+* [Black-Box Epistemology](black-box-epistemology.md) - 金观涛《控制论与科学方法论》Ch.5 — 可观察/可控制变量、打开/不打开黑箱、认识负反馈、反馈过度与可判定条件
 * [Branch Prediction](branch-prediction.md) - 分支预测：1-bit/2-bit 饱和计数器、局部与全局历史、TAGE/BTB、分支惩罚对 CPI 的量化影响
 * [Butterfly and MIN Topology](butterfly-min-topology.md) - 多级互连网络（MIN）：k-ary n-fly Butterfly、完美洗牌、自路由；Omega/Banyan/Delta 同构；Batcher-Banyan 无阻塞；与 Clos 路径多样性对比
 * [Cache Coherence](cache-coherence.md) - 多核 Cache 一致性：MESI/MOESI 状态机、Snooping vs Directory、False Sharing，与 WSE 无共享地址空间的对比
@@ -18,6 +19,7 @@
 * [CPU Pipeline Fundamentals](cpu-pipeline-fundamentals.md) - 五级流水线（IF/ID/EX/MEM/WB）、三大冒险（结构/数据/控制）、Forwarding 与分支惩罚
 * [CSA and HCA (Hybrid Attention)](csa-hca.md) - 两级压缩注意力：CSA 温和压缩+稀疏选择，HCA 激进压缩+dense attention
 * [CXL Tiered Memory](cxl-tiered-memory.md) - CXL 扩展内存分层 — 页迁移（M5）、解耦内存数据通路（CosMoS）、fabric（Aurelia）；把冷页/容量迁出本机 DRAM
+* [Cybernetics and Scientific Methodology](cybernetics-and-scientific-methodology.md) - 金观涛、华国凡《控制论与科学方法论》— 可能性空间、反馈、信息通道、稳态/超稳定、质变与黑箱认识论；科学方法论视角的控制论
 * [Deadlock-Free Routing CDG and Dally Theorem](deadlock-free-routing-cdg-dally.md) - D&T Ch.8.1-8.4：通道依赖图 CDG、Dally & Seitz 无死锁定理、虫孔易死锁、Torus dateline/≥2 VC、Mesh 单 VC；WSE 选型
 * [Deterministic Execution](deterministic-execution.md) - 编译器控制时序、消除 jitter 的执行范式
 * [Deterministic Routing and DOR](deterministic-routing-dor.md) - 确定性路由与维序路由（DOR）：XY/Y-first、e-cube、源路由 vs 分布式；Mesh/Hypercube 最短路径与 CDG 无死锁直觉；WSE 工业选型
