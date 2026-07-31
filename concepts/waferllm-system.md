@@ -15,10 +15,11 @@ tags:
 - kv-cache
 timestamp: '2026-07-17T00:00:00Z'
 created: 2026-07-07
-updated: 2026-07-17
+updated: 2026-07-30
 sources:
 - raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf
 - raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf
+- raw/articles/22580 From GPT2 to Kimi3, Explained.md
 ---
 
 # WaferLLM System
@@ -113,6 +114,19 @@ Decode 瓶颈在 **局部 GEMV + 全局聚合**：
 - **E2E**：vs SGLang **2×8 A100**（NVLink+IB）**10–20×**、**2.5×** 能效；vs 单卡 **30–40×**
 - **MeshGEMM** vs SUMMA/Cannon **2–3×** prefill throughput
 
+## 与 Kimi K3 的同构关系（2026-07 新增）
+
+WaferLLM 在**硬件层（mesh-NoC）**解决"固定容量必须有淘汰策略"，Kimi K3 在**模型层（attention 状态）**解决同一个问题。两者是数学同构的：
+
+| 层级 | 容量瓶颈 | 淘汰策略 |
+|------|----------|---------|
+| **WSE mesh-NoC** | 48 KB SRAM/core 不够装 LLaMA-7B 一个分片 | weight streaming + 24-color 路由 + K-tree reduce |
+| **Kimi K3 attention** | D×D 状态矩阵不够装 1M token 所有关联 | KDA delta rule + per-channel α + MLA 周期 reset + AttnRes |
+
+**两边都在和同一个幽灵打仗：固定容量。** 详见 [Linear Attention Evolution](/concepts/linear-attention-evolution.md) §"数学下界"和 [Moonshot AI Kimi K3](/entities/moonshot-ai-kimi-k3.md) §"在推理栈中的位置"。
+
+**方向上的信号**：如果 KDA 类模型成为主流，WSE 路线（必须跑 O(N) softmax attention）也要重写——因为 KDA 的 O(1) 状态天然适合 mesh 上的 distributed recurrent compute。这把 Direction 2（compiler-aware decode on mesh-NoC）的目标从"让 softmax attention 跑得快"扩展为"让任意 attention 状态结构都能映射到 mesh"。
+
 ## 与 SpaDA / TileLoom 区分
 
 | | WaferLLM | [SpaDA](/concepts/spada-programming-language.md) | [TileLoom](/concepts/tileloom-compiler.md) |
@@ -124,9 +138,11 @@ Decode 瓶颈在 **局部 GEMV + 全局聚合**：
 SpaDA 报告 WSE-2 **82× GEMV vs A100**（HPDC'24 手写 CSL baseline）；WaferLLM 在 **全模型 E2E** 与 **KV 管理** 上进一步系统化为 PLMR-compliant 栈。
 
 ## 相关概念
-
+## 相关概念
 - [Cerebras WSE](/entities/cerebras-wse.md) — WSE-2 硬件与 color 路由
 - [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — GEMM/GEMV 阶段分工
+- [Linear Attention Evolution](/concepts/linear-attention-evolution.md) — 2026-07 KDA 模型层"固定容量淘汰策略"——与本节 mesh-NoC 硬件层同构
+- [Moonshot AI Kimi K3](/entities/moonshot-ai-kimi-k3.md) — K3 实体页（KDA + 周期 MLA + AttnRes）
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — massive mesh memory
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — 有限路由与 DOR
 - [Collective-Capable NoC](/concepts/collective-capable-noc.md) — mesh 上 collective 设计空间

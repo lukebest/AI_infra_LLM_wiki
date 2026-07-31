@@ -1,5 +1,14 @@
 # Bundle Update Log
 
+## 2026-07-30
+* **Ingest**: Ali (@waterloo_intern) '22580: From GPT2 to Kimi3, Explained' (2026-07-27 X 长文) → `raw/articles/22580 From GPT2 to Kimi3, Explained.md`（551 行，已存）。
+* **Creation** (entities): [Moonshot AI Kimi K3](/entities/moonshot-ai-kimi-k3.md) — K3 模型实体 + 架构骨架 + 与 GPT-2 尺度对照。
+* **Creation** (concepts): [Linear Attention Evolution](/concepts/linear-attention-evolution.md) — GPT-2 → Linear Attn → DeltaNet → Gated DeltaNet → KDA 七年演化主线；[Attention Residuals](/concepts/attention-residuals.md) — AttnRes 深度方向选择性残差检索；[Stable Latent MoE](/concepts/stable-latent-moe.md) — K3 MoE 框架（latent-space + Quantile Balancing + 898 expert/16+2 active）。
+* **Creation** (papers): [Ali 22580 From GPT2 to Kimi3](/papers/ali-22580-from-gpt2-to-kimi3.md) — 论文摘要页（含全部章节结构 + 关键代码 + 数学公式）。
+* **Update**: [WaferLLM System](/concepts/waferllm-system.md) — 新增 §"与 Kimi K3 的同构关系" + 相关概念交叉引用，frontmatter sources/updated 同步；[Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — 新增 Linear Attention Evolution 与 K3 交叉引用（KDA 改变 decode bandwidth 格局），frontmatter 同步。
+* **Update**: [SCHEMA.md](/SCHEMA.md) tag taxonomy 实际未改动（新页 tags 全部命中既有 taxonomy：attention/moe/llm/architecture/moonshot/optimization/kernel/inference 等）。
+* **Indexes**: 手动同步 `concepts/index.md`（+3 条）、`entities/index.md`（+1 条）、`papers/index.md`（+1 条）。
+
 ## 2026-07-24
 * **Ingest**: 金观涛、华国凡《控制论与科学方法论》→ `raw/books/控制论与科学方法论-金观涛-华国凡.mobi` + 结构化摘录 `raw/books/cybernetics-and-scientific-methodology.md`（源：`/home/luke/下载/控制论与科学方法论.mobi`）。
 * **Creation**: [Cybernetics and Scientific Methodology](/concepts/cybernetics-and-scientific-methodology.md), [Black-Box Epistemology](/concepts/black-box-epistemology.md)。

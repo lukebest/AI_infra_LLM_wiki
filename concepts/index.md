@@ -4,6 +4,7 @@
 * [Adaptive Routing for NoC](adaptive-routing-noc.md) - D&T Ch.6-7 自适应路由：最小/非最小、Valiant VRR、VC 与拥塞感知；Duato 逃逸子网预告；DOR vs 自适应选型与 WSE/AllReduce
 * [Architecture Benchmark Methodology](architecture-benchmark-methodology.md) - 体系结构量化评估方法论：几何均值、Speedup 计算、SPEC/MLPerf 原则与常见数据陷阱
 * [Architecture Paper Reading Methodology](architecture-paper-reading-methodology.md) - 体系结构论文 5 步精读法 + 四大量化武器（归因/Roofline/敏感性/Pareto）；以 Luczynski HPDC'24 Wafer-Scale Reduce 为范例
+* [Attention Residuals](attention-residuals.md) - 深度方向选择性残差检索（AttnRes）；Kimi K3 引入，每 12 层一个边界，共 8 个 block；+2% latency 但 1.25× 计算优势
 * [Basic Data-Flow Processor](basic-data-flow-processor.md) - Dennis & Misunas (1975) 基本数据流处理器：token/actor 图、Instruction Cell + 仲裁/分发网络、decider/T-gate/merge 条件与迭代、Cell Block 两级存储作活跃指令 cache
 * [Black-Box Epistemology](black-box-epistemology.md) - 金观涛《控制论与科学方法论》Ch.5 — 可观察/可控制变量、打开/不打开黑箱、认识负反馈、反馈过度与可判定条件
 * [Branch Prediction](branch-prediction.md) - 分支预测：1-bit/2-bit 饱和计数器、局部与全局历史、TAGE/BTB、分支惩罚对 CPI 的量化影响
@@ -55,6 +56,7 @@
 * [ISA Design Principles](isa-design-principles.md) - 指令集设计原则：Load/Store、RISC-V 编码、CISC vs RISC 历史教训、寄存器与条件码权衡
 * [Layout-Aware NoC and Flexible Dataflow Accelerators](layout-aware-noc-flexible-dataflow.md) - NoC 感知 / 转换 / 消除矩阵数据 layout 的 4 类技术路线：L1 raw bytes / L2 multicast 隐式 / L3 reorder network 显式 / L4 runtime fission-fusion + L5 反向（编译期消除）；代表工作 MAERI / SIGMA / FEATHER(BIRRD+RIR) / Venus / SmartMem
 * [Linear and Ring Topology](linear-ring-topology.md) - 线形阵列与环形拓扑：度/直径/二分带宽度量，双向环即 1-D Torus，NoC/SAN/Die-to-Die 应用与 Chordal Ring 扩展
+* [Linear Attention Evolution](linear-attention-evolution.md) - GPT-2 → Linear Attention → DeltaNet → Gated DeltaNet → KDA 七年演化；核心是 attention 状态空间从 O(N) → O(1) + 选择性衰减 + 周期 reset
 * [LLM Distributed Training Collectives](llm-distributed-training-collectives.md) - H&P Ch.6/10 语境下 LLM 训练集体通信：AllReduce/AllGather/All-to-All；Ring vs Tree；DP/TP/PP/EP 配方；通信-计算重叠与 WSE 片上 vs 跨 wafer
 * [LPU Architecture](lpu-architecture.md) - Groq LPU 推理专用架构：SRAM-first、显式数据搬运、编译器调度
 * [M2N Communication](m2n-communication.md) - M2N 不对称通信模式，disaggregated inference 核心，4.2× NCCL 优化
@@ -88,6 +90,7 @@
 * [Reasoning Cliff](reasoning-cliff.md) - 推理悬崖：KV 线性增长使 HBM 饱和，scheduler 进入 convoy mode
 * [SpaDA Programming Language](spada-programming-language.md) - 空间数据流编程语言：place/dataflow/compute 三构造、async/await、GT4Py→CSL 编译管线与 checkerboard 路由/task 融合优化，WSE-2 上 14× 减码、260 TFlop/s stencil
 * [SRv6 Source Routing for AI Supercomputers](srv6-source-routing.md) - AI 超算静态源路由：SRv6 uSID uN 转发，禁用动态路由，与 MRC 协同
+* [Stable Latent MoE](stable-latent-moe.md) - Kimi K3 的 MoE 框架：latent-space experts（输入 down-project）+ Quantile Balancing + 898 experts (2 shared + 896 routed, 16+2 active)；FLOPs 减半
 * [SSD and NVMe Storage System](ssd-nvme-storage-system.md) - 片外存储：NAND/FTL/GC/写放大、RAID 0/1/5/6 写惩罚、NVMe 多队列与 PCIe 带宽、read() 延迟分解与 io_uring；WSE memoryX 与 CMX KV tier
 * [Superscalar CPU Research (2023-2026)](superscalar-cpu-research-2023-2026.md) - 2023-2026 超标量 CPU 顶会综述：异构旁路子系统（Constable/Bullseye/Prophet）、CVA6S+ 开源 baseline、OoO 边际饱和与 LLM memory-bound 优化；WSE/NPU 关联矩阵与核内同步 Gap
 * [Switching Elements](switching-elements.md) - 交换单元：空分/时分交换，开关阵列与共享存储器/总线，性能指标

@@ -5,6 +5,7 @@
 * [DeepSeek-V4](deepseek-v4.md) - V4 模型系列：1.6T/284B MoE，百万 token 上下文，CSA+HCA 混合注意力
 * [Graphcore IPU](graphcore-ipu.md) - Graphcore Colossus Mk2 IPU：1472 全互联 core、896 MB 分布式 SRAM，Voxel 论文用于 3D AI chip 仿真验证
 * [Kyber Rack](kyber-rack.md) - NVIDIA 第二种 rack 架构，144 GPU/rack，NVLink 7 switch，支持 NVL144/288/1152
+* [Moonshot AI Kimi K3](moonshot-ai-kimi-k3.md) - 月之暗面 2026-07 发布的 2.8T 参数开源 LLM；KDA + 周期 MLA + AttnRes 混合架构；原生视觉 + 1M context；激活 16 of 896 routed + 2 shared experts
 * [MRC (Multipath Reliable Connection)](mrc.md) - Multipath Reliable Connection：OpenAI/Microsoft/AMD/NVIDIA/Broadcom 联合设计的多路径 RDMA 传输协议，包 spraying + 选择性重传，100K+ GPU 训练集群生产部署
 * [NVIDIA Groq 3 LPX](nvidia-groq-3-lpx.md) - NVIDIA rack-scale 低延迟推理加速器，256 LPU，LP30 Samsung SF4，AFD，C2C 三级拓扑
 * [NVIDIA Vera Rubin NVL72](nvidia-vera-rubin-nvl72.md) - NVIDIA Vera Rubin GPU 系统，含 NVL72/144/288/576/1152 系统谱系

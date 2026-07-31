@@ -11,11 +11,12 @@ tags:
 - throughput
 timestamp: '2026-07-17T00:00:00Z'
 created: 2026-06-15
-updated: 2026-07-17
+updated: 2026-07-30
 sources:
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
 - raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf
+- raw/articles/22580 From GPT2 to Kimi3, Explained.md
 ---
 
 # Prefill-Decode Resource Divergence（Prefill vs Decode 资源分歧）
@@ -121,6 +122,8 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [FlashAttention-3](/concepts/flashattention-3.md) — Hopper 异步 + FP8（740 TFLOPs/s，相对 FA2 1.5–2×）
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — 3D 堆叠缓解 BW wall，prefill/decode 对 DRAM/NoC/SRAM 响应不同
 - [WaferLLM System](/concepts/waferllm-system.md) — 晶圆级 mesh：decode GEMV + KV shift vs GPU PagedAttention
+- [Linear Attention Evolution](/concepts/linear-attention-evolution.md) — 2026-07 Kimi K3 引入 KDA（O(1) 状态）替代 O(N) KV cache，从根本上改变 decode bandwidth 格局
+- [Moonshot AI Kimi K3](/entities/moonshot-ai-kimi-k3.md) — K3 是首个用 KDA+MLA 混合架构大规模验证"decode 不再是 O(N) bandwidth-bound"的模型
 - [MOCAP Prefill Pipelining](/papers/mocap-wafer-scale-chunked-pipelining.md) — prefill-only WSC：chunked pipeline 专攻长上下文 prefill
 - [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子形状、算术强度、Roofline、Prefill/Decode 对应
 - [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — KV spill 至 NVMe tier 的延迟与带宽

@@ -1,5 +1,6 @@
 # Paper
 
+* [22580: From GPT-2 to Kimi K3, Explained](ali-22580-from-gpt2-to-kimi3.md) - Ali (@waterloo_intern, Baseten) 2026-07-27 X 长文；从 GPT-2 attention 一路演化到 Kimi K3；核心论点"过去七年 LLM 真正的变化不是规模 22,580×，而是 attention 状态空间从 O(N) 到 O(1) 的选择/衰减/reset 范式"
 * [MegaScale-Infer](megascale-infer-2504.02263.md) - MegaScale-Infer：MoE disaggregated attention/FFN serving，ping-pong pipeline + M2N 通信库，1.90× 吞吐提升
 * [Resilient AI Supercomputer Networking using MRC and SRv6](resilient-ai-supercomputer-networking-mrc-srv6.md) - MRC+SRv6+multi-plane Clos：三管齐下的 100K+ GPU AI 训练网络容错方案，OpenAI/Microsoft 生产验证
 
