@@ -1,5 +1,11 @@
 # Bundle Update Log
 
+## 2026-08-13
+* **Ingest**: Corner To Corner Route 交互可视化 → `raw/articles/corner-to-corner-route.html` + 摘录 `raw/articles/corner-to-corner-route.md`（6×8 AIC 折叠多环、RBRG 转弯服务、相位约束最短路）。
+* **Creation**: [AIC Folded Multi-Ring NoC](/concepts/aic-folded-multi-ring-noc.md) — floorplan 常量、微边周期表、H→V→H 合法性、对角 194 cyc / 53.7 mm 复现。
+* **Update**: [Linear and Ring Topology](/concepts/linear-ring-topology.md), [Mesh and Torus Topology](/concepts/mesh-torus-topology.md), [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md), [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — 折叠多环/几何 DOR 交叉引用。
+* **Indexes**: 手动同步 `concepts/index.md`（+1 条）。
+
 ## 2026-07-30
 * **Ingest**: Ali (@waterloo_intern) '22580: From GPT2 to Kimi3, Explained' (2026-07-27 X 长文) → `raw/articles/22580 From GPT2 to Kimi3, Explained.md`（551 行，已存）。
 * **Creation** (entities): [Moonshot AI Kimi K3](/entities/moonshot-ai-kimi-k3.md) — K3 模型实体 + 架构骨架 + 与 GPT-2 尺度对照。

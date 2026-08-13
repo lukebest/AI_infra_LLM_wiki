@@ -10,8 +10,9 @@ tags:
 - torus
 - hypercube
 - wse
-timestamp: '2026-07-06T00:00:00Z'
+timestamp: '2026-08-13T00:00:00Z'
 created: 2026-07-06
+updated: 2026-08-13
 sources:
 - raw/articles/interconn-study-21d-day-09.md
 ---
@@ -126,6 +127,7 @@ William J. Dally, *Performance Analysis of k-ary n-cube Interconnection Networks
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — Mesh 上 XY 路由（Day 11）
 - [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md) — 拓扑/路由/流控四层
 - [NoC Router Pipeline Optimizations](/concepts/noc-router-pipeline-optimizations.md) — High-Radix / CMesh 与流水线优化（Day 18）
+- [AIC Folded Multi-Ring NoC](/concepts/aic-folded-multi-ring-noc.md) — hfold/vfold 在 26×33 mm reticle 上的几何实例
 - [Cerebras WSE](/entities/cerebras-wse.md) — 2-D Mesh 实例
 
 # Citations

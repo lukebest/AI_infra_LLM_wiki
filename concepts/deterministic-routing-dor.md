@@ -10,8 +10,9 @@ tags:
 - hypercube
 - dor
 - wse
-timestamp: '2026-07-06T00:00:00Z'
+timestamp: '2026-08-13T00:00:00Z'
 created: 2026-07-06
+updated: 2026-08-13
 sources:
 - raw/articles/interconn-study-21d-day-11.md
 ---
@@ -120,6 +121,7 @@ LLM 分块后流量局部化，最长路径不频繁；**芯片级 AllReduce** �
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — WSE 静态 color 路由
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Express/CMesh 变体
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — MIN 自路由（对比 DOR）
+- [AIC Folded Multi-Ring NoC](/concepts/aic-folded-multi-ring-noc.md) — 跨行 H→V→H 相位约束最短路（几何 DOR）
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 最小/VRR/VC（Day 12）
 - [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — CDG / Torus≥2 VC（Day 13）
 - [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md) — 逃逸层常用 DOR（Day 14）

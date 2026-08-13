@@ -2,6 +2,7 @@
 
 * [3D-Stacked AI Chip](3d-stacked-ai-chip.md) - 3D 堆叠 AI 芯片：TSV 垂直堆叠 DRAM bank 于 AI core 之上，分布式内存与专用总线带来带宽扩展与利用率新挑战
 * [Adaptive Routing for NoC](adaptive-routing-noc.md) - D&T Ch.6-7 自适应路由：最小/非最小、Valiant VRR、VC 与拥塞感知；Duato 逃逸子网预告；DOR vs 自适应选型与 WSE/AllReduce
+* [AIC Folded Multi-Ring NoC](aic-folded-multi-ring-noc.md) - 6×8 AIC 折叠多环：真比例 reticle、RBRG 10 cyc 转弯、相位约束最短路径；对角 Core00→47 为 194 cyc / 53.7 mm
 * [Architecture Benchmark Methodology](architecture-benchmark-methodology.md) - 体系结构量化评估方法论：几何均值、Speedup 计算、SPEC/MLPerf 原则与常见数据陷阱
 * [Architecture Paper Reading Methodology](architecture-paper-reading-methodology.md) - 体系结构论文 5 步精读法 + 四大量化武器（归因/Roofline/敏感性/Pareto）；以 Luczynski HPDC'24 Wafer-Scale Reduce 为范例
 * [Attention Residuals](attention-residuals.md) - 深度方向选择性残差检索（AttnRes）；Kimi K3 引入，每 12 层一个边界，共 8 个 block；+2% latency 但 1.25× 计算优势
