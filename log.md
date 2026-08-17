@@ -1,5 +1,11 @@
 # Bundle Update Log
 
+## 2026-08-13
+* **Ingest**: Corner To Corner Route 交互可视化 → `raw/articles/corner-to-corner-route.html` + 摘录 `raw/articles/corner-to-corner-route.md`（6×8 AIC 折叠多环、RBRG 转弯服务、相位约束最短路）。
+* **Creation**: [AIC Folded Multi-Ring NoC](/concepts/aic-folded-multi-ring-noc.md) — floorplan 常量、微边周期表、H→V→H 合法性、对角 194 cyc / 53.7 mm 复现。
+* **Update**: [Linear and Ring Topology](/concepts/linear-ring-topology.md), [Mesh and Torus Topology](/concepts/mesh-torus-topology.md), [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md), [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — 折叠多环/几何 DOR 交叉引用。
+* **Indexes**: 手动同步 `concepts/index.md`（+1 条）。
+
 ## 2026-07-31
 * **Layer 1 Ingest (New Study Series)**: 3D NoC 研究 Phase 1（Layer 1 物理层）开篇，4 raw 学记 → `raw/articles/3d-noc-study-{01-tsv-process-tech,02-monolithic-vs-tsv,03-hybrid-bonding,04-3d-mesh-baseline}.md`（侧重 TSV 物理 + 三路线对比 + 商业现实 + Feero baseline）。
 * **Creation** (papers): [Katti TSV 2010](papers/katti-tsv-technology-roadmap-2010.md) — TSV 综述原典入口；[Batude Monolithic 2011](papers/batude-monolithic-3d-review-2011.md) — Monolithic 综述入口；[Hybrid Bonding Recent](papers/hybrid-bonding-3d-integration-recent.md) — Cu-Cu 直接键合综述；[Feero 3D Mesh Stan 2008](papers/feero-3d-mesh-noc-stan-2008.md) — 3-D Mesh NoC 拓扑 baseline。

@@ -1,0 +1,1798 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>Corner To Corner Route</title>
+<style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
+</head>
+<body>
+<iframe sandbox="allow-scripts" referrerpolicy="no-referrer" title="Corner To Corner Route" srcdoc="&lt;!doctype html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+&lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
+&lt;title&gt;Corner To Corner Route&lt;/title&gt;
+&lt;style&gt;:root {
+  color-scheme: light dark;
+  background-color: var(
+    --background,
+    var(--color-background-primary, light-dark(rgb(255 255 255), rgb(24 24 24)))
+  ) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: var(
+    --color-background-primary,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --card: color-mix(in oklab, var(--foreground) 5%, var(--background));
+  --card-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --popover: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255), rgb(45 45 45))
+  );
+  --popover-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --primary: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --primary-foreground: var(
+    --color-text-inverse,
+    light-dark(rgb(255 255 255), rgb(13 13 13))
+  );
+  --secondary: var(
+    --color-background-secondary,
+    light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%))
+  );
+  --secondary-foreground: var(
+    --color-text-primary,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: var(
+    --color-text-secondary,
+    light-dark(rgb(26 28 31 / 49.4%), rgb(255 255 255 / 49.8%))
+  );
+  --accent: var(
+    --color-background-info,
+    light-dark(rgb(229 242 255), rgb(13 39 63))
+  );
+  --accent-foreground: var(
+    --color-text-info,
+    light-dark(rgb(51 156 255), rgb(131 195 255))
+  );
+  --destructive: var(
+    --color-text-warning,
+    light-dark(rgb(226 85 7), rgb(255 133 73))
+  );
+  --border: var(
+    --color-border-secondary,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+  --input: var(
+    --color-border-primary,
+    light-dark(
+      rgb(26 28 31 / 11.8%),
+      color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+    )
+  );
+  --ring: var(
+    --color-ring-primary,
+    light-dark(rgb(51 156 255), rgb(131 195 255 / 76%))
+  );
+  --font-size-base: var(--font-text-md-size, 14px);
+  --blue: light-dark(rgb(51 156 255), rgb(51 156 255));
+  --orange: light-dark(rgb(226 85 7), rgb(251 106 34));
+  --green: light-dark(rgb(0 162 64), rgb(64 201 119));
+  --red: light-dark(rgb(224 46 42), rgb(255 103 100));
+  --purple: light-dark(rgb(146 79 247), rgb(173 123 249));
+  --yellow: light-dark(rgb(255 195 0), rgb(255 210 64));
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, &quot;Segoe UI&quot;, sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, &quot;SF Mono&quot;, Menlo, Consolas, &quot;Liberation Mono&quot;,
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: var(--border-radius-lg, 12.5px);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; viewBox=&#x27;0 0 17 17&#x27;%3E%3Cpath d=&#x27;M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z&#x27;/%3E%3C/svg%3E&quot;);
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+}
+
+:root[data-theme=&quot;light&quot;] {
+  color-scheme: light;
+}
+
+:root[data-theme=&quot;dark&quot;] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html &gt; body {
+  /* Preserve MCP aliases for older inline renderers without creating :root cycles. */
+  --color-background-primary: var(
+    --background,
+    light-dark(rgb(255 255 255), rgb(24 24 24))
+  );
+  --color-text-primary: var(
+    --foreground,
+    light-dark(rgb(26 28 31), rgb(255 255 255))
+  );
+  --color-border-secondary: var(
+    --border,
+    light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%))
+  );
+
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium, 500);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--foreground);
+  font: inherit;
+  text-align: start;
+}
+
+.table :is(th, td) {
+  padding-block: 10px;
+  padding-inline: 0 24px;
+  overflow-wrap: anywhere;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-responsive &gt; .table :is(th, td) {
+  overflow-wrap: break-word;
+}
+
+.table :is(th, td):last-child {
+  padding-inline-end: 0;
+}
+
+.table :is(caption, thead th) {
+  font-weight: 600;
+}
+
+.table thead th {
+  padding-block: 8px;
+  border-bottom-color: color-mix(in srgb, var(--foreground) 16%, transparent);
+}
+
+.table tbody tr:last-child :is(th, td) {
+  border-bottom: 0;
+}
+
+.table.table-sm :is(th, td) {
+  padding-block: 6px;
+}
+
+.table.table-sm :is(th, td):not(:last-child) {
+  padding-inline-end: 16px;
+}
+
+.table :is(.text-end, [align=&quot;right&quot;]) {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+
+.table :is(.text-center, [align=&quot;center&quot;]) {
+  text-align: center;
+}
+
+.table .text-nowrap {
+  white-space: nowrap;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget &gt; :not(.card) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls &gt; .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls &gt; .form-label &gt; :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type=&quot;file&quot;] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type=&quot;file&quot;]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type=&quot;file&quot;]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type=&quot;color&quot;] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type=&quot;color&quot;]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type=&quot;checkbox&quot;]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type=&quot;checkbox&quot;]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: &quot;&quot;;
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type=&quot;radio&quot;] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type=&quot;radio&quot;]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: &quot;&quot;;
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+    [aria-pressed=&quot;true&quot;],
+    [aria-selected=&quot;true&quot;],
+    .is-selected
+  ) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed=&quot;true&quot;], [aria-selected=&quot;true&quot;], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget &gt; svg {
+  width: 100%;
+}
+
+/* Model-authored chart rules can otherwise stretch icons after these styles load. */
+svg.lucide {
+  display: block;
+  width: 16px !important;
+  height: 16px !important;
+  flex: none;
+  margin: 0 !important;
+  stroke-width: 1.6;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html&gt;body{padding:0}&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id=&quot;rfroute&quot; class=&quot;rfroute-root&quot;&gt;
+  &lt;header class=&quot;rfroute-header&quot;&gt;
+    &lt;div&gt;
+      &lt;h2&gt;6×8 AIC · folded multi-ring shortest path&lt;/h2&gt;
+      &lt;div class=&quot;text-small text-muted&quot;&gt;26,000 × 33,000 µm true-proportion reticle · 400 µm/cycle · RBRG turn = 5 cyc ingress + 5 cyc egress&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/header&gt;
+
+  &lt;div class=&quot;rfroute-picker&quot; aria-label=&quot;Shortest path endpoints&quot;&gt;
+    &lt;label class=&quot;form-label&quot;&gt;Source&lt;select id=&quot;rfroute-src&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;&lt;/label&gt;
+    &lt;button id=&quot;rfroute-swap&quot; class=&quot;btn btn-secondary&quot; type=&quot;button&quot; aria-label=&quot;Swap source and destination&quot;&gt;⇄&lt;/button&gt;
+    &lt;label class=&quot;form-label&quot;&gt;Destination&lt;select id=&quot;rfroute-dst&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;&lt;/label&gt;
+    &lt;output id=&quot;rfroute-result&quot; class=&quot;rfroute-result&quot; aria-live=&quot;polite&quot;&gt;&lt;/output&gt;
+  &lt;/div&gt;
+  &lt;div id=&quot;rfroute-route-id&quot; class=&quot;rfroute-route-id text-small text-muted&quot;&gt;&lt;/div&gt;
+
+  &lt;section class=&quot;rfroute-breakdown&quot; aria-labelledby=&quot;rfroute-breakdown-heading&quot;&gt;
+    &lt;div class=&quot;rfroute-breakdown-head&quot;&gt;
+      &lt;div&gt;
+        &lt;h3 id=&quot;rfroute-breakdown-heading&quot;&gt;Total cycle breakdown&lt;/h3&gt;
+        &lt;div class=&quot;text-small text-muted&quot;&gt;recomputed from the selected directed route · every subtotal is additive&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;output id=&quot;rfroute-breakdown-equation&quot; class=&quot;rfroute-breakdown-equation&quot; aria-live=&quot;polite&quot; aria-atomic=&quot;true&quot;&gt;&lt;/output&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;rfroute-breakdown-table&quot; role=&quot;table&quot; aria-label=&quot;Selected route cycle calculation&quot;&gt;
+      &lt;div class=&quot;rfroute-breakdown-row rfroute-breakdown-header&quot; role=&quot;row&quot;&gt;
+        &lt;span role=&quot;columnheader&quot;&gt;Route component&lt;/span&gt;
+        &lt;span role=&quot;columnheader&quot;&gt;Calculation&lt;/span&gt;
+        &lt;span role=&quot;columnheader&quot;&gt;Subtotal&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div id=&quot;rfroute-breakdown-rows&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;rfroute-breakdown-row rfroute-breakdown-total&quot; role=&quot;row&quot;&gt;
+        &lt;span role=&quot;rowheader&quot;&gt;Selected-route total&lt;/span&gt;
+        &lt;span id=&quot;rfroute-breakdown-total-note&quot;&gt;&lt;/span&gt;
+        &lt;strong id=&quot;rfroute-breakdown-total&quot;&gt;0 cyc&lt;/strong&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;rfroute-section&quot; aria-labelledby=&quot;rfroute-overview-heading&quot;&gt;
+    &lt;div class=&quot;rfroute-heading&quot;&gt;
+      &lt;h3 id=&quot;rfroute-overview-heading&quot;&gt;Reticle floorplan&lt;/h3&gt;
+      &lt;span class=&quot;text-small text-muted&quot;&gt;each typical physical dimension is annotated once · selected path highlighted&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;rfroute-overview-wrap&quot;&gt;
+      &lt;svg id=&quot;rfroute-overview&quot; class=&quot;rfroute-overview&quot; viewBox=&quot;0 0 26000 33000&quot; preserveAspectRatio=&quot;xMidYMid meet&quot; role=&quot;img&quot; aria-labelledby=&quot;rfroute-title rfroute-desc&quot;&gt;&lt;/svg&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section class=&quot;rfroute-section rfroute-sequence&quot; aria-labelledby=&quot;rfroute-sequence-heading&quot;&gt;
+    &lt;div class=&quot;rfroute-heading&quot;&gt;
+      &lt;div&gt;
+        &lt;h3 id=&quot;rfroute-sequence-heading&quot;&gt;Ordered link-cycle equation&lt;/h3&gt;
+        &lt;div class=&quot;text-small text-muted&quot;&gt;left to right follows the selected route · zero-cycle stations remain visible&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;output id=&quot;rfroute-sequence-summary&quot; class=&quot;rfroute-sequence-summary&quot; aria-live=&quot;polite&quot;&gt;&lt;/output&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;rfroute-sequence-equation&quot; class=&quot;rfroute-sequence-equation&quot; role=&quot;math&quot; aria-label=&quot;Ordered sum of every selected route edge&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;rfroute-link-ledger&quot; role=&quot;table&quot; aria-label=&quot;Ordered per-link cycle breakdown&quot;&gt;
+      &lt;div class=&quot;rfroute-link-row rfroute-link-header&quot; role=&quot;row&quot;&gt;
+        &lt;span role=&quot;columnheader&quot;&gt;Step&lt;/span&gt;
+        &lt;span role=&quot;columnheader&quot;&gt;Directed link / station action&lt;/span&gt;
+        &lt;span role=&quot;columnheader&quot;&gt;Distance&lt;/span&gt;
+        &lt;span role=&quot;columnheader&quot;&gt;Cycle breakdown&lt;/span&gt;
+        &lt;span role=&quot;columnheader&quot;&gt;Term&lt;/span&gt;
+        &lt;span role=&quot;columnheader&quot;&gt;Running total&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;div id=&quot;rfroute-link-rows&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;details class=&quot;rfroute-section rfroute-advanced&quot;&gt;
+    &lt;summary&gt;&lt;span&gt;Advanced latency parameters&lt;/span&gt;&lt;span id=&quot;rfroute-extra&quot; class=&quot;text-small text-muted&quot;&gt;extra logic +0 cyc&lt;/span&gt;&lt;/summary&gt;
+    &lt;div class=&quot;rfroute-inputs&quot;&gt;
+      &lt;label class=&quot;form-label&quot;&gt;Straight RBRG&lt;input class=&quot;form-control&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;1&quot; value=&quot;0&quot; data-latency=&quot;straight&quot; /&gt;&lt;/label&gt;
+      &lt;label class=&quot;form-label&quot;&gt;Near-turn extra (beyond 10)&lt;input class=&quot;form-control&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;1&quot; value=&quot;0&quot; data-latency=&quot;near&quot; /&gt;&lt;/label&gt;
+      &lt;label class=&quot;form-label&quot;&gt;Far-turn extra (beyond 10)&lt;input class=&quot;form-control&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;1&quot; value=&quot;0&quot; data-latency=&quot;far&quot; /&gt;&lt;/label&gt;
+      &lt;label class=&quot;form-label&quot;&gt;CS pass&lt;input class=&quot;form-control&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;1&quot; value=&quot;0&quot; data-latency=&quot;cs&quot; /&gt;&lt;/label&gt;
+      &lt;label class=&quot;form-label&quot;&gt;PIPE pass&lt;input class=&quot;form-control&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;1&quot; value=&quot;0&quot; data-latency=&quot;pipe&quot; /&gt;&lt;/label&gt;
+      &lt;label class=&quot;form-label&quot;&gt;Source injection&lt;input class=&quot;form-control&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;1&quot; value=&quot;0&quot; data-latency=&quot;inject&quot; /&gt;&lt;/label&gt;
+      &lt;label class=&quot;form-label&quot;&gt;Destination ejection&lt;input class=&quot;form-control&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;1&quot; value=&quot;0&quot; data-latency=&quot;eject&quot; /&gt;&lt;/label&gt;
+      &lt;label class=&quot;form-label&quot;&gt;Near-turn FIFO wait&lt;input class=&quot;form-control&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;1&quot; value=&quot;0&quot; data-latency=&quot;qnear&quot; /&gt;&lt;/label&gt;
+      &lt;label class=&quot;form-label&quot;&gt;Far-turn FIFO wait&lt;input class=&quot;form-control&quot; type=&quot;number&quot; min=&quot;0&quot; step=&quot;1&quot; value=&quot;0&quot; data-latency=&quot;qfar&quot; /&gt;&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;rfroute-formula&quot; class=&quot;rfroute-formula&quot;&gt;&lt;/div&gt;
+  &lt;/details&gt;
+&lt;/div&gt;
+
+&lt;style&gt;
+  #rfroute { width:100%; color:var(--foreground); }
+  #rfroute h2, #rfroute h3, #rfroute strong { font-weight:500; }
+  #rfroute h2, #rfroute h3 { margin:0; }
+  #rfroute .rfroute-header { display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:.6rem 1rem; padding-bottom:.7rem; border-bottom:1px solid var(--border); }
+  #rfroute .rfroute-picker { display:grid; grid-template-columns:minmax(10rem,.8fr) auto minmax(10rem,.8fr) minmax(17rem,1.35fr); gap:.65rem; align-items:end; margin-top:.9rem; }
+  #rfroute .rfroute-picker label { min-width:0; }
+  #rfroute .rfroute-picker select { width:100%; margin-top:.2rem; }
+  #rfroute .rfroute-picker button { min-width:2.6rem; height:2.4rem; }
+  #rfroute .rfroute-result { min-height:2.4rem; display:flex; align-items:center; padding:.35rem .65rem; border-left:3px solid var(--primary); font-size:1.05rem; font-weight:500; font-variant-numeric:tabular-nums; }
+  #rfroute .rfroute-route-id { min-height:1.4rem; margin-top:.4rem; }
+  #rfroute .rfroute-breakdown { margin-top:.9rem; border-block:1px solid var(--border); padding:.7rem 0 .8rem; }
+  #rfroute .rfroute-breakdown-head { display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:.45rem 1.2rem; margin-bottom:.55rem; }
+  #rfroute .rfroute-breakdown-equation { color:var(--foreground); font-size:.95rem; font-weight:500; font-variant-numeric:tabular-nums; text-align:right; }
+  #rfroute .rfroute-breakdown-table { border-top:1px solid var(--border); }
+  #rfroute .rfroute-breakdown-row { display:grid; grid-template-columns:minmax(13rem,1.45fr) minmax(10rem,.85fr) minmax(6rem,.45fr); align-items:center; column-gap:1rem; min-width:0; border-bottom:1px solid color-mix(in srgb,var(--border) 65%,transparent); }
+  #rfroute .rfroute-breakdown-row &gt; * { min-width:0; padding:.38rem .25rem; }
+  #rfroute .rfroute-breakdown-row &gt; :nth-child(2), #rfroute .rfroute-breakdown-row &gt; :nth-child(3) { text-align:right; font-variant-numeric:tabular-nums; }
+  #rfroute .rfroute-breakdown-header { color:var(--muted-foreground); font-size:.75rem; font-weight:500; letter-spacing:.025em; }
+  #rfroute .rfroute-breakdown-component { display:flex; flex-direction:column; gap:.05rem; }
+  #rfroute .rfroute-breakdown-component small { color:var(--muted-foreground); font-size:.74rem; font-weight:400; }
+  #rfroute .rfroute-breakdown-math { color:var(--muted-foreground); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.84rem; }
+  #rfroute .rfroute-breakdown-cycles { font-weight:500; }
+  #rfroute .rfroute-breakdown-extra .rfroute-breakdown-component { color:var(--viz-series-4); }
+  #rfroute .rfroute-breakdown-zero { color:var(--muted-foreground); }
+  #rfroute .rfroute-breakdown-total { border-bottom:0; border-top:1.5px solid var(--foreground); margin-top:-1px; font-weight:500; }
+  #rfroute .rfroute-breakdown-total &gt; :last-child { color:var(--primary); font-size:1.03rem; }
+  #rfroute .rfroute-section { margin-top:1.25rem; }
+  #rfroute .rfroute-heading { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:.35rem 1rem; margin-bottom:.5rem; }
+  #rfroute .rfroute-overview-wrap { display:block; width:100%; overflow:auto; scrollbar-gutter:stable both-edges; }
+  #rfroute .rfroute-overview { display:block; width:100%; min-width:64rem; max-width:90rem; height:auto; margin-inline:auto; aspect-ratio:32800/39800; overflow:hidden; border:1px solid var(--border); background:var(--background); shape-rendering:geometricPrecision; text-rendering:geometricPrecision; }
+  #rfroute .rfroute-sequence-summary { color:var(--foreground); font-size:.9rem; font-weight:500; font-variant-numeric:tabular-nums; }
+  #rfroute .rfroute-sequence-equation { display:flex; flex-wrap:wrap; align-items:baseline; gap:.24rem .08rem; padding:.7rem .15rem .8rem; border-block:1px solid var(--border); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-variant-numeric:tabular-nums; line-height:1.25; }
+  #rfroute .rfroute-sequence-term { display:inline-flex; align-items:baseline; gap:.12rem; padding:.12rem .08rem; border:0; border-bottom:1px solid transparent; border-radius:0; background:transparent; color:var(--foreground); font:inherit; cursor:pointer; }
+  #rfroute .rfroute-sequence-term::before { content:&#x27;+&#x27;; margin-right:.16rem; color:var(--muted-foreground); }
+  #rfroute .rfroute-sequence-term:first-child::before { content:&#x27;&#x27;; margin:0; }
+  #rfroute .rfroute-sequence-term:hover, #rfroute .rfroute-sequence-term:focus-visible, #rfroute .rfroute-sequence-term.is-active { border-bottom-color:var(--primary); outline:none; color:var(--primary); }
+  #rfroute .rfroute-sequence-index { color:var(--muted-foreground); font-size:.66em; vertical-align:super; }
+  #rfroute .rfroute-sequence-value { font-weight:500; }
+  #rfroute .rfroute-sequence-equals { display:inline-flex; align-items:baseline; gap:.35rem; margin-left:.2rem; padding:.12rem .08rem; font-weight:500; color:var(--primary); }
+  #rfroute .rfroute-link-ledger { border-bottom:1px solid var(--border); }
+  #rfroute .rfroute-link-row { display:grid; grid-template-columns:3.25rem minmax(13rem,1.45fr) minmax(6.2rem,.5fr) minmax(14rem,1.1fr) minmax(5rem,.42fr) minmax(6.5rem,.55fr); align-items:center; gap:.75rem; border-bottom:1px solid color-mix(in srgb,var(--border) 60%,transparent); }
+  #rfroute .rfroute-link-row &gt; * { min-width:0; padding:.38rem .16rem; }
+  #rfroute .rfroute-link-row &gt; :nth-child(n+3) { text-align:right; font-variant-numeric:tabular-nums; }
+  #rfroute .rfroute-link-header { color:var(--muted-foreground); font-size:.72rem; font-weight:500; letter-spacing:.02em; }
+  #rfroute .rfroute-link-step { color:var(--muted-foreground); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.8rem; }
+  #rfroute .rfroute-link-name { display:flex; flex-direction:column; gap:.05rem; }
+  #rfroute .rfroute-link-name small { color:var(--muted-foreground); font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.7rem; overflow-wrap:anywhere; }
+  #rfroute .rfroute-link-distance, #rfroute .rfroute-link-calc, #rfroute .rfroute-link-term, #rfroute .rfroute-link-running { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.8rem; }
+  #rfroute .rfroute-link-calc { color:var(--muted-foreground); overflow-wrap:anywhere; }
+  #rfroute .rfroute-link-term, #rfroute .rfroute-link-running { font-weight:500; }
+  #rfroute .rfroute-link-row.is-active { background:color-mix(in srgb,var(--primary) 8%,var(--background)); }
+  #rfroute .rfroute-link-row.is-active .rfroute-link-step, #rfroute .rfroute-link-row.is-active .rfroute-link-term { color:var(--primary); }
+  #rfroute .rfroute-link-empty { padding:.75rem .15rem; color:var(--muted-foreground); }
+  #rfroute .rfroute-inputs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.7rem 1rem; }
+  #rfroute .rfroute-inputs label { min-width:0; }
+  #rfroute .rfroute-inputs input { width:100%; margin-top:.2rem; }
+  #rfroute .rfroute-formula { margin-top:.75rem; padding:.65rem; border-left:3px solid var(--primary); background:color-mix(in srgb,var(--muted) 24%,var(--background)); font-variant-numeric:tabular-nums; overflow-wrap:anywhere; }
+  #rfroute .rfroute-advanced { border-top:1px solid var(--border); padding-top:.7rem; }
+  #rfroute .rfroute-advanced summary { display:flex; justify-content:space-between; gap:1rem; cursor:pointer; font-weight:500; }
+  #rfroute .rfroute-advanced[open] summary { margin-bottom:.75rem; }
+
+  #rfroute .rr-reticle { fill:var(--background); stroke:var(--foreground); stroke-width:1; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-keepout { fill:color-mix(in srgb,var(--border) 18%,transparent); }
+  #rfroute .rr-corridor { fill:color-mix(in srgb,var(--viz-series-4) 9%,transparent); }
+  #rfroute .rr-field { fill:none; stroke:var(--border); stroke-width:1; stroke-dasharray:90 70; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-ha { fill:color-mix(in srgb,var(--viz-series-1) 32%,var(--background)); }
+  #rfroute .rr-hb { fill:color-mix(in srgb,var(--viz-series-1) 18%,var(--background)); }
+  #rfroute .rr-va { fill:color-mix(in srgb,var(--viz-series-2) 32%,var(--background)); }
+  #rfroute .rr-vb { fill:color-mix(in srgb,var(--viz-series-2) 18%,var(--background)); }
+  #rfroute .rr-close-h { fill:none; stroke:color-mix(in srgb,var(--viz-series-1) 24%,var(--background)); stroke-width:105; }
+  #rfroute .rr-close-v { fill:none; stroke:color-mix(in srgb,var(--viz-series-2) 24%,var(--background)); stroke-width:105; }
+  #rfroute .rr-core { fill:color-mix(in srgb,var(--viz-series-1) 10%,var(--background)); stroke:var(--viz-series-1); stroke-width:1; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-core.source { fill:color-mix(in srgb,var(--viz-series-4) 42%,var(--background)); stroke:var(--viz-series-4); stroke-width:2.5; }
+  #rfroute .rr-core.destination { fill:color-mix(in srgb,var(--viz-series-5) 42%,var(--background)); stroke:var(--viz-series-5); stroke-width:2.5; }
+  #rfroute .rr-rbrg { fill:color-mix(in srgb,var(--viz-series-3) 30%,var(--background)); stroke:var(--viz-series-3); stroke-width:.8; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-rbrg-pass { fill:color-mix(in srgb,var(--viz-series-4) 32%,var(--background)); stroke:var(--viz-series-4); stroke-width:2; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-rbrg-turn { fill:var(--viz-series-4); stroke:var(--foreground); stroke-width:2; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-path-outline { fill:none; stroke:var(--background); stroke-width:260; stroke-linecap:round; stroke-linejoin:round; opacity:.9; }
+  #rfroute .rr-path { fill:none; stroke:var(--viz-series-4); stroke-width:120; stroke-linecap:round; stroke-linejoin:round; }
+  #rfroute .rr-core-id { fill:var(--muted-foreground); font-size:360px; font-weight:400; text-anchor:middle; dominant-baseline:middle; }
+  #rfroute .rr-core-id.selected { fill:var(--foreground); font-weight:500; }
+  #rfroute .rr-badge { fill:var(--background); stroke:var(--viz-series-4); stroke-width:3; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-badge-text { fill:var(--foreground); font-size:360px; font-weight:500; text-anchor:middle; dominant-baseline:middle; }
+  #rfroute .rr-label-bg { fill:color-mix(in srgb,var(--background) 94%,transparent); stroke:var(--border); stroke-width:1; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-label { fill:var(--foreground); font-size:360px; font-weight:500; text-anchor:middle; dominant-baseline:middle; }
+  #rfroute .rr-label-sub { fill:var(--muted-foreground); font-size:280px; font-weight:400; text-anchor:middle; dominant-baseline:middle; }
+  #rfroute .rr-dim-ext { fill:none; stroke:color-mix(in srgb,var(--foreground) 66%,transparent); stroke-width:1; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-dim-line { fill:none; stroke:var(--foreground); stroke-width:1.35; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-dim-tick { stroke:var(--foreground); stroke-width:1.6; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-dim-leader { fill:none; stroke:var(--foreground); stroke-width:1.25; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-dim-dot { fill:var(--viz-series-4); stroke:var(--background); stroke-width:1.5; vector-effect:non-scaling-stroke; }
+  #rfroute .rr-dim-label { fill:var(--foreground); font-size:420px; font-weight:500; text-anchor:middle; dominant-baseline:middle; font-variant-numeric:tabular-nums; paint-order:stroke; stroke:var(--background); stroke-width:150px; stroke-linejoin:round; }
+  #rfroute .rr-dim-note { fill:var(--muted-foreground); font-size:320px; font-weight:400; text-anchor:middle; dominant-baseline:middle; font-variant-numeric:tabular-nums; paint-order:stroke; stroke:var(--background); stroke-width:120px; stroke-linejoin:round; }
+  #rfroute .rr-dim-key { fill:var(--viz-series-4); font-size:300px; font-weight:500; text-anchor:middle; dominant-baseline:middle; paint-order:stroke; stroke:var(--background); stroke-width:110px; }
+  #rfroute .rr-turn-service { fill:none; stroke:var(--viz-series-4); stroke-width:4; vector-effect:non-scaling-stroke; stroke-linecap:round; stroke-linejoin:round; }
+  #rfroute .rr-turn-service-label { fill:var(--viz-series-4); font-size:440px; font-weight:500; text-anchor:middle; dominant-baseline:middle; font-variant-numeric:tabular-nums; paint-order:stroke; stroke:var(--background); stroke-width:150px; stroke-linejoin:round; }
+  #rfroute .rr-route-turn-label { fill:var(--viz-series-4); font-size:320px; font-weight:500; text-anchor:start; dominant-baseline:middle; paint-order:stroke; stroke:var(--background); stroke-width:130px; stroke-linejoin:round; }
+
+  @media(max-width:760px){
+    #rfroute .rfroute-picker { grid-template-columns:1fr auto 1fr; }
+    #rfroute .rfroute-result { grid-column:1/-1; }
+    #rfroute .rfroute-inputs { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    #rfroute .rfroute-link-row { grid-template-columns:2.8rem minmax(10rem,1.25fr) minmax(5.5rem,.55fr) minmax(11rem,1fr) minmax(5rem,.48fr) minmax(6rem,.55fr); gap:.5rem; }
+  }
+  @media(max-width:620px){
+    #rfroute .rfroute-picker { grid-template-columns:1fr auto; }
+    #rfroute .rfroute-picker label:first-child { grid-column:1; }
+    #rfroute .rfroute-picker button { grid-column:2; grid-row:1/3; align-self:center; }
+    #rfroute .rfroute-picker label:nth-of-type(2) { grid-column:1; }
+    #rfroute .rfroute-result { grid-column:1/-1; }
+    #rfroute .rfroute-inputs { grid-template-columns:1fr; }
+    #rfroute .rfroute-breakdown-head { align-items:flex-start; }
+    #rfroute .rfroute-breakdown-equation { width:100%; text-align:left; }
+    #rfroute .rfroute-breakdown-header { display:none; }
+    #rfroute .rfroute-breakdown-row { grid-template-columns:minmax(0,1fr) auto; gap:.08rem .7rem; padding:.16rem 0; }
+    #rfroute .rfroute-breakdown-row &gt; * { padding:.2rem .15rem; }
+    #rfroute .rfroute-breakdown-row &gt; :first-child { grid-column:1; grid-row:1; }
+    #rfroute .rfroute-breakdown-row &gt; :nth-child(2) { grid-column:1; grid-row:2; text-align:left; padding-top:0; }
+    #rfroute .rfroute-breakdown-row &gt; :nth-child(3) { grid-column:2; grid-row:1 / span 2; align-self:center; }
+    #rfroute .rfroute-sequence-summary { width:100%; }
+    #rfroute .rfroute-sequence-equation { gap:.2rem .04rem; font-size:.86rem; }
+    #rfroute .rfroute-link-header { display:none; }
+    #rfroute .rfroute-link-row { grid-template-columns:2.45rem minmax(0,1fr) auto; grid-template-rows:auto auto auto; gap:.02rem .55rem; padding:.3rem 0; }
+    #rfroute .rfroute-link-row &gt; * { padding:.08rem .1rem; text-align:left !important; }
+    #rfroute .rfroute-link-step { grid-column:1; grid-row:1 / span 3; align-self:start; }
+    #rfroute .rfroute-link-name { grid-column:2; grid-row:1; }
+    #rfroute .rfroute-link-distance { grid-column:3; grid-row:1; }
+    #rfroute .rfroute-link-calc { grid-column:2 / span 2; grid-row:2; }
+    #rfroute .rfroute-link-term { grid-column:2; grid-row:3; }
+    #rfroute .rfroute-link-running { grid-column:3; grid-row:3; text-align:right !important; }
+    #rfroute .rr-long { display:none; }
+    #rfroute .rfroute-overview-wrap { margin-inline:-.25rem; padding-inline:.25rem; }
+  }
+&lt;/style&gt;
+
+&lt;script&gt;
+(() =&gt; {
+  const root=document.getElementById(&#x27;rfroute&#x27;);
+  if(!root || root.dataset.ready===&#x27;true&#x27;) return;
+  root.dataset.ready=&#x27;true&#x27;;
+  const svg=root.querySelector(&#x27;#rfroute-overview&#x27;);
+  const srcSelect=root.querySelector(&#x27;#rfroute-src&#x27;),dstSelect=root.querySelector(&#x27;#rfroute-dst&#x27;);
+  const NS=&#x27;http://www.w3.org/2000/svg&#x27;;
+  const W=26000,H=33000,E=500,lane=105,fieldW=25000,fieldH=32000,pitchX=3130,pitchY=5340;
+  const vX=[710,3380,3840,6510,6970,9640,10100,12770,13230,15900,16360,19030,19490,22160,22620,25290];
+  const hY=[710,5590,6050,10930,11390,16270,16730,21610,22070,26950,27410,32290];
+  const coreX=Array.from({length:8},(_,c)=&gt;2045+3130*c);
+  const make=(name,attrs={},text=&#x27;&#x27;)=&gt;{const n=document.createElementNS(NS,name);Object.entries(attrs).forEach(([k,v])=&gt;n.setAttribute(k,String(v)));if(text!==&#x27;&#x27;)n.textContent=text;return n;};
+  const append=(p,...nodes)=&gt;nodes.forEach(n=&gt;p.appendChild(n));
+  const ringPath=(ox,oy,ow,oh,ix,iy,iw,ih)=&gt;`M${ox} ${oy}H${ox+ow}V${oy+oh}H${ox}Z M${ix} ${iy}V${iy+ih}H${ix+iw}V${iy}Z`;
+  const corePath=(x0,y0)=&gt;`M${x0+420} ${y0+315}H${x0+2670}V${y0+420}H${x0+2775}V${y0+4880}H${x0+2670}V${y0+4985}H${x0+420}V${y0+4880}H${x0+315}V${y0+420}H${x0+420}Z`;
+  const cell=(r,c)=&gt;({x0:E+c*pitchX,y0:E+r*pitchY,cx:2045+c*pitchX,cy:3150+r*pitchY,eid:r*8+c});
+  function hBundle(parent,y){append(parent,make(&#x27;rect&#x27;,{x:E,y:y-lane,width:fieldW,height:lane,class:&#x27;rr-ha&#x27;}),make(&#x27;rect&#x27;,{x:E,y,width:fieldW,height:lane,class:&#x27;rr-hb&#x27;}));}
+  function vBundle(parent,x){append(parent,make(&#x27;rect&#x27;,{x:x-lane,y:E,width:lane,height:fieldH,class:&#x27;rr-va&#x27;}),make(&#x27;rect&#x27;,{x,y:E,width:lane,height:fieldH,class:&#x27;rr-vb&#x27;}));}
+  function closures(parent){
+    for(let r=0;r&lt;6;r+=1){const t=hY[2*r],b=hY[2*r+1];[`M500 ${t-52.5}H402.5V${b+52.5}H500`,`M500 ${t+52.5}H297.5V${b-52.5}H500`,`M25500 ${t-52.5}H25597.5V${b+52.5}H25500`,`M25500 ${t+52.5}H25702.5V${b-52.5}H25500`].forEach(d=&gt;parent.appendChild(make(&#x27;path&#x27;,{d,class:&#x27;rr-close-h&#x27;})));}
+    vX.forEach(x=&gt;append(parent,make(&#x27;path&#x27;,{d:`M${x-52.5} 500V350H${x+52.5}V500`,class:&#x27;rr-close-v&#x27;}),make(&#x27;path&#x27;,{d:`M${x-52.5} 32500V32650H${x+52.5}V32500`,class:&#x27;rr-close-v&#x27;})));
+  }
+  function rbrg(parent,x,y,klass=&#x27;rr-rbrg&#x27;){parent.appendChild(make(&#x27;rect&#x27;,{x:x-210,y:y-210,width:420,height:420,class:klass}));}
+
+  const station=new Map(),adj=new Map();
+  const bId=(hi,vi)=&gt;`B:${hi}:${vi}`,mId=(hi,c)=&gt;`M:${hi}:${c}`,port=(id,p)=&gt;`${id}:${p}`;
+  const addStation=(id,data)=&gt;station.set(id,{id,...data});
+  const addEdge=(from,to,data)=&gt;{const edge={from,to,...data};if(!adj.has(from))adj.set(from,[]);adj.get(from).push(edge);};
+  const edge=(id,kind,um,points,more={})=&gt;({id,kind,um,cyc:more.cyc??Math.ceil(um/400),points,...more});
+  function buildGraph(){
+    for(let hi=0;hi&lt;12;hi+=1){
+      for(let vi=0;vi&lt;16;vi+=1)addStation(bId(hi,vi),{type:&#x27;rbrg&#x27;,hi,vi,x:vX[vi],y:hY[hi]});
+      for(let c=0;c&lt;8;c+=1)addStation(mId(hi,c),{type:(hi%2)===(c%2)?&#x27;cs&#x27;:&#x27;pipe&#x27;,hi,c,x:coreX[c],y:hY[hi]});
+    }
+    const moves=[
+      [&#x27;Wi&#x27;,&#x27;Eo&#x27;,&#x27;straight&#x27;,&#x27;H&#x27;,&#x27;H&#x27;],[&#x27;Ei&#x27;,&#x27;Wo&#x27;,&#x27;straight&#x27;,&#x27;H&#x27;,&#x27;H&#x27;],[&#x27;Ni&#x27;,&#x27;So&#x27;,&#x27;straight&#x27;,&#x27;V&#x27;,&#x27;V&#x27;],[&#x27;Si&#x27;,&#x27;No&#x27;,&#x27;straight&#x27;,&#x27;V&#x27;,&#x27;V&#x27;],
+      [&#x27;Wi&#x27;,&#x27;So&#x27;,&#x27;near&#x27;,&#x27;H&#x27;,&#x27;V&#x27;],[&#x27;Si&#x27;,&#x27;Eo&#x27;,&#x27;near&#x27;,&#x27;V&#x27;,&#x27;H&#x27;],[&#x27;Ei&#x27;,&#x27;No&#x27;,&#x27;near&#x27;,&#x27;H&#x27;,&#x27;V&#x27;],[&#x27;Ni&#x27;,&#x27;Wo&#x27;,&#x27;near&#x27;,&#x27;V&#x27;,&#x27;H&#x27;],
+      [&#x27;Wi&#x27;,&#x27;No&#x27;,&#x27;far&#x27;,&#x27;H&#x27;,&#x27;V&#x27;],[&#x27;Ni&#x27;,&#x27;Eo&#x27;,&#x27;far&#x27;,&#x27;V&#x27;,&#x27;H&#x27;],[&#x27;Ei&#x27;,&#x27;So&#x27;,&#x27;far&#x27;,&#x27;H&#x27;,&#x27;V&#x27;],[&#x27;Si&#x27;,&#x27;Wo&#x27;,&#x27;far&#x27;,&#x27;V&#x27;,&#x27;H&#x27;]
+    ];
+    for(let hi=0;hi&lt;12;hi+=1)for(let vi=0;vi&lt;16;vi+=1){
+      const s=station.get(bId(hi,vi));
+      moves.forEach(([a,z,kind,fromAxis,toAxis],k)=&gt;addEdge(port(s.id,a),port(s.id,z),edge(`R:${hi}:${vi}:${k}`,kind,kind===&#x27;straight&#x27;?420:kind===&#x27;near&#x27;?315:525,[[s.x,s.y]],{hi,vi,fromAxis,toAxis,trans:fromAxis===toAxis?null:`${fromAxis}2${toAxis}`,turn:fromAxis===toAxis?0:1,cyc:kind===&#x27;straight&#x27;?2:10})));
+    }
+    for(let hi=0;hi&lt;12;hi+=1)for(let c=0;c&lt;8;c+=1){
+      const s=station.get(mId(hi,c)),kind=s.type;
+      addEdge(port(s.id,&#x27;Wi&#x27;),port(s.id,&#x27;Eo&#x27;),edge(`M:${hi}:${c}:E`,kind,0,[[s.x,s.y]],{hi,dir:&#x27;E&#x27;}));
+      addEdge(port(s.id,&#x27;Ei&#x27;),port(s.id,&#x27;Wo&#x27;),edge(`M:${hi}:${c}:W`,kind,0,[[s.x,s.y]],{hi,dir:&#x27;W&#x27;}));
+    }
+    for(let hi=0;hi&lt;12;hi+=1){
+      const seq=[];for(let c=0;c&lt;8;c+=1)seq.push(station.get(bId(hi,2*c)),station.get(mId(hi,c)),station.get(bId(hi,2*c+1)));
+      for(let i=0;i&lt;seq.length-1;i+=1){
+        const a=seq[i],z=seq[i+1],kind=a.type===&#x27;rbrg&#x27;&amp;&amp;z.type===&#x27;rbrg&#x27;?&#x27;gap&#x27;:&#x27;harm&#x27;,um=kind===&#x27;gap&#x27;?40:1125;
+        addEdge(port(a.id,&#x27;Eo&#x27;),port(z.id,&#x27;Wi&#x27;),edge(`H:${hi}:${i}:E`,kind,um,[[a.x,a.y],[z.x,z.y]],{hi,dir:&#x27;E&#x27;}));
+        addEdge(port(z.id,&#x27;Wo&#x27;),port(a.id,&#x27;Ei&#x27;),edge(`H:${hi}:${i}:W`,kind,um,[[z.x,z.y],[a.x,a.y]],{hi,dir:&#x27;W&#x27;}));
+      }
+    }
+    for(let r=0;r&lt;6;r+=1){
+      const t=2*r,b=2*r+1,Lt=station.get(bId(t,0)),Lb=station.get(bId(b,0)),Rt=station.get(bId(t,15)),Rb=station.get(bId(b,15));
+      addEdge(port(Rt.id,&#x27;Eo&#x27;),port(Rb.id,&#x27;Ei&#x27;),edge(`HF:${r}:RE`,&#x27;hfold&#x27;,5180,[[Rt.x,Rt.y],[25500,Rt.y],[25702.5,Rt.y],[25702.5,Rb.y],[25500,Rb.y],[Rb.x,Rb.y]],{hi:t,dir:&#x27;fold&#x27;}));
+      addEdge(port(Rb.id,&#x27;Eo&#x27;),port(Rt.id,&#x27;Ei&#x27;),edge(`HF:${r}:RW`,&#x27;hfold&#x27;,5180,[[Rb.x,Rb.y],[25500,Rb.y],[25702.5,Rb.y],[25702.5,Rt.y],[25500,Rt.y],[Rt.x,Rt.y]],{hi:b,dir:&#x27;fold&#x27;}));
+      addEdge(port(Lt.id,&#x27;Wo&#x27;),port(Lb.id,&#x27;Wi&#x27;),edge(`HF:${r}:LE`,&#x27;hfold&#x27;,5180,[[Lt.x,Lt.y],[500,Lt.y],[350,Lt.y],[350,Lb.y],[500,Lb.y],[Lb.x,Lb.y]],{hi:t,dir:&#x27;fold&#x27;}));
+      addEdge(port(Lb.id,&#x27;Wo&#x27;),port(Lt.id,&#x27;Wi&#x27;),edge(`HF:${r}:LW`,&#x27;hfold&#x27;,5180,[[Lb.x,Lb.y],[500,Lb.y],[350,Lb.y],[350,Lt.y],[500,Lt.y],[Lt.x,Lt.y]],{hi:b,dir:&#x27;fold&#x27;}));
+    }
+    for(let vi=0;vi&lt;16;vi+=1){
+      for(let hi=0;hi&lt;11;hi+=1){
+        const a=station.get(bId(hi,vi)),z=station.get(bId(hi+1,vi)),kind=hi%2===0?&#x27;vspan&#x27;:&#x27;gap&#x27;,um=kind===&#x27;vspan&#x27;?4460:40;
+        addEdge(port(a.id,&#x27;So&#x27;),port(z.id,&#x27;Ni&#x27;),edge(`V:${vi}:${hi}:S`,kind,um,[[a.x,a.y],[z.x,z.y]],{vi,dir:&#x27;S&#x27;}));
+        addEdge(port(z.id,&#x27;No&#x27;),port(a.id,&#x27;Si&#x27;),edge(`V:${vi}:${hi}:N`,kind,um,[[z.x,z.y],[a.x,a.y]],{vi,dir:&#x27;N&#x27;}));
+      }
+      const top=station.get(bId(0,vi)),bottom=station.get(bId(11,vi));
+      addEdge(port(top.id,&#x27;No&#x27;),port(top.id,&#x27;Ni&#x27;),edge(`VF:${vi}:T`,&#x27;vfold&#x27;,405,[[top.x,top.y],[top.x,500],[top.x-52.5,350],[top.x+52.5,350],[top.x,500],[top.x,top.y]],{vi,dir:&#x27;fold&#x27;}));
+      addEdge(port(bottom.id,&#x27;So&#x27;),port(bottom.id,&#x27;Si&#x27;),edge(`VF:${vi}:B`,&#x27;vfold&#x27;,405,[[bottom.x,bottom.y],[bottom.x,32500],[bottom.x-52.5,32650],[bottom.x+52.5,32650],[bottom.x,32500],[bottom.x,bottom.y]],{vi,dir:&#x27;fold&#x27;}));
+    }
+    adj.forEach(list=&gt;list.sort((a,b)=&gt;a.id.localeCompare(b.id)));
+  }
+  buildGraph();
+
+  const extraFor=(kind,v)=&gt;kind===&#x27;straight&#x27;?v.straight:kind===&#x27;near&#x27;?v.near+v.qnear:kind===&#x27;far&#x27;?v.far+v.qfar:kind===&#x27;cs&#x27;?v.cs:kind===&#x27;pipe&#x27;?v.pipe:kind===&#x27;inject&#x27;?v.inject:kind===&#x27;eject&#x27;?v.eject:0;
+  const cmp=(a,b)=&gt;a.total-b.total||a.um-b.um||a.turns-b.turns||a.steps-b.steps||String(a.tie).localeCompare(String(b.tie));
+  class Heap{
+    constructor(){this.a=[];}
+    push(v){const a=this.a;a.push(v);let i=a.length-1;while(i){const p=(i-1)&gt;&gt;1;if(cmp(a[p].cost,a[i].cost)&lt;=0)break;[a[p],a[i]]=[a[i],a[p]];i=p;}}
+    pop(){const a=this.a;if(!a.length)return null;const out=a[0],last=a.pop();if(a.length){a[0]=last;let i=0;for(;;){let l=i*2+1,r=l+1,m=i;if(l&lt;a.length&amp;&amp;cmp(a[l].cost,a[m].cost)&lt;0)m=l;if(r&lt;a.length&amp;&amp;cmp(a[r].cost,a[m].cost)&lt;0)m=r;if(m===i)break;[a[i],a[m]]=[a[m],a[i]];i=m;}}return out;}
+    get length(){return this.a.length;}
+  }
+  const costAdd=(c,e,v)=&gt;({total:c.total+e.cyc+extraFor(e.kind,v),wire:c.wire+e.cyc,um:c.um+e.um,turns:c.turns+(e.turn||0),steps:c.steps+1,tie:e.id});
+  const better=(a,b)=&gt;!b||cmp(a,b)&lt;0;
+  function route(src,dst,values){
+    if(src===dst)return {src,dst,edges:[],points:[],wire:0,total:0,um:0,counts:{},turns:0,folds:0,summary:&#x27;local core · no network traversal&#x27;};
+    const sr=Math.floor(src/8),sc=src%8,dr=Math.floor(dst/8),dc=dst%8,cross=sr!==dr,finalPhase=cross?2:0;
+    const shi=2*sr+(sc%2),dhi=2*dr+(dc%2),sm=station.get(mId(shi,sc)),dm=station.get(mId(dhi,dc));
+    const sCell=cell(sr,sc),dCell=cell(dr,dc),sEdgeY=sc%2===0?sCell.y0+315:sCell.y0+4985,dEdgeY=dc%2===0?dCell.y0+315:dCell.y0+4985;
+    const starts=[&#x27;Eo&#x27;,&#x27;Wo&#x27;].map((p,i)=&gt;({node:port(sm.id,p),edge:edge(`INJ:${src}:${i}`,&#x27;inject&#x27;,105,[[sCell.cx,sEdgeY],[sm.x,sm.y]],{hi:shi,dir:i?&#x27;W&#x27;:&#x27;E&#x27;})}));
+    const targets=new Set([port(dm.id,&#x27;Wi&#x27;),port(dm.id,&#x27;Ei&#x27;)]),dist=new Map(),prev=new Map(),heap=new Heap();
+    starts.forEach(s=&gt;{const k=`${s.node}|0`,c={total:s.edge.cyc+values.inject,wire:s.edge.cyc,um:s.edge.um,turns:0,steps:1,tie:s.edge.id};if(better(c,dist.get(k))){dist.set(k,c);prev.set(k,{prev:null,edge:s.edge});heap.push({key:k,node:s.node,phase:0,cost:c});}});
+    let best=null;
+    while(heap.length){
+      const cur=heap.pop();if(cmp(cur.cost,dist.get(cur.key))!==0)continue;
+      if(cur.phase===finalPhase&amp;&amp;targets.has(cur.node)){
+        const ej=edge(`EJ:${dst}`,&#x27;eject&#x27;,105,[[dm.x,dm.y],[dCell.cx,dEdgeY]],{hi:dhi});const candidate={state:cur.key,cost:costAdd(cur.cost,ej,values),edge:ej};if(!best||better(candidate.cost,best.cost))best=candidate;
+      }
+      for(const e of (adj.get(cur.node)||[])){
+        let phase=cur.phase;
+        if(!cross&amp;&amp;e.trans)continue;
+        if(cross&amp;&amp;e.trans===&#x27;H2V&#x27;){if(phase!==0)continue;phase=1;}
+        else if(cross&amp;&amp;e.trans===&#x27;V2H&#x27;){if(phase!==1||Math.floor(e.hi/2)!==dr)continue;phase=2;}
+        const key=`${e.to}|${phase}`,nc=costAdd(cur.cost,e,values);
+        if(better(nc,dist.get(key))){dist.set(key,nc);prev.set(key,{prev:cur.key,edge:e});heap.push({key,node:e.to,phase,cost:nc});}
+      }
+    }
+    if(!best)throw new Error(`No legal route ${src}→${dst}`);
+    const edges=[best.edge];let k=best.state;while(k){const p=prev.get(k);if(!p)break;edges.unshift(p.edge);k=p.prev;}
+    const points=[];edges.forEach(e=&gt;e.points.forEach(p=&gt;{const q=points[points.length-1];if(!q||q[0]!==p[0]||q[1]!==p[1])points.push(p);}));
+    const counts={};edges.forEach(e=&gt;counts[e.kind]=(counts[e.kind]||0)+1);
+    const firstTurn=edges.find(e=&gt;e.trans===&#x27;H2V&#x27;),vLabel=firstTurn?`V${String(firstTurn.vi).padStart(2,&#x27;0&#x27;)}`:&#x27;&#x27;;
+    const dirs=edges.filter(e=&gt;[&#x27;harm&#x27;,&#x27;gap&#x27;,&#x27;vspan&#x27;].includes(e.kind)).map(e=&gt;e.dir);const h0=dirs.find(d=&gt;d===&#x27;E&#x27;||d===&#x27;W&#x27;)||&#x27;&#x27;,vd=dirs.find(d=&gt;d===&#x27;N&#x27;||d===&#x27;S&#x27;)||&#x27;&#x27;;
+    const summary=cross?`FH${String(sr).padStart(2,&#x27;0&#x27;)} ${h0} → ${vLabel} ${vd} → FH${String(dr).padStart(2,&#x27;0&#x27;)}`:`FH${String(sr).padStart(2,&#x27;0&#x27;)} · H-only`;
+    return {src,dst,edges,points,wire:best.cost.wire,total:best.cost.total,um:best.cost.um,counts,turns:best.cost.turns,folds:(counts.hfold||0)+(counts.vfold||0),summary};
+  }
+
+  const dimText=(d)=&gt;d.cycles==null?`${d.distance.toLocaleString()} µm`:`${d.distance.toLocaleString()} µm / ${d.cycles} cyc`;
+  const archTick=(parent,x,y,angle=0)=&gt;{
+    const a=angle*Math.PI/180,dx=Math.cos(a)*185,dy=Math.sin(a)*185;
+    parent.appendChild(make(&#x27;line&#x27;,{x1:x-dx,y1:y-dy,x2:x+dx,y2:y+dy,class:&#x27;rr-dim-tick&#x27;}));
+  };
+  function horizontalDim(parent,d){
+    const {x1,x2,sourceY,dimY}=d,labelX=d.labelX??(x1+x2)/2,lineEnd=d.lineEnd??x2;
+    append(parent,
+      make(&#x27;line&#x27;,{x1,y1:sourceY,x2:x1,y2:dimY-80,class:&#x27;rr-dim-ext&#x27;}),
+      make(&#x27;line&#x27;,{x1:x2,y1:sourceY,x2:x2,y2:dimY-80,class:&#x27;rr-dim-ext&#x27;}),
+      make(&#x27;line&#x27;,{x1,y1:dimY,x2:lineEnd,y2:dimY,class:&#x27;rr-dim-line&#x27;})
+    );
+    archTick(parent,x1,dimY,-45);archTick(parent,x2,dimY,-45);
+    append(parent,
+      make(&#x27;text&#x27;,{x:labelX,y:dimY-260,class:&#x27;rr-dim-label&#x27;},dimText(d)),
+      make(&#x27;text&#x27;,{x:labelX,y:dimY+300,class:&#x27;rr-dim-note&#x27;},d.note)
+    );
+  }
+  function verticalDim(parent,d){
+    const {y1,y2,sourceX,dimX}=d,labelY=d.labelY??(y1+y2)/2,lineEnd=d.lineEnd??y2;
+    append(parent,
+      make(&#x27;line&#x27;,{x1:sourceX,y1,x2:dimX+80,y2:y1,class:&#x27;rr-dim-ext&#x27;}),
+      make(&#x27;line&#x27;,{x1:sourceX,y1:y2,x2:dimX+80,y2:y2,class:&#x27;rr-dim-ext&#x27;}),
+      make(&#x27;line&#x27;,{x1:dimX,y1,x2:dimX,y2:lineEnd,class:&#x27;rr-dim-line&#x27;})
+    );
+    archTick(parent,dimX,y1,45);archTick(parent,dimX,y2,45);
+    const group=make(&#x27;g&#x27;,{transform:`rotate(-90 ${dimX} ${labelY})`});
+    append(group,
+      make(&#x27;text&#x27;,{x:dimX,y:labelY-260,class:&#x27;rr-dim-label&#x27;},dimText(d)),
+      make(&#x27;text&#x27;,{x:dimX,y:labelY+300,class:&#x27;rr-dim-note&#x27;},d.note)
+    );parent.appendChild(group);
+  }
+  function leaderDim(parent,d){
+    const points=[d.anchor,...(d.via||[]),d.end||d.label];
+    parent.appendChild(make(&#x27;path&#x27;,{d:points.map(([x,y],i)=&gt;`${i?&#x27;L&#x27;:&#x27;M&#x27;}${x} ${y}`).join(&#x27;&#x27;),class:&#x27;rr-dim-leader&#x27;}));
+    parent.appendChild(make(&#x27;circle&#x27;,{cx:d.anchor[0],cy:d.anchor[1],r:95,class:&#x27;rr-dim-dot&#x27;}));
+    const [x,y]=d.label;
+    append(parent,
+      make(&#x27;text&#x27;,{x,y:y-260,class:&#x27;rr-dim-label&#x27;},dimText(d)),
+      make(&#x27;text&#x27;,{x,y:y+280,class:&#x27;rr-dim-note&#x27;},d.note)
+    );
+  }
+  function turnService(parent){
+    const x=22620,y=710;
+    parent.appendChild(make(&#x27;path&#x27;,{d:`M${x-210} ${y}H${x}V${y+210}`,class:&#x27;rr-turn-service&#x27;}));
+    parent.appendChild(make(&#x27;path&#x27;,{d:`M${x} ${y}L23900 -850H29500`,class:&#x27;rr-dim-leader&#x27;}));
+    append(parent,
+      make(&#x27;text&#x27;,{x:26700,y:-1090,class:&#x27;rr-turn-service-label&#x27;},&#x27;RBRG TURN · 10 cyc&#x27;),
+      make(&#x27;text&#x27;,{x:26700,y:-530,class:&#x27;rr-dim-note&#x27;},&#x27;INGRESS 5 cyc  +  EGRESS 5 cyc&#x27;)
+    );
+  }
+  function drawDimensions(parent){
+    verticalDim(parent,{distance:105,cycles:1,note:&#x27;CORE↔CS TYP.&#x27;,y1:710,y2:815,sourceX:2045,dimX:-1200,lineEnd:4000,labelY:2300});
+    horizontalDim(parent,{distance:1125,cycles:3,note:&#x27;H ARM TYP.&#x27;,x1:2045,x2:3170,sourceY:710,dimY:-500});
+    horizontalDim(parent,{distance:420,cycles:2,note:&#x27;RBRG STRAIGHT TYP.&#x27;,x1:3170,x2:3590,sourceY:710,dimY:-1900,lineEnd:8200,labelX:5900});
+    horizontalDim(parent,{distance:40,cycles:1,note:&#x27;INTER-STATION GAP TYP.&#x27;,x1:3590,x2:3630,sourceY:710,dimY:-3300,lineEnd:10000,labelX:8000});
+    verticalDim(parent,{distance:4460,cycles:12,note:&#x27;V SPAN TYP.&#x27;,y1:920,y2:5380,sourceX:22620,dimX:27000});
+    turnService(parent);
+    leaderDim(parent,{distance:315,cycles:null,anchor:[22620,710],via:[[23900,-2350]],end:[29500,-2350],label:[26700,-2350],note:&#x27;NEAR PATH · geometric ℓ&#x27;});
+    leaderDim(parent,{distance:525,cycles:null,anchor:[22620,32290],via:[[23800,33470]],end:[29500,33470],label:[26700,33470],note:&#x27;FAR PATH · geometric ℓ&#x27;});
+    leaderDim(parent,{distance:5180,cycles:13,anchor:[350,3150],via:[[1200,7000]],end:[3200,7000],label:[5000,7000],note:&#x27;H FOLD TYP.&#x27;});
+    leaderDim(parent,{distance:405,cycles:2,anchor:[13230,350],via:[[13230,3400]],end:[11000,3400],label:[9000,3400],note:&#x27;V FOLD TYP.&#x27;});
+  }
+  const pointsPath=(points)=&gt;points.length?points.map(([x,y],i)=&gt;`${i?&#x27;L&#x27;:&#x27;M&#x27;}${x} ${y}`).join(&#x27;&#x27;):&#x27;&#x27;;
+  function draw(profile){
+    svg.replaceChildren();
+    svg.setAttribute(&#x27;viewBox&#x27;,&#x27;-2800 -3800 32800 39800&#x27;);
+    const defs=make(&#x27;defs&#x27;),marker=make(&#x27;marker&#x27;,{id:&#x27;rfroute-arrow&#x27;,viewBox:&#x27;0 0 10 10&#x27;,refX:8,refY:5,markerWidth:6,markerHeight:6,orient:&#x27;auto-start-reverse&#x27;});marker.appendChild(make(&#x27;path&#x27;,{d:&#x27;M0 0L10 5L0 10Z&#x27;,fill:&#x27;var(--viz-series-4)&#x27;}));defs.appendChild(marker);
+    append(svg,
+      defs,
+      make(&#x27;title&#x27;,{id:&#x27;rfroute-title&#x27;},`Core ${String(profile.src).padStart(2,&#x27;0&#x27;)} to Core ${String(profile.dst).padStart(2,&#x27;0&#x27;)} shortest path`),
+      make(&#x27;desc&#x27;,{id:&#x27;rfroute-desc&#x27;},&#x27;A true-proportion 26 by 33 millimetre reticle with one architectural dimension annotation for each physical segment type and a dynamically highlighted minimum-transfer shortest path.&#x27;),
+      make(&#x27;rect&#x27;,{x:0,y:0,width:W,height:H,class:&#x27;rr-reticle&#x27;}),
+      make(&#x27;path&#x27;,{d:ringPath(0,0,W,H,200,200,W-400,H-400),class:&#x27;rr-keepout&#x27;,&#x27;fill-rule&#x27;:&#x27;evenodd&#x27;}),
+      make(&#x27;path&#x27;,{d:ringPath(200,200,W-400,H-400,E,E,fieldW,fieldH),class:&#x27;rr-corridor&#x27;,&#x27;fill-rule&#x27;:&#x27;evenodd&#x27;}),
+      make(&#x27;rect&#x27;,{x:E,y:E,width:fieldW,height:fieldH,class:&#x27;rr-field&#x27;})
+    );
+    const close=make(&#x27;g&#x27;);closures(close);svg.appendChild(close);
+    const rails=make(&#x27;g&#x27;);hY.forEach(y=&gt;hBundle(rails,y));vX.forEach(x=&gt;vBundle(rails,x));svg.appendChild(rails);
+    for(let r=0;r&lt;6;r+=1){for(let c=0;c&lt;8;c+=1){
+      const g=cell(r,c),group=make(&#x27;g&#x27;);
+      [[vX[2*c],hY[2*r]],[vX[2*c+1],hY[2*r]],[vX[2*c],hY[2*r+1]],[vX[2*c+1],hY[2*r+1]]].forEach(([x,y])=&gt;rbrg(group,x,y));
+      const role=g.eid===profile.src?&#x27; source&#x27;:g.eid===profile.dst?&#x27; destination&#x27;:&#x27;&#x27;;
+      group.appendChild(make(&#x27;path&#x27;,{d:corePath(g.x0,g.y0),class:`rr-core${role}`,&#x27;data-core-id&#x27;:g.eid}));
+      const selected=role?&#x27; selected&#x27;:&#x27;&#x27;;group.appendChild(make(&#x27;text&#x27;,{x:g.cx,y:g.cy,class:`rr-core-id${selected}`},`${g.eid===profile.src?&#x27;S &#x27;:g.eid===profile.dst?&#x27;D &#x27;:&#x27;&#x27;}${String(g.eid).padStart(2,&#x27;0&#x27;)}`));
+      svg.appendChild(group);
+    }}
+    if(profile.points.length){const d=pointsPath(profile.points);append(svg,make(&#x27;path&#x27;,{d,class:&#x27;rr-path-outline&#x27;}),make(&#x27;path&#x27;,{d,class:&#x27;rr-path&#x27;,&#x27;marker-end&#x27;:&#x27;url(#rfroute-arrow)&#x27;}));}
+    profile.edges.filter(e=&gt;e.turn).forEach(e=&gt;{
+      const b=station.get(bId(e.hi,e.vi));
+      append(svg,
+        make(&#x27;path&#x27;,{d:`M${b.x} ${b.y}L${b.x+500} ${b.y+500}`,class:&#x27;rr-dim-leader&#x27;}),
+        make(&#x27;text&#x27;,{x:b.x+560,y:b.y+560,class:&#x27;rr-route-turn-label&#x27;},&#x27;5 in + 5 out = 10 cyc&#x27;)
+      );
+    });
+    const dimensionLayer=make(&#x27;g&#x27;,{&#x27;aria-label&#x27;:&#x27;Architectural-style segment dimensions&#x27;});
+    drawDimensions(dimensionLayer);svg.appendChild(dimensionLayer);
+  }
+  function resizeLabels(){
+    const w=svg.getBoundingClientRect().width;if(!w)return;
+    const scale=32800/w,screenPx=w&lt;620?11.5:12.5;
+    const label=Math.max(420,Math.min(880,screenPx*scale));
+    const note=Math.max(330,Math.min(720,(screenPx-1.5)*scale));
+    svg.querySelectorAll(&#x27;.rr-dim-label&#x27;).forEach(n=&gt;n.style.fontSize=`${label}px`);
+    svg.querySelectorAll(&#x27;.rr-dim-note,.rr-dim-key&#x27;).forEach(n=&gt;n.style.fontSize=`${note}px`);
+    svg.querySelectorAll(&#x27;.rr-turn-service-label&#x27;).forEach(n=&gt;n.style.fontSize=`${Math.max(360,Math.min(620,note))}px`);
+    svg.querySelectorAll(&#x27;.rr-route-turn-label&#x27;).forEach(n=&gt;n.style.fontSize=`${Math.max(330,Math.min(560,note*.88))}px`);
+  }
+  function values(){const out={};root.querySelectorAll(&#x27;[data-latency]&#x27;).forEach(input=&gt;out[input.dataset.latency]=Math.max(0,Number(input.value)||0));return out;}
+  function appendBreakdownRow(parent,{label,note,calculation,subtotal,extra=false,zero=false}){
+    const row=document.createElement(&#x27;div&#x27;);
+    row.className=`rfroute-breakdown-row${extra?&#x27; rfroute-breakdown-extra&#x27;:&#x27;&#x27;}${zero?&#x27; rfroute-breakdown-zero&#x27;:&#x27;&#x27;}`;
+    row.setAttribute(&#x27;role&#x27;,&#x27;row&#x27;);
+    const component=document.createElement(&#x27;span&#x27;);component.className=&#x27;rfroute-breakdown-component&#x27;;component.setAttribute(&#x27;role&#x27;,&#x27;rowheader&#x27;);
+    const name=document.createElement(&#x27;span&#x27;);name.textContent=label;component.appendChild(name);
+    if(note){const detail=document.createElement(&#x27;small&#x27;);detail.textContent=note;component.appendChild(detail);}
+    const math=document.createElement(&#x27;span&#x27;);math.className=&#x27;rfroute-breakdown-math&#x27;;math.setAttribute(&#x27;role&#x27;,&#x27;cell&#x27;);math.textContent=calculation;
+    const cycles=document.createElement(&#x27;span&#x27;);cycles.className=&#x27;rfroute-breakdown-cycles&#x27;;cycles.setAttribute(&#x27;role&#x27;,&#x27;cell&#x27;);cycles.textContent=`${subtotal.toLocaleString()} cyc`;
+    row.append(component,math,cycles);parent.appendChild(row);
+  }
+  function renderBreakdown(p,v){
+    const holder=root.querySelector(&#x27;#rfroute-breakdown-rows&#x27;);holder.replaceChildren();
+    if(!p.edges.length){
+      appendBreakdownRow(holder,{label:&#x27;Local delivery&#x27;,note:&#x27;source and destination are the same core&#x27;,calculation:&#x27;no network traversal&#x27;,subtotal:0,zero:true});
+      root.querySelector(&#x27;#rfroute-breakdown-equation&#x27;).textContent=&#x27;0 transport + 0 turn service + 0 extras = 0 cyc&#x27;;
+      root.querySelector(&#x27;#rfroute-breakdown-total-note&#x27;).textContent=&#x27;0 µm · local&#x27;;
+      root.querySelector(&#x27;#rfroute-breakdown-total&#x27;).textContent=&#x27;0 cyc&#x27;;
+      return;
+    }
+    const aggregate=(kinds)=&gt;{
+      const set=new Set(kinds),edges=p.edges.filter(e=&gt;set.has(e.kind));
+      return {count:edges.length,um:edges.reduce((s,e)=&gt;s+e.um,0),cycles:edges.reduce((s,e)=&gt;s+e.cyc,0)};
+    };
+    const baseDefs=[
+      {label:&#x27;Core ↔ CS access&#x27;,kinds:[&#x27;inject&#x27;,&#x27;eject&#x27;],unit:&#x27;access&#x27;},
+      {label:&#x27;Horizontal arm&#x27;,kinds:[&#x27;harm&#x27;],unit:&#x27;arm&#x27;},
+      {label:&#x27;Inter-station gap&#x27;,kinds:[&#x27;gap&#x27;],unit:&#x27;gap&#x27;},
+      {label:&#x27;Vertical span&#x27;,kinds:[&#x27;vspan&#x27;],unit:&#x27;span&#x27;},
+      {label:&#x27;Straight RBRG&#x27;,kinds:[&#x27;straight&#x27;],unit:&#x27;RBRG&#x27;},
+      {label:&#x27;Horizontal fold&#x27;,kinds:[&#x27;hfold&#x27;],unit:&#x27;fold&#x27;},
+      {label:&#x27;Vertical fold&#x27;,kinds:[&#x27;vfold&#x27;],unit:&#x27;fold&#x27;}
+    ];
+    let accountedBase=0;
+    baseDefs.forEach(def=&gt;{
+      const a=aggregate(def.kinds);if(!a.count)return;
+      accountedBase+=a.cycles;
+      const per=a.cycles/a.count;
+      const plural=a.count===1?&#x27;&#x27;:def.unit===&#x27;access&#x27;?&#x27;es&#x27;:&#x27;s&#x27;;
+      appendBreakdownRow(holder,{label:def.label,note:`${a.count} ${def.unit}${plural} · ${a.um.toLocaleString()} µm`,calculation:`${a.count} × ${Number.isInteger(per)?per:per.toFixed(2)} cyc`,subtotal:a.cycles});
+    });
+    const turnEdges=p.edges.filter(e=&gt;e.turn),turnUm=turnEdges.reduce((s,e)=&gt;s+e.um,0),near=turnEdges.filter(e=&gt;e.kind===&#x27;near&#x27;).length,far=turnEdges.filter(e=&gt;e.kind===&#x27;far&#x27;).length;
+    const ingress=p.turns*5,egress=p.turns*5;
+    if(p.turns){
+      appendBreakdownRow(holder,{label:&#x27;RBRG turn · ingress&#x27;,note:`${near} near + ${far} far · ${turnUm.toLocaleString()} µm geometry`,calculation:`${p.turns} × 5 cyc`,subtotal:ingress});
+      appendBreakdownRow(holder,{label:&#x27;RBRG turn · egress&#x27;,note:&#x27;fixed service · turn geometry is inclusive&#x27;,calculation:`${p.turns} × 5 cyc`,subtotal:egress});
+      accountedBase+=ingress+egress;
+    }
+    const baseRemainder=p.wire-accountedBase;
+    if(baseRemainder)appendBreakdownRow(holder,{label:&#x27;Other base transport&#x27;,note:&#x27;unclassified directed-edge service&#x27;,calculation:&#x27;route aggregate&#x27;,subtotal:baseRemainder});
+
+    const c=p.counts,extraDefs=[
+      {label:&#x27;Straight RBRG extra&#x27;,count:c.straight||0,per:v.straight},
+      {label:&#x27;Near-turn logic extra&#x27;,count:c.near||0,per:v.near},
+      {label:&#x27;Far-turn logic extra&#x27;,count:c.far||0,per:v.far},
+      {label:&#x27;CS pass extra&#x27;,count:c.cs||0,per:v.cs},
+      {label:&#x27;PIPE pass extra&#x27;,count:c.pipe||0,per:v.pipe},
+      {label:&#x27;Source injection extra&#x27;,count:c.inject||0,per:v.inject},
+      {label:&#x27;Destination ejection extra&#x27;,count:c.eject||0,per:v.eject},
+      {label:&#x27;Near-turn FIFO wait&#x27;,count:c.near||0,per:v.qnear},
+      {label:&#x27;Far-turn FIFO wait&#x27;,count:c.far||0,per:v.qfar}
+    ];
+    let extraRows=0,extraSubtotal=0;
+    extraDefs.forEach(def=&gt;{const subtotal=def.count*def.per;if(!subtotal)return;extraRows+=1;extraSubtotal+=subtotal;appendBreakdownRow(holder,{label:def.label,note:&#x27;configured in Advanced latency parameters&#x27;,calculation:`${def.count} × ${def.per} cyc`,subtotal,extra:true});});
+    if(!extraRows)appendBreakdownRow(holder,{label:&#x27;Configured extra latency&#x27;,note:&#x27;Advanced latency parameters are all zero on this route&#x27;,calculation:&#x27;—&#x27;,subtotal:0,zero:true});
+    const nonTurn=p.wire-ingress-egress;
+    root.querySelector(&#x27;#rfroute-breakdown-equation&#x27;).textContent=`${nonTurn.toLocaleString()} transport + ${ingress.toLocaleString()} ingress + ${egress.toLocaleString()} egress + ${extraSubtotal.toLocaleString()} extras = ${p.total.toLocaleString()} cyc`;
+    root.querySelector(&#x27;#rfroute-breakdown-total-note&#x27;).textContent=`${p.um.toLocaleString()} µm · ${p.turns} turn${p.turns===1?&#x27;&#x27;:&#x27;s&#x27;} · ${p.folds} fold${p.folds===1?&#x27;&#x27;:&#x27;s&#x27;}`;
+    root.querySelector(&#x27;#rfroute-breakdown-total&#x27;).textContent=`${p.total.toLocaleString()} cyc`;
+  }
+  function orderedEdgeLabel(e){
+    const h=e.hi==null?&#x27;&#x27;:`H${String(e.hi).padStart(2,&#x27;0&#x27;)}`,v=e.vi==null?&#x27;&#x27;:`V${String(e.vi).padStart(2,&#x27;0&#x27;)}`;
+    if(e.kind===&#x27;inject&#x27;)return {name:&#x27;Source core → cross station&#x27;,detail:e.id};
+    if(e.kind===&#x27;eject&#x27;)return {name:&#x27;Cross station → destination core&#x27;,detail:e.id};
+    if(e.kind===&#x27;harm&#x27;)return {name:`Horizontal arm · ${h} ${e.dir}`,detail:e.id};
+    if(e.kind===&#x27;gap&#x27;)return {name:`${e.id.startsWith(&#x27;V:&#x27;)?&#x27;Vertical&#x27;:&#x27;Horizontal&#x27;} inter-station gap · ${e.dir}`,detail:e.id};
+    if(e.kind===&#x27;vspan&#x27;)return {name:`Vertical span · ${v} ${e.dir}`,detail:e.id};
+    if(e.kind===&#x27;straight&#x27;)return {name:`RBRG ${e.fromAxis} straight · ${h}×${v}`,detail:e.id};
+    if(e.kind===&#x27;near&#x27;||e.kind===&#x27;far&#x27;)return {name:`RBRG ${e.kind} turn · ${e.fromAxis}→${e.toAxis}`,detail:`${h}×${v} · ${e.id}`};
+    if(e.kind===&#x27;hfold&#x27;)return {name:`Horizontal fold · ${e.dir}`,detail:e.id};
+    if(e.kind===&#x27;vfold&#x27;)return {name:`Vertical fold · ${v}`,detail:e.id};
+    if(e.kind===&#x27;cs&#x27;)return {name:`Cross-station pass · ${h}`,detail:e.id};
+    if(e.kind===&#x27;pipe&#x27;)return {name:`Pipeline pass · ${h}`,detail:e.id};
+    return {name:e.kind,detail:e.id};
+  }
+  function orderedEdgeCycle(e,v){
+    const extraParts=[];
+    if(e.kind===&#x27;straight&#x27;&amp;&amp;v.straight)extraParts.push(`${v.straight} RBRG-extra`);
+    if(e.kind===&#x27;near&#x27;){
+      if(v.near)extraParts.push(`${v.near} turn-extra`);
+      if(v.qnear)extraParts.push(`${v.qnear} FIFO-wait`);
+    }
+    if(e.kind===&#x27;far&#x27;){
+      if(v.far)extraParts.push(`${v.far} turn-extra`);
+      if(v.qfar)extraParts.push(`${v.qfar} FIFO-wait`);
+    }
+    if(e.kind===&#x27;cs&#x27;&amp;&amp;v.cs)extraParts.push(`${v.cs} CS-extra`);
+    if(e.kind===&#x27;pipe&#x27;&amp;&amp;v.pipe)extraParts.push(`${v.pipe} PIPE-extra`);
+    if(e.kind===&#x27;inject&#x27;&amp;&amp;v.inject)extraParts.push(`${v.inject} inject-extra`);
+    if(e.kind===&#x27;eject&#x27;&amp;&amp;v.eject)extraParts.push(`${v.eject} eject-extra`);
+    const extra=extraFor(e.kind,v),total=e.cyc+extra;
+    let base;
+    if(e.kind===&#x27;near&#x27;||e.kind===&#x27;far&#x27;)base=&#x27;5 ingress + 5 egress&#x27;;
+    else if(e.kind===&#x27;cs&#x27;||e.kind===&#x27;pipe&#x27;)base=&#x27;station base 0&#x27;;
+    else base=`ceil(${e.um.toLocaleString()} / 400) = ${e.cyc}`;
+    return {extra,total,calculation:extraParts.length?`${base} + ${extraParts.join(&#x27; + &#x27;)}`:base};
+  }
+  function orderedEdgeAxis(e){
+    if([&#x27;harm&#x27;,&#x27;cs&#x27;,&#x27;pipe&#x27;].includes(e.kind))return &#x27;H&#x27;;
+    if(e.kind===&#x27;vspan&#x27;)return &#x27;V&#x27;;
+    if(e.kind===&#x27;gap&#x27;)return e.id.startsWith(&#x27;V:&#x27;)?&#x27;V&#x27;:&#x27;H&#x27;;
+    if(e.kind===&#x27;straight&#x27;)return e.fromAxis;
+    return null;
+  }
+  function orderedShortName(e){
+    return e.kind===&#x27;inject&#x27;?&#x27;inject&#x27;:e.kind===&#x27;eject&#x27;?&#x27;eject&#x27;:e.kind===&#x27;harm&#x27;?&#x27;H-arm&#x27;:e.kind===&#x27;gap&#x27;?&#x27;gap&#x27;:e.kind===&#x27;vspan&#x27;?&#x27;V-span&#x27;:e.kind===&#x27;straight&#x27;?&#x27;RBRG&#x27;:e.kind===&#x27;near&#x27;?&#x27;near-turn&#x27;:e.kind===&#x27;far&#x27;?&#x27;far-turn&#x27;:e.kind===&#x27;cs&#x27;?&#x27;CS&#x27;:e.kind===&#x27;pipe&#x27;?&#x27;PIPE&#x27;:e.kind===&#x27;hfold&#x27;?&#x27;H-fold&#x27;:e.kind===&#x27;vfold&#x27;?&#x27;V-fold&#x27;:e.kind;
+  }
+  function groupOrderedEdges(edges,v){
+    const raw=[];let current=null;
+    const flush=()=&gt;{if(current?.edges.length)raw.push(current);current=null;};
+    const standalone=new Set([&#x27;inject&#x27;,&#x27;eject&#x27;,&#x27;near&#x27;,&#x27;far&#x27;,&#x27;hfold&#x27;,&#x27;vfold&#x27;]);
+    edges.forEach(e=&gt;{
+      if(standalone.has(e.kind)){flush();raw.push({axis:null,edges:[e]});return;}
+      const axis=orderedEdgeAxis(e);
+      const startsNewPitch=current&amp;&amp;axis===current.axis&amp;&amp;current.um&gt;0&amp;&amp;((axis===&#x27;V&#x27;&amp;&amp;e.kind===&#x27;vspan&#x27;)||(axis===&#x27;H&#x27;&amp;&amp;e.kind===&#x27;gap&#x27;));
+      if(!current||axis!==current.axis||startsNewPitch){flush();current={axis,edges:[e],um:e.um};}else{current.edges.push(e);current.um+=e.um;}
+    });flush();
+    return raw.map((g,index)=&gt;{
+      const cycles=g.edges.map(e=&gt;orderedEdgeCycle(e,v)),total=cycles.reduce((s,c)=&gt;s+c.total,0),um=g.edges.reduce((s,e)=&gt;s+e.um,0);
+      return {...g,index,total,um,cycles};
+    });
+  }
+  function orderedGroupLabel(group){
+    if(group.edges.length===1)return orderedEdgeLabel(group.edges[0]);
+    const h=group.edges.find(e=&gt;e.hi!=null)?.hi,v=group.edges.find(e=&gt;e.vi!=null)?.vi,dir=group.edges.find(e=&gt;[&#x27;E&#x27;,&#x27;W&#x27;,&#x27;N&#x27;,&#x27;S&#x27;].includes(e.dir))?.dir||&#x27;&#x27;;
+    const containsPitch=group.axis===&#x27;V&#x27;?group.edges.some(e=&gt;e.kind===&#x27;vspan&#x27;):group.edges.some(e=&gt;e.kind===&#x27;gap&#x27;);
+    if(group.axis===&#x27;V&#x27;)return {name:`Vertical ${containsPitch?&#x27;macro&#x27;:&#x27;partial&#x27;} link · V${String(v).padStart(2,&#x27;0&#x27;)} ${dir}`,detail:`${group.edges.length} directed micro-edges · ${group.edges.map(orderedShortName).join(&#x27; → &#x27;)}`};
+    if(group.axis===&#x27;H&#x27;)return {name:`Horizontal ${containsPitch?&#x27;column&#x27;:&#x27;partial&#x27;} link · H${String(h).padStart(2,&#x27;0&#x27;)} ${dir}`,detail:`${group.edges.length} directed micro-edges · ${group.edges.map(orderedShortName).join(&#x27; → &#x27;)}`};
+    return {name:&#x27;Directed link group&#x27;,detail:`${group.edges.length} directed micro-edges`};
+  }
+  function orderedGroupCalculation(group){
+    if(group.edges.length===1){const calculation=group.cycles[0].calculation;return calculation.trimEnd().endsWith(`= ${group.total}`)?calculation:`${calculation} = ${group.total}`;}
+    const parts=group.edges.map((e,i)=&gt;{
+      const c=group.cycles[i],short=orderedShortName(e);
+      return c.extra?`(${e.cyc}+${c.extra}) ${short}`:`${c.total} ${short}`;
+    });
+    return `${parts.join(&#x27; + &#x27;)} = ${group.total}`;
+  }
+  function setOrderedActive(index,scroll=false){
+    root.querySelectorAll(&#x27;.rfroute-sequence-term,.rfroute-link-row[data-step]&#x27;).forEach(n=&gt;n.classList.toggle(&#x27;is-active&#x27;,Number(n.dataset.step)===index));
+    if(scroll){const row=root.querySelector(`.rfroute-link-row[data-step=&quot;${index}&quot;]`);row?.scrollIntoView({behavior:&#x27;smooth&#x27;,block:&#x27;center&#x27;});}
+  }
+  function renderOrderedSequence(p,v){
+    const equation=root.querySelector(&#x27;#rfroute-sequence-equation&#x27;),rows=root.querySelector(&#x27;#rfroute-link-rows&#x27;),summary=root.querySelector(&#x27;#rfroute-sequence-summary&#x27;);
+    equation.replaceChildren();rows.replaceChildren();
+    if(!p.edges.length){
+      const zero=document.createElement(&#x27;span&#x27;);zero.className=&#x27;rfroute-sequence-equals&#x27;;zero.textContent=&#x27;0 = 0 cyc&#x27;;equation.appendChild(zero);
+      const empty=document.createElement(&#x27;div&#x27;);empty.className=&#x27;rfroute-link-empty&#x27;;empty.textContent=&#x27;Source and destination are identical; no directed link is traversed.&#x27;;rows.appendChild(empty);
+      summary.textContent=&#x27;0 terms · 0 µm · Σ0 cyc&#x27;;equation.setAttribute(&#x27;aria-label&#x27;,&#x27;0 equals 0 cycles&#x27;);return;
+    }
+    const groups=groupOrderedEdges(p.edges,v);let running=0;
+    const spoken=[];
+    groups.forEach((group,index)=&gt;{
+      const step=index+1,label=orderedGroupLabel(group);running+=group.total;spoken.push(String(group.total));
+      const term=document.createElement(&#x27;button&#x27;);term.type=&#x27;button&#x27;;term.className=&#x27;rfroute-sequence-term&#x27;;term.dataset.step=String(index);
+      term.title=`Step ${step}: ${label.name} · ${group.total} cyc`;
+      term.setAttribute(&#x27;aria-label&#x27;,`Step ${step}, ${label.name}, ${group.total} cycles`);
+      const value=document.createElement(&#x27;span&#x27;);value.className=&#x27;rfroute-sequence-value&#x27;;value.textContent=String(group.total);
+      const termIndex=document.createElement(&#x27;span&#x27;);termIndex.className=&#x27;rfroute-sequence-index&#x27;;termIndex.textContent=String(step).padStart(2,&#x27;0&#x27;);
+      term.append(value,termIndex);equation.appendChild(term);
+
+      const row=document.createElement(&#x27;div&#x27;);row.className=&#x27;rfroute-link-row&#x27;;row.dataset.step=String(index);row.setAttribute(&#x27;role&#x27;,&#x27;row&#x27;);
+      const stepNode=document.createElement(&#x27;span&#x27;);stepNode.className=&#x27;rfroute-link-step&#x27;;stepNode.setAttribute(&#x27;role&#x27;,&#x27;cell&#x27;);stepNode.textContent=`#${String(step).padStart(2,&#x27;0&#x27;)}`;
+      const nameNode=document.createElement(&#x27;span&#x27;);nameNode.className=&#x27;rfroute-link-name&#x27;;nameNode.setAttribute(&#x27;role&#x27;,&#x27;rowheader&#x27;);
+      const nameMain=document.createElement(&#x27;span&#x27;);nameMain.textContent=label.name;const nameDetail=document.createElement(&#x27;small&#x27;);nameDetail.textContent=label.detail;nameNode.append(nameMain,nameDetail);
+      const distance=document.createElement(&#x27;span&#x27;);distance.className=&#x27;rfroute-link-distance&#x27;;distance.setAttribute(&#x27;role&#x27;,&#x27;cell&#x27;);distance.textContent=`${group.um.toLocaleString()} µm`;
+      const calc=document.createElement(&#x27;span&#x27;);calc.className=&#x27;rfroute-link-calc&#x27;;calc.setAttribute(&#x27;role&#x27;,&#x27;cell&#x27;);calc.textContent=orderedGroupCalculation(group);
+      const termNode=document.createElement(&#x27;span&#x27;);termNode.className=&#x27;rfroute-link-term&#x27;;termNode.setAttribute(&#x27;role&#x27;,&#x27;cell&#x27;);termNode.textContent=`+${group.total} cyc`;
+      const runningNode=document.createElement(&#x27;span&#x27;);runningNode.className=&#x27;rfroute-link-running&#x27;;runningNode.setAttribute(&#x27;role&#x27;,&#x27;cell&#x27;);runningNode.textContent=`Σ${running} cyc`;
+      row.append(stepNode,nameNode,distance,calc,termNode,runningNode);rows.appendChild(row);
+      term.addEventListener(&#x27;mouseenter&#x27;,()=&gt;setOrderedActive(index));term.addEventListener(&#x27;mouseleave&#x27;,()=&gt;setOrderedActive(-1));term.addEventListener(&#x27;focus&#x27;,()=&gt;setOrderedActive(index));term.addEventListener(&#x27;blur&#x27;,()=&gt;setOrderedActive(-1));term.addEventListener(&#x27;click&#x27;,()=&gt;setOrderedActive(index,true));
+      row.addEventListener(&#x27;mouseenter&#x27;,()=&gt;setOrderedActive(index));row.addEventListener(&#x27;mouseleave&#x27;,()=&gt;setOrderedActive(-1));
+    });
+    const equals=document.createElement(&#x27;span&#x27;);equals.className=&#x27;rfroute-sequence-equals&#x27;;equals.textContent=`= ${p.total.toLocaleString()} cyc`;equation.appendChild(equals);
+    const zeroMicroEdges=p.edges.filter(e=&gt;orderedEdgeCycle(e,v).total===0).length;
+    summary.textContent=`${groups.length} link terms · ${p.edges.length} micro-edges (${zeroMicroEdges} at 0 cyc) · ${p.um.toLocaleString()} µm · Σ${p.total.toLocaleString()} cyc`;
+    equation.setAttribute(&#x27;aria-label&#x27;,`${spoken.join(&#x27; plus &#x27;)} equals ${p.total} cycles`);
+    if(running!==p.total)console.error(&#x27;Ordered equation mismatch&#x27;,{running,total:p.total});
+  }
+  function update(){
+    const v=values(),p=route(Number(srcSelect.value),Number(dstSelect.value),v),extra=p.total-p.wire,c=p.counts;
+    root.querySelector(&#x27;#rfroute-result&#x27;).textContent=`Shortest ${p.total.toLocaleString()} cyc · ${p.um.toLocaleString()} µm`;
+    const nonTurn=p.wire-10*p.turns,turnExtra=(c.near||0)*v.near+(c.far||0)*v.far+(c.near||0)*v.qnear+(c.far||0)*v.qfar;
+    root.querySelector(&#x27;#rfroute-route-id&#x27;).textContent=`${p.summary} · non-turn transport ${nonTurn} cyc + ${p.turns}×(5 in + 5 out)${extra?` + configured logic ${extra}`:&#x27;&#x27;} · ${p.folds} fold${p.folds===1?&#x27;&#x27;:&#x27;s&#x27;}`;
+    root.querySelector(&#x27;#rfroute-extra&#x27;).textContent=`extra logic +${extra} cyc`;
+    const terms=[[&#x27;straight&#x27;,&#x27;straight&#x27;],[&#x27;cs&#x27;,&#x27;cs&#x27;],[&#x27;pipe&#x27;,&#x27;pipe&#x27;],[&#x27;inject&#x27;,&#x27;inject&#x27;],[&#x27;eject&#x27;,&#x27;eject&#x27;]].map(([valueKey,kind])=&gt;`${c[kind]||0}×${v[valueKey]}`).join(&#x27; + &#x27;);
+    root.querySelector(&#x27;#rfroute-formula&#x27;).textContent=`non-turn ${nonTurn} + ${p.turns}×(5 ingress + 5 egress) + turn/FIFO extra ${turnExtra} + other extras (${terms}) = ${p.total} cycles`;
+    renderBreakdown(p,v);
+    renderOrderedSequence(p,v);
+    draw(p);requestAnimationFrame(resizeLabels);
+  }
+  for(let eid=0;eid&lt;48;eid+=1){const r=Math.floor(eid/8),c=eid%8,label=`Core ${String(eid).padStart(2,&#x27;0&#x27;)}  (r${r}, c${c})`;srcSelect.add(new Option(label,eid));dstSelect.add(new Option(label,eid));}
+  srcSelect.value=&#x27;0&#x27;;dstSelect.value=&#x27;47&#x27;;
+  srcSelect.addEventListener(&#x27;change&#x27;,update);dstSelect.addEventListener(&#x27;change&#x27;,update);
+  root.querySelector(&#x27;#rfroute-swap&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{const a=srcSelect.value;srcSelect.value=dstSelect.value;dstSelect.value=a;update();});
+  root.querySelectorAll(&#x27;[data-latency]&#x27;).forEach(input=&gt;input.addEventListener(&#x27;input&#x27;,update));
+  update();new ResizeObserver(resizeLabels).observe(svg);
+})();
+&lt;/script&gt;
+
+&lt;script src=&quot;https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set([&quot;top&quot;, &quot;right&quot;, &quot;bottom&quot;, &quot;left&quot;]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =&gt;
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest(&quot;[data-tooltip]&quot;)
+      : null;
+  const containsTarget = (trigger, target) =&gt;
+    target?.nodeType != null &amp;&amp; trigger.contains(target);
+  const getContent = (trigger) =&gt;
+    trigger.getAttribute(&quot;data-tooltip&quot;)?.trim() ?? &quot;&quot;;
+  const getPlacement = (trigger) =&gt; {
+    const placement = trigger.getAttribute(&quot;data-tooltip-placement&quot;);
+    return tooltipPlacements.has(placement) ? placement : &quot;top&quot;;
+  };
+  const getTooltip = () =&gt; {
+    if (tooltip == null) {
+      tooltip = document.createElement(&quot;div&quot;);
+      tooltip.id = tooltipId;
+      tooltip.className = &quot;tooltip&quot;;
+      tooltip.setAttribute(&quot;role&quot;, &quot;tooltip&quot;);
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) =&gt; {
+    const ids = new Set(
+      (trigger.getAttribute(&quot;aria-describedby&quot;) ?? &quot;&quot;)
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute(&quot;aria-describedby&quot;);
+    } else {
+      trigger.setAttribute(&quot;aria-describedby&quot;, [...ids].join(&quot; &quot;));
+    }
+  };
+  const clearOpenTimeout = () =&gt; {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) =&gt; {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) =&gt; {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-width&quot;,
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              &quot;--tooltip-available-height&quot;,
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: &quot;fixed&quot;,
+    })
+      .then(({ x, y }) =&gt; {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = &quot;visible&quot;;
+      })
+      .catch(() =&gt; {
+        if (activeTrigger === trigger &amp;&amp; request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) =&gt; {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = &quot;hidden&quot;;
+    floating.style.transform = &quot;translate(0, 0)&quot;;
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () =&gt; {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) =&gt; {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() &lt; skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() =&gt; {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) =&gt; {
+    if (event.pointerType === &quot;touch&quot;) {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(&quot;:focus-visible&quot;)) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) =&gt; {
+    if (event.key === &quot;Escape&quot;) {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) =&gt; {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () =&gt; {
+    closeTooltip(false);
+    document.removeEventListener(&quot;pointerover&quot;, handlePointerOpen);
+    document.removeEventListener(&quot;pointerout&quot;, handleLeave);
+    document.removeEventListener(&quot;focusin&quot;, handleFocusIn);
+    document.removeEventListener(&quot;focusout&quot;, handleLeave);
+    document.removeEventListener(&quot;keydown&quot;, handleKeyDown);
+    document.removeEventListener(&quot;contextmenu&quot;, handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener(&quot;pointerover&quot;, handlePointerOpen);
+  document.addEventListener(&quot;pointerout&quot;, handleLeave);
+  document.addEventListener(&quot;focusin&quot;, handleFocusIn);
+  document.addEventListener(&quot;focusout&quot;, handleLeave);
+  document.addEventListener(&quot;keydown&quot;, handleKeyDown);
+  document.addEventListener(&quot;contextmenu&quot;, handleContextMenu);
+  window.addEventListener(&quot;pagehide&quot;, destroy, { once: true });
+})();
+&lt;/script&gt;
+&lt;script id=&quot;codex-visualization-lucide&quot; async src=&quot;https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+(() =&gt; {
+  const initialize = () =&gt; {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById(&quot;codex-visualization-lucide&quot;)
+    ?.addEventListener(&quot;load&quot;, initialize, { once: true });
+})();
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+"></iframe>
+</body>
+</html>
