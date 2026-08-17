@@ -1,6 +1,7 @@
 # Concept
 
 * [3D-Stacked AI Chip](3d-stacked-ai-chip.md) - 3D 堆叠 AI 芯片：TSV 垂直堆叠 DRAM bank 于 AI core 之上，分布式内存与专用总线带来带宽扩展与利用率新挑战
+* [3D Stacking Technologies](3d-stacking-technologies.md) - 3D 集成三路线对垒：TSV-based (商业主流)、Monolithic (实验)、Hybrid Bonding (Cu-Cu 当代商业)；对 3D NoC 设计的根本含义对比
 * [Adaptive Routing for NoC](adaptive-routing-noc.md) - D&T Ch.6-7 自适应路由：最小/非最小、Valiant VRR、VC 与拥塞感知；Duato 逃逸子网预告；DOR vs 自适应选型与 WSE/AllReduce
 * [Architecture Benchmark Methodology](architecture-benchmark-methodology.md) - 体系结构量化评估方法论：几何均值、Speedup 计算、SPEC/MLPerf 原则与常见数据陷阱
 * [Architecture Paper Reading Methodology](architecture-paper-reading-methodology.md) - 体系结构论文 5 步精读法 + 四大量化武器（归因/Roofline/敏感性/Pareto）；以 Luczynski HPDC'24 Wafer-Scale Reduce 为范例
@@ -96,6 +97,7 @@
 * [Switching Elements](switching-elements.md) - 交换单元：空分/时分交换，开关阵列与共享存储器/总线，性能指标
 * [Switching Networks](switching-networks.md) - 交换网络：CLOS 三级网络（严格/可重排无阻塞），TST 网络，Banyan 网络
 * [Switching Principles](switching-principles.md) - 交换原理基础：电路/报文/分组/虫孔交换，历史演进，三对基本概念，交换系统结构
+* [Through-Silicon Via (TSV) Physical Layer](tsv-3d-physical-layer.md) - 3D 集成的基础物理单元：via-first/middle/last 工艺、Keep-Out Zone、寄生 R/C、热密度、良率模型；3D NoC 设计的根本约束由此层决定
 * [TileLang DSL](tilelang.md) - Kernel 开发 DSL
 * [TileLoom Compiler](tileloom-compiler.md) - NUS TileLoom：MLIR 端到端 dataflow planning，Triton/Helion → spatiotemporal mapping + df 硬件模型；Tenstorrent 2-D mesh 上 FlashAttention ~2× TTNN
 * [Topology Optimization Variants](topology-optimization-variants.md) - 拓扑变体与优化：Folding、Concentrated/Collapsed Mesh、Express Cube、Dally 1990 最优维度定律、高基数路由器；Compression vs Expansion 权衡

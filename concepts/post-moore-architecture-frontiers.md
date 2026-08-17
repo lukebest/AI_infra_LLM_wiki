@@ -59,6 +59,8 @@ arch-study **研究篇 Day 29**：经典（H&P）之后，**单核主频、单�
 - **CPO** 算力 + 光共封装  
 - 对照：小 die 良率 vs [WSE](/entities/cerebras-wse.md) 整晶圆容错  
 
+> 3D / 2.5D 工艺路线细节（TSV / Monolithic / Hybrid Bonding 三路线对 3D NoC 设计的根本含义）见 [Through-Silicon Via Physical Layer](/concepts/tsv-3d-physical-layer.md) 与 [3D Stacking Technologies](/concepts/3d-stacking-technologies.md)。
+
 ## 主题 D：Wafer-Scale 未来
 
 - 单 wafer 极限 → **Rack-Scale / 多 wafer fabric**  

@@ -1,5 +1,12 @@
 # Bundle Update Log
 
+## 2026-07-31
+* **Layer 1 Ingest (New Study Series)**: 3D NoC 研究 Phase 1（Layer 1 物理层）开篇，4 raw 学记 → `raw/articles/3d-noc-study-{01-tsv-process-tech,02-monolithic-vs-tsv,03-hybrid-bonding,04-3d-mesh-baseline}.md`（侧重 TSV 物理 + 三路线对比 + 商业现实 + Feero baseline）。
+* **Creation** (papers): [Katti TSV 2010](papers/katti-tsv-technology-roadmap-2010.md) — TSV 综述原典入口；[Batude Monolithic 2011](papers/batude-monolithic-3d-review-2011.md) — Monolithic 综述入口；[Hybrid Bonding Recent](papers/hybrid-bonding-3d-integration-recent.md) — Cu-Cu 直接键合综述；[Feero 3D Mesh Stan 2008](papers/feero-3d-mesh-noc-stan-2008.md) — 3-D Mesh NoC 拓扑 baseline。
+* **Creation** (concepts): [TSV Physical Layer](concepts/tsv-3d-physical-layer.md) — TSV 工艺 + KOZ + 寄生 + 热 + 良率 五约束概念页；[3D Stacking Technologies](concepts/3d-stacking-technologies.md) — TSV / Monolithic / Hybrid Bonding 三路线对比 + 对 3D NoC 设计含义。
+* **Update**: [3D-Stacked AI Chip](concepts/3d-stacked-ai-chip.md) + [Post-Moore Architecture Frontiers](concepts/post-moore-architecture-frontiers.md) 反向链接在 #5 步补。`SCHEMA.md` tag taxonomy 加 `3d / tsv / monolithic / hybrid-bonding / through-silicon-via / microbump / cu-cu / packaging / integration / sequential-integration`（既有 `chiplet / physical-layer` 等保留，无重复）。
+* **Indexes**: 手动同步 `concepts/index.md`（+2 条）、`papers/index.md`（+4 条）。
+
 ## 2026-07-30
 * **Ingest**: Ali (@waterloo_intern) '22580: From GPT2 to Kimi3, Explained' (2026-07-27 X 长文) → `raw/articles/22580 From GPT2 to Kimi3, Explained.md`（551 行，已存）。
 * **Creation** (entities): [Moonshot AI Kimi K3](/entities/moonshot-ai-kimi-k3.md) — K3 模型实体 + 架构骨架 + 与 GPT-2 尺度对照。

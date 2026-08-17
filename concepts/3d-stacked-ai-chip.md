@@ -79,6 +79,10 @@ Core FLOPS、DRAM BW、NoC BW、SRAM 容量必须协同配置；单纯 scale 任
 | **Core group** | 物理相邻 core 组内同步 DRAM 访问 | 缓解多 core 导致的 bank 冲突；详见 [Core Group](/concepts/core-group-dram-access.md) |
 | **Mesh NoC** | 低面积 + dimension-ordered → 近最优 | 相对 all-to-all 面积更优 |
 
+## 物理层前置
+
+本页是 Voxel 视角下的 3D AI 芯片工作负载与协同设计空间；物理前置见 [Through-Silicon Via Physical Layer](/concepts/tsv-3d-physical-layer.md) 与 [3D Stacking Technologies](/concepts/3d-stacking-technologies.md)（TSV / Monolithic / Hybrid Bonding 三路线 + 对 3D 集成的根本含义）。
+
 ## LLM 工作负载差异
 
 - **Decode（memory-bound）**：扩 DRAM BW 显著降 latency；大 SRAM 利于 prefetch；NoC BW 不敏感
