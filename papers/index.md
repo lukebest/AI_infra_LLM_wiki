@@ -1,5 +1,9 @@
 # Paper
 
+* [3DLS: A 3D Logic-Stacked Architecture for Disaggregated LLM Serving](3dls-3d-logic-stacked-disaggregated-llm-serving.md) - KAIST IEEE CAL 2026 — logic-on-logic 把 KVT 与 decode AllReduce 物理隔离；相对共享 D2D 最高 1.49× 吞吐、60.2% 更低 E2E
+* [Mozart: Modularized and Efficient MoE Training on 3.5D Wafer-Scale Chiplet Architectures](mozart-35d-wafer-scale-moe-training.md) - UNC/UMN 3.5D 晶圆级 NoP-Tree + 专家共激活布局；Qwen3/OLMoE/DeepSeek post-training 1.92× / 2.37× / 2.17×
+* [Network Design for Wafer-Scale Systems with Wafer-on-Wafer Hybrid Bonding](network-design-wafer-scale-wow-hybrid-bonding.md) - ETH Iff et al. — WoW 放置即拓扑；相对 mesh-like baseline 吞吐最高 +250%、延迟 -36%、每字节能量 -38%
+
 * [22580: From GPT-2 to Kimi K3, Explained](ali-22580-from-gpt2-to-kimi3.md) - Ali (@waterloo_intern, Baseten) 2026-07-27 X 长文；从 GPT-2 attention 一路演化到 Kimi K3；核心论点"过去七年 LLM 真正的变化不是规模 22,580×，而是 attention 状态空间从 O(N) 到 O(1) 的选择/衰减/reset 范式"
 * [MegaScale-Infer](megascale-infer-2504.02263.md) - MegaScale-Infer：MoE disaggregated attention/FFN serving，ping-pong pipeline + M2N 通信库，1.90× 吞吐提升
 * [Resilient AI Supercomputer Networking using MRC and SRv6](resilient-ai-supercomputer-networking-mrc-srv6.md) - MRC+SRv6+multi-plane Clos：三管齐下的 100K+ GPU AI 训练网络容错方案，OpenAI/Microsoft 生产验证

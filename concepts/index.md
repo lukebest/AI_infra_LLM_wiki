@@ -74,6 +74,7 @@
 * [Multicore SMT and NUCA](multicore-smt-nuca.md) - H&P Ch.5.7-5.9：Fine/Coarse/SMT 多线程、SMT 1.2-1.3× 收益、Amdahl+通信/一致性 Overhead、NUCA 非均匀 Cache、WSE 反 Amdahl 哲学
 * [Muon Optimizer](muon-optimizer.md) - 矩阵正交化优化器，Hybrid Newton-Schulz 迭代
 * [Network Interface and System-Level Design](network-interface-and-system-design.md) - Dally & Towles Ch.13–14 — NI 翻译官；End-to-End；服务模型；流控 vs 拥塞控制；Max-Min Fairness；开环/闭环
+* [Network-on-Wafer](network-on-wafer.md) - 晶圆级互连：field stitching / chiplet-on-fanout / WoW hybrid bonding 三条物理路线；放置即拓扑
 * [NoC Fundamentals (H&P Appendix F)](noc-fundamentals-hp-appendix-f.md) - H&P 附录 F 互连网络五问：拓扑/路由/流控/路由器/性能；直连 vs 间接、虫孔+VC、饱和吞吐与 WSE-scale 扩展指标
 * [NoC Research Methodology and Case Studies](noc-research-methodology-case-studies.md) - 互连 Day 20 — NoC 论文三层读法；CMP 四原则；Packets not Wires；Polaris 5GHz Mesh；Mesh vs Fat-Tree；WSE 反推
 * [NoC Router Pipeline and Allocators](noc-router-pipeline-allocators.md) - Dally & Towles Ch.11–12 — RC/VA/SA/ST/LT 五级流水；Crossbar；RR / Matrix / iSLIP / Wavefront 仲裁

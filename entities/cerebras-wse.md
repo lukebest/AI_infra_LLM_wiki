@@ -9,8 +9,9 @@ tags:
 - deterministic
 - inference
 - mesh
-timestamp: '2026-05-29T00:00:00Z'
+timestamp: '2026-08-18T00:00:00Z'
 created: 2026-04-16
+updated: 2026-08-18
 sources:
 - raw/papers/Near-optimal_wafer-scale_reduce.pdf
 - raw/articles/interconn-study-21d-day-01.md
@@ -146,6 +147,8 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Layout-Aware NoC and Flexible Dataflow Accelerators](/concepts/layout-aware-noc-flexible-dataflow.md) — MAERI/SIGMA/FEATHER/Venus 5 类技术路线
 - [NVLink NVSwitch Scale-Up Fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md) — GPU fat-tree 对照
 - [Paper Deep-Dive Map](/summaries/paper-deepdive.md) — 精读 Day 1–8
+- [Network-on-Wafer](/concepts/network-on-wafer.md) — WSE 是 field stitching 均匀 mesh；对照 WoW「同层不能直连」
+- [WoW Network Design](/papers/network-design-wafer-scale-wow-hybrid-bonding.md) — SoIC-WoW 第三条 WSI 路线
 
 # Citations
 

@@ -11,8 +11,9 @@ tags:
 - wse
 - photonic
 - research
-timestamp: '2026-07-13T00:00:00Z'
+timestamp: '2026-08-18T00:00:00Z'
 created: 2026-07-13
+updated: 2026-08-18
 sources:
 - raw/articles/arch-study-30d-day-29.md
 ---
@@ -66,6 +67,7 @@ arch-study **研究篇 Day 29**：经典（H&P）之后，**单核主频、单�
 - 单 wafer 极限 → **Rack-Scale / 多 wafer fabric**  
 - 集体通信：[WSE Reduce](/concepts/wse-reduce-algorithms.md)、[WaferLLM](/concepts/waferllm-system.md)  
 - 片上充裕 vs 片外瓶颈：[WSE Quantitative Analysis](/concepts/wse-quantitative-architecture-analysis.md)
+- **NoW 新轴**：[Network-on-Wafer](/concepts/network-on-wafer.md) — WoW 重叠几何 vs 3.5D NoP-Tree；见 [Iff et al.](/papers/network-design-wafer-scale-wow-hybrid-bonding.md)、[Mozart](/papers/mozart-35d-wafer-scale-moe-training.md)
 
 ## 三条路（收束）
 

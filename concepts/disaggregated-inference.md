@@ -7,8 +7,9 @@ tags:
 - serving-system
 - moe
 - disaggregated-inference
-timestamp: '2026-05-08T00:00:00Z'
+timestamp: '2026-08-18T00:00:00Z'
 created: 2026-04-17
+updated: 2026-08-18
 sources:
 - arXiv:2504.02263
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
@@ -86,6 +87,7 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 | **Disaggregated Attn/FFN** | 模块层 | M2N/N2M | MoE 推理效率 |
 | **Disaggregated Prefill/Decode** | 阶段层 | KV transfer | 降低 TTFT/TPOT |
 | **Pool-based KV** | 内存层 | KV routing | KV cache 管理 |
+| **3DLS 物理隔离** | 封装垂直维 | 垂直 KVT + 侧向 AR | 去掉共享 D2D 争用 |
 
 ## 与 Luke 研究的关联
 
@@ -120,9 +122,11 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [HCache State Restoration](/papers/hcache-fast-state-restoration.md) — 会话状态快速恢复（隐藏激活）
 - [FlexInfer Offloading](/papers/flexinfer-on-device-llm-offloading.md) — 端侧预算自适应 offload
 - [SuperInfer Superchips](/papers/superinfer-slo-aware-rotary-scheduling.md) — GH200 NVLink-C2C 上 SLO-aware KV 调度
+- [3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) — chiplet 上 PD+TP 的 KVT/AR 物理隔离（IEEE CAL 2026）
 
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
 [2] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)
 [3] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
+[4] [raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf](raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf) — 3DLS 物理隔离

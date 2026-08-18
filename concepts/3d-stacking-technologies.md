@@ -13,14 +13,18 @@ tags:
 - chiplet
 - wse
 - noc
-timestamp: '2026-07-31T00:00:00Z'
+timestamp: '2026-08-18T00:00:00Z'
 created: '2026-07-31'
+updated: '2026-08-18'
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
 - raw/articles/3d-noc-study-02-monolithic-vs-tsv.md
 - raw/articles/3d-noc-study-03-hybrid-bonding.md
 - papers/batude-monolithic-3d-review-2011.md
 - papers/hybrid-bonding-3d-integration-recent.md
+- papers/network-design-wafer-scale-wow-hybrid-bonding.md
+- papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md
+- papers/mozart-35d-wafer-scale-moe-training.md
 ---
 
 # 3D Stacking Technologies（3D 堆叠工艺路线）
@@ -84,6 +88,8 @@ sources:
 
 详见 [Hybrid Bonding papers/hybrid-bonding-3d-integration-recent.md](/papers/hybrid-bonding-3d-integration-recent.md)。
 
+2026 新用法：TSMC SoIC-**WoW** 把 Cu-Cu 键合从 die 堆叠推到**整晶圆面对面**——同晶圆 reticle 不能直连，拓扑由重叠决定，见 [Network-on-Wafer](/concepts/network-on-wafer.md) 与 [Iff et al.](/papers/network-design-wafer-scale-wow-hybrid-bonding.md)。[Mozart](/papers/mozart-35d-wafer-scale-moe-training.md) 用 hybrid bonding 做 per-chiplet logic-on-SRAM；[3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) 用垂直维隔离 PD 解耦的 KVT 与 decode AllReduce。
+
 ## 路线 → 3D NoC 设计的根本含义
 
 | 路线 | port 数 | 路由器主约束 | 拓扑倾向 |
@@ -99,7 +105,8 @@ sources:
 - [Through-Silicon Via (TSV) Physical Layer](/concepts/tsv-3d-physical-layer.md) — TSV 工艺单元
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — Voxel / 3D AI chip 上跑 LLM 工作负载
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — Packaging (3D/2.5D/Chiplet) 路线
-- [WSE](/entities/cerebras-wse.md) — **反例**：Cerebras 不靠 3D 堆叠，靠整晶圆制造
+- [WSE](/entities/cerebras-wse.md) — **反例**：Cerebras 不靠 3D 堆叠，靠整晶圆制造（field stitching，不是 WoW）
+- [Network-on-Wafer](/concepts/network-on-wafer.md) — SoIC-WoW 把 hybrid bonding 变成晶圆级网络约束
 - [DRAM Memory System](/concepts/dram-memory-system.md) — HBM 即 TSV-based 商业现实
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — 3D V-Cache 即 TSV-based
 
@@ -116,3 +123,4 @@ sources:
 [2] [raw/articles/3d-noc-study-03-hybrid-bonding.md](raw/articles/3d-noc-study-03-hybrid-bonding.md) — Hybrid Bonding 学记
 [3] [papers/batude-monolithic-3d-review-2011.md](papers/batude-monolithic-3d-review-2011.md) — Monolithic 综述
 [4] [papers/hybrid-bonding-3d-integration-recent.md](papers/hybrid-bonding-3d-integration-recent.md) — Hybrid Bonding 综述
+[5] [papers/network-design-wafer-scale-wow-hybrid-bonding.md](papers/network-design-wafer-scale-wow-hybrid-bonding.md) — WoW 放置即拓扑（2026）

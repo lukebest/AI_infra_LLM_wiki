@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-08-18
+* **Watch (first-run)**: 2026-08-18 Asia/Shanghai 首轮 AI infra 论文巡检。检索 2025–2026（偏近 2–8 周）WSE / NoC / NoW / 3D IC / LLM 加速器。已有页未重复 ingest：FlooNoC collectives、Cerebras/WSE、Voxel、WaferLLM、MOCAP、hybrid bonding 综述。
+* **Considered not ingested**: ThAME (arXiv:2607.17074, ESWEEK-26, 15.7×/9.8× 仅摘要级)；DeepStack (2604.04750, 与 Voxel DSE 重叠)；3D-Flow FlashAttention hybrid-bond (2602.11016)；DyPNet-MSC photonic NoW (ISPASS 2026)；Trivance AllReduce (2602.17254)；RPU (2602.18568)；CHIME (2601.19908)。
+* **Ingest**: Iff et al. WoW NoW PDF → `raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf` + stub `raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md`（arXiv:2603.05266）。
+* **Ingest**: 3DLS PDF → `raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf` + stub `raw/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md`（arXiv:2607.01617, IEEE CAL 2026）。
+* **Ingest**: Mozart PDF → `raw/papers/Mozart_35D_Wafer_Scale_MoE_Training_2026.pdf` + stub `raw/papers/mozart-35d-wafer-scale-moe-training.md`（arXiv:2603.07006）。
+* **Creation** (papers): [WoW Network Design](/papers/network-design-wafer-scale-wow-hybrid-bonding.md), [3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md), [Mozart](/papers/mozart-35d-wafer-scale-moe-training.md)。
+* **Creation** (concepts): [Network-on-Wafer](/concepts/network-on-wafer.md) — 三条 WSI 物理路线 + 放置即拓扑。
+* **Update**: [3D Stacking Technologies](/concepts/3d-stacking-technologies.md), [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md), [Disaggregated Inference](/concepts/disaggregated-inference.md), [Cerebras WSE](/entities/cerebras-wse.md), [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md), [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md), `SCHEMA.md`（加 `now / network-on-wafer / wafer-on-wafer`）。
+* **Indexes**: 手动同步 `concepts/index.md`（+1）、`papers/index.md`（+3）。
+
 ## 2026-08-13
 * **Ingest**: Corner To Corner Route 交互可视化 → `raw/articles/corner-to-corner-route.html` + 摘录 `raw/articles/corner-to-corner-route.md`（6×8 AIC 折叠多环、RBRG 转弯服务、相位约束最短路）。
 * **Creation**: [AIC Folded Multi-Ring NoC](/concepts/aic-folded-multi-ring-noc.md) — floorplan 常量、微边周期表、H→V→H 合法性、对角 194 cyc / 53.7 mm 复现。

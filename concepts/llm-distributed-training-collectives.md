@@ -11,8 +11,9 @@ tags:
 - distributed
 - noc
 - wse
-timestamp: '2026-07-13T00:00:00Z'
+timestamp: '2026-08-18T00:00:00Z'
 created: 2026-07-13
+updated: 2026-08-18
 sources:
 - raw/articles/arch-study-30d-day-27.md
 ---
@@ -98,6 +99,8 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [Alibaba HPN](/papers/alibaba-hpn-datacenter-network-llm.md) — LLM 训练数据中心网络（HPN）
 - [Meta RDMA over Ethernet](/papers/rdma-over-ethernet-meta-training.md) — Meta 规模分布式训练 RoCE
 - [Comm/Comp Parallelism](/papers/optimizing-comm-comp-parallelism-training.md) — 训练平台通信-计算重叠
+- [Mozart 3.5D](/papers/mozart-35d-wafer-scale-moe-training.md) — 晶圆级 chiplet 上用专家共激活布局压 All-to-All 的 C_T
+- [3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) — **推理** TP AllReduce 与 KVT 争用（对照训练集体）
 
 # Citations
 
