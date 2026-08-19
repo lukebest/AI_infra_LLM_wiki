@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-08-19
+* **Watch**: 2026-08-19 Asia/Shanghai AI infra 论文巡检。检索近 7–14 天并扩展到约 2 个月：WSE / NoC / NoW / 3D IC / LLM 加速器互连。昨日已 ingest 的 Iff/3DLS/Mozart 未重复。
+* **Ingest**: Fovea PDF → `raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf` + stub `raw/papers/fovea-physical-implication-aware-wafer-scale-dse.md`（arXiv:2608.03285, 2026-08-04）。
+* **Ingest**: C2C-Explorer PDF → `raw/papers/C2C_Explorer_Chip_to_Chip_Interconnect_LLM_2026.pdf` + stub `raw/papers/c2c-explorer-chip-to-chip-interconnect-llm.md`（arXiv:2608.08611, DAC 2026 自称）。
+* **Ingest**: ThAME PDF（v2）→ `raw/papers/ThAME_3D_Memory_Enabled_Heterogeneous_MoE_2026.pdf` + stub `raw/papers/thame-3d-memory-enabled-heterogeneous-moe.md`（arXiv:2607.17074；昨日仅摘要、今日全文）。
+* **Creation** (papers): [Fovea](/papers/fovea-physical-implication-aware-wafer-scale-dse.md), [C2C-Explorer](/papers/c2c-explorer-chip-to-chip-interconnect-llm.md), [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md)。
+* **Update**: [Network-on-Wafer](/concepts/network-on-wafer.md)（Fovea 可行域/DSE）, [3D Stacking Technologies](/concepts/3d-stacking-technologies.md)（CBA+HB）, [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md), [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md), [Cerebras WSE](/entities/cerebras-wse.md), Mozart / WoW / 3DLS 论文页交叉引用。
+* **Indexes**: 手动同步 `papers/index.md`（+3）。
+* **Considered not ingested**: SHIFT (2606.28754, 计算搬迁 vs 数据搬迁，对比「晶圆级 LLM 服务」但主贡献偏 runtime)；HCRMap (2607.11586, 3.5D MoE 映射，与 Mozart 重叠且偏调度)；SiFAR (2607.08973, 软件同步-free AllReduce)；HyNoC (FPGA VLIW NoC, LLaMA 只作负载)；CLIP-3D (2607.12788, 通用 3D-IC 热/布局, 非 LLM)；200 mm M3D InOx (2608.09508, 器件/工艺为主)；Chiplet-Contiguous Layout / locality simulator (2606.11718/11716, 多 chiplet GPU GEMM)；DeepStack / 3D-Flow / DyPNet-MSC / Trivance 仍缺相对 wiki 的新增量或全文无新实质。无增量条目不单列「无增量」，因本轮有三篇 ingest。
+
 ## 2026-08-18
 * **Watch (first-run)**: 2026-08-18 Asia/Shanghai 首轮 AI infra 论文巡检。检索 2025–2026（偏近 2–8 周）WSE / NoC / NoW / 3D IC / LLM 加速器。已有页未重复 ingest：FlooNoC collectives、Cerebras/WSE、Voxel、WaferLLM、MOCAP、hybrid bonding 综述。
 * **Considered not ingested**: ThAME (arXiv:2607.17074, ESWEEK-26, 15.7×/9.8× 仅摘要级)；DeepStack (2604.04750, 与 Voxel DSE 重叠)；3D-Flow FlashAttention hybrid-bond (2602.11016)；DyPNet-MSC photonic NoW (ISPASS 2026)；Trivance AllReduce (2602.17254)；RPU (2602.18568)；CHIME (2601.19908)。

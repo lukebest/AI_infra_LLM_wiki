@@ -76,6 +76,7 @@ C_T：Qwen3 8 → 6.58 → **5.77**；OLMoE 8 → 6.84 → **5.63**；DeepSeek 6
 - [FlashMoE Kernel](/concepts/flashmoe-kernel.md) / [MegaMoE Kernel](/concepts/megamoe-kernel.md) — GPU 上 MoE 通信重叠；Mozart 是 chiplet/DRAM 层次
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — Mozart 在训练侧把 attention 与 expert 分到不同 chiplet
 - [WoW Network Design](/papers/network-design-wafer-scale-wow-hybrid-bonding.md) — 同是晶圆级，几何约束完全不同
+- [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) — 推理侧 FeFET/DRAM PNM + 树 NoC；Mozart 是训练侧 NoP-Tree
 
 ## 开放问题
 

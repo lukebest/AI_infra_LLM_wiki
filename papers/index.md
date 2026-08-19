@@ -1,5 +1,9 @@
 # Paper
 
+* [C2C-Explorer: Chip-to-Chip Interconnect DSE for LLM Systems](c2c-explorer-chip-to-chip-interconnect-llm.md) - DAC 2026 — LLM 轨迹驱动的 scale-up C2C 仿真+贝叶斯 DSE；FPGA 时序误差 2.46–8.23%；DeepSeek combine goodput +44.1%、buffer −98.4%
+* [Fovea: Physical-Implication-Aware Wafer-Scale DSE](fovea-physical-implication-aware-wafer-scale-dse.md) - 清华 — 物理可行域 + Decision Domain；70 对 LLM 训练全部找回参考最优，相对穷尽参考平均 4.13×、最高 7.80×
+* [ThAME: 3D Memory-Enabled Heterogeneous Accelerator for LLM MoE](thame-3d-memory-enabled-heterogeneous-moe.md) - WSU ESWEEK-26 — FeFET-NAND PNM 存 expert、DRAM-PNM 做 attention、分层树 NoC；相对 H3D-T 最高 15.7× TBT、9.8× 能效
+
 * [3DLS: A 3D Logic-Stacked Architecture for Disaggregated LLM Serving](3dls-3d-logic-stacked-disaggregated-llm-serving.md) - KAIST IEEE CAL 2026 — logic-on-logic 把 KVT 与 decode AllReduce 物理隔离；相对共享 D2D 最高 1.49× 吞吐、60.2% 更低 E2E
 * [Mozart: Modularized and Efficient MoE Training on 3.5D Wafer-Scale Chiplet Architectures](mozart-35d-wafer-scale-moe-training.md) - UNC/UMN 3.5D 晶圆级 NoP-Tree + 专家共激活布局；Qwen3/OLMoE/DeepSeek post-training 1.92× / 2.37× / 2.17×
 * [Network Design for Wafer-Scale Systems with Wafer-on-Wafer Hybrid Bonding](network-design-wafer-scale-wow-hybrid-bonding.md) - ETH Iff et al. — WoW 放置即拓扑；相对 mesh-like baseline 吞吐最高 +250%、延迟 -36%、每字节能量 -38%

@@ -13,9 +13,9 @@ tags:
 - chiplet
 - wse
 - noc
-timestamp: '2026-08-18T00:00:00Z'
+timestamp: '2026-08-19T00:00:00Z'
 created: '2026-07-31'
-updated: '2026-08-18'
+updated: '2026-08-19'
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
 - raw/articles/3d-noc-study-02-monolithic-vs-tsv.md
@@ -25,6 +25,7 @@ sources:
 - papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md
 - papers/mozart-35d-wafer-scale-moe-training.md
+- papers/thame-3d-memory-enabled-heterogeneous-moe.md
 ---
 
 # 3D Stacking Technologies（3D 堆叠工艺路线）
@@ -88,7 +89,7 @@ sources:
 
 详见 [Hybrid Bonding papers/hybrid-bonding-3d-integration-recent.md](/papers/hybrid-bonding-3d-integration-recent.md)。
 
-2026 新用法：TSMC SoIC-**WoW** 把 Cu-Cu 键合从 die 堆叠推到**整晶圆面对面**——同晶圆 reticle 不能直连，拓扑由重叠决定，见 [Network-on-Wafer](/concepts/network-on-wafer.md) 与 [Iff et al.](/papers/network-design-wafer-scale-wow-hybrid-bonding.md)。[Mozart](/papers/mozart-35d-wafer-scale-moe-training.md) 用 hybrid bonding 做 per-chiplet logic-on-SRAM；[3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) 用垂直维隔离 PD 解耦的 KVT 与 decode AllReduce。
+2026 新用法：TSMC SoIC-**WoW** 把 Cu-Cu 键合从 die 堆叠推到**整晶圆面对面**——同晶圆 reticle 不能直连，拓扑由重叠决定，见 [Network-on-Wafer](/concepts/network-on-wafer.md) 与 [Iff et al.](/papers/network-design-wafer-scale-wow-hybrid-bonding.md)。[Mozart](/papers/mozart-35d-wafer-scale-moe-training.md) 用 hybrid bonding 做 per-chiplet logic-on-SRAM；[3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) 用垂直维隔离 PD 解耦的 KVT 与 decode AllReduce。[ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) 用 CMOS Directly Bonded to Array（CBA）+ Cu-Cu HB 把 FeFET-NAND 阵列接到 PNM 基座，文称数据 I/O 不占逻辑有源区。
 
 ## 路线 → 3D NoC 设计的根本含义
 
@@ -124,3 +125,4 @@ sources:
 [3] [papers/batude-monolithic-3d-review-2011.md](papers/batude-monolithic-3d-review-2011.md) — Monolithic 综述
 [4] [papers/hybrid-bonding-3d-integration-recent.md](papers/hybrid-bonding-3d-integration-recent.md) — Hybrid Bonding 综述
 [5] [papers/network-design-wafer-scale-wow-hybrid-bonding.md](papers/network-design-wafer-scale-wow-hybrid-bonding.md) — WoW 放置即拓扑（2026）
+[6] [papers/thame-3d-memory-enabled-heterogeneous-moe.md](papers/thame-3d-memory-enabled-heterogeneous-moe.md) — FeFET-NAND CBA + HB PNM（2026）

@@ -73,6 +73,7 @@ QoS / VC / 静态带宽预留只能**重分配**干扰：优先 AR 会拖慢 KV 
 - [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — 争用发生在 decode 步内的 AR，被层间 KVT 拉长
 - [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md) — 这里是 **推理 TP AllReduce**，但集体仍在关键路径
 - [Network-on-Wafer](/concepts/network-on-wafer.md) — 相关工作引用 WSC-LLM / NoW 共设计；3DLS 把隔离做在封装垂直维
+- [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) — 另一条 3D 异构：DRAM vs FeFET 分工，不是 KVT/AR 垂直隔离
 - [MOCAP](/papers/mocap-wafer-scale-chunked-pipelining.md) — 晶圆级 prefill-only；3DLS 是 PD 解耦 serving
 - [Voxel](/papers/voxel-3d-stacked-ai-chip-llm-inference.md) — 3D AI 仿真；3DLS 强调流量隔离而非 bank 冲突
 

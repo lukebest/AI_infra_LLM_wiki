@@ -83,6 +83,7 @@ HB pitch 量产 <10 μm、研究原型 1 μm，电气特性接近上层金属，
 - [Near-Optimal Wafer-Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md) / [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) — WSE 上集体算法；本文评的是 packet 网络，不是集体原语
 - [Mozart 3.5D](/papers/mozart-35d-wafer-scale-moe-training.md) — 另一条 3.5D 晶圆级：NoP-Tree + 专家 chiplet，不是 WoW 重叠拓扑
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — Packaging × Wafer-Scale 交点
+- [Fovea](/papers/fovea-physical-implication-aware-wafer-scale-dse.md) — 同质 repeated-die + 边界 D2D 的可行域/多保真 DSE，不是 WoW 重叠约束
 
 ## 开放问题
 

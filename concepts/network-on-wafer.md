@@ -16,12 +16,14 @@ tags:
 - packaging
 - fabric
 - architecture
-timestamp: '2026-08-18T00:00:00Z'
+timestamp: '2026-08-19T00:00:00Z'
 created: 2026-08-18
+updated: 2026-08-19
 sources:
 - raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/mozart-35d-wafer-scale-moe-training.md
+- papers/fovea-physical-implication-aware-wafer-scale-dse.md
 ---
 
 # Network-on-Wafer（晶圆级网络 / NoW）
@@ -61,10 +63,14 @@ sources:
 - [WaferLLM System](/concepts/waferllm-system.md) — 在 Cerebras 均匀 mesh 上做 LLM 算子；NoW 换拓扑后 MeshGEMM/V 的两跳假设要重验。
 - [AIC Folded Multi-Ring NoC](/concepts/aic-folded-multi-ring-noc.md) — reticle 尺度折叠环，不是晶圆级重叠网。
 
+## 晶圆级 DSE：先构造可行域
+
+[Fovea](/papers/fovea-physical-implication-aware-wafer-scale-dse.md)（清华，2026-08）不设计新拓扑，而是论证：**同质 repeated-die 晶圆仍然不是一张万能模板**。die 轮廓同时决定光罩合规、tiling、D2D lane 数和边界 I/O 能否放下；面积可行里平均 29.4% 的分析 top-10% 会被物理约束打掉。分析 vs ASTRA-sim+ns-3 约 4000× 成本且 20.96% 成对反转，所以用 Decision Domain 只精评无法排除的候选。范围是 chiplet-on-wafer 边界 D2D，**不是** WoW 重叠网，也不是 Cerebras field stitch。
+
 ## 当前认知
 
 - **NoW 不是“大号 NoC”**：物理路线先决定边集合，再谈路由/流控。
-- **2026 年有两条可写进设计空间的轴**：WoW 重叠几何（Iff/ETH）与 3.5D 异构树（Mozart）。
+- **2026 年可写进设计空间的轴**：WoW 重叠几何（Iff/ETH）、3.5D 异构树（Mozart）、以及同质 repeated-die 的物理可行域+多保真确认（Fovea）。
 - **集体通信、良率、热** 仍是开放层：Iff 指出 FRED 式 Clos-like 在 WoW 几何下不可行；Mozart 自陈仍 memory-bound。
 
 ## 开放问题
@@ -73,9 +79,11 @@ sources:
 2. Field-stitch 均匀 mesh 与 WoW 高 radix 不规则图，对 [WaferLLM](/concepts/waferllm-system.md) 类算子谁更友好？
 3. Photonic NoW（检索到 ISPASS 2026 DyPNet-MSC，本轮未 ingest）如何与电学 WoW 比较？
 4. 3DLS 的垂直隔离能否叠在 WoW 的 LoL 上，做成“层间 KVT + 层内高 radix NoW”？
+5. Fovea 的 Decision Domain 能否接到 WoW 重叠几何 / 异构 chiplet 混合物？
 
 # Citations
 
 [1] [raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf](raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf) — Iff et al. 2026
 [2] [raw/papers/Mozart_35D_Wafer_Scale_MoE_Training_2026.pdf](raw/papers/Mozart_35D_Wafer_Scale_MoE_Training_2026.pdf) — Luo et al. 2026
-[3] [raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf](raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf) — Lee et al. 2026
+[3] [raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf](raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf) — Li et al. 2026
+[4] [raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf](raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf) — Lee et al. 2026
