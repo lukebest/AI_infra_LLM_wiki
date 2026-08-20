@@ -1,5 +1,13 @@
 # Bundle Update Log
 
+## 2026-08-20
+* **Watch**: 2026-08-20 Asia/Shanghai AI infra 论文巡检。近 7–14 天 cs.AR 多为 GNN/RTL/FPGA CAD，WSE/NoC/NoW/3D/LLM 互连增量很少。已 ingest 的 Iff/3DLS/Mozart（08-18）与 Fovea/C2C-Explorer/ThAME（08-19）不重复。
+* **Ingest**: DICE PDF → `raw/papers/DICE_Detailed_Inter_Chiplet_End_to_End_PHY_Modeling_2026.pdf` + stub `raw/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md`（arXiv:2607.24221；PDF 页眉仍为 ISCA 2026 submission draft）。
+* **Creation** (papers): [DICE](/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md)。
+* **Update**: [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md)（chiplet PHY/FEC/PAM4）、[C2C-Explorer](/papers/c2c-explorer-chip-to-chip-interconnect-llm.md)、[Network-on-Wafer](/concepts/network-on-wafer.md)、[UB 物理层](/concepts/ub-physical-layer.md)。
+* **Indexes**: 手动同步 `papers/index.md`（+1）、`raw/papers/index.md`。
+* **Considered not ingested**: Collective Communication for Distributed LLM Systems (2608.15118, 集群级 AR/RS/AG/A2A 教程，与已有 collectives 概念重叠、非 WSE/NoC/NoW/3D)；200 mm M3D InOx (2608.09508, 器件/工艺)；BusyBarn (ISCA 2026 晶圆级 LLM 映射+BALD，IEEE 付费、无公开 PDF，数字无法核)；Ouroboros / FlatAttention / ELMoE-3D / ATLAS 等 3–5 个月前工作超出 1–2 月窗口。先前跳过的 SHIFT/HCRMap/SiFAR/CLIP-3D/Chiplet-Contiguous/DeepStack/3D-Flow/DyPNet-MSC/Trivance 仍无新全文增量。
+
 ## 2026-08-19
 * **Watch**: 2026-08-19 Asia/Shanghai AI infra 论文巡检。检索近 7–14 天并扩展到约 2 个月：WSE / NoC / NoW / 3D IC / LLM 加速器互连。昨日已 ingest 的 Iff/3DLS/Mozart 未重复。
 * **Ingest**: Fovea PDF → `raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf` + stub `raw/papers/fovea-physical-implication-aware-wafer-scale-dse.md`（arXiv:2608.03285, 2026-08-04）。

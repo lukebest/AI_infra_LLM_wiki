@@ -11,10 +11,16 @@ tags:
 - transport
 - flow-control
 - fabric
-timestamp: '2026-06-24T00:00:00Z'
+- chiplet
+- serdes
+- fec
+- scale-up
+timestamp: '2026-08-20T00:00:00Z'
 created: 2026-06-24
+updated: 2026-08-20
 sources:
 - raw/articles/interconn-study-21d-day-02.md
+- papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md
 ---
 
 # Interconnection Network Protocol Stack（互连网络协议栈）
@@ -60,10 +66,14 @@ NI 决定：哪些 collective 可硬件卸载、哪些需软件参与、注入/e
 
 | 通用层 | UB 实现 | NoC / WSE |
 |--------|---------|-----------|
-| Physical | [UB 物理层](/concepts/ub-physical-layer.md) | 片上 wire、无 SerDes |
+| Physical | [UB 物理层](/concepts/ub-physical-layer.md) | 片上 wire、无 SerDes；chiplet 封装内则为 SerDes+FEC |
 | Link | [UB 数据链路层](/concepts/ub-data-link-layer.md) | Credit 流控、VC（见 [NoC Router](/concepts/noc-router-microarchitecture.md)） |
 | Network | [UB 网络层](/concepts/ub-network-layer.md) | 24-color 静态路由 |
 | Transport | [UB 传输层](/concepts/ub-transport-layer.md) | 端到端 collective 语义 |
+
+## Chiplet 封装内 PHY（相对片上 wire）
+
+片上 NoC 把 Physical 当成 CMOS wire。跨 CCD/IOD 的短距 C2C 不是这条抽象：[DICE](/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) 在 gem5 里把这一跳建成 QC-LDPC + PAM4 + AWGN/jitter/crosstalk + LLR 解调 + 按 flit 重传。固定延迟 HeteroGarnet 会把延迟构成画得像 monolithic，IPC 相对 DICE 平均偏 6.8%、最高 27.6%（方向因负载而异）。晶圆级 hybrid bonding / field stitch 通常没有这层 SerDes，见 [Network-on-Wafer](/concepts/network-on-wafer.md)。
 
 ## 历史坐标
 
@@ -76,7 +86,10 @@ NI 决定：哪些 collective 可硬件卸载、哪些需软件参与、注入/e
 - [Switching Principles](/concepts/switching-principles.md) — 交换方式与历史演进
 - [UB 数据链路层机制](/concepts/ub-data-link-layer.md) — Credit 流控实例
 - [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md) — NI / E2E / 拥塞（Day 19）
+- [DICE](/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) — chiplet PHY 运行时模型（QC-LDPC / PAM4）
+- [C2C-Explorer](/papers/c2c-explorer-chip-to-chip-interconnect-llm.md) — scale-up C2C 的 AXI/MAC/credit 层，不建模误码
 
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-02.md](raw/articles/interconn-study-21d-day-02.md) — Dally & Towles Ch.2 学习笔记（21 天互连研究 Day 2）
+[2] [papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md](papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) — Aligholipour et al., arXiv:2607.24221

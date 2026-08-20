@@ -16,14 +16,15 @@ tags:
 - packaging
 - fabric
 - architecture
-timestamp: '2026-08-19T00:00:00Z'
+timestamp: '2026-08-20T00:00:00Z'
 created: 2026-08-18
-updated: 2026-08-19
+updated: 2026-08-20
 sources:
 - raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/mozart-35d-wafer-scale-moe-training.md
 - papers/fovea-physical-implication-aware-wafer-scale-dse.md
+- papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md
 ---
 
 # Network-on-Wafer（晶圆级网络 / NoW）
@@ -62,6 +63,7 @@ sources:
 - [WSE Reduce Algorithms](/concepts/wse-reduce-algorithms.md) / [Near-Optimal Wafer-Scale Reduce](/papers/near-optimal-wafer-scale-reduce.md) — field-stitch mesh 上的 reduce；不能直接搬到重叠约束图。
 - [WaferLLM System](/concepts/waferllm-system.md) — 在 Cerebras 均匀 mesh 上做 LLM 算子；NoW 换拓扑后 MeshGEMM/V 的两跳假设要重验。
 - [AIC Folded Multi-Ring NoC](/concepts/aic-folded-multi-ring-noc.md) — reticle 尺度折叠环，不是晶圆级重叠网。
+- [DICE](/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) — **封装内** CCD–IOD SerDes PHY（PAM4+FEC）。WoW hybrid bonding 电气接近上层金属、通常不需要这层 PHY；不要把 DICE 的误码/重传数字套到 NoW。
 
 ## 晶圆级 DSE：先构造可行域
 

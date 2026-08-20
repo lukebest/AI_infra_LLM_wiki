@@ -190,6 +190,7 @@ Link_Idle → Probe → Discovery → Config → Send_NullBlock → Link_Active
 
 - [Ub Data Link Layer](/concepts/ub-data-link-layer.md) — 物理层直接服务的数据链路层（FEC/CRC 模式切换由数据链路层协调触发）
 - [Unifiedbus Ub](/entities/unifiedbus-ub.md) — UB 协议整体架构（§3 物理层是协议栈最底层）
+- [DICE](/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) — 研究用 gem5 chiplet PHY（QC-LDPC + PAM4），不是 UB 规格；对照「固定延迟会抹掉 FEC 长尾」
 
 ## 来源
 

@@ -1,5 +1,6 @@
 # Paper
 
+* [DICE: Detailed Inter-Chiplet End-to-End PHY Modeling](dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) - Uppsala — gem5 运行时 QC-LDPC/PAM4 chiplet PHY；相对 HeteroGarnet IPC 平均偏移 6.8%、最高 27.6%；9454P 跨 die 最大 C2C RMSE 89.5 vs 141.2 cycle
 * [C2C-Explorer: Chip-to-Chip Interconnect DSE for LLM Systems](c2c-explorer-chip-to-chip-interconnect-llm.md) - DAC 2026 — LLM 轨迹驱动的 scale-up C2C 仿真+贝叶斯 DSE；FPGA 时序误差 2.46–8.23%；DeepSeek combine goodput +44.1%、buffer −98.4%
 * [Fovea: Physical-Implication-Aware Wafer-Scale DSE](fovea-physical-implication-aware-wafer-scale-dse.md) - 清华 — 物理可行域 + Decision Domain；70 对 LLM 训练全部找回参考最优，相对穷尽参考平均 4.13×、最高 7.80×
 * [ThAME: 3D Memory-Enabled Heterogeneous Accelerator for LLM MoE](thame-3d-memory-enabled-heterogeneous-moe.md) - WSU ESWEEK-26 — FeFET-NAND PNM 存 expert、DRAM-PNM 做 attention、分层树 NoC；相对 H3D-T 最高 15.7× TBT、9.8× 能效

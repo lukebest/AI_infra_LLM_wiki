@@ -24,6 +24,7 @@
 * [Aurelia: CXL Fabric with Tentacle](aurelia-cxl-fabric-tentacle.md)
 * [Cache-resident LLM inference in GB-scale last-level caches](cache-resident-llm-inference-llc.md)
 * [CosMoS: Architectural Support for Cost-Effective Data Movement in a Disaggregated Memory Systems](cosmos-disaggregated-memory-data-movement.md)
+* [DICE: Detailed Inter-Chiplet End-to-End PHY Modeling](dice-detailed-inter-chiplet-end-to-end-phy-modeling.md)
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md)
 * [DynaX: sparse attention acceleration with dynamic X:M fine-grained structured pruning](dynax-sparse-attention-acceleration.md)
 * [Fast state restoration in LLM serving with HCache](hcache-fast-state-restoration.md)
