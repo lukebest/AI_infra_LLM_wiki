@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-08-21
+* **Watch**: 2026-08-21 Asia/Shanghai AI infra 论文巡检。近 7–14 天 cs.AR 仍多 GNN/RTL/FPGA/SNN；WSE/NoC/NoW/3D/LLM 互连增量里选出 3 篇有架构实质的全文。已 ingest 的 Iff/3DLS/Mozart（08-18）、Fovea/C2C-Explorer/ThAME（08-19）、DICE（08-20）不重复。
+* **Ingest**: ReXpert PDF → `raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf` + stub `raw/papers/rexpert-reram-nmc-disaggregated-moe.md`（arXiv:2608.13962, 2026-08-14）。
+* **Ingest**: HCCL PDF → `raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf` + stub `raw/papers/hccl-meta-mtia-300-collective-communication.md`（arXiv:2608.00358；abs 自称 SC '26，未核程序册）。
+* **Ingest**: DASH PDF → `raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf` + stub `raw/papers/dash-dual-path-hbf-moe-inference.md`（arXiv:2608.14333, 2026-08-14）。
+* **Creation** (papers): [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md), [HCCL](/papers/hccl-meta-mtia-300-collective-communication.md), [DASH](/papers/dash-dual-path-hbf-moe-inference.md)。
+* **Update**: [Disaggregated Inference](/concepts/disaggregated-inference.md), [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md), [DRAM and Memory System](/concepts/dram-memory-system.md), [TSV Physical Layer](/concepts/tsv-3d-physical-layer.md), [3D Stacking Technologies](/concepts/3d-stacking-technologies.md)；交叉 [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md)、[3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md)、[C2C-Explorer](/papers/c2c-explorer-chip-to-chip-interconnect-llm.md)、[Meta RDMA](/papers/rdma-over-ethernet-meta-training.md)。
+* **Schema**: `SCHEMA.md` 公司标签加 `meta`。
+* **Indexes**: 手动同步 `papers/index.md`（+3）、`raw/papers/index.md`。
+* **Considered not ingested**: FPGA NoC CAD (2608.17266, FPL 2024 投稿窗口、FPGA 布局布线，无 LLM 架构增量)；DTX (2608.16953, 训练脉动/VLIW，无互连/3D/chiplet)；Dryas (2608.12934, Enzian ECI 跟踪引擎)；HBF Sucks / Potential Applications of HBF / Beyond Capacity 的姊妹短文 (2608.11668/13127/13868, 表征或短 CAL，架构增量已被 DASH 覆盖)；Hardware Design and Security (2608.05063, 安全)；SLA scheduling (2608.16336)；H100 global load (2608.15764)；BusyBarn 仍无公开全文 PDF（仅 artifact/IEEE）；先前跳过的 SHIFT/HCRMap/SiFAR/CLIP-3D/Chiplet-Contiguous/DeepStack/3D-Flow/DyPNet-MSC/Trivance/200mm InOx/2608.15118 仍无新全文增量。
+
 ## 2026-08-20
 * **Watch**: 2026-08-20 Asia/Shanghai AI infra 论文巡检。近 7–14 天 cs.AR 多为 GNN/RTL/FPGA CAD，WSE/NoC/NoW/3D/LLM 互连增量很少。已 ingest 的 Iff/3DLS/Mozart（08-18）与 Fovea/C2C-Explorer/ThAME（08-19）不重复。
 * **Ingest**: DICE PDF → `raw/papers/DICE_Detailed_Inter_Chiplet_End_to_End_PHY_Modeling_2026.pdf` + stub `raw/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md`（arXiv:2607.24221；PDF 页眉仍为 ISCA 2026 submission draft）。

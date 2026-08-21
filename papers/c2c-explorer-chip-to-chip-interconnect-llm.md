@@ -86,6 +86,8 @@ Scale-up 域 C2C（NVLink / UALink / ETH-X 一类）决定 collective 是否打�
 - [Fovea](/papers/fovea-physical-implication-aware-wafer-scale-dse.md) — 同是多保真 DSE，对象是晶圆 die 阵列而非 C2C 微架构
 - [3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) — 封装内 D2D 争用；本文是多 XPU C2C 链路层
 - [DICE](/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) — 同一 C2C 域更下一层：PAM4/FEC/重传的 gem5 PHY，负载是 CPU 而非 LLM
+- [HCCL](/papers/hccl-meta-mtia-300-collective-communication.md) — 生产芯片上的编译集体 + 包内 NIC，不是 AXI/以太 DSE
+- [DASH](/papers/dash-dual-path-hbf-moe-inference.md) — UCIe 预算用在 HBM↔HBF↔GPU，不是多 XPU 集体
 
 ## 开放问题
 

@@ -10,7 +10,8 @@ tags:
 - through-silicon-via
 - architecture
 - noc
-timestamp: '2026-07-31T00:00:00Z'
+timestamp: '2026-08-21T00:00:00Z'
+updated: '2026-08-21'
 created: '2026-07-31'
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
@@ -107,6 +108,7 @@ Y_die = exp(-A · N_TSV / A_chip · λ_TSV)
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — Packaging (3D/2.5D/Chiplet) 路线之一
 - [DRAM Memory System](/concepts/dram-memory-system.md) — HBM 即 TSV 商业现实
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 存储+NoC 全景，TSV 是其关键链路
+- [DASH](/papers/dash-dual-path-hbf-moe-inference.md) — HBF 用 TSV 堆 NAND die；GPU 侧是 UCIe，不是 3D logic NoC
 
 ## 开放问题（向 Layer 2-5 推进）
 

@@ -11,11 +11,12 @@ tags:
 - distributed
 - noc
 - wse
-timestamp: '2026-08-19T00:00:00Z'
+timestamp: '2026-08-21T00:00:00Z'
 created: 2026-07-13
-updated: 2026-08-19
+updated: 2026-08-21
 sources:
 - raw/articles/arch-study-30d-day-27.md
+- raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -103,6 +104,8 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) — **推理** TP AllReduce 与 KVT 争用（对照训练集体）
 - [C2C-Explorer](/papers/c2c-explorer-chip-to-chip-interconnect-llm.md) — 把 AllReduce/All-to-All 落到 AXI/以太 C2C 的 VC、credit、MAC 组帧
 - [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) — 片内树 NoC 上的 MoE scatter-gather，不是跨卡集体
+- [HCCL](/papers/hccl-meta-mtia-300-collective-communication.md) — Meta MTIA 300：集体编译到包内 ME/NMC，机柜内最高 940 GB/s，重叠 GEMM 降幅 <0.5%
+- [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md) — 驻留 MoE 后 EP/TP 权重移动变次级；归约顺序必须匹配 shard 放置（反向 D2D 最高 5.7×）
 
 # Citations
 

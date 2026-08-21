@@ -43,6 +43,7 @@ Meta **大规模 AI 训练 RoCE 网络**的设计、实现与运维经验：独�
 - [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md) — collective 语义与并行策略
 - [MPI Reduce / AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — Ring/Tree AllReduce
 - [Clos / Fat-Tree Topology](/concepts/clos-fat-tree-topology.md) — Clos backend 拓扑
+- [HCCL](/papers/hccl-meta-mtia-300-collective-communication.md) — 下一代 MTIA 300：集体离开 NCCL kernel，进包内 ME/NIC chiplet
 
 # Citations
 

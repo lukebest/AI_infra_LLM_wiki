@@ -72,6 +72,7 @@ Qwen1.5、prompt 128、输出 n=512–4096：ThAME TBT **2.17–2.22 ms**（TPU 
 - [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md) — 这里是片内 scatter-gather，不是跨卡 All-to-All
 - [Network-on-Wafer](/concepts/network-on-wafer.md) — 封装是 2.5D UCIe，不是晶圆级 NoW
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — host prefill / DRAM decode-attn / FeFET expert，功能解耦但同包
+- [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md) — 另一条驻留 FFN：ReRAM NMC + Core 组播，不是 FeFET 树 NoC
 
 ## 开放问题
 

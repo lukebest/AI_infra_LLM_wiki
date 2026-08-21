@@ -10,6 +10,7 @@ tags:
 - hbm
 - wse
 timestamp: '2026-06-24T00:00:00Z'
+updated: 2026-08-21
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-17.md
@@ -94,6 +95,8 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — Day 17–22 存储篇综合
 - [NoC Fundamentals (H&P Appendix F)](/concepts/noc-fundamentals-hp-appendix-f.md) — NoC 五问（Day 21）
 - [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) — H100 HBM Roofline 与 WSE 带宽密度对比（Day 24）
+- [DASH](/papers/dash-dual-path-hbf-moe-inference.md) — HBF 与 HBM 并列近 GPU；专家权重走 Direct∥Relay，不经 HBM 阵列
+- [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md) — 用 ReRAM 读带宽密度（0.128 B/FLOP）绕开 HBM 权重复用膝点
 
 # Citations
 
