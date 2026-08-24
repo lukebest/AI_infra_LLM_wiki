@@ -16,15 +16,16 @@ tags:
 - packaging
 - fabric
 - architecture
-timestamp: '2026-08-20T00:00:00Z'
+timestamp: '2026-08-24T00:00:00Z'
 created: 2026-08-18
-updated: 2026-08-20
+updated: 2026-08-24
 sources:
 - raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/mozart-35d-wafer-scale-moe-training.md
 - papers/fovea-physical-implication-aware-wafer-scale-dse.md
 - papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md
+- papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md
 ---
 
 # Network-on-Wafer（晶圆级网络 / NoW）
@@ -55,6 +56,8 @@ sources:
 [Mozart](/papers/mozart-35d-wafer-scale-moe-training.md) 也是晶圆级，但互连是 **2.5D NoP-Tree**（中心 attention、叶专家、in-network switch），垂直维是 per-chiplet logic-on-SRAM hybrid bonding，不是 WoW 重叠成网。它优化的是 MoE All-to-All 的 token 复制数 C_T，不是平均路径 hop。
 
 [3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) 把隔离做在 **封装垂直维**（KVT vs decode AllReduce），侧向仍是 2.5D D2D，不是整晶圆 NoW。相关工作引用了 WSC-LLM 与 PD-aware NoW 共设计。
+
+[HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) 是 **chiplet-on-fanout 近亲**：被动硅 interposer 上最多 24 个计算 die、2D mesh NoI。它优化 hybrid LLM serving 的组成/放置/D2D 带宽，**不是**场拼接，也不是 WoW 重叠成网。
 
 ## 和 wiki 已有 mesh/WSE 页的关系
 

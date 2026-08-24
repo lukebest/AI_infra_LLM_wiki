@@ -1,5 +1,13 @@
 # Bundle Update Log
 
+## 2026-08-24
+* **Watch**: 2026-08-24 Asia/Shanghai AI infra 论文巡检。近 7 天 cs.AR（8/17–8/21）仍多 FPGA/RTL/GPU SIMT；WSE/NoC/NoW/3D/LLM 互连增量里只选出 1 篇有架构实质的全文。已 ingest 的 ReXpert/HCCL/DASH（08-21）、DICE（08-20）、Fovea/C2C-Explorer/ThAME（08-19）、Iff/3DLS/Mozart（08-18）不重复。
+* **Ingest**: HYDRA PDF → `raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf` + stub `raw/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md`（arXiv:2608.19395, 2026-08-19）。
+* **Creation** (papers): [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md)。
+* **Update**: [C2C-Explorer](/papers/c2c-explorer-chip-to-chip-interconnect-llm.md), [Disaggregated Inference](/concepts/disaggregated-inference.md), [Interconnection Network Design Space](/concepts/interconnection-network-design-space.md), [Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md), [Network-on-Wafer](/concepts/network-on-wafer.md)。
+* **Indexes**: 手动同步 `papers/index.md`（+1）、`raw/papers/index.md`。
+* **Considered not ingested**: FPGA NoC CAD (2608.17266)；DTX (2608.16953)；SLA scheduling (2608.16336)；H100 global load (2608.15764)；FIBER (2608.19628, GPU SIMT/寄存器)；HBM reliability (2608.19471)；MAGMA (2608.18366, FPGA GMM 视觉)；TokenPowerSandbox (2608.18149, 能耗 serving)；HCRMap (2607.11586, 3.5D MoE 映射，先前跳过、与 Mozart 重叠)。BusyBarn 仍无公开全文 PDF。本周合格增量只有 HYDRA，不硬凑 2–4 篇。
+
 ## 2026-08-21
 * **Watch**: 2026-08-21 Asia/Shanghai AI infra 论文巡检。近 7–14 天 cs.AR 仍多 GNN/RTL/FPGA/SNN；WSE/NoC/NoW/3D/LLM 互连增量里选出 3 篇有架构实质的全文。已 ingest 的 Iff/3DLS/Mozart（08-18）、Fovea/C2C-Explorer/ThAME（08-19）、DICE（08-20）不重复。
 * **Ingest**: ReXpert PDF → `raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf` + stub `raw/papers/rexpert-reram-nmc-disaggregated-moe.md`（arXiv:2608.13962, 2026-08-14）。

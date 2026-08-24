@@ -119,6 +119,7 @@ sources:
 - [NoC Research Methodology and Case Studies](/concepts/noc-research-methodology-case-studies.md) — 论文反推与 Polaris/WSE（Day 20）
 - [Interconn-Study 21d Knowledge Map](/summaries/interconn-study-21d-knowledge-map.md) — 21 天收束（Day 21）
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — 光互连 / 可重构 / demand-aware NoC（Day 29）
+- [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 封装内 NoI mesh：hybrid serving 轨迹倒逼组成/放置/D2D 带宽，不是先定 mesh 再灌合成流
 
 # Citations
 

@@ -7,15 +7,16 @@ tags:
 - serving-system
 - moe
 - disaggregated-inference
-timestamp: '2026-08-21T00:00:00Z'
+timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-08-21
+updated: 2026-08-24
 sources:
 - arXiv:2504.02263
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 - raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf
 - raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf
+- raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -90,6 +91,7 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 | **Disaggregated Prefill/Decode** | 阶段层 | KV transfer | 降低 TTFT/TPOT |
 | **Pool-based KV** | 内存层 | KV routing | KV cache 管理 |
 | **3DLS 物理隔离** | 封装垂直维 | 垂直 KVT + 侧向 AR | 去掉共享 D2D 争用 |
+| **HYDRA 封装内 PD×算子** | 封装内 chiplet | NoI mesh | hybrid Transformer–Mamba serving |
 
 ## 与 Luke 研究的关联
 
@@ -127,6 +129,7 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) — chiplet 上 PD+TP 的 KVT/AR 物理隔离（IEEE CAL 2026）
 - [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md) — 驻留 ReRAM FFN 池 + 有界组播；iso-compute vs H20 **9.5×** FFN 延迟
 - [DASH](/papers/dash-dual-path-hbf-moe-inference.md) — 不拆模块池，拆 HBF→GPU 的 Direct/Relay 投递
+- [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 封装内 prefill/decode × Attention/Mamba chiplet 拆分，不是机柜 AFD
 - [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) — 同包内 host / DRAM-PNM attn / FeFET expert
 
 # Citations
@@ -137,3 +140,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [4] [raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf](raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf) — 3DLS 物理隔离
 [5] [raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf](raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf) — ReXpert 驻留 FFN 池
 [6] [raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf](raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf) — DASH HBF 双路径
+[7] [raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf](raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf) — HYDRA 封装内 hybrid serving DSE

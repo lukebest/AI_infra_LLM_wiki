@@ -75,6 +75,8 @@ NI 决定：哪些 collective 可硬件卸载、哪些需软件参与、注入/e
 
 片上 NoC 把 Physical 当成 CMOS wire。跨 CCD/IOD 的短距 C2C 不是这条抽象：[DICE](/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) 在 gem5 里把这一跳建成 QC-LDPC + PAM4 + AWGN/jitter/crosstalk + LLR 解调 + 按 flit 重传。固定延迟 HeteroGarnet 会把延迟构成画得像 monolithic，IPC 相对 DICE 平均偏 6.8%、最高 27.6%（方向因负载而异）。晶圆级 hybrid bonding / field stitch 通常没有这层 SerDes，见 [Network-on-Wafer](/concepts/network-on-wafer.md)。
 
+[HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) 的 D2D 停在 UCIe x64 advanced-package + NVIDIA GRS PHY 的带宽/面积假设（256–640 GB/s），**没有** DICE 那种 PAM4/FEC 运行时模型。
+
 ## 历史坐标
 
 协议栈各层随互连介质演进：电话网铜线 → HPC 专用链路 → 硅片 NoC → 晶圆级单介质（[Cerebras WSE](/entities/cerebras-wse.md)）。详见 [Switching Principles](/concepts/switching-principles.md) 中的时代划分与里程碑。
@@ -88,6 +90,7 @@ NI 决定：哪些 collective 可硬件卸载、哪些需软件参与、注入/e
 - [Network Interface and System-Level Design](/concepts/network-interface-and-system-design.md) — NI / E2E / 拥塞（Day 19）
 - [DICE](/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) — chiplet PHY 运行时模型（QC-LDPC / PAM4）
 - [C2C-Explorer](/papers/c2c-explorer-chip-to-chip-interconnect-llm.md) — scale-up C2C 的 AXI/MAC/credit 层，不建模误码
+- [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 包内 NoI 的 UCIe x64/GRS 带宽档，不是 PHY 误码模型
 
 # Citations
 

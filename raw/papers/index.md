@@ -33,6 +33,7 @@
 * [FlexInfer: breaking memory constraint via flexible and efficient offloading for on-device LLM inference](flexinfer-on-device-llm-offloading.md)
 * [HCCL: Collective Communication for Meta MTIA 300](hccl-meta-mtia-300-collective-communication.md)
 * [Heterogeneous computing: the key to powering the future of AI agent inference](heterogeneous-computing-ai-agent-inference.md)
+* [HYDRA: Heterogeneous Chiplet DSE for Hybrid LLM Serving](hydra-heterogeneous-chiplet-dse-hybrid-llm.md)
 * [HyperMR: Efficient Hypergraph-enhanced Matrix Storage on Compute-in-Memory Architecture](hypermr-hypergraph-matrix-storage-cim.md)
 * [Large Language Model Inference Acceleration: A Comprehensive Hardware Perspective](LLM_Inference_Acceleration_Comprehensive_Hardware_Survey_2024.md)
 * [LoopLynx: A Scalable Dataflow Architecture for Efficient LLM Inference](LoopLynx_Scalable_Dataflow_LLM_Inference_2025.md)
