@@ -1,5 +1,10 @@
 # Bundle Update Log
 
+## 2026-08-25
+* **Watch**: 2026-08-25 Asia/Shanghai AI infra 论文巡检。cs.AR pastweek 最新到 Mon 8/24（6 篇）；Tue 8/25 列表尚未出。昨日已 ingest 的 HYDRA（2608.19395）不重复。
+* **No increment**: 本轮无 WSE/NoC/NoW/3D/LLM 互连合格全文。不硬凑入库。
+* **Considered not ingested**: TMR wide-link NoC router (2608.21288, Benini 组，512-bit/2-cycle/7nm TMR，偏 SEE 可靠性而非 LLM 互连拓扑)；SPICE MoE prefetch (2608.21240, PCIe expert offload 投机预取，软件编排)；FIBER (2608.19628)；HyperCut (2608.19296, tiled NoC 层间调度，唯一偏 LLM 的是 GPT-2 decode)；FPGA NoC CAD / DTX / SLA / H100 load / HBM reliability / MAGMA / TokenPowerSandbox / HCRMap 仍跳过。BusyBarn 仍无公开 PDF。
+
 ## 2026-08-24
 * **Watch**: 2026-08-24 Asia/Shanghai AI infra 论文巡检。近 7 天 cs.AR（8/17–8/21）仍多 FPGA/RTL/GPU SIMT；WSE/NoC/NoW/3D/LLM 互连增量里只选出 1 篇有架构实质的全文。已 ingest 的 ReXpert/HCCL/DASH（08-21）、DICE（08-20）、Fovea/C2C-Explorer/ThAME（08-19）、Iff/3DLS/Mozart（08-18）不重复。
 * **Ingest**: HYDRA PDF → `raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf` + stub `raw/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md`（arXiv:2608.19395, 2026-08-19）。
