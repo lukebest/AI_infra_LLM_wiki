@@ -1,5 +1,10 @@
 # Bundle Update Log
 
+## 2026-08-26
+* **Watch**: 2026-08-26 Asia/Shanghai AI infra 论文巡检。cs.AR new/recent 聚焦 Tue 8/25（Wed 8/26 列表尚未出）；扩展核对 FlashAccel 替换版（2607.10186v2, replaced 2026-08-22）。已 ingest 的 HYDRA/ReXpert/HCCL/DASH 等不重复。
+* **No increment**: 本轮无 WSE/NoC/NoW/3D/chiplet/LLM 互连合格全文。不硬凑入库。
+* **Considered not ingested**: NOVA (2608.22613, 4F² VCT + peri-over-cell 两层 NMP，HB/TSV 仅作 DRAM 堆叠带宽，无 NoC/chiplet/NoW 拓扑增量)；FlashAccel (2607.10186v2, GPU 内 HBF 权重+KV 布局/SRAM 预取/管理软件，相对已 ingest 的 DASH 双路径 UCIe 无互连架构增量)；SYNTLOG FSM FPGA (2608.23288)；systolic PE approx (2608.22378)；NoTB RTL (2608.21962)；FPGA compression survey (2608.21657)；Optalysys photonic compute-in-transit (2608.21536)；M3D 6T SRAM 2nm (2608.22741)；VIPER PIM DSE (2608.23404)；MCM GPU cycle simulator (2608.22602)；TherMapNet (2608.21887)。昨日跳过的 TMR/SPICE/FIBER/HyperCut/FPGA NoC CAD/DTX/SLA/H100 load/HBM reliability/MAGMA/TokenPowerSandbox/HCRMap 仍跳过。BusyBarn 仍无公开 PDF。WATOS (2512.12279) 在窗口外。
+
 ## 2026-08-25
 * **Watch**: 2026-08-25 Asia/Shanghai AI infra 论文巡检。cs.AR pastweek 最新到 Mon 8/24（6 篇）；Tue 8/25 列表尚未出。昨日已 ingest 的 HYDRA（2608.19395）不重复。
 * **No increment**: 本轮无 WSE/NoC/NoW/3D/LLM 互连合格全文。不硬凑入库。
