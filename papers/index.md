@@ -7,6 +7,21 @@
 * [Hot Chips 2026 OXMIQ HBF](hc2026-oxmiq-hbf.md) - OXMIQ — HBF 是低 α/低 β 容量点；72-GPU 机柜 ~14× 容量 / ~0.6× 带宽；HBM for the rack
 * [Hot Chips 2026 NVIDIA NVLink Fusion](hc2026-nvidia-riscv-nvlink-fusion.md) - NVIDIA — NVL72 全铜 72 GPU；3.6 TB/s per GPU、900 GB/s C2C、28.8 TB/s/switch tray；CHI Fusion
 * [Hot Chips 2026 Pistil 20-Chiplet SLM](hc2026-pistil-20-chiplet-slm.md) - Harvard/Google/Lockheed — 16 nm 2.5D flower；512 MB / 51.2 GB/s；vs Jetson Nano 最高 7.6× 吞吐
+* [Hot Chips 2026 NVIDIA Rubin GPU](hc2026-nvidia-rubin.md) - NVIDIA — NVLink 6；72 GPU / 3.6 TB/s all-to-all；100 MW factory 2 ZFLOPS / 11 PB / 800 PB/s
+* [Hot Chips 2026 AMD Instinct MI455X](hc2026-amd-instinct-mi455x.md) - AMD — 12× HBM4 432 GB / 23.3 TB/s；UALoE 3.6 TB/s bi-dir
+* [Hot Chips 2026 AMD Helios UALoE](hc2026-amd-helios-ualoe.md) - AMD — 72-GPU rack；UALoE load-store / ESUN；1.8 TB/s/dir
+* [Hot Chips 2026 Intel Crescent Island](hc2026-intel-crescent-island.md) - Intel — Xe3p；160 GB LPDDR5x；Memory Fabric，不是 packet NoC
+* [Hot Chips 2026 NVIDIA Vera CPU](hc2026-nvidia-vera.md) - NVIDIA — C2C 1.8 TB/s；SCF 3.4 TB/s；1.5 TB SOCAMM
+* [Hot Chips 2026 Cerebras CS-4](hc2026-cerebras-cs4.md) - Cerebras — 三片 WSE-3T；Direct Wafer Links + RoCE；CS-6 指向 3D DRAM
+* [Hot Chips 2026 Meta MTIA 400](hc2026-meta-mtia-400.md) - Meta — 2D mesh + leaky-bucket；1.2 TB/s SU
+* [Hot Chips 2026 Microsoft Maia 200](hc2026-microsoft-maia-200.md) - Microsoft — GNOC / Ethernet ATL；FCQ 4 卡；口号 chip→6k
+* [Hot Chips 2026 Google TPU 8](hc2026-google-tpu8.md) - Google — 8i Boardfly / 8t OCS torus
+* [Hot Chips 2026 SambaNova SN50](hc2026-sambanova-sn50.md) - SambaNova — dataflow RDU；2 TB/s Ethernet SU
+* [Hot Chips 2026 NVIDIA BlueField-4](hc2026-nvidia-bluefield-4.md) - NVIDIA — Astra 7.2 Tb/s；KV G1–G4
+* [Hot Chips 2026 NVIDIA Groq 3 LPX](hc2026-nvidia-groq-3-lpx.md) - NVIDIA — 256 LPU / 128 GB SRAM / 350 ns C2C
+* [Hot Chips 2026 NVIDIA Spectrum-X Multiplane](hc2026-nvidia-spectrum-x-multiplane.md) - NVIDIA — 8 plane × 4 rail；512k @ 1.6T
+* [Hot Chips 2026 OpenAI Jalapeño](hc2026-openai-jalapeno.md) - OpenAI — 128 @ 600 GB/s / 2048 @ 200 GB/s Ethernet SU
+* [Hot Chips 2026 Broadcom Thor Ultra](hc2026-broadcom-thor-ultra.md) - Broadcom — 800G eRoCE / MRC++ / RCCC
 
 * [HYDRA: Heterogeneous Chiplet DSE for Hybrid LLM Serving](hydra-heterogeneous-chiplet-dse-hybrid-llm.md) - UW–Madison/Ulsan — 2.5D 异构 chiplet 上 Hybrid LLM serving 的宏架构+运行时联合 DSE；平均 1.55× 吞吐、TTFT −43.7%，最高 2.3×
 * [HCCL: Collective Communication for Meta MTIA 300](hccl-meta-mtia-300-collective-communication.md) - SC 2026 自称 — 包内 NIC chiplet + ME/NMC 卸载集体；机柜内最高 940 GB/s，重叠 GEMM 降幅 <0.5%；推理 PUT 集体 <6 μs

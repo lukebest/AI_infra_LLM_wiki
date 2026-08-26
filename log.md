@@ -2,6 +2,13 @@
 
 ## 2026-08-26
 
+### Hot Chips 2026 conference ingest
+* **Ingest**: Day1/Day2 幻灯 PDF → `raw/papers/HC2026_*.pdf` + Raw Source stub。未 ingest Micron Confidential、边缘 PIM、XCENA、Arm AGI、IBM Z、欢迎/颁奖/Versal。
+* **Creation** (papers): [Rubin](/papers/hc2026-nvidia-rubin.md), [MI455X](/papers/hc2026-amd-instinct-mi455x.md), [Helios UALoE](/papers/hc2026-amd-helios-ualoe.md), [Crescent Island](/papers/hc2026-intel-crescent-island.md), [Vera](/papers/hc2026-nvidia-vera.md), [CS-4](/papers/hc2026-cerebras-cs4.md), [MTIA 400](/papers/hc2026-meta-mtia-400.md), [Maia 200](/papers/hc2026-microsoft-maia-200.md), [TPU 8](/papers/hc2026-google-tpu8.md), [SN50](/papers/hc2026-sambanova-sn50.md), [BlueField-4](/papers/hc2026-nvidia-bluefield-4.md), [Groq 3 LPX](/papers/hc2026-nvidia-groq-3-lpx.md), [Spectrum-X](/papers/hc2026-nvidia-spectrum-x-multiplane.md), [Jalapeño](/papers/hc2026-openai-jalapeno.md), [Thor Ultra](/papers/hc2026-broadcom-thor-ultra.md)。
+* **Update**: [Vera Rubin NVL72](/entities/nvidia-vera-rubin-nvl72.md)。
+* **Schema**: 公司标签加 `intel / microsoft / openai / broadcom / sambanova`；网络加 `ualink / ualoe`。
+* **Indexes**: 手动同步 `papers/index.md`（+15）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+
 ### Hot Chips 2026 tutorials / posters ingest
 * **Ingest**: Handy / Samsung / SK hynix / d-Matrix / OXMIQ / NVIDIA Fusion 教程 PDF + Pistil 海报 PDF → `raw/papers/HC2026_*.pdf` + Raw Source stub。**未**拷贝、未 ingest Micron Confidential 教程。
 * **Creation** (papers): [Handy HBM 开场](/papers/hc2026-handy-hbm-tutorial.md), [Samsung B-die / zHBM](/papers/hc2026-samsung-hbm-base-die.md), [SK hynix packaging](/papers/hc2026-skhynix-hbm-advanced-packaging.md), [d-Matrix Raptor](/papers/hc2026-dmatrix-raptor-3d-dram.md), [OXMIQ HBF](/papers/hc2026-oxmiq-hbf.md), [NVIDIA NVLink Fusion](/papers/hc2026-nvidia-riscv-nvlink-fusion.md), [Pistil](/papers/hc2026-pistil-20-chiplet-slm.md)。
