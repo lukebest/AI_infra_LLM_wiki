@@ -23,10 +23,6 @@ sources:
 
 Rack-scale 低延迟推理加速器，NVIDIA Vera Rubin 平台的第七颗芯片。256 个 Groq 3 LPU（LP30）互联，专注确定性、低延迟的 agentic 推理。
 
-## Hot Chips 2026（第一手幻灯片）
-
-[NVIDIA Groq 3 LPX](/papers/hc2026-nvidia-groq-3-lpx.md) Day2：Gemma 4 **31B** **10,996 TPS/user**（16K ISL / max **264K**）。SPEED-bench **4,767** median tok/s。Artificial Analysis **100K** context：**4×** 更快长上下文 decode（对照未标名）。机柜：**256 LPU** / **128 GB** SRAM / **315 PFLOPs FP8** / **40 PB/s** 聚合 SRAM / C2C **350 ns**。可达 SRAM：**0.35 µs @ 8 GB** … **2.95 µs @ 1152 GB**。可扩到 **1000+** LPU。与 **72 Rubin** 三种拆分（各 rack 自持 KV）：(1) LPX draft / NVL72 verify；(2) GPU ATTN+KV / LPU FFN；(3) GPU prefill / LPX decode。GPT-OSS-2T 相对 NVL72-only：**~3× / ~3× / ~5×** 交互。TPS/MW 绝对值 **未知**。
-
 ## Groq 收购背景
 
 NVIDIA 以 $20B 向 Groq 授权 IP 并聘用大部分团队（法律结构上非完整收购，规避反垄断审查）。交易宣布后不到 4 个月，NVIDIA 已有系统概念集成进 Vera Rubin 推理栈。
