@@ -9,8 +9,8 @@ tags:
 - dram
 - hbm
 - wse
-timestamp: '2026-06-24T00:00:00Z'
-updated: 2026-08-21
+timestamp: '2026-08-26T00:00:00Z'
+updated: 2026-08-26
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-17.md
@@ -97,6 +97,10 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 - [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) — H100 HBM Roofline 与 WSE 带宽密度对比（Day 24）
 - [DASH](/papers/dash-dual-path-hbf-moe-inference.md) — HBF 与 HBM 并列近 GPU；专家权重走 Direct∥Relay，不经 HBM 阵列
 - [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md) — 用 ReRAM 读带宽密度（0.128 B/FLOP）绕开 HBM 权重复用膝点
+- [Handy HBM 开场](/papers/hc2026-handy-hbm-tutorial.md) — Hot Chips 2026：HBM 吃 **3×** DDR 晶圆面积；DRAM 产能十年未涨
+- [SK hynix packaging](/papers/hc2026-skhynix-hbm-advanced-packaging.md) — HBM4 2048 IO / 2048 GB/s；12Hi 量产、16Hi Qual
+- [OXMIQ HBF](/papers/hc2026-oxmiq-hbf.md) — HBF 是低 α/低 β 容量点；同机柜 ~14× 容量 / ~0.6× 带宽
+- [Pistil](/papers/hc2026-pistil-20-chiplet-slm.md) — 边缘 2.5D RPC-DRAM flower，512 MB / 51.2 GB/s
 
 # Citations
 

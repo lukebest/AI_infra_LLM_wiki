@@ -11,8 +11,9 @@ tags:
 - hopper
 - blackwell
 - gpu
-timestamp: '2026-07-22T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: 2026-07-22
+updated: 2026-08-26
 sources:
 - raw/articles/paper-deepdive-day-08.md
 ---
@@ -33,6 +34,8 @@ NVIDIA Hopper / Blackwell 白皮书与 GTC 材料。paper-deepdive **Day 8**：[
 | NVSwitch Gen4（笔记） | 高基数 ASIC（数百 port 级） | Clos/fat-tree 中枢 |
 
 工艺：H100 ~80B 管；B200 笔记称 ~208B（双 die 等）。实体延伸：[Nvidia Vera Rubin NVL72](/entities/nvidia-vera-rubin-nvl72.md)、[Kyber Rack](/entities/kyber-rack.md)。
+
+Hot Chips 2026（[NVIDIA RISC-V / NVLink Fusion](/papers/hc2026-nvidia-riscv-nvlink-fusion.md)）：Vera Rubin NVL72 写成单 **72 GPU** 全铜 L1；**9** switch tray × **4** NVLink 6 switch = **36** switch；**28.8 TB/s per switch tray**；**3.6 TB/s per GPU**；**900 GB/s** CPU–GPU 经 NVLink-C2C；每 GPU 旁一颗 Fusion chiplet。Custom CPU 经 **CHI** 进 fabric。无新 HBM 数字。
 
 ## 两条 scale-up 哲学
 
@@ -59,6 +62,7 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 - [UnifiedBus UB](/entities/unifiedbus-ub.md) — 另一 scale-up 协议栈
 - [Multi-plane Clos Topology for AI Training](/concepts/multi-plane-clos-topology.md)
 - [Paper Deep-Dive Map](/summaries/paper-deepdive.md)
+- [Hot Chips 2026 NVIDIA Fusion](/papers/hc2026-nvidia-riscv-nvlink-fusion.md)
 
 # Citations
 

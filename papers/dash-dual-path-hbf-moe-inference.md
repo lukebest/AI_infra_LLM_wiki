@@ -21,8 +21,9 @@ tags:
 - physical-layer
 - scale-up
 - storage
-timestamp: '2026-08-21T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: 2026-08-21
+updated: 2026-08-26
 sources:
 - raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf
 - raw/papers/dash-dual-path-hbf-moe-inference.md
@@ -97,6 +98,7 @@ DASH = Direct Attachment of HBF to the GPU as main memory, plus a Separate path 
 - [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md) — 驻留专家用 ReRAM 带宽密度；DASH 用 HBF 容量 + 双路径带宽
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 不拆 Attn/FFN 池，拆的是 **专家权重投递路径**
 - [PRESERVE](/papers/preserve-prefetch-weights-kv-cache.md) — HBM→L2 prefetch；DASH 是 HBF→GPU 的 t_R 隐藏与 KV 回写
+- [OXMIQ HBF](/papers/hc2026-oxmiq-hbf.md) — Hot Chips 2026 系统账：HBF 只赢低 I·b；**HBM for the rack, HBF for the box**。OCP HBF spec v0.7.0 Grade 2 目标 1.536 TB/s / 512 GiB，与本文 1.6 TB/s / 512 GB 同量级
 
 ## 开放问题
 

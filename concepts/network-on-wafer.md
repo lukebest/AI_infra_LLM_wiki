@@ -16,9 +16,9 @@ tags:
 - packaging
 - fabric
 - architecture
-timestamp: '2026-08-24T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: 2026-08-18
-updated: 2026-08-24
+updated: 2026-08-26
 sources:
 - raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/network-design-wafer-scale-wow-hybrid-bonding.md
@@ -58,6 +58,8 @@ sources:
 [3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) 把隔离做在 **封装垂直维**（KVT vs decode AllReduce），侧向仍是 2.5D D2D，不是整晶圆 NoW。相关工作引用了 WSC-LLM 与 PD-aware NoW 共设计。
 
 [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) 是 **chiplet-on-fanout 近亲**：被动硅 interposer 上最多 24 个计算 die、2D mesh NoI。它优化 hybrid LLM serving 的组成/放置/D2D 带宽，**不是**场拼接，也不是 WoW 重叠成网。
+
+Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写 **WoW + HCB**，但是 **xPU 垂直叠到 HBM C-die**、取消 2.5D interposer——封装级 3D，**不是**整晶圆 NoW 重叠网。[Pistil](/papers/hc2026-pistil-20-chiplet-slm.md) 是 20-chiplet 2.5D flower，更不是晶圆级。
 
 ## 和 wiki 已有 mesh/WSE 页的关系
 

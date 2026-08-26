@@ -18,6 +18,14 @@
 
 # Raw Source
 
+* [Hot Chips 2026 Handy HBM Tutorial](hc2026-handy-hbm-tutorial.md)
+* [Hot Chips 2026 Samsung HBM Base Die](hc2026-samsung-hbm-base-die.md)
+* [Hot Chips 2026 SK hynix HBM Packaging](hc2026-skhynix-hbm-advanced-packaging.md)
+* [Hot Chips 2026 d-Matrix Raptor 3D-DRAM](hc2026-dmatrix-raptor-3d-dram.md)
+* [Hot Chips 2026 OXMIQ HBF](hc2026-oxmiq-hbf.md)
+* [Hot Chips 2026 NVIDIA NVLink Fusion](hc2026-nvidia-riscv-nvlink-fusion.md)
+* [Hot Chips 2026 Pistil 20-Chiplet SLM](hc2026-pistil-20-chiplet-slm.md)
+
 * [A Cloud-Scale Characterization of Remote Procedure Calls](cloud-scale-rpc-characterization.md)
 * [AI Accelerators for Large Language Model Inference: Architecture Analysis and Scaling Strategies](AI_Accelerators_LLM_Inference_2025.md)
 * [Alibaba HPN: A Data Center Network for Large Language Model Training](alibaba-hpn-datacenter-network-llm.md)

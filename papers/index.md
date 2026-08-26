@@ -1,5 +1,13 @@
 # Paper
 
+* [Hot Chips 2026 Handy HBM Tutorial](hc2026-handy-hbm-tutorial.md) - Objective Analysis — HBM 吃 3× DDR 晶圆面积；DRAM 产能十年未涨；PIM/base-die 被推理推上台
+* [Hot Chips 2026 Samsung HBM Base Die](hc2026-samsung-hbm-base-die.md) - Samsung — HBM4/4E B-die 改 4 nm logic；cHBM→aHBM→zHBM（WoW+HCB 取消 2.5D interposer）
+* [Hot Chips 2026 SK hynix HBM Packaging](hc2026-skhynix-hbm-advanced-packaging.md) - SK hynix — HBM4 12Hi 量产/16Hi Qual；HyB 才能 ≥20Hi、pitch <18 μm；i-HBM 热阻 >30% ↓
+* [Hot Chips 2026 d-Matrix Raptor 3D-DRAM](hc2026-dmatrix-raptor-3d-dram.md) - d-Matrix — 1-Hi logic-on-top；自称 ≈20× BW/mm²、13.5× 更好 mW/GB/s vs HBM4；ISCA 2026 指针
+* [Hot Chips 2026 OXMIQ HBF](hc2026-oxmiq-hbf.md) - OXMIQ — HBF 是低 α/低 β 容量点；72-GPU 机柜 ~14× 容量 / ~0.6× 带宽；HBM for the rack
+* [Hot Chips 2026 NVIDIA NVLink Fusion](hc2026-nvidia-riscv-nvlink-fusion.md) - NVIDIA — NVL72 全铜 72 GPU；3.6 TB/s per GPU、900 GB/s C2C、28.8 TB/s/switch tray；CHI Fusion
+* [Hot Chips 2026 Pistil 20-Chiplet SLM](hc2026-pistil-20-chiplet-slm.md) - Harvard/Google/Lockheed — 16 nm 2.5D flower；512 MB / 51.2 GB/s；vs Jetson Nano 最高 7.6× 吞吐
+
 * [HYDRA: Heterogeneous Chiplet DSE for Hybrid LLM Serving](hydra-heterogeneous-chiplet-dse-hybrid-llm.md) - UW–Madison/Ulsan — 2.5D 异构 chiplet 上 Hybrid LLM serving 的宏架构+运行时联合 DSE；平均 1.55× 吞吐、TTFT −43.7%，最高 2.3×
 * [HCCL: Collective Communication for Meta MTIA 300](hccl-meta-mtia-300-collective-communication.md) - SC 2026 自称 — 包内 NIC chiplet + ME/NMC 卸载集体；机柜内最高 940 GB/s，重叠 GEMM 降幅 <0.5%；推理 PUT 集体 <6 μs
 * [ReXpert: ReRAM Near-Memory FFN Pool for Disaggregated MoE](rexpert-reram-nmc-disaggregated-moe.md) - HKUST/阿里云 — 驻留 expert + core 内组播；occupancy 0.328→0.519；iso-compute vs H20 FFN 9.5×、权重搬运能 20×

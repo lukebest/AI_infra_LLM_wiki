@@ -11,7 +11,7 @@ tags:
 - interconnect
 - architecture
 - commercial
-timestamp: '2026-07-31T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: '2026-07-31'
 sources:
 - raw/articles/3d-noc-study-03-hybrid-bonding.md
@@ -74,6 +74,8 @@ Hybrid bonding 是过去七年最重要的 3D 集成技术：Cu-Cu 直接扩散�
 
 **3D-DRAM 趋势**：HBM 与 3D-DRAM 路线已开始整合 HBM4 之 hybrid-bonding base die；2026 后 SK hynix/Cadence 标准 16-Hi die + hybrid bonding 之 HBM5。
 
+Hot Chips 2026 校正：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packaging.md) 公开说 HBM4 **12Hi 量产、16Hi under Qual**（Adv. MR-MUF），**HyB 对准 ≥20Hi**、pitch **<18 μm**、同限高下 core die 可厚最多 **24%**。Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md) 用 **WoW + HCB** 取消 2.5D interposer；HPB 覆盖 >50% PHY 时峰值温度降 >35%。d-Matrix [Raptor](/papers/hc2026-dmatrix-raptor-3d-dram.md) 今天仍是 36 μm F2F，HB 是 <2 μm / 8-high 路线图。
+
 ### 5. 3D NoC 研究的关键启示
 
 1. **垂直链路不再是稀薄资源** → 经典 3-D Mesh 的 "minimum-port" 假设已被打破。可以构造 **richly-connected vertical topology** (every tile has 4–6 vertical ports)
@@ -88,6 +90,8 @@ Hybrid bonding 是过去七年最重要的 3D 集成技术：Cu-Cu 直接扩散�
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — Hybrid bonding 产品（V-Cache、MI300）正是 3D AI 芯片基础
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — Packaging / 3D 路线的商业现实
 - [Multi-Frame Architecture Memory Hierarchy](/concepts/cxl-tiered-memory.md) — HBM/CXL tiering 与 hybrid-bonding 内存层的差异
+- [SK hynix HBM packaging](/papers/hc2026-skhynix-hbm-advanced-packaging.md) — HyB vs MR-MUF
+- [Samsung HBM Base Die](/papers/hc2026-samsung-hbm-base-die.md) — HCB / zHBM
 
 ## 关键开放问题
 

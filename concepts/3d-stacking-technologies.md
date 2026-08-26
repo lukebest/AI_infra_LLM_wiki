@@ -13,9 +13,9 @@ tags:
 - chiplet
 - wse
 - noc
-timestamp: '2026-08-21T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: '2026-07-31'
-updated: '2026-08-21'
+updated: 2026-08-26
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
 - raw/articles/3d-noc-study-02-monolithic-vs-tsv.md
@@ -91,6 +91,8 @@ sources:
 
 2026 新用法：TSMC SoIC-**WoW** 把 Cu-Cu 键合从 die 堆叠推到**整晶圆面对面**——同晶圆 reticle 不能直连，拓扑由重叠决定，见 [Network-on-Wafer](/concepts/network-on-wafer.md) 与 [Iff et al.](/papers/network-design-wafer-scale-wow-hybrid-bonding.md)。[Mozart](/papers/mozart-35d-wafer-scale-moe-training.md) 用 hybrid bonding 做 per-chiplet logic-on-SRAM；[3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) 用垂直维隔离 PD 解耦的 KVT 与 decode AllReduce。[ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) 用 CMOS Directly Bonded to Array（CBA）+ Cu-Cu HB 把 FeFET-NAND 阵列接到 PNM 基座，文称数据 I/O 不占逻辑有源区。[DASH](/papers/dash-dual-path-hbf-moe-inference.md) 的 HBF 仍是 **TSV 堆 NAND**（不是 HB logic-on-logic）；封装侧用 UCIe 把 HBM 基座和 HBF 基座接到 GPU。
 
+Hot Chips 2026 封装侧：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packaging.md) 把 HBM4 写成 **12Hi 量产 / 16Hi Qual**（MR-MUF / Adv. MR-MUF），**HyB 才是 ≥20Hi** 的研究档——室温 SiO₂–SiO₂ + **>200 °C** Cu–Cu，pitch **<18 μm**，相对热阻约 **0.40×**。[Samsung](/papers/hc2026-samsung-hbm-base-die.md) 的 **zHBM** 用 **WoW + HCB** 把 xPU 垂直叠到 C-die 上，取消 2.5D interposer（不是晶圆级 NoW）。[d-Matrix Raptor](/papers/hc2026-dmatrix-raptor-3d-dram.md) 今天是 **36 μm F2F、1-Hi logic-on-top**，路线图 HB **<2 μm / 8-high**。
+
 ## 路线 → 3D NoC 设计的根本含义
 
 | 路线 | port 数 | 路由器主约束 | 拓扑倾向 |
@@ -110,6 +112,9 @@ sources:
 - [Network-on-Wafer](/concepts/network-on-wafer.md) — SoIC-WoW 把 hybrid bonding 变成晶圆级网络约束
 - [DRAM Memory System](/concepts/dram-memory-system.md) — HBM 即 TSV-based 商业现实
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — 3D V-Cache 即 TSV-based
+- [SK hynix HBM packaging](/papers/hc2026-skhynix-hbm-advanced-packaging.md) — HyB vs HBM4E
+- [Samsung HBM Base Die](/papers/hc2026-samsung-hbm-base-die.md) — zHBM / HCB
+- [d-Matrix Raptor](/papers/hc2026-dmatrix-raptor-3d-dram.md) — 1-Hi 3D DRAM
 
 ## 开放问题
 
@@ -127,3 +132,5 @@ sources:
 [5] [papers/network-design-wafer-scale-wow-hybrid-bonding.md](papers/network-design-wafer-scale-wow-hybrid-bonding.md) — WoW 放置即拓扑（2026）
 [6] [papers/thame-3d-memory-enabled-heterogeneous-moe.md](papers/thame-3d-memory-enabled-heterogeneous-moe.md) — FeFET-NAND CBA + HB PNM（2026）
 [7] [papers/dash-dual-path-hbf-moe-inference.md](papers/dash-dual-path-hbf-moe-inference.md) — TSV-HBF + UCIe 双路径（2026）
+[8] [papers/hc2026-skhynix-hbm-advanced-packaging.md](papers/hc2026-skhynix-hbm-advanced-packaging.md) — HyB vs MR-MUF / HBM4E（Hot Chips 2026）
+[9] [papers/hc2026-samsung-hbm-base-die.md](papers/hc2026-samsung-hbm-base-die.md) — zHBM WoW+HCB（Hot Chips 2026）

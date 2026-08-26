@@ -11,9 +11,9 @@ tags:
 - interconnect
 - inference
 - architecture
-timestamp: '2026-08-19T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: 2026-06-24
-updated: 2026-08-19
+updated: 2026-08-26
 sources:
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
 ---
@@ -103,6 +103,7 @@ Core FLOPS、DRAM BW、NoC BW、SRAM 容量必须协同配置；单纯 scale 任
 - [3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) — logic-on-logic：用垂直维隔离 KVT 与 decode AllReduce，不是 DRAM-on-logic
 - [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) — DRAM-PNM 做 attention、FeFET-NAND-PNM 做 expert，树 NoC 扛 MoE scatter-gather
 - [Network-on-Wafer](/concepts/network-on-wafer.md) — 整晶圆 WoW 与 3.5D chiplet 树
+- [d-Matrix Raptor](/papers/hc2026-dmatrix-raptor-3d-dram.md) — Hot Chips 2026：**1-Hi logic-on-top** 3D DRAM（不是 Voxel 的 DRAM-on-logic 网格）；36 μm F2F；自称 ≈20× BW/mm² vs HBM4
 
 # Citations
 

@@ -10,8 +10,8 @@ tags:
 - through-silicon-via
 - architecture
 - noc
-timestamp: '2026-08-21T00:00:00Z'
-updated: '2026-08-21'
+timestamp: '2026-08-26T00:00:00Z'
+updated: 2026-08-26
 created: '2026-07-31'
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
@@ -109,6 +109,9 @@ Y_die = exp(-A · N_TSV / A_chip · λ_TSV)
 - [DRAM Memory System](/concepts/dram-memory-system.md) — HBM 即 TSV 商业现实
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 存储+NoC 全景，TSV 是其关键链路
 - [DASH](/papers/dash-dual-path-hbf-moe-inference.md) — HBF 用 TSV 堆 NAND die；GPU 侧是 UCIe，不是 3D logic NoC
+- [SK hynix packaging](/papers/hc2026-skhynix-hbm-advanced-packaging.md) — HBM4 **>20K** TSVs + power TSVs「铺满」，标 75% PDN
+- [Samsung HBM Base Die](/papers/hc2026-samsung-hbm-base-die.md) — BW 瓶颈仍是 TSV 数量与 pitch；zHBM 用 HCB 取消 PHY
+- [d-Matrix Raptor](/papers/hc2026-dmatrix-raptor-3d-dram.md) — ~700 TSV/mm² 供电穿过 1-Hi DRAM
 
 ## 开放问题（向 Layer 2-5 推进）
 

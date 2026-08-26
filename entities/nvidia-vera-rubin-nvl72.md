@@ -9,8 +9,9 @@ tags:
 - training
 - inference
 - scale-up
-timestamp: '2026-05-08T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: 2026-04-16
+updated: 2026-08-26
 sources:
 - raw/articles/nvidia-groq3-lpx-blog-2026-04.md
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
@@ -48,6 +49,10 @@ NVIDIA Vera Rubin 平台的核心 GPU 系统。72 个 Rubin GPU 通过 NVLink �
 
 详见 [Nvidia Cpo Roadmap](/concepts/nvidia-cpo-roadmap.md)
 
+## Hot Chips 2026（NVLink Fusion 教程）
+
+[NVIDIA RISC-V / Fusion](/papers/hc2026-nvidia-riscv-nvlink-fusion.md) 把 NVL72 写成：单 72 GPU 全铜 L1；18 compute tray × 4 Rubin GPU + 2 Vera CPU；9 switch tray × 4 NVLink 6 switch；**3.6 TB/s per GPU**、**900 GB/s** C2C、**28.8 TB/s** / switch tray。Fusion 允许 custom CPU/XPU 进同一 72-XPU 域（CHI 一致性）。无新 HBM 数字。
+
 ## Kyber Rack 更新（GTC 2026）
 
 相比 GTC 2025 原型，主要变化：
@@ -69,6 +74,7 @@ NVIDIA Vera Rubin 平台的核心 GPU 系统。72 个 Rubin GPU 通过 NVLink �
 - [Kyber Rack](/entities/kyber-rack.md) — Kyber rack 架构
 - [Nvidia Cpo Roadmap](/concepts/nvidia-cpo-roadmap.md) — CPO 路线图
 - [Vera Etl256](/entities/vera-etl256.md) — Vera CPU 独立 rack
+- [Hot Chips 2026 NVIDIA Fusion](/papers/hc2026-nvidia-riscv-nvlink-fusion.md) — NVL72 / C2C / CHI 数字
 
 # Citations
 

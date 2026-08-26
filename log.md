@@ -1,6 +1,16 @@
 # Bundle Update Log
 
 ## 2026-08-26
+
+### Hot Chips 2026 tutorials / posters ingest
+* **Ingest**: Handy / Samsung / SK hynix / d-Matrix / OXMIQ / NVIDIA Fusion 教程 PDF + Pistil 海报 PDF → `raw/papers/HC2026_*.pdf` + Raw Source stub。**未**拷贝、未 ingest Micron Confidential 教程。
+* **Creation** (papers): [Handy HBM 开场](/papers/hc2026-handy-hbm-tutorial.md), [Samsung B-die / zHBM](/papers/hc2026-samsung-hbm-base-die.md), [SK hynix packaging](/papers/hc2026-skhynix-hbm-advanced-packaging.md), [d-Matrix Raptor](/papers/hc2026-dmatrix-raptor-3d-dram.md), [OXMIQ HBF](/papers/hc2026-oxmiq-hbf.md), [NVIDIA NVLink Fusion](/papers/hc2026-nvidia-riscv-nvlink-fusion.md), [Pistil](/papers/hc2026-pistil-20-chiplet-slm.md)。
+* **Update**: [3D Stacking](/concepts/3d-stacking-technologies.md)（SK HyB vs HBM4E；Samsung zHBM WoW+HCB）, [Hybrid Bonding](/papers/hybrid-bonding-3d-integration-recent.md), [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md)（Raptor 1-Hi logic-on-top）, [DRAM](/concepts/dram-memory-system.md), [TSV](/concepts/tsv-3d-physical-layer.md), [Network-on-Wafer](/concepts/network-on-wafer.md)（zHBM 不是晶圆级 NoW）, [DASH](/papers/dash-dual-path-hbf-moe-inference.md)（OXMIQ 对照）, [NVLink fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md), [Vera Rubin NVL72](/entities/nvidia-vera-rubin-nvl72.md)。
+* **Schema**: 公司标签加 `samsung / sk-hynix / d-matrix / oxmiq`；技术加 `hbf`。未加 intel / microsoft / openai。
+* **Indexes**: 手动同步 `papers/index.md`（+7）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Skip**: Micron Confidential；Opticore（photonic compute）；LUTs and Bolts（edu ring NoC）；RISC-V / Canonical / Infineon；conference day1/day2 笔记未就绪。
+
+### Watch (morning, no increment)
 * **Watch**: 2026-08-26 Asia/Shanghai AI infra 论文巡检。cs.AR new/recent 聚焦 Tue 8/25（Wed 8/26 列表尚未出）；扩展核对 FlashAccel 替换版（2607.10186v2, replaced 2026-08-22）。已 ingest 的 HYDRA/ReXpert/HCCL/DASH 等不重复。
 * **No increment**: 本轮无 WSE/NoC/NoW/3D/chiplet/LLM 互连合格全文。不硬凑入库。
 * **Considered not ingested**: NOVA (2608.22613, 4F² VCT + peri-over-cell 两层 NMP，HB/TSV 仅作 DRAM 堆叠带宽，无 NoC/chiplet/NoW 拓扑增量)；FlashAccel (2607.10186v2, GPU 内 HBF 权重+KV 布局/SRAM 预取/管理软件，相对已 ingest 的 DASH 双路径 UCIe 无互连架构增量)；SYNTLOG FSM FPGA (2608.23288)；systolic PE approx (2608.22378)；NoTB RTL (2608.21962)；FPGA compression survey (2608.21657)；Optalysys photonic compute-in-transit (2608.21536)；M3D 6T SRAM 2nm (2608.22741)；VIPER PIM DSE (2608.23404)；MCM GPU cycle simulator (2608.22602)；TherMapNet (2608.21887)。昨日跳过的 TMR/SPICE/FIBER/HyperCut/FPGA NoC CAD/DTX/SLA/H100 load/HBM reliability/MAGMA/TokenPowerSandbox/HCRMap 仍跳过。BusyBarn 仍无公开 PDF。WATOS (2512.12279) 在窗口外。
