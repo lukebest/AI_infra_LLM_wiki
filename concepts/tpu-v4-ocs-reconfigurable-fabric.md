@@ -11,8 +11,9 @@ tags:
 - topology
 - google
 - llm
-timestamp: '2026-07-22T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: 2026-07-22
+updated: 2026-08-26
 sources:
 - raw/articles/paper-deepdive-day-07.md
 ---
@@ -64,6 +65,7 @@ Jouppi et al., **ISCA 2023**（+ v5p 报告）。paper-deepdive **Day 7**：[raw
 - [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)
 - [Multi-plane Clos Topology for AI Training](/concepts/multi-plane-clos-topology.md)
 - [Paper Deep-Dive Map](/summaries/paper-deepdive.md)
+- [Hot Chips 2026 TPU 8](/papers/hc2026-google-tpu8.md) — 8t 仍 OCS 切片（9600-chip / 2.4 TB/s ICI）；8i 改 Boardfly（1152-chip，max 7 hops）；Virgo 134,400 TPU
 
 # Citations
 

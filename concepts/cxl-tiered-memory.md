@@ -11,9 +11,9 @@ tags:
 - storage
 - infrastructure
 - latency
-timestamp: '2026-07-17T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: 2026-07-17
-updated: 2026-07-17
+updated: 2026-08-26
 sources:
 - raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf
 - raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf
@@ -39,6 +39,7 @@ sources:
 - **KV / 会话状态**：长上下文与多轮对话放大容量需求；分层内存与 [HCache](/papers/hcache-fast-state-restoration.md)、[FlexInfer](/papers/flexinfer-on-device-llm-offloading.md) 的 offload/prefetch 正交但目标相近（把冷状态移出热路径）。
 - **训练激活/检查点**：大 batch 与长序列可把中间张量放到 CXL 层，代价是带宽与延迟。
 - **超芯片 / C2C**：[SuperInfer](/papers/superinfer-slo-aware-rotary-scheduling.md) 在 GH200 上利用 NVLink-C2C 的统一内存视图——与 CXL 同属「扩大可寻址内存」，介质与一致性模型不同。
+- **Hot Chips 2026（未单列论文）**：Intel Diamond Rapids MVF 写 **CXL 3.0 1LM / Flat2LM** + CXL 3 I/O（每 hub 4×16 Flexbus，可 PCIe Gen6 / CXL 3 / UPI 3）；不是 GPU scale-up。[Vera](/papers/hc2026-nvidia-vera.md) 带 **CXL 3.1**。
 
 ## 开放问题
 

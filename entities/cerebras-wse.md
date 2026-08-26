@@ -1,7 +1,7 @@
 ---
 type: Entity
 title: Cerebras WSE
-description: Cerebras 晶圆级 AI 加速器，24 color 确定性路由，900K 核心
+description: Cerebras 晶圆级加速器；HC2026 CS-4 = 3× WSE-3T；CS-6 预告 3D DRAM
 tags:
 - cerebras
 - wse
@@ -9,9 +9,9 @@ tags:
 - deterministic
 - inference
 - mesh
-timestamp: '2026-08-19T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: 2026-04-16
-updated: 2026-08-19
+updated: 2026-08-26
 sources:
 - raw/papers/Near-optimal_wafer-scale_reduce.pdf
 - raw/articles/interconn-study-21d-day-01.md
@@ -29,11 +29,16 @@ sources:
 - raw/articles/memory-fence-hardware-2026-06-28.md
 - raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf
 - raw/articles/arch-study-30d-day-26.md
+- raw/papers/hc2026-cerebras-cs4.md
 ---
 
 # Cerebras WSE (Wafer-Scale Engine)
 
-晶圆级 AI 加速器。WSE-3 为最新代：900K 核心，44 GB SRAM，214 Pbit/s fabric 带宽。
+晶圆级 AI 加速器。WSE-3：900K 核心，44 GB SRAM，214 Pbit/s fabric 带宽。
+
+## Hot Chips 2026：CS-4 / Nexus / CS-6
+
+[CS-4](/papers/hc2026-cerebras-cs4.md) = 三片 **WSE-3 Turbo**。相对 CS-3：compute **125 → 750 PFLOPS**；SRAM **44 → 132 GB**；mem BW **21.6 → 129.6 PB/s**；fabric **26.7 → 160.5 PB/s**；I/O **1.2 → 7.2 Tbit/s**；晶圆间 **2 µs**。新 **Direct Wafer Links** + RoCE。单晶圆标 **43,200 TB/s** vs Rubin **22 TB/s**；wafer fabric **53.5 PB/s**。GA **Q3 2026**。Nexus 预留 CS-5 / CS-6；**CS-6** 预告 wafer-scale SRAM + **3D stacked DRAM**（FLOPS/BW **未知**）。CS-5 数字标 internal projections。
 
 ## 与通用 CPU 体系结构的差异
 
@@ -150,6 +155,7 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Network-on-Wafer](/concepts/network-on-wafer.md) — WSE 是 field stitching 均匀 mesh；对照 WoW「同层不能直连」
 - [WoW Network Design](/papers/network-design-wafer-scale-wow-hybrid-bonding.md) — SoIC-WoW 第三条 WSI 路线
 - [Fovea](/papers/fovea-physical-implication-aware-wafer-scale-dse.md) — 同质 repeated-die 仍要按负载选实例；不是 WSE 式固定 field-stitch 模板
+- [Hot Chips 2026 CS-4](/papers/hc2026-cerebras-cs4.md) — 三晶圆机柜 + Direct Wafer Links + CS-6 3D DRAM
 
 # Citations
 
@@ -168,3 +174,4 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 [13] [raw/articles/arch-study-30d-day-25.md](raw/articles/arch-study-30d-day-25.md) — DSA/脉动 vs SLA（Day 25）
 [14] [raw/articles/interconn-study-21d-day-13.md](raw/articles/interconn-study-21d-day-13.md) — CDG/Dally、Mesh vs Torus（Day 13）
 [15] [raw/articles/interconn-study-21d-day-14.md](raw/articles/interconn-study-21d-day-14.md) — Duato / 逃逸 VC（Day 14）
+[16] [raw/papers/hc2026-cerebras-cs4.md](raw/papers/hc2026-cerebras-cs4.md) — CS-4 / Nexus, Hot Chips 2026

@@ -1,7 +1,7 @@
 ---
 type: Concept
 title: NVLink NVSwitch Scale-Up Fabric
-description: Hopper/Blackwell NVLink + NVSwitch — 固定 fat-tree、极高每链路带宽、NVL72；与 TPU v4 OCS 可重构哲学对照
+description: Hopper/Blackwell/Rubin NVLink + NVSwitch — 固定 fat-tree；NVLink 6 3.6 TB/s all-to-all；与 TPU v4 OCS 对照
 tags:
 - nvlink
 - nvswitch
@@ -16,6 +16,7 @@ created: 2026-07-22
 updated: 2026-08-26
 sources:
 - raw/articles/paper-deepdive-day-08.md
+- raw/papers/hc2026-nvidia-rubin.md
 ---
 
 # NVLink / NVSwitch Scale-Up Fabric
@@ -31,11 +32,12 @@ NVIDIA Hopper / Blackwell 白皮书与 GTC 材料。paper-deepdive **Day 8**：[
 | Hopper NVLink 4 | **~900 GB/s** | H100 |
 | Blackwell NVLink 5 | **~1.8 TB/s** | 2× Hopper |
 | NVL72 | **72 GPU** 单域 | ~18 NVSwitch tray；聚合带宽笔记称 ~130 TB/s/rack 量级 |
+| **Rubin NVLink 6**（HC2026） | **3.6 TB/s per GPU all-to-all** | 72 GPU；Counted Write；130 TFLOPS in-network |
 | NVSwitch Gen4（笔记） | 高基数 ASIC（数百 port 级） | Clos/fat-tree 中枢 |
 
 工艺：H100 ~80B 管；B200 笔记称 ~208B（双 die 等）。实体延伸：[Nvidia Vera Rubin NVL72](/entities/nvidia-vera-rubin-nvl72.md)、[Kyber Rack](/entities/kyber-rack.md)。
 
-Hot Chips 2026（[NVIDIA RISC-V / NVLink Fusion](/papers/hc2026-nvidia-riscv-nvlink-fusion.md)）：Vera Rubin NVL72 写成单 **72 GPU** 全铜 L1；**9** switch tray × **4** NVLink 6 switch = **36** switch；**28.8 TB/s per switch tray**；**3.6 TB/s per GPU**；**900 GB/s** CPU–GPU 经 NVLink-C2C；每 GPU 旁一颗 Fusion chiplet。Custom CPU 经 **CHI** 进 fabric。无新 HBM 数字。
+Hot Chips 2026：[Fusion 教程](/papers/hc2026-nvidia-riscv-nvlink-fusion.md) 给 NVL72 机柜几何（9×4 NVLink 6 switch，**28.8 TB/s**/tray，**900 GB/s** C2C，CHI）。[Rubin GPU](/papers/hc2026-nvidia-rubin.md) 补协议：**Counted Write** 替换 MEMBAR+atomic；相对 Ethernet **3×** 延迟、**10×** packet rate、**130 TFLOPS** in-network。同日对照 [Helios UALoE](/papers/hc2026-amd-helios-ualoe.md)（以太网 load-store，**1.8 TB/s/dir**）。[TPU 8](/papers/hc2026-google-tpu8.md) 仍走 OCS/Boardfly，不是 fat-tree。
 
 ## 两条 scale-up 哲学
 
@@ -63,7 +65,10 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 - [Multi-plane Clos Topology for AI Training](/concepts/multi-plane-clos-topology.md)
 - [Paper Deep-Dive Map](/summaries/paper-deepdive.md)
 - [Hot Chips 2026 NVIDIA Fusion](/papers/hc2026-nvidia-riscv-nvlink-fusion.md)
+- [Hot Chips 2026 Rubin GPU](/papers/hc2026-nvidia-rubin.md)
+- [Hot Chips 2026 Helios UALoE](/papers/hc2026-amd-helios-ualoe.md)
 
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
+[2] [raw/papers/hc2026-nvidia-rubin.md](raw/papers/hc2026-nvidia-rubin.md) — Rubin GPU / NVLink 6, Hot Chips 2026

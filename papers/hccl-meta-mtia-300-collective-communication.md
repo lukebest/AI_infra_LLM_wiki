@@ -19,11 +19,13 @@ tags:
 - architecture
 - moe
 - meta
-timestamp: '2026-08-21T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: 2026-08-21
+updated: 2026-08-26
 sources:
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
 - raw/papers/hccl-meta-mtia-300-collective-communication.md
+- raw/papers/hc2026-meta-mtia-400.md
 ---
 
 # HCCL: Collective Communication for Meta Training and Inference Accelerators
@@ -92,6 +94,7 @@ Host 把一次集体编成 work packet → 多个可并行 subgraph → 带依�
 - [C2C-Explorer](/papers/c2c-explorer-chip-to-chip-interconnect-llm.md) — 探索框架；HCCL 是生产芯片上的集体库
 - [FlashMoE Kernel](/concepts/flashmoe-kernel.md) — GPU 上把 MoE 与 NVSHMEM 融进一个 kernel；HCCL 把集体**搬离**计算阵列
 - [Collective-Capable NoC](/concepts/collective-capable-noc.md) — 片上 in-network 算术；HCCL 的 NMC 是近 HBM 的线速归约，不在 NoC 交换机里
+- [MTIA 400](/papers/hc2026-meta-mtia-400.md) — Hot Chips 2026：2D mesh NoC + leaky-bucket；SU 仍 **1.2 TB/s**；**12 ME**；HBM **288 GB / 9.4 TB/s**；72 ASIC 域
 
 ## 开放问题
 
@@ -104,3 +107,4 @@ Host 把一次集体编成 work packet → 多个可并行 subgraph → 带依�
 
 [1] [raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf](raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf) — Bland et al., arXiv:2608.00358
 [2] [raw/papers/hccl-meta-mtia-300-collective-communication.md](raw/papers/hccl-meta-mtia-300-collective-communication.md) — 结构化摘录
+[3] [raw/papers/hc2026-meta-mtia-400.md](raw/papers/hc2026-meta-mtia-400.md) — MTIA 400, Hot Chips 2026

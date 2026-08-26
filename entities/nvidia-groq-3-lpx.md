@@ -1,7 +1,7 @@
 ---
 type: Entity
 title: NVIDIA Groq 3 LPX
-description: NVIDIA rack-scale 低延迟推理加速器，256 LPU，LP30 Samsung SF4，AFD，C2C 三级拓扑
+description: NVIDIA rack-scale LPU；HC2026 第一手：10,996 TPS/user、350 ns C2C、40 PB/s SRAM
 tags:
 - nvidia
 - groq
@@ -10,16 +10,22 @@ tags:
 - inference
 - deterministic
 - scale-up
-timestamp: '2026-05-08T00:00:00Z'
+timestamp: '2026-08-26T00:00:00Z'
 created: 2026-04-16
+updated: 2026-08-26
 sources:
 - raw/articles/nvidia-groq3-lpx-blog-2026-04.md
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
+- raw/papers/hc2026-nvidia-groq-3-lpx.md
 ---
 
 # NVIDIA Groq 3 LPX
 
 Rack-scale 低延迟推理加速器，NVIDIA Vera Rubin 平台的第七颗芯片。256 个 Groq 3 LPU（LP30）互联，专注确定性、低延迟的 agentic 推理。
+
+## Hot Chips 2026（第一手幻灯片）
+
+[NVIDIA Groq 3 LPX](/papers/hc2026-nvidia-groq-3-lpx.md) Day2：Gemma 4 **31B** **10,996 TPS/user**（16K ISL / max **264K**）。SPEED-bench **4,767** median tok/s。Artificial Analysis **100K** context：**4×** 更快长上下文 decode（对照未标名）。机柜：**256 LPU** / **128 GB** SRAM / **315 PFLOPs FP8** / **40 PB/s** 聚合 SRAM / C2C **350 ns**。可达 SRAM：**0.35 µs @ 8 GB** … **2.95 µs @ 1152 GB**。可扩到 **1000+** LPU。与 **72 Rubin** 三种拆分（各 rack 自持 KV）：(1) LPX draft / NVL72 verify；(2) GPU ATTN+KV / LPU FFN；(3) GPU prefill / LPX decode。GPT-OSS-2T 相对 NVL72-only：**~3× / ~3× / ~5×** 交互。TPS/MW 绝对值 **未知**。
 
 ## Groq 收购背景
 
@@ -91,6 +97,10 @@ Rack 总 scale-up 带宽：256 LPU × 90 lanes × 112G / 8 × 2 directions ≈ *
 - 每 LPU 4×100G → OSFP cage → 跨 rack LPU
 - Daisy chain 拓扑，100G AEC reach 内可实现
 
+## Hot Chips 2026（第一手幻灯片）
+
+[Groq 3 LPX / LP30](/papers/hc2026-nvidia-groq-3-lpx.md) 确认机柜：**256 LPU / 128 GB SRAM / 315 PFLOPs FP8 / 40 PB/s / 350 ns C2C**（256×500 MB 与既有 LP30 表一致）。Gemma 4 31B：**10,996 TPS/user**。无自适应路由。三种拆分（各 rack 自持 KV）：draft / ATTN-FFN / prefill-decode；GPT-OSS-2T 相对 NVL72-only **~3× / ~3× / ~5×** 交互。TPS/MW 绝对值 **未知**。
+
 ## Attention FFN Disaggregation（AFD）
 
 LPX 的核心使用模式，源自 [Megascale Infer 2504.02263](/papers/megascale-infer-2504.02263.md) 和 Step-3：
@@ -117,8 +127,10 @@ LPX 的核心使用模式，源自 [Megascale Infer 2504.02263](/papers/megascal
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构推理概念
 - [Kyber Rack](/entities/kyber-rack.md) — Kyber rack 架构
 - [Megascale Infer 2504.02263](/papers/megascale-infer-2504.02263.md) — AFD 技术来源
+- [Hot Chips 2026 Groq 3 LPX](/papers/hc2026-nvidia-groq-3-lpx.md) — 第一手 350 ns / 10,996 TPS
 
 # Citations
 
 [1] [raw/articles/nvidia-groq3-lpx-blog-2026-04.md](raw/articles/nvidia-groq3-lpx-blog-2026-04.md)
 [2] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)
+[3] [raw/papers/hc2026-nvidia-groq-3-lpx.md](raw/papers/hc2026-nvidia-groq-3-lpx.md) — Arsovski / Raghavan, Hot Chips 2026
