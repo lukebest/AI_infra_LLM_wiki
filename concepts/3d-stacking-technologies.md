@@ -15,7 +15,7 @@ tags:
 - noc
 timestamp: '2026-08-26T00:00:00Z'
 created: '2026-07-31'
-updated: 2026-08-26
+updated: 2026-08-27
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
 - raw/articles/3d-noc-study-02-monolithic-vs-tsv.md
@@ -115,6 +115,7 @@ Hot Chips 2026 封装侧：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packag
 - [SK hynix HBM packaging](/papers/hc2026-skhynix-hbm-advanced-packaging.md) — HyB vs HBM4E
 - [Samsung HBM Base Die](/papers/hc2026-samsung-hbm-base-die.md) — zHBM / HCB
 - [d-Matrix Raptor](/papers/hc2026-dmatrix-raptor-3d-dram.md) — 1-Hi 3D DRAM
+- [晶圆级光互连](/papers/wafer-scale-optical-interconnect-moe-thermal.md) — GPU/EIC/PIC W2W HB，再 D2W 到 300 mm 光 interposer
 
 ## 开放问题
 
@@ -134,3 +135,4 @@ Hot Chips 2026 封装侧：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packag
 [7] [papers/dash-dual-path-hbf-moe-inference.md](papers/dash-dual-path-hbf-moe-inference.md) — TSV-HBF + UCIe 双路径（2026）
 [8] [papers/hc2026-skhynix-hbm-advanced-packaging.md](papers/hc2026-skhynix-hbm-advanced-packaging.md) — HyB vs MR-MUF / HBM4E（Hot Chips 2026）
 [9] [papers/hc2026-samsung-hbm-base-die.md](papers/hc2026-samsung-hbm-base-die.md) — zHBM WoW+HCB（Hot Chips 2026）
+[10] [papers/wafer-scale-optical-interconnect-moe-thermal.md](papers/wafer-scale-optical-interconnect-moe-thermal.md) — 光 interposer 3D 堆（2026）

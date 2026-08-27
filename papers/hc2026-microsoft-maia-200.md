@@ -15,10 +15,11 @@ tags:
 - architecture
 timestamp: '2026-08-26T00:00:00Z'
 created: 2026-08-26
-updated: 2026-08-26
+updated: 2026-08-27
 sources:
 - raw/papers/HC2026_Microsoft_Maia_200.pdf
 - raw/papers/hc2026-microsoft-maia-200.md
+- papers/maia-200-sdla.md
 ---
 
 # Maia 200 — Data Center Scale AI Accelerator (Software Defined Dataflow)
@@ -43,8 +44,13 @@ Tray **FCQ**：**4** 加速器固定 Ethernet 全连接（无交换机）做 TP 
 
 集体按尺寸自适应：broadcast（小）/ hierarchical（中）/ ring（大）。Attention：FlashAttention 风格 QK block；交错 **2** tensor + **2** SIMD。Kernel 结果「as of June 2026」：FP8×FP8 与 FP4×FP4 GEMM TP=1；fused SDPA FA2；AllReduce BF16 TP8 与 AllToAll TP8。
 
+## 归档全文
+
+2026-08-25 出现独立预印本 [Maia 200 SDLA](/papers/maia-200-sdla.md)（arXiv:2608.24664）。**不要把两份来源的数字混进同一张表**：幻灯有 SRAM **272 MB @ 80 TB/s**、ATL **<1 µs** P2P mem2mem；全文有 **6144** 精确规模、ATLv2 接收端驱动、Hamming Mesh **20+8 / 4 plane**、8 芯 Allgather **78%/94%** SoL。峰值 TOPS / HBM / 28×400 / 750 W 两边一致。
+
 ## 与 wiki 的关系
 
+- [Maia 200 SDLA 全文](/papers/maia-200-sdla.md) — 归档来源；ATLv2 / Hamming Mesh / 6144
 - [MRC](/entities/mrc.md) — 幻灯自称 ATL 影响 MRC / UET
 - [AMD Helios UALoE](/papers/hc2026-amd-helios-ualoe.md) — 另一条以太网 load-store scale-up
 - [Layout-Aware NoC](/concepts/layout-aware-noc-flexible-dataflow.md) — GNOC 广播 vs flexible interconnect
@@ -54,3 +60,4 @@ Tray **FCQ**：**4** 加速器固定 Ethernet 全连接（无交换机）做 TP 
 
 [1] [raw/papers/HC2026_Microsoft_Maia_200.pdf](raw/papers/HC2026_Microsoft_Maia_200.pdf) — Ranjan / Peng / Hoefler, Hot Chips 2026
 [2] [raw/papers/hc2026-microsoft-maia-200.md](raw/papers/hc2026-microsoft-maia-200.md) — 结构化摘录
+[3] [papers/maia-200-sdla.md](papers/maia-200-sdla.md) — Xu et al. arXiv:2608.24664 归档全文

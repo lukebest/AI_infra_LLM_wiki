@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-08-21T00:00:00Z'
 created: 2026-07-13
-updated: 2026-08-21
+updated: 2026-08-27
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -106,6 +106,8 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) — 片内树 NoC 上的 MoE scatter-gather，不是跨卡集体
 - [HCCL](/papers/hccl-meta-mtia-300-collective-communication.md) — Meta MTIA 300：集体编译到包内 ME/NMC，机柜内最高 940 GB/s，重叠 GEMM 降幅 <0.5%
 - [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md) — 驻留 MoE 后 EP/TP 权重移动变次级；归约顺序必须匹配 shard 放置（反向 D2D 最高 5.7×）
+- [Maia 200 SDLA](/papers/maia-200-sdla.md) — 8 芯 Ethernet Allgather 到延迟界 78% / 带宽界 94% SoL；direct vs ring
+- [晶圆级光互连热 stall](/papers/wafer-scale-optical-interconnect-moe-thermal.md) — MoE EP All-to-All 被 MRR 热光 stall ~47–49 ms 放大到 2.7–3.8×
 
 # Citations
 

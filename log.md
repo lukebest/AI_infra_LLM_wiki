@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-08-27
+
+### Watch (morning)
+* **Watch**: 2026-08-27 Asia/Shanghai AI infra 论文巡检。cs.AR new/recent 到 Wed 8/26（Tue 8/25 提交；API 最新 2608.24664 15:05 UTC）。Thu 8/27 列表尚无更新提交。cs.NI 近窗多为 5G/量子/IoT；MemChannel CXL pooling 与 WiCi 无线 GPU 不入库。已 ingest 的 HYDRA/ReXpert/HCCL/DASH/DICE/Fovea/C2C/ThAME/3DLS/Mozart/Iff 与全部 hc2026-* 不重复。
+* **Ingest**: Maia 200 全文 PDF → `raw/papers/Maia_200_Software_Defined_Dataflow_2026.pdf` + stub `raw/papers/maia-200-sdla.md`（arXiv:2608.24664, 2026-08-25）。
+* **Ingest**: 晶圆级光互连热调谐 PDF → `raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf` + stub `raw/papers/wafer-scale-optical-interconnect-moe-thermal.md`（arXiv:2608.24637, 2026-08-25）。
+* **Creation** (papers): [Maia 200 SDLA](/papers/maia-200-sdla.md)（归档全文，链到 HC 幻灯页，不重复峰值 TOPS）；[晶圆级光互连热 stall](/papers/wafer-scale-optical-interconnect-moe-thermal.md)。
+* **Update**: [HC Maia 200](/papers/hc2026-microsoft-maia-200.md)（加归档指针；幻灯 <1 µs 与全文 ~4 µs 不混用），[Network-on-Wafer](/concepts/network-on-wafer.md)（光 interposer 近亲），[LLM Collectives](/concepts/llm-distributed-training-collectives.md)，[Protocol Stack](/concepts/interconnection-network-protocol-stack.md)（ATLv2），[3D Stacking](/concepts/3d-stacking-technologies.md)。
+* **Indexes**: 手动同步 `papers/index.md`（+2）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: Simthesizer (2608.24650, serving 仿真器+agent，无互连架构)；Pipeline-Native Transformers (2608.23841, CPU decode 带宽)；Elastic KV (2608.23658)；MemChannel CXL (2608.21731, cs.NI pooling transport)；WiCi (2608.24204)。昨日跳过的 NOVA/FlashAccel/TMR/SPICE/FIBER/HyperCut/VIPER/M3D SRAM/MCM GPU/SYNTLOG/Optalysys 仍跳过。BusyBarn 仍无公开 PDF。NVHBM 是新闻博客，不是论文。
+
 ## 2026-08-26
 
 ### Hot Chips 2026 ingest

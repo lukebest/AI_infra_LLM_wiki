@@ -15,6 +15,7 @@
 * [Hot Chips 2026 Cerebras CS-4](hc2026-cerebras-cs4.md) - Cerebras — 三片 WSE-3T；Direct Wafer Links + RoCE；CS-6 指向 3D DRAM
 * [Hot Chips 2026 Meta MTIA 400](hc2026-meta-mtia-400.md) - Meta — 2D mesh + leaky-bucket；1.2 TB/s SU
 * [Hot Chips 2026 Microsoft Maia 200](hc2026-microsoft-maia-200.md) - Microsoft — GNOC / Ethernet ATL；FCQ 4 卡；口号 chip→6k
+* [Maia 200 SDLA 归档全文](maia-200-sdla.md) - Microsoft arXiv:2608.24664 — ATLv2 接收端驱动；Hamming Mesh 20+8 / 4 plane → 6144；8 芯 Allgather 78%/94% SoL
 * [Hot Chips 2026 Google TPU 8](hc2026-google-tpu8.md) - Google — 8i Boardfly / 8t OCS torus
 * [Hot Chips 2026 SambaNova SN50](hc2026-sambanova-sn50.md) - SambaNova — dataflow RDU；2 TB/s Ethernet SU
 * [Hot Chips 2026 NVIDIA BlueField-4](hc2026-nvidia-bluefield-4.md) - NVIDIA — Astra 7.2 Tb/s；KV G1–G4
@@ -23,6 +24,7 @@
 * [Hot Chips 2026 OpenAI Jalapeño](hc2026-openai-jalapeno.md) - OpenAI — 128 @ 600 GB/s / 2048 @ 200 GB/s Ethernet SU
 * [Hot Chips 2026 Broadcom Thor Ultra](hc2026-broadcom-thor-ultra.md) - Broadcom — 800G eRoCE / MRC++ / RCCC
 
+* [Thermal Tuning Overhead in Wafer-Scale Optical Interconnects for LLM MoE](wafer-scale-optical-interconnect-moe-thermal.md) - Georgia Tech — 晶圆级 DWDM MRR 热光 stall；铁电相对热光 Mixtral/Qwen-MoE/LLaMA-MoE 2.7×/3.8×/3.3×（四层 proxy）
 * [HYDRA: Heterogeneous Chiplet DSE for Hybrid LLM Serving](hydra-heterogeneous-chiplet-dse-hybrid-llm.md) - UW–Madison/Ulsan — 2.5D 异构 chiplet 上 Hybrid LLM serving 的宏架构+运行时联合 DSE；平均 1.55× 吞吐、TTFT −43.7%，最高 2.3×
 * [HCCL: Collective Communication for Meta MTIA 300](hccl-meta-mtia-300-collective-communication.md) - SC 2026 自称 — 包内 NIC chiplet + ME/NMC 卸载集体；机柜内最高 940 GB/s，重叠 GEMM 降幅 <0.5%；推理 PUT 集体 <6 μs
 * [ReXpert: ReRAM Near-Memory FFN Pool for Disaggregated MoE](rexpert-reram-nmc-disaggregated-moe.md) - HKUST/阿里云 — 驻留 expert + core 内组播；occupancy 0.328→0.519；iso-compute vs H20 FFN 9.5×、权重搬运能 20×

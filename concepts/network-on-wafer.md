@@ -18,7 +18,7 @@ tags:
 - architecture
 timestamp: '2026-08-26T00:00:00Z'
 created: 2026-08-18
-updated: 2026-08-26
+updated: 2026-08-27
 sources:
 - raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/network-design-wafer-scale-wow-hybrid-bonding.md
@@ -26,6 +26,7 @@ sources:
 - papers/fovea-physical-implication-aware-wafer-scale-dse.md
 - papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md
 - papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md
+- papers/wafer-scale-optical-interconnect-moe-thermal.md
 ---
 
 # Network-on-Wafer（晶圆级网络 / NoW）
@@ -61,6 +62,10 @@ sources:
 
 Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写 **WoW + HCB**，但是 **xPU 垂直叠到 HBM C-die**、取消 2.5D interposer——封装级 3D，**不是**整晶圆 NoW 重叠网。[Pistil](/papers/hc2026-pistil-20-chiplet-slm.md) 是 20-chiplet 2.5D flower，更不是晶圆级。
 
+## 光 interposer NoW（第四条近亲）
+
+[Yoon et al. 2026](/papers/wafer-scale-optical-interconnect-moe-thermal.md) 把 300 mm **SiN 光 interposer** 当 scale-up 域：GPU 居中、HBM 外围，多层 X–Y 波导、O-E-O 中继，不是电学 WoW 重叠，也不是 Cerebras 缝金属。DWDM 账是 32 Gb/s × 32 λ → 目标 **1.5 TB/s** die-to-die。主结论不是拓扑，而是 **MRR 热光 stall ~47–49 ms/突发** 会把 MoE All-to-All 拉到 2.7–3.8×；铁电调谐把这条延迟抹掉。开放问题里的 photonic NoW 从此有一篇可引用的全文，但仍缺与 DyPNet-MSC 的对照。
+
 ## 和 wiki 已有 mesh/WSE 页的关系
 
 - [Mesh and Torus Topology](/concepts/mesh-torus-topology.md) — WSE/Dojo 默认 2D mesh；WoW baseline 只是“像 mesh”，**不能**用 XY 维序。
@@ -77,14 +82,14 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 ## 当前认知
 
 - **NoW 不是“大号 NoC”**：物理路线先决定边集合，再谈路由/流控。
-- **2026 年可写进设计空间的轴**：WoW 重叠几何（Iff/ETH）、3.5D 异构树（Mozart）、以及同质 repeated-die 的物理可行域+多保真确认（Fovea）。
-- **集体通信、良率、热** 仍是开放层：Iff 指出 FRED 式 Clos-like 在 WoW 几何下不可行；Mozart 自陈仍 memory-bound。
+- **2026 年可写进设计空间的轴**：WoW 重叠几何（Iff/ETH）、3.5D 异构树（Mozart）、同质 repeated-die 物理可行域（Fovea）、以及光 interposer 的 **调谐延迟**（Yoon/Yu，不是名义带宽）。
+- **集体通信、良率、热** 仍是开放层：Iff 指出 FRED 式 Clos-like 在 WoW 几何下不可行；Mozart 自陈仍 memory-bound；光 NoW 上热已经能量化成 All-to-All stall。
 
 ## 开放问题
 
 1. 不规则 WoW 图上的 AllReduce / All-to-All 最优算法是什么？
 2. Field-stitch 均匀 mesh 与 WoW 高 radix 不规则图，对 [WaferLLM](/concepts/waferllm-system.md) 类算子谁更友好？
-3. Photonic NoW（检索到 ISPASS 2026 DyPNet-MSC，本轮未 ingest）如何与电学 WoW 比较？
+3. Photonic NoW：Yoon/Yu 2026 量化了 MRR 热 stall；仍缺与 ISPASS 2026 DyPNet-MSC 及电学 WoW 的对照。
 4. 3DLS 的垂直隔离能否叠在 WoW 的 LoL 上，做成“层间 KVT + 层内高 radix NoW”？
 5. Fovea 的 Decision Domain 能否接到 WoW 重叠几何 / 异构 chiplet 混合物？
 
@@ -94,3 +99,4 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 [2] [raw/papers/Mozart_35D_Wafer_Scale_MoE_Training_2026.pdf](raw/papers/Mozart_35D_Wafer_Scale_MoE_Training_2026.pdf) — Luo et al. 2026
 [3] [raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf](raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf) — Li et al. 2026
 [4] [raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf](raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf) — Lee et al. 2026
+[5] [raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf](raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf) — Yoon, Chen, Yu 2026
