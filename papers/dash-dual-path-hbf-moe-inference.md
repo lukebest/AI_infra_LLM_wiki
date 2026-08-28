@@ -23,7 +23,7 @@ tags:
 - storage
 timestamp: '2026-08-26T00:00:00Z'
 created: 2026-08-21
-updated: 2026-08-26
+updated: 2026-08-28
 sources:
 - raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf
 - raw/papers/dash-dual-path-hbf-moe-inference.md
@@ -99,6 +99,7 @@ DASH = Direct Attachment of HBF to the GPU as main memory, plus a Separate path 
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 不拆 Attn/FFN 池，拆的是 **专家权重投递路径**
 - [PRESERVE](/papers/preserve-prefetch-weights-kv-cache.md) — HBM→L2 prefetch；DASH 是 HBF→GPU 的 t_R 隐藏与 KV 回写
 - [OXMIQ HBF](/papers/hc2026-oxmiq-hbf.md) — Hot Chips 2026 系统账：HBF 只赢低 I·b；**HBM for the rack, HBF for the box**。OCP HBF spec v0.7.0 Grade 2 目标 1.536 TB/s / 512 GiB，与本文 1.6 TB/s / 512 GB 同量级
+- [FLINT](/papers/flint-hbf-llm-inference.md) — 仍走 HBM→HBF 级联；增量在基座 burst-buffer / phantom-plane / 只读 FTL，不是第三条 UCIe。6.2× 是相对 H3，不是相对 DASH
 
 ## 开放问题
 

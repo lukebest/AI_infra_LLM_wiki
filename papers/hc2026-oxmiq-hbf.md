@@ -15,7 +15,7 @@ tags:
 - llm
 timestamp: '2026-08-26T00:00:00Z'
 created: 2026-08-26
-updated: 2026-08-26
+updated: 2026-08-28
 sources:
 - raw/papers/HC2026_OXMIQ_HBF_AI_Compute.pdf
 - raw/papers/hc2026-oxmiq-hbf.md
@@ -93,6 +93,7 @@ vLLM 提案：HBF 替换 host pinned memory 做 paged KV offload + prefix + MoE 
 ## 与 wiki 的关系
 
 - [DASH](/papers/dash-dual-path-hbf-moe-inference.md) — DASH 是 GPU–HBF 双路径硅/仿真方案；本文是机柜级 (β, α) 账，结论互补（HBF 不是万能容量层）
+- [FLINT](/papers/flint-hbf-llm-inference.md) — 级联 HBF 的控制器：把 H3 浪费的 86–96% MoE 流量收回；不改 OXMIQ 的低 I·b 胜区判断
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — HBF 与 HBM 并列近 GPU，不是第三层 SSD
 - [Through-Silicon Via (TSV) Physical Layer](/concepts/tsv-3d-physical-layer.md) — HBF 栈仍是 TSV 堆 NAND（与 DASH 一致）
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — HBF 换的是 expert 本地化，减少 all-to-all

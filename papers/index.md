@@ -29,6 +29,7 @@
 * [HCCL: Collective Communication for Meta MTIA 300](hccl-meta-mtia-300-collective-communication.md) - SC 2026 自称 — 包内 NIC chiplet + ME/NMC 卸载集体；机柜内最高 940 GB/s，重叠 GEMM 降幅 <0.5%；推理 PUT 集体 <6 μs
 * [ReXpert: ReRAM Near-Memory FFN Pool for Disaggregated MoE](rexpert-reram-nmc-disaggregated-moe.md) - HKUST/阿里云 — 驻留 expert + core 内组播；occupancy 0.328→0.519；iso-compute vs H20 FFN 9.5×、权重搬运能 20×
 * [DASH: Dual-Path HBF for MoE LLM Inference](dash-dual-path-hbf-moe-inference.md) - KAIST — GPU–HBF 直连 + HBM 基座中继；五模型几何均值吞吐 1.90× vs RelayOnly；代表负载 1.94× 吞吐 / 1.90× E2E
+* [FLINT: Workload-Driven HBF Substrate for LLM Inference](flint-hbf-llm-inference.md) - Huawei/ETH — burst-buffer + phantom-plane + 只读 FTL；decode 吞吐 vs SSD/HBM-only/H3 为 1205×/2.2×/6.2×（仿真）
 
 * [DICE: Detailed Inter-Chiplet End-to-End PHY Modeling](dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) - Uppsala — gem5 运行时 QC-LDPC/PAM4 chiplet PHY；相对 HeteroGarnet IPC 平均偏移 6.8%、最高 27.6%；9454P 跨 die 最大 C2C RMSE 89.5 vs 141.2 cycle
 * [C2C-Explorer: Chip-to-Chip Interconnect DSE for LLM Systems](c2c-explorer-chip-to-chip-interconnect-llm.md) - DAC 2026 — LLM 轨迹驱动的 scale-up C2C 仿真+贝叶斯 DSE；FPGA 时序误差 2.46–8.23%；DeepSeek combine goodput +44.1%、buffer −98.4%

@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-08-28
+
+### Watch (morning)
+* **Watch**: 2026-08-28 Asia/Shanghai AI infra 论文巡检。cs.AR new/recent 到 Thu 8/27（7 篇新稿 + 替换）；Fri 8/28 列表尚未放出。已 ingest 的 Maia/光互连/HYDRA/ReXpert/HCCL/DASH/DICE/Fovea/C2C/ThAME/3DLS/Mozart/Iff 与全部 hc2026-* 不重复。2608.24637 v2 数字未变（2.7×/3.8×/3.3×），不重入库。
+* **Ingest**: FLINT PDF → `raw/papers/FLINT_HBF_LLM_Inference_2026.pdf` + stub `raw/papers/flint-hbf-llm-inference.md`（arXiv:2608.25062, 2026-08-25）。
+* **Creation** (papers): [FLINT](/papers/flint-hbf-llm-inference.md)（HBF 基座 burst-buffer / phantom-plane / 只读 FTL；级联不是 DASH 双路径）。
+* **Update**: [DASH](/papers/dash-dual-path-hbf-moe-inference.md)，[OXMIQ HBF](/papers/hc2026-oxmiq-hbf.md)，[TSV](/concepts/tsv-3d-physical-layer.md)，[DRAM](/concepts/dram-memory-system.md)，[3D Stacking](/concepts/3d-stacking-technologies.md)。
+* **Indexes**: 手动同步 `papers/index.md`（+1）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: 3D-IC Benchmark Suite (2608.25155, UCLA Gupta，CATCH→3Dblox 物理设计测试集，无 LLM/NoC/NoW)；edge Hydra 表征 (2608.25053, AGX SoC + llama.cpp，与已入库 HYDRA 2608.19395 不是同一篇)；APT DiT 剪枝 (2608.25380)；BOOSTEDSOSA (2608.25346)；Syn2Logic (2608.25536)；Ising anneal (2608.26100)。cs.NI 近窗 5G/UAV/IoT/BGP/SlimTCP，无 LLM 互连。昨日跳过的 Simthesizer/NOVA/FlashAccel/TMR/SPICE/FIBER/HyperCut 与 2608.24637 v2 仍跳过。BusyBarn 仍无公开 PDF。
+
 ## 2026-08-27
 
 ### Watch (morning)
