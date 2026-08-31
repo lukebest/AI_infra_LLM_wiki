@@ -24,6 +24,7 @@
 * [Hot Chips 2026 OpenAI Jalapeño](hc2026-openai-jalapeno.md) - OpenAI — 128 @ 600 GB/s / 2048 @ 200 GB/s Ethernet SU
 * [Hot Chips 2026 Broadcom Thor Ultra](hc2026-broadcom-thor-ultra.md) - Broadcom — 800G eRoCE / MRC++ / RCCC
 
+* [Synchronization Tax in GPU Scale-Up Domains](synchronization-tax-gpu-scale-up.md) - Cornell — 8-GPU 域集体通信 >50% 是 barrier 等待；最优带宽随域规模下降（512 vs 8 GPU 为 2.06×）
 * [Thermal Tuning Overhead in Wafer-Scale Optical Interconnects for LLM MoE](wafer-scale-optical-interconnect-moe-thermal.md) - Georgia Tech — 晶圆级 DWDM MRR 热光 stall；铁电相对热光 Mixtral/Qwen-MoE/LLaMA-MoE 2.7×/3.8×/3.3×（四层 proxy）
 * [HYDRA: Heterogeneous Chiplet DSE for Hybrid LLM Serving](hydra-heterogeneous-chiplet-dse-hybrid-llm.md) - UW–Madison/Ulsan — 2.5D 异构 chiplet 上 Hybrid LLM serving 的宏架构+运行时联合 DSE；平均 1.55× 吞吐、TTFT −43.7%，最高 2.3×
 * [HCCL: Collective Communication for Meta MTIA 300](hccl-meta-mtia-300-collective-communication.md) - SC 2026 自称 — 包内 NIC chiplet + ME/NMC 卸载集体；机柜内最高 940 GB/s，重叠 GEMM 降幅 <0.5%；推理 PUT 集体 <6 μs

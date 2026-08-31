@@ -42,6 +42,8 @@
 * [Hot Chips 2026 OpenAI Jalapeño](hc2026-openai-jalapeno.md)
 * [Hot Chips 2026 Broadcom Thor Ultra](hc2026-broadcom-thor-ultra.md)
 
+* [Synchronization Tax in GPU Scale-Up Domains](synchronization-tax-gpu-scale-up.md)
+
 * [A Cloud-Scale Characterization of Remote Procedure Calls](cloud-scale-rpc-characterization.md)
 * [AI Accelerators for Large Language Model Inference: Architecture Analysis and Scaling Strategies](AI_Accelerators_LLM_Inference_2025.md)
 * [Alibaba HPN: A Data Center Network for Large Language Model Training](alibaba-hpn-datacenter-network-llm.md)

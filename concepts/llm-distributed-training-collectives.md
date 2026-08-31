@@ -11,12 +11,13 @@ tags:
 - distributed
 - noc
 - wse
-timestamp: '2026-08-21T00:00:00Z'
+timestamp: '2026-08-31T00:00:00Z'
 created: 2026-07-13
-updated: 2026-08-27
+updated: 2026-08-31
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
+- raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -75,6 +76,9 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 弱 scaling 大模型：常出现 **T_comm / T_compute > 1**（笔记例：~3.7×）→ GPU 大量时间等通信。
 
+经典 Hockney 只写 `T = pα + qS/B`。 [Synchronization Tax](/papers/synchronization-tax-gpu-scale-up.md) 把集体墙钟拆成 **wait + transfer**：先到 barrier 的 rank 空等最慢 rank，这段 **τ 与互连带宽无关**。增广式 `T = pα + qS/B + τ`。8-GPU NVLink 域上 τ 可占通信时间 >50%；中位 rank 可把 >80% 的 TP 通信花在等。GEMM 跨 rank 差驱动 78% 的 GPU 计算差异。因此把 T_comm 全算成「带宽不够」会高估 scale-up 该配的 B。
+
+
 ## Wafer-Scale 如何改写故事
 
 | | GPU 集群 | 单 WSE |
@@ -108,7 +112,9 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md) — 驻留 MoE 后 EP/TP 权重移动变次级；归约顺序必须匹配 shard 放置（反向 D2D 最高 5.7×）
 - [Maia 200 SDLA](/papers/maia-200-sdla.md) — 8 芯 Ethernet Allgather 到延迟界 78% / 带宽界 94% SoL；direct vs ring
 - [晶圆级光互连热 stall](/papers/wafer-scale-optical-interconnect-moe-thermal.md) — MoE EP All-to-All 被 MRR 热光 stall ~47–49 ms 放大到 2.7–3.8×
+- [Synchronization Tax](/papers/synchronization-tax-gpu-scale-up.md) — 集体墙钟含与 B 无关的 barrier 税 τ；B* 随域规模下降
 
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
+[2] [raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf](raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf) — Devraj et al., arXiv:2608.22503；τ 与 B 无关

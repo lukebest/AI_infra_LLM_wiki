@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-08-31
+
+### Watch (morning)
+* **Watch**: 2026-08-31 Asia/Shanghai AI infra 论文巡检。cs.AR recent 到 Fri 8/28；Mon 8/31 美东列表上海早晨可能尚未放出。已 ingest 的 FLINT/Maia/光互连/HYDRA/ReXpert/HCCL/DASH/DICE/Fovea/C2C/ThAME/3DLS/Mozart/Iff 与全部 hc2026-* 不重复。
+* **Ingest**: Synchronization Tax PDF → `raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf` + stub `raw/papers/synchronization-tax-gpu-scale-up.md`（arXiv:2608.22503, 2026-08-23, cs.DC）。
+* **Creation** (papers): [Synchronization Tax](/papers/synchronization-tax-gpu-scale-up.md)（Cornell；8-GPU 域集体 >50% 是 barrier 等待；增广 Hockney T=pα+qS/B+τ，B* 随域规模下降）。
+* **Update**: [NVLink fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md)（带宽缩放 vs 域规模张力），[LLM Collectives](/concepts/llm-distributed-training-collectives.md)（墙钟含与 B 无关的 τ）。
+* **Indexes**: 手动同步 `papers/index.md`（+1）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: MeshReduce-U (2608.26220, GNN/不规则 mesh NoC 编译器，非 LLM fabric)；SNN multicast (2608.26223)；Redwood (2608.26418, AI 设计加速器 EDA)；Ankhdjet (2608.26206, 三值 CiROM)；HOLMES yield (2608.26758)；LLM EDA orchestration (2608.27184)；DNA storage；SILK TOCTOU；vision generative edge。3D-IC Benchmark (2608.25155) 与 edge Hydra (2608.25053) 已于 8/28 跳过。BusyBarn 仍无公开 arXiv PDF。2603.22774 CPU slowdowns 替换版在窗口外。昨日跳过的 Simthesizer/NOVA/FlashAccel/TMR/SPICE 仍跳过。
+
 ## 2026-08-28
 
 ### Watch (morning)
