@@ -1,5 +1,12 @@
 # Bundle Update Log
 
+## 2026-09-01
+
+### Watch (morning)
+* **Watch**: 2026-09-01 Asia/Shanghai AI infra 论文巡检。**无增量**。cs.AR recent/new 到 Mon 8/31（5 条；Tue 9/1 美东列表上海早晨尚未放出）。已 ingest 的 Sync Tax/FLINT/Maia/光互连/HYDRA/ReXpert/HCCL/DASH/DICE/Fovea/C2C/ThAME/3DLS/Mozart 与全部 hc2026-* 不重复。
+* **Indexes**: 无 papers 变更。未跑 `generate_indexes.py`。
+* **Considered not ingested**: AI Hardware Accelerators survey (2608.28048, 综述无新一作互连数)；Gen-TAS (2608.28160, FPGA-GPP 任务分配)；Neuromorphic numerical solvers (2608.28387)；DeepSeq3 (2608.28188, EDA GNN)；RVV 1.0 HPC (2608.28097)；TerraceMoE (2608.27874, MoE 分层 A2A 代价模型，step-level gate 失败、实测未进 hierarchical 区)；VPP (2608.26523, Ascend chunked-prefill 软件流水)；CE-MoE layer reconfig (2608.28511, 减 A2A 的模型层型，非 fabric)；Blackwell CC TEE (2608.26575)；LLM energy token/request (2608.28044)；cache LAH/S4-FIFO (2608.27975)。Fri 8/28 已跳过项（MeshReduce-U/SNN/Redwood/Ankhdjet/HOLMES/LLM-EDA 等）仍跳过。BusyBarn（ISCA 2026）仍仅 artifact/IEEE，无公开全文 PDF。
+
 ## 2026-08-31
 
 ### Watch (morning)
