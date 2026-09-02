@@ -11,9 +11,11 @@ tags:
 - agentic-ai
 timestamp: '2026-05-08T00:00:00Z'
 created: 2026-04-16
+updated: 2026-09-02
 sources:
 - raw/articles/nvidia-groq3-lpx-blog-2026-04.md
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
+- raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf
 ---
 
 # Heterogeneous Inference（异构推理）
@@ -74,8 +76,11 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 - [Heterogeneous Computing for Agents](/papers/heterogeneous-computing-ai-agent-inference.md) — Agent 推理的 OI/CF 异构框架
 - [Cache-Resident LLC Inference](/papers/cache-resident-llm-inference-llc.md) — GB 级 LLC 上 cache-resident CPU 推理
 - [CXL Tiered Memory](/concepts/cxl-tiered-memory.md) — CXL 分层内存与页迁移
+- [CHIPSMORE](/papers/chipsmore-cim-chiplets-llm-inference.md) — 异构在 RRAM-ACIM（静态）vs SRAM-DCIM（LoRA/动态），不是 GPU+LPU
+- [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 封装内 PD×算子 chiplet 异构 DSE
 
 # Citations
 
 [1] [raw/articles/nvidia-groq3-lpx-blog-2026-04.md](raw/articles/nvidia-groq3-lpx-blog-2026-04.md)
 [2] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)
+[3] [raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf](raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf)

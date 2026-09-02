@@ -13,6 +13,7 @@ tags:
 - infrastructure
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
+updated: 2026-09-02
 sources:
 - raw/articles/interconn-study-21d-day-01.md
 - raw/articles/interconn-study-21d-day-03.md
@@ -27,6 +28,7 @@ sources:
 - raw/articles/interconn-study-21d-day-12.md
 - raw/articles/interconn-study-21d-day-13.md
 - raw/articles/interconn-study-21d-day-14.md
+- raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf
 ---
 
 # Interconnection Network Design Space（互连网络设计空间）
@@ -120,6 +122,7 @@ sources:
 - [Interconn-Study 21d Knowledge Map](/summaries/interconn-study-21d-knowledge-map.md) — 21 天收束（Day 21）
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — 光互连 / 可重构 / demand-aware NoC（Day 29）
 - [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 封装内 NoI mesh：hybrid serving 轨迹倒逼组成/放置/D2D 带宽，不是先定 mesh 再灌合成流
+- [CHIPSMORE](/papers/chipsmore-cim-chiplets-llm-inference.md) — IPCN 2D mesh 带 in-network DMAC（compute-in-interconnect）；UCIe 利用率 <25%，瓶颈不在 Inter-CT
 
 # Citations
 

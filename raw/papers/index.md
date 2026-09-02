@@ -52,6 +52,7 @@
 * [CosMoS: Architectural Support for Cost-Effective Data Movement in a Disaggregated Memory Systems](cosmos-disaggregated-memory-data-movement.md)
 * [DASH: Dual-Path HBF for MoE LLM Inference](dash-dual-path-hbf-moe-inference.md)
 * [FLINT: HBF Substrate for LLM Inference](flint-hbf-llm-inference.md)
+* [CHIPSMORE: CIM Chiplets LLM Inference](chipsmore-cim-chiplets-llm-inference.md)
 * [Thermal Tuning Overhead in Wafer-Scale Optical Interconnects for LLM MoE](wafer-scale-optical-interconnect-moe-thermal.md)
 * [DICE: Detailed Inter-Chiplet End-to-End PHY Modeling](dice-detailed-inter-chiplet-end-to-end-phy-modeling.md)
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md)

@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-09-02
+
+### Watch (morning)
+* **Watch**: 2026-09-02 Asia/Shanghai AI infra 论文巡检。cs.AR new 页 = Tue 9/1 提交；Wed 9/2 美东列表上海早晨可能尚未放出。已 ingest 的 Sync Tax/FLINT/Maia/光互连/HYDRA/ReXpert/HCCL/DASH/DICE/Fovea/C2C/ThAME/3DLS/Mozart 与全部 hc2026-* 不重复。
+* **Ingest**: CHIPSMORE PDF → `raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf` + stub `raw/papers/chipsmore-cim-chiplets-llm-inference.md`（arXiv:2608.30509, 2026-08-31, cs.AR）。
+* **Creation** (papers): [CHIPSMORE](/papers/chipsmore-cim-chiplets-llm-inference.md)（NUS；RRAM-ACIM+SRAM-DCIM + IPCN in-network DMAC；分层 KV；非复制多请求层流水；vs H100 Mistral-7B INT8 最高 2.38× 吞吐 / 27× 能效）。
+* **Update**: [Disaggregated Inference](/concepts/disaggregated-inference.md)（层流水共享权重一行），[Heterogeneous Inference](/concepts/heterogeneous-inference.md)（CIM PE 异构），[Interconnection Network Design Space](/concepts/interconnection-network-design-space.md)（IPCN compute-in-interconnect）。
+* **Indexes**: 手动同步 `papers/index.md`（+1）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: Beacon (2608.30932, LLM multi-agent chiplet HW-DSE，方法文、无新 fabric PHY/拓扑数，与 HYDRA 域重叠)；AXI4 transaction monitoring (2608.30435, Benini mixed-crit SoC)；LLM-based HW development hierarchical IRs (2608.30659, EDA)；Clock-gating MSP430 (2608.30954)；FABO routing (2608.30268)；adiabatic systolic (2608.30058)；SNN memory (2608.30444)；genomic storage thesis (2608.31004)；KORD (2608.30379)。先验跳过仍适用：survey 2608.28048、Gen-TAS、TerraceMoE gate-fail、VPP、CE-MoE、Blackwell CC、MeshReduce-U、edge Hydra 2608.25053、Intelligent Network WAN 2608.26453（出 WSE/NoC/NoW 范围）。BusyBarn（ISCA 2026）仍无公开全文 PDF。
+
 ## 2026-09-01
 
 ### Watch (morning)
