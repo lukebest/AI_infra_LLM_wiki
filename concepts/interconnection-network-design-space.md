@@ -11,9 +11,9 @@ tags:
 - fabric
 - mesh
 - infrastructure
-timestamp: '2026-06-24T00:00:00Z'
+timestamp: '2026-09-03T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-02
+updated: 2026-09-03
 sources:
 - raw/articles/interconn-study-21d-day-01.md
 - raw/articles/interconn-study-21d-day-03.md
@@ -29,6 +29,7 @@ sources:
 - raw/articles/interconn-study-21d-day-13.md
 - raw/articles/interconn-study-21d-day-14.md
 - raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf
+- raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf
 ---
 
 # Interconnection Network Design Space（互连网络设计空间）
@@ -123,6 +124,7 @@ sources:
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — 光互连 / 可重构 / demand-aware NoC（Day 29）
 - [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 封装内 NoI mesh：hybrid serving 轨迹倒逼组成/放置/D2D 带宽，不是先定 mesh 再灌合成流
 - [CHIPSMORE](/papers/chipsmore-cim-chiplets-llm-inference.md) — IPCN 2D mesh 带 in-network DMAC（compute-in-interconnect）；UCIe 利用率 <25%，瓶颈不在 Inter-CT
+- [LEAP](/papers/leap-imc-noc-llm-inference.md) — mesh + IRCU INC；确定性 Broadcast/Reduce/AllGather 服务 LLM 分区数据流
 
 # Citations
 
@@ -146,3 +148,4 @@ sources:
 [18] [raw/articles/interconn-study-21d-day-19.md](raw/articles/interconn-study-21d-day-19.md) — Ch.13–14 NI / System（Day 19）
 [19] [raw/articles/interconn-study-21d-day-20.md](raw/articles/interconn-study-21d-day-20.md) — NoC 论文与案例（Day 20）
 [20] [raw/articles/interconn-study-21d-day-21.md](raw/articles/interconn-study-21d-day-21.md) — 21 天知识地图（Day 21）
+[21] [raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf](raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf) — LEAP INC mesh

@@ -9,13 +9,15 @@ tags:
 - architecture
 - serving
 - agentic-ai
-timestamp: '2026-05-08T00:00:00Z'
+timestamp: '2026-09-03T00:00:00Z'
 created: 2026-04-16
-updated: 2026-09-02
+updated: 2026-09-03
 sources:
 - raw/articles/nvidia-groq3-lpx-blog-2026-04.md
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 - raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf
+- raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf
+- raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf
 ---
 
 # Heterogeneous Inference（异构推理）
@@ -77,6 +79,8 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 - [Cache-Resident LLC Inference](/papers/cache-resident-llm-inference-llc.md) — GB 级 LLC 上 cache-resident CPU 推理
 - [CXL Tiered Memory](/concepts/cxl-tiered-memory.md) — CXL 分层内存与页迁移
 - [CHIPSMORE](/papers/chipsmore-cim-chiplets-llm-inference.md) — 异构在 RRAM-ACIM（静态）vs SRAM-DCIM（LoRA/动态），不是 GPU+LPU
+- [LEAP](/papers/leap-imc-noc-llm-inference.md) — 异构在 IMC / NMC / INC；LEAP-D 再按 PD 重配宏
+- [DynaNDE](/papers/dynande-near-data-expert-scheduling.md) — NPU vs NDP 专家调度异构；vs MoNDE 2.6×/2.2×
 - [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 封装内 PD×算子 chiplet 异构 DSE
 
 # Citations
@@ -84,3 +88,5 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [1] [raw/articles/nvidia-groq3-lpx-blog-2026-04.md](raw/articles/nvidia-groq3-lpx-blog-2026-04.md)
 [2] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)
 [3] [raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf](raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf)
+[4] [raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf](raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf)
+[5] [raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf](raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf)

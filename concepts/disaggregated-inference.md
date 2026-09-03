@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-09-02
+updated: 2026-09-03
 sources:
 - arXiv:2504.02263
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
@@ -18,6 +18,7 @@ sources:
 - raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf
 - raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf
 - raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf
+- raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -94,6 +95,7 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 | **3DLS 物理隔离** | 封装垂直维 | 垂直 KVT + 侧向 AR | 去掉共享 D2D 争用 |
 | **HYDRA 封装内 PD×算子** | 封装内 chiplet | NoI mesh | hybrid Transformer–Mamba serving |
 | **CHIPSMORE 层流水共享权重** | 封装内 CT cluster | IPCN mesh + UCIe | base/LoRA 多请求，不复制 RRAM 权重 |
+| **LEAP-D 片上 PD 解耦** | 同片 prefill/decode 宏区 | mesh INC + KV 区传 | IMC 留 prefill；decode 扩 scratchpad |
 
 ## 与 Luke 研究的关联
 
@@ -134,6 +136,7 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 封装内 prefill/decode × Attention/Mamba chiplet 拆分，不是机柜 AFD
 - [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) — 同包内 host / DRAM-PNM attn / FeFET expert
 - [CHIPSMORE](/papers/chipsmore-cim-chiplets-llm-inference.md) — CIM chiplet 层流水多请求共享权重 + 分层 KV；不是机柜 AFD
+- [LEAP](/papers/leap-imc-noc-llm-inference.md) — 片上 IMC-NoC 的 LEAP-D PD 解耦；vs H100 1.52× 吞吐 / 24.91× 能效（仿真）
 
 # Citations
 

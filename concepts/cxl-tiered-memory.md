@@ -11,13 +11,14 @@ tags:
 - storage
 - infrastructure
 - latency
-timestamp: '2026-08-26T00:00:00Z'
+timestamp: '2026-09-03T00:00:00Z'
 created: 2026-07-17
-updated: 2026-08-26
+updated: 2026-09-03
 sources:
 - raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf
 - raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf
 - raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf
+- raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf
 ---
 
 # CXL Tiered Memory
@@ -38,6 +39,7 @@ sources:
 
 - **KV / 会话状态**：长上下文与多轮对话放大容量需求；分层内存与 [HCache](/papers/hcache-fast-state-restoration.md)、[FlexInfer](/papers/flexinfer-on-device-llm-offloading.md) 的 offload/prefetch 正交但目标相近（把冷状态移出热路径）。
 - **训练激活/检查点**：大 batch 与长序列可把中间张量放到 CXL 层，代价是带宽与延迟。
+- **MoE expert 近数据执行**：[DynaNDE](/papers/dynande-near-data-expert-scheduling.md) 在 CXL-NDP 上做 AMove 专家计算，与纯页迁移正交；vs MoNDE prefill/decode 平均 2.6×/2.2×。
 - **超芯片 / C2C**：[SuperInfer](/papers/superinfer-slo-aware-rotary-scheduling.md) 在 GH200 上利用 NVLink-C2C 的统一内存视图——与 CXL 同属「扩大可寻址内存」，介质与一致性模型不同。
 - **Hot Chips 2026（未单列论文）**：Intel Diamond Rapids MVF 写 **CXL 3.0 1LM / Flat2LM** + CXL 3 I/O（每 hub 4×16 Flexbus，可 PCIe Gen6 / CXL 3 / UPI 3）；不是 GPU scale-up。[Vera](/papers/hc2026-nvidia-vera.md) 带 **CXL 3.1**。
 
@@ -60,3 +62,4 @@ sources:
 [1] [raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf](raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf)
 [2] [raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf](raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf)
 [3] [raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf](raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf)
+[4] [raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf](raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf) — DynaNDE CXL-NDP MoE

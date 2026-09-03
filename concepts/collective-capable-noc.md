@@ -13,8 +13,10 @@ tags:
 - mesh
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
+updated: 2026-09-03
 sources:
 - raw/papers/Collective_Capable_NoC_ML_Accelerators_2026.pdf
+- raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf
 ---
 
 # Collective-Capable NoC（片上 collective 互连）
@@ -167,7 +169,9 @@ Parallel reduction（CollectB/LsbAnd）处理窄网 bitwise/AXI 语义；**宽�
 - [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — 软件 AllReduce 经典算法（Ring/RHD）
 - [Memory Consistency Model](/concepts/memory-consistency-model.md) — 大规模 barrier 硬件必要性
 - [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md) — WSE multicast 对照
+- [LEAP](/papers/leap-imc-noc-llm-inference.md) — LLM 专用 IRCU INC（归约+DDMM）；对照 FlooNoC DCA 通用算术归约
 
 # Citations
 
 [1] [raw/papers/Collective_Capable_NoC_ML_Accelerators_2026.pdf](raw/papers/Collective_Capable_NoC_ML_Accelerators_2026.pdf) — Colagrande et al., MLSys 2026 (arXiv:2603.26438)
+[2] [raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf](raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf) — LEAP IRCU

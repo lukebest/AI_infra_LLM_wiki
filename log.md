@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-09-03
+
+### Watch (morning)
+* **Watch**: 2026-09-03 Asia/Shanghai AI infra 论文巡检。cs.AR new/recent = Wed 9/2 提交（12+cross）；Thu 9/3 美东列表上海早晨可能尚未放出。已 ingest 的 CHIPSMORE/Sync Tax/FLINT/Maia/光互连/HYDRA/ReXpert/HCCL/DASH/DICE/Fovea/C2C/ThAME/3DLS/Mozart 与全部 hc2026-* 不重复。
+* **Ingest**: LEAP PDF → `raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf` + stub `raw/papers/leap-imc-noc-llm-inference.md`（arXiv:2609.00857, 2026-09-01, cs.AR；ICCAD'25 扩展）。
+* **Ingest**: DynaNDE PDF → `raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf` + stub `raw/papers/dynande-near-data-expert-scheduling.md`（arXiv:2609.00407, 2026-09-01, cs.AR）。
+* **Creation** (papers): [LEAP](/papers/leap-imc-noc-llm-inference.md)（NUS；IMC+NMC+INC；LEAP-D 片上 PD；vs A100 ≥2.55×/≥71.94×，vs H100 1.52×/24.91×）；[DynaNDE](/papers/dynande-near-data-expert-scheduling.md)（IIT；NPU–NDP 分析模型调度；vs MoNDE prefill/decode 2.6×/2.2×）。
+* **Update**: [Disaggregated Inference](/concepts/disaggregated-inference.md)（LEAP-D 片上行），[Heterogeneous Inference](/concepts/heterogeneous-inference.md)（IMC/NMC/INC；NPU–NDP），[Interconnection Network Design Space](/concepts/interconnection-network-design-space.md)（IRCU INC），[Collective-Capable NoC](/concepts/collective-capable-noc.md)（对照 LEAP IRCU），[CXL Tiered Memory](/concepts/cxl-tiered-memory.md)（MoE CXL-NDP）。
+* **Indexes**: 手动同步 `papers/index.md`（+2）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: Block-Diffusion edge (2609.01084, LPDDR/systolic 压缩，无 NoC/NoW/chiplet 互连增量)；VARA ReRAM (2609.00421, 通用激活稀疏 IMC)；HBQ (2609.00450, MICRO 量化)；SPEC CPU 2026 EPYC (2609.01527)；FPGA Transformer survey (2609.01212)；Analog-DB / FALCON / JENGA / energy-law / version-space / SILK replace。先验跳过仍适用：Beacon 2608.30932、AXI4 monitor、LLM-H、survey 2608.28048、Gen-TAS、SNN、MeshReduce-U、Redwood、Ankhdjet、TerraceMoE。BusyBarn（ISCA 2026）仍仅 artifact/Zenodo，无公开全文 PDF。3DLS 已入库不重复。
+
 ## 2026-09-02
 
 ### Watch (morning)
