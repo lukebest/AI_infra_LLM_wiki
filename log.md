@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-09-04
+
+### Watch (morning)
+* **Watch**: 2026-09-04 Asia/Shanghai AI infra 论文巡检。cs.AR recent/new = Thu 9/3 提交（含 cross）；已 ingest 的 LEAP/DynaNDE/CHIPSMORE/Sync Tax/FLINT/Maia/光互连/HYDRA/ReXpert/HCCL/DASH/DICE/Fovea/C2C/ThAME/3DLS/Mozart 与全部 hc2026-* 不重复。
+* **Ingest**: Photonic Prefill PDF → `raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf` + stub `raw/papers/scaling-inference-prefill-photonic.md`（arXiv:2609.01821, 2026-09-01, cs.DC/cs.AR）。
+* **Ingest**: AInfer-PD PDF → `raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf` + stub `raw/papers/ainfer-pd-inplace-prefill-decode-moe.md`（arXiv:2609.00993, 2026-09-01, cs.DC）。
+* **Creation** (papers): [Photonic Prefill](/papers/scaling-inference-prefill-photonic.md)（3D 光子 4× SU BW / 1152 pod；高 batch 2.1–3.2×、跨 pod 2.2–4.5×）；[AInfer-PD](/papers/ainfer-pd-inplace-prefill-decode-moe.md)（Ant；turnstile+DeepEP 相位隔离；vs Normal −7.1–22.5%、vs SGLang −24.8–32.9%）。
+* **Update**: [Disaggregated Inference](/concepts/disaggregated-inference.md)（同池 P/D 复用一行 + 光学 DES），[NVLink NVSwitch Scale-Up Fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md)（光学 1152 pod 对照），[NVIDIA CPO Roadmap](/concepts/nvidia-cpo-roadmap.md)（推理 prefill 量化）。
+* **Indexes**: 手动同步 `papers/index.md`（+2）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: AceSpec (2609.02514, edge-cloud WAN speculative，出 WSE/NoC/NoW)；Atlas 3DGS VR (2609.02352)；NOVA eNVM on-chip training (2609.01948)；RunSoC automotive (2609.01614)；Batch Before You Time EDA (2609.02470)；H3DNAS / FORGE MCU / GadIR / HDL repair；CREDIT DSMEM；MeanField GPU scheduling；Characterizing multi-tenancy AI training (2609.00817, 表征)；Just Talk Once split FL (2609.01457)。先验跳过仍适用：Block-Diffusion/VARA/HBQ、Beacon、AXI4、LLM-H、survey 2608.28048、Gen-TAS、SNN、MeshReduce-U、Redwood、Ankhdjet、TerraceMoE、FPGA Transformer survey。BusyBarn 仍无公开全文 PDF。
+
 ## 2026-09-03
 
 ### Watch (morning)

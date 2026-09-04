@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-09-03
+updated: 2026-09-04
 sources:
 - arXiv:2504.02263
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
@@ -19,6 +19,8 @@ sources:
 - raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf
 - raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf
 - raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf
+- raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf
+- raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -96,6 +98,8 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 | **HYDRA 封装内 PD×算子** | 封装内 chiplet | NoI mesh | hybrid Transformer–Mamba serving |
 | **CHIPSMORE 层流水共享权重** | 封装内 CT cluster | IPCN mesh + UCIe | base/LoRA 多请求，不复制 RRAM 权重 |
 | **LEAP-D 片上 PD 解耦** | 同片 prefill/decode 宏区 | mesh INC + KV 区传 | IMC 留 prefill；decode 扩 scratchpad |
+| **AInfer-PD 同池复用** | 同设备 P/D 并发（非第二池） | turnstile 排交叉集体 + DeepEP 相位私有态 | 共享权重/KV；防 ADP/ATP 进度环 |
+| **光学 scale-up × PD DES** | 解耦 prefill/decode worker | 4× SU BW / 1152 pod | TTFT↓ 但 decode 饱和可抬 TPOT |
 
 ## 与 Luke 研究的关联
 
@@ -137,6 +141,8 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) — 同包内 host / DRAM-PNM attn / FeFET expert
 - [CHIPSMORE](/papers/chipsmore-cim-chiplets-llm-inference.md) — CIM chiplet 层流水多请求共享权重 + 分层 KV；不是机柜 AFD
 - [LEAP](/papers/leap-imc-noc-llm-inference.md) — 片上 IMC-NoC 的 LEAP-D PD 解耦；vs H100 1.52× 吞吐 / 24.91× 能效（仿真）
+- [AInfer-PD](/papers/ainfer-pd-inplace-prefill-decode-moe.md) — 同池 P/D 复用的集体/DeepEP 隔离；vs Normal −7.1–22.5%、vs SGLang −24.8–32.9%
+- [Photonic Prefill](/papers/scaling-inference-prefill-photonic.md) — 光学扩大 scale-up pod 后对 PD 解耦 serving 的 TTFT/TPOT 传导（DES）
 
 # Citations
 
@@ -147,3 +153,5 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [5] [raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf](raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf) — ReXpert 驻留 FFN 池
 [6] [raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf](raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf) — DASH HBF 双路径
 [7] [raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf](raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf) — HYDRA 封装内 hybrid serving DSE
+[8] [raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf](raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf) — 光学 prefill × PD DES
+[9] [raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf](raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf) — AInfer-PD 同池复用

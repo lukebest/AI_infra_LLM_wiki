@@ -13,11 +13,12 @@ tags:
 - gpu
 timestamp: '2026-08-31T00:00:00Z'
 created: 2026-07-22
-updated: 2026-08-31
+updated: 2026-09-04
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
 - raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf
+- raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf
 ---
 
 # NVLink / NVSwitch Scale-Up Fabric
@@ -39,6 +40,8 @@ NVIDIA Hopper / Blackwell 白皮书与 GTC 材料。paper-deepdive **Day 8**：[
 工艺：H100 ~80B 管；B200 笔记称 ~208B（双 die 等）。实体延伸：[Nvidia Vera Rubin NVL72](/entities/nvidia-vera-rubin-nvl72.md)、[Kyber Rack](/entities/kyber-rack.md)。
 
 Hot Chips 2026：[Fusion 教程](/papers/hc2026-nvidia-riscv-nvlink-fusion.md) 给 NVL72 机柜几何（9×4 NVLink 6 switch，**28.8 TB/s**/tray，**900 GB/s** C2C，CHI）。[Rubin GPU](/papers/hc2026-nvidia-rubin.md) 补协议：**Counted Write** 替换 MEMBAR+atomic；相对 Ethernet **3×** 延迟、**10×** packet rate、**130 TFLOPS** in-network。同日对照 [Helios UALoE](/papers/hc2026-amd-helios-ualoe.md)（以太网 load-store，**1.8 TB/s/dir**）。[TPU 8](/papers/hc2026-google-tpu8.md) 仍走 OCS/Boardfly，不是 fat-tree。
+
+[Photonic Prefill](/papers/scaling-inference-prefill-photonic.md)（arXiv:2609.01821）把电学 **72-GPU** 铜域当作 MoE prefill 的硬边界：跨 rack 后走慢 scale-out，光学配对给出 **4×** SU 带宽与最大 **1152** GPU 全光 pod；B300 FP4 上 128K@288 ~**2.9×**、生产平台跨边界 **2.2–4.5×**（分析模型，非实测光子）。
 
 [Synchronization Tax](/papers/synchronization-tax-gpu-scale-up.md)（Cornell, arXiv:2608.22503）指出第二条趋势和第一条打架：集体墙钟里有一段 **与 B 无关** 的 barrier 等待 τ。8-GPU 域可占通信时间 >50%；EVT 下最优带宽随域规模 **下降**（512 vs 8 GPU 为 2.06× 更低 B*）。论文 Table 1 口径 NVLink GB/s/GPU：A100 300 / H100·H200 450 / B200 900，域 8→72——与上表双向 ~900 GB/s（Hopper）不要混用。
 
@@ -78,3 +81,4 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
 [2] [raw/papers/hc2026-nvidia-rubin.md](raw/papers/hc2026-nvidia-rubin.md) — Rubin GPU / NVLink 6, Hot Chips 2026
 [3] [raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf](raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf) — Devraj et al., arXiv:2608.22503；同步税 vs 带宽缩放
+[4] [raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf](raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf) — Madhavan et al., arXiv:2609.01821；光学 1152 pod vs 电学 72

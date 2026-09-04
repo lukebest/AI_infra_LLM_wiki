@@ -55,6 +55,8 @@
 * [CHIPSMORE: CIM Chiplets LLM Inference](chipsmore-cim-chiplets-llm-inference.md)
 * [LEAP: IMC-NoC LLM Inference](leap-imc-noc-llm-inference.md)
 * [DynaNDE: Near-Data Expert Scheduling](dynande-near-data-expert-scheduling.md)
+* [Scaling Inference Prefill Photonic](scaling-inference-prefill-photonic.md)
+* [AInfer-PD In-Place Prefill–Decode MoE](ainfer-pd-inplace-prefill-decode-moe.md)
 * [Thermal Tuning Overhead in Wafer-Scale Optical Interconnects for LLM MoE](wafer-scale-optical-interconnect-moe-thermal.md)
 * [DICE: Detailed Inter-Chiplet End-to-End PHY Modeling](dice-detailed-inter-chiplet-end-to-end-phy-modeling.md)
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md)
