@@ -13,11 +13,13 @@ tags:
 - wse
 timestamp: '2026-08-31T00:00:00Z'
 created: 2026-07-13
-updated: 2026-08-31
+updated: 2026-09-07
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
 - raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf
+- raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf
+- raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -93,6 +95,10 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 不必串行等 AllReduce：用 **async AllReduce + 下一层/下一 micro-batch 计算** 掩盖；PP 用 1F1B 等调度减 bubble。重叠率受链路与 kernel 粒度限制。
 
+## Sequence Parallelism / Ulysses All-to-All（2026-09 增量）
+
+长上下文训练把序列切开后，attention 常需 **All-to-All** 把头维重排（DeepSpeed-Ulysses）。[BASP](/papers/basp-batch-aware-sequence-parallelism.md) 在 \(N=KB\) 时把全局 N-way A2A 拆成 B 组并行 K-way，每 GPU 仍 \(BS/N\) tokens；8×A100 上相对 Ulysses 端到端 **1.17–1.32×**，大 B 时 A2A 墙钟可降约 **85×**（端到端收益会被 ZeRO 集体吃掉一部分）。[Einsummable](/papers/einsummable-multi-gpu-parallelism.md) 从另一端自动搜 join-agg 分解，可在 128K 单序列上自动落到类似 Ulysses 的头/token 切分，且通信用合成 exchange 而非罐头 NCCL。
+
 ## 相关页面
 
 - [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — α+nβ 五算法
@@ -118,3 +124,5 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
 [2] [raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf](raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf) — Devraj et al., arXiv:2608.22503；τ 与 B 无关
+[3] [raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf](raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf) — BASP；Ulysses 子组 A2A
+[4] [raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf](raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf) — Einsummable；自动 intra-op 并行

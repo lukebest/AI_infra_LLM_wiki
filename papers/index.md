@@ -36,6 +36,9 @@
 * [DynaNDE: Near-Data Expert Scheduling for Batched MoE](dynande-near-data-expert-scheduling.md) - IIT — NPU–NDP 分析模型调度；vs MoNDE prefill/decode 2.6×/2.2×（仿真）
 * [Scaling Inference Prefill with High-Radix Photonic Interconnects](scaling-inference-prefill-photonic.md) - 3D 光子 scale-up；高 batch 2.1–3.2×、跨 pod 生产平台 2.2–4.5×（分析）
 * [AInfer-PD: In-Place Prefill–Decode Multiplexing for MoE](ainfer-pd-inplace-prefill-decode-moe.md) - Ant — turnstile+DeepEP 相位隔离；vs Normal −7.1–22.5%、vs SGLang −24.8–32.9%
+* [BASP: Batch-Aware Sequence Parallelism](basp-batch-aware-sequence-parallelism.md) - Clemson — Ulysses A2A 按 micro-batch 子组；Llama/Qwen 相对 Ulysses 1.17–1.32×（8×A100）
+* [CREDIT: DSMEM Inter-CTA Tiling](credit-dsmem-inter-cta-tiling.md) - UW–Madison — DSMEM reduction-reuse + 成本模型 91.7%；5090/H100 几何均值 1.466×/1.318×
+* [Einsummable: Automatic Multi-GPU Parallelism](einsummable-multi-gpu-parallelism.md) - Rice — join-agg 自动分解；LLaMA block 几何均值 8.97 ms vs PyTorch 13.65 / vLLM 14.87
 
 * [DICE: Detailed Inter-Chiplet End-to-End PHY Modeling](dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) - Uppsala — gem5 运行时 QC-LDPC/PAM4 chiplet PHY；相对 HeteroGarnet IPC 平均偏移 6.8%、最高 27.6%；9454P 跨 die 最大 C2C RMSE 89.5 vs 141.2 cycle
 * [C2C-Explorer: Chip-to-Chip Interconnect DSE for LLM Systems](c2c-explorer-chip-to-chip-interconnect-llm.md) - DAC 2026 — LLM 轨迹驱动的 scale-up C2C 仿真+贝叶斯 DSE；FPGA 时序误差 2.46–8.23%；DeepSeek combine goodput +44.1%、buffer −98.4%

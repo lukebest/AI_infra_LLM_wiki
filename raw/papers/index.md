@@ -18,6 +18,9 @@
 
 # Raw Source
 
+* [BASP Batch-Aware Sequence Parallelism](basp-batch-aware-sequence-parallelism.md)
+* [CREDIT DSMEM Inter-CTA Tiling](credit-dsmem-inter-cta-tiling.md)
+* [Einsummable Multi-GPU Parallelism](einsummable-multi-gpu-parallelism.md)
 * [Hot Chips 2026 Handy HBM Tutorial](hc2026-handy-hbm-tutorial.md)
 * [Hot Chips 2026 Samsung HBM Base Die](hc2026-samsung-hbm-base-die.md)
 * [Hot Chips 2026 SK hynix HBM Packaging](hc2026-skhynix-hbm-advanced-packaging.md)

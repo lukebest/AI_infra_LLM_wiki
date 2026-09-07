@@ -1,5 +1,17 @@
 # Bundle Update Log
 
+## 2026-09-07
+
+### Watch (morning)
+* **Watch**: 2026-09-07 Asia/Shanghai AI infra 论文巡检。cs.AR/cs.DC recent 列表到 Fri 9/4（周一美东新稿上海早晨尚未放出；Labor Day 窗口）。已 ingest 的 Photonic Prefill/AInfer-PD/LEAP/DynaNDE/CHIPSMORE/Sync Tax 等不重复。
+* **Ingest**: BASP PDF → `raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf` + stub `raw/papers/basp-batch-aware-sequence-parallelism.md`（arXiv:2609.03151, 2026-09-04, cs.DC）。
+* **Ingest**: CREDIT PDF → `raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf` + stub `raw/papers/credit-dsmem-inter-cta-tiling.md`（arXiv:2609.01864, 2026-09-02, cs.DC）。
+* **Ingest**: Einsummable PDF → `raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf` + stub `raw/papers/einsummable-multi-gpu-parallelism.md`（arXiv:2609.03905, 2026-09-04, cs.DC）。
+* **Creation** (papers): [BASP](/papers/basp-batch-aware-sequence-parallelism.md)（Ulysses 子组 A2A；1.17–1.32×）；[CREDIT](/papers/credit-dsmem-inter-cta-tiling.md)（DSMEM reduction-reuse；5090/H100 1.466×/1.318×）；[Einsummable](/papers/einsummable-multi-gpu-parallelism.md)（自动 join-agg；LLaMA block 8.97 vs 13.65/14.87 ms）。
+* **Update**: [LLM Collectives](/concepts/llm-distributed-training-collectives.md)（SP/Ulysses 子组 + 自动分解），[NVLink fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md)（训练侧关 NVLink 域），[GPU SIMT](/concepts/gpu-simt-architecture.md)（DSMEM 一行）。
+* **Indexes**: 手动同步 `papers/index.md`（+3）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: Para-Pipe (2609.04168, 边缘异构 SoC 算子流水，非 LLM fabric)；FlowTT (2609.03459, DLRM TT embedding GPU kernel)；Analog Photonic Interposer (2609.03125, 视觉 sensor↔模拟加速器)；Latency-Aware Multi-Agent LLM on Heterogeneous GPUs (2609.03335, serving 编排)；Einsummable 同窗 Barnacle/JuPyLive/区块链/FL/5G 等出范围；Sep 4 已跳过 AceSpec/Atlas/NOVA/CREDIT 当时仅扫过标题——今日全文入库；Characterizing multi-tenancy (2609.00817) 仍表征文。BusyBarn 仍无公开全文 PDF。先验跳过 Beacon/AXI4/survey 2608.28048 等仍适用。
+
 ## 2026-09-04
 
 ### Watch (morning)

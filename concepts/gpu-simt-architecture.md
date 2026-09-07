@@ -14,8 +14,10 @@ tags:
 - npu
 timestamp: '2026-07-07T00:00:00Z'
 created: 2026-07-07
+updated: 2026-09-07
 sources:
 - raw/articles/arch-study-30d-day-24.md
+- raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf
 ---
 
 # GPU SIMT Architecture（GPU 与 SIMT）
@@ -132,6 +134,11 @@ AI=100 FP32 GEMM → compute-bound（100 > 16.7），实测 35/50 = **70%** peak
 ## 与 LLM 推理
 
 [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md)：prefill 高算力利用 Tensor Core；decode 常 memory/sync bound（671B decode HBM util ~50–60%）。GPU SIMT 是主流训练/推理 baseline；WSE/NPU 走 MIMD/DSA 路径——见 [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md)。
+
+
+## DSMEM / Thread Block Cluster（Hopper+）
+
+Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑分布式、物理仍属各 CTA）。[CREDIT](/papers/credit-dsmem-inter-cta-tiling.md) 测得远程 load 约 **6.4×** 本地延迟，并给出 reduction-reuse 盈利筛：宽行归约后复用时，用紧凑 partial 交换换掉 HBM 重读；N=64K 时相对最快 baseline 几何均值 RTX 5090 **1.466×** / H100 **1.318×**。小形状常仍输给单 CTA。
 
 ## 相关页面
 

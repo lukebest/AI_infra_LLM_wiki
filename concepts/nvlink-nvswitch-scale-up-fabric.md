@@ -13,12 +13,13 @@ tags:
 - gpu
 timestamp: '2026-08-31T00:00:00Z'
 created: 2026-07-22
-updated: 2026-09-04
+updated: 2026-09-07
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
 - raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf
 - raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf
+- raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf
 ---
 
 # NVLink / NVSwitch Scale-Up Fabric
@@ -75,6 +76,11 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 - [Hot Chips 2026 Rubin GPU](/papers/hc2026-nvidia-rubin.md)
 - [Hot Chips 2026 Helios UALoE](/papers/hc2026-amd-helios-ualoe.md)
 - [Synchronization Tax](/papers/synchronization-tax-gpu-scale-up.md) — τ 征税，B* 随域规模下降
+
+
+## 训练侧：把集体关在 NVLink 域
+
+[BASP](/papers/basp-batch-aware-sequence-parallelism.md) 在 Ulysses 训练中按 micro-batch 建 SP 子组；当子组大小 = 每节点 GPU 数时，attention all-to-all 可不出节点，避开 IB。[Einsummable](/papers/einsummable-multi-gpu-parallelism.md) 默认假设单机 NVSwitch 非阻塞域做 intra-op 并行。片内更细一层：[CREDIT](/papers/credit-dsmem-inter-cta-tiling.md) 的 DSMEM 是 GPC 内 inter-SM，不是 NVLink。
 
 # Citations
 
