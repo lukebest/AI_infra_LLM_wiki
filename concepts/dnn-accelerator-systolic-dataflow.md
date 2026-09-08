@@ -12,6 +12,7 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
+updated: 2026-09-08
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
@@ -142,6 +143,11 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 - [WaferLLM System](/concepts/waferllm-system.md) — 晶圆级 LLM 算子映射
 - [Post-Moore Architecture Frontiers](/concepts/post-moore-architecture-frontiers.md) — AI 加速器稀疏/混合精度趋势（Day 29）
 
+## 分数精度脉动（2026-09）
+
+[FlexPosit](/papers/flexposit-tunable-fractional-precision-llm.md) 用 **bit-serial** 脉动 + Posit 把权重精度做成 4–8 bit 连续可调（GPCU 时间窗），追求 channel-wise 规整与接近 group-wise 的精度；16 nm iso-area 相对 BitMoD/OliVe 最高约 **1.8×/1.5×** 吞吐（综合/仿真）。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-25.md](raw/articles/arch-study-30d-day-25.md) — H&P Ch.7.1–7.5 DSA（Day 25）
+[99] [raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf](raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf) — FlexPosit

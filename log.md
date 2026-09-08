@@ -1,5 +1,18 @@
 # Bundle Update Log
 
+## 2026-09-08
+
+### Watch (morning)
+* **Watch**: 2026-09-08 Asia/Shanghai AI infra 论文巡检。cs.AR/cs.DC recent 列表到 **Mon 9/7**（Tue 9/8 美东列表上海早晨尚未放出）。已 ingest 的 BASP/CREDIT/Einsummable/Photonic Prefill/AInfer-PD/LEAP/DynaNDE/CHIPSMORE/Sync Tax 等不重复。
+* **Ingest**: CIERA PDF → `raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf` + stub `raw/papers/ciera-cross-iteration-exponent-reuse-allgather.md`（arXiv:2609.04609, 2026-09-04, cs.DC）。
+* **Ingest**: REACT PDF → `raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf` + stub `raw/papers/react-tuning-collective-patterns-shared-clusters.md`（arXiv:2609.04417, 2026-09-03, cs.NI/cs.DC）。
+* **Ingest**: FlexPosit PDF → `raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf` + stub `raw/papers/flexposit-tunable-fractional-precision-llm.md`（arXiv:2609.04724, 2026-09-04, cs.AR）。
+* **Ingest**: Huawei τ PDF → `raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf` + stub `raw/papers/huawei-tau-chip-logicfolding-thermal.md`（arXiv:2609.04287, 2026-09-02, cs.AR）。
+* **Creation** (papers): [CIERA](/papers/ciera-cross-iteration-exponent-reuse-allgather.md)（无损指数复用 Allgather；OLMoE@16 3.70×/3.68×）；[REACT](/papers/react-tuning-collective-patterns-shared-clusters.md)（拥塞改写集体；+13–38% / ns-3 ~75%）；[FlexPosit](/papers/flexposit-tunable-fractional-precision-llm.md)（Posit bit-serial；vs BitMoD 1.8×/1.2×）；[Huawei τ](/papers/huawei-tau-chip-logicfolding-thermal.md)（LogicFolding HB；NPU −66% iso-perf）。
+* **Update**: [LLM Collectives](/concepts/llm-distributed-training-collectives.md)（CIERA+REACT），[3D Stacking](/concepts/3d-stacking-technologies.md)（τ/LogicFolding），[DNN Systolic](/concepts/dnn-accelerator-systolic-dataflow.md)（FlexPosit 一行）。SCHEMA 补 `collective`/`allreduce`/`distributed`。
+* **Indexes**: 手动同步 `papers/index.md`（+4）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: CIM Analog Softmax (2609.04266, 电路级 softmax、无 NoC/fabric 增量)；Atlas compound AI deploy (2609.04513, 编排)；KV low-rank adapt (2609.04263)；Prefix-cache×量化 divergence (2609.04748, serving 可复现)；GreenPipe/TreeFI/Proton/APEX-RBD/EOSQR/edge DVFS/BF16 AMX/progressive compression/MemGuard/量子/FL/电网柔性；Sep 7 已跳过 Para-Pipe/FlowTT/Analog Photonic Interposer/Latency-Aware Multi-Agent。BusyBarn 仍无公开全文 PDF。先验跳过 Beacon/AXI4/survey 等仍适用。
+
 ## 2026-09-07
 
 ### Watch (morning)

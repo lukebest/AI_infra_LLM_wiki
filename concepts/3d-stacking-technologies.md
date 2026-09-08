@@ -15,7 +15,7 @@ tags:
 - noc
 timestamp: '2026-08-26T00:00:00Z'
 created: '2026-07-31'
-updated: 2026-08-28
+updated: 2026-09-08
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
 - raw/articles/3d-noc-study-02-monolithic-vs-tsv.md
@@ -26,6 +26,7 @@ sources:
 - papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md
 - papers/mozart-35d-wafer-scale-moe-training.md
 - papers/thame-3d-memory-enabled-heterogeneous-moe.md
+- raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf
 ---
 
 # 3D Stacking Technologies（3D 堆叠工艺路线）
@@ -103,6 +104,11 @@ Hot Chips 2026 封装侧：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packag
 
 **关键结论**：**2024 之前 3D NoC 论文多在 TSV-based 假设** → 5-port 优化；**2024+ 商业现实 = hybrid bonding** → 8+ port 富余。
 
+
+## LogicFolding / 产品侧 HB 功耗证词（2026-09）
+
+[Huawei τ Chip](/papers/huawei-tau-chip-logicfolding-thermal.md)（Kirin）：把 hybrid bonding 当 **晶圆级跨层器件步骤** 而非封装；2026 代约 **1.5 µm** pitch / ~5e7 垂直互连，密度 **+55%**，iso-performance 下 NPU/GPU/CPU 功耗 **−66%/−58%/−41%**（厂商自测）。核心论点：动态功耗由 **线电容通勤** 主导，折叠缩短线长则「更密可以更凉」。与「叠层必热熔」直觉对冲；独立复现边界仍开放。
+
 ## 与 wiki 既有页面的关联
 
 - [Through-Silicon Via (TSV) Physical Layer](/concepts/tsv-3d-physical-layer.md) — TSV 工艺单元
@@ -117,6 +123,7 @@ Hot Chips 2026 封装侧：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packag
 - [d-Matrix Raptor](/papers/hc2026-dmatrix-raptor-3d-dram.md) — 1-Hi 3D DRAM
 - [晶圆级光互连](/papers/wafer-scale-optical-interconnect-moe-thermal.md) — GPU/EIC/PIC W2W HB，再 D2W 到 300 mm 光 interposer
 - [FLINT](/papers/flint-hbf-llm-inference.md) — TSV-HBF 级联 + 基座控制器
+- [Huawei τ Chip](/papers/huawei-tau-chip-logicfolding-thermal.md) — LogicFolding + W2W HB 功耗证词
 
 ## 开放问题
 
@@ -138,3 +145,4 @@ Hot Chips 2026 封装侧：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packag
 [9] [papers/hc2026-samsung-hbm-base-die.md](papers/hc2026-samsung-hbm-base-die.md) — zHBM WoW+HCB（Hot Chips 2026）
 [10] [papers/wafer-scale-optical-interconnect-moe-thermal.md](papers/wafer-scale-optical-interconnect-moe-thermal.md) — 光 interposer 3D 堆（2026）
 [11] [papers/flint-hbf-llm-inference.md](papers/flint-hbf-llm-inference.md) — TSV-HBF 级联控制器（2026）
+[12] [raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf](raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf) — He, arXiv:2609.04287；Kirin LogicFolding

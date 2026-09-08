@@ -39,6 +39,11 @@
 * [BASP: Batch-Aware Sequence Parallelism](basp-batch-aware-sequence-parallelism.md) - Clemson — Ulysses A2A 按 micro-batch 子组；Llama/Qwen 相对 Ulysses 1.17–1.32×（8×A100）
 * [CREDIT: DSMEM Inter-CTA Tiling](credit-dsmem-inter-cta-tiling.md) - UW–Madison — DSMEM reduction-reuse + 成本模型 91.7%；5090/H100 几何均值 1.466×/1.318×
 * [Einsummable: Automatic Multi-GPU Parallelism](einsummable-multi-gpu-parallelism.md) - Rice — join-agg 自动分解；LLaMA block 几何均值 8.97 ms vs PyTorch 13.65 / vLLM 14.87
+* [CIERA: Cross-Iteration Exponent Reuse Allgather](ciera-cross-iteration-exponent-reuse-allgather.md) - UVA/Anyscale — MoE 无损指数复用 Allgather；OLMoE@16GPU vs ZeRO-3 3.70×、vs ZeRO++ 3.68×
+* [REACT: Tuning Collective Patterns in Shared AI Clusters](react-tuning-collective-patterns-shared-clusters.md) - UIUC/Meta/IBM — NCCL shim 拥塞改写集体 pattern；算法带宽 +13–38%，ns-3 最高约 +75%
+* [FlexPosit: Tunable Fractional Precision LLM Accelerator](flexposit-tunable-fractional-precision-llm.md) - UVA/SJTU — Posit+bit-serial；vs BitMoD 最高 1.8× 吞吐/1.2× 能，vs OliVe 1.5×/2.0×（16 nm）
+* [Huawei τ Chip / LogicFolding](huawei-tau-chip-logicfolding-thermal.md) - Huawei — W2W HB LogicFolding；Kirin2026 密度 +55%，iso-perf NPU/GPU/CPU −66%/−58%/−41%
+
 
 * [DICE: Detailed Inter-Chiplet End-to-End PHY Modeling](dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) - Uppsala — gem5 运行时 QC-LDPC/PAM4 chiplet PHY；相对 HeteroGarnet IPC 平均偏移 6.8%、最高 27.6%；9454P 跨 die 最大 C2C RMSE 89.5 vs 141.2 cycle
 * [C2C-Explorer: Chip-to-Chip Interconnect DSE for LLM Systems](c2c-explorer-chip-to-chip-interconnect-llm.md) - DAC 2026 — LLM 轨迹驱动的 scale-up C2C 仿真+贝叶斯 DSE；FPGA 时序误差 2.46–8.23%；DeepSeek combine goodput +44.1%、buffer −98.4%

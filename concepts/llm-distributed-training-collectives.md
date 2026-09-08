@@ -13,13 +13,15 @@ tags:
 - wse
 timestamp: '2026-08-31T00:00:00Z'
 created: 2026-07-13
-updated: 2026-09-07
+updated: 2026-09-08
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
 - raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf
 - raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf
 - raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf
+- raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf
+- raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -119,6 +121,8 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [Maia 200 SDLA](/papers/maia-200-sdla.md) — 8 芯 Ethernet Allgather 到延迟界 78% / 带宽界 94% SoL；direct vs ring
 - [晶圆级光互连热 stall](/papers/wafer-scale-optical-interconnect-moe-thermal.md) — MoE EP All-to-All 被 MRR 热光 stall ~47–49 ms 放大到 2.7–3.8×
 - [Synchronization Tax](/papers/synchronization-tax-gpu-scale-up.md) — 集体墙钟含与 B 无关的 barrier 税 τ；B* 随域规模下降
+- [CIERA](/papers/ciera-cross-iteration-exponent-reuse-allgather.md) — MoE AllGather 指数复用无损压缩
+- [REACT](/papers/react-tuning-collective-patterns-shared-clusters.md) — 共享集群拥塞下改写集体 pattern
 
 # Citations
 
@@ -126,3 +130,5 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [2] [raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf](raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf) — Devraj et al., arXiv:2608.22503；τ 与 B 无关
 [3] [raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf](raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf) — BASP；Ulysses 子组 A2A
 [4] [raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf](raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf) — Einsummable；自动 intra-op 并行
+[5] [raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf](raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf) — CIERA；无损指数复用 Allgather
+[6] [raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf](raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf) — REACT；拥塞感知集体 pattern
