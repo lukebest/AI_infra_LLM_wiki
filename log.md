@@ -1,5 +1,12 @@
 # Bundle Update Log
 
+## 2026-09-09
+
+### Watch (morning)
+* **Watch**: 2026-09-09 Asia/Shanghai AI infra 论文巡检。**无增量**。cs.AR/cs.DC recent/new 仍停在 **Mon 9/7**（Tue 9/8 与 Wed 9/9 美东列表上海早晨尚未放出）。昨日已 ingest 的 CIERA/REACT/FlexPosit/Huawei τ 与 BASP/CREDIT/Einsummable/Photonic Prefill/AInfer-PD/LEAP/DynaNDE/CHIPSMORE/Sync Tax 等不重复。
+* **Indexes**: 无 papers 变更。未跑 `generate_indexes.py`。
+* **Considered not ingested**: MonoMoE (2609.04244, H200 量化 MoE fused megakernel，无 NoC/fabric 增量)；Budgeting Bytes (2609.04238, 边缘存储字节/token roofline，非互连)；TreeFI/EOSQR/Proton irradiation/APEX-RBD/HCST/edge DVFS/GreenPipe/Serverless CVM/Atlas；LevelSyn EDA、systolic beamforming、Barnacle 区块链、JuPyLive、Iapetus 卫星 ViT。BusyBarn 仍无公开全文 PDF（仅 artifact/Zenodo）。先验跳过 Beacon/AXI4/survey 等仍适用。
+
 ## 2026-09-08
 
 ### Watch (morning)
