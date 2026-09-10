@@ -18,7 +18,7 @@ tags:
 - architecture
 timestamp: '2026-08-26T00:00:00Z'
 created: 2026-08-18
-updated: 2026-08-27
+updated: 2026-09-10
 sources:
 - raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/network-design-wafer-scale-wow-hybrid-bonding.md
@@ -27,6 +27,7 @@ sources:
 - papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md
 - papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md
 - papers/wafer-scale-optical-interconnect-moe-thermal.md
+- papers/wafertrans-iommu-free-wafer-scale-gpu.md
 ---
 
 # Network-on-Wafer（晶圆级网络 / NoW）
@@ -79,6 +80,11 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 
 [Fovea](/papers/fovea-physical-implication-aware-wafer-scale-dse.md)（清华，2026-08）不设计新拓扑，而是论证：**同质 repeated-die 晶圆仍然不是一张万能模板**。die 轮廓同时决定光罩合规、tiling、D2D lane 数和边界 I/O 能否放下；面积可行里平均 29.4% 的分析 top-10% 会被物理约束打掉。分析 vs ASTRA-sim+ns-3 约 4000× 成本且 20.96% 成对反转，所以用 Decision Domain 只精评无法排除的候选。范围是 chiplet-on-wafer 边界 D2D，**不是** WoW 重叠网，也不是 Cerebras field stitch。
 
+
+## 晶圆级 Unified Memory 的翻译面（2026-09）
+
+[WaferTrans](/papers/wafertrans-iommu-free-wafer-scale-gpu.md)（清华）不改 NoW 边集合，而是指出：WSG 片上带宽够做近无损 UM 时，**远程 VA 翻译若仍走 CPU-IOMMU**，会先把收益吃掉。方案是每 GPU 的 PTE Presence Directory + PTE-PC，在晶圆内解析远程翻译；vs Trans-FW 平均 **2.5×**（Sequential/Adjacent **3.1×**），面积约 **0.40%**。开放问题里「软件栈看见什么样的域」因此多了一层：拓扑之外还有 **翻译控制面是否出晶圆**。
+
 ## 当前认知
 
 - **NoW 不是“大号 NoC”**：物理路线先决定边集合，再谈路由/流控。
@@ -100,3 +106,4 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 [3] [raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf](raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf) — Li et al. 2026
 [4] [raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf](raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf) — Lee et al. 2026
 [5] [raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf](raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf) — Yoon, Chen, Yu 2026
+[5] [raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf](raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf) — Tang et al., arXiv:2609.06125；IOMMU-free 翻译

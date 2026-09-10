@@ -1,5 +1,8 @@
 # Paper
 
+* [WaferTrans: IOMMU-free VA Translation for Wafer-scale GPUs](wafertrans-iommu-free-wafer-scale-gpu.md) - 清华 — 片上 PPD 去掉 CPU-IOMMU；vs Trans-FW 平均 2.5×（Seq/Adj 3.1×）
+* [HDA-MoE: Hybrid Parallelism for MoE on 3D NMP](hda-moe-3d-nmp-hybrid-parallel.md) - 北大/阿里 DAMO — 离线 hybrid 放置 + 在线调度；vs TP 1.1–3.4×、vs HD-MoE 1.1–1.3×
+* [Sharing a Fabric with Collective Communication](sharing-fabric-collective-storage-penalties.md) - NTU/LLNL — 存储×集体同 fabric；Lustre 同 TC all-reduce 最高 145×；DYAD vs Lustre 7.4×
 * [Hot Chips 2026 Handy HBM Tutorial](hc2026-handy-hbm-tutorial.md) - Objective Analysis — HBM 吃 3× DDR 晶圆面积；DRAM 产能十年未涨；PIM/base-die 被推理推上台
 * [Hot Chips 2026 Samsung HBM Base Die](hc2026-samsung-hbm-base-die.md) - Samsung — HBM4/4E B-die 改 4 nm logic；cHBM→aHBM→zHBM（WoW+HCB 取消 2.5D interposer）
 * [Hot Chips 2026 SK hynix HBM Packaging](hc2026-skhynix-hbm-advanced-packaging.md) - SK hynix — HBM4 12Hi 量产/16Hi Qual；HyB 才能 ≥20Hi、pitch <18 μm；i-HBM 热阻 >30% ↓

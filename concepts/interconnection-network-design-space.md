@@ -13,7 +13,7 @@ tags:
 - infrastructure
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-03
+updated: 2026-09-10
 sources:
 - raw/articles/interconn-study-21d-day-01.md
 - raw/articles/interconn-study-21d-day-03.md
@@ -125,6 +125,12 @@ sources:
 - [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 封装内 NoI mesh：hybrid serving 轨迹倒逼组成/放置/D2D 带宽，不是先定 mesh 再灌合成流
 - [CHIPSMORE](/papers/chipsmore-cim-chiplets-llm-inference.md) — IPCN 2D mesh 带 in-network DMAC（compute-in-interconnect）；UCIe 利用率 <25%，瓶颈不在 Inter-CT
 - [LEAP](/papers/leap-imc-noc-llm-inference.md) — mesh + IRCU INC；确定性 Broadcast/Reduce/AllGather 服务 LLM 分区数据流
+
+
+## 2026-09 增量
+
+- [HDA-MoE](/papers/hda-moe-3d-nmp-hybrid-parallel.md)：3D NMP 上 Mesh/Torus/Fat-tree 的 Link Balance 放置，把专家映射算进 NoC 占用。
+- [WaferTrans](/papers/wafertrans-iommu-free-wafer-scale-gpu.md)：晶圆 scale-up 域的 **地址翻译控制面**（PPD），与数据面带宽分账。
 
 # Citations
 

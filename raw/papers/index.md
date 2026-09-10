@@ -1,5 +1,8 @@
 # Other
 
+* [WaferTrans stub](wafertrans-iommu-free-wafer-scale-gpu.md) + [PDF](WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf) — arXiv:2609.06125
+* [HDA-MoE stub](hda-moe-3d-nmp-hybrid-parallel.md) + [PDF](HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf) — arXiv:2609.08682
+* [Sharing a Fabric stub](sharing-fabric-collective-storage-penalties.md) + [PDF](Sharing_Fabric_Collective_Storage_Penalties_2026.pdf) — arXiv:2609.06506
 * [aethereal-network-on-chip](aethereal-network-on-chip.md)
 * [collective-capable-noc-ml-accelerators](collective-capable-noc-ml-accelerators.md)
 * [dennis-misunas-basic-data-flow-processor](dennis-misunas-basic-data-flow-processor.md)

@@ -1,5 +1,17 @@
 # Bundle Update Log
 
+## 2026-09-10
+
+### Watch (morning)
+* **Watch**: 2026-09-10 Asia/Shanghai AI infra 论文巡检。cs.AR/cs.DC recent 到 **Wed 9/9**（Thu 9/10 美东列表上海早晨尚未放出）。昨日无增量日已扫过的 Mon 9/7 项不重复。
+* **Ingest**: WaferTrans PDF → `raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf` + stub `raw/papers/wafertrans-iommu-free-wafer-scale-gpu.md`（arXiv:2609.06125, 2026-09-05, cs.AR）。
+* **Ingest**: HDA-MoE PDF → `raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf` + stub `raw/papers/hda-moe-3d-nmp-hybrid-parallel.md`（arXiv:2609.08682, 2026-09-09, cs.AR）。
+* **Ingest**: Sharing a Fabric PDF → `raw/papers/Sharing_Fabric_Collective_Storage_Penalties_2026.pdf` + stub `raw/papers/sharing-fabric-collective-storage-penalties.md`（arXiv:2609.06506, 2026-09-09, cs.DC）。
+* **Creation** (papers): [WaferTrans](/papers/wafertrans-iommu-free-wafer-scale-gpu.md)（IOMMU-free 片上翻译；vs Trans-FW 2.5×）；[HDA-MoE](/papers/hda-moe-3d-nmp-hybrid-parallel.md)（3D NMP hybrid 放置+调度；vs TP 1.1–3.4×）；[Sharing a Fabric](/papers/sharing-fabric-collective-storage-penalties.md)（存储×集体争用；DYAD 7.4× vs Lustre）。
+* **Update**: [Network-on-Wafer](/concepts/network-on-wafer.md)（UM 翻译面）、[3D Stacking](/concepts/3d-stacking-technologies.md)（3D NMP MoE）、[LLM Collectives](/concepts/llm-distributed-training-collectives.md)（fabric×存储）、[Interconnection Design Space](/concepts/interconnection-network-design-space.md)（一行）。
+* **Indexes**: 手动同步 `papers/index.md`（+3）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: MoE Comp-Comm Overlap 资源管理 (2609.07536, FLUX/COMET SM residency，无新 fabric/NoC PHY)；Poseidon (2609.06086, 异构集群并行搜索)；EStream (2609.06551, 手机 NPU MoE prefill)；Interface-Aware KV NVM (2609.05764, 片上 NVM 量化接口)；Photonic chiplet HT (2609.06796, 安全威胁综述)；Flash KV for recsys (2609.07175)；Multichip Ising Pegasus (2609.07907)；Gutenberg NDP (2609.06691)；DejaVu unified-memory SoC (2609.05635)；Tools-CC-Bench (2609.08739, 基准)；MonoMoE/Budgeting Bytes 等 9/9 已跳过项仍适用。BusyBarn 仍无公开全文 PDF。
+
 ## 2026-09-09
 
 ### Watch (morning)

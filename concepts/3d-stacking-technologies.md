@@ -15,7 +15,7 @@ tags:
 - noc
 timestamp: '2026-08-26T00:00:00Z'
 created: '2026-07-31'
-updated: 2026-09-08
+updated: 2026-09-10
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
 - raw/articles/3d-noc-study-02-monolithic-vs-tsv.md
@@ -109,6 +109,11 @@ Hot Chips 2026 封装侧：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packag
 
 [Huawei τ Chip](/papers/huawei-tau-chip-logicfolding-thermal.md)（Kirin）：把 hybrid bonding 当 **晶圆级跨层器件步骤** 而非封装；2026 代约 **1.5 µm** pitch / ~5e7 垂直互连，密度 **+55%**，iso-performance 下 NPU/GPU/CPU 功耗 **−66%/−58%/−41%**（厂商自测）。核心论点：动态功耗由 **线电容通勤** 主导，折叠缩短线长则「更密可以更凉」。与「叠层必热熔」直觉对冲；独立复现边界仍开放。
 
+
+## 3D NMP 上的 MoE 部署（2026-09）
+
+[HDA-MoE](/papers/hda-moe-3d-nmp-hybrid-parallel.md)（北大/阿里 DAMO）把 **hybrid bonding 垂直叠 DRAM+compute** 的 NMP bank 阵列当推理目标：离线 hybrid TP–EP 放置 + 在线 pre-broadcast / hardware-aware gating。仿真 vs TP **1.1×–3.4×**、vs HD-MoE **1.1×–1.3×**。与 LogicFolding 的「缩短线长」证词正交：这里用的是近存算带宽，旋钮在专家映射与 NoC 链路平衡。
+
 ## 与 wiki 既有页面的关联
 
 - [Through-Silicon Via (TSV) Physical Layer](/concepts/tsv-3d-physical-layer.md) — TSV 工艺单元
@@ -124,6 +129,7 @@ Hot Chips 2026 封装侧：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packag
 - [晶圆级光互连](/papers/wafer-scale-optical-interconnect-moe-thermal.md) — GPU/EIC/PIC W2W HB，再 D2W 到 300 mm 光 interposer
 - [FLINT](/papers/flint-hbf-llm-inference.md) — TSV-HBF 级联 + 基座控制器
 - [Huawei τ Chip](/papers/huawei-tau-chip-logicfolding-thermal.md) — LogicFolding + W2W HB 功耗证词
+- [HDA-MoE](/papers/hda-moe-3d-nmp-hybrid-parallel.md) — 3D NMP bank 上 MoE hybrid 并行
 
 ## 开放问题
 
@@ -146,3 +152,4 @@ Hot Chips 2026 封装侧：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packag
 [10] [papers/wafer-scale-optical-interconnect-moe-thermal.md](papers/wafer-scale-optical-interconnect-moe-thermal.md) — 光 interposer 3D 堆（2026）
 [11] [papers/flint-hbf-llm-inference.md](papers/flint-hbf-llm-inference.md) — TSV-HBF 级联控制器（2026）
 [12] [raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf](raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf) — He, arXiv:2609.04287；Kirin LogicFolding
+[13] [raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf](raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf) — Huang et al., arXiv:2609.08682；3D NMP MoE
