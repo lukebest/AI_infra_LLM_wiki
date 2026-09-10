@@ -18,7 +18,7 @@ sources:
 
 # SmartMem
 
-**Authors:** Wei Niu, Md Musfiqur Rahman Sanim, Zhihao Shu (U. Georgia), Jiexiong Guan, Xipeng Shen, Miao Yin, Gagan Agrawal, Bin Ren | **Venue:** ASPLOS 2024 | **PDF:** [raw/papers/SmartMem_Layout_Transformation_Elimination_ASPLOS2024.pdf](SmartMem_Layout_Transformation_Elimination_ASPLOS2024.pdf)
+**Authors:** Wei Niu, Md Musfiqur Rahman Sanim, Zhihao Shu (U. Georgia), Jiexiong Guan, Xipeng Shen, Miao Yin, Gagan Agrawal, Bin Ren | **Venue:** ASPLOS 2024 | **PDF:** `raw/papers/SmartMem_Layout_Transformation_Elimination_ASPLOS2024.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -84,4 +84,4 @@ MLIR Pipeline:
 
 # Citations
 
-[1] [raw/papers/SmartMem_Layout_Transformation_Elimination_ASPLOS2024.pdf](SmartMem_Layout_Transformation_Elimination_ASPLOS2024.pdf) — Niu et al. ASPLOS 2024
+[1] `raw/papers/SmartMem_Layout_Transformation_Elimination_ASPLOS2024.pdf`（非公开本地路径） — Niu et al. ASPLOS 2024

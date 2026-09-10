@@ -46,5 +46,5 @@ Qin, Fan, Li, Wang, An, Ye, Fan（中科院计算所）
 
 # Citations
 
-[1] [raw/papers/PANDA_Adaptive_Prefetch_Dataflow_Architectures_2025.pdf](raw/papers/PANDA_Adaptive_Prefetch_Dataflow_Architectures_2025.pdf)
+[1] `raw/papers/PANDA_Adaptive_Prefetch_Dataflow_Architectures_2025.pdf`（非公开本地路径）
 [2] [raw/papers/panda-adaptive-prefetch-dataflow.md](raw/papers/panda-adaptive-prefetch-dataflow.md) — 结构化摘录

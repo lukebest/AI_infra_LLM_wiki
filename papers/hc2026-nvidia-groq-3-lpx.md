@@ -24,7 +24,7 @@ sources:
 
 **Speakers:** Igor Arsovski, Santosh Raghavan（NVIDIA）  
 **Venue:** Hot Chips 2026 Day 2  
-**PDF:** [raw/papers/HC2026_NVIDIA_Groq_3_LPX.pdf](raw/papers/HC2026_NVIDIA_Groq_3_LPX.pdf)
+**PDF:** `raw/papers/HC2026_NVIDIA_Groq_3_LPX.pdf`（非公开本地路径）
 
 Vera Rubin「Extend Interactivity」机柜。更新 [NVIDIA Groq 3 LPX](/entities/nvidia-groq-3-lpx.md)。绝对 TPS/MW 曲线点 **未知**。
 
@@ -59,5 +59,5 @@ GPT-OSS-2T，cached ISL **400K** / new **4K** / OSL **400**：相对 NVL72-only�
 
 # Citations
 
-[1] [raw/papers/HC2026_NVIDIA_Groq_3_LPX.pdf](raw/papers/HC2026_NVIDIA_Groq_3_LPX.pdf) — Arsovski / Raghavan, Hot Chips 2026
+[1] `raw/papers/HC2026_NVIDIA_Groq_3_LPX.pdf`（非公开本地路径） — Arsovski / Raghavan, Hot Chips 2026
 [2] [raw/papers/hc2026-nvidia-groq-3-lpx.md](raw/papers/hc2026-nvidia-groq-3-lpx.md) — 结构化摘录

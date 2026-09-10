@@ -17,7 +17,7 @@ sources:
 
 # FlexInfer: Flexible On-Device LLM Offloading
 
-**Authors:** Hongchao Du, Shangyu Wu, Arina Kharlamova, Nan Guan, Chun Jason Xue | **Affiliations:** CityU HK, MBZUAI | **PDF:** [raw/papers/FlexInfer_On_Device_LLM_Offloading_2025.pdf](raw/papers/FlexInfer_On_Device_LLM_Offloading_2025.pdf)
+**Authors:** Hongchao Du, Shangyu Wu, Arina Kharlamova, Nan Guan, Chun Jason Xue | **Affiliations:** CityU HK, MBZUAI | **PDF:** `raw/papers/FlexInfer_On_Device_LLM_Offloading_2025.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -50,5 +50,5 @@ FlexInfer 为资源受限 **on-device** 推理提供 **异步 prefetch + 均衡 
 
 # Citations
 
-[1] [raw/papers/FlexInfer_On_Device_LLM_Offloading_2025.pdf](raw/papers/FlexInfer_On_Device_LLM_Offloading_2025.pdf) — Du et al. (2025)
+[1] `raw/papers/FlexInfer_On_Device_LLM_Offloading_2025.pdf`（非公开本地路径） — Du et al. (2025)
 [2] [raw/papers/flexinfer-on-device-llm-offloading.md](raw/papers/flexinfer-on-device-llm-offloading.md) — 结构化摘录

@@ -27,7 +27,7 @@ sources:
 **Affiliation:** Cornell University
 **arXiv:** [2608.22503](https://arxiv.org/abs/2608.22503)（2026-08-23，cs.DC）
 **Venue:** 预印本。文内未另报会议。
-**PDF:** [raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf](raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.22503)
 
 相对 [HCCL](/papers/hccl-meta-mtia-300-collective-communication.md) 改的是 **集体怎么卸载**，本文改的是 **集体墙钟里有多少其实是等 barrier、带宽加不动**。相对 [Maia 200](/papers/maia-200-sdla.md) 的 Ethernet Allgather SoL，本文量的是 NVLink/NVSwitch 域内 NCCL 等待税。
 
@@ -103,5 +103,5 @@ T = pα + qS/B + τ
 
 # Citations
 
-[1] [raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf](raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf) — Devraj, Bowen, Singh, arXiv:2608.22503
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.22503) — Devraj, Bowen, Singh, arXiv:2608.22503
 [2] [raw/papers/synchronization-tax-gpu-scale-up.md](raw/papers/synchronization-tax-gpu-scale-up.md) — 结构化摘录

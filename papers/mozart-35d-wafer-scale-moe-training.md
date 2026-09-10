@@ -29,7 +29,7 @@ sources:
 **Authors:** Shuqing Luo, Han Ye, Pingzhi Li, Jiayin Qin, Jie Peng, Yang (Katie) Zhao, Yu (Kevin) Cao, Tianlong Chen（UNC Chapel Hill / University of Minnesota）
 **arXiv:** [2603.07006](https://arxiv.org/abs/2603.07006)
 **Venue:** arXiv 预印本（正文含 NeurIPS checklist）。**正式会议接收未独立核实**。
-**PDF:** [raw/papers/Mozart_35D_Wafer_Scale_MoE_Training_2026.pdf](raw/papers/Mozart_35D_Wafer_Scale_MoE_Training_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2603.07006)
 **Code:** https://github.com/UNITES-Lab/Mozart
 
 ## 中文摘要
@@ -87,5 +87,5 @@ C_T：Qwen3 8 → 6.58 → **5.77**；OLMoE 8 → 6.84 → **5.63**；DeepSeek 6
 
 # Citations
 
-[1] [raw/papers/Mozart_35D_Wafer_Scale_MoE_Training_2026.pdf](raw/papers/Mozart_35D_Wafer_Scale_MoE_Training_2026.pdf) — Luo et al., arXiv:2603.07006
+[1] [arXiv PDF](https://arxiv.org/pdf/2603.07006) — Luo et al., arXiv:2603.07006
 [2] [raw/papers/mozart-35d-wafer-scale-moe-training.md](raw/papers/mozart-35d-wafer-scale-moe-training.md) — 结构化摘录

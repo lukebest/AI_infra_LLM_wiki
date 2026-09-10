@@ -20,7 +20,7 @@ sources:
 
 # MOCAP: Wafer-Scale Chunked Pipelining for Prefill-Only LLM Inference
 
-**Authors:** Zichuan Wang, Huizheng Wang, Yuheng Xiao, Haonan Zuo, et al. | **Affiliations:** Tsinghua University, SJTU, Shanghai AI Lab | **PDF:** [raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf](raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf)
+**Authors:** Zichuan Wang, Huizheng Wang, Yuheng Xiao, Haonan Zuo, et al. | **Affiliations:** Tsinghua University, SJTU, Shanghai AI Lab | **PDF:** `raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -53,5 +53,5 @@ MOCAP 针对 **prefill-only**（长上下文、单 token 输出）在 wafer-scal
 
 # Citations
 
-[1] [raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf](raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf) — Wang et al. (2026)
+[1] `raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf`（非公开本地路径） — Wang et al. (2026)
 [2] [raw/papers/mocap-wafer-scale-chunked-pipelining.md](raw/papers/mocap-wafer-scale-chunked-pipelining.md) — 结构化摘录

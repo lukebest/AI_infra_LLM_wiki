@@ -28,7 +28,7 @@ sources:
 **Affiliation:** Tsinghua University
 **arXiv:** [2609.06125](https://arxiv.org/abs/2609.06125)（2026-09-05，cs.AR）
 **Venue:** 预印本（IEEE 格式稿）。
-**PDF:** [raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf](raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.06125)
 
 相对 [Network Design WoW](/papers/network-design-wafer-scale-wow-hybrid-bonding.md) 谈的是 **边怎么长出来**，本文谈的是晶圆级 GPU 阵列上 **远程虚址怎么在片上翻译完**。相对 [WaferLLM](/papers/waferllm-wafer-scale-llm-inference.md) 的算子层，本文卡在 Unified Memory 的地址翻译路径。
 
@@ -76,5 +76,5 @@ SOTA **Trans-FW** 在 IOMMU 旁加集中 Forwarding Table，把请求转到持�
 
 # Citations
 
-[1] [raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf](raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf) — Tang et al., arXiv:2609.06125
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.06125) — Tang et al., arXiv:2609.06125
 [2] [raw/papers/wafertrans-iommu-free-wafer-scale-gpu.md](raw/papers/wafertrans-iommu-free-wafer-scale-gpu.md) — ingest stub

@@ -27,7 +27,7 @@ sources:
 **Affiliation:** UIUC; Meta; IBM Research
 **arXiv:** [2609.04417](https://arxiv.org/abs/2609.04417)（2026-09-03，cs.NI/cs.DC）
 **Venue:** 预印本
-**PDF:** [raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf](raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.04417)
 
 共享集群里外部作业会造成持久/间歇拥塞，而用户往往不能改交换机或全局调度。REACT 在 **CCL 层**检测流级拥塞，**改写集体通信的边集**（保留语义：谁聚合、ring 邻居等），单边可部署。对照 [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)：这是 **pattern/拓扑自适应**，不是压缩载荷，也不是新硬件 fabric。
 
@@ -72,5 +72,5 @@ sources:
 
 # Citations
 
-[1] [raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf](raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf) — Gupta et al., arXiv:2609.04417
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.04417) — Gupta et al., arXiv:2609.04417
 [2] [raw/papers/react-tuning-collective-patterns-shared-clusters.md](raw/papers/react-tuning-collective-patterns-shared-clusters.md) — ingest stub

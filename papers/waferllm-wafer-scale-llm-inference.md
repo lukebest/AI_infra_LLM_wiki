@@ -20,7 +20,7 @@ sources:
 
 # WaferLLM: Large Language Model Inference at Wafer Scale
 
-**Authors:** Congjie He, Yeqi Huang, Pei Mu (Edinburgh); Ziming Miao, Jilong Xue, Lingxiao Ma, Fan Yang (MSR) | **arXiv:** [2502.04563v3](https://arxiv.org/abs/2502.04563) (May 2025) | **PDF:** [raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf](raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf) | **Code:** https://github.com/MeshInfra/WaferLLM
+**Authors:** Congjie He, Yeqi Huang, Pei Mu (Edinburgh); Ziming Miao, Jilong Xue, Lingxiao Ma, Fan Yang (MSR) | **arXiv:** [2502.04563v3](https://arxiv.org/abs/2502.04563) (May 2025) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2502.04563) | **Code:** https://github.com/MeshInfra/WaferLLM
 
 ## 一句话总结
 
@@ -58,4 +58,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf](raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf) — He et al. (2025)
+[1] [arXiv PDF](https://arxiv.org/pdf/2502.04563) — He et al. (2025)

@@ -26,7 +26,7 @@ sources:
 
 **Speaker:** Sangwook Han, Ph.D.（Samsung Electronics Memory Business / DRAM Design Team；Design Lead, Custom HBM4E）  
 **Venue:** Hot Chips 2026 Tutorial  
-**PDF:** [raw/papers/HC2026_Samsung_HBM_Base_Die.pdf](raw/papers/HC2026_Samsung_HBM_Base_Die.pdf)
+**PDF:** `raw/papers/HC2026_Samsung_HBM_Base_Die.pdf`（非公开本地路径）
 
 把 HBM 从标准 JEDEC 栈改写成可定制 logic B-die，最终 **zHBM** 取消 2.5D interposer。数字只取幻灯片正文；代际 BW/容量总图无刻度 → **未知**。对照 [SK hynix HyB](/papers/hc2026-skhynix-hbm-advanced-packaging.md) 的封装侧。
 
@@ -105,5 +105,5 @@ xPU 与 C-die **真 3D 垂直叠**，去掉 2.5D interposer；distributed I/O，
 
 # Citations
 
-[1] [raw/papers/HC2026_Samsung_HBM_Base_Die.pdf](raw/papers/HC2026_Samsung_HBM_Base_Die.pdf) — Sangwook Han, Hot Chips 2026 Tutorial
+[1] `raw/papers/HC2026_Samsung_HBM_Base_Die.pdf`（非公开本地路径） — Sangwook Han, Hot Chips 2026 Tutorial
 [2] [raw/papers/hc2026-samsung-hbm-base-die.md](raw/papers/hc2026-samsung-hbm-base-die.md) — 结构化摘录

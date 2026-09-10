@@ -25,7 +25,7 @@ sources:
 
 **Speaker:** Gilad Shainer（NVIDIA）  
 **Venue:** Hot Chips 2026 Day 2  
-**PDF:** [raw/papers/HC2026_NVIDIA_Spectrum_X_Multiplane.pdf](raw/papers/HC2026_NVIDIA_Spectrum_X_Multiplane.pdf)
+**PDF:** `raw/papers/HC2026_NVIDIA_Spectrum_X_Multiplane.pdf`（非公开本地路径）
 
 五张专用网，不是一张织物。对照 [Multi-plane Clos](/concepts/multi-plane-clos-topology.md)。SuperNIC 一处写 **1.6T**、XGS 页 ConnectX-9 又写 **800 Gb/s**——两处都在幻灯上。
 
@@ -58,5 +58,5 @@ Spectrum-XGS：**1.9×** 多站点性能；同页写交换机 **800 Gb/s per por
 
 # Citations
 
-[1] [raw/papers/HC2026_NVIDIA_Spectrum_X_Multiplane.pdf](raw/papers/HC2026_NVIDIA_Spectrum_X_Multiplane.pdf) — Gilad Shainer, Hot Chips 2026
+[1] `raw/papers/HC2026_NVIDIA_Spectrum_X_Multiplane.pdf`（非公开本地路径） — Gilad Shainer, Hot Chips 2026
 [2] [raw/papers/hc2026-nvidia-spectrum-x-multiplane.md](raw/papers/hc2026-nvidia-spectrum-x-multiplane.md) — 结构化摘录

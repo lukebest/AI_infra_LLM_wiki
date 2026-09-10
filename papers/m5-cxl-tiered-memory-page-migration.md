@@ -43,5 +43,5 @@ CXL tiered memory 的 **page migration 开发平台**：在 CXL 控制器内做�
 
 # Citations
 
-[1] [raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf](raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf)
+[1] `raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf`（非公开本地路径）
 [2] [raw/papers/m5-cxl-tiered-memory-page-migration.md](raw/papers/m5-cxl-tiered-memory-page-migration.md) — 结构化摘录

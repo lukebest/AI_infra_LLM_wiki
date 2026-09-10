@@ -18,7 +18,7 @@ sources:
 
 # Venus
 
-**Authors:** Jiaqi Yang et al. (George Washington University, HPCAT lab) | **Venue:** DAC 2023 | **PDF:** [raw/papers/Venus_Versatile_Reconfigurable_Accelerator_DAC2023.pdf](Venus_Versatile_Reconfigurable_Accelerator_DAC2023.pdf)
+**Authors:** Jiaqi Yang et al. (George Washington University, HPCAT lab) | **Venue:** DAC 2023 | **PDF:** `raw/papers/Venus_Versatile_Reconfigurable_Accelerator_DAC2023.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -84,4 +84,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Venus_Versatile_Reconfigurable_Accelerator_DAC2023.pdf](Venus_Versatile_Reconfigurable_Accelerator_DAC2023.pdf) — Yang et al. DAC 2023
+[1] `raw/papers/Venus_Versatile_Reconfigurable_Accelerator_DAC2023.pdf`（非公开本地路径） — Yang et al. DAC 2023

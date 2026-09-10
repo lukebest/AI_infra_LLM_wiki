@@ -33,7 +33,7 @@ sources:
 **Authors:** Wesley Bland, Lars Paul Huse, Chidambaram Muthu 等（Meta Platforms；通讯 wbland / larsph / cmuthu）
 **arXiv:** [2608.00358](https://arxiv.org/abs/2608.00358)
 **Venue:** abs 写 to be published in *SC '26*。**未独立核实会议程序册，不当成已录用。** 硅细节指向同作者组的 *MTIA-3* ISCA '26 文。
-**PDF:** [raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf](raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.00358)
 
 ## 动机
 
@@ -105,6 +105,6 @@ Host 把一次集体编成 work packet → 多个可并行 subgraph → 带依�
 
 # Citations
 
-[1] [raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf](raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf) — Bland et al., arXiv:2608.00358
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.00358) — Bland et al., arXiv:2608.00358
 [2] [raw/papers/hccl-meta-mtia-300-collective-communication.md](raw/papers/hccl-meta-mtia-300-collective-communication.md) — 结构化摘录
 [3] [raw/papers/hc2026-meta-mtia-400.md](raw/papers/hc2026-meta-mtia-400.md) — MTIA 400, Hot Chips 2026

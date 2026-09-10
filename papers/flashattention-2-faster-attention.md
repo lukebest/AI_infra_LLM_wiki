@@ -18,7 +18,7 @@ sources:
 
 # FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning
 
-**Author:** Tri Dao (Princeton / Stanford) | **Venue:** arXiv:2307.08691, Jul 2023 | **PDF:** [raw/papers/FlashAttention2_Faster_Attention_2023.pdf](raw/papers/FlashAttention2_Faster_Attention_2023.pdf)
+**Author:** Tri Dao (Princeton / Stanford) | **Venue:** arXiv:2307.08691, Jul 2023 | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2307.08691)
 
 ## 一句话总结
 
@@ -54,4 +54,4 @@ FlashAttention-2 在 IO-aware tiling + online softmax 之上，通过 **减少 n
 
 # Citations
 
-[1] [raw/papers/FlashAttention2_Faster_Attention_2023.pdf](raw/papers/FlashAttention2_Faster_Attention_2023.pdf) — Dao (2023)
+[1] [arXiv PDF](https://arxiv.org/pdf/2307.08691) — Dao (2023)

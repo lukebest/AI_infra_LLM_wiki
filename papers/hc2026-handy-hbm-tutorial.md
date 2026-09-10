@@ -20,7 +20,7 @@ sources:
 
 **Speaker:** Jim Handy（Objective Analysis）  
 **Venue:** Hot Chips 2026 Tutorial（开场）  
-**PDF:** [raw/papers/HC2026_Handy_HBM_Tutorial_Introduction.pdf](raw/papers/HC2026_Handy_HBM_Tutorial_Introduction.pdf)
+**PDF:** `raw/papers/HC2026_Handy_HBM_Tutorial_Introduction.pdf`（非公开本地路径）
 
 市场账，给后面三星 / SK hynix / d-Matrix / OXMIQ 教程当分母。不含工艺数字。图表纵轴年份/美元大多不可读 → **未知**。
 
@@ -57,5 +57,5 @@ DRAM 短缺三驱动：
 
 # Citations
 
-[1] [raw/papers/HC2026_Handy_HBM_Tutorial_Introduction.pdf](raw/papers/HC2026_Handy_HBM_Tutorial_Introduction.pdf) — Jim Handy, Hot Chips 2026 Tutorial
+[1] `raw/papers/HC2026_Handy_HBM_Tutorial_Introduction.pdf`（非公开本地路径） — Jim Handy, Hot Chips 2026 Tutorial
 [2] [raw/papers/hc2026-handy-hbm-tutorial.md](raw/papers/hc2026-handy-hbm-tutorial.md) — 结构化摘录

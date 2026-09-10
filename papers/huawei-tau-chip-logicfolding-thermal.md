@@ -26,7 +26,7 @@ sources:
 **Affiliation:** Huawei Technologies
 **arXiv:** [2609.04287](https://arxiv.org/abs/2609.04287)（2026-09-02，cs.AR）
 **Venue:** 预印本（论述 + Kirin 硅测叙事）
-**PDF:** [raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf](raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.04287)
 
 回应「3D/折叠必热熔」：动态功耗主项是 **线电容通勤**，LogicFolding 用稠密 **W2W hybrid bonding** 把长水平线改成短垂直跳，密度升而 iso-performance 功耗降。对照 [3D Stacking Technologies](/concepts/3d-stacking-technologies.md)：这是 **hybrid bonding 作器件级跨层互连**（非封装叙事）的产品侧证词，带 Kirin 数字。
 
@@ -68,5 +68,5 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf](raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf) — He, arXiv:2609.04287
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.04287) — He, arXiv:2609.04287
 [2] [raw/papers/huawei-tau-chip-logicfolding-thermal.md](raw/papers/huawei-tau-chip-logicfolding-thermal.md) — ingest stub

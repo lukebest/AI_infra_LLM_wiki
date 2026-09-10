@@ -22,7 +22,7 @@ sources:
 
 # Understanding Inference Scaling for LLMs: Bottlenecks, Trade-offs, and Performance Principles
 
-**arXiv:** [2605.19775](https://arxiv.org/abs/2605.19775) | **Authors:** Moiz Arif, Avinash Maurya, Sudharshan Vazhkudai, Bogdan Nicolae | **Affiliations:** Micron Technology + Argonne National Laboratory
+**arXiv:** [2605.19775](https://arxiv.org/abs/2605.19775) | **Authors:** Moiz Arif, Avinash Maurya, Sudharshan Vazhkudai, Bogdan Nicolae | **Affiliations:** Micron Technology + Argonne National Laboratory | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2605.19775)
 
 ## 一句话总结
 
@@ -88,4 +88,4 @@ KV cache 线性增长（8B: 20M tokens → 2 TB）→ 饱和后 scheduler 进入
 
 # Citations
 
-[1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
+[1] [arXiv PDF](https://arxiv.org/pdf/2605.19775)

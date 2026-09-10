@@ -37,7 +37,7 @@ sources:
 **Affiliation:** Huawei Technologies Switzerland AG / Huawei / ETH Zürich / HUST
 **arXiv:** [2608.25062](https://arxiv.org/abs/2608.25062)（2026-08-25）
 **Venue:** 预印本。文内未另报会议。
-**PDF:** [raw/papers/FLINT_HBF_LLM_Inference_2026.pdf](raw/papers/FLINT_HBF_LLM_Inference_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.25062)
 
 同主题 [DASH](/papers/dash-dual-path-hbf-moe-inference.md) 改的是 **GPU–HBF 怎么接**（三条 UCIe，Direct∥Relay）。本文改的是 **HBF 基座怎么读、怎么 refresh、怎么翻译地址**：级联仍走 HBM→HBF D2D，不新增直连。
 
@@ -121,5 +121,5 @@ sources:
 
 # Citations
 
-[1] [raw/papers/FLINT_HBF_LLM_Inference_2026.pdf](raw/papers/FLINT_HBF_LLM_Inference_2026.pdf) — Oliveira, Tavakkol et al., arXiv:2608.25062
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.25062) — Oliveira, Tavakkol et al., arXiv:2608.25062
 [2] [raw/papers/flint-hbf-llm-inference.md](raw/papers/flint-hbf-llm-inference.md) — 结构化摘录

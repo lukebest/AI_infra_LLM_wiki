@@ -19,7 +19,7 @@ sources:
 
 # LoopLynx: A Scalable Dataflow Architecture for Efficient LLM Inference
 
-**Authors:** Jianing Zheng, Gang Chen (Sun Yat-sen University) | **arXiv:** [2504.09561v1](https://arxiv.org/abs/2504.09561) (Apr 2025) | **Venue:** IEEE conference | **PDF:** [raw/papers/LoopLynx_Scalable_Dataflow_LLM_Inference_2025.pdf](LoopLynx_Scalable_Dataflow_LLM_Inference_2025.pdf)
+**Authors:** Jianing Zheng, Gang Chen (Sun Yat-sen University) | **arXiv:** [2504.09561v1](https://arxiv.org/abs/2504.09561) (Apr 2025) | **Venue:** IEEE conference | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2504.09561)
 
 ## 一句话总结
 
@@ -80,4 +80,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/LoopLynx_Scalable_Dataflow_LLM_Inference_2025.pdf](LoopLynx_Scalable_Dataflow_LLM_Inference_2025.pdf) — Zheng, Chen (2025)
+[1] [arXiv PDF](https://arxiv.org/pdf/2504.09561) — Zheng, Chen (2025)

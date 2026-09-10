@@ -45,5 +45,5 @@ Google 内部 **fleet 级 RPC 特征化**（Search/Gmail/Maps/YouTube + Spanner/
 
 # Citations
 
-[1] [raw/papers/Cloud_Scale_RPC_Characterization_2023.pdf](raw/papers/Cloud_Scale_RPC_Characterization_2023.pdf)
+[1] `raw/papers/Cloud_Scale_RPC_Characterization_2023.pdf`（非公开本地路径）
 [2] [raw/papers/cloud-scale-rpc-characterization.md](raw/papers/cloud-scale-rpc-characterization.md) — 结构化摘录

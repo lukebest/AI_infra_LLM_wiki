@@ -45,5 +45,5 @@ Shu-Ting Wang, Weitao Wang（UCSD, Rice）
 
 # Citations
 
-[1] [raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf](raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf)
+[1] `raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf`（非公开本地路径）
 [2] [raw/papers/aurelia-cxl-fabric-tentacle.md](raw/papers/aurelia-cxl-fabric-tentacle.md) — 结构化摘录

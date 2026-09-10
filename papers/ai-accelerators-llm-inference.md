@@ -20,7 +20,7 @@ sources:
 
 # AI Accelerators for LLM Inference: Architecture Analysis and Scaling Strategies
 
-**Author:** Amit Sharma (IEEE Member) | **arXiv:** [2506.00008](https://arxiv.org/abs/2506.00008) (2025) | **PDF:** [raw/papers/AI_Accelerators_LLM_Inference_2025.pdf](AI_Accelerators_LLM_Inference_2025.pdf)
+**Author:** Amit Sharma (IEEE Member) | **arXiv:** [2506.00008](https://arxiv.org/abs/2506.00008) (2025) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2506.00008)
 
 ## 一句话总结
 
@@ -83,4 +83,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/AI_Accelerators_LLM_Inference_2025.pdf](raw/papers/AI_Accelerators_LLM_Inference_2025.pdf) — Sharma (2025)
+[1] [arXiv PDF](https://arxiv.org/pdf/2506.00008) — Sharma (2025)

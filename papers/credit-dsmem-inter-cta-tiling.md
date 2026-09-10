@@ -27,7 +27,7 @@ sources:
 **Affiliation:** University of Wisconsin–Madison
 **arXiv:** [2609.01864](https://arxiv.org/abs/2609.01864)（2026-09-02，cs.DC）
 **Venue:** 预印本
-**PDF:** [raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf](raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.01864)
 
 Hopper 起 CUDA **thread block cluster** 允许 CTA 经 **DSMEM** 直接访问 peer SMEM。CREDIT 不把 DSMEM 当通用融合织物，而是筛 **reduction-reuse** 模式：宽行归约出紧凑统计量后再逐元素复用，用 cluster 内交换标量 partial **换掉第二次 HBM 重读**。对照 [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) 的内存层次：这是 **GPC 内 inter-SM** 一层，不是 NVLink scale-up。
 
@@ -70,5 +70,5 @@ Hopper 起 CUDA **thread block cluster** 允许 CTA 经 **DSMEM** 直接访问 p
 
 # Citations
 
-[1] [raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf](raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf) — Li, Huang, Ogras, arXiv:2609.01864
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.01864) — Li, Huang, Ogras, arXiv:2609.01864
 [2] [raw/papers/credit-dsmem-inter-cta-tiling.md](raw/papers/credit-dsmem-inter-cta-tiling.md) — ingest stub

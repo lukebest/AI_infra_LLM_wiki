@@ -19,7 +19,7 @@ sources:
 
 # Heterogeneous Computing for AI Agent Inference
 
-**Authors:** Aaron Zhao, Junyi Liu | **Affiliations:** Imperial College London, Microsoft Research | **PDF:** [raw/papers/Heterogeneous_Computing_AI_Agent_Inference_2026.pdf](raw/papers/Heterogeneous_Computing_AI_Agent_Inference_2026.pdf)
+**Authors:** Aaron Zhao, Junyi Liu | **Affiliations:** Imperial College London, Microsoft Research | **PDF:** `raw/papers/Heterogeneous_Computing_AI_Agent_Inference_2026.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -52,5 +52,5 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Heterogeneous_Computing_AI_Agent_Inference_2026.pdf](raw/papers/Heterogeneous_Computing_AI_Agent_Inference_2026.pdf) — Zhao & Liu (2026)
+[1] `raw/papers/Heterogeneous_Computing_AI_Agent_Inference_2026.pdf`（非公开本地路径） — Zhao & Liu (2026)
 [2] [raw/papers/heterogeneous-computing-ai-agent-inference.md](raw/papers/heterogeneous-computing-ai-agent-inference.md) — 结构化摘录

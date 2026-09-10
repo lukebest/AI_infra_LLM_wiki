@@ -31,7 +31,7 @@ sources:
 **Affiliation:** Peking University；Alibaba DAMO Academy
 **arXiv:** [2609.08682](https://arxiv.org/abs/2609.08682)（2026-09-09，cs.AR）
 **Venue:** 预印本；文称基于 HD-MoE 的期刊扩展（系统建模 / 精度 / 可扩展性）。
-**PDF:** [raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf](raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.08682)
 
 相对 [ThAME](/papers/thame-3d-memory-enabled-heterogeneous-moe.md) 的异构存算+树 NoC，本文把 **3D NMP bank 阵列** 当部署目标，主旋钮是 **hybrid TP–EP 放置 + 运行时调度**。相对 [DynaNDE](/papers/dynande-near-data-expert-scheduling.md) 的 NPU–NDP 调度，本文显式建 NoC 链路占用与 Mesh/Torus/Fat-tree 抽象。
 
@@ -95,5 +95,5 @@ MoE 省算力但抬内存容量/带宽。3D NMP（DRAM 与 compute **hybrid bond
 
 # Citations
 
-[1] [raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf](raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf) — Huang et al., arXiv:2609.08682
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.08682) — Huang et al., arXiv:2609.08682
 [2] [raw/papers/hda-moe-3d-nmp-hybrid-parallel.md](raw/papers/hda-moe-3d-nmp-hybrid-parallel.md) — ingest stub

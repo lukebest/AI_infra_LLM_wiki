@@ -29,7 +29,7 @@ sources:
 **Authors:** Jaehun Lee, In-Jun Jung, Joo-Young Kim（KAIST）
 **arXiv:** [2607.01617](https://arxiv.org/abs/2607.01617)
 **Venue:** IEEE Computer Architecture Letters, 2026。DOI [10.1109/LCA.2026.3709108](https://doi.org/10.1109/LCA.2026.3709108)
-**PDF:** [raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf](raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2607.01617)
 
 ## 中文摘要
 
@@ -88,5 +88,5 @@ QoS / VC / 静态带宽预留只能**重分配**干扰：优先 AR 会拖慢 KV 
 
 # Citations
 
-[1] [raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf](raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf) — Lee, Jung, Kim, IEEE CAL 2026
+[1] [arXiv PDF](https://arxiv.org/pdf/2607.01617) — Lee, Jung, Kim, IEEE CAL 2026
 [2] [raw/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md](raw/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) — 结构化摘录

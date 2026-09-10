@@ -21,7 +21,7 @@ sources:
 
 # Exploring the Efficiency of 3D-Stacked AI Chip Architecture for LLM Inference with Voxel
 
-**arXiv:** [2604.26821](https://arxiv.org/abs/2604.26821) | **Authors:** Yiqi Liu, Noelle Crawford, Michael Wang, Jilong Xue, Jian Huang (UIUC)
+**arXiv:** [2604.26821](https://arxiv.org/abs/2604.26821) | **Authors:** Yiqi Liu, Noelle Crawford, Michael Wang, Jilong Xue, Jian Huang (UIUC) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2604.26821)
 
 ## 一句话总结
 
@@ -74,4 +74,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf](raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf)
+[1] [arXiv PDF](https://arxiv.org/pdf/2604.26821)

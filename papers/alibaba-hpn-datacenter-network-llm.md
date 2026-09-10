@@ -45,5 +45,5 @@ Qian, Xi, Cao, Gao, et al.（阿里云 Cloud）
 
 # Citations
 
-[1] [raw/papers/Alibaba_HPN_Datacenter_Network_LLM_Training_2024.pdf](raw/papers/Alibaba_HPN_Datacenter_Network_LLM_Training_2024.pdf)
+[1] `raw/papers/Alibaba_HPN_Datacenter_Network_LLM_Training_2024.pdf`（非公开本地路径）
 [2] [raw/papers/alibaba-hpn-datacenter-network-llm.md](raw/papers/alibaba-hpn-datacenter-network-llm.md) — 结构化摘录

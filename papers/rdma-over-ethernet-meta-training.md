@@ -47,5 +47,5 @@ Meta **大规模 AI 训练 RoCE 网络**的设计、实现与运维经验：独�
 
 # Citations
 
-[1] [raw/papers/RDMA_Over_Ethernet_Distributed_Training_Meta_2024.pdf](raw/papers/RDMA_Over_Ethernet_Distributed_Training_Meta_2024.pdf)
+[1] `raw/papers/RDMA_Over_Ethernet_Distributed_Training_Meta_2024.pdf`（非公开本地路径）
 [2] [raw/papers/rdma-over-ethernet-meta-training.md](raw/papers/rdma-over-ethernet-meta-training.md) — 结构化摘录

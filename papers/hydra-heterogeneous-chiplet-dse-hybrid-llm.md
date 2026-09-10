@@ -23,7 +23,7 @@ sources:
 **Authors:** Jiahao Lin, Alish Kanani, Sangwan Lee, Jaehyun Park, Umit Y. Ogras  
 **arXiv:** [2608.19395](https://arxiv.org/abs/2608.19395)（2026-08-19）  
 **Venue:** 预印本。文内**未**自称会议接收。  
-**PDF:** [raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf](raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf)  
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.19395)  
 **Code:** 文内写 Github，**URL 未知**。
 
 ## 中文摘要
@@ -82,5 +82,5 @@ Hybrid Transformer–Mamba（Jamba / Nemotron-H / Zamba 一类）把 Attention �
 
 # Citations
 
-[1] [raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf](raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf) — Lin et al., arXiv:2608.19395
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.19395) — Lin et al., arXiv:2608.19395
 [2] [raw/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md](raw/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 结构化摘录

@@ -19,7 +19,7 @@ sources:
 
 # Cache-Resident LLM Inference in GB-Scale LLCs
 
-**Authors:** Wanning Zhang, Tongzhou Gu, Marco Canini, et al. | **Affiliations:** KAUST, HKUST | **PDF:** [raw/papers/Cache_Resident_LLM_Inference_GB_LLC_2026.pdf](raw/papers/Cache_Resident_LLM_Inference_GB_LLC_2026.pdf)
+**Authors:** Wanning Zhang, Tongzhou Gu, Marco Canini, et al. | **Affiliations:** KAUST, HKUST | **PDF:** `raw/papers/Cache_Resident_LLM_Inference_GB_LLC_2026.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -52,5 +52,5 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Cache_Resident_LLM_Inference_GB_LLC_2026.pdf](raw/papers/Cache_Resident_LLM_Inference_GB_LLC_2026.pdf) — Zhang et al. (2026)
+[1] `raw/papers/Cache_Resident_LLM_Inference_GB_LLC_2026.pdf`（非公开本地路径） — Zhang et al. (2026)
 [2] [raw/papers/cache-resident-llm-inference-llc.md](raw/papers/cache-resident-llm-inference-llc.md) — 结构化摘录

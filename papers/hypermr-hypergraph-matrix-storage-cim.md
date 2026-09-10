@@ -43,5 +43,5 @@ Wu, Chen, Chen, Jiang, Li, Shou（浙江大学）
 
 # Citations
 
-[1] [raw/papers/HyperMR_Hypergraph_Matrix_Storage_CIM_2025.pdf](raw/papers/HyperMR_Hypergraph_Matrix_Storage_CIM_2025.pdf)
+[1] `raw/papers/HyperMR_Hypergraph_Matrix_Storage_CIM_2025.pdf`（非公开本地路径）
 [2] [raw/papers/hypermr-hypergraph-matrix-storage-cim.md](raw/papers/hypermr-hypergraph-matrix-storage-cim.md) — 结构化摘录

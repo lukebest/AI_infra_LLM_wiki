@@ -17,7 +17,7 @@ sources:
 
 # Optimization of Collective Reduction Operations
 
-**Author:** Rolf Rabenseifner (HLRS, University of Stuttgart) | **Venue:** ICCS 2004, LNCS 3036 | **PDF:** [raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf](raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf)
+**Author:** Rolf Rabenseifner (HLRS, University of Stuttgart) | **Venue:** ICCS 2004, LNCS 3036 | **PDF:** `raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -53,4 +53,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf](raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf) — Rabenseifner (2004)
+[1] `raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf`（非公开本地路径） — Rabenseifner (2004)

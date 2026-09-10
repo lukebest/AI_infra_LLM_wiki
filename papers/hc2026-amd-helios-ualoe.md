@@ -28,7 +28,7 @@ sources:
 
 **Speakers:** Steve Scott, David Riddoch, Krishna Doddapaneni（AMD）  
 **Venue:** Hot Chips 2026 Conference  
-**PDF:** [raw/papers/HC2026_AMD_Helios_UALoE.pdf](raw/papers/HC2026_AMD_Helios_UALoE.pdf)
+**PDF:** `raw/papers/HC2026_AMD_Helios_UALoE.pdf`（非公开本地路径）
 
 72-GPU 以太网 scale-up。芯片数字见 [MI455X](/papers/hc2026-amd-instinct-mi455x.md)。对照 [Rubin NVLink 6](/papers/hc2026-nvidia-rubin.md) 的 **3.6 TB/s all-to-all / 130 TFLOPS in-network**。Vulcano 接到已有 [MRC](/entities/mrc.md)。
 
@@ -62,5 +62,5 @@ MRC 性能表（msg **≥64KB**，**1–4K QPs**）：**1×800G / 2×400G / 4×2
 
 # Citations
 
-[1] [raw/papers/HC2026_AMD_Helios_UALoE.pdf](raw/papers/HC2026_AMD_Helios_UALoE.pdf) — Scott / Riddoch / Doddapaneni, Hot Chips 2026
+[1] `raw/papers/HC2026_AMD_Helios_UALoE.pdf`（非公开本地路径） — Scott / Riddoch / Doddapaneni, Hot Chips 2026
 [2] [raw/papers/hc2026-amd-helios-ualoe.md](raw/papers/hc2026-amd-helios-ualoe.md) — 结构化摘录

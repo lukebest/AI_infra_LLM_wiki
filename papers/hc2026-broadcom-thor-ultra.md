@@ -24,7 +24,7 @@ sources:
 
 **Speaker:** Hemal Shah（Broadcom，Distinguished Engineer）  
 **Venue:** Hot Chips 2026 Day 2  
-**PDF:** [raw/papers/HC2026_Broadcom_Thor_Ultra.pdf](raw/papers/HC2026_Broadcom_Thor_Ultra.pdf)
+**PDF:** `raw/papers/HC2026_Broadcom_Thor_Ultra.pdf`（非公开本地路径）
 
 商家 800G NIC。对照 [MRC](/entities/mrc.md) 与同日 [Helios UALoE](/papers/hc2026-amd-helios-ualoe.md) / [Maia ATL](/papers/hc2026-microsoft-maia-200.md)。
 
@@ -57,5 +57,5 @@ TCP（Gen6 CPU）：单向 **791 Gbps** @ 16 flows = **98.9%** of 800G；双向 
 
 # Citations
 
-[1] [raw/papers/HC2026_Broadcom_Thor_Ultra.pdf](raw/papers/HC2026_Broadcom_Thor_Ultra.pdf) — Hemal Shah, Hot Chips 2026
+[1] `raw/papers/HC2026_Broadcom_Thor_Ultra.pdf`（非公开本地路径） — Hemal Shah, Hot Chips 2026
 [2] [raw/papers/hc2026-broadcom-thor-ultra.md](raw/papers/hc2026-broadcom-thor-ultra.md) — 结构化摘录

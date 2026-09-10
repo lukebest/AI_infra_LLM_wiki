@@ -31,7 +31,7 @@ sources:
 **Authors:** Kunming Shao, Ming Zeng, Xin Yuan, Binbin Liao, Yangming Zhang, Wei Wang, Tim Kwang-Ting Cheng, Chi-Ying Tsui（HKUST + Alibaba Cloud）
 **arXiv:** [2608.13962](https://arxiv.org/abs/2608.13962)（2026-08-14）
 **Venue:** 未标会议；方法/结果为 measured traces + modeled pool，**不是硅**。
-**PDF:** [raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf](raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.13962)
 
 ## 动机
 
@@ -112,5 +112,5 @@ Decode SLO 卡住 run-batch。稀疏路由让激活并集 U(B) 涨得快：Qwen3
 
 # Citations
 
-[1] [raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf](raw/papers/ReXpert_MoE_ReRAM_Near_Memory_Disaggregated_Serving_2026.pdf) — Shao et al., arXiv:2608.13962
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.13962) — Shao et al., arXiv:2608.13962
 [2] [raw/papers/rexpert-reram-nmc-disaggregated-moe.md](raw/papers/rexpert-reram-nmc-disaggregated-moe.md) — 结构化摘录

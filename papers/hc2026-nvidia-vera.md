@@ -26,7 +26,7 @@ sources:
 
 **Speakers:** Jonathon Evans, Polychronis Xekalakis（NVIDIA）  
 **Venue:** Hot Chips 2026 Conference  
-**PDF:** [raw/papers/HC2026_NVIDIA_Vera.pdf](raw/papers/HC2026_NVIDIA_Vera.pdf)
+**PDF:** `raw/papers/HC2026_NVIDIA_Vera.pdf`（非公开本地路径）
 
 Rubin 工厂里的 **agent CPU**。更新 [Vera Rubin NVL72](/entities/nvidia-vera-rubin-nvl72.md) 与 [Vera ETL256](/entities/vera-etl256.md)。同场 GPU 见 [Rubin](/papers/hc2026-nvidia-rubin.md)。CXL 侧对照 [CXL Tiered Memory](/concepts/cxl-tiered-memory.md)。单 socket GHz / TDP：**未知**。
 
@@ -54,5 +54,5 @@ I/O：**4.3 TB/s** aggregate off-die。**NVLink-C2C 1,800 GB/s** coherent CPU–
 
 # Citations
 
-[1] [raw/papers/HC2026_NVIDIA_Vera.pdf](raw/papers/HC2026_NVIDIA_Vera.pdf) — Evans / Xekalakis, Hot Chips 2026
+[1] `raw/papers/HC2026_NVIDIA_Vera.pdf`（非公开本地路径） — Evans / Xekalakis, Hot Chips 2026
 [2] [raw/papers/hc2026-nvidia-vera.md](raw/papers/hc2026-nvidia-vera.md) — 结构化摘录

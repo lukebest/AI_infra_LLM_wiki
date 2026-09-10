@@ -30,7 +30,7 @@ sources:
 
 **Speakers:** Manas Mandal, Raj Dash, Rouslan Dimitrov（NVIDIA）  
 **Venue:** Hot Chips 2026 Conference  
-**PDF:** [raw/papers/HC2026_NVIDIA_Rubin.pdf](raw/papers/HC2026_NVIDIA_Rubin.pdf)
+**PDF:** `raw/papers/HC2026_NVIDIA_Rubin.pdf`（非公开本地路径）
 
 同日对照：[Helios UALoE](/papers/hc2026-amd-helios-ualoe.md)（也是 72-GPU scale-up）、[Vera CPU](/papers/hc2026-nvidia-vera.md)。更新 [Vera Rubin NVL72](/entities/nvidia-vera-rubin-nvl72.md) 与 [NVLink fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md)。
 
@@ -62,5 +62,5 @@ Die 标签：Enhanced **5th Gen Tensor Cores**；**NVLink-C2C** coherent CPU–G
 
 # Citations
 
-[1] [raw/papers/HC2026_NVIDIA_Rubin.pdf](raw/papers/HC2026_NVIDIA_Rubin.pdf) — Mandal / Dash / Dimitrov, Hot Chips 2026
+[1] `raw/papers/HC2026_NVIDIA_Rubin.pdf`（非公开本地路径） — Mandal / Dash / Dimitrov, Hot Chips 2026
 [2] [raw/papers/hc2026-nvidia-rubin.md](raw/papers/hc2026-nvidia-rubin.md) — 结构化摘录

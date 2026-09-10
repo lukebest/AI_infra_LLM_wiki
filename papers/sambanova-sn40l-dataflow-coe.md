@@ -20,7 +20,7 @@ sources:
 
 # SambaNova SN40L: Scaling the AI Memory Wall with Dataflow and Composition of Experts
 
-**Authors:** Prabhakar, Sivaramakrishnan, Gandhi et al. (SambaNova Systems) | **arXiv:** [2405.07518v2](https://arxiv.org/abs/2405.07518) (Nov 2024) | **PDF:** [raw/papers/SambaNova_SN40L_Memory_Wall_Dataflow_CoE_2024.pdf](SambaNova_SN40L_Memory_Wall_Dataflow_CoE_2024.pdf)
+**Authors:** Prabhakar, Sivaramakrishnan, Gandhi et al. (SambaNova Systems) | **arXiv:** [2405.07518v2](https://arxiv.org/abs/2405.07518) (Nov 2024) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2405.07518)
 
 ## 一句话总结
 
@@ -83,4 +83,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/SambaNova_SN40L_Memory_Wall_Dataflow_CoE_2024.pdf](SambaNova_SN40L_Memory_Wall_Dataflow_CoE_2024.pdf) — Prabhakar et al. (2024)
+[1] [arXiv PDF](https://arxiv.org/pdf/2405.07518) — Prabhakar et al. (2024)

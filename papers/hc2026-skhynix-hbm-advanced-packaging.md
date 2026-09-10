@@ -26,7 +26,7 @@ sources:
 
 **Speaker:** Jaesik Lee（SK hynix America，VP of Package Engineering）  
 **Venue:** Hot Chips 2026 Tutorial  
-**PDF:** [raw/papers/HC2026_SK_hynix_HBM_Advanced_Packaging.pdf](raw/papers/HC2026_SK_hynix_HBM_Advanced_Packaging.pdf)
+**PDF:** `raw/papers/HC2026_SK_hynix_HBM_Advanced_Packaging.pdf`（非公开本地路径）
 
 公开数字把 16Hi 量产挑战、**HyB 才能 ≥20Hi**、以及 CoWoS-S/R/L 对 HBM 应力写清楚。相对倍率（0.5× gap、0.40× 热阻）保留原文，不换算成绝对 μm。对照 [Samsung B-die / zHBM](/papers/hc2026-samsung-hbm-base-die.md)。
 
@@ -94,5 +94,5 @@ HBM3E **16Hi @ 48 GB/cube** 靠 advanced MR-MUF。12Hi→16Hi：总封装高 **7
 
 # Citations
 
-[1] [raw/papers/HC2026_SK_hynix_HBM_Advanced_Packaging.pdf](raw/papers/HC2026_SK_hynix_HBM_Advanced_Packaging.pdf) — Jaesik Lee, Hot Chips 2026 Tutorial
+[1] `raw/papers/HC2026_SK_hynix_HBM_Advanced_Packaging.pdf`（非公开本地路径） — Jaesik Lee, Hot Chips 2026 Tutorial
 [2] [raw/papers/hc2026-skhynix-hbm-advanced-packaging.md](raw/papers/hc2026-skhynix-hbm-advanced-packaging.md) — 结构化摘录

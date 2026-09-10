@@ -42,5 +42,5 @@ Wang, Zhang, Wei（清华）；Wu, Luo（阿里云 Cloud）
 
 # Citations
 
-[1] [raw/papers/Silent_Data_Corruptions_Production_CPU_2023.pdf](raw/papers/Silent_Data_Corruptions_Production_CPU_2023.pdf)
+[1] `raw/papers/Silent_Data_Corruptions_Production_CPU_2023.pdf`（非公开本地路径）
 [2] [raw/papers/silent-data-corruptions-production-cpu.md](raw/papers/silent-data-corruptions-production-cpu.md) — 结构化摘录

@@ -36,7 +36,7 @@ sources:
 **Affiliation:** 文内未另标；以 [Lightmatter Passage](https://lightmatter.co/products/passage/) 作 3D 光子带宽/radix/能耗参考点（不直接仿真厂商产品）
 **arXiv:** [2609.01821](https://arxiv.org/abs/2609.01821)（2026-09-01，cs.DC / cs.AR）
 **Venue:** 预印本
-**PDF:** [raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf](raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.01821)
 
 与 [晶圆级光互连热调谐](/papers/wafer-scale-optical-interconnect-moe-thermal.md) 同属光子 MoE 互连线：那篇盯 **训练 EP All-to-All 的 MRR 热 stall**；本文盯 **推理 prefill 的 scale-up pod 边界与集体带宽**。对照 [NVIDIA CPO Roadmap](/concepts/nvidia-cpo-roadmap.md) 的 NVL576/1152 与 [NVLink fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md) 的机柜铜域。
 
@@ -91,5 +91,5 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf](raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf) — Madhavan et al., arXiv:2609.01821
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.01821) — Madhavan et al., arXiv:2609.01821
 [2] [raw/papers/scaling-inference-prefill-photonic.md](raw/papers/scaling-inference-prefill-photonic.md) — 结构化摘录

@@ -25,7 +25,7 @@ sources:
 
 **Speakers:** Anurag Agrawal（OXMIQ Labs, System Architecture）；Radhakrishna Giduthuri（PRAXMATI, Software Architecture）  
 **Venue:** Hot Chips 2026 Tutorial  
-**PDF:** [raw/papers/HC2026_OXMIQ_HBF_AI_Compute.pdf](raw/papers/HC2026_OXMIQ_HBF_AI_Compute.pdf)
+**PDF:** `raw/papers/HC2026_OXMIQ_HBF_AI_Compute.pdf`（非公开本地路径）
 
 和已收录 [DASH](/papers/dash-dual-path-hbf-moe-inference.md)（GPU–HBF 双路径）成对：OXMIQ 给的是系统建筑师的 **(β, α)** 账和 72-GPU 机柜仿真，不是新硅。结论：HBF 只在低 I·b 区（小 batch MoE、稀疏长上下文 KV）赢；dense / 高 B 留 HBM。vLLM 还没有 MoE expert pool 插件。末页招聘不摘。
 
@@ -101,5 +101,5 @@ vLLM 提案：HBF 替换 host pinned memory 做 paged KV offload + prefix + MoE 
 
 # Citations
 
-[1] [raw/papers/HC2026_OXMIQ_HBF_AI_Compute.pdf](raw/papers/HC2026_OXMIQ_HBF_AI_Compute.pdf) — Agrawal / Giduthuri, Hot Chips 2026 Tutorial
+[1] `raw/papers/HC2026_OXMIQ_HBF_AI_Compute.pdf`（非公开本地路径） — Agrawal / Giduthuri, Hot Chips 2026 Tutorial
 [2] [raw/papers/hc2026-oxmiq-hbf.md](raw/papers/hc2026-oxmiq-hbf.md) — 结构化摘录

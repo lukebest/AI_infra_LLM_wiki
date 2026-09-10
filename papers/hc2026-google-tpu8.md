@@ -25,7 +25,7 @@ sources:
 
 **Speakers:** Norman P. Jouppi, Sridhar Lakshmanamurthy（Google）  
 **Venue:** Hot Chips 2026 Day 2  
-**PDF:** [raw/papers/HC2026_Google_TPU8.pdf](raw/papers/HC2026_Google_TPU8.pdf)
+**PDF:** `raw/papers/HC2026_Google_TPU8.pdf`（非公开本地路径）
 
 同期两颗：**TPU 8t**（训练）与 **TPU 8i**（推理）。8i 芯片 HBM TB/s **未知**（旁边 SRAM-vs-HBM 表是通例）。对照 [TPU v4 OCS](/concepts/tpu-v4-ocs-reconfigurable-fabric.md)。
 
@@ -56,5 +56,5 @@ AI-in-the-loop RTL：8t MXU **6%** 功耗 / **5.8%** 面积 → **6%** 更多 TF
 
 # Citations
 
-[1] [raw/papers/HC2026_Google_TPU8.pdf](raw/papers/HC2026_Google_TPU8.pdf) — Jouppi / Lakshmanamurthy, Hot Chips 2026
+[1] `raw/papers/HC2026_Google_TPU8.pdf`（非公开本地路径） — Jouppi / Lakshmanamurthy, Hot Chips 2026
 [2] [raw/papers/hc2026-google-tpu8.md](raw/papers/hc2026-google-tpu8.md) — 结构化摘录

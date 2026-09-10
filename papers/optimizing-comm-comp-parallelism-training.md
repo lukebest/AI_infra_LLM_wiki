@@ -42,5 +42,5 @@ Hou, Yuan, Ma, Xu, Wang, et al.（国防科技大学）
 
 # Citations
 
-[1] [raw/papers/Optimizing_Comm_Comp_Parallelism_Distributed_Training_2024.pdf](raw/papers/Optimizing_Comm_Comp_Parallelism_Distributed_Training_2024.pdf)
+[1] `raw/papers/Optimizing_Comm_Comp_Parallelism_Distributed_Training_2024.pdf`（非公开本地路径）
 [2] [raw/papers/optimizing-comm-comp-parallelism-training.md](raw/papers/optimizing-comm-comp-parallelism-training.md) — 结构化摘录

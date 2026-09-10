@@ -26,7 +26,7 @@ sources:
 
 **Speaker:** Frans Sijstermans（NVIDIA）  
 **Venue:** Hot Chips 2026 Tutorial Part III  
-**PDF:** [raw/papers/HC2026_NVIDIA_RISC-V_NVLink_Fusion.pdf](raw/papers/HC2026_NVIDIA_RISC-V_NVLink_Fusion.pdf)
+**PDF:** `raw/papers/HC2026_NVIDIA_RISC-V_NVLink_Fusion.pdf`（非公开本地路径）
 
 不是 RISC-V ISA 课。后半是 NVL72 + NVLink Fusion + CHI 一致性，给自定义 CPU 进 NVIDIA scale-up。前半 CUDA 软件从简。无新的 HBM/封装数字。更新既有 [NVLink fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md) 与 [Vera Rubin NVL72](/entities/nvidia-vera-rubin-nvl72.md)。
 
@@ -74,5 +74,5 @@ Fusion 对自定义 CPU 的要求：CUDA 全套 + 高速互连 **C2C, ~88 PCIe l
 
 # Citations
 
-[1] [raw/papers/HC2026_NVIDIA_RISC-V_NVLink_Fusion.pdf](raw/papers/HC2026_NVIDIA_RISC-V_NVLink_Fusion.pdf) — Frans Sijstermans, Hot Chips 2026 Tutorial Part III
+[1] `raw/papers/HC2026_NVIDIA_RISC-V_NVLink_Fusion.pdf`（非公开本地路径） — Frans Sijstermans, Hot Chips 2026 Tutorial Part III
 [2] [raw/papers/hc2026-nvidia-riscv-nvlink-fusion.md](raw/papers/hc2026-nvidia-riscv-nvlink-fusion.md) — 结构化摘录

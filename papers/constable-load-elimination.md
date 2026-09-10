@@ -17,7 +17,7 @@ sources:
 
 # Constable: Improving Performance and Power Efficiency by Safely Eliminating Load Instruction Execution
 
-**Authors:** Rahul Bera, Adithya Ranganathan, et al. (ETH Zürich + Intel PARL) | **Venue:** ISCA 2024 **Best Paper** | **arXiv:** [2406.18786](https://arxiv.org/abs/2406.18786) | **Deep-dive:** [raw/reports/constable-deepdive.md](raw/reports/constable-deepdive.md)
+**Authors:** Rahul Bera, Adithya Ranganathan, et al. (ETH Zürich + Intel PARL) | **Venue:** ISCA 2024 **Best Paper** | **arXiv:** [2406.18786](https://arxiv.org/abs/2406.18786) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2406.18786) | **Deep-dive:** [raw/reports/constable-deepdive.md](raw/reports/constable-deepdive.md)
 
 ## 一句话总结
 

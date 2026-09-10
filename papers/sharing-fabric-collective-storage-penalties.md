@@ -27,7 +27,7 @@ sources:
 **Affiliation:** Nanyang Technological University；Lawrence Livermore National Laboratory
 **arXiv:** [2609.06506](https://arxiv.org/abs/2609.06506)（2026-09-09，cs.DC / cs.PF）
 **Venue:** 预印本；LLNL-CONF-2022824。
-**PDF:** [raw/papers/Sharing_Fabric_Collective_Storage_Penalties_2026.pdf](raw/papers/Sharing_Fabric_Collective_Storage_Penalties_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.06506)
 
 相对 [Synchronization Tax](/papers/synchronization-tax-gpu-scale-up.md) 量的是 **域内 barrier 税**，本文量的是 **scale-out fabric 上存储 I/O 与集体争用**。相对 [REACT](/papers/react-tuning-collective-patterns-shared-clusters.md) 改集体 pattern，本文主张把存储流量 **挪出共享路径**（DYAD 节点本地 NVMe）。
 
@@ -92,5 +92,5 @@ HPC 训练常让 NCCL/RCCL 集体与并行文件系统共享一张网（文测 *
 
 # Citations
 
-[1] [raw/papers/Sharing_Fabric_Collective_Storage_Penalties_2026.pdf](raw/papers/Sharing_Fabric_Collective_Storage_Penalties_2026.pdf) — Wang et al., arXiv:2609.06506
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.06506) — Wang et al., arXiv:2609.06506
 [2] [raw/papers/sharing-fabric-collective-storage-penalties.md](raw/papers/sharing-fabric-collective-storage-penalties.md) — ingest stub

@@ -18,7 +18,7 @@ sources:
 
 # MegaScale-Infer: Serving Mixture-of-Experts at Scale with Disaggregated Expert Parallelism
 
-**arXiv**: [2504.02263](https://arxiv.org/abs/2504.02263) | **v4** (2025-07-26)
+**arXiv**: [2504.02263](https://arxiv.org/abs/2504.02263) | **v4** (2025-07-26) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2504.02263)
 **Authors**: Ruidong Zhu, Ziheng Jiang, Chao Jin, Peng Wu, et al. (ByteDance Seed + PKU)
 **Key metric**: 1.90× per-GPU throughput, 1.5–2× cost reduction in production
 
@@ -141,4 +141,4 @@ MegaScale-Infer 的 M2N 库优化：
 # Citations
 
 [1] [arXiv:2504.02263](https://arxiv.org/abs/2504.02263)
-[2] [raw/papers/megascale-infer-2504.02263.pdf](raw/papers/megascale-infer-2504.02263.pdf)
+[2] [arXiv PDF](https://arxiv.org/pdf/2504.02263)

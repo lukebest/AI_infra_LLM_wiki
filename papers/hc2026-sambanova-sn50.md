@@ -24,7 +24,7 @@ sources:
 
 **Speaker:** Raghu Prabhakar（SambaNova，Chief Architect）  
 **Venue:** Hot Chips 2026 Day 2  
-**PDF:** [raw/papers/HC2026_SambaNova_SN50.pdf](raw/papers/HC2026_SambaNova_SN50.pdf)
+**PDF:** `raw/papers/HC2026_SambaNova_SN50.pdf`（非公开本地路径）
 
 前代见 [SN40L](/papers/sambanova-sn40l-dataflow-coe.md)。**MBU** = 权重+KV 实际用掉的 peak HBM 比例。AgentX 时间份额：DeepSeek V3 8K/1K decode **97%**。
 
@@ -53,5 +53,5 @@ MiniMax M2.7（AA serverless，10k input，07-07-26）：SN50 private **763** to
 
 # Citations
 
-[1] [raw/papers/HC2026_SambaNova_SN50.pdf](raw/papers/HC2026_SambaNova_SN50.pdf) — Raghu Prabhakar, Hot Chips 2026
+[1] `raw/papers/HC2026_SambaNova_SN50.pdf`（非公开本地路径） — Raghu Prabhakar, Hot Chips 2026
 [2] [raw/papers/hc2026-sambanova-sn50.md](raw/papers/hc2026-sambanova-sn50.md) — 结构化摘录

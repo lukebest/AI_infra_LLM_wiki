@@ -21,7 +21,7 @@ sources:
 
 # Near-Optimal Wafer-Scale Reduce
 
-**arXiv:2404.15888v4** | HPDC 2024
+**arXiv:2404.15888v4** | HPDC 2024 | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2404.15888)
 Luczynski, Gianinazzi, Iff, Wilson, De Sensi, Hoefler (ETH Zurich + Cerebras + Sapienza)
 
 首次系统性研究 Cerebras WSE 上的 Reduce/AllReduce collective。提出性能模型 → 设计新算法 → 建立下界 → 自动生成接近最优代码。
@@ -76,4 +76,4 @@ Luczynski, Gianinazzi, Iff, Wilson, De Sensi, Hoefler (ETH Zurich + Cerebras + S
 
 # Citations
 
-[1] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)
+[1] [arXiv PDF](https://arxiv.org/pdf/2404.15888)
