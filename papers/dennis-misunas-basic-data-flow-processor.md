@@ -15,7 +15,7 @@ sources:
 
 # A Preliminary Architecture for a Basic Data-Flow Processor
 
-**Authors:** Jack B. Dennis, David P. Misunas (MIT Project MAC) | **Venue:** 2nd Annual Symposium on Computer Architecture (ISCA), 1975 | **ACM:** [641675.642111](https://dl.acm.org/doi/10.1145/641675.642111) | **PDF:** [raw/papers/Dennis_Misunas_Basic_Data_Flow_Processor_1975.pdf](raw/papers/Dennis_Misunas_Basic_Data_Flow_Processor_1975.pdf)
+**Authors:** Jack B. Dennis, David P. Misunas (MIT Project MAC) | **Venue:** 2nd Annual Symposium on Computer Architecture (ISCA), 1975 | **ACM:** [641675.642111](https://dl.acm.org/doi/10.1145/641675.642111) | **PDF:** `raw/papers/Dennis_Misunas_Basic_Data_Flow_Processor_1975.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -48,4 +48,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Dennis_Misunas_Basic_Data_Flow_Processor_1975.pdf](raw/papers/Dennis_Misunas_Basic_Data_Flow_Processor_1975.pdf) — Dennis & Misunas (1975)
+[1] `raw/papers/Dennis_Misunas_Basic_Data_Flow_Processor_1975.pdf`（非公开本地路径） — Dennis & Misunas (1975)

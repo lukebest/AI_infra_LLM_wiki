@@ -17,7 +17,7 @@ sources:
 
 # SpaDA: A Spatial Dataflow Architecture Programming Language
 
-**Authors:** Lukas Gianinazzi⋆, Tal Ben-Nun⋆, Torsten Hoefler | **Affiliations:** Noeda Research; LLNL; ETH Zurich | **PDF:** [raw/papers/SpaDA_Spatial_Dataflow_Architecture_Programming_Language_2026.pdf](raw/papers/SpaDA_Spatial_Dataflow_Architecture_Programming_Language_2026.pdf) | **arXiv:** 2511.09447v2
+**Authors:** Lukas Gianinazzi⋆, Tal Ben-Nun⋆, Torsten Hoefler | **Affiliations:** Noeda Research; LLNL; ETH Zurich | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2511.09447) | **arXiv:** 2511.09447v2
 
 ## 一句话总结
 
@@ -70,4 +70,4 @@ Tree reduce 示例（Figure 1a）：meta-for 每 stage 一 phase，`relative_str
 
 # Citations
 
-[1] [raw/papers/SpaDA_Spatial_Dataflow_Architecture_Programming_Language_2026.pdf](raw/papers/SpaDA_Spatial_Dataflow_Architecture_Programming_Language_2026.pdf) — Gianinazzi et al. (2026)
+[1] [arXiv PDF](https://arxiv.org/pdf/2511.09447) — Gianinazzi et al. (2026)

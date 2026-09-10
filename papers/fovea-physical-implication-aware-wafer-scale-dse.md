@@ -26,7 +26,7 @@ sources:
 **Authors:** Jinxi Li, Huizheng Wang, Jinyi Deng, Yang Hu, Shouyi Yin（清华大学）
 **arXiv:** [2608.03285](https://arxiv.org/abs/2608.03285)（2026-08-04）
 **Venue:** arXiv cs.AR 预印本，文内未另报会议。
-**PDF:** [raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf](raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.03285)
 
 ## 中文摘要
 
@@ -80,5 +80,5 @@ OpenAI 已把晶圆级系统接到 serving 栈（文内引 2026 Cerebras 合作�
 
 # Citations
 
-[1] [raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf](raw/papers/Fovea_Physical_Implication_Aware_Wafer_Scale_DSE_2026.pdf) — Li et al., arXiv:2608.03285
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.03285) — Li et al., arXiv:2608.03285
 [2] [raw/papers/fovea-physical-implication-aware-wafer-scale-dse.md](raw/papers/fovea-physical-implication-aware-wafer-scale-dse.md) — 结构化摘录

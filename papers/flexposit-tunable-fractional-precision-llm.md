@@ -25,7 +25,7 @@ sources:
 **Affiliation:** University of Virginia; Shanghai Jiao Tong University
 **arXiv:** [2609.04724](https://arxiv.org/abs/2609.04724)（2026-09-04，cs.AR）
 **Venue:** ASP-DAC 2027（预印本）
-**PDF:** [raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf](raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.04724)
 
 把 LLM 量化的「分数位宽」做成可硬件调的时间参数：Posit 锥形精度 + channel-window 敏感度 MPQ + **bit-serial 脉动阵列**（GPCU 控精度窗）。对照 [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md)：仍是脉动数据流，但精度在 4–8 bit 连续可调，追求 group-wise 精度与 channel-wise 规整的折中。
 
@@ -67,5 +67,5 @@ sub-5-bit 权重下接近 FP16 PPL。**综合/仿真**，非流片实测。
 
 # Citations
 
-[1] [raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf](raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf) — Gao et al., arXiv:2609.04724
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.04724) — Gao et al., arXiv:2609.04724
 [2] [raw/papers/flexposit-tunable-fractional-precision-llm.md](raw/papers/flexposit-tunable-fractional-precision-llm.md) — ingest stub

@@ -28,7 +28,7 @@ sources:
 **Authors:** Jiayi Li, Di Wu, Qingxu Li, Hongxiao Zhao, Jiaqi Yang, Anjunyi Fan, Wenbin Zhang, Boqiang Wu, Shuting Liu, Shifeng Fang, Jianbo Dong, Dimin Niu, Bonan Yan
 **arXiv:** [2608.08611](https://arxiv.org/abs/2608.08611)
 **Venue:** 文内写 accepted [DAC 2026](https://arxiv.org/abs/2608.08611)（2026-07-26 Long Beach）。**未独立核实会议程序册。**
-**PDF:** [raw/papers/C2C_Explorer_Chip_to_Chip_Interconnect_LLM_2026.pdf](raw/papers/C2C_Explorer_Chip_to_Chip_Interconnect_LLM_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.08611)
 **Code:** https://github.com/Selinaee/C2C-Explorer
 
 ## 中文摘要
@@ -99,5 +99,5 @@ Scale-up 域 C2C（NVLink / UALink / ETH-X 一类）决定 collective 是否打�
 
 # Citations
 
-[1] [raw/papers/C2C_Explorer_Chip_to_Chip_Interconnect_LLM_2026.pdf](raw/papers/C2C_Explorer_Chip_to_Chip_Interconnect_LLM_2026.pdf) — Li et al., arXiv:2608.08611
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.08611) — Li et al., arXiv:2608.08611
 [2] [raw/papers/c2c-explorer-chip-to-chip-interconnect-llm.md](raw/papers/c2c-explorer-chip-to-chip-interconnect-llm.md) — 结构化摘录

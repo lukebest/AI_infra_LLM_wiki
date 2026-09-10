@@ -42,5 +42,5 @@ Puri, Jose, Tamarapalli（IIT Guwahati）
 
 # Citations
 
-[1] [raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf](raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf)
+[1] `raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf`（非公开本地路径）
 [2] [raw/papers/cosmos-disaggregated-memory-data-movement.md](raw/papers/cosmos-disaggregated-memory-data-movement.md) — 结构化摘录

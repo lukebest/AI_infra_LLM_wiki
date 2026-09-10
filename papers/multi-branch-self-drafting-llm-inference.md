@@ -17,7 +17,7 @@ sources:
 
 # Multi-Branch Self-Drafting for LLM Inference Acceleration
 
-**Authors:** Zipeng Gao, Qingrong Xia, Tong Xu, et al. | **Affiliations:** USTC, Huawei Cloud | **PDF:** [raw/papers/Multi_Branch_Self_Drafting_LLM_Inference_2025.pdf](raw/papers/Multi_Branch_Self_Drafting_LLM_Inference_2025.pdf)
+**Authors:** Zipeng Gao, Qingrong Xia, Tong Xu, et al. | **Affiliations:** USTC, Huawei Cloud | **PDF:** `raw/papers/Multi_Branch_Self_Drafting_LLM_Inference_2025.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -50,5 +50,5 @@ Self-Draft 将自回归解码扩展为 **multi-branch drafting**：同一 LLM �
 
 # Citations
 
-[1] [raw/papers/Multi_Branch_Self_Drafting_LLM_Inference_2025.pdf](raw/papers/Multi_Branch_Self_Drafting_LLM_Inference_2025.pdf) — Gao et al. (AAAI-25)
+[1] `raw/papers/Multi_Branch_Self_Drafting_LLM_Inference_2025.pdf`（非公开本地路径） — Gao et al. (AAAI-25)
 [2] [raw/papers/multi-branch-self-drafting-llm-inference.md](raw/papers/multi-branch-self-drafting-llm-inference.md) — 结构化摘录

@@ -16,7 +16,7 @@ sources:
 
 # Eyeriss: An Energy-Efficient Reconfigurable Accelerator for Deep Convolutional Neural Networks
 
-**Authors:** Yu-Hsin Chen, Tushar Krishna, Joel S. Emer, Vivienne Sze (MIT) | **Venue:** IEEE JSSC, Jan. 2017 | **DOI:** [10.1109/JSSC.2016.2616357](https://doi.org/10.1109/JSSC.2016.2616357) | **PDF:** [raw/papers/Eyeriss_Energy_Efficient_CNN_Accelerator_2017.pdf](raw/papers/Eyeriss_Energy_Efficient_CNN_Accelerator_2017.pdf)
+**Authors:** Yu-Hsin Chen, Tushar Krishna, Joel S. Emer, Vivienne Sze (MIT) | **Venue:** IEEE JSSC, Jan. 2017 | **DOI:** [10.1109/JSSC.2016.2616357](https://doi.org/10.1109/JSSC.2016.2616357) | **PDF:** `raw/papers/Eyeriss_Energy_Efficient_CNN_Accelerator_2017.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -51,4 +51,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Eyeriss_Energy_Efficient_CNN_Accelerator_2017.pdf](raw/papers/Eyeriss_Energy_Efficient_CNN_Accelerator_2017.pdf) — Chen et al. (2017)
+[1] `raw/papers/Eyeriss_Energy_Efficient_CNN_Accelerator_2017.pdf`（非公开本地路径） — Chen et al. (2017)

@@ -2,6 +2,9 @@
 
 ## 2026-09-10
 
+### Public PDF links
+* **Fix**: Quartz/`generate_site.py` 发布 `papers/` 但不发布 `raw/` 二进制，相对 `raw/papers/*.pdf` 在 https://lukebest.github.io/ 会 404。有已知 arXiv id 的论文页，把正文 **PDF:** 与 `# Citations` 里的本地 PDF 链接改为 `https://arxiv.org/pdf/<id>`（frontmatter `sources:` 仍保留本地 ingest 路径）。无 arXiv 的会议论文 / Hot Chips 幻灯改为纯文本路径（非公开本地路径），不编造 arXiv id。未跑 `generate_indexes.py`。
+
 ### Watch (morning)
 * **Watch**: 2026-09-10 Asia/Shanghai AI infra 论文巡检。cs.AR/cs.DC recent 到 **Wed 9/9**（Thu 9/10 美东列表上海早晨尚未放出）。昨日无增量日已扫过的 Mon 9/7 项不重复。
 * **Ingest**: WaferTrans PDF → `raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf` + stub `raw/papers/wafertrans-iommu-free-wafer-scale-gpu.md`（arXiv:2609.06125, 2026-09-05, cs.AR）。

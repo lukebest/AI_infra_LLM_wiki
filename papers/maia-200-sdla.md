@@ -33,7 +33,7 @@ sources:
 **Affiliation:** Microsoft  
 **arXiv:** [2608.24664](https://arxiv.org/abs/2608.24664)（2026-08-25 15:05 UTC）  
 **Venue:** 预印本。文内未另报会议。Hot Chips 2026 幻灯是另一来源，见 [HC Maia 200](/papers/hc2026-microsoft-maia-200.md)。  
-**PDF:** [raw/papers/Maia_200_Software_Defined_Dataflow_2026.pdf](raw/papers/Maia_200_Software_Defined_Dataflow_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.24664)
 
 本页只写**全文相对幻灯多出来的架构事实**。峰值 TOPS、HBM 7 TB/s、28×400、750 W、TSMC 3 nm、CoWoS-S、FCQ/6k 口号等已在幻灯页，不重复。
 
@@ -89,6 +89,6 @@ LLM 推理（含 MoE）是数据搬运问题：decode 吃 KV 带宽，MoE 要运
 
 # Citations
 
-[1] [raw/papers/Maia_200_Software_Defined_Dataflow_2026.pdf](raw/papers/Maia_200_Software_Defined_Dataflow_2026.pdf) — Xu et al., arXiv:2608.24664
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.24664) — Xu et al., arXiv:2608.24664
 [2] [raw/papers/maia-200-sdla.md](raw/papers/maia-200-sdla.md) — 结构化摘录
 [3] [papers/hc2026-microsoft-maia-200.md](papers/hc2026-microsoft-maia-200.md) — Hot Chips 2026 幻灯页

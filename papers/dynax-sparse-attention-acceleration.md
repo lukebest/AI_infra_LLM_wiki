@@ -19,7 +19,7 @@ sources:
 
 # DynaX: Dynamic X:M Sparse Attention Acceleration
 
-**Authors:** Xiao Xiong, Zhaorui Chen, et al. | **Affiliation:** Chongqing University | **PDF:** [raw/papers/DynaX_Sparse_Attention_Dynamic_XM_Pruning_2025.pdf](raw/papers/DynaX_Sparse_Attention_Dynamic_XM_Pruning_2025.pdf)
+**Authors:** Xiao Xiong, Zhaorui Chen, et al. | **Affiliation:** Chongqing University | **PDF:** `raw/papers/DynaX_Sparse_Attention_Dynamic_XM_Pruning_2025.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -54,5 +54,5 @@ DynaX 用 **dynamic X:M** 两步结构化剪枝 + block scheduling 匹配 PEA，
 
 # Citations
 
-[1] [raw/papers/DynaX_Sparse_Attention_Dynamic_XM_Pruning_2025.pdf](raw/papers/DynaX_Sparse_Attention_Dynamic_XM_Pruning_2025.pdf) — Xiong et al. (ASPLOS '25)
+[1] `raw/papers/DynaX_Sparse_Attention_Dynamic_XM_Pruning_2025.pdf`（非公开本地路径） — Xiong et al. (ASPLOS '25)
 [2] [raw/papers/dynax-sparse-attention-acceleration.md](raw/papers/dynax-sparse-attention-acceleration.md) — 结构化摘录

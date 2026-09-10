@@ -36,7 +36,7 @@ sources:
 **Affiliation:** National University of Singapore (NUS)
 **arXiv:** [2609.00857](https://arxiv.org/abs/2609.00857)（2026-09-01，cs.AR）
 **Venue:** LEAP ICCAD'2025 的期刊扩展版（Comments: 11 pages, 15 figures）。
-**PDF:** [raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf](raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.00857)
 
 同组 [CHIPSMORE](/papers/chipsmore-cim-chiplets-llm-inference.md) 做 **CIM chiplet + UCIe + 层流水**；本文做 **单片 IMC–NMC–INC 统一 fabric + 片上 PD 解耦**。相对 [Collective-Capable NoC](/concepts/collective-capable-noc.md) 的 FlooNoC DCA，这里的 IRCU 是 LLM 专用 in-router 归约/DDMM，不是通用 AXI collective。
 
@@ -92,5 +92,5 @@ IMC 吃静态权重（DSMM），但 attention 还有运行时动态矩阵（DDMM
 
 # Citations
 
-[1] [raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf](raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf) — Wang/Chong/Fong, arXiv:2609.00857
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.00857) — Wang/Chong/Fong, arXiv:2609.00857
 [2] [raw/papers/leap-imc-noc-llm-inference.md](raw/papers/leap-imc-noc-llm-inference.md) — 结构化摘录

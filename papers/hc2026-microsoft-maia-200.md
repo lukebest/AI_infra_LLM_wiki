@@ -26,7 +26,7 @@ sources:
 
 **Speakers:** Prashant Ranjan, Jackson Peng, Torsten Hoefler（Microsoft）  
 **Venue:** Hot Chips 2026 Day 2  
-**PDF:** [raw/papers/HC2026_Microsoft_Maia_200.pdf](raw/papers/HC2026_Microsoft_Maia_200.pdf)
+**PDF:** `raw/papers/HC2026_Microsoft_Maia_200.pdf`（非公开本地路径）
 
 Azure 推理压 $/token 与 W/token。架构类 **SDLA**（Software Defined Local Access Dataflow）：显式 SW 编排、控制/数据流分离。Kernel roofline 逐点 **未知**（图、无表）。
 
@@ -58,6 +58,6 @@ Tray **FCQ**：**4** 加速器固定 Ethernet 全连接（无交换机）做 TP 
 
 # Citations
 
-[1] [raw/papers/HC2026_Microsoft_Maia_200.pdf](raw/papers/HC2026_Microsoft_Maia_200.pdf) — Ranjan / Peng / Hoefler, Hot Chips 2026
+[1] `raw/papers/HC2026_Microsoft_Maia_200.pdf`（非公开本地路径） — Ranjan / Peng / Hoefler, Hot Chips 2026
 [2] [raw/papers/hc2026-microsoft-maia-200.md](raw/papers/hc2026-microsoft-maia-200.md) — 结构化摘录
 [3] [papers/maia-200-sdla.md](papers/maia-200-sdla.md) — Xu et al. arXiv:2608.24664 归档全文

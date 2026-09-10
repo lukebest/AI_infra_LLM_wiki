@@ -18,7 +18,7 @@ sources:
 
 # TileLoom: Automatic Dataflow Planning for Tile-Based Languages on Spatial Dataflow Accelerators
 
-**Authors:** Wei Li, Zhenyu Bai, Heru Wang, et al. (NUS + ASU/Google + Lumai) | **arXiv:** [2512.22168v2](https://arxiv.org/abs/2512.22168) (May 2026) | **PDF:** [raw/papers/TileLoom_Automatic_Dataflow_Planning_2026.pdf](raw/papers/TileLoom_Automatic_Dataflow_Planning_2026.pdf) | **Code:** https://github.com/ecolab-nus/loom-dataflow
+**Authors:** Wei Li, Zhenyu Bai, Heru Wang, et al. (NUS + ASU/Google + Lumai) | **arXiv:** [2512.22168v2](https://arxiv.org/abs/2512.22168) (May 2026) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2512.22168) | **Code:** https://github.com/ecolab-nus/loom-dataflow
 
 ## 一句话总结
 
@@ -68,4 +68,4 @@ TileLoom 是 **MLIR 端到端编译器**：把 **Triton/Helion tile kernel** 降
 
 # Citations
 
-[1] [raw/papers/TileLoom_Automatic_Dataflow_Planning_2026.pdf](raw/papers/TileLoom_Automatic_Dataflow_Planning_2026.pdf) — Li et al. (2026)
+[1] [arXiv PDF](https://arxiv.org/pdf/2512.22168) — Li et al. (2026)

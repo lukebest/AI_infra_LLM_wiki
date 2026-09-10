@@ -25,7 +25,7 @@ sources:
 
 **Speakers:** Sumit Mohan, Dr. Hong Jiang（Intel）  
 **Venue:** Hot Chips 2026 Conference  
-**PDF:** [raw/papers/HC2026_Intel_Crescent_Island.pdf](raw/papers/HC2026_Intel_Crescent_Island.pdf)
+**PDF:** `raw/papers/HC2026_Intel_Crescent_Island.pdf`（非公开本地路径）
 
 Decode 第三条路：大容量低功耗 LPDDR5x + 空气 350 W PCIe + PCIe 交换 scale-up。**不是**训练 GPU，也**没有** NVLink/UALoE。对照 [Rubin](/papers/hc2026-nvidia-rubin.md)、[Groq 3 LPX](/papers/hc2026-nvidia-groq-3-lpx.md)、[DRAM](/concepts/dram-memory-system.md)。片上标签是 **Memory Fabric / 32 MB L2**，**不是 packet NoC**。
 
@@ -53,5 +53,5 @@ LMSYS SpecBundle / EAGLE-3 / SGLang，batch 8；**throughput metrics deliberatel
 
 # Citations
 
-[1] [raw/papers/HC2026_Intel_Crescent_Island.pdf](raw/papers/HC2026_Intel_Crescent_Island.pdf) — Mohan / Jiang, Hot Chips 2026
+[1] `raw/papers/HC2026_Intel_Crescent_Island.pdf`（非公开本地路径） — Mohan / Jiang, Hot Chips 2026
 [2] [raw/papers/hc2026-intel-crescent-island.md](raw/papers/hc2026-intel-crescent-island.md) — 结构化摘录

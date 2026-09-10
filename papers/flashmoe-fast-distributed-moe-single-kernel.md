@@ -17,7 +17,7 @@ sources:
 
 # FlashMoE: Fast Distributed MoE in a Single Kernel
 
-**Authors:** Osayamen Jonathan Aimuyo, Byungsoo Oh, Rachee Singh (Cornell) | **Venue:** NeurIPS 2025 | **arXiv:** [2506.04667](https://arxiv.org/abs/2506.04667) | **PDF:** [raw/papers/FlashMoE_Fast_Distributed_MoE_Single_Kernel_2025.pdf](raw/papers/FlashMoE_Fast_Distributed_MoE_Single_Kernel_2025.pdf)
+**Authors:** Osayamen Jonathan Aimuyo, Byungsoo Oh, Rachee Singh (Cornell) | **Venue:** NeurIPS 2025 | **arXiv:** [2506.04667](https://arxiv.org/abs/2506.04667) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2506.04667)
 
 ## 一句话总结
 
@@ -52,4 +52,4 @@ FlashMoE 用 **一个 persistent GPU megakernel** 融合 gate、dispatch、exper
 
 # Citations
 
-[1] [raw/papers/FlashMoE_Fast_Distributed_MoE_Single_Kernel_2025.pdf](raw/papers/FlashMoE_Fast_Distributed_MoE_Single_Kernel_2025.pdf) — Aimuyo et al. (2025)
+[1] [arXiv PDF](https://arxiv.org/pdf/2506.04667) — Aimuyo et al. (2025)

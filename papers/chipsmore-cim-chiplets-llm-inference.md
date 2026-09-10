@@ -35,7 +35,7 @@ sources:
 **Affiliation:** National University of Singapore (NUS)
 **arXiv:** [2608.30509](https://arxiv.org/abs/2608.30509)（2026-08-31，cs.AR）
 **Venue:** 预印本。文内未另报会议。
-**PDF:** [raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf](raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.30509)
 
 相对 [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) 搜的是 **封装内 hybrid serving 组成/放置**，本文给的是 **一颗 CIM chiplet 加速器怎么同时扛 base/LoRA、长短 KV、多请求**。相对 [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md) 的 ReRAM 近存 FFN 池，这里是 **RRAM-ACIM 静态权重 + SRAM-DCIM 动态/LoRA + 片上 compute-in-interconnect**。
 
@@ -109,5 +109,5 @@ LLM 推理在适配模式（base / LoRA）、上下文长度、请求并发上�
 
 # Citations
 
-[1] [raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf](raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf) — Chong et al., arXiv:2608.30509
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.30509) — Chong et al., arXiv:2608.30509
 [2] [raw/papers/chipsmore-cim-chiplets-llm-inference.md](raw/papers/chipsmore-cim-chiplets-llm-inference.md) — 结构化摘录

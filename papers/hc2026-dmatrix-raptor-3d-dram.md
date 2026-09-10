@@ -26,7 +26,7 @@ sources:
 
 **Speakers:** Sudeep Bhoja（d-Matrix, Co-founder & CTO）；Aayush Ankit（Meta；标注 work done while at d-Matrix）  
 **Venue:** Hot Chips 2026 Tutorial  
-**PDF:** [raw/papers/HC2026_dMatrix_Raptor_3D_DRAM.pdf](raw/papers/HC2026_dMatrix_Raptor_3D_DRAM.pdf)  
+**PDF:** `raw/papers/HC2026_dMatrix_Raptor_3D_DRAM.pdf`（非公开本地路径）  
 **Paper pointer:** Raptor paper: **ISCA 2026**
 
 用 1-Hi logic-on-top + 36 μm F2F 换 SRAM 级 BW、~1/10 HBM 能量。自称对硅面积归一化打过 HBM4 / Rubin R200。Model Details 表是图，容量分解 **未知**。不写招聘。
@@ -86,5 +86,5 @@ Raptor 83% / Rubin 85% 有效 BW；Rubin R200 = 8× HBM4 24 Gb SoC。
 
 # Citations
 
-[1] [raw/papers/HC2026_dMatrix_Raptor_3D_DRAM.pdf](raw/papers/HC2026_dMatrix_Raptor_3D_DRAM.pdf) — Bhoja / Ankit, Hot Chips 2026 Tutorial
+[1] `raw/papers/HC2026_dMatrix_Raptor_3D_DRAM.pdf`（非公开本地路径） — Bhoja / Ankit, Hot Chips 2026 Tutorial
 [2] [raw/papers/hc2026-dmatrix-raptor-3d-dram.md](raw/papers/hc2026-dmatrix-raptor-3d-dram.md) — 结构化摘录

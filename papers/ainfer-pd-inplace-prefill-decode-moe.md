@@ -30,7 +30,7 @@ sources:
 **Affiliation:** Ant Group
 **arXiv:** [2609.00993](https://arxiv.org/abs/2609.00993)（2026-09-01，cs.DC）
 **Venue:** 预印本
-**PDF:** [raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf](raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.00993)
 
 相对 DistServe/Splitwise 的 **PD 解耦**（独立池 + KV 搬运），本文走 **in-place 复用**：同设备共享权重与 KV，但补上大 MoE 缺失的 **通信隔离**——交叉 ADP/ATP 集体排序 + DeepEP normal/low-latency 相位私有态。对照 wiki [Disaggregated Inference](/concepts/disaggregated-inference.md) 表中「阶段层解耦」一行：这是同池并发的安全补丁，不是第二套模型实例。
 
@@ -83,5 +83,5 @@ H1–H2 走交叉 ADP/ATP；H3–H4 ATP1，主要量 in-place 调度本身。
 
 # Citations
 
-[1] [raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf](raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf) — Wang et al., arXiv:2609.00993
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.00993) — Wang et al., arXiv:2609.00993
 [2] [raw/papers/ainfer-pd-inplace-prefill-decode-moe.md](raw/papers/ainfer-pd-inplace-prefill-decode-moe.md) — 结构化摘录

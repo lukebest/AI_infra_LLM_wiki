@@ -27,7 +27,7 @@ sources:
 **Affiliation:** University of Virginia; Anyscale
 **arXiv:** [2609.04609](https://arxiv.org/abs/2609.04609)（2026-09-04，cs.DC）
 **Venue:** 预印本
-**PDF:** [raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf](raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.04609)
 
 ZeRO-3 类分片把 expert 权重切开后，每层前的 **Allgather** 可占通信 **51.8–69.0%**。CIERA 抓住「warmup 后 ≥99% 指数跨 iter 不变」：缓存指数、只传 sign+mantissa，接收端拼回 **bitwise-exact** 权重。对照 wiki [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)：这是 **AllGather 载荷压缩**（无损、系统感知门控），不是新集体拓扑。
 
@@ -75,5 +75,5 @@ ZeRO-3 类分片把 expert 权重切开后，每层前的 **Allgather** 可占�
 
 # Citations
 
-[1] [raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf](raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf) — Sadiq et al., arXiv:2609.04609
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.04609) — Sadiq et al., arXiv:2609.04609
 [2] [raw/papers/ciera-cross-iteration-exponent-reuse-allgather.md](raw/papers/ciera-cross-iteration-exponent-reuse-allgather.md) — ingest stub

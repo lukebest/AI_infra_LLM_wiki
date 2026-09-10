@@ -25,7 +25,7 @@ sources:
 **Orgs:** Harvard University + Google LLC + Lockheed Martin  
 **Equal contrib.:** Nestor Cuevas & Matthew Adiletta；David Brooks, Gu-Yeon Wei  
 **Venue:** Hot Chips 2026 Poster  
-**PDF:** [raw/papers/HC2026_Pistil_20_Chiplet_SLM.pdf](raw/papers/HC2026_Pistil_20_Chiplet_SLM.pdf)
+**PDF:** `raw/papers/HC2026_Pistil_20_Chiplet_SLM.pdf`（非公开本地路径）
 
 20-chiplet 2.5D、「花」形拓扑用满 compute–memory shoreline。数字全在正文。**不是** datacenter HBM，是边缘 SLM。板级速率 **未知**。
 
@@ -67,5 +67,5 @@ dense SLM，**4-bit**，llama.cpp vs **Jetson Nano 8GB**：
 
 # Citations
 
-[1] [raw/papers/HC2026_Pistil_20_Chiplet_SLM.pdf](raw/papers/HC2026_Pistil_20_Chiplet_SLM.pdf) — Cuevas, Adiletta, Brooks, Wei et al., Hot Chips 2026 Poster
+[1] `raw/papers/HC2026_Pistil_20_Chiplet_SLM.pdf`（非公开本地路径） — Cuevas, Adiletta, Brooks, Wei et al., Hot Chips 2026 Poster
 [2] [raw/papers/hc2026-pistil-20-chiplet-slm.md](raw/papers/hc2026-pistil-20-chiplet-slm.md) — 结构化摘录

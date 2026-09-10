@@ -24,7 +24,7 @@ sources:
 
 **Speaker:** Idan Burstein（NVIDIA）  
 **Venue:** Hot Chips 2026 Day 2  
-**PDF:** [raw/papers/HC2026_NVIDIA_BlueField_4.pdf](raw/papers/HC2026_NVIDIA_BlueField_4.pdf)
+**PDF:** `raw/papers/HC2026_NVIDIA_BlueField_4.pdf`（非公开本地路径）
 
 Vera Rubin 七芯片五机柜里的 **scale-in** / 存储 / 安全处理器。本甲板没有 Spectrum-X 那张五网 **18× / 2×** 记分牌。线性扩展图各 NIC 计数精确 Tb/s **未知**。
 
@@ -51,5 +51,5 @@ BF4 Grace 上 NVMe-oF：**8 cores for 1.6 Tb/s**；**16 cores for 20 M IOPS**；
 
 # Citations
 
-[1] [raw/papers/HC2026_NVIDIA_BlueField_4.pdf](raw/papers/HC2026_NVIDIA_BlueField_4.pdf) — Idan Burstein, Hot Chips 2026
+[1] `raw/papers/HC2026_NVIDIA_BlueField_4.pdf`（非公开本地路径） — Idan Burstein, Hot Chips 2026
 [2] [raw/papers/hc2026-nvidia-bluefield-4.md](raw/papers/hc2026-nvidia-bluefield-4.md) — 结构化摘录

@@ -19,7 +19,7 @@ sources:
 
 # LLM Inference Acceleration: A Comprehensive Hardware Perspective
 
-**arXiv:** [2410.04466v4](https://arxiv.org/abs/2410.04466) (2024) | **PDF:** [raw/papers/LLM_Inference_Acceleration_Comprehensive_Hardware_Survey_2024.pdf](LLM_Inference_Acceleration_Comprehensive_Hardware_Survey_2024.pdf)
+**arXiv:** [2410.04466v4](https://arxiv.org/abs/2410.04466) (2024) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2410.04466)
 
 ## 一句话总结
 
@@ -59,4 +59,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/LLM_Inference_Acceleration_Comprehensive_Hardware_Survey_2024.pdf](raw/papers/LLM_Inference_Acceleration_Comprehensive_Hardware_Survey_2024.pdf) — (2024)
+[1] [arXiv PDF](https://arxiv.org/pdf/2410.04466) — (2024)

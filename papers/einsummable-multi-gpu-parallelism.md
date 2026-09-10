@@ -28,7 +28,7 @@ sources:
 **Affiliation:** Rice University
 **arXiv:** [2609.03905](https://arxiv.org/abs/2609.03905)（2026-09-04，cs.DC；PVLDB 风格预印）
 **Venue:** 预印本 / VLDB 风格
-**PDF:** [raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf](raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.03905)
 
 单机多 GPU（NVLink 域可达 72）上，intra-operator 并行常靠手写 TP/SP/DP 或 mesh 注解自动并行。Einsummable 把每个算子建模为 **张量关系上的 join + aggregation**，用 **join-agg specs** 枚举合法分解，再用通信字节代理做 DP 选计划，最后合成 **exchange program**（拓扑感知，不依赖罐头 NCCL）。对照 [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)：集体不是库调用，而是编译出来的专用交换。
 
@@ -74,5 +74,5 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf](raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf) — Ding et al., arXiv:2609.03905
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.03905) — Ding et al., arXiv:2609.03905
 [2] [raw/papers/einsummable-multi-gpu-parallelism.md](raw/papers/einsummable-multi-gpu-parallelism.md) — ingest stub

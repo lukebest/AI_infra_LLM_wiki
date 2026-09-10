@@ -20,7 +20,7 @@ sources:
 
 # MAERI
 
-**Authors:** Hyoukjun Kwon, Ananda Samajdar, Tushar Krishna (Georgia Tech) | **Venue:** ASPLOS 2018 | **PDF:** [raw/papers/MAERI_Flexible_Dataflow_Reconfigurable_Interconnects_ASPLOS2018.pdf](MAERI_Flexible_Dataflow_Reconfigurable_Interconnects_ASPLOS2018.pdf)
+**Authors:** Hyoukjun Kwon, Ananda Samajdar, Tushar Krishna (Georgia Tech) | **Venue:** ASPLOS 2018 | **PDF:** `raw/papers/MAERI_Flexible_Dataflow_Reconfigurable_Interconnects_ASPLOS2018.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -85,4 +85,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/MAERI_Flexible_Dataflow_Reconfigurable_Interconnects_ASPLOS2018.pdf](raw/papers/MAERI_Flexible_Dataflow_Reconfigurable_Interconnects_ASPLOS2018.pdf) — Kwon et al. ASPLOS 2018
+[1] `raw/papers/MAERI_Flexible_Dataflow_Reconfigurable_Interconnects_ASPLOS2018.pdf`（非公开本地路径） — Kwon et al. ASPLOS 2018

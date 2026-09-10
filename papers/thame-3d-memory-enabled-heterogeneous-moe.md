@@ -27,7 +27,7 @@ sources:
 **Authors:** Pratyush Dhingra, Pramit Kumar Pal, Janardhan Rao Doppa, Partha Pratim Pande（Washington State University）
 **arXiv:** [2607.17074](https://arxiv.org/abs/2607.17074)（v1 2026-07-19，v2 2026-08-02）
 **Venue:** abs 写 accepted IEEE/ACM Embedded Systems Week (ESWEEK-26)。**未独立核实程序册。**
-**PDF:** [raw/papers/ThAME_3D_Memory_Enabled_Heterogeneous_MoE_2026.pdf](raw/papers/ThAME_3D_Memory_Enabled_Heterogeneous_MoE_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2607.17074)
 
 ## 中文摘要
 
@@ -83,5 +83,5 @@ Qwen1.5、prompt 128、输出 n=512–4096：ThAME TBT **2.17–2.22 ms**（TPU 
 
 # Citations
 
-[1] [raw/papers/ThAME_3D_Memory_Enabled_Heterogeneous_MoE_2026.pdf](raw/papers/ThAME_3D_Memory_Enabled_Heterogeneous_MoE_2026.pdf) — Dhingra et al., arXiv:2607.17074v2
+[1] [arXiv PDF](https://arxiv.org/pdf/2607.17074) — Dhingra et al., arXiv:2607.17074v2
 [2] [raw/papers/thame-3d-memory-enabled-heterogeneous-moe.md](raw/papers/thame-3d-memory-enabled-heterogeneous-moe.md) — 结构化摘录

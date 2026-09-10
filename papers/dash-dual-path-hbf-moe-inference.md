@@ -34,7 +34,7 @@ sources:
 **Authors:** Seeyeon Kim, Juhyeong Jin, Joo-Young Kim（KAIST）
 **arXiv:** [2608.14333](https://arxiv.org/abs/2608.14333)（2026-08-14）
 **Venue:** 未标会议。事件驱动 serving 仿真 + H100 实测算子时延，**不是硅**。
-**PDF:** [raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf](raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.14333)
 
 同组 [3DLS](/papers/3dls-3d-logic-stacked-disaggregated-llm-serving.md) 做 logic-on-logic 流量隔离；本文把问题换成 **HBF 容量层如何接到 GPU**。
 
@@ -110,5 +110,5 @@ DASH = Direct Attachment of HBF to the GPU as main memory, plus a Separate path 
 
 # Citations
 
-[1] [raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf](raw/papers/DASH_Dual_Path_HBF_MoE_LLM_Inference_2026.pdf) — Kim, Jin, Kim, arXiv:2608.14333
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.14333) — Kim, Jin, Kim, arXiv:2608.14333
 [2] [raw/papers/dash-dual-path-hbf-moe-inference.md](raw/papers/dash-dual-path-hbf-moe-inference.md) — 结构化摘录

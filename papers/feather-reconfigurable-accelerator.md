@@ -16,7 +16,7 @@ sources:
 
 # FEATHER: A Reconfigurable Accelerator with Data Reordering Support for Low-Cost On-Chip Dataflow Switching
 
-**Authors:** Jianming Tong, Anirudh Itagi, Prasanth Chatarasi, Tushar Krishna | **Affiliations:** Georgia Tech; IBM Research | **PDF:** [raw/papers/FEATHER_Reconfigurable_Accelerator_Dataflow_Switching_2024.pdf](raw/papers/FEATHER_Reconfigurable_Accelerator_Dataflow_Switching_2024.pdf) | **arXiv:** 2405.13170
+**Authors:** Jianming Tong, Anirudh Itagi, Prasanth Chatarasi, Tushar Krishna | **Affiliations:** Georgia Tech; IBM Research | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2405.13170) | **arXiv:** 2405.13170
 
 ## 一句话总结
 
@@ -69,4 +69,4 @@ Fixed → Line Rotation → Transpose → Row Reorder → **Arbitrary**（FEATHE
 
 # Citations
 
-[1] [raw/papers/FEATHER_Reconfigurable_Accelerator_Dataflow_Switching_2024.pdf](raw/papers/FEATHER_Reconfigurable_Accelerator_Dataflow_Switching_2024.pdf) — Tong et al. (2024)
+[1] [arXiv PDF](https://arxiv.org/pdf/2405.13170) — Tong et al. (2024)

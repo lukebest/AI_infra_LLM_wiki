@@ -20,7 +20,7 @@ sources:
 
 # PRESERVE: Prefetch Weights and KV-Cache in Distributed LLM Serving
 
-**Authors:** Ahmet Caner Yüzügüler, Jiawei Zhuang, Lukas Cavigelli | **Affiliation:** Huawei Zurich Research Center | **PDF:** [raw/papers/PRESERVE_Prefetch_Weights_KV_Cache_LLM_Serving_2025.pdf](raw/papers/PRESERVE_Prefetch_Weights_KV_Cache_LLM_Serving_2025.pdf)
+**Authors:** Ahmet Caner Yüzügüler, Jiawei Zhuang, Lukas Cavigelli | **Affiliation:** Huawei Zurich Research Center | **PDF:** `raw/papers/PRESERVE_Prefetch_Weights_KV_Cache_LLM_Serving_2025.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -54,5 +54,5 @@ PRESERVE 在分布式 decode 中于 **collective communication** 期间从 HBM *
 
 # Citations
 
-[1] [raw/papers/PRESERVE_Prefetch_Weights_KV_Cache_LLM_Serving_2025.pdf](raw/papers/PRESERVE_Prefetch_Weights_KV_Cache_LLM_Serving_2025.pdf) — Yüzügüler et al. (2025)
+[1] `raw/papers/PRESERVE_Prefetch_Weights_KV_Cache_LLM_Serving_2025.pdf`（非公开本地路径） — Yüzügüler et al. (2025)
 [2] [raw/papers/preserve-prefetch-weights-kv-cache.md](raw/papers/preserve-prefetch-weights-kv-cache.md) — 结构化摘录

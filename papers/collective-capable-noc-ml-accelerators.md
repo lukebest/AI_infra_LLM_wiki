@@ -18,7 +18,7 @@ sources:
 
 # A Lightweight High-Throughput Collective-Capable NoC for Large-Scale ML Accelerators
 
-**Authors:** Luca Colagrande, Lorenzo Leone, Chen Wu, Tim Fischer, Raphael Roth, Luca Benini (ETH Zurich) | **Venue:** MLSys 2026 | **arXiv:** [2603.26438](https://arxiv.org/abs/2603.26438) | **Code:** [FlooNoC v0.8.0](https://github.com/pulp-platform/FlooNoC/releases/tag/v0.8.0), [picobello](https://github.com/pulp-platform/picobello)
+**Authors:** Luca Colagrande, Lorenzo Leone, Chen Wu, Tim Fischer, Raphael Roth, Luca Benini (ETH Zurich) | **Venue:** MLSys 2026 | **arXiv:** [2603.26438](https://arxiv.org/abs/2603.26438) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2603.26438) | **Code:** [FlooNoC v0.8.0](https://github.com/pulp-platform/FlooNoC/releases/tag/v0.8.0), [picobello](https://github.com/pulp-platform/picobello)
 
 ## 一句话总结
 
@@ -60,4 +60,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Collective_Capable_NoC_ML_Accelerators_2026.pdf](raw/papers/Collective_Capable_NoC_ML_Accelerators_2026.pdf) — Colagrande et al. (2026)
+[1] [arXiv PDF](https://arxiv.org/pdf/2603.26438) — Colagrande et al. (2026)

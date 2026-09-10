@@ -29,7 +29,7 @@ sources:
 **Authors:** Rashid Aligholipour, Stefanos Kaxiras, Yuan Yao（Uppsala University）
 **arXiv:** [2607.24221](https://arxiv.org/abs/2607.24221)（2026-07 投稿窗口；本轮 2026-08-20 取 PDF）
 **Venue:** PDF 页眉仍写 *ISCA 2026 Submission — Confidential Draft*；GitHub artifact 自称 ISCA 2026。**未独立核实会议程序册，不当成已录用。**
-**PDF:** [raw/papers/DICE_Detailed_Inter_Chiplet_End_to_End_PHY_Modeling_2026.pdf](raw/papers/DICE_Detailed_Inter_Chiplet_End_to_End_PHY_Modeling_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2607.24221)
 **Code:** https://github.com/RashidAGP/DICE-Simulator
 
 ## 动机
@@ -91,5 +91,5 @@ sources:
 
 # Citations
 
-[1] [raw/papers/DICE_Detailed_Inter_Chiplet_End_to_End_PHY_Modeling_2026.pdf](raw/papers/DICE_Detailed_Inter_Chiplet_End_to_End_PHY_Modeling_2026.pdf) — Aligholipour, Kaxiras, Yao, arXiv:2607.24221
+[1] [arXiv PDF](https://arxiv.org/pdf/2607.24221) — Aligholipour, Kaxiras, Yao, arXiv:2607.24221
 [2] [raw/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md](raw/papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) — 结构化摘录

@@ -17,7 +17,7 @@ sources:
 
 # Plasticine: A Reconfigurable Architecture For Parallel Patterns
 
-**Authors:** Raghu Prabhakar, Yaqi Zhang, David Koeplinger, Matt Feldman, Tian Zhao, Stefan Hadjis, Ardavan Pedram, Christos Kozyrakis, Kunle Olukotun (Stanford) | **Venue:** ISCA 2017 | **DOI:** [10.1145/3079856.3080256](https://doi.org/10.1145/3079856.3080256) | **PDF:** [raw/papers/Plasticine_Reconfigurable_Parallel_Patterns_2017.pdf](raw/papers/Plasticine_Reconfigurable_Parallel_Patterns_2017.pdf)
+**Authors:** Raghu Prabhakar, Yaqi Zhang, David Koeplinger, Matt Feldman, Tian Zhao, Stefan Hadjis, Ardavan Pedram, Christos Kozyrakis, Kunle Olukotun (Stanford) | **Venue:** ISCA 2017 | **DOI:** [10.1145/3079856.3080256](https://doi.org/10.1145/3079856.3080256) | **PDF:** `raw/papers/Plasticine_Reconfigurable_Parallel_Patterns_2017.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -54,4 +54,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/Plasticine_Reconfigurable_Parallel_Patterns_2017.pdf](raw/papers/Plasticine_Reconfigurable_Parallel_Patterns_2017.pdf) — Prabhakar et al. (2017)
+[1] `raw/papers/Plasticine_Reconfigurable_Parallel_Patterns_2017.pdf`（非公开本地路径） — Prabhakar et al. (2017)

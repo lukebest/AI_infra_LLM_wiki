@@ -30,7 +30,7 @@ sources:
 **Authors:** Patrick Iff, Tommaso Bonato, Maciej Besta, Luca Benini, Torsten Hoefler（ETH Zurich）
 **arXiv:** [2603.05266](https://arxiv.org/abs/2603.05266)（2026-03-05）
 **Venue:** arXiv cs.AR 预印本。abs 页模板写 Design Automation Conference / 2025-07 Long Beach，**未独立核实**，按 2026-03-05 预印本引用。
-**PDF:** [raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf](raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2603.05266)
 **Code:** https://github.com/spcl/nw-design-for-wsi
 
 ## 中文摘要
@@ -94,5 +94,5 @@ HB pitch 量产 <10 μm、研究原型 1 μm，电气特性接近上层金属，
 
 # Citations
 
-[1] [raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf](raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf) — Iff et al., arXiv:2603.05266
+[1] [arXiv PDF](https://arxiv.org/pdf/2603.05266) — Iff et al., arXiv:2603.05266
 [2] [raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md](raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md) — 结构化摘录

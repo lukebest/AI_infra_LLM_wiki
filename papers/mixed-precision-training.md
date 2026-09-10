@@ -18,7 +18,7 @@ sources:
 
 # Mixed Precision Training
 
-**Authors:** Paulius Micikevicius, Sharan Narang, et al. | **Affiliations:** NVIDIA, Baidu Research | **PDF:** [raw/papers/Mixed_Precision_Training_2018.pdf](raw/papers/Mixed_Precision_Training_2018.pdf)
+**Authors:** Paulius Micikevicius, Sharan Narang, et al. | **Affiliations:** NVIDIA, Baidu Research | **PDF:** `raw/papers/Mixed_Precision_Training_2018.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -53,5 +53,5 @@ ICLR 2018 经典：**FP16** 存权重/激活/梯度，**FP32 master weights + lo
 
 # Citations
 
-[1] [raw/papers/Mixed_Precision_Training_2018.pdf](raw/papers/Mixed_Precision_Training_2018.pdf) — Micikevicius et al. (ICLR 2018)
+[1] `raw/papers/Mixed_Precision_Training_2018.pdf`（非公开本地路径） — Micikevicius et al. (ICLR 2018)
 [2] [raw/papers/mixed-precision-training.md](raw/papers/mixed-precision-training.md) — 结构化摘录

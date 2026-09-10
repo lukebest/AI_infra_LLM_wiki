@@ -17,7 +17,7 @@ sources:
 
 # FlashDecoding++: Faster Large Language Model Inference on GPUs
 
-**Authors:** Ke Hong, Guohao Dai, Jiaming Xu, Qiuli Mao, et al. (Tsinghua, SJTU, PKU, Infinigence-AI) | **Venue:** arXiv:2311.01282v4, Jan 2024 | **PDF:** [raw/papers/FlashDecoding_PlusPlus_LLM_Inference_GPUs_2024.pdf](raw/papers/FlashDecoding_PlusPlus_LLM_Inference_GPUs_2024.pdf)
+**Authors:** Ke Hong, Guohao Dai, Jiaming Xu, Qiuli Mao, et al. (Tsinghua, SJTU, PKU, Infinigence-AI) | **Venue:** arXiv:2311.01282v4, Jan 2024 | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2311.01282)
 
 ## 一句话总结
 
@@ -55,4 +55,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/FlashDecoding_PlusPlus_LLM_Inference_GPUs_2024.pdf](raw/papers/FlashDecoding_PlusPlus_LLM_Inference_GPUs_2024.pdf) — Hong et al. (2024)
+[1] [arXiv PDF](https://arxiv.org/pdf/2311.01282) — Hong et al. (2024)

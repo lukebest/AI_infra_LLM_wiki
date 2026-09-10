@@ -19,7 +19,7 @@ sources:
 
 # HCache: Fast State Restoration in LLM Serving
 
-**Authors:** Shiwei Gao, Youmin Chen, Jiwu Shu | **Affiliation:** Tsinghua University | **PDF:** [raw/papers/HCache_Fast_State_Restoration_LLM_Serving_2025.pdf](raw/papers/HCache_Fast_State_Restoration_LLM_Serving_2025.pdf)
+**Authors:** Shiwei Gao, Youmin Chen, Jiwu Shu | **Affiliation:** Tsinghua University | **PDF:** `raw/papers/HCache_Fast_State_Restoration_LLM_Serving_2025.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -54,5 +54,5 @@ HCache 在 **stateful serving**（多轮对话/RAG）中从 **hidden state**（�
 
 # Citations
 
-[1] [raw/papers/HCache_Fast_State_Restoration_LLM_Serving_2025.pdf](raw/papers/HCache_Fast_State_Restoration_LLM_Serving_2025.pdf) — Gao et al. (EuroSys '25)
+[1] `raw/papers/HCache_Fast_State_Restoration_LLM_Serving_2025.pdf`（非公开本地路径） — Gao et al. (EuroSys '25)
 [2] [raw/papers/hcache-fast-state-restoration.md](raw/papers/hcache-fast-state-restoration.md) — 结构化摘录

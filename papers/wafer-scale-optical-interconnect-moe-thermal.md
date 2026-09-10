@@ -34,7 +34,7 @@ sources:
 **Affiliation:** Georgia Institute of Technology  
 **arXiv:** [2608.24637](https://arxiv.org/abs/2608.24637)（2026-08-25）  
 **Venue:** 预印本。文内未另报会议。  
-**PDF:** [raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf](raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2608.24637)
 
 ## 中文摘要
 
@@ -90,5 +90,5 @@ MoE 训练的 EP All-to-All 把 scale-up 带宽推到电学 I/O 边长墙之外�
 
 # Citations
 
-[1] [raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf](raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf) — Yoon, Chen, Yu, arXiv:2608.24637
+[1] [arXiv PDF](https://arxiv.org/pdf/2608.24637) — Yoon, Chen, Yu, arXiv:2608.24637
 [2] [raw/papers/wafer-scale-optical-interconnect-moe-thermal.md](raw/papers/wafer-scale-optical-interconnect-moe-thermal.md) — 结构化摘录

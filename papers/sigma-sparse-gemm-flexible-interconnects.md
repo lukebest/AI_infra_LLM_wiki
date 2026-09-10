@@ -20,7 +20,7 @@ sources:
 
 # SIGMA
 
-**Authors:** Eric Qin, Ananda Samajdar, Hyoukjun Kwon, Vineet Nadella, Sudarshan Srinivasan, Dipankar Das, Bharat Kaul, Tushar Krishna (Georgia Tech + Intel) | **Venue:** HPCA 2020 | **PDF:** [raw/papers/SIGMA_Sparse_GEMM_Flexible_Interconnects_HPCA2020.pdf](SIGMA_Sparse_GEMM_Flexible_Interconnects_HPCA2020.pdf)
+**Authors:** Eric Qin, Ananda Samajdar, Hyoukjun Kwon, Vineet Nadella, Sudarshan Srinivasan, Dipankar Das, Bharat Kaul, Tushar Krishna (Georgia Tech + Intel) | **Venue:** HPCA 2020 | **PDF:** `raw/papers/SIGMA_Sparse_GEMM_Flexible_Interconnects_HPCA2020.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -81,4 +81,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/SIGMA_Sparse_GEMM_Flexible_Interconnects_HPCA2020.pdf](SIGMA_Sparse_GEMM_Flexible_Interconnects_HPCA2020.pdf) — Qin et al. HPCA 2020
+[1] `raw/papers/SIGMA_Sparse_GEMM_Flexible_Interconnects_HPCA2020.pdf`（非公开本地路径） — Qin et al. HPCA 2020

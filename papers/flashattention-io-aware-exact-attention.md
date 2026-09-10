@@ -17,7 +17,7 @@ sources:
 
 # FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness
 
-**Authors:** Tri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra, Christopher Ré (Stanford / SUNY Buffalo) | **Venue:** NeurIPS 2022 | **arXiv:** [2205.14135](https://doi.org/10.48550/arXiv.2205.14135) | **PDF:** [raw/papers/FlashAttention_Fast_IO_Aware_Attention_2022.pdf](raw/papers/FlashAttention_Fast_IO_Aware_Attention_2022.pdf)
+**Authors:** Tri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra, Christopher Ré (Stanford / SUNY Buffalo) | **Venue:** NeurIPS 2022 | **arXiv:** [2205.14135](https://doi.org/10.48550/arXiv.2205.14135) | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2205.14135)
 
 ## 一句话总结
 
@@ -54,4 +54,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/FlashAttention_Fast_IO_Aware_Attention_2022.pdf](raw/papers/FlashAttention_Fast_IO_Aware_Attention_2022.pdf) — Dao et al. (2022)
+[1] [arXiv PDF](https://arxiv.org/pdf/2205.14135) — Dao et al. (2022)

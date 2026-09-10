@@ -25,7 +25,7 @@ sources:
 
 **Speakers:** Srinagesh Loke, Xing Cindy Chen, Jatinder Singh（Meta）  
 **Venue:** Hot Chips 2026 Day 2  
-**PDF:** [raw/papers/HC2026_Meta_MTIA_400.pdf](raw/papers/HC2026_Meta_MTIA_400.pdf)
+**PDF:** `raw/papers/HC2026_Meta_MTIA_400.pdf`（非公开本地路径）
 
 双职责：DLRM 推理 + GenAI 训练。400 TDP **未知**。交叉 [HCCL / MTIA 300](/papers/hccl-meta-mtia-300-collective-communication.md)。
 
@@ -61,5 +61,5 @@ NoC：**2D mesh** + 多 VC。拥塞控制：**leaky buckets** + **Max OT**。集
 
 # Citations
 
-[1] [raw/papers/HC2026_Meta_MTIA_400.pdf](raw/papers/HC2026_Meta_MTIA_400.pdf) — Loke / Chen / Singh, Hot Chips 2026
+[1] `raw/papers/HC2026_Meta_MTIA_400.pdf`（非公开本地路径） — Loke / Chen / Singh, Hot Chips 2026
 [2] [raw/papers/hc2026-meta-mtia-400.md](raw/papers/hc2026-meta-mtia-400.md) — 结构化摘录

@@ -23,7 +23,7 @@ sources:
 
 **Speakers:** Richard Ho, Ravi Narayanaswami, Chris Leary（OpenAI）  
 **Venue:** Hot Chips 2026 Day 2  
-**PDF:** [raw/papers/HC2026_OpenAI_Jalapeno.pdf](raw/papers/HC2026_OpenAI_Jalapeno.pdf)
+**PDF:** `raw/papers/HC2026_OpenAI_Jalapeno.pdf`（非公开本地路径）
 
 推理 ASIC + 系统。**RTL → tapeout 9 months**。伙伴点名 **Broadcom & Celestica**。Package TDP **700 W**。非目标：芯片数、单芯片吞吐、TTFT。Jalapeño 跑 **STP**；部分 GPU 基线用 **MTP**。
 
@@ -59,5 +59,5 @@ ASIC：mxfp8×mxfp8 **3.4 PFLOP/s**；mxfp8×mxfp4 **6.7**；mxfp4×mxfp4 **13.4
 
 # Citations
 
-[1] [raw/papers/HC2026_OpenAI_Jalapeno.pdf](raw/papers/HC2026_OpenAI_Jalapeno.pdf) — Ho / Narayanaswami / Leary, Hot Chips 2026
+[1] `raw/papers/HC2026_OpenAI_Jalapeno.pdf`（非公开本地路径） — Ho / Narayanaswami / Leary, Hot Chips 2026
 [2] [raw/papers/hc2026-openai-jalapeno.md](raw/papers/hc2026-openai-jalapeno.md) — 结构化摘录

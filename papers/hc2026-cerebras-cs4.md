@@ -25,7 +25,7 @@ sources:
 
 **Speaker:** Jean-Philippe Fricker（Cerebras，Co-Founder & Chief System Architect）  
 **Venue:** Hot Chips 2026 Day 2  
-**PDF:** [raw/papers/HC2026_Cerebras_CS4.pdf](raw/papers/HC2026_Cerebras_CS4.pdf)
+**PDF:** `raw/papers/HC2026_Cerebras_CS4.pdf`（非公开本地路径）
 
 三片晶圆进一个机柜。相对倍率默认对 CS-3。CS-6 FLOPS / BW / 绝对延迟 **未知**。更新 [Cerebras WSE](/entities/cerebras-wse.md)。
 
@@ -62,5 +62,5 @@ Early access now，GA **later in Q3 2026**。Nexus 面向 CS-5 / CS-6。CS-5（2
 
 # Citations
 
-[1] [raw/papers/HC2026_Cerebras_CS4.pdf](raw/papers/HC2026_Cerebras_CS4.pdf) — Jean-Philippe Fricker, Hot Chips 2026
+[1] `raw/papers/HC2026_Cerebras_CS4.pdf`（非公开本地路径） — Jean-Philippe Fricker, Hot Chips 2026
 [2] [raw/papers/hc2026-cerebras-cs4.md](raw/papers/hc2026-cerebras-cs4.md) — 结构化摘录

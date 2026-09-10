@@ -16,7 +16,7 @@ sources:
 
 # CODE PLAN: Scaling Code-Form Planning for LLM Reasoning
 
-**Authors:** Jiaxin Wen, Jian Guan, Hongning Wang, Wei Wu, Minlie Huang | **Affiliations:** Tsinghua University, Ant Group | **PDF:** [raw/papers/Code_Form_Planning_Scaling_LLM_Reasoning_2024.pdf](raw/papers/Code_Form_Planning_Scaling_LLM_Reasoning_2024.pdf)
+**Authors:** Jiaxin Wen, Jian Guan, Hongning Wang, Wei Wu, Minlie Huang | **Affiliations:** Tsinghua University, Ant Group | **PDF:** `raw/papers/Code_Form_Planning_Scaling_LLM_Reasoning_2024.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -49,5 +49,5 @@ CODE PLAN 让 LLM 先生成并遵循 **code-form 伪代码计划**再作答；�
 
 # Citations
 
-[1] [raw/papers/Code_Form_Planning_Scaling_LLM_Reasoning_2024.pdf](raw/papers/Code_Form_Planning_Scaling_LLM_Reasoning_2024.pdf) — Wen et al. (2024)
+[1] `raw/papers/Code_Form_Planning_Scaling_LLM_Reasoning_2024.pdf`（非公开本地路径） — Wen et al. (2024)
 [2] [raw/papers/code-form-planning-llm-reasoning.md](raw/papers/code-form-planning-llm-reasoning.md) — 结构化摘录

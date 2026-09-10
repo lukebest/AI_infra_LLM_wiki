@@ -28,7 +28,7 @@ sources:
 
 **Speakers:** Alan Smith, Maiyuran Subramaniam（AMD）  
 **Venue:** Hot Chips 2026 Conference  
-**PDF:** [raw/papers/HC2026_AMD_Instinct_MI455X.pdf](raw/papers/HC2026_AMD_Instinct_MI455X.pdf)
+**PDF:** `raw/papers/HC2026_AMD_Instinct_MI455X.pdf`（非公开本地路径）
 
 芯片拆解。系统见同日 [Helios / UALoE](/papers/hc2026-amd-helios-ualoe.md)。对照 [Rubin NVLink 6](/papers/hc2026-nvidia-rubin.md)。封装落到 [Hybrid Bonding](/papers/hybrid-bonding-3d-integration-recent.md) 与 [DRAM](/concepts/dram-memory-system.md)。
 
@@ -57,5 +57,5 @@ Peak vs MI355X（AMD Performance Labs, June 2026，endnote MI400-006）：OCP MX
 
 # Citations
 
-[1] [raw/papers/HC2026_AMD_Instinct_MI455X.pdf](raw/papers/HC2026_AMD_Instinct_MI455X.pdf) — Smith / Subramaniam, Hot Chips 2026
+[1] `raw/papers/HC2026_AMD_Instinct_MI455X.pdf`（非公开本地路径） — Smith / Subramaniam, Hot Chips 2026
 [2] [raw/papers/hc2026-amd-instinct-mi455x.md](raw/papers/hc2026-amd-instinct-mi455x.md) — 结构化摘录

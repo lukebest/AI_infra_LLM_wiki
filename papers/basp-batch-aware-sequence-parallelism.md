@@ -27,7 +27,7 @@ sources:
 **Affiliation:** Clemson University
 **arXiv:** [2609.03151](https://arxiv.org/abs/2609.03151)（2026-09-04，cs.DC）
 **Venue:** 预印本
-**PDF:** [raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf](raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.03151)
 
 DeepSpeed-Ulysses 把长序列沿 sequence 维切开，attention 用全局 **N-way all-to-all** 做头重排。BASP 观察到这与 micro-batch **B** 无关：当 \(N=KB\) 时，可把全局集体拆成 **B 组并行的 K-way all-to-all**，每 GPU 仍持 \(BS/N\) tokens。对照 wiki [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md) 的 All-to-All 行：这是 **SP 侧拓扑感知子组**，不是新原语。
 
@@ -75,5 +75,5 @@ Loss 曲线 800 iter 与 Ulysses 重叠。**实测**小集群；非新硅。
 
 # Citations
 
-[1] [raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf](raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf) — Ghimire & Calhoun, arXiv:2609.03151
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.03151) — Ghimire & Calhoun, arXiv:2609.03151
 [2] [raw/papers/basp-batch-aware-sequence-parallelism.md](raw/papers/basp-batch-aware-sequence-parallelism.md) — ingest stub

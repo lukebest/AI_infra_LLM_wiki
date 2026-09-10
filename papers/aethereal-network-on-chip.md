@@ -52,5 +52,5 @@ GS-only ≈ **2× 性能、~1/4 面积**（相对 GS-BE）；代价是缺少“�
 
 # Citations
 
-[1] [raw/papers/Aethereal_Network_on_Chip_Concepts_Architectures_Implementations_2005.pdf](raw/papers/Aethereal_Network_on_Chip_Concepts_Architectures_Implementations_2005.pdf)
+[1] `raw/papers/Aethereal_Network_on_Chip_Concepts_Architectures_Implementations_2005.pdf`（非公开本地路径）
 [2] [raw/papers/aethereal-network-on-chip.md](raw/papers/aethereal-network-on-chip.md) — 结构化摘录

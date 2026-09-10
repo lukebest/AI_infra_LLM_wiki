@@ -20,7 +20,7 @@ sources:
 
 # SuperInfer: SLO-Aware Rotary Scheduling on Superchips
 
-**Authors:** Jiahuan Yu, Mingtao Hu, Zichao Lin, Minjia Zhang | **Affiliation:** UIUC | **PDF:** [raw/papers/SuperInfer_SLO_Aware_Rotary_Scheduling_Superchips_2026.pdf](raw/papers/SuperInfer_SLO_Aware_Rotary_Scheduling_Superchips_2026.pdf)
+**Authors:** Jiahuan Yu, Mingtao Hu, Zichao Lin, Minjia Zhang | **Affiliation:** UIUC | **PDF:** `raw/papers/SuperInfer_SLO_Aware_Rotary_Scheduling_Superchips_2026.pdf`（非公开本地路径）
 
 ## 一句话总结
 
@@ -53,5 +53,5 @@ SuperInfer 为 GH200 等 **superchip**（NVLink-C2C ~900 GB/s）联合设计 **R
 
 # Citations
 
-[1] [raw/papers/SuperInfer_SLO_Aware_Rotary_Scheduling_Superchips_2026.pdf](raw/papers/SuperInfer_SLO_Aware_Rotary_Scheduling_Superchips_2026.pdf) — Yu et al. (2026)
+[1] `raw/papers/SuperInfer_SLO_Aware_Rotary_Scheduling_Superchips_2026.pdf`（非公开本地路径） — Yu et al. (2026)
 [2] [raw/papers/superinfer-slo-aware-rotary-scheduling.md](raw/papers/superinfer-slo-aware-rotary-scheduling.md) — 结构化摘录

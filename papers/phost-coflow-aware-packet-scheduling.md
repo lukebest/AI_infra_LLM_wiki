@@ -47,5 +47,5 @@ Gao, Narayan, Kumar, Agarwal, Ratnasamy, Shenker（UC Berkeley）
 
 # Citations
 
-[1] [raw/papers/pHost_Coflow_Aware_Packet_Scheduling_2015.pdf](raw/papers/pHost_Coflow_Aware_Packet_Scheduling_2015.pdf)
+[1] `raw/papers/pHost_Coflow_Aware_Packet_Scheduling_2015.pdf`（非公开本地路径）
 [2] [raw/papers/phost-coflow-aware-packet-scheduling.md](raw/papers/phost-coflow-aware-packet-scheduling.md) — 结构化摘录

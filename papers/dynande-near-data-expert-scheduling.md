@@ -30,7 +30,7 @@ sources:
 **Affiliation:** Illinois Institute of Technology
 **arXiv:** [2609.00407](https://arxiv.org/abs/2609.00407)（2026-09-01，cs.AR）
 **Venue:** 预印本（文内 DOI 占位）。
-**PDF:** [raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf](raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf)
+**PDF:** [arXiv PDF](https://arxiv.org/pdf/2609.00407)
 
 相对 [ReXpert](/papers/rexpert-reram-nmc-disaggregated-moe.md) 把 expert **驻留**在 ReRAM 近存池，本文假定 expert 在扩展内存、用 **NPU↔NDP 协作调度** 决定谁 PMove、谁 AMove。互连是 **PCIe Gen4×16 / CXL**，不是片上 NoC 或 chiplet D2D。
 
@@ -77,5 +77,5 @@ Batched MoE 下专家参数搬运常主导延迟（文 Fig.1 DeepSeek 分解）�
 
 # Citations
 
-[1] [raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf](raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf) — Lu et al., arXiv:2609.00407
+[1] [arXiv PDF](https://arxiv.org/pdf/2609.00407) — Lu et al., arXiv:2609.00407
 [2] [raw/papers/dynande-near-data-expert-scheduling.md](raw/papers/dynande-near-data-expert-scheduling.md) — 结构化摘录

@@ -18,7 +18,7 @@ sources:
 
 # FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision
 
-**Authors:** Jay Shah, Ganesh Bikshandi, Ying Zhang, Vijay Thakkar, Pradeep Ramani, Tri Dao (Colfax, Meta, NVIDIA, Georgia Tech, Princeton, Together AI) | **Venue:** arXiv:2407.08608, Jul 2024 | **PDF:** [raw/papers/FlashAttention3_Asynchrony_Low_Precision_2024.pdf](raw/papers/FlashAttention3_Asynchrony_Low_Precision_2024.pdf)
+**Authors:** Jay Shah, Ganesh Bikshandi, Ying Zhang, Vijay Thakkar, Pradeep Ramani, Tri Dao (Colfax, Meta, NVIDIA, Georgia Tech, Princeton, Together AI) | **Venue:** arXiv:2407.08608, Jul 2024 | **PDF:** [arXiv PDF](https://arxiv.org/pdf/2407.08608)
 
 ## 一句话总结
 
@@ -52,4 +52,4 @@ sources:
 
 # Citations
 
-[1] [raw/papers/FlashAttention3_Asynchrony_Low_Precision_2024.pdf](raw/papers/FlashAttention3_Asynchrony_Low_Precision_2024.pdf) — Shah et al. (2024)
+[1] [arXiv PDF](https://arxiv.org/pdf/2407.08608) — Shah et al. (2024)
