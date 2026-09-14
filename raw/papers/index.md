@@ -1,5 +1,9 @@
 # Other
 
+* [Fengshui stub](fengshui-chiplet-ecosystem-basic-codesign.md) + [PDF](Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf) — arXiv:2609.10970
+* [Entwine stub](entwine-tiled-computation-fine-grained-gpu-comm.md) + [PDF](Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf) — arXiv:2609.11562
+* [SAGE stub](sage-semantic-aware-geographic-error-recovery.md) + [PDF](SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf) — arXiv:2609.10126
+* [Composable CXL stub](composable-cxl-memory-k8s-llm-serving.md) + [PDF](Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf) — arXiv:2609.10790
 * [WaferTrans stub](wafertrans-iommu-free-wafer-scale-gpu.md) + [PDF](WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf) — arXiv:2609.06125
 * [HDA-MoE stub](hda-moe-3d-nmp-hybrid-parallel.md) + [PDF](HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf) — arXiv:2609.08682
 * [Sharing a Fabric stub](sharing-fabric-collective-storage-penalties.md) + [PDF](Sharing_Fabric_Collective_Storage_Penalties_2026.pdf) — arXiv:2609.06506

@@ -13,13 +13,14 @@ tags:
 - gpu
 timestamp: '2026-08-31T00:00:00Z'
 created: 2026-07-22
-updated: 2026-09-07
+updated: 2026-09-14
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
 - raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf
 - raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf
 - raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf
+- raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf
 ---
 
 # NVLink / NVSwitch Scale-Up Fabric
@@ -76,11 +77,14 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 - [Hot Chips 2026 Rubin GPU](/papers/hc2026-nvidia-rubin.md)
 - [Hot Chips 2026 Helios UALoE](/papers/hc2026-amd-helios-ualoe.md)
 - [Synchronization Tax](/papers/synchronization-tax-gpu-scale-up.md) — τ 征税，B* 随域规模下降
+- [Entwine](/papers/entwine-tiled-computation-fine-grained-gpu-comm.md) — 单节点 NVLink 上 tile 级 GEMM–RS 重叠
 
 
 ## 训练侧：把集体关在 NVLink 域
 
 [BASP](/papers/basp-batch-aware-sequence-parallelism.md) 在 Ulysses 训练中按 micro-batch 建 SP 子组；当子组大小 = 每节点 GPU 数时，attention all-to-all 可不出节点，避开 IB。[Einsummable](/papers/einsummable-multi-gpu-parallelism.md) 默认假设单机 NVSwitch 非阻塞域做 intra-op 并行。片内更细一层：[CREDIT](/papers/credit-dsmem-inter-cta-tiling.md) 的 DSMEM 是 GPC 内 inter-SM，不是 NVLink。
+
+[Entwine](/papers/entwine-tiled-computation-fine-grained-gpu-comm.md) 仍在单节点 NVLink 域，但把通信粒度做到 **GEMM tile**：交错产出 + SM 通信核 + 预算选型；vs 顺序 NCCL geomean 1.232×。
 
 # Citations
 
@@ -88,3 +92,4 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 [2] [raw/papers/hc2026-nvidia-rubin.md](raw/papers/hc2026-nvidia-rubin.md) — Rubin GPU / NVLink 6, Hot Chips 2026
 [3] [raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf](raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf) — Devraj et al., arXiv:2608.22503；同步税 vs 带宽缩放
 [4] [raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf](raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf) — Madhavan et al., arXiv:2609.01821；光学 1152 pod vs 电学 72
+[5] [raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf](raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf) — Entwine

@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-09-10T00:00:00Z'
 created: 2026-07-13
-updated: 2026-09-10
+updated: 2026-09-14
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -22,6 +22,7 @@ sources:
 - raw/papers/Einsummable_Multi_GPU_Parallelism_2026.pdf
 - raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf
 - raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf
+- raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -106,6 +107,8 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 [Sharing a Fabric](/papers/sharing-fabric-collective-storage-penalties.md)（NTU/LLNL）在 Slingshot-11 上拆出两种代价：重尾 DataLoader stall（主），以及存储与 NCCL/RCCL **同 traffic class** 时 all-reduce 被拖到最高 **145×**（次）。DYAD 节点本地 NVMe staging 整 epoch vs Lustre **7.4×**。提醒：集体墙钟的外生项不只是集群拥塞 pattern（[REACT](/papers/react-tuning-collective-patterns-shared-clusters.md)），还有 **I/O 是否还在那张网上**。
 
+[Entwine](/papers/entwine-tiled-computation-fine-grained-gpu-comm.md)（中科院）把重叠从「整核后再集体」推进到 **tile 产出顺序 + 细粒度 SM 通信核 + 资源预算**：A800 NVLink 上 GEMM–ReduceScatter vs cuBLAS+NCCL geomean **1.232×**（最高 1.433×），相对 FlashOverlap/Async-TP/FLUX 等再高 **3.1–9.8%**。
+
 ## 相关页面
 
 - [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — α+nβ 五算法
@@ -129,6 +132,7 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [CIERA](/papers/ciera-cross-iteration-exponent-reuse-allgather.md) — MoE AllGather 指数复用无损压缩
 - [REACT](/papers/react-tuning-collective-patterns-shared-clusters.md) — 共享集群拥塞下改写集体 pattern
 - [Sharing a Fabric](/papers/sharing-fabric-collective-storage-penalties.md) — 存储与集体同 fabric / 同 TC 的两重罚
+- [Entwine](/papers/entwine-tiled-computation-fine-grained-gpu-comm.md) — NVLink 域内 GEMM–RS tile 顺序×SM 通信预算；vs NCCL 1.232× geomean
 
 # Citations
 
@@ -139,3 +143,4 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [5] [raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf](raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf) — CIERA；无损指数复用 Allgather
 [6] [raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf](raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf) — REACT；拥塞感知集体 pattern
 [7] [raw/papers/Sharing_Fabric_Collective_Storage_Penalties_2026.pdf](raw/papers/Sharing_Fabric_Collective_Storage_Penalties_2026.pdf) — Wang et al., arXiv:2609.06506；存储×集体 fabric 争用
+[8] [raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf](raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf) — Ma et al., arXiv:2609.11562；tile 级 GEMM–RS 重叠

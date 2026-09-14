@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-09-04
+updated: 2026-09-14
 sources:
 - arXiv:2504.02263
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
@@ -21,6 +21,8 @@ sources:
 - raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf
 - raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf
 - raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf
+- raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf
+- raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -143,6 +145,8 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [LEAP](/papers/leap-imc-noc-llm-inference.md) — 片上 IMC-NoC 的 LEAP-D PD 解耦；vs H100 1.52× 吞吐 / 24.91× 能效（仿真）
 - [AInfer-PD](/papers/ainfer-pd-inplace-prefill-decode-moe.md) — 同池 P/D 复用的集体/DeepEP 隔离；vs Normal −7.1–22.5%、vs SGLang −24.8–32.9%
 - [Photonic Prefill](/papers/scaling-inference-prefill-photonic.md) — 光学扩大 scale-up pod 后对 PD 解耦 serving 的 TTFT/TPOT 传导（DES）
+- [Fengshui](/papers/fengshui-chiplet-ecosystem-basic-codesign.md) — 算子级 BASIC/chiplet 池；与相位拆分互补的 die 经济学
+- [Composable CXL](/papers/composable-cxl-memory-k8s-llm-serving.md) — **内存**解耦共享 KV（非 P/D 池）；跨节点 prefix TTFT 5.5–36.6×
 
 # Citations
 
@@ -155,3 +159,5 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [7] [raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf](raw/papers/HYDRA_Heterogeneous_Chiplet_DSE_Hybrid_LLM_2026.pdf) — HYDRA 封装内 hybrid serving DSE
 [8] [raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf](raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf) — 光学 prefill × PD DES
 [9] [raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf](raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf) — AInfer-PD 同池复用
+[10] [raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf](raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf) — Fengshui
+[11] [raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf](raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf) — Composable CXL serving

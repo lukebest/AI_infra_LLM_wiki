@@ -1,5 +1,9 @@
 # Paper
 
+* [Composable CXL Memory as K8s Shared Memory for LLM Serving](composable-cxl-memory-k8s-llm-serving.md) - Seagate — DRA+DAX 组合 CXL；Qwen2.5-7B 跨节点 prefix TTFT 5.5–36.6×，sharing gap 1–4%
+* [Entwine: Tiled Computation and Fine-Grained GPU Communication](entwine-tiled-computation-fine-grained-gpu-comm.md) - 中科院 — tile×SM 通信预算；GEMM–RS vs NCCL geomean 1.232×（最高 1.433×）
+* [Fengshui: Chiplet Ecosystem and Bespoke Accelerator Codesign](fengshui-chiplet-ecosystem-basic-codesign.md) - 密歇根 — 8 chiplet 池联合 BASIC；能量/EDP×$ 相对同构 −48.5–97.8%
+* [SAGE: Semantic-Aware Geographic Error Recovery for AI Data Movement](sage-semantic-aware-geographic-error-recovery.md) - 城大香港 — 语义分级×地理检查点；Garnet vs 34-hop 延迟 −28% / Ψ_del −30.1%
 * [WaferTrans: IOMMU-free VA Translation for Wafer-scale GPUs](wafertrans-iommu-free-wafer-scale-gpu.md) - 清华 — 片上 PPD 去掉 CPU-IOMMU；vs Trans-FW 平均 2.5×（Seq/Adj 3.1×）
 * [HDA-MoE: Hybrid Parallelism for MoE on 3D NMP](hda-moe-3d-nmp-hybrid-parallel.md) - 北大/阿里 DAMO — 离线 hybrid 放置 + 在线调度；vs TP 1.1–3.4×、vs HD-MoE 1.1–1.3×
 * [Sharing a Fabric with Collective Communication](sharing-fabric-collective-storage-penalties.md) - NTU/LLNL — 存储×集体同 fabric；Lustre 同 TC all-reduce 最高 145×；DYAD vs Lustre 7.4×

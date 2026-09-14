@@ -17,11 +17,12 @@ tags:
 - scale-up
 timestamp: '2026-08-20T00:00:00Z'
 created: 2026-06-24
-updated: 2026-08-27
+updated: 2026-09-14
 sources:
 - raw/articles/interconn-study-21d-day-02.md
 - papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md
 - papers/maia-200-sdla.md
+- raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf
 ---
 
 # Interconnection Network Protocol Stack（互连网络协议栈）
@@ -80,6 +81,8 @@ NI 决定：哪些 collective 可硬件卸载、哪些需软件参与、注入/e
 
 [Maia 200](/papers/maia-200-sdla.md) 的 ATLv2 是 **传输层**：接收端驱动 RDMA、AES-GCM-256、selective retransmit、包喷洒。物理/链路仍是 PFC 以太 + 400G ANC，不是 chiplet SerDes PHY。
 
+[SAGE](/papers/sage-semantic-aware-geographic-error-recovery.md)（城大香港）在可靠投递之上加 **数值语义**：BF16 Class-H/M/L 决定是否重放、地理检查点决定从多远重放；Garnet 上相对固定 34-hop 平均延迟 −28%、Ψ_del −30.1%。与 DICE 的「PHY 延迟要不要建细」互补——SAGE 问「哪些错误值得付重传税」。
+
 ## 历史坐标
 
 协议栈各层随互连介质演进：电话网铜线 → HPC 专用链路 → 硅片 NoC → 晶圆级单介质（[Cerebras WSE](/entities/cerebras-wse.md)）。详见 [Switching Principles](/concepts/switching-principles.md) 中的时代划分与里程碑。
@@ -95,8 +98,11 @@ NI 决定：哪些 collective 可硬件卸载、哪些需软件参与、注入/e
 - [C2C-Explorer](/papers/c2c-explorer-chip-to-chip-interconnect-llm.md) — scale-up C2C 的 AXI/MAC/credit 层，不建模误码
 - [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 包内 NoI 的 UCIe x64/GRS 带宽档，不是 PHY 误码模型
 - [Maia 200 SDLA](/papers/maia-200-sdla.md) — Ethernet ATLv2 接收端驱动
+- [SAGE](/papers/sage-semantic-aware-geographic-error-recovery.md) — 语义分级重放 / 地理检查点
 
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-02.md](raw/articles/interconn-study-21d-day-02.md) — Dally & Towles Ch.2 学习笔记（21 天互连研究 Day 2）
 [2] [papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md](papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) — Aligholipour et al., arXiv:2607.24221
+
+[3] [raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf](raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf) — Hung et al., arXiv:2609.10126；语义错误恢复

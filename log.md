@@ -1,5 +1,18 @@
 # Bundle Update Log
 
+## 2026-09-14
+
+### Watch (morning)
+* **Watch**: 2026-09-14 Asia/Shanghai AI infra 论文巡检。cs.AR/cs.DC recent 到 **Fri 9/11**（周末无新表；Mon 9/14 美东列表上海早晨尚未放出）。补扫 9/10–9/11（9/11 早报失败窗口）。已 ingest 的 WaferTrans/HDA-MoE/Sharing-a-Fabric/CIERA/REACT/FlexPosit/Huawei τ 等不重复。
+* **Ingest**: Fengshui PDF → `raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf` + stub `raw/papers/fengshui-chiplet-ecosystem-basic-codesign.md`（arXiv:2609.10970, 2026-09-10, cs.AR）。
+* **Ingest**: Entwine PDF → `raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf` + stub `raw/papers/entwine-tiled-computation-fine-grained-gpu-comm.md`（arXiv:2609.11562, 2026-09-10, cs.DC）。
+* **Ingest**: SAGE PDF → `raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf` + stub `raw/papers/sage-semantic-aware-geographic-error-recovery.md`（arXiv:2609.10126, 2026-09-09, cs.AR）。
+* **Ingest**: Composable CXL PDF → `raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf` + stub `raw/papers/composable-cxl-memory-k8s-llm-serving.md`（arXiv:2609.10790, 2026-09-09, cs.DC）。
+* **Creation** (papers): [Fengshui](/papers/fengshui-chiplet-ecosystem-basic-codesign.md)（8 chiplet 池；能量/EDP×$ −48.5–97.8%）；[Entwine](/papers/entwine-tiled-computation-fine-grained-gpu-comm.md)（tile×SM；vs NCCL 1.232×）；[SAGE](/papers/sage-semantic-aware-geographic-error-recovery.md)（语义重放；vs 34-hop −28%/Ψ_del −30.1%）；[Composable CXL](/papers/composable-cxl-memory-k8s-llm-serving.md)（K8s DRA+DAX；TTFT 5.5–36.6×）。
+* **Update**: [Interconnection Design Space](/concepts/interconnection-network-design-space.md)（Fengshui+SAGE）、[Protocol Stack](/concepts/interconnection-network-protocol-stack.md)（SAGE）、[LLM Collectives](/concepts/llm-distributed-training-collectives.md)（Entwine）、[NVLink fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md)（Entwine）、[CXL Tiered Memory](/concepts/cxl-tiered-memory.md)（Composable CXL）、[Disaggregated Inference](/concepts/disaggregated-inference.md)（Fengshui+CXL）。
+* **Indexes**: 手动同步 `papers/index.md`（+4）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: AccelForge (2609.11906, 加速器建模框架/DSE)；PATTON (2609.11392, 商品 PIM runtime，无新 fabric/NoC)；AMEND (2609.09823, GPU-PIM attention)；UNISON (2609.09643, NMP KV 调度)；REACH (2609.10861, HBM ECC)；HBFSim (2609.09800, HBF 仿真工具)；三角格点 NoC 路由 (2609.09746, 纯理论无 LLM)；电源/数据中心电网 (2609.11649)；CHERI/病理 BEACON/FlexSpIM SNN/Shift-Accumulate Attention；MoE Comp-Comm Overlap (2609.07536, 已于 9/10 跳过)；Tools-CC-Bench；Epoch diffusion MoE serving；EStream mobile NPU。BusyBarn 仍无公开全文 PDF。
+
 ## 2026-09-10
 
 ### Public PDF links

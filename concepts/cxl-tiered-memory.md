@@ -13,12 +13,13 @@ tags:
 - latency
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-07-17
-updated: 2026-09-03
+updated: 2026-09-14
 sources:
 - raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf
 - raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf
 - raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf
 - raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf
+- raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf
 ---
 
 # CXL Tiered Memory
@@ -34,6 +35,7 @@ sources:
 | **页迁移策略** | [M5](/papers/m5-cxl-tiered-memory-page-migration.md) | 何时、迁哪些页；避免 thrashing 与错误层级 |
 | **解耦内存数据移动** | [CosMoS](/papers/cosmos-disaggregated-memory-data-movement.md) | 解耦内存池上的 cost-effective 搬运/访问支持 |
 | **CXL fabric** | [Aurelia](/papers/aurelia-cxl-fabric-tentacle.md) | 多主机共享 CXL 内存的 fabric / tentacle 拓扑 |
+| **K8s 可调度共享池** | [Composable CXL](/papers/composable-cxl-memory-k8s-llm-serving.md) | DRA+DAX 跨节点 KV/prefix；TTFT 5.5–36.6×（feasibility） |
 
 ## 与 LLM 系统的交汇
 
@@ -63,3 +65,4 @@ sources:
 [2] [raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf](raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf)
 [3] [raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf](raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf)
 [4] [raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf](raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf) — DynaNDE CXL-NDP MoE
+[5] [raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf](raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf) — Fan et al., arXiv:2609.10790
