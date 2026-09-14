@@ -32,6 +32,7 @@ sources:
 - raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf
 - raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf
 - raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf
+- raw/articles/bojieli-ai-infra-book.md
 ---
 
 # Interconnection Network Design Space（互连网络设计空间）
@@ -136,6 +137,12 @@ sources:
 - [HDA-MoE](/papers/hda-moe-3d-nmp-hybrid-parallel.md)：3D NMP 上 Mesh/Torus/Fat-tree 的 Link Balance 放置，把专家映射算进 NoC 占用。
 - [WaferTrans](/papers/wafertrans-iommu-free-wafer-scale-gpu.md)：晶圆 scale-up 域的 **地址翻译控制面**（PPD），与数据面带宽分账。
 
+## 书 Ch.6–7：应用流量如何选拓扑（2026-09）
+
+[Ch.6](/analyses/ai-infra-book/ch06-supernode.md) 把 Dally 四层接到 LLM 流量：同一组 6 端口/卡，**维序 AllReduce** 下环面与交换网打平；**均匀 All-to-All**（MoE dispatch）环面按平均跳数摊带宽，64 卡约 3× 慢、512 卡 6×。选择依据：规则集体 vs 任意小消息、协作域卡数、是否愿用交换硅换等距。
+
+[Ch.7](/analyses/ai-infra-book/ch07-datacenter-network.md) 补 scale-out 三模型：割集 \(T=V/B\)、在途 \(N\ge\lceil BT/m\rceil\)、关键路径从数据就绪起。算法改的是**哪段出口的字节**，不是「总发送量」。rail 对齐、超售 \(f\le1/r\)、ECMP 冲突与 incast 反馈距离都是设计空间里的可算旋钮。对照 [超节点](/concepts/ai-infra-supernode.md)。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — Dally & Towles Ch.1（Day 1）
@@ -161,3 +168,5 @@ sources:
 [21] [raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf](raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf) — LEAP INC mesh
 [22] [raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf](raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf) — Fengshui chiplet 生态
 [23] [raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf](raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf) — SAGE 语义错误恢复
+[24] [Ch.6–7](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/07-数据中心网络.md) — 李博杰《AI Infra》
+[25] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)

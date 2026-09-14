@@ -9,5 +9,6 @@
 * [MRC (Multipath Reliable Connection)](mrc.md) - Multipath Reliable Connection：OpenAI/Microsoft/AMD/NVIDIA/Broadcom 联合设计的多路径 RDMA 传输协议，包 spraying + 选择性重传，100K+ GPU 训练集群生产部署
 * [NVIDIA Groq 3 LPX](nvidia-groq-3-lpx.md) - NVIDIA rack-scale LPU；HC2026 第一手 10,996 TPS/user、350 ns C2C、40 PB/s
 * [NVIDIA Vera Rubin NVL72](nvidia-vera-rubin-nvl72.md) - NVIDIA Vera Rubin；HC2026 NVLink 6 3.6 TB/s、七芯片五机柜、Vera C2C 1.8 TB/s
+* [深入理解 AI Infra（李博杰）](bojieli-ai-infra-book.md) - 开源教材：从约束推导设计；五个数据搬移问题；十二章预算/机制摘要
 * [UnifiedBus (UB)](unifiedbus-ub.md) - Huawei UnifiedBus 高性能互连协议，SuperPoD-scale AI/HPC，统一协议栈，全资源池化
 * [Vera ETL256](vera-etl256.md) - 256 CPU 独立 rack，Spectrum-6 ETL switch，液冷，全 copper 互联

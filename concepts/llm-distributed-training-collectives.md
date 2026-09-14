@@ -23,6 +23,7 @@ sources:
 - raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf
 - raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf
 - raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf
+- raw/articles/bojieli-ai-infra-book.md
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -109,6 +110,17 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 [Entwine](/papers/entwine-tiled-computation-fine-grained-gpu-comm.md)（中科院）把重叠从「整核后再集体」推进到 **tile 产出顺序 + 细粒度 SM 通信核 + 资源预算**：A800 NVLink 上 GEMM–ReduceScatter vs cuBLAS+NCCL geomean **1.232×**（最高 1.433×），相对 FlashOverlap/Async-TP/FLUX 等再高 **3.1–9.8%**。
 
+## 书 Ch.6–7、10：分层、环/树、就绪偏差（2026-09）
+
+[Ch.6](/analyses/ai-infra-book/ch06-supernode.md) / [Ch.7](/analyses/ai-infra-book/ch07-datacenter-network.md) / [Ch.10](/analyses/ai-infra-book/ch10-training-system.md) 把集体从「记得 Ring」推进到可算的路径：
+
+- 环 \(T=2(n-1)\alpha+2(n-1)M/(nB)\)；未分段树 \(2\log_2 n(\alpha+M/B)\)。H100 八卡、\(\alpha=0.822\) μs、450 GB/s/dir，交点约 **680 KiB**。decode 10 KiB 偏启动/树；prefill 80 MiB 偏环。
+- **分层梯度**：16 rank、192 MiB。连续环跨机 720 MiB/1 NIC；分层 384 MiB/8 NIC。发送总量可相同，出口不同。
+- NCCL `busbw=2(n-1)M/(nT)` ≠ 每 NIC 线速。重叠必须测并发，不能独占时间相减。
+- 关键路径从**数据就绪**起：三人 0 ms、一人 2 ms + 0.4 ms 交换 = 2.4 ms；对齐就绪到 0.4 ms（与 Synchronization Tax 的 \(\tau\) 同构）。MegaScale：带宽稳、rank 越来越晚到。
+- 1024 卡、TP8×DP128：超节点 8→64 且出口随卡增长，步时间 0.939→0.690 s（**+36% tok/s**）；再大收益 <2%。同条件仍选 TP8。
+- 训练状态 16 B/param；ZeRO 减复制不自动减峰值激活。checkpoint \(\epsilon\approx C/I+\lambda(I/2+R)\)。
+
 ## 相关页面
 
 - [MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md) — α+nβ 五算法
@@ -133,6 +145,7 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [REACT](/papers/react-tuning-collective-patterns-shared-clusters.md) — 共享集群拥塞下改写集体 pattern
 - [Sharing a Fabric](/papers/sharing-fabric-collective-storage-penalties.md) — 存储与集体同 fabric / 同 TC 的两重罚
 - [Entwine](/papers/entwine-tiled-computation-fine-grained-gpu-comm.md) — NVLink 域内 GEMM–RS tile 顺序×SM 通信预算；vs NCCL 1.232× geomean
+- [AI Infra Book Ch.6](/analyses/ai-infra-book/ch06-supernode.md) / [Ch.7](/analyses/ai-infra-book/ch07-datacenter-network.md) — 分层集体与超节点缩放
 
 # Citations
 
@@ -144,3 +157,5 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [6] [raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf](raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf) — REACT；拥塞感知集体 pattern
 [7] [raw/papers/Sharing_Fabric_Collective_Storage_Penalties_2026.pdf](raw/papers/Sharing_Fabric_Collective_Storage_Penalties_2026.pdf) — Wang et al., arXiv:2609.06506；存储×集体 fabric 争用
 [8] [raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf](raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf) — Ma et al., arXiv:2609.11562；tile 级 GEMM–RS 重叠
+[9] [Ch.6–7 manuscripts](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》
+[10] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)

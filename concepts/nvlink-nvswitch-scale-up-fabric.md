@@ -21,6 +21,7 @@ sources:
 - raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf
 - raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf
 - raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf
+- raw/articles/bojieli-ai-infra-book.md
 ---
 
 # NVLink / NVSwitch Scale-Up Fabric
@@ -86,6 +87,15 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 
 [Entwine](/papers/entwine-tiled-computation-fine-grained-gpu-comm.md) 仍在单节点 NVLink 域，但把通信粒度做到 **GEMM tile**：交错产出 + SM 通信核 + 预算选型；vs 顺序 NCCL geomean 1.232×。
 
+## 书 Ch.6–7：域边界与收敛（2026-09）
+
+[李博杰 Ch.6](/analyses/ai-infra-book/ch06-supernode.md) 把 NVL 域写成「先判断再摊」的协作单位，对照 [超节点](/concepts/ai-infra-supernode.md)：
+
+- H100 NVLink 4：**450 GB/s/dir**（双向 900）；\(\alpha\) 取 MSCCL++ **0.822 μs**。Qwen3-32B 机内 TP8 单步 5.15 ms；跨两台 HGX 的 TP16 用实测 32.74 μs/AR → **6.67 ms**，更慢。更大域常用来装更多实例或超八卡模型，不是把 8-KV-head 模型切到 TP16。
+- NVSwitch Gen3：64 端口 × 25 GB/s/dir。下联/上联 32/32 → 800 GB/s 上联；48/16 只 400。DGX H100 NVLink 出节点 **2:1 收敛**。Switch System 最多 **256** 张 H100，全交换 115.2 TB/s = 256×450。
+- 64 卡设计案例（每卡 6×50 GB/s，TPU v4 ICI 口径）：维序归约环面=交换；均匀 All-to-All 交换约 3×（512 卡 6×）。
+- Ch.7：1024 卡训练里高速域 8→64 卡、出口随卡增长，吞吐约 **+36%**；出口仍按 8×400 Gbit/s 封顶时，64 卡分层归约可能慢于连续环。
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
@@ -93,3 +103,5 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 [3] [raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf](raw/papers/Synchronization_Tax_GPU_Scale_Up_Domains_2026.pdf) — Devraj et al., arXiv:2608.22503；同步税 vs 带宽缩放
 [4] [raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf](raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf) — Madhavan et al., arXiv:2609.01821；光学 1152 pod vs 电学 72
 [5] [raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf](raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf) — Entwine
+[6] [Ch.6 超节点](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》
+[7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
