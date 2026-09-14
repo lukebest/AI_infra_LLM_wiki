@@ -2,6 +2,17 @@
 
 ## 2026-09-14
 
+### Ingest: bojieli《深入理解 AI Infra》
+* **Ingest**: 李博杰开源书（Apache-2.0）`bojieli/ai-infra-book`。只拉 `manuscripts/*.md`（`gh api` / raw.githubusercontent.com），**未 clone Git LFS**。
+* **Creation** (raw): [源 stub](/raw/articles/bojieli-ai-infra-book.md) — 许可、仓库/PDF/站点、章节清单；不收录正文。
+* **Creation** (entities): [深入理解 AI Infra](/entities/bojieli-ai-infra-book.md) — 从约束推导设计、五问、阅读地图。
+* **Creation** (analyses): [AI Infra Book](/analyses/ai-infra-book/index.md) — 前言 + 12 章摘要（优先深度 Ch.6/7/9/10）。
+* **Creation** (concepts, 2/5 cap): [Constraint-Driven AI Infra Design](/concepts/constraint-driven-ai-infra-design.md)、[AI Infra Supernode](/concepts/ai-infra-supernode.md)。Engram / 分层集合通信 / 多 rail 溢出写在章节页与既有概念补丁中。
+* **Update**: [Disaggregated Inference](/concepts/disaggregated-inference.md)（Ch.9 PD/AF）、[NVLink fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md)（Ch.6–7 域/超售）、[LLM Collectives](/concepts/llm-distributed-training-collectives.md)（环/树、分层 AR、1024 卡）、[Interconnection Design Space](/concepts/interconnection-network-design-space.md)（环面 vs 交换）、[Heterogeneous Inference](/concepts/heterogeneous-inference.md)（A100/H20 + CPU/GPU 专家）、[CXL Tiered Memory](/concepts/cxl-tiered-memory.md)（远端读类比）、[Clos](/concepts/clos-fat-tree-topology.md)（QM9700 超售/rail）、[Network-on-Wafer](/concepts/network-on-wafer.md)（OpenTallas 对照）、[UB](/entities/unifiedbus-ub.md)（OpenURMA μs）。
+* **SCHEMA**: 增 tag `book`、`methodology`、`supernode`、`datacenter`。
+* **Indexes**: 手工同步 `analyses/index.md`、`entities/index.md`、`concepts/index.md`、`raw/articles/index.md`。未跑 `generate_indexes.py`。**未部署 Pages**。
+* **Deferred**: `experiments/`、`calculations/` 代码树、`archive/reviews`、逐字章节转写；Ch.11 工具环境/API 成本、Ch.12 鹊桥/WAN 只做薄摘要。OpenTallas ROM 晶圆数字为书中分析、非实测硅。
+
 ### Watch (morning)
 * **Watch**: 2026-09-14 Asia/Shanghai AI infra 论文巡检。cs.AR/cs.DC recent 到 **Fri 9/11**（周末无新表；Mon 9/14 美东列表上海早晨尚未放出）。补扫 9/10–9/11（9/11 早报失败窗口）。已 ingest 的 WaferTrans/HDA-MoE/Sharing-a-Fabric/CIERA/REACT/FlexPosit/Huawei τ 等不重复。
 * **Ingest**: Fengshui PDF → `raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf` + stub `raw/papers/fengshui-chiplet-ecosystem-basic-codesign.md`（arXiv:2609.10970, 2026-09-10, cs.AR）。

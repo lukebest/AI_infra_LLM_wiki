@@ -28,6 +28,7 @@ sources:
 - papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md
 - papers/wafer-scale-optical-interconnect-moe-thermal.md
 - papers/wafertrans-iommu-free-wafer-scale-gpu.md
+- raw/articles/bojieli-ai-infra-book.md
 ---
 
 # Network-on-Wafer（晶圆级网络 / NoW）
@@ -99,6 +100,10 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 4. 3DLS 的垂直隔离能否叠在 WoW 的 LoL 上，做成“层间 KVT + 层内高 radix NoW”？
 5. Fovea 的 Decision Domain 能否接到 WoW 重叠几何 / 异构 chiplet 混合物？
 
+## 书 Ch.6.7.4：ROM 晶圆对照（2026-09）
+
+[Ch.6](/analyses/ai-infra-book/ch06-supernode.md) 用 OpenTallas 对 V4.1 Flash 的等硅面积分析（**未流片**）：权重进掩模 ROM 后，单用户速度由片上 AllReduce 决定（200K、batch-1：4070 tok/s，通信占比 65%）；片上 SRAM 44 GB（WSE-3 口径）装不下 510 GB checkpoint。这是「晶圆当超节点」时五问里 **搬什么/谁等它** 的极端：权重通路与 KV 通路分离后，NoW 集体延迟变成单用户上限。数字勿与已量产 WSE 混用。
+
 # Citations
 
 [1] [raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf](raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf) — Iff et al. 2026
@@ -107,3 +112,5 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 [4] [raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf](raw/papers/3DLS_3D_Logic_Stacked_Disaggregated_LLM_Serving_2026.pdf) — Lee et al. 2026
 [5] [raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf](raw/papers/Thermal_Tuning_Wafer_Scale_Optical_Interconnect_LLM_MoE_2026.pdf) — Yoon, Chen, Yu 2026
 [5] [raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf](raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf) — Tang et al., arXiv:2609.06125；IOMMU-free 翻译
+[6] [Ch.6.7.4](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》ROM 晶圆对照
+[7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)

@@ -19,6 +19,7 @@
 
 # Raw Source
 
+* [深入理解 AI Infra（李博杰）源 stub](bojieli-ai-infra-book.md) - Apache-2.0 开源书：仓库/PDF/章节清单；不收录正文
 * [Memory Fence 深度研究报告](memory-fence-hardware-2026-06-28.md)
 * [Paper Deep-Dive Overview](paper-deepdive-overview.md)
 * [互连网络晨报 — Day 1](interconn-study-21d-day-01.md)

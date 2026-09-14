@@ -4,6 +4,7 @@
 * [3D Stacking Technologies](3d-stacking-technologies.md) - 3D 集成三路线对垒：TSV-based (商业主流)、Monolithic (实验)、Hybrid Bonding (Cu-Cu 当代商业)；对 3D NoC 设计的根本含义对比
 * [Adaptive Routing for NoC](adaptive-routing-noc.md) - D&T Ch.6-7 自适应路由：最小/非最小、Valiant VRR、VC 与拥塞感知；Duato 逃逸子网预告；DOR vs 自适应选型与 WSE/AllReduce
 * [AIC Folded Multi-Ring NoC](aic-folded-multi-ring-noc.md) - 6×8 AIC 折叠多环：真比例 reticle、RBRG 10 cyc 转弯、相位约束最短路径；对角 Core00→47 为 194 cyc / 53.7 mm
+* [AI Infra Supernode](ai-infra-supernode.md) - 超节点：高带宽协作域；实例数 vs 组大小；NVLink/TPU/UB 三条路；8→64 卡吞吐 7.4×
 * [Architecture Benchmark Methodology](architecture-benchmark-methodology.md) - 体系结构量化评估方法论：几何均值、Speedup 计算、SPEC/MLPerf 原则与常见数据陷阱
 * [Architecture Paper Reading Methodology](architecture-paper-reading-methodology.md) - 体系结构论文 5 步精读法 + 四大量化武器（归因/Roofline/敏感性/Pareto）；以 Luczynski HPDC'24 Wafer-Scale Reduce 为范例
 * [Attention Residuals](attention-residuals.md) - 深度方向选择性残差检索（AttnRes）；Kimi K3 引入，每 12 层一个边界，共 8 个 block；+2% latency 但 1.25× 计算优势
@@ -15,6 +16,7 @@
 * [Cerebras Color Mechanism](cerebras-color-mechanism.md) - WSE Color 虚拟通道机制：静态路由+独立缓冲+Color×4任务调度+独立反压，Fabric/Local Color 双类型
 * [Clos and Fat-Tree Topology](clos-fat-tree-topology.md) - 间接网络：终端/交换分离、Clos C(n,m,r) 无阻塞条件、Fat-Tree 代价等价与 Beneš RNB，及 InfiniBand/Jupiter 与 WSE 规模分界
 * [CMP NoC Pareto Design Tradeoffs](cmp-noc-pareto-design-tradeoffs.md) - Balfour & Dally MICRO 2006 — tiled CMP NoC 的 area/energy/delay Pareto；wormhole、2-stage router、buffer/flit/mesh sweet spot
+* [Constraint-Driven AI Infra Design](constraint-driven-ai-infra-design.md) - 李博杰书：从约束推导设计；MFU/MBU；五个数据搬移问题
 * [CMX & STX](cmx-stx.md) - NVIDIA 推理存储平台：CMX（Tier G3.5 NVMe KV cache）+ STX（BF-4 存储 rack 参考架构）
 * [Collective-Capable NoC](collective-capable-noc.md) - FlooNoC 扩展：AXI 多地址 mask、XY fork 组播、并行/宽归约；DCA 范式（互连借 FPU 做 in-network 算术归约，router +16.9%、tile <1%）
 * [Constable Load Elimination](constable-load-elimination.md) - ISCA 2024 Best Paper：SLD/RMT/AMT 识别 likely-stable load 并跳过执行；12.4 KB/core、+5.1% perf、-3.4% 动态功耗、SMT +8.8%；与 LVP 正交

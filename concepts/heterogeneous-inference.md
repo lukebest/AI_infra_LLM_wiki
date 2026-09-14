@@ -11,8 +11,9 @@ tags:
 - agentic-ai
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-04-16
-updated: 2026-09-03
+updated: 2026-09-14
 sources:
+- raw/articles/bojieli-ai-infra-book.md
 - raw/articles/nvidia-groq3-lpx-blog-2026-04.md
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 - raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf
@@ -82,6 +83,14 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 - [LEAP](/papers/leap-imc-noc-llm-inference.md) — 异构在 IMC / NMC / INC；LEAP-D 再按 PD 重配宏
 - [DynaNDE](/papers/dynande-near-data-expert-scheduling.md) — NPU vs NDP 专家调度异构；vs MoNDE 2.6×/2.2×
 - [HYDRA](/papers/hydra-heterogeneous-chiplet-dse-hybrid-llm.md) — 封装内 PD×算子 chiplet 异构 DSE
+- [AI Infra Book Ch.9](/analyses/ai-infra-book/ch09-distributed-inference.md) — A100/H20 与 CPU/GPU 专家交点
+
+## 书 Ch.9：阶段配硬件，复用定放置（2026-09）
+
+[Ch.9](/analyses/ai-infra-book/ch09-distributed-inference.md) 给了两组可算边界，补 GPU+LPU 叙事：
+
+1. **P/D 异构卡**：H20 算力约 A100 一半、HBM 约两倍 → 做 decode；A100 做 prefill。4+4 分离 4.55 req/s vs 共置 3.02（1.51×）。对调角色腰斩。同构上分离不提高吞吐。
+2. **专家 CPU vs GPU**：低复用（每专家 1 行）CPU 就地读 DRAM 快于搬 36 MiB 权重；AVX 交点 ~72 行、AMX ~689 行。跨 NUMA 125 GB/s 时 AMX 路径会改读 bound。Engram 大表在 H100 上预取窗口 69 μs，放主机内存即可（[Ch.6](/analyses/ai-infra-book/ch06-supernode.md)）。
 
 # Citations
 
@@ -90,3 +99,5 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [3] [raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf](raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf)
 [4] [raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf](raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf)
 [5] [raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf](raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf)
+[6] [Ch.9](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/09-分布式推理.md) — 李博杰《AI Infra》
+[7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)

@@ -20,6 +20,7 @@ sources:
 - raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf
 - raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf
 - raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf
+- raw/articles/bojieli-ai-infra-book.md
 ---
 
 # CXL Tiered Memory
@@ -44,6 +45,7 @@ sources:
 - **MoE expert 近数据执行**：[DynaNDE](/papers/dynande-near-data-expert-scheduling.md) 在 CXL-NDP 上做 AMove 专家计算，与纯页迁移正交；vs MoNDE prefill/decode 平均 2.6×/2.2×。
 - **超芯片 / C2C**：[SuperInfer](/papers/superinfer-slo-aware-rotary-scheduling.md) 在 GH200 上利用 NVLink-C2C 的统一内存视图——与 CXL 同属「扩大可寻址内存」，介质与一致性模型不同。
 - **Hot Chips 2026（未单列论文）**：Intel Diamond Rapids MVF 写 **CXL 3.0 1LM / Flat2LM** + CXL 3 I/O（每 hub 4×16 Flexbus，可 PCIe Gen6 / CXL 3 / UPI 3）；不是 GPU scale-up。[Vera](/papers/hc2026-nvidia-vera.md) 带 **CXL 3.1**。
+- **书 Ch.6–7 内存池 / 远程读**（介质常是 RDMA/UB，不是 CXL，但决策同构）：全局有空、局部不够则借用；144 MiB 快照整份复用交点 r≈1.03，只碰 10% 则 r≈10.3。在途槽位不足（128 vs 391）会把 50 GB/s 出口打成 16.4 GB/s。[Ch.6 池](/analyses/ai-infra-book/ch06-supernode.md)、[Ch.7 并发](/analyses/ai-infra-book/ch07-datacenter-network.md)。UB 不维护跨主机缓存一致，可见性由应用发布——与 CXL 一致性域不同。
 
 ## 开放问题
 
@@ -66,3 +68,5 @@ sources:
 [3] [raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf](raw/papers/Aurelia_CXL_Fabric_Tentacle_2023.pdf)
 [4] [raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf](raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf) — DynaNDE CXL-NDP MoE
 [5] [raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf](raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf) — Fan et al., arXiv:2609.10790
+[6] [Ch.6–7](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》内存池与远程读
+[7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)

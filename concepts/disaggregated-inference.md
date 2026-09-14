@@ -11,6 +11,7 @@ timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
 updated: 2026-09-14
 sources:
+- raw/articles/bojieli-ai-infra-book.md
 - arXiv:2504.02263
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -102,6 +103,7 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 | **LEAP-D 片上 PD 解耦** | 同片 prefill/decode 宏区 | mesh INC + KV 区传 | IMC 留 prefill；decode 扩 scratchpad |
 | **AInfer-PD 同池复用** | 同设备 P/D 并发（非第二池） | turnstile 排交叉集体 + DeepEP 相位私有态 | 共享权重/KV；防 ADP/ATP 进度环 |
 | **光学 scale-up × PD DES** | 解耦 prefill/decode worker | 4× SU BW / 1152 pod | TTFT↓ 但 decode 饱和可抬 TPOT |
+| **书 Ch.9 PD / AF** | 阶段池 / 层内算子池 | KV 整份交接；逐层激活 | 异构配比；同构常先分块 prefill |
 
 ## 与 Luke 研究的关联
 
@@ -147,6 +149,17 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [Photonic Prefill](/papers/scaling-inference-prefill-photonic.md) — 光学扩大 scale-up pod 后对 PD 解耦 serving 的 TTFT/TPOT 传导（DES）
 - [Fengshui](/papers/fengshui-chiplet-ecosystem-basic-codesign.md) — 算子级 BASIC/chiplet 池；与相位拆分互补的 die 经济学
 - [Composable CXL](/papers/composable-cxl-memory-k8s-llm-serving.md) — **内存**解耦共享 KV（非 P/D 池）；跨节点 prefix TTFT 5.5–36.6×
+- [AI Infra Book Ch.9](/analyses/ai-infra-book/ch09-distributed-inference.md) — PD/AF 预算与配比
+
+## 书 Ch.9：配比与交接预算（2026-09）
+
+李博杰教材把解耦写成可算的配比，而不是「一定更快」：[Ch.9](/analyses/ai-infra-book/ch09-distributed-inference.md)。
+
+- 稳定：\(\lambda d_r < n_r\)；共置 \(\mu=N/(d_P+d_D)\)。4×A100+4×H20、8K/1025、Qwen3-8B：共置 **3.02 req/s**，到达 3.5 时持续积压。
+- **同构 8×A100** 整数划分 PD 上限 2.83 < 共置 3.05；分离换的是排队隔离。分块 prefill 理想捎带可到 4.50——同构通常先分块。
+- **异构** A100×4 做 P、H20×4 做 D：4.55 req/s（**1.51×** 共置）。角色对调 2.22。H20 算力弱、带宽约 2× A100，适合 D。
+- KV 交接：GQA 8K = 1.125 GiB @ 25 GB/s → **48.3 ms**；紧凑 MLA 549 MiB → 23.0 ms。\(\mu_{PD}=\min(\mu_P,\mu_D,B_{\mathrm{net}}/V_{KV})\)。无前缀复用时经共享池中转多搬一次、多等 48.3 ms，应直传。
+- AF / 专家分离每层 dispatch+combine；稠密逐层 72×8 KiB 由**启动**主导（0.384 ms）。专家复用交点：AVX ~72 行、AMX ~689 行才值得搬权重上 GPU。
 
 # Citations
 
@@ -161,3 +174,5 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [9] [raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf](raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf) — AInfer-PD 同池复用
 [10] [raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf](raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf) — Fengshui
 [11] [raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf](raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf) — Composable CXL serving
+[12] [Ch.9 分布式推理](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/09-分布式推理.md) — 李博杰《AI Infra》
+[13] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)

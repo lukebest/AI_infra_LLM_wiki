@@ -11,7 +11,9 @@ tags:
 - switch
 timestamp: '2026-05-11T00:00:00Z'
 created: 2026-05-09
+updated: 2026-09-14
 sources:
+- raw/articles/bojieli-ai-infra-book.md
 - raw/articles/UB-overview.md
 - raw/articles/UB-FUN.md
 - raw/articles/UB-MEM.md
@@ -119,6 +121,17 @@ UB 的定位可类比 [Switching Principles](/concepts/switching-principles.md) 
 - UnifiedBus™ (UB) Base Specification Revision 2.0, 2025-12-31, Huawei Technologies
 - <https://www.unifiedbus.com>
 
+## 书 Ch.6.5.5 / 7.3：规模与延迟预算（2026-09）
+
+规范页之上，[李博杰书](/entities/bojieli-ai-infra-book.md)用 OpenURMA 仿真给出可对照数字（作者参与 UB）：
+
+- **状态**：256 KiB 片上缓存、每主机 8 端点。RoCE 式逐对 QP \(512A^2(H-1)\) 约 8 主机溢出；Jetty+通道 \(52A+56(H-1)\) 到四千主机。CloudMatrix384 的 192 主机：QP ~6 MiB vs UB ~11 KiB。目录式缓存一致（NVLink 类）两主机已 ~8 MiB，1024 主机 ~136 MiB——故 UB **不**做跨主机 cache coherence。
+- **建连**：N=M=1024，QP 并行约 17 s，UB 约 16 ms。
+- **64 B 读**（L=100 ns）：PCIe NIC 2.22 μs（五次 PCIe 1.65 μs）；UB 异步 0.75 μs；UB Load 0.42 μs（仿真 0.50 μs）。总时间 = 截距 + 2L。
+- CloudMatrix384：384×910C + 192 CPU，域内 UB、域外 RDMA。昇腾 950 UB 双向合计 **2016 GB/s**（72×112 Gbit/s，单向 1008）；UBoE 与 UB Link 分同一组 SerDes。
+
+章节：[Ch.6](/analyses/ai-infra-book/ch06-supernode.md)、[Ch.7](/analyses/ai-infra-book/ch07-datacenter-network.md)。
+
 # Citations
 
 [1] [raw/articles/UB-overview.md](raw/articles/UB-overview.md)
@@ -130,3 +143,5 @@ UB 的定位可类比 [Switching Principles](/concepts/switching-principles.md) 
 [7] [raw/articles/UB-NETWORK-ch5.md](raw/articles/UB-NETWORK-ch5.md)
 [8] [raw/articles/UB-DL-ch4.md](raw/articles/UB-DL-ch4.md)
 [9] [raw/articles/UB-PHY-ch3.md](raw/articles/UB-PHY-ch3.md)
+[10] [Ch.6.5.5](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》UB 规模
+[11] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)

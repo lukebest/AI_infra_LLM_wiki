@@ -31,10 +31,10 @@ sources: [raw/articles/source-name.md]
 - 公司: nvidia, cerebras, groq, amd, google, lightmatter, celestial-ai, deepseek, huawei, bytedance, graphcore, meta, samsung, sk-hynix, d-matrix, oxmiq, intel, microsoft, openai, broadcom, sambanova
 - 技术: sram, hbm, hbf, photonic, cpo, optical, mesh, memory-bandwidth, memory, rack, cpu, rpc, virtualization, power, 3d, tsv, monolithic, hybrid-bonding, through-silicon-via, microbump, cu-cu, packaging, integration, sequential-integration, wafer-on-wafer
 - AI系统: agentic-ai, ai-agent, moe, transformer, llm, training, attention, quantization, expert-parallelism, speculative-decoding, dataflow, collective, allreduce, distributed
-- 方法论: comparison, timeline, benchmark, architecture, information-theory, knowledge-management, formal-analysis
+- 方法论: comparison, timeline, benchmark, architecture, information-theory, knowledge-management, formal-analysis, book, methodology
 - 模型: model, architecture, benchmark, training-system, inference-system
 - 技术: compression, sparse, optimization, routing, parallelism, kernel
-- 系统: sandbox, storage, hardware, networking, topology, infrastructure, interconnect, cxl, rdma
+- 系统: sandbox, storage, hardware, networking, topology, infrastructure, interconnect, cxl, rdma, supernode, datacenter
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 
