@@ -1,5 +1,17 @@
 # Bundle Update Log
 
+## 2026-09-15
+
+### Watch (morning)
+* **Watch**: 2026-09-15 Asia/Shanghai AI infra 论文巡检。cs.AR/cs.DC recent 到 **Mon 9/14**（Tue 9/15 美东列表上海早晨尚未放出）。已 ingest 的 Fengshui/Entwine/SAGE/Composable CXL 与 WaferTrans/HDA-MoE 等不重复。
+* **Ingest**: Vortex PDF → `raw/papers/Vortex_Extreme_Compression_LLM_Inference_2026.pdf` + stub `raw/papers/vortex-extreme-compression-llm-inference.md`（arXiv:2609.12208, 2026-09-10, cs.AR）。
+* **Ingest**: Hopper Utilization PDF → `raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf` + stub `raw/papers/dissecting-gpu-utilization-llm-inference-hopper.md`（arXiv:2609.12923, 2026-09-11, cs.PF/cs.AR）。
+* **Ingest**: RoofLang PDF → `raw/papers/RoofLang_AI_Driven_LLM_Inference_Architecting_2026.pdf` + stub `raw/papers/rooflang-ai-driven-llm-inference-architecting.md`（arXiv:2609.12551, 2026-09-11, cs.DC）。
+* **Creation** (papers): [Vortex](/papers/vortex-extreme-compression-llm-inference.md)（脉动 bi-flow VQ+稀疏；8.03×–23.7× / 5.68×–12.5×）；[Hopper Utilization](/papers/dissecting-gpu-utilization-llm-inference-hopper.md)（GMMA fill 1.6–12.5%；SOL 92%→7.9%）；[RoofLang](/papers/rooflang-ai-driven-llm-inference-architecting.md)（V4 峰值 decode 3.5–39.5×；B300 agent +6.23–50.1%）。
+* **Update**: [DNN Systolic](/concepts/dnn-accelerator-systolic-dataflow.md)（Vortex）、[GPU SIMT](/concepts/gpu-simt-architecture.md)（Hopper util）、[FlashAttention-3](/concepts/flashattention-3.md)（FA3 serving 利用率）、[GEMM vs GEMV](/concepts/gemm-vs-gemv.md)（fragment fill + bi-flow）、[Disaggregated Inference](/concepts/disaggregated-inference.md)（RoofLang+M 杠杆）、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)（KV 压缩/流量）。
+* **Indexes**: 手动同步 `papers/index.md`（+3）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: py-kvcache (2609.11744, 外部 KV/NVMe 表征；有数字但相对既有 CXL/disagg 页增量偏 serving 连接器)；AccelForge (2609.11906, DSE 框架)；PATTON (2609.11392, PIM runtime)；TinyML multi-exit (2609.11939)；PyTorch operator profiling (2609.11938)；VLA robot factories (2609.12075)；HeatCache (2609.12449, 热调度)；ForgeMegakernel (2609.12379, codegen)；Argus (2609.12299, 测量编排)；CHERI/病理 BEACON/SNN/Ising/HLS agents/电网/三角格点/AMEND/UNISON/REACH/HBFSim 等先验跳过仍适用。BusyBarn 仍无公开全文 PDF。
+
 ## 2026-09-14
 
 ### Ingest: bojieli《深入理解 AI Infra》

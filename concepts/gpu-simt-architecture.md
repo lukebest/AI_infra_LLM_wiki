@@ -14,10 +14,11 @@ tags:
 - npu
 timestamp: '2026-07-07T00:00:00Z'
 created: 2026-07-07
-updated: 2026-09-07
+updated: 2026-09-15
 sources:
 - raw/articles/arch-study-30d-day-24.md
 - raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf
+- raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf
 ---
 
 # GPU SIMT Architecture（GPU 与 SIMT）
@@ -150,6 +151,10 @@ Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑
 - [FlashAttention-2](/concepts/flashattention-2.md) / [FlashAttention-3](/concepts/flashattention-3.md) — Tensor Core kernel
 - [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — Day 25 硬件 SIMD / 脉动
 - [Eyeriss Accelerator](/concepts/eyeriss-accelerator.md) — RS dataflow 流片基线
+
+## Hopper decode 利用率分母（2026-09）
+
+[Dissecting Hopper Utilization](/papers/dissecting-gpu-utilization-llm-inference-hopper.md) 在 H100 NVL + vLLM/FA3 上把 SM util 拆成八视图：decode 稠密 GEMM sm_busy 均值仅 **9.4%**，但 BF16 GMMA **64-row** fragment fill 均值 **5.86%**（**1.6–12.5%**），设备 SOL 冷 prefill **92%** vs decode **7.9%**；occupancy 相对 64-warp 与相对 kernel 上限可差约 **5×**。
 
 # Citations
 

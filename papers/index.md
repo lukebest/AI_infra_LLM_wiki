@@ -1,5 +1,8 @@
 # Paper
 
+* [Vortex: Extreme Compression for Efficient LLM Inference](vortex-extreme-compression-llm-inference.md) - Duke — 脉动 bi-flow VQ+稀疏；相对 SOTA 8.03×–23.7× 加速、5.68×–12.5× 能耗（仿真）
+* [Dissecting GPU Utilization for LLM Inference on Hopper](dissecting-gpu-utilization-llm-inference-hopper.md) - KTH — H100 NVL vLLM/FA3；decode GMMA fill 1.6–12.5%，SOL 冷 92% vs decode 7.9%
+* [RoofLang: AI-Driven Architecting of LLM Inference Systems](rooflang-ai-driven-llm-inference-architecting.md) - 行云智理/MSR — DSL+roofline 仿真；V4 系峰值 decode 3.5–39.5×；B300 agent +6.23–50.1%
 * [Composable CXL Memory as K8s Shared Memory for LLM Serving](composable-cxl-memory-k8s-llm-serving.md) - Seagate — DRA+DAX 组合 CXL；Qwen2.5-7B 跨节点 prefix TTFT 5.5–36.6×，sharing gap 1–4%
 * [Entwine: Tiled Computation and Fine-Grained GPU Communication](entwine-tiled-computation-fine-grained-gpu-comm.md) - 中科院 — tile×SM 通信预算；GEMM–RS vs NCCL geomean 1.232×（最高 1.433×）
 * [Fengshui: Chiplet Ecosystem and Bespoke Accelerator Codesign](fengshui-chiplet-ecosystem-basic-codesign.md) - 密歇根 — 8 chiplet 池联合 BASIC；能量/EDP×$ 相对同构 −48.5–97.8%

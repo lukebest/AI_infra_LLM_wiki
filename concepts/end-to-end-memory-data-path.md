@@ -13,6 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
+updated: 2026-09-15
 sources:
 - raw/articles/arch-study-30d-day-22.md
 - raw/articles/arch-study-30d-day-17.md
@@ -20,6 +21,8 @@ sources:
 - raw/articles/arch-study-30d-day-19.md
 - raw/articles/arch-study-30d-day-20.md
 - raw/articles/arch-study-30d-day-21.md
+- raw/papers/Vortex_Extreme_Compression_LLM_Inference_2026.pdf
+- raw/papers/RoofLang_AI_Driven_LLM_Inference_Architecting_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -166,6 +169,10 @@ WSE 简化（无 off-chip）:
 - [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — HBM→NVMe KV
 - [Cerebras WSE](/entities/cerebras-wse.md) — 消除存储墙实例
 - [Multicore SMT and NUCA](/concepts/multicore-smt-nuca.md) — 第四阶段入口（Day 23）
+
+## 推理侧压缩与 KV 流量（2026-09）
+
+[Vortex](/papers/vortex-extreme-compression-llm-inference.md) 同时量化静态权重与运行时 KV，把压缩从权重延伸到动态路径。[RoofLang](/papers/rooflang-ai-driven-llm-inference-architecting.md) 用仿真说明紧凑 KV（如 V4 FP8+FP4 index）如何抬高峰值 decode batch、拉开相对大 KV 模型的 **3.5–39.5×** 吞吐差距。
 
 # Citations
 

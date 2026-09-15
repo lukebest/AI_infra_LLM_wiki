@@ -14,8 +14,10 @@ tags:
 - fp8
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
+updated: 2026-09-15
 sources:
 - raw/papers/FlashAttention3_Asynchrony_Low_Precision_2024.pdf
+- raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf
 ---
 
 # FlashAttention-3
@@ -100,6 +102,10 @@ FlashAttention (2022, IO tiling)
 - [FlashAttention-2](/concepts/flashattention-2.md) — 直接前代
 - [FP4 Quantization-Aware Training](/concepts/fp4-qat.md) — 更低精度训练（不同栈层）
 - [papers/flashattention-3-asynchrony-low-precision.md](/papers/flashattention-3-asynchrony-low-precision.md) — 论文摘要
+
+## Serving 侧 FA3 利用率（2026-09）
+
+[Dissecting Hopper Utilization](/papers/dissecting-gpu-utilization-llm-inference-hopper.md) 实测 FA3 在冷 prefill **27–73%** SM util、decode **3.4–23.9%**；B=32 时 FA3-fwd 可占 decode iteration **49.5%**。与本文峰值 TFLOPs 数字互补——现场 decode 常被 fragment fill / 带宽 stall 主导，而非 FA3 算力峰值。
 
 # Citations
 

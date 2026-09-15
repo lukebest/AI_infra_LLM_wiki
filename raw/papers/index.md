@@ -1,5 +1,8 @@
 # Other
 
+* [Vortex stub](vortex-extreme-compression-llm-inference.md) + [PDF](Vortex_Extreme_Compression_LLM_Inference_2026.pdf) — arXiv:2609.12208
+* [Hopper Utilization stub](dissecting-gpu-utilization-llm-inference-hopper.md) + [PDF](Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf) — arXiv:2609.12923
+* [RoofLang stub](rooflang-ai-driven-llm-inference-architecting.md) + [PDF](RoofLang_AI_Driven_LLM_Inference_Architecting_2026.pdf) — arXiv:2609.12551
 * [Fengshui stub](fengshui-chiplet-ecosystem-basic-codesign.md) + [PDF](Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf) — arXiv:2609.10970
 * [Entwine stub](entwine-tiled-computation-fine-grained-gpu-comm.md) + [PDF](Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf) — arXiv:2609.11562
 * [SAGE stub](sage-semantic-aware-geographic-error-recovery.md) + [PDF](SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf) — arXiv:2609.10126

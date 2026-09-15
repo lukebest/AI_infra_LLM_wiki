@@ -12,10 +12,11 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-09-08
+updated: 2026-09-15
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
+- raw/papers/Vortex_Extreme_Compression_LLM_Inference_2026.pdf
 ---
 
 # DNN Accelerator Systolic Dataflow（DNN 加速器与脉动数据流）
@@ -146,6 +147,10 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 ## 分数精度脉动（2026-09）
 
 [FlexPosit](/papers/flexposit-tunable-fractional-precision-llm.md) 用 **bit-serial** 脉动 + Posit 把权重精度做成 4–8 bit 连续可调（GPCU 时间窗），追求 channel-wise 规整与接近 group-wise 的精度；16 nm iso-area 相对 BitMoD/OliVe 最高约 **1.8×/1.5×** 吞吐（综合/仿真）。
+
+## VQ bi-flow 脉动（2026-09）
+
+[Vortex](/papers/vortex-extreme-compression-llm-inference.md) 在脉动 MXU 上加 LUU/QAU/SPU，用 **LUF（prefill）/ MUF（decode）** 双流吃 VQ + codebook-wise 稀疏；仿真口径相对 SOTA 加速器 **8.03×–23.7×** 加速、**5.68×–12.5×** 能耗，相对常规脉动平均 **22.4×**（非硅）。
 
 # Citations
 

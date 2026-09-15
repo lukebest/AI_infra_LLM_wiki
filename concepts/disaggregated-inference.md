@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-09-14
+updated: 2026-09-15
 sources:
 - raw/articles/bojieli-ai-infra-book.md
 - arXiv:2504.02263
@@ -24,6 +24,8 @@ sources:
 - raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf
 - raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf
 - raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf
+- raw/papers/RoofLang_AI_Driven_LLM_Inference_Architecting_2026.pdf
+- raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -125,6 +127,9 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [Prefill Decode Divergence](/concepts/prefill-decode-divergence.md) 量化了两阶段的正交资源需求
 
 ## 相关页面
+
+- [RoofLang](/papers/rooflang-ai-driven-llm-inference-architecting.md) — 仿真搜索并行/放置；V4 紧凑 KV 带来 3.5–39.5× 峰值 decode（相对对照模型）
+- [Dissecting Hopper Utilization](/papers/dissecting-gpu-utilization-llm-inference-hopper.md) — 测量侧：抬高 decode M（packing / persistent）与 PD 同属抬利用率杠杆
 
 - [Megascale Infer 2504.02263](/papers/megascale-infer-2504.02263.md) — 首个大规模 disaggregated expert parallelism 系统
 - [FlashMoE Kernel](/concepts/flashmoe-kernel.md) — 单节点 EP megakernel（与 disagg 正交，可叠在 expert 侧）

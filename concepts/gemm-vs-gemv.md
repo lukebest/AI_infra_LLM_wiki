@@ -15,11 +15,14 @@ tags:
 - kernel
 timestamp: '2026-07-07T00:00:00Z'
 created: 2026-07-07
+updated: 2026-09-15
 sources:
 - concepts/prefill-decode-divergence.md
 - concepts/waferllm-system.md
 - concepts/flashdecoding-plus-plus.md
 - raw/papers/FlashDecoding_PlusPlus_LLM_Inference_GPUs_2024.pdf
+- raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf
+- raw/papers/Vortex_Extreme_Compression_LLM_Inference_2026.pdf
 ---
 
 # GEMM vs GEMV in LLM Inference
@@ -233,6 +236,10 @@ H100 算力 ~989 TFLOPS (FP16) ÷ 内存带宽 ~3.35 TB/s = **ridge point ~295 F
 - [TileLoom Compiler](/concepts/tileloom-compiler.md) — Tenstorrent 上 dataflow 编译
 - [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md) — WSE Ridge≈6、GEMV 606× 带宽边界（Day 26）
 - [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — NPU Roofline / AI 表（Day 25）
+
+## Hopper fragment fill 与脉动 bi-flow（2026-09）
+
+[Dissecting Hopper Utilization](/papers/dissecting-gpu-utilization-llm-inference-hopper.md) 把 decode 小-M GEMM 钉到 GMMA m64：**η_M 1.6–12.5%**，有用 matmul 可被利用率读数高估 **8–64×**。[Vortex](/papers/vortex-extreme-compression-llm-inference.md) 在脉动侧用 MUF（M<16）/ LUF（M≥16）显式切换，同一问题的 DSA 解法。
 
 # Citations
 
