@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-09-15
+updated: 2026-09-16
 sources:
 - raw/articles/bojieli-ai-infra-book.md
 - arXiv:2504.02263
@@ -26,6 +26,8 @@ sources:
 - raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf
 - raw/papers/RoofLang_AI_Driven_LLM_Inference_Architecting_2026.pdf
 - raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf
+- raw/papers/PDD_Cross_Datacenter_Prefill_Decode_Disaggregation_2026.pdf
+- raw/papers/Trillion_Param_MoE_HBF_Memory_Provisioning_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -155,6 +157,9 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [Fengshui](/papers/fengshui-chiplet-ecosystem-basic-codesign.md) — 算子级 BASIC/chiplet 池；与相位拆分互补的 die 经济学
 - [Composable CXL](/papers/composable-cxl-memory-k8s-llm-serving.md) — **内存**解耦共享 KV（非 P/D 池）；跨节点 prefix TTFT 5.5–36.6×
 - [AI Infra Book Ch.9](/analyses/ai-infra-book/ch09-distributed-inference.md) — PD/AF 预算与配比
+- [PDD](/papers/pdd-cross-datacenter-prefill-decode-disaggregation.md) — **跨 DC** Prefill+RelayDecode+MainDecode；H100×H200 BCR 最高 **+37.5%**（面向 agentic TTFT）
+- [Trillion MoE in a Box](/papers/trillion-param-moe-hbf-memory-provisioning.md) — 对照：低并发 **单节点** HBF 一体机，不是机柜 PD 池
+- [UNISON](/papers/unison-near-memory-scheduler-llm-agents.md) — 会话级 KV 近存调度（与 PD 池正交）
 
 ## 书 Ch.9：配比与交接预算（2026-09）
 
@@ -181,3 +186,6 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [11] [raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf](raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf) — Composable CXL serving
 [12] [Ch.9 分布式推理](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/09-分布式推理.md) — 李博杰《AI Infra》
 [13] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
+[14] [arXiv:2609.13161](https://arxiv.org/pdf/2609.13161) — PDD 跨 DC PD
+[15] [arXiv:2609.15636](https://arxiv.org/pdf/2609.15636) — Trillion MoE HBF 供给
+[16] [arXiv:2609.09643](https://arxiv.org/pdf/2609.09643) — UNISON agent KV 近存调度

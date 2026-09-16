@@ -13,7 +13,7 @@ tags:
 - latency
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-07-17
-updated: 2026-09-14
+updated: 2026-09-16
 sources:
 - raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf
 - raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf
@@ -21,6 +21,8 @@ sources:
 - raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf
 - raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
+- raw/papers/BOOST_Concurrent_Host_HBM_LLM_Inference_2026.pdf
+- raw/papers/UNISON_Near_Memory_Scheduler_LLM_Agents_2026.pdf
 ---
 
 # CXL Tiered Memory
@@ -60,6 +62,8 @@ sources:
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 计算/状态解耦
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构内存/加速器栈
 - [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — 更冷一层（存储）对照
+- [BOOST](/papers/boost-concurrent-host-hbm-llm-inference.md) — 同节点 host↔HBM **对等并发**（非 CXL 远端）
+- [UNISON](/papers/unison-near-memory-scheduler-llm-agents.md) — agent 会话级近存驻留调度
 
 # Citations
 
@@ -70,3 +74,5 @@ sources:
 [5] [raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf](raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf) — Fan et al., arXiv:2609.10790
 [6] [Ch.6–7](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》内存池与远程读
 [7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
+[8] [arXiv:2609.13592](https://arxiv.org/pdf/2609.13592) — BOOST
+[9] [arXiv:2609.09643](https://arxiv.org/pdf/2609.09643) — UNISON

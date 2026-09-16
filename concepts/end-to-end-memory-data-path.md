@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-09-15
+updated: 2026-09-16
 sources:
 - raw/articles/arch-study-30d-day-22.md
 - raw/articles/arch-study-30d-day-17.md
@@ -23,6 +23,9 @@ sources:
 - raw/articles/arch-study-30d-day-21.md
 - raw/papers/Vortex_Extreme_Compression_LLM_Inference_2026.pdf
 - raw/papers/RoofLang_AI_Driven_LLM_Inference_Architecting_2026.pdf
+- raw/papers/BOOST_Concurrent_Host_HBM_LLM_Inference_2026.pdf
+- raw/papers/Trillion_Param_MoE_HBF_Memory_Provisioning_2026.pdf
+- raw/papers/UNISON_Near_Memory_Scheduler_LLM_Agents_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -174,9 +177,16 @@ WSE 简化（无 off-chip）:
 
 [Vortex](/papers/vortex-extreme-compression-llm-inference.md) 同时量化静态权重与运行时 KV，把压缩从权重延伸到动态路径。[RoofLang](/papers/rooflang-ai-driven-llm-inference-architecting.md) 用仿真说明紧凑 KV（如 V4 FP8+FP4 index）如何抬高峰值 decode batch、拉开相对大 KV 模型的 **3.5–39.5×** 吞吐差距。
 
+## Host/HBF/近存调度（2026-09-16）
+
+[BOOST](/papers/boost-concurrent-host-hbm-llm-inference.md) 把 host DRAM 与 HBM 当对等带宽源（CAP），Grace Hopper 上高吞吐 **+31%**。[Trillion MoE in a Box](/papers/trillion-param-moe-hbf-memory-provisioning.md) 在权重驻 HBF 后给出状态层 **1.4–4.0 s⁻¹** 膝点。[UNISON](/papers/unison-near-memory-scheduler-llm-agents.md) 用近存核做 agent 会话 KV 驻留（AMAT **−22–51%**）。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
 [2] [raw/articles/arch-study-30d-day-17.md](raw/articles/arch-study-30d-day-17.md) — DRAM（Day 17）
 [3] [raw/articles/arch-study-30d-day-20.md](raw/articles/arch-study-30d-day-20.md) — SSD/NVMe（Day 20）
 [4] [raw/articles/arch-study-30d-day-21.md](raw/articles/arch-study-30d-day-21.md) — NoC（Day 21）
+[5] [arXiv:2609.13592](https://arxiv.org/pdf/2609.13592) — BOOST host+HBM CAP
+[6] [arXiv:2609.15636](https://arxiv.org/pdf/2609.15636) — HBF 供给膝点
+[7] [arXiv:2609.09643](https://arxiv.org/pdf/2609.09643) — UNISON

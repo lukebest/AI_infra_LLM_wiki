@@ -1,5 +1,10 @@
 # Other
 
+* [Trillion MoE HBF stub](trillion-param-moe-hbf-memory-provisioning.md) + [PDF](Trillion_Param_MoE_HBF_Memory_Provisioning_2026.pdf) — arXiv:2609.15636
+* [BOOST stub](boost-concurrent-host-hbm-llm-inference.md) + [PDF](BOOST_Concurrent_Host_HBM_LLM_Inference_2026.pdf) — arXiv:2609.13592
+* [PDD stub](pdd-cross-datacenter-prefill-decode-disaggregation.md) + [PDF](PDD_Cross_Datacenter_Prefill_Decode_Disaggregation_2026.pdf) — arXiv:2609.13161
+* [UNISON stub](unison-near-memory-scheduler-llm-agents.md) + [PDF](UNISON_Near_Memory_Scheduler_LLM_Agents_2026.pdf) — arXiv:2609.09643
+
 * [Vortex stub](vortex-extreme-compression-llm-inference.md) + [PDF](Vortex_Extreme_Compression_LLM_Inference_2026.pdf) — arXiv:2609.12208
 * [Hopper Utilization stub](dissecting-gpu-utilization-llm-inference-hopper.md) + [PDF](Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf) — arXiv:2609.12923
 * [RoofLang stub](rooflang-ai-driven-llm-inference-architecting.md) + [PDF](RoofLang_AI_Driven_LLM_Inference_Architecting_2026.pdf) — arXiv:2609.12551

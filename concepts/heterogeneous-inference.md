@@ -11,7 +11,7 @@ tags:
 - agentic-ai
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-04-16
-updated: 2026-09-14
+updated: 2026-09-16
 sources:
 - raw/articles/bojieli-ai-infra-book.md
 - raw/articles/nvidia-groq3-lpx-blog-2026-04.md
@@ -92,7 +92,11 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 1. **P/D 异构卡**：H20 算力约 A100 一半、HBM 约两倍 → 做 decode；A100 做 prefill。4+4 分离 4.55 req/s vs 共置 3.02（1.51×）。对调角色腰斩。同构上分离不提高吞吐。
 2. **专家 CPU vs GPU**：低复用（每专家 1 行）CPU 就地读 DRAM 快于搬 36 MiB 权重；AVX 交点 ~72 行、AMX ~689 行。跨 NUMA 125 GB/s 时 AMX 路径会改读 bound。Engram 大表在 H100 上预取窗口 69 μs，放主机内存即可（[Ch.6](/analyses/ai-infra-book/ch06-supernode.md)）。
 
+- [PDD](/papers/pdd-cross-datacenter-prefill-decode-disaggregation.md) — 跨 DC H100/H200 角色映射，BCR 最高 +37.5%
+
 # Citations
+
+[PDD] [arXiv:2609.13161](https://arxiv.org/pdf/2609.13161)
 
 [1] [raw/articles/nvidia-groq3-lpx-blog-2026-04.md](raw/articles/nvidia-groq3-lpx-blog-2026-04.md)
 [2] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)

@@ -1,5 +1,10 @@
 # Paper
 
+* [Trillion-Parameter MoE in a Box: HBF Memory Provisioning](trillion-param-moe-hbf-memory-provisioning.md) - Huawei — 权重驻 HBF 后状态层 1.4–4.0 s⁻¹（vs HBM3e 33.3）；HBF×6 暴露 2.30 TB/s
+* [BOOST: Concurrent Host+HBM Access for LLM Inference](boost-concurrent-host-hbm-llm-inference.md) - GT/NVIDIA/Stanford — Grace Hopper iso-batch TPOT +4.3%、高吞吐 +31%（vs prefetch +15%）
+* [PDD: Cross-Datacenter Prefill-Decode Disaggregation](pdd-cross-datacenter-prefill-decode-disaggregation.md) - Infinigence/清华等 — Prefill+RLD+MD 跨 DC；H100×H200 BCR 最高 +37.5%
+* [UNISON: Near-Memory Session KV Scheduler for LLM Agents](unison-near-memory-scheduler-llm-agents.md) - 复旦 — SPEAR+TIDE；hit +0.3–23.1%、AMAT −22–51%、TTFT −58–89%；28nm 0.169 mm²
+
 * [Vortex: Extreme Compression for Efficient LLM Inference](vortex-extreme-compression-llm-inference.md) - Duke — 脉动 bi-flow VQ+稀疏；相对 SOTA 8.03×–23.7× 加速、5.68×–12.5× 能耗（仿真）
 * [Dissecting GPU Utilization for LLM Inference on Hopper](dissecting-gpu-utilization-llm-inference-hopper.md) - KTH — H100 NVL vLLM/FA3；decode GMMA fill 1.6–12.5%，SOL 冷 92% vs decode 7.9%
 * [RoofLang: AI-Driven Architecting of LLM Inference Systems](rooflang-ai-driven-llm-inference-architecting.md) - 行云智理/MSR — DSL+roofline 仿真；V4 系峰值 decode 3.5–39.5×；B300 agent +6.23–50.1%

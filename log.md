@@ -1,5 +1,18 @@
 # Bundle Update Log
 
+## 2026-09-16
+
+### Watch (morning)
+* **Watch**: 2026-09-16 Asia/Shanghai AI infra 论文巡检。cs.AR recent 到 **Tue 9/15**（24 篇；Wed 9/16 美东列表上海早晨尚未放出）。已 ingest 的 Vortex/Hopper Util/RoofLang/Fengshui/Entwine/SAGE/Composable CXL 等不重复。口径含 **agentic AI architecture / chip design**。
+* **Ingest**: Trillion MoE HBF PDF → `raw/papers/Trillion_Param_MoE_HBF_Memory_Provisioning_2026.pdf` + stub `raw/papers/trillion-param-moe-hbf-memory-provisioning.md`（arXiv:2609.15636, 2026-09-14, cs.AR）。
+* **Ingest**: BOOST PDF → `raw/papers/BOOST_Concurrent_Host_HBM_LLM_Inference_2026.pdf` + stub `raw/papers/boost-concurrent-host-hbm-llm-inference.md`（arXiv:2609.13592, 2026-09-11, cs.DC/cs.AR）。
+* **Ingest**: PDD PDF → `raw/papers/PDD_Cross_Datacenter_Prefill_Decode_Disaggregation_2026.pdf` + stub `raw/papers/pdd-cross-datacenter-prefill-decode-disaggregation.md`（arXiv:2609.13161, cs.AR/cs.DC；Tue 9/15 列表）。
+* **Ingest**: UNISON PDF → `raw/papers/UNISON_Near_Memory_Scheduler_LLM_Agents_2026.pdf` + stub `raw/papers/unison-near-memory-scheduler-llm-agents.md`（arXiv:2609.09643, 2026-09-09, cs.AR；先前作 NMP KV 跳过，今日按 agentic 硬件口径入库）。
+* **Creation** (papers): [Trillion MoE HBF](/papers/trillion-param-moe-hbf-memory-provisioning.md)（状态层 1.4–4.0 s⁻¹；HBF×6 → 2.30 TB/s）；[BOOST](/papers/boost-concurrent-host-hbm-llm-inference.md)（TPOT +4.3% / 吞吐 +31%）；[PDD](/papers/pdd-cross-datacenter-prefill-decode-disaggregation.md)（跨 DC BCR +37.5%）；[UNISON](/papers/unison-near-memory-scheduler-llm-agents.md)（hit +0.3–23.1%、AMAT −22–51%、TTFT −58–89%；0.169 mm²）。
+* **Update**: [Disaggregated Inference](/concepts/disaggregated-inference.md)（PDD+对照）、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)（BOOST/HBF/UNISON）、[CXL Tiered Memory](/concepts/cxl-tiered-memory.md)（BOOST/UNISON 对照）、[Heterogeneous Inference](/concepts/heterogeneous-inference.md)（PDD）。
+* **Indexes**: 手动同步 `papers/index.md`（+4）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: Grouped Value Attention (2609.13285, 算法侧 KV 表示压缩)；Dynamic HBM Repartitioning / VAMP (2609.13537, serving 运行时边界)；InplaceKVCache (2609.14507, KV 抽象格式)；AgentKV (2609.14872, cs.LG 软件淘汰)；FlashGPU-sim (2609.15311, 仿真器)；AMD Matrix Cores (2609.14845, 数值模型)；BigMoMo (2609.14643, 手机 MoE)；DVFS SLM (2609.13153)；NPU Eval v1.0 (2609.13166)；BrainScaleS chiplet NoC (2609.13563, 神经形态非 LLM)；mKernel (2609.13585)；ETCInfer 热调度 (2609.15230)；OpWeave (2609.14237)；Cnuas (2609.15889)；HBF Sucks 等先验跳过仍适用。BusyBarn 仍无公开全文 PDF。AccelForge/PATTON/py-kvcache/TinyML/HeatCache 等 9/14–15 跳过项仍适用。
+
 ## 2026-09-15
 
 ### Watch (morning)
