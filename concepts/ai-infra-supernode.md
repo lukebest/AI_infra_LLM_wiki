@@ -12,7 +12,7 @@ tags:
 - topology
 timestamp: '2026-09-14T00:00:00Z'
 created: 2026-09-14
-updated: 2026-09-14
+updated: 2026-09-17
 sources:
 - raw/articles/bojieli-ai-infra-book.md
 ---
@@ -65,6 +65,12 @@ V4.1 Flash、200K decode、256×H100（书 6.7.4）：
 2. 把高频小消息（decode TP AllReduce）关在域内；跨域放 DP 梯度或 PP 交接。
 3. 出口不会随节点变大自动变宽；3:1 超售把跨域传输拉到 3×。
 4. 故障域 = 实例共用的电源/交换机；更大实例 = 更大 blast radius。
+
+
+
+## Nested Parallel / Nested BSP（2026-09）
+
+[Nested Parallel von Neumann](/papers/nested-parallel-von-neumann-nested-bsp.md) 把 SuperNode→autonomous zone 写成硬件嵌套玩偶，与 [UnifiedBus](/entities/unifiedbus-ub.md) / [Huawei τ](/papers/huawei-tau-chip-logicfolding-thermal.md) 对齐；理论叙事，补本页「超节点仍是一台计算机」的形式化语言。
 
 # Citations
 

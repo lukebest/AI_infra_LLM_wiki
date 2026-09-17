@@ -12,7 +12,7 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-09-15
+updated: 2026-09-17
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
@@ -151,6 +151,9 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 ## VQ bi-flow 脉动（2026-09）
 
 [Vortex](/papers/vortex-extreme-compression-llm-inference.md) 在脉动 MXU 上加 LUU/QAU/SPU，用 **LUF（prefill）/ MUF（decode）** 双流吃 VQ + codebook-wise 稀疏；仿真口径相对 SOTA 加速器 **8.03×–23.7×** 加速、**5.68×–12.5×** 能耗，相对常规脉动平均 **22.4×**（非硅）。
+
+
+- [WMHA](/papers/world-model-hardware-accelerator-wmha.md) — DiT/世界模型 **VLIW + 16×16 dual-dot WS**；调度重构并发 **1.83%→44.66%**、**1.484×**；sky130 综合 68.4 mm²
 
 # Citations
 

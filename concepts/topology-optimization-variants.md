@@ -12,9 +12,10 @@ tags:
 - wse
 timestamp: '2026-08-13T00:00:00Z'
 created: 2026-07-06
-updated: 2026-08-13
+updated: 2026-09-17
 sources:
 - raw/articles/interconn-study-21d-day-09.md
+- raw/papers/Budgeted_Express_Mesh_NoC_2026.pdf
 ---
 
 # Topology Optimization Variants（拓扑优化与变体）
@@ -69,6 +70,15 @@ R - R - R                R(2PE) - R(2PE)
 | e↑ | 端口数↑ |
 
 4×4 Mesh 平均距离 ~2；Express Mesh (e=2) 可降至 ~1.33。链路足够便宜时，长链是「免费」的延迟优化。
+
+## 现代证据：Budgeted Express-Mesh（2026-09）
+
+[Budgeted Express-Mesh](/papers/budgeted-express-mesh-noc.md)（arXiv:2609.17057）在固定线预算下做 **traffic-aware** express 放置（ASPL Greedy + simulation-guided SA）+ committed top-K 路由：
+
+- 8×8、B=32：Mesh ASPL 5.333/Diam 14 → Greedy 3.837/8。
+- 高负载（注入率 0.80）Tornado：Greedy vs Random 吞吐 **+50.7%**；SA 再相对 Greedy **+1.3–7.1%**（多流量）。
+- 合成流量 / Garnet；补本页 Express Mesh「长链降距离」直觉的仿真数字，非 LLM 迹。
+
 
 ## Dally 1990 最优维度定律
 

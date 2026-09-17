@@ -11,9 +11,10 @@ tags:
 - switch
 timestamp: '2026-05-11T00:00:00Z'
 created: 2026-05-09
-updated: 2026-09-14
+updated: 2026-09-17
 sources:
 - raw/articles/bojieli-ai-infra-book.md
+- raw/papers/Nested_Parallel_von_Neumann_Nested_BSP_2026.pdf
 - raw/articles/UB-overview.md
 - raw/articles/UB-FUN.md
 - raw/articles/UB-MEM.md
@@ -120,6 +121,11 @@ UB 的定位可类比 [Switching Principles](/concepts/switching-principles.md) 
 
 - UnifiedBus™ (UB) Base Specification Revision 2.0, 2025-12-31, Huawei Technologies
 - <https://www.unifiedbus.com>
+
+
+## Nested Parallel 理论叙事（2026-09）
+
+[Nested Parallel von Neumann / Nested BSP](/papers/nested-parallel-von-neumann-nested-bsp.md)（廖恒，arXiv:2609.16787）把 UB 写成 **Nested Parallel von Neumann Architecture** 的端到端 memory-semantic 总线：peer equality、physically sparse / logically tight，与 Nested BSP 软件嵌套及 [τ Scaling law](/papers/huawei-tau-chip-logicfolding-thermal.md) 配对；文称 SuperNode 以 Nested BSP 为理论根基。论述文，无新吞吐表——规范与书中数字仍以本页上文为准。
 
 ## 书 Ch.6.5.5 / 7.3：规模与延迟预算（2026-09）
 

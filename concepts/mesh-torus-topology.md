@@ -11,7 +11,7 @@ tags:
 - wse
 timestamp: '2026-08-13T00:00:00Z'
 created: 2026-06-24
-updated: 2026-08-13
+updated: 2026-09-17
 sources:
 - raw/articles/interconn-study-21d-day-06.md
 - raw/articles/interconn-study-21d-day-09.md
@@ -138,6 +138,7 @@ WSE-3 ~949×949 Mesh：D≈1896 跳；T_r=1 ns + T_w=0.5 ns → 最坏 **~2.8 μ
 - [Distributed GEMM Algorithms](/concepts/distributed-gemm-algorithms.md) — Cannon/SUMMA 在 2D 处理器 mesh 上的经典 GEMM
 - [Butterfly and MIN Topology](/concepts/butterfly-min-topology.md) — MIN 自路由 vs Mesh 多路径（WSE 选型）
 - [Topology Optimization Variants](/concepts/topology-optimization-variants.md) — Folding/CMesh/Express、Dally 1990
+- [Budgeted Express-Mesh](/papers/budgeted-express-mesh-noc.md) — 固定预算 traffic-aware express；高负载 Tornado Greedy vs Random **+50.7%**
 - [AIC Folded Multi-Ring NoC](/concepts/aic-folded-multi-ring-noc.md) — 6×8 核阵列但物理是折叠多环而非四邻居 mesh
 - [Deterministic Routing and DOR](/concepts/deterministic-routing-dor.md) — XY 维序路由
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — Mesh 最小/非最小自适应（Day 12）

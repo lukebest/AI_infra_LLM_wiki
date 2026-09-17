@@ -1,5 +1,10 @@
 # Paper
 
+* [PipeSwift: Pipeline Parallel Agentic Serving](pipeswift-pipeline-parallel-agentic-serving.md) - 清华等 — JCT-aware PP+MTP；vs SGLang EP 1.21–1.45×、vs vLLM PP2 1.60–2.33×、vs PD-disagg 1.14–1.54×（64 H800）
+* [Nested Parallel von Neumann / Nested BSP](nested-parallel-von-neumann-nested-bsp.md) - Huawei 廖恒 — Nested BSP + UB 端到端 peer；与 τ Scaling law 配对
+* [Budgeted Express-Mesh](budgeted-express-mesh-noc.md) - 清华 — traffic-aware express；高负载 Tornado Greedy vs Random +50.7%
+* [World Model Hardware Accelerator (WMHA)](world-model-hardware-accelerator-wmha.md) - 独立研究 — DiT VLIW；MSE×23；sky130 68.4 mm²；调度 1.484×
+
 * [Trillion-Parameter MoE in a Box: HBF Memory Provisioning](trillion-param-moe-hbf-memory-provisioning.md) - Huawei — 权重驻 HBF 后状态层 1.4–4.0 s⁻¹（vs HBM3e 33.3）；HBF×6 暴露 2.30 TB/s
 * [BOOST: Concurrent Host+HBM Access for LLM Inference](boost-concurrent-host-hbm-llm-inference.md) - GT/NVIDIA/Stanford — Grace Hopper iso-batch TPOT +4.3%、高吞吐 +31%（vs prefetch +15%）
 * [PDD: Cross-Datacenter Prefill-Decode Disaggregation](pdd-cross-datacenter-prefill-decode-disaggregation.md) - Infinigence/清华等 — Prefill+RLD+MD 跨 DC；H100×H200 BCR 最高 +37.5%

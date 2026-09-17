@@ -1,5 +1,10 @@
 # Other
 
+* [PipeSwift stub](pipeswift-pipeline-parallel-agentic-serving.md) + [PDF](PipeSwift_Pipeline_Parallel_Agentic_Serving_2026.pdf) — arXiv:2609.16491
+* [Nested Parallel stub](nested-parallel-von-neumann-nested-bsp.md) + [PDF](Nested_Parallel_von_Neumann_Nested_BSP_2026.pdf) — arXiv:2609.16787
+* [Budgeted Express-Mesh stub](budgeted-express-mesh-noc.md) + [PDF](Budgeted_Express_Mesh_NoC_2026.pdf) — arXiv:2609.17057
+* [WMHA stub](world-model-hardware-accelerator-wmha.md) + [PDF](World_Model_Hardware_Accelerator_WMHA_2026.pdf) — arXiv:2609.16244
+
 * [Trillion MoE HBF stub](trillion-param-moe-hbf-memory-provisioning.md) + [PDF](Trillion_Param_MoE_HBF_Memory_Provisioning_2026.pdf) — arXiv:2609.15636
 * [BOOST stub](boost-concurrent-host-hbm-llm-inference.md) + [PDF](BOOST_Concurrent_Host_HBM_LLM_Inference_2026.pdf) — arXiv:2609.13592
 * [PDD stub](pdd-cross-datacenter-prefill-decode-disaggregation.md) + [PDF](PDD_Cross_Datacenter_Prefill_Decode_Disaggregation_2026.pdf) — arXiv:2609.13161

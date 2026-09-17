@@ -1,5 +1,18 @@
 # Bundle Update Log
 
+## 2026-09-17
+
+### Watch (morning)
+* **Watch**: 2026-09-17 Asia/Shanghai AI infra 论文巡检。cs.AR recent 到 **Wed 9/16**（15 篇；Thu 9/17 美东列表上海早晨尚未放出）。cs.DC Wed 9/16 同步覆盖。已 ingest 的 Trillion MoE HBF/BOOST/PDD/UNISON/Vortex/Hopper Util/RoofLang 等不重复。口径含 **agentic AI architecture / chip design**。
+* **Ingest**: PipeSwift PDF → `raw/papers/PipeSwift_Pipeline_Parallel_Agentic_Serving_2026.pdf` + stub `raw/papers/pipeswift-pipeline-parallel-agentic-serving.md`（arXiv:2609.16491, 2026-09-15, cs.DC）。
+* **Ingest**: Nested Parallel PDF → `raw/papers/Nested_Parallel_von_Neumann_Nested_BSP_2026.pdf` + stub `raw/papers/nested-parallel-von-neumann-nested-bsp.md`（arXiv:2609.16787, Huawei 廖恒）。
+* **Ingest**: Budgeted Express-Mesh PDF → `raw/papers/Budgeted_Express_Mesh_NoC_2026.pdf` + stub `raw/papers/budgeted-express-mesh-noc.md`（arXiv:2609.17057, cs.AR/cs.NI）。
+* **Ingest**: WMHA PDF → `raw/papers/World_Model_Hardware_Accelerator_WMHA_2026.pdf` + stub `raw/papers/world-model-hardware-accelerator-wmha.md`（arXiv:2609.16244, cs.AR）。
+* **Creation** (papers): [PipeSwift](/papers/pipeswift-pipeline-parallel-agentic-serving.md)（JCT 1.21–1.45× / 1.60–2.33× / 1.14–1.54×）；[Nested Parallel](/papers/nested-parallel-von-neumann-nested-bsp.md)（Nested BSP+UB peer）；[Budgeted Express-Mesh](/papers/budgeted-express-mesh-noc.md)（Tornado +50.7%）；[WMHA](/papers/world-model-hardware-accelerator-wmha.md)（MSE×23；1.484×；68.4 mm²）。
+* **Update**: [Disaggregated Inference](/concepts/disaggregated-inference.md)（PipeSwift JCT/PP）、[Topology Optimization Variants](/concepts/topology-optimization-variants.md) + [Mesh/Torus](/concepts/mesh-torus-topology.md)（Express-Mesh）、[UnifiedBus](/entities/unifiedbus-ub.md) + [AI Infra Supernode](/concepts/ai-infra-supernode.md)（Nested Parallel）、[DNN Systolic](/concepts/dnn-accelerator-systolic-dataflow.md)（WMHA）。
+* **Indexes**: 手动同步 `papers/index.md`（+4）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: OptiPrime HE-MPC 私有推理 (2609.16898, 出核心 WSE/NoC/LLM serving 口径)；Cognitive Admission Control agentic (列表错位，API 为 PipeSwift)；XMPIaaS / BOA ANNS / INT8 portable / SpecLens Verilog / CGRA / ScaleLUT / FINNAS / FSNIC / Carry-Through Checksum / DT-RAID / Nested BSP 同窗联邦/FL/农业 DS2；Tue 9/15 已跳过 GVA/VAMP/InplaceKV/AgentKV/FlashGPU-sim/BigMoMo/BrainScaleS/Cnuas 等仍适用。BusyBarn 仍无公开全文 PDF。
+
 ## 2026-09-16
 
 ### Watch (morning)
