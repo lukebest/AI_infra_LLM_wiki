@@ -1,5 +1,9 @@
 # Other
 
+* [HBFlex stub](hbflex-flexible-memory-hbf-llm.md) + [PDF](HBFlex_Flexible_Memory_HBF_LLM_2026.pdf) — arXiv:2609.18675
+* [Ask the Tool stub](ask-tool-progress-agent-kv-serving.md) + [PDF](Ask_Tool_Progress_Agent_KV_Serving_2026.pdf) — arXiv:2609.18849
+* [Fathom stub](fathom-sparse-decoding-offloaded-kv.md) + [PDF](Fathom_Sparse_Decoding_Offloaded_KV_2026.pdf) — arXiv:2609.17652
+
 * [PipeSwift stub](pipeswift-pipeline-parallel-agentic-serving.md) + [PDF](PipeSwift_Pipeline_Parallel_Agentic_Serving_2026.pdf) — arXiv:2609.16491
 * [Nested Parallel stub](nested-parallel-von-neumann-nested-bsp.md) + [PDF](Nested_Parallel_von_Neumann_Nested_BSP_2026.pdf) — arXiv:2609.16787
 * [Budgeted Express-Mesh stub](budgeted-express-mesh-noc.md) + [PDF](Budgeted_Express_Mesh_NoC_2026.pdf) — arXiv:2609.17057

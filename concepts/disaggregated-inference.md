@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-09-17
+updated: 2026-09-18
 sources:
 - raw/articles/bojieli-ai-infra-book.md
 - arXiv:2504.02263
@@ -163,6 +163,7 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [Trillion MoE in a Box](/papers/trillion-param-moe-hbf-memory-provisioning.md) — 对照：低并发 **单节点** HBF 一体机，不是机柜 PD 池
 - [UNISON](/papers/unison-near-memory-scheduler-llm-agents.md) — 会话级 KV 近存调度（与 PD 池正交）
 - [PipeSwift](/papers/pipeswift-pipeline-parallel-agentic-serving.md) — **JCT 目标下复活 PP+MTP**；vs SGLang EP **1.21–1.45×**、vs PD-disagg **1.14–1.54×**（agentic 轨迹）
+- [Ask the Tool](/papers/ask-tool-progress-agent-kv-serving.md) — 工具等待期 **progress→KV keep/evict/prefetch**；p90 TTFT after tool vs LRU **−20.7%/−20.8%**
 
 ## 书 Ch.9：配比与交接预算（2026-09）
 
@@ -193,3 +194,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [15] [arXiv:2609.15636](https://arxiv.org/pdf/2609.15636) — Trillion MoE HBF 供给
 [16] [arXiv:2609.09643](https://arxiv.org/pdf/2609.09643) — UNISON agent KV 近存调度
 [17] [arXiv:2609.16491](https://arxiv.org/pdf/2609.16491) — PipeSwift agentic PP serving
+[18] [arXiv:2609.18849](https://arxiv.org/pdf/2609.18849) — Ask the Tool progress-aware KV

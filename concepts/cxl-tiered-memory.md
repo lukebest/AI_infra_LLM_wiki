@@ -13,7 +13,7 @@ tags:
 - latency
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-07-17
-updated: 2026-09-16
+updated: 2026-09-18
 sources:
 - raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf
 - raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf
@@ -64,6 +64,7 @@ sources:
 - [SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md) — 更冷一层（存储）对照
 - [BOOST](/papers/boost-concurrent-host-hbm-llm-inference.md) — 同节点 host↔HBM **对等并发**（非 CXL 远端）
 - [UNISON](/papers/unison-near-memory-scheduler-llm-agents.md) — agent 会话级近存驻留调度
+- [Fathom](/papers/fathom-sparse-decoding-offloaded-kv.md) — **host 卸荷** KV 上 per-query bit-plane 扫（非 CXL，同属冷层扫带宽问题）
 
 # Citations
 

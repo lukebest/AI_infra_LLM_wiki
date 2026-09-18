@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-09-16
+updated: 2026-09-18
 sources:
 - raw/articles/arch-study-30d-day-22.md
 - raw/articles/arch-study-30d-day-17.md
@@ -26,6 +26,8 @@ sources:
 - raw/papers/BOOST_Concurrent_Host_HBM_LLM_Inference_2026.pdf
 - raw/papers/Trillion_Param_MoE_HBF_Memory_Provisioning_2026.pdf
 - raw/papers/UNISON_Near_Memory_Scheduler_LLM_Agents_2026.pdf
+- raw/papers/HBFlex_Flexible_Memory_HBF_LLM_2026.pdf
+- raw/papers/Fathom_Sparse_Decoding_Offloaded_KV_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -177,6 +179,11 @@ WSE 简化（无 off-chip）:
 
 [Vortex](/papers/vortex-extreme-compression-llm-inference.md) 同时量化静态权重与运行时 KV，把压缩从权重延伸到动态路径。[RoofLang](/papers/rooflang-ai-driven-llm-inference-architecting.md) 用仿真说明紧凑 KV（如 V4 FP8+FP4 index）如何抬高峰值 decode batch、拉开相对大 KV 模型的 **3.5–39.5×** 吞吐差距。
 
+
+## Full-HBF KV 与 Host 扫索引（2026-09-18）
+
+[HBFlex](/papers/hbflex-flexible-memory-hbf-llm.md) 去掉混合栈中的 HBM 槽位，用平面均衡读 + 窗口写回 + 寿命回收把动态 KV 放进全 HBF（吞吐 vs FlashAccel 最高 **1.58×**、vs H3 **3.30×**）。[Fathom](/papers/fathom-sparse-decoding-offloaded-kv.md) 在 **host 卸荷** regime 用 per-query bit-plane 读深压 top-k 前的 key scan（Qwen3-8B@1M GPU time **1.67×** vs 136-bit 扫）。
+
 ## Host/HBF/近存调度（2026-09-16）
 
 [BOOST](/papers/boost-concurrent-host-hbm-llm-inference.md) 把 host DRAM 与 HBM 当对等带宽源（CAP），Grace Hopper 上高吞吐 **+31%**。[Trillion MoE in a Box](/papers/trillion-param-moe-hbf-memory-provisioning.md) 在权重驻 HBF 后给出状态层 **1.4–4.0 s⁻¹** 膝点。[UNISON](/papers/unison-near-memory-scheduler-llm-agents.md) 用近存核做 agent 会话 KV 驻留（AMAT **−22–51%**）。
@@ -190,3 +197,5 @@ WSE 简化（无 off-chip）:
 [5] [arXiv:2609.13592](https://arxiv.org/pdf/2609.13592) — BOOST host+HBM CAP
 [6] [arXiv:2609.15636](https://arxiv.org/pdf/2609.15636) — HBF 供给膝点
 [7] [arXiv:2609.09643](https://arxiv.org/pdf/2609.09643) — UNISON
+[8] [arXiv:2609.18675](https://arxiv.org/pdf/2609.18675) — HBFlex
+[9] [arXiv:2609.17652](https://arxiv.org/pdf/2609.17652) — Fathom

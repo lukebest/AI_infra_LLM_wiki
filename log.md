@@ -1,5 +1,17 @@
 # Bundle Update Log
 
+## 2026-09-18
+
+### Watch (morning)
+* **Watch**: 2026-09-18 Asia/Shanghai AI infra 论文巡检。cs.AR/cs.DC pastweek 到 **Thu 9/17**（Fri 9/18 美东列表上海早晨尚未放出）。已 ingest 的 PipeSwift/Nested Parallel/Express-Mesh/WMHA/Trillion HBF/BOOST/PDD/UNISON 等不重复。口径含 **agentic AI architecture / chip design**。
+* **Ingest**: HBFlex PDF → `raw/papers/HBFlex_Flexible_Memory_HBF_LLM_2026.pdf` + stub `raw/papers/hbflex-flexible-memory-hbf-llm.md`（arXiv:2609.18675, 2026-09-16, cs.AR）。
+* **Ingest**: Ask the Tool PDF → `raw/papers/Ask_Tool_Progress_Agent_KV_Serving_2026.pdf` + stub `raw/papers/ask-tool-progress-agent-kv-serving.md`（arXiv:2609.18849, cs.DC）。
+* **Ingest**: Fathom PDF → `raw/papers/Fathom_Sparse_Decoding_Offloaded_KV_2026.pdf` + stub `raw/papers/fathom-sparse-decoding-offloaded-kv.md`（arXiv:2609.17652, cs.LG；DC 列表）。
+* **Creation** (papers): [HBFlex](/papers/hbflex-flexible-memory-hbf-llm.md)（vs FA 1.58× / vs H3 3.30×）；[Ask the Tool](/papers/ask-tool-progress-agent-kv-serving.md)（p90 TTFT −20.7%/−20.8%）；[Fathom](/papers/fathom-sparse-decoding-offloaded-kv.md)（1M 1.67×；−18% bytes）。
+* **Update**: [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)（HBFlex/Fathom）、[Disaggregated Inference](/concepts/disaggregated-inference.md)（Ask the Tool）、[CXL Tiered Memory](/concepts/cxl-tiered-memory.md)（Fathom host 卸荷对照）。
+* **Indexes**: 手动同步 `papers/index.md`（+3）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: Rect3D 3D-IC floorplan CAD (2609.18946)；Locus ZKP (2609.18846)；HCL MXFP4 (2609.18792)；GPU ISA encoding (2609.18662)；VeriBugBench/RTL Trojans/FAME/Lyapunov/WARD/REQAP/Analog pin/PLC ladder/analog EML/FairCompressAgent/BLADE；OAK/Ermes/Fluid Notarization/Vigil/AUPE/COMPASS-ABS/DiverseFT/UAV Edge/GeoMesh geo-training (2609.18388, WAN 训练非 WSE/NoC)/Zero-I/O FT/Token Latency Fairness/SSD-LLaMA consumer MoE (2609.18110, 消费级 SSD 栈)/Thunderbolt RDMA/ASPIRE speculative/vidax video JAX mesh/GroupKV dLLM/State P2P；Wed 已跳过 OptiPrime/FSNIC/SpecLens/CGRA/ScaleLUT/FINNAS/Carry-Through/DT-RAID/BusyBarn 等仍适用。
+
 ## 2026-09-17
 
 ### Watch (morning)

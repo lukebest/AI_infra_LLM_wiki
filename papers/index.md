@@ -1,5 +1,9 @@
 # Paper
 
+* [HBFlex: Full-HBF Memory for Fine-Grained LLM KV](hbflex-flexible-memory-hbf-llm.md) - 北大/阿里 — 全 HBF；吞吐 vs FlashAccel 最高 1.58×、vs H3 最高 3.30×
+* [Ask the Tool: Progress-Aware KV for Agentic Serving](ask-tool-progress-agent-kv-serving.md) - 清华/阿里云 — 工具 progress；p90 TTFT after tool vs LRU −20.7%/−20.8%
+* [Fathom: Per-Query Bit-Plane Scan for Offloaded KV](fathom-sparse-decoding-offloaded-kv.md) - 独立 — host 卸荷；Qwen3-8B@1M vs 136-bit 扫 1.67×；同 time −18% 字节
+
 * [PipeSwift: Pipeline Parallel Agentic Serving](pipeswift-pipeline-parallel-agentic-serving.md) - 清华等 — JCT-aware PP+MTP；vs SGLang EP 1.21–1.45×、vs vLLM PP2 1.60–2.33×、vs PD-disagg 1.14–1.54×（64 H800）
 * [Nested Parallel von Neumann / Nested BSP](nested-parallel-von-neumann-nested-bsp.md) - Huawei 廖恒 — Nested BSP + UB 端到端 peer；与 τ Scaling law 配对
 * [Budgeted Express-Mesh](budgeted-express-mesh-noc.md) - 清华 — traffic-aware express；高负载 Tornado Greedy vs Random +50.7%
