@@ -1,5 +1,6 @@
 # Other
 
+* [MeshKV stub](meshkv-noc-kv-cache-fabric.md) + [PDF](MeshKV_NoC_KV_Cache_Fabric_2026.pdf) — arXiv:2609.19207
 * [HBFlex stub](hbflex-flexible-memory-hbf-llm.md) + [PDF](HBFlex_Flexible_Memory_HBF_LLM_2026.pdf) — arXiv:2609.18675
 * [Ask the Tool stub](ask-tool-progress-agent-kv-serving.md) + [PDF](Ask_Tool_Progress_Agent_KV_Serving_2026.pdf) — arXiv:2609.18849
 * [Fathom stub](fathom-sparse-decoding-offloaded-kv.md) + [PDF](Fathom_Sparse_Decoding_Offloaded_KV_2026.pdf) — arXiv:2609.17652

@@ -1,5 +1,6 @@
 # Paper
 
+* [MeshKV: NoC KV Cache Fabric for Tiled Decode](meshkv-noc-kv-cache-fabric.md) - UCLA/Columbia — 片上 KV NoC；流量最高 −58%、KV 利用率 2.1×、多流吞吐 1.9×
 * [HBFlex: Full-HBF Memory for Fine-Grained LLM KV](hbflex-flexible-memory-hbf-llm.md) - 北大/阿里 — 全 HBF；吞吐 vs FlashAccel 最高 1.58×、vs H3 最高 3.30×
 * [Ask the Tool: Progress-Aware KV for Agentic Serving](ask-tool-progress-agent-kv-serving.md) - 清华/阿里云 — 工具 progress；p90 TTFT after tool vs LRU −20.7%/−20.8%
 * [Fathom: Per-Query Bit-Plane Scan for Offloaded KV](fathom-sparse-decoding-offloaded-kv.md) - 独立 — host 卸荷；Qwen3-8B@1M vs 136-bit 扫 1.67×；同 time −18% 字节

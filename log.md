@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-09-21
+
+### Watch (morning)
+* **Watch**: 2026-09-21 Asia/Shanghai AI infra 论文巡检。cs.AR/cs.DC API 到 **Thu 9/17**（Fri–Mon 美东列表上海早晨尚未放出）。已 ingest 的 HBFlex/Ask the Tool/Fathom/PipeSwift/Nested Parallel/Express-Mesh/WMHA 等不重复。口径含 **agentic AI architecture / chip design**。补扫发现 **MeshKV 2609.19207**（9/16 投稿）在 9/18 早报漏列。
+* **Ingest**: MeshKV PDF → `raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf` + stub `raw/papers/meshkv-noc-kv-cache-fabric.md`（arXiv:2609.19207, 2026-09-16, cs.AR）。
+* **Creation** (papers): [MeshKV](/papers/meshkv-noc-kv-cache-fabric.md)（流量 −58%；KV 利用率 2.1×；多流 1.9×）。
+* **Update**: [Mesh/Torus](/concepts/mesh-torus-topology.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[Interconnection Network Design Space](/concepts/interconnection-network-design-space.md)。
+* **Indexes**: 手动同步 `papers/index.md`（+1）、`raw/papers/index.md`。未跑 `generate_indexes.py`。
+* **Considered not ingested**: The Life of a Token 教程 (2609.19924)；SiliconBench 桌面统一内存评测 (2609.19169)；MiX VLM 微缩放格式 (2609.19683)；PixelFlow DiT serving (2609.20723)；Do AI Agents Understand Computer Architecture? / AutoTuring 评测 (2609.19387)；Rosetta 多代理建分析模型 (2609.19376)；Shared KV / Hybrid-State LMCache 正确性笔记 (2609.15021/15030)；DeepSeek-V4-Flash AMD gfx90a 工程笔记 (2609.15627)；Token Latency Fairness (2609.18112)；Xronos 边缘 CPU TP (2609.19909)；ASRB K8s 路由 (2609.20497)；Agentic Autoscaling 文本分类 (2609.14898)；9/18 已跳过 Rect3D/Locus/HCL/GPU ISA/VeriBug/GeoMesh/SSD-LLaMA 等仍适用。BusyBarn 仍无公开全文 PDF。
+
 ## 2026-09-18
 
 ### Watch (morning)

@@ -11,8 +11,9 @@ tags:
 - wse
 timestamp: '2026-08-13T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-17
+updated: 2026-09-21
 sources:
+- raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/interconn-study-21d-day-06.md
 - raw/articles/interconn-study-21d-day-09.md
 - raw/articles/interconn-study-21d-day-10.md
@@ -146,6 +147,8 @@ WSE-3 ~949×949 Mesh：D≈1896 跳；T_r=1 ns + T_w=0.5 ns → 最坏 **~2.8 μ
 - [Duato Escape VC Deadlock-Free Routing](/concepts/duato-escape-vc-deadlock-free-routing.md) — 完全自适应逃逸层（Day 14）
 - [NoC Research Methodology and Case Studies](/concepts/noc-research-methodology-case-studies.md) — Mesh vs Fat-Tree / Polaris（Day 20）
 - [Interconnection Topology Metrics](/concepts/interconnection-topology-metrics.md) — 六拓扑统一比较（Day 10）
+
+- [MeshKV](/papers/meshkv-noc-kv-cache-fabric.md) — 8×8 mesh 上 KV 多播/去重；互连流量最高 **−58%**、多流吞吐 **1.9×**
 
 # Citations
 

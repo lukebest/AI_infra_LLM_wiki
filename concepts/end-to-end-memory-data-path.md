@@ -13,8 +13,9 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-09-18
+updated: 2026-09-21
 sources:
+- raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/arch-study-30d-day-22.md
 - raw/articles/arch-study-30d-day-17.md
 - raw/articles/arch-study-30d-day-18.md
@@ -188,6 +189,10 @@ WSE 简化（无 off-chip）:
 
 [BOOST](/papers/boost-concurrent-host-hbm-llm-inference.md) 把 host DRAM 与 HBM 当对等带宽源（CAP），Grace Hopper 上高吞吐 **+31%**。[Trillion MoE in a Box](/papers/trillion-param-moe-hbf-memory-provisioning.md) 在权重驻 HBF 后给出状态层 **1.4–4.0 s⁻¹** 膝点。[UNISON](/papers/unison-near-memory-scheduler-llm-agents.md) 用近存核做 agent 会话 KV 驻留（AMAT **−22–51%**）。
 
+## 片上 NoC KV 流量（2026-09-21）
+
+[MeshKV](/papers/meshkv-noc-kv-cache-fabric.md) 不先压缩字节，而把瓦片加速器上的 KV 块做成 NoC 分组流（TaKV 条带 + Mare 多播 + Pad 重叠）。FPGA 8×8：互连流量最高 **−58%**，二分 KV 利用率约 **2.1×**，多流吞吐最高 **1.9×**——瓶颈从 off-chip 挪到片上 bisection 背压。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -199,3 +204,4 @@ WSE 简化（无 off-chip）:
 [7] [arXiv:2609.09643](https://arxiv.org/pdf/2609.09643) — UNISON
 [8] [arXiv:2609.18675](https://arxiv.org/pdf/2609.18675) — HBFlex
 [9] [arXiv:2609.17652](https://arxiv.org/pdf/2609.17652) — Fathom
+[10] [arXiv:2609.19207](https://arxiv.org/pdf/2609.19207) — MeshKV
