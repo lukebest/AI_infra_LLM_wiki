@@ -6,10 +6,14 @@ tags:
 - sandbox
 - training-system
 - inference-system
+- agentic-ai
 timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
+updated: 2026-09-22
 sources:
 - DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf
+- raw/papers/DeepSeek_DSec_Agentic_Sandbox_Infrastructure_2026.pdf
+- raw/papers/dsec-agentic-sandbox-infrastructure.md
 ---
 
 # DSec (DeepSeek Elastic Compute) Sandbox
@@ -52,6 +56,15 @@ DeepSeek-V4 的生产级沙箱平台，用于后训练和评估中的 agentic �
 - Used in: [Deepseek V4](#DeepSeek-V4)
 - Related: [Tilelang](#TileLang)
 
+
+## 2026-09 paper update (arXiv:2609.22978)
+
+论文把既有生产平台表述成独立执行平面：统一 SDK 下的 FnCall / container / Firecracker microVM / QEMU fullVM，3FS + EROFS/OverlayBD 按需镜像，以及与 RL trainer 解耦的 pause/resume。量化边界来自原文：约 160 节点 scale unit 每日约 **300 万** sandbox；峰值并发 **>380K**、创建 **>5,000/s**；稳定点每节点至少 **3,200 containers** 或 **800 microVMs**；8,192-container 批量启动中 lazy EROFS 相对 eager pull **1.71×** 更短并减少磁盘写入 **57%**。
+
+与 [Ask the Tool](../papers/ask-tool-progress-agent-kv-serving.md) 对照：DSec 保存工具执行环境状态，Ask the Tool 用 waiting-time 预测管理 KV。与 [PipeSwift](../papers/pipeswift-pipeline-parallel-agentic-serving.md) 对照：PipeSwift 优化 agentic serving 的模型侧流水，DSec 覆盖 RL/eval 的沙箱执行面。完整论文页见 [DeepSeek DSec](../papers/dsec-agentic-sandbox-infrastructure.md)。
+
 # Citations
 
-[1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)
+1. Huang, J., Tang, H., Chen, J., et al. “DeepSeek Elastic Compute (DSec): A Sandbox Infrastructure for Effective Agentic Training at Scale.” arXiv:2609.22978, 2026. [paper](../papers/dsec-agentic-sandbox-infrastructure.md)
+2. [本地原文 PDF](../raw/papers/DeepSeek_DSec_Agentic_Sandbox_Infrastructure_2026.pdf)；[原始来源记录](../raw/papers/dsec-agentic-sandbox-infrastructure.md)
+3. [旧来源指针 DeepSeek_V4 PDF](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)

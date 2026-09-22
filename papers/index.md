@@ -1,5 +1,10 @@
 # Paper
 
+* [CARDAN: Scratchpad MoE Multi-Engine Dataflow](cardan-moe-scratchpad-dataflow.md) - UC Merced/Yotta — Trainium3；HBM read −26–50%；batch-1 1.15–1.31×、batch-16 1.70×
+* [Weave: Dynamic SM Scheduling for MoE Overlap](weave-dynamic-sm-moe-overlap.md) - 上交/NUS/阿里 — 4×H100 EP4；MoE layer 2.89×、端到端 1.33×（摘要汇总）
+* [COMET: FPGA Packet Tracking for EC-RDMA WAN](comet-erasure-coded-rdma-packet-tracking.md) - 东北大学/Microsoft — Agilex 7 400 Gb/s；资源 <1%；连接数 vs SDR 6×
+* [DeepSeek DSec: Agentic Sandbox Infrastructure](dsec-agentic-sandbox-infrastructure.md) - DeepSeek — 300 万 sandbox/日；>380K 并发；>5,000 创建/s
+
 * [MeshKV: NoC KV Cache Fabric for Tiled Decode](meshkv-noc-kv-cache-fabric.md) - UCLA/Columbia — 片上 KV NoC；流量最高 −58%、KV 利用率 2.1×、多流吞吐 1.9×
 * [HBFlex: Full-HBF Memory for Fine-Grained LLM KV](hbflex-flexible-memory-hbf-llm.md) - 北大/阿里 — 全 HBF；吞吐 vs FlashAccel 最高 1.58×、vs H3 最高 3.30×
 * [Ask the Tool: Progress-Aware KV for Agentic Serving](ask-tool-progress-agent-kv-serving.md) - 清华/阿里云 — 工具 progress；p90 TTFT after tool vs LRU −20.7%/−20.8%

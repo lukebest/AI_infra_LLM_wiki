@@ -1,5 +1,10 @@
 # Other
 
+* [CARDAN stub](cardan-moe-scratchpad-dataflow.md) + [PDF](CARDAN_Multi_Engine_MoE_Scratchpad_Dataflow_2026.pdf) — arXiv:2609.21137
+* [Weave stub](weave-dynamic-sm-moe-overlap.md) + [PDF](Weave_Dynamic_SM_MoE_Overlap_2026.pdf) — arXiv:2609.21483
+* [COMET stub](comet-erasure-coded-rdma-packet-tracking.md) + [PDF](COMET_Erasure_Coded_RDMA_WAN_2026.pdf) — arXiv:2609.21774
+* [DSec stub](dsec-agentic-sandbox-infrastructure.md) + [PDF](DeepSeek_DSec_Agentic_Sandbox_Infrastructure_2026.pdf) — arXiv:2609.22978
+
 * [MeshKV stub](meshkv-noc-kv-cache-fabric.md) + [PDF](MeshKV_NoC_KV_Cache_Fabric_2026.pdf) — arXiv:2609.19207
 * [HBFlex stub](hbflex-flexible-memory-hbf-llm.md) + [PDF](HBFlex_Flexible_Memory_HBF_LLM_2026.pdf) — arXiv:2609.18675
 * [Ask the Tool stub](ask-tool-progress-agent-kv-serving.md) + [PDF](Ask_Tool_Progress_Agent_KV_Serving_2026.pdf) — arXiv:2609.18849

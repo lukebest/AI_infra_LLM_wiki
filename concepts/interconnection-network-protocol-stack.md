@@ -17,15 +17,18 @@ tags:
 - scale-up
 timestamp: '2026-08-20T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-14
+updated: 2026-09-22
 sources:
 - raw/articles/interconn-study-21d-day-02.md
 - papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md
 - papers/maia-200-sdla.md
 - raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf
+- raw/papers/COMET_Erasure_Coded_RDMA_WAN_2026.pdf
 ---
 
 # Interconnection Network Protocol Stack（互连网络协议栈）
+
+[COMET](../papers/comet-erasure-coded-rdma-packet-tracking.md) 补充了 scale-across WAN 的 transport/offload 案例：用 erasure-code path stripe 与稀疏 loss tracking 把可靠性状态从 BDP 解耦，并映射为 FPGA 上可并行复制的数据路径。
 
 互连网络在**物理层到传输层**采用与 TCP/IP 类似的四层分解。各层职责边界清晰，便于将 NoC、scale-up fabric、scale-out 网络统一分析。
 

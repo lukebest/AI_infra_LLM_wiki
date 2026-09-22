@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-09-22
+
+### Watch (morning)
+* **Watch**: 2026-09-22 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC submittedDate 扫到 **Sat 9/19**；去重 MeshKV/HBFlex/Ask the Tool/Fathom/PipeSwift/Nested Parallel/Express-Mesh/WMHA 等近期条目。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。
+* **Ingest**: CARDAN PDF + stub（arXiv:2609.21137）；Weave（2609.21483）；COMET（2609.21774）；DeepSeek DSec（2609.22978）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [CARDAN](/papers/cardan-moe-scratchpad-dataflow.md)（HBM read −26–50%；batch-1 1.15–1.31×）；[Weave](/papers/weave-dynamic-sm-moe-overlap.md)（MoE layer 2.89×；端到端 1.33×，摘要汇总）；[COMET](/papers/comet-erasure-coded-rdma-packet-tracking.md)（400 Gb/s；资源 <1%；连接数 vs SDR 6×）；[DSec](/papers/dsec-agentic-sandbox-infrastructure.md)（300 万 sandbox/日；>380K 并发；>5,000/s）。
+* **Update**: [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md)、[DSec Sandbox Platform](/concepts/dsec-sandbox.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`、`concepts/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: ExoFlow (2609.21427，通用 Ray dataflow fault tolerance，未给 LLM/AI accelerator 增量)；Towards Efficient Serverless LLM Serving (2609.22358，K8s/Knative 启发式调度，缺体系结构增量)；From Deployment Hell to Stability (2609.22064，MLOps framework 经验)；Efficient Wide-Area Communication for Federated Foundation Model Training (2609.22673，联邦优化/仿真，非互连硬件)；The Cost-Efficiency of AI Inferencing (2609.22597，经济模型)；EdgeServerlessBench (2609.22330，通用 edge benchmark)；Agent Model Measurement (2609.21943，代码测量 agent 应用)；DaYu (2609.22090，DPU stream analytics，非本轮 AI/LLM workload)。9/21 已列教程、VLM 格式、纯 agent/评测与软件 runtime 等跳过理由仍适用。
+
 ## 2026-09-21
 
 ### Watch (morning)

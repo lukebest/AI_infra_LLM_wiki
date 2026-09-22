@@ -30,10 +30,10 @@
 * [Deterministic Routing and DOR](deterministic-routing-dor.md) - 确定性路由与维序路由（DOR）：XY/Y-first、e-cube、源路由 vs 分布式；Mesh/Hypercube 最短路径与 CDG 无死锁直觉；WSE 工业选型
 * [Disaggregated Inference](disaggregated-inference.md) - 解耦推理：attention/FFN 分离部署，独立扩展，batch 聚合
 * [Distributed GEMM Algorithms](distributed-gemm-algorithms.md) - 分布式内存矩阵乘算法谱系：Cannon（2D mesh ring-shift）、SUMMA（broadcast 外积）、2.5D/3D SUMMA（通信–内存权衡）；α+β 代价模型、SBP 切分 vs 映射放置；T10 rTensor 形式化 Cannon
-* [DNN Accelerator Systolic Dataflow](dnn-accelerator-systolic-dataflow.md) - H&P Ch.7 DSA：脉动阵列、WS/OS/RS 数据复用、Roofline for NPU、TPU vs GPU vs WSE SLA；晶体管从控制迁到 MAC
+* [DNN Accelerator Systolic Dataflow](dnn-accelerator-systolic-dataflow.md) - H&P Ch.7 DSA：脉动阵列与数据复用；新增 CARDAN 的 MoE shared/private 权重及多 engine scratchpad 数据流
 * [DRAM and Memory System](dram-memory-system.md) - DRAM 访问时序与 Row Buffer、Channel/Bank 并行、DDR/HBM 带宽公式、内存墙与 Roofline Ridge Point、WSE 分布式 SRAM 对 HBM 的绕过
 * [DSA Processor Design Tradeoffs](dsa-processor-design-tradeoffs.md) - 领域专用处理器设计取舍：现代 CPU 传统武器（OoO/Cache/分支预测/TLB）的能力代价矩阵 vs WSE SLA 核
-* [DSec Sandbox Platform](dsec-sandbox.md) - DeepSeek Elastic Compute 沙箱平台，4 种执行基板，数十万并发
+* [DSec Sandbox Platform](dsec-sandbox.md) - DeepSeek Elastic Compute 沙箱平台，4 种执行基板；论文更新：300 万 sandbox/日、>380K 并发、>5,000 创建/s
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md) - DeepSeek 半自回归 speculative decoding：并行 DFlash backbone + Markov sequential head、confidence-scheduled 负载感知 verify，V4 生产 +60–85% 单用户速度
 * [Duato Escape VC Deadlock-Free Routing](duato-escape-vc-deadlock-free-routing.md) - D&T Ch.8.5-8.8：Duato 定理（逃逸子网）、自适应+逃逸 VC、避免 vs 恢复、协议层 Request/Response 死锁；Dally 的推广
 * [End-to-End Memory Data Path](end-to-end-memory-data-path.md) - 存储篇综合（Day 17-22）：load 全路径 AMAT 层级展开、内存墙时间线、一致性决策树、同步成本量级、WSE 消除 off-chip 的简化路径
@@ -55,13 +55,13 @@
 * [Instruction-Level Parallelism](instruction-level-parallelism.md) - 指令级并行 ILP：超标量 vs VLIW、真依赖与名称依赖、静态/动态多发射权衡
 * [Interconnection Network Cost Model](interconnection-network-cost-model.md) - 互连网络开销与性能模型：节点/链路/交换成本、零负载延迟公式、注入带宽与二分带宽上界、直连网络 d≈O(log N)
 * [Interconnection Network Design Space](interconnection-network-design-space.md) - Dally & Towles 互连网络四层设计空间（应用→拓扑/路由/流控→微架构）、基本术语与三大应用域
-* [Interconnection Network Protocol Stack](interconnection-network-protocol-stack.md) - 互连网络四层协议栈（物理/链路/网络/传输）、Network Interface 边界，与 NoC 及 UB 的对应关系
+* [Interconnection Network Protocol Stack](interconnection-network-protocol-stack.md) - 四层协议栈与 NIC 边界；新增 COMET 的 EC-RDMA WAN/FPGA loss tracking 案例
 * [Interconnection Topology Metrics](interconnection-topology-metrics.md) - 互连拓扑度量：度/直径/平均距离/二分带宽/对称性，k-ary n-cube 公式，Mesh vs Torus 对比
 * [ISA Design Principles](isa-design-principles.md) - 指令集设计原则：Load/Store、RISC-V 编码、CISC vs RISC 历史教训、寄存器与条件码权衡
 * [Layout-Aware NoC and Flexible Dataflow Accelerators](layout-aware-noc-flexible-dataflow.md) - NoC 感知 / 转换 / 消除矩阵数据 layout 的 4 类技术路线：L1 raw bytes / L2 multicast 隐式 / L3 reorder network 显式 / L4 runtime fission-fusion + L5 反向（编译期消除）；代表工作 MAERI / SIGMA / FEATHER(BIRRD+RIR) / Venus / SmartMem
 * [Linear and Ring Topology](linear-ring-topology.md) - 线形阵列与环形拓扑：度/直径/二分带宽度量，双向环即 1-D Torus，NoC/SAN/Die-to-Die 应用与 Chordal Ring 扩展
 * [Linear Attention Evolution](linear-attention-evolution.md) - GPT-2 → Linear Attention → DeltaNet → Gated DeltaNet → KDA 七年演化；核心是 attention 状态空间从 O(N) → O(1) + 选择性衰减 + 周期 reset
-* [LLM Distributed Training Collectives](llm-distributed-training-collectives.md) - H&P Ch.6/10 语境下 LLM 训练集体通信：AllReduce/AllGather/All-to-All；Ring vs Tree；DP/TP/PP/EP 配方；通信-计算重叠与 WSE 片上 vs 跨 wafer
+* [LLM Distributed Training Collectives](llm-distributed-training-collectives.md) - AllReduce/AllGather/All-to-All 与 DP/TP/PP/EP；新增 Weave 的 MoE 层内动态 SM/通信重叠
 * [LPU Architecture](lpu-architecture.md) - Groq LPU 推理专用架构：SRAM-first、显式数据搬运、编译器调度
 * [M2N Communication](m2n-communication.md) - M2N 不对称通信模式，disaggregated inference 核心，4.2× NCCL 优化
 * [Manifold-Constrained Hyper-Connections (mHC)](mhc.md) - 流形约束超连接，Birkhoff polytope 约束残差映射

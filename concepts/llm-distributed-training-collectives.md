@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-09-10T00:00:00Z'
 created: 2026-07-13
-updated: 2026-09-14
+updated: 2026-09-22
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -23,10 +23,13 @@ sources:
 - raw/papers/CIERA_Cross_Iteration_Exponent_Reuse_Allgather_2026.pdf
 - raw/papers/REACT_Tuning_Collective_Patterns_Shared_AI_Clusters_2026.pdf
 - raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf
+- raw/papers/Weave_Dynamic_SM_MoE_Overlap_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
+
+[Weave](../papers/weave-dynamic-sm-moe-overlap.md) 显示 MoE expert parallel 的重叠粒度已从 collective/kernel 边界下沉到 persistent megakernel 内部：通信 SM 数和 chunk 可按层、按 GPU 动态选择，空闲通信 SM 还能临时执行 GEMM tile。
 
 arch-study **并行篇 Day 27**：H&P Ch.6 + Ch.10——当模型装不进单芯片（GPT-3 175B ≫ WSE 44 GB SRAM），**通信成为训练主瓶颈**。经典 MPI 五算法见 [MPI Reduce/AllReduce](/concepts/mpi-reduce-allreduce-algorithms.md)；本页聚焦 **LLM 训练配方与复杂度直觉**。
 

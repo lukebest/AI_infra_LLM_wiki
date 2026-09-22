@@ -12,14 +12,17 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-09-17
+updated: 2026-09-22
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
 - raw/papers/Vortex_Extreme_Compression_LLM_Inference_2026.pdf
+- raw/papers/CARDAN_Multi_Engine_MoE_Scratchpad_Dataflow_2026.pdf
 ---
 
 # DNN Accelerator Systolic Dataflow（DNN 加速器与脉动数据流）
+
+[CARDAN](../papers/cardan-moe-scratchpad-dataflow.md) 把该范式扩展到动态路由 MoE：以共享权重表示制造 routing-independent 搬运，再让 DMA、tensor、SIMD/vector engine 并发执行，说明 scratchpad 数据流也可跨模型表示与 runtime 协同。
 
 arch-study **并行篇 Day 25**：H&P Ch.7.1–7.5 **Domain-Specific Architectures**——把 Day 24 [GPU SIMT](/concepts/gpu-simt-architecture.md) 的「软件 SIMD」再推一步：**把并行刻进 MAC 阵列**。核心命题：**数据复用策略决定一切**；脉动阵列是 TPU 的灵魂。
 
