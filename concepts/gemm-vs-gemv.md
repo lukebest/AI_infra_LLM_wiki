@@ -15,8 +15,9 @@ tags:
 - kernel
 timestamp: '2026-07-07T00:00:00Z'
 created: 2026-07-07
-updated: 2026-09-15
+updated: 2026-09-23
 sources:
+- raw/papers/SPECTRA_Speculative_Decoding_Reconfigurable_Tiled_2026.pdf
 - concepts/prefill-decode-divergence.md
 - concepts/waferllm-system.md
 - concepts/flashdecoding-plus-plus.md
@@ -24,6 +25,7 @@ sources:
 - raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf
 - raw/papers/Vortex_Extreme_Compression_LLM_Inference_2026.pdf
 ---
+- raw/papers/SPECTRA_Speculative_Decoding_Reconfigurable_Tiled_2026.pdf
 
 # GEMM vs GEMV in LLM Inference
 
@@ -240,6 +242,12 @@ H100 算力 ~989 TFLOPS (FP16) ÷ 内存带宽 ~3.35 TB/s = **ridge point ~295 F
 ## Hopper fragment fill 与脉动 bi-flow（2026-09）
 
 [Dissecting Hopper Utilization](/papers/dissecting-gpu-utilization-llm-inference-hopper.md) 把 decode 小-M GEMM 钉到 GMMA m64：**η_M 1.6–12.5%**，有用 matmul 可被利用率读数高估 **8–64×**。[Vortex](/papers/vortex-extreme-compression-llm-inference.md) 在脉动侧用 MUF（M<16）/ LUF（M≥16）显式切换，同一问题的 DSA 解法。
+
+
+
+## Speculative verification 的中间 regime（2026-09-23）
+
+[SPECTRA](/papers/spectra-speculative-decoding-tiled.md) 指出 speculative **verification** 的算术强度落在经典 GEMV decode 与 GEMM prefill 之间，并随 γ / 接受率变化；瓦片引擎在 systolic↔vector 间切换以覆盖该区（相对 systolic-only 最高 **2.09×**）。
 
 # Citations
 

@@ -1,5 +1,10 @@
 # Paper
 
+* [SPECTRA: Speculative Decoding on Reconfigurable Tiles](spectra-speculative-decoding-tiled.md) - Columbia — 20-tile FPGA；tile 最高 2.09×、系统级再最高 1.25×
+* [SPLASH: Sparse Attention × High-Bandwidth Flash](splash-sparse-attention-hbf.md) - NUS — HBM+HBF KV；100 ms TPOT 下 3.5–11.4× decode/GPU
+* [Die Scaling Breaks GPU Fine-grained Scheduling](die-scaling-gpu-fine-grained-scheduling.md) - 上交/NUS/NVIDIA — 远端 HBM +67%；kernel 1.22×、LLM decode +14.3%
+* [AHRR: Agents + HLS Abstraction for Chip Design](ahrr-agents-hls-chip-design.md) - UCLA — AHRR vs Direct RTL 2.6× geomean；ICCAD’26
+
 * [CARDAN: Scratchpad MoE Multi-Engine Dataflow](cardan-moe-scratchpad-dataflow.md) - UC Merced/Yotta — Trainium3；HBM read −26–50%；batch-1 1.15–1.31×、batch-16 1.70×
 * [Weave: Dynamic SM Scheduling for MoE Overlap](weave-dynamic-sm-moe-overlap.md) - 上交/NUS/阿里 — 4×H100 EP4；MoE layer 2.89×、端到端 1.33×（摘要汇总）
 * [COMET: FPGA Packet Tracking for EC-RDMA WAN](comet-erasure-coded-rdma-packet-tracking.md) - 东北大学/Microsoft — Agilex 7 400 Gb/s；资源 <1%；连接数 vs SDR 6×

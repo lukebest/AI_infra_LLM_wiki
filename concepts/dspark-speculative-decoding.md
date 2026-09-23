@@ -10,9 +10,11 @@ tags:
 - scheduling
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
+updated: 2026-09-23
 sources:
 - raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf
 ---
+- raw/papers/SPECTRA_Speculative_Decoding_Reconfigurable_Tiled_2026.pdf
 
 # DSpark Speculative Decoding
 
@@ -79,6 +81,12 @@ Sequential stage (Markov/RNN head): 采样 x_k ~ p_k(·|x_0, x_<k)
 - [FlashDecoding++](/concepts/flashdecoding-plus-plus.md) — 正交：kernel 降每步 decode latency
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 对比：编译器调度 vs serving 层 speculative 加速
 - [Multi-Branch Self-Drafting](/papers/multi-branch-self-drafting-llm-inference.md) — 训练无关多分支 in-model drafting（AAAI'25）
+
+
+
+## 硬件侧：验证期中间 AI（2026-09-23）
+
+算法层提高 τ / 缩短无效 verify 之外，[SPECTRA](/papers/spectra-speculative-decoding-tiled.md) 从加速器角度处理 verification 的中间算术强度：20-tile FPGA 上 tile 可重构最高 **2.09×**、系统映射再最高 **1.25×**。
 
 # Citations
 

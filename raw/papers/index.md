@@ -1,5 +1,10 @@
 # Other
 
+* [SPECTRA stub](spectra-speculative-decoding-tiled.md) + [PDF](SPECTRA_Speculative_Decoding_Reconfigurable_Tiled_2026.pdf) — arXiv:2609.24847
+* [SPLASH stub](splash-sparse-attention-hbf.md) + [PDF](SPLASH_Sparse_Attention_High_Bandwidth_Flash_2026.pdf) — arXiv:2609.23816
+* [Die Scaling stub](die-scaling-gpu-fine-grained-scheduling.md) + [PDF](Die_Scaling_GPU_Fine_Grained_Scheduling_2026.pdf) — arXiv:2609.24270
+* [AHRR stub](ahrr-agents-hls-chip-design.md) + [PDF](AHRR_Agents_Higher_Abstraction_Chip_Design_2026.pdf) — arXiv:2609.21157
+
 * [CARDAN stub](cardan-moe-scratchpad-dataflow.md) + [PDF](CARDAN_Multi_Engine_MoE_Scratchpad_Dataflow_2026.pdf) — arXiv:2609.21137
 * [Weave stub](weave-dynamic-sm-moe-overlap.md) + [PDF](Weave_Dynamic_SM_MoE_Overlap_2026.pdf) — arXiv:2609.21483
 * [COMET stub](comet-erasure-coded-rdma-packet-tracking.md) + [PDF](COMET_Erasure_Coded_RDMA_WAN_2026.pdf) — arXiv:2609.21774

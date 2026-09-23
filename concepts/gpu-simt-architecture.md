@@ -14,12 +14,13 @@ tags:
 - npu
 timestamp: '2026-07-07T00:00:00Z'
 created: 2026-07-07
-updated: 2026-09-15
+updated: 2026-09-23
 sources:
 - raw/articles/arch-study-30d-day-24.md
 - raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf
 - raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf
 ---
+- raw/papers/Die_Scaling_GPU_Fine_Grained_Scheduling_2026.pdf
 
 # GPU SIMT Architecture（GPU 与 SIMT）
 
@@ -155,6 +156,12 @@ Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑
 ## Hopper decode 利用率分母（2026-09）
 
 [Dissecting Hopper Utilization](/papers/dissecting-gpu-utilization-llm-inference-hopper.md) 在 H100 NVL + vLLM/FA3 上把 SM util 拆成八视图：decode 稠密 GEMM sm_busy 均值仅 **9.4%**，但 BF16 GMMA **64-row** fragment fill 均值 **5.86%**（**1.6–12.5%**），设备 SOL 冷 prefill **92%** vs decode **7.9%**；occupancy 相对 64-warp 与相对 kernel 上限可差约 **5×**。
+
+
+
+## Die scaling 物理不对称（2026-09-23）
+
+[Die Scaling GPU Scheduling](/papers/die-scaling-gpu-fine-grained-scheduling.md) 表明 H200/B200 的 floorsweep 拓扑与 HBM/L2 NUMA 被逻辑 SM 抽象掩盖：远端 HBM 最高 **+67%** 延迟，拓扑无关分配最高 **1.33×** 波动；不对称感知调度使多路 LLM decode 最高 **+14.3%**。
 
 # Citations
 

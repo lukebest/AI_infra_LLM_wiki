@@ -12,13 +12,14 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-09-22
+updated: 2026-09-23
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
 - raw/papers/Vortex_Extreme_Compression_LLM_Inference_2026.pdf
 - raw/papers/CARDAN_Multi_Engine_MoE_Scratchpad_Dataflow_2026.pdf
 ---
+- raw/papers/SPECTRA_Speculative_Decoding_Reconfigurable_Tiled_2026.pdf
 
 # DNN Accelerator Systolic Dataflow（DNN 加速器与脉动数据流）
 
@@ -157,6 +158,12 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 
 
 - [WMHA](/papers/world-model-hardware-accelerator-wmha.md) — DiT/世界模型 **VLIW + 16×16 dual-dot WS**；调度重构并发 **1.83%→44.66%**、**1.484×**；sky130 综合 68.4 mm²
+
+
+
+## Speculative decode 的可重构脉动/向量（2026-09-23）
+
+[SPECTRA](/papers/spectra-speculative-decoding-tiled.md) 在同一 tile 引擎上切换 systolic（GEMM）与 vector-lane（GEMV），覆盖 speculative verification 的中间 AI；相对 systolic-only 最高 **2.09×**。
 
 # Citations
 

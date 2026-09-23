@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-09-23
+
+### Watch (morning)
+* **Watch**: 2026-09-23 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC submittedDate 扫到 **Mon 9/21**；去重 CARDAN/Weave/COMET/DSec/MeshKV/HBFlex/Ask the Tool/Fathom 等。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。
+* **Ingest**: SPECTRA PDF + stub（arXiv:2609.24847）；SPLASH（2609.23816）；Die Scaling GPU Scheduling（2609.24270）；AHRR（2609.21157）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [SPECTRA](/papers/spectra-speculative-decoding-tiled.md)（tile 最高 2.09×；系统级再最高 1.25×）；[SPLASH](/papers/splash-sparse-attention-hbf.md)（100 ms TPOT 下 3.5–11.4×）；[Die Scaling](/papers/die-scaling-gpu-fine-grained-scheduling.md)（远端 HBM +67%；decode +14.3%）；[AHRR](/papers/ahrr-agents-hls-chip-design.md)（vs Direct RTL 2.6× geomean）。
+* **Update**: [GEMM vs GEMV](/concepts/gemm-vs-gemv.md)、[DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md)、[DNN Systolic](/concepts/dnn-accelerator-systolic-dataflow.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[GPU SIMT](/concepts/gpu-simt-architecture.md)、[DSA Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`、`concepts/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: Multi-kW 3D HI Power Delivery (2609.24904，方法综述缺本轮量化增量)；WaveletECO (2609.23444，ECO agent/本地 9B，偏 EDA 工具链)；MoSim network contention sim (2609.23278，DT 仿真器)；QEffect CUDA Graph FP8 PP (2609.23536，runtime 契约偏软件)；Presage prefetch agent (2609.22636，预取搜索)；MiX VLM (2609.19683，9/21 已跳过)；NSP Nested Sequence Parallelism (2609.22755，训练 SP 软件)；NPU vehicle FINN (2609.24757)；AWE FP4 GEMM (2609.24519)；ScaleMPA RRT* (2609.24497)；CIM SAR skipping (2609.24288)；Measured Joules Learned Routes (2609.23085，能耗路由软件)；MCP-GRANITE (2609.24161，agent 接口评测)；XDNA FlashAttention case (2609.21264，编译案例)；Verification Reward Model (2609.22347)；Quality over Quantity Verilog data (2609.22765)。
+
 ## 2026-09-22
 
 ### Watch (morning)

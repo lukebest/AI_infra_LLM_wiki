@@ -30,13 +30,13 @@
 * [Deterministic Routing and DOR](deterministic-routing-dor.md) - 确定性路由与维序路由（DOR）：XY/Y-first、e-cube、源路由 vs 分布式；Mesh/Hypercube 最短路径与 CDG 无死锁直觉；WSE 工业选型
 * [Disaggregated Inference](disaggregated-inference.md) - 解耦推理：attention/FFN 分离部署，独立扩展，batch 聚合
 * [Distributed GEMM Algorithms](distributed-gemm-algorithms.md) - 分布式内存矩阵乘算法谱系：Cannon（2D mesh ring-shift）、SUMMA（broadcast 外积）、2.5D/3D SUMMA（通信–内存权衡）；α+β 代价模型、SBP 切分 vs 映射放置；T10 rTensor 形式化 Cannon
-* [DNN Accelerator Systolic Dataflow](dnn-accelerator-systolic-dataflow.md) - H&P Ch.7 DSA：脉动阵列与数据复用；新增 CARDAN 的 MoE shared/private 权重及多 engine scratchpad 数据流
+* [DNN Accelerator Systolic Dataflow](dnn-accelerator-systolic-dataflow.md) - H&P Ch.7 DSA：脉动阵列与数据复用；CARDAN MoE 多 engine；SPECTRA systolic/vector 可重构
 * [DRAM and Memory System](dram-memory-system.md) - DRAM 访问时序与 Row Buffer、Channel/Bank 并行、DDR/HBM 带宽公式、内存墙与 Roofline Ridge Point、WSE 分布式 SRAM 对 HBM 的绕过
-* [DSA Processor Design Tradeoffs](dsa-processor-design-tradeoffs.md) - 领域专用处理器设计取舍：现代 CPU 传统武器（OoO/Cache/分支预测/TLB）的能力代价矩阵 vs WSE SLA 核
+* [DSA Processor Design Tradeoffs](dsa-processor-design-tradeoffs.md) - 领域专用处理器设计取舍；AHRR 显示 agent+HLS 相对 Direct RTL 2.6× geomean
 * [DSec Sandbox Platform](dsec-sandbox.md) - DeepSeek Elastic Compute 沙箱平台，4 种执行基板；论文更新：300 万 sandbox/日、>380K 并发、>5,000 创建/s
-* [DSpark Speculative Decoding](dspark-speculative-decoding.md) - DeepSeek 半自回归 speculative decoding：并行 DFlash backbone + Markov sequential head、confidence-scheduled 负载感知 verify，V4 生产 +60–85% 单用户速度
+* [DSpark Speculative Decoding](dspark-speculative-decoding.md) - DeepSeek speculative decoding；对照 SPECTRA 硬件覆盖 verification 中间 AI
 * [Duato Escape VC Deadlock-Free Routing](duato-escape-vc-deadlock-free-routing.md) - D&T Ch.8.5-8.8：Duato 定理（逃逸子网）、自适应+逃逸 VC、避免 vs 恢复、协议层 Request/Response 死锁；Dally 的推广
-* [End-to-End Memory Data Path](end-to-end-memory-data-path.md) - 存储篇综合（Day 17-22）：load 全路径 AMAT 层级展开、内存墙时间线、一致性决策树、同步成本量级、WSE 消除 off-chip 的简化路径
+* [End-to-End Memory Data Path](end-to-end-memory-data-path.md) - 存储篇综合；HBFlex/SPLASH/MeshKV/Fathom 等 HBF·KV 路径
 * [Eyeriss Accelerator](eyeriss-accelerator.md) - MIT 65nm CNN 加速器：168 PE 空间阵列、Row Stationary (RS) 可重构 dataflow、四级存储层次、GIN 单周期组播 NoC、RLC 压缩与 PE data gating；AlexNet 83.1 GMAC/s/W
 * [FEATHER Accelerator](feather-accelerator.md) - 可重构 DNN 加速器：NEST 2D PE 阵列 + BIRRD 蝶形归约/重排网络，RIR 在归约中隐藏 layout 切换，Layoutloop 联合 dataflow-layout 搜索
 * [FlashAttention](flashattention.md) - IO-aware 精确 attention：SRAM tiling + online softmax + 反向重算；O(N) 内存、HBM 访问 IO-optimal；GPT-2 attention 7.6×、训练最高 3×
@@ -47,8 +47,8 @@
 * [Flattened Butterfly 拓扑](flattened-butterfly-topology.md) - Flattened Butterfly 片上拓扑：高基数路由器降低直径，concentration + bypass channel，2-hop 直径，38% 功耗降低
 * [Flow Control Fundamentals](flow-control-fundamentals.md) - Dally & Towles Ch.9 — Message/Packet/Flit/Phit；电路/报文/虫孔/VCT 延迟公式；HoL blocking；与死锁的关系
 * [FP4 Quantization-Aware Training](fp4-qat.md) - FP4 量化感知训练，无损 FP4→FP8 反量化
-* [GEMM vs GEMV in LLM Inference](gemm-vs-gemv.md) - 矩阵乘 vs 矩阵-向量乘：算子形状、算术强度（AI）、Roofline 类别、Prefill/Decode 对应关系；GEMM compute-bound（AI~1000），GEMV bandwidth-bound（AI~2）；H100 decode <1% 峰值 FLOPS，理论时间 vs 实际时间差 100×
-* [GPU SIMT Architecture](gpu-simt-architecture.md) - H&P Ch.4 GPU/SIMT：Warp 锁步、Warp Divergence、Occupancy 延迟隐藏、H100 内存层次、Tensor Core；与 CPU OoO / WSE MIMD 对比
+* [GEMM vs GEMV in LLM Inference](gemm-vs-gemv.md) - GEMM/GEMV 算术强度；SPECTRA 覆盖 speculative verification 中间 regime
+* [GPU SIMT Architecture](gpu-simt-architecture.md) - GPU/SIMT；Hopper util + Die Scaling floorsweep/NUMA 调度
 * [Heterogeneous Inference](heterogeneous-inference.md) - GPU + LPU 异构推理，分别优化 prefill/decode
 * [High-Radix Clos Adaptive Routing](high-radix-clos-adaptive-routing.md) - Kim/Dally/Abts SC 2006 — high-radix Clos + DisPERoute 自适应；挑战 mesh+DOR 普适最优；负载均衡与死锁自由
 * [Inference Capacity Trap](inference-capacity-trap.md) - 推理容量陷阱：KV cache 饱和导致 preemption + recomputation，throughput 崩溃

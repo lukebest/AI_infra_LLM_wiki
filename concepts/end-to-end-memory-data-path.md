@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-09-21
+updated: 2026-09-23
 sources:
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/arch-study-30d-day-22.md
@@ -30,6 +30,7 @@ sources:
 - raw/papers/HBFlex_Flexible_Memory_HBF_LLM_2026.pdf
 - raw/papers/Fathom_Sparse_Decoding_Offloaded_KV_2026.pdf
 ---
+- raw/papers/SPLASH_Sparse_Attention_High_Bandwidth_Flash_2026.pdf
 
 # End-to-End Memory Data Path（端到端存储数据路径）
 
@@ -193,6 +194,12 @@ WSE 简化（无 off-chip）:
 
 [MeshKV](/papers/meshkv-noc-kv-cache-fabric.md) 不先压缩字节，而把瓦片加速器上的 KV 块做成 NoC 分组流（TaKV 条带 + Mare 多播 + Pad 重叠）。FPGA 8×8：互连流量最高 **−58%**，二分 KV 利用率约 **2.1×**，多流吞吐最高 **1.9×**——瓶颈从 off-chip 挪到片上 bisection 背压。
 
+
+
+## HBM+HBF 虚拟化 KV × 稀疏读（2026-09-23）
+
+[SPLASH](/papers/splash-sparse-attention-hbf.md) 保留 HBM 热层、HBF 容量层，并把稀疏注意力做成 page/plane 友好；100 ms TPOT 下每 GPU decode 吞吐相对基线 **3.5–11.4×**（vs LongSight-HBF **3.5×**、vs HBM-only **11.4×** geomean）。与 HBFlex「去掉 HBM」路线形成对照。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -205,3 +212,4 @@ WSE 简化（无 off-chip）:
 [8] [arXiv:2609.18675](https://arxiv.org/pdf/2609.18675) — HBFlex
 [9] [arXiv:2609.17652](https://arxiv.org/pdf/2609.17652) — Fathom
 [10] [arXiv:2609.19207](https://arxiv.org/pdf/2609.19207) — MeshKV
+[11] [arXiv:2609.23816](https://arxiv.org/pdf/2609.23816) — SPLASH
