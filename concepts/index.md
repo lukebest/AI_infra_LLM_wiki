@@ -28,7 +28,7 @@
 * [Deadlock-Free Routing CDG and Dally Theorem](deadlock-free-routing-cdg-dally.md) - D&T Ch.8.1-8.4：通道依赖图 CDG、Dally & Seitz 无死锁定理、虫孔易死锁、Torus dateline/≥2 VC、Mesh 单 VC；WSE 选型
 * [Deterministic Execution](deterministic-execution.md) - 编译器控制时序、消除 jitter 的执行范式
 * [Deterministic Routing and DOR](deterministic-routing-dor.md) - 确定性路由与维序路由（DOR）：XY/Y-first、e-cube、源路由 vs 分布式；Mesh/Hypercube 最短路径与 CDG 无死锁直觉；WSE 工业选型
-* [Disaggregated Inference](disaggregated-inference.md) - 解耦推理：attention/FFN 分离部署，独立扩展，batch 聚合
+* [Disaggregated Inference](disaggregated-inference.md) - 解耦推理；含 Crossflow 弹性 P/D 边界（+16.2–17.4%）
 * [Distributed GEMM Algorithms](distributed-gemm-algorithms.md) - 分布式内存矩阵乘算法谱系：Cannon（2D mesh ring-shift）、SUMMA（broadcast 外积）、2.5D/3D SUMMA（通信–内存权衡）；α+β 代价模型、SBP 切分 vs 映射放置；T10 rTensor 形式化 Cannon
 * [DNN Accelerator Systolic Dataflow](dnn-accelerator-systolic-dataflow.md) - H&P Ch.7 DSA：脉动阵列与数据复用；CARDAN MoE 多 engine；SPECTRA systolic/vector 可重构
 * [DRAM and Memory System](dram-memory-system.md) - DRAM 访问时序与 Row Buffer、Channel/Bank 并行、DDR/HBM 带宽公式、内存墙与 Roofline Ridge Point、WSE 分布式 SRAM 对 HBM 的绕过
@@ -36,7 +36,7 @@
 * [DSec Sandbox Platform](dsec-sandbox.md) - DeepSeek Elastic Compute 沙箱平台，4 种执行基板；论文更新：300 万 sandbox/日、>380K 并发、>5,000 创建/s
 * [DSpark Speculative Decoding](dspark-speculative-decoding.md) - DeepSeek speculative decoding；对照 SPECTRA 硬件覆盖 verification 中间 AI
 * [Duato Escape VC Deadlock-Free Routing](duato-escape-vc-deadlock-free-routing.md) - D&T Ch.8.5-8.8：Duato 定理（逃逸子网）、自适应+逃逸 VC、避免 vs 恢复、协议层 Request/Response 死锁；Dally 的推广
-* [End-to-End Memory Data Path](end-to-end-memory-data-path.md) - 存储篇综合；HBFlex/SPLASH/MeshKV/Fathom 等 HBF·KV 路径
+* [End-to-End Memory Data Path](end-to-end-memory-data-path.md) - 存储篇综合；HotCold/EMA/HBFlex/SPLASH/MeshKV 等 HBF·KV·peer-HBM 路径
 * [Eyeriss Accelerator](eyeriss-accelerator.md) - MIT 65nm CNN 加速器：168 PE 空间阵列、Row Stationary (RS) 可重构 dataflow、四级存储层次、GIN 单周期组播 NoC、RLC 压缩与 PE data gating；AlexNet 83.1 GMAC/s/W
 * [FEATHER Accelerator](feather-accelerator.md) - 可重构 DNN 加速器：NEST 2D PE 阵列 + BIRRD 蝶形归约/重排网络，RIR 在归约中隐藏 layout 切换，Layoutloop 联合 dataflow-layout 搜索
 * [FlashAttention](flashattention.md) - IO-aware 精确 attention：SRAM tiling + online softmax + 反向重算；O(N) 内存、HBM 访问 IO-optimal；GPT-2 attention 7.6×、训练最高 3×
@@ -48,7 +48,7 @@
 * [Flow Control Fundamentals](flow-control-fundamentals.md) - Dally & Towles Ch.9 — Message/Packet/Flit/Phit；电路/报文/虫孔/VCT 延迟公式；HoL blocking；与死锁的关系
 * [FP4 Quantization-Aware Training](fp4-qat.md) - FP4 量化感知训练，无损 FP4→FP8 反量化
 * [GEMM vs GEMV in LLM Inference](gemm-vs-gemv.md) - GEMM/GEMV 算术强度；SPECTRA 覆盖 speculative verification 中间 regime
-* [GPU SIMT Architecture](gpu-simt-architecture.md) - GPU/SIMT；Hopper util + Die Scaling floorsweep/NUMA 调度
+* [GPU SIMT Architecture](gpu-simt-architecture.md) - GPU/SIMT；Hopper util / Die Scaling / Tessera BSA / EMA peer-HBM
 * [Heterogeneous Inference](heterogeneous-inference.md) - GPU + LPU 异构推理，分别优化 prefill/decode
 * [High-Radix Clos Adaptive Routing](high-radix-clos-adaptive-routing.md) - Kim/Dally/Abts SC 2006 — high-radix Clos + DisPERoute 自适应；挑战 mesh+DOR 普适最优；负载均衡与死锁自由
 * [Inference Capacity Trap](inference-capacity-trap.md) - 推理容量陷阱：KV cache 饱和导致 preemption + recomputation，throughput 崩溃
@@ -90,7 +90,7 @@
 * [Parallelism Transition Point](parallelism-transition-point.md) - 并行度切换点：32B 是 DP→TP inflection，MoE 需 hybrid PP+TP
 * [Plasticine Accelerator](plasticine-accelerator.md) - Stanford ISCA 2017 CGRA：PCU/PMU 空间阵列直接支持 Map/FlatMap/Fold/HashReduce parallel patterns；28nm 112.8mm²、12.3 TFLOPS、相对 FPGA 最高 76.9× Perf/W
 * [Post-Moore Architecture Frontiers](post-moore-architecture-frontiers.md) - 摩尔/Dennard 之后的体系结构主线：AI 加速器、NoC 新方向、Chiplet、Wafer-Scale；三条路 DSA × Packaging × Novel devices
-* [Prefill-Decode Resource Divergence](prefill-decode-divergence.md) - Prefill（compute-bound）vs Decode（bandwidth-bound）资源需求正交，>99% 时间在 decode
+* [Prefill-Decode Resource Divergence](prefill-decode-divergence.md) - P/D 资源正交；Crossflow：相位比波动下弹性边界
 * [Quantitative Architecture Fundamentals](quantitative-architecture-fundamentals.md) - Hennessy & Patterson 量化体系结构基石：CPU 性能公式、Amdahl 定律、局部性、功耗墙、Dennard Scaling 终结与暗硅
 * [Reasoning Cliff](reasoning-cliff.md) - 推理悬崖：KV 线性增长使 HBM 饱和，scheduler 进入 convoy mode
 * [SpaDA Programming Language](spada-programming-language.md) - 空间数据流编程语言：place/dataflow/compute 三构造、async/await、GT4Py→CSL 编译管线与 checkerboard 路由/task 融合优化，WSE-2 上 14× 减码、260 TFlop/s stencil

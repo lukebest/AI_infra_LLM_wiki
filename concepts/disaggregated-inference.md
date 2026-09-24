@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-09-18
+updated: 2026-09-24
 sources:
 - raw/articles/bojieli-ai-infra-book.md
 - arXiv:2504.02263
@@ -29,6 +29,7 @@ sources:
 - raw/papers/PDD_Cross_Datacenter_Prefill_Decode_Disaggregation_2026.pdf
 - raw/papers/Trillion_Param_MoE_HBF_Memory_Provisioning_2026.pdf
 - raw/papers/PipeSwift_Pipeline_Parallel_Agentic_Serving_2026.pdf
+- raw/papers/Crossflow_PD_Elasticity_Agentic_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -109,6 +110,7 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 | **AInfer-PD 同池复用** | 同设备 P/D 并发（非第二池） | turnstile 排交叉集体 + DeepEP 相位私有态 | 共享权重/KV；防 ADP/ATP 进度环 |
 | **光学 scale-up × PD DES** | 解耦 prefill/decode worker | 4× SU BW / 1152 pod | TTFT↓ 但 decode 饱和可抬 TPOT |
 | **PipeSwift 共置 PP（JCT）** | 阶段共置 + 管线并行 | stage P2P + MTP | agentic **completion time**，非 token SLO |
+| **Crossflow 弹性 P/D 边界** | 同集群相位池 | decode 租约本地 prefill | 吞吐 geomean +16.2–17.4%；高负载最高 +43.4% |
 | **书 Ch.9 PD / AF** | 阶段池 / 层内算子池 | KV 整份交接；逐层激活 | 异构配比；同构常先分块 prefill |
 
 ## 与 Luke 研究的关联

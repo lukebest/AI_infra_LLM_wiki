@@ -1,5 +1,10 @@
 # Other
 
+* [Hot–Cold stub](hotcold-hbm-hbf-agentic-llm.md) + [PDF](HotCold_HBM_HBF_Agentic_LLM_2026.pdf) — arXiv:2609.25782
+* [Crossflow stub](crossflow-pd-elasticity-agentic.md) + [PDF](Crossflow_PD_Elasticity_Agentic_2026.pdf) — arXiv:2609.27085
+* [EMA stub](ema-elastic-memory-across-gpus.md) + [PDF](EMA_Elastic_Memory_Across_GPUs_2026.pdf) — arXiv:2609.27040
+* [Tessera stub](tessera-dynamic-block-sparse-attention.md) + [PDF](Tessera_Dynamic_Block_Sparse_Attention_2026.pdf) — arXiv:2609.25869
+
 * [SPECTRA stub](spectra-speculative-decoding-tiled.md) + [PDF](SPECTRA_Speculative_Decoding_Reconfigurable_Tiled_2026.pdf) — arXiv:2609.24847
 * [SPLASH stub](splash-sparse-attention-hbf.md) + [PDF](SPLASH_Sparse_Attention_High_Bandwidth_Flash_2026.pdf) — arXiv:2609.23816
 * [Die Scaling stub](die-scaling-gpu-fine-grained-scheduling.md) + [PDF](Die_Scaling_GPU_Fine_Grained_Scheduling_2026.pdf) — arXiv:2609.24270

@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-09-24
+
+### Watch (morning)
+* **Watch**: 2026-09-24 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC submittedDate 覆盖 **Tue 9/22–Wed 9/23**（相对 9/23 早报已扫到 Mon 9/21）；去重 SPECTRA/SPLASH/Die Scaling/AHRR/CARDAN/Weave/COMET/DSec/MeshKV/HBFlex 等。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。
+* **Ingest**: Hot–Cold HBM/HBF PDF + stub（arXiv:2609.25782）；Crossflow（2609.27085）；EMA（2609.27040）；Tessera（2609.25869）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [Hot–Cold HBM/HBF](/papers/hotcold-hbm-hbf-agentic-llm.md)（14 ms TBT；resume +≈0.1 ms；会话 24×；−7.6 kW/8-GPU）；[Crossflow](/papers/crossflow-pd-elasticity-agentic.md)（吞吐 geomean +16.2–17.4%；高负载最高 +43.4%）；[EMA](/papers/ema-elastic-memory-across-gpus.md)（吞吐最高 +52%；达 2× 容量静态的 96%）；[Tessera](/papers/tessera-dynamic-block-sparse-attention.md)（BSA 最高 6.79×；50-step 环 1.22–2.08×）。
+* **Update**: [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)（修 SPLASH sources 错位 + HotCold/EMA）、[Disaggregated Inference](/concepts/disaggregated-inference.md)、[Prefill-Decode Divergence](/concepts/prefill-decode-divergence.md)、[GPU SIMT](/concepts/gpu-simt-architecture.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: SARA SLO 资源分配 (2609.26763，排队论/部署优化偏软件)；KV Cache Working Set 容量规划 (2609.27746，在线规划方法)；GRADE-RTL / AgenticSizing / Agentic-IC3（EDA/验证 agent，相对昨 AHRR 增量弱）；Toki HBM FPGA 剖析 (2609.26551，工具框架)；DSAC near-threshold TPU (2609.26644，NTC 时钟，非 LLM 主线)；Multi-kW 3D HI Power (2609.24904，昨已跳)；nondeterminism GEMM (2609.25624，数值可复现内核)；PyTorch→NPU agent 转换 (2609.27249)。
+
 ## 2026-09-23
 
 ### Watch (morning)

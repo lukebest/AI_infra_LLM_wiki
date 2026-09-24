@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-09-23
+updated: 2026-09-24
 sources:
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/arch-study-30d-day-22.md
@@ -29,8 +29,10 @@ sources:
 - raw/papers/UNISON_Near_Memory_Scheduler_LLM_Agents_2026.pdf
 - raw/papers/HBFlex_Flexible_Memory_HBF_LLM_2026.pdf
 - raw/papers/Fathom_Sparse_Decoding_Offloaded_KV_2026.pdf
----
 - raw/papers/SPLASH_Sparse_Attention_High_Bandwidth_Flash_2026.pdf
+- raw/papers/HotCold_HBM_HBF_Agentic_LLM_2026.pdf
+- raw/papers/EMA_Elastic_Memory_Across_GPUs_2026.pdf
+---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
 
@@ -199,6 +201,11 @@ WSE 简化（无 off-chip）:
 ## HBM+HBF 虚拟化 KV × 稀疏读（2026-09-23）
 
 [SPLASH](/papers/splash-sparse-attention-hbf.md) 保留 HBM 热层、HBF 容量层，并把稀疏注意力做成 page/plane 友好；100 ms TPOT 下每 GPU decode 吞吐相对基线 **3.5–11.4×**（vs LongSight-HBF **3.5×**、vs HBM-only **11.4×** geomean）。与 HBFlex「去掉 HBM」路线形成对照。
+
+## 2026-09-24 增量
+
+- [Hot–Cold HBM/HBF](/papers/hotcold-hbm-hbf-agentic-llm.md)：agentic 热集驻 HBM、冷池共封装 HBF；14 ms TBT、resume +≈0.1 ms、会话 24×；相对全闪读 −7.6 kW/8-GPU。
+- [EMA](/papers/ema-elastic-memory-across-gpus.md)：机内 peer-HBM 弹性地址空间；吞吐最高 +52%，达 2× 容量静态的 96%。
 
 # Citations
 

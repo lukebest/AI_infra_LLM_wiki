@@ -1,5 +1,10 @@
 # Paper
 
+* [Hot–Cold HBM/HBF for Agentic LLM](hotcold-hbm-hbf-agentic-llm.md) - 热集 HBM + 冷池 HBF；14 ms TBT、resume +≈0.1 ms、会话 24×；−7.6 kW/8-GPU
+* [Crossflow: P/D Elasticity for Agentic Serving](crossflow-pd-elasticity-agentic.md) - Meta — decode 租约弹性 prefill；吞吐 geomean +16.2–17.4%，高负载最高 +43.4%
+* [EMA: Elastic Memory Across GPUs](ema-elastic-memory-across-gpus.md) - 伯克利 — 机内互借 HBM；吞吐最高 +52%，达 2× 容量静态的 96%
+* [Tessera: Dynamic Block-Sparse Attention Runtime](tessera-dynamic-block-sparse-attention.md) - NUS — 逻辑 mask↔物理 tile；BSA 最高 6.79×；720p 50-step 1.22–2.08×
+
 * [SPECTRA: Speculative Decoding on Reconfigurable Tiles](spectra-speculative-decoding-tiled.md) - Columbia — 20-tile FPGA；tile 最高 2.09×、系统级再最高 1.25×
 * [SPLASH: Sparse Attention × High-Bandwidth Flash](splash-sparse-attention-hbf.md) - NUS — HBM+HBF KV；100 ms TPOT 下 3.5–11.4× decode/GPU
 * [Die Scaling Breaks GPU Fine-grained Scheduling](die-scaling-gpu-fine-grained-scheduling.md) - 上交/NUS/NVIDIA — 远端 HBM +67%；kernel 1.22×、LLM decode +14.3%

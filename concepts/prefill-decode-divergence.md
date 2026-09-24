@@ -11,12 +11,13 @@ tags:
 - throughput
 timestamp: '2026-07-17T00:00:00Z'
 created: 2026-06-15
-updated: 2026-07-30
+updated: 2026-09-24
 sources:
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
 - raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf
 - raw/articles/22580 From GPT2 to Kimi3, Explained.md
+- raw/papers/Crossflow_PD_Elasticity_Agentic_2026.pdf
 ---
 
 # Prefill-Decode Resource Divergence（Prefill vs Decode 资源分歧）
@@ -142,6 +143,10 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [FlashAttention-3](/concepts/flashattention-3.md) — Hopper prefill/训练 + FP8
 - [WaferLLM System](/concepts/waferllm-system.md) — WSE-2 上 MeshGEMV/decode 与 KV shift
 - [Kv Cache](#kv-cache) — KV cache 是 decode 阶段的核心资源
+
+## 2026-09-24：弹性边界
+
+[Crossflow](/papers/crossflow-pd-elasticity-agentic.md) 显示静态 P/D 分池跟不上相位比波动（分钟 peak-to-mean 最高 4.7×；agentic 小时比中位 24.5×）。角色固定、边界用 decode 租约弹性化后，吞吐 geomean +16.2–17.4%。
 
 # Citations
 

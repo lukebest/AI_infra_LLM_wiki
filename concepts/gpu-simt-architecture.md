@@ -14,11 +14,13 @@ tags:
 - npu
 timestamp: '2026-07-07T00:00:00Z'
 created: 2026-07-07
-updated: 2026-09-23
+updated: 2026-09-24
 sources:
 - raw/articles/arch-study-30d-day-24.md
 - raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf
-- raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf
+- raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf- raw/papers/Tessera_Dynamic_Block_Sparse_Attention_2026.pdf
+- raw/papers/EMA_Elastic_Memory_Across_GPUs_2026.pdf
+
 ---
 - raw/papers/Die_Scaling_GPU_Fine_Grained_Scheduling_2026.pdf
 
@@ -162,6 +164,11 @@ Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑
 ## Die scaling 物理不对称（2026-09-23）
 
 [Die Scaling GPU Scheduling](/papers/die-scaling-gpu-fine-grained-scheduling.md) 表明 H200/B200 的 floorsweep 拓扑与 HBM/L2 NUMA 被逻辑 SM 抽象掩盖：远端 HBM 最高 **+67%** 延迟，拓扑无关分配最高 **1.33×** 波动；不对称感知调度使多路 LLM decode 最高 **+14.3%**。
+
+## 2026-09-24 增量
+
+- [Tessera](/papers/tessera-dynamic-block-sparse-attention.md)：动态 BSA 逻辑 mask 与物理 tile 解耦；BSA 最高 6.79×。
+- [EMA](/papers/ema-elastic-memory-across-gpus.md)：同机 GPU HBM 弹性共享（NVLink 预取）。
 
 # Citations
 
