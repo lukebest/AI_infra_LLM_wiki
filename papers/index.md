@@ -1,5 +1,8 @@
 # Paper
 
+* [Flux: OCS Optimal Scheduling for LLM Training](flux-ocs-scheduling-llm-training.md) - imec/Antwerp — vs RotorNet/BvN；iteration 最高 10×、峰值 NIC buffer >1000×
+* [Co-Fabric: Unified xPU Interconnection](cofabric-unified-xpu-interconnection.md) - IEIT — 64-xPU 3D-Mesh vs RoCE；延迟 >50%↓、带宽 2–5×、R1 +30–80%、成本 −80%
+
 * [Hot–Cold HBM/HBF for Agentic LLM](hotcold-hbm-hbf-agentic-llm.md) - 热集 HBM + 冷池 HBF；14 ms TBT、resume +≈0.1 ms、会话 24×；−7.6 kW/8-GPU
 * [Crossflow: P/D Elasticity for Agentic Serving](crossflow-pd-elasticity-agentic.md) - Meta — decode 租约弹性 prefill；吞吐 geomean +16.2–17.4%，高负载最高 +43.4%
 * [EMA: Elastic Memory Across GPUs](ema-elastic-memory-across-gpus.md) - 伯克利 — 机内互借 HBM；吞吐最高 +52%，达 2× 容量静态的 96%

@@ -1,5 +1,8 @@
 # Other
 
+* [Flux stub](flux-ocs-scheduling-llm-training.md) + [PDF](Flux_OCS_Scheduling_LLM_Training_2026.pdf) — arXiv:2609.25949
+* [Co-Fabric stub](cofabric-unified-xpu-interconnection.md) + [PDF](CoFabric_Unified_xPU_Interconnection_2026.pdf) — arXiv:2609.25560
+
 * [Hot–Cold stub](hotcold-hbm-hbf-agentic-llm.md) + [PDF](HotCold_HBM_HBF_Agentic_LLM_2026.pdf) — arXiv:2609.25782
 * [Crossflow stub](crossflow-pd-elasticity-agentic.md) + [PDF](Crossflow_PD_Elasticity_Agentic_2026.pdf) — arXiv:2609.27085
 * [EMA stub](ema-elastic-memory-across-gpus.md) + [PDF](EMA_Elastic_Memory_Across_GPUs_2026.pdf) — arXiv:2609.27040

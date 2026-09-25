@@ -10,11 +10,12 @@ tags:
 - interconnect
 - infrastructure
 - topology
-timestamp: '2026-09-14T00:00:00Z'
+timestamp: '2026-09-25T00:00:00Z'
 created: 2026-09-14
-updated: 2026-09-17
+updated: 2026-09-25
 sources:
 - raw/articles/bojieli-ai-infra-book.md
+- raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf
 ---
 
 # AI Infra Supernode（超节点）
@@ -72,9 +73,14 @@ V4.1 Flash、200K decode、256×H100（书 6.7.4）：
 
 [Nested Parallel von Neumann](/papers/nested-parallel-von-neumann-nested-bsp.md) 把 SuperNode→autonomous zone 写成硬件嵌套玩偶，与 [UnifiedBus](/entities/unifiedbus-ub.md) / [Huawei τ](/papers/huawei-tau-chip-logicfolding-thermal.md) 对齐；理论叙事，补本页「超节点仍是一台计算机」的形式化语言。
 
+## Co-Fabric：产品化跨 host 超节点互连（2026-09-25）
+
+[Co-Fabric](/papers/cofabric-unified-xpu-interconnection.md) 把超节点写成统一互连域：shadow-device 枚举 + 4 层栈 + 3D-Mesh/Switch 弹性。64-xPU 实测相对 RoCE 超节点：R1 推理 **+30%–80%**，互连成本约 **−80%**、功耗约 **−5%**——补本页「协议选择如何改变协作域成本」的产品数据点。
+
 # Citations
 
 [1] [Ch.6 超节点](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md)
 [2] [Ch.7 数据中心网络](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/07-数据中心网络.md)
 [3] [PDF](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
 [4] [raw stub](/raw/articles/bojieli-ai-infra-book.md)
+[5] [raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf](raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf) — Co-Fabric 64-xPU 3D-Mesh

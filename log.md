@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-09-25
+
+### Watch (morning)
+* **Watch**: 2026-09-25 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC/cs.NI 覆盖 **Tue 9/22** 及窗口内增量（相对 9/24 早报已扫 HotCold/Crossflow/EMA/Tessera）；去重 SPECTRA/SPLASH/Die Scaling/AHRR/CARDAN/Weave/COMET/DSec 等。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。
+* **Ingest**: Flux PDF + stub（arXiv:2609.25949）；Co-Fabric（2609.25560）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [Flux](/papers/flux-ocs-scheduling-llm-training.md)（iteration 最高 10×；峰值 NIC buffer >三个数量级）；[Co-Fabric](/papers/cofabric-unified-xpu-interconnection.md)（延迟 >50%↓；带宽 2–5×；R1 +30–80%；互连成本 −80%、功耗 −5%）。
+* **Update**: [TPU v4 OCS](/concepts/tpu-v4-ocs-reconfigurable-fabric.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[Interconnection Network Design Space](/concepts/interconnection-network-design-space.md)、[Interconnection Network Protocol Stack](/concepts/interconnection-network-protocol-stack.md)、[NVLink/NVSwitch](/concepts/nvlink-nvswitch-scale-up-fabric.md)、[AI Infra Supernode](/concepts/ai-infra-supernode.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: BitNet CGLA (2609.27453，host-bound 2.52 tok/s)；Mamba CGLA (2609.27437)；Tetris RNB photonic scheduling (2609.25434，与 Flux 互补但今日增量弱)；CXL-SSD KV (2609.26828)；KV Working Set (2609.27746)；SARA (2609.26763)；MicroQonv；MVP CV SoC；quantum/DPD/fuzzing/tapeout education；9/24 已 ingest 的 HotCold/Crossflow/EMA/Tessera 不重复。
+
 ## 2026-09-24
 
 ### Watch (morning)

@@ -11,11 +11,12 @@ tags:
 - topology
 - google
 - llm
-timestamp: '2026-08-26T00:00:00Z'
+timestamp: '2026-09-25T00:00:00Z'
 created: 2026-07-22
-updated: 2026-08-26
+updated: 2026-09-25
 sources:
 - raw/articles/paper-deepdive-day-07.md
+- raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf
 ---
 
 # TPU v4 OCS Reconfigurable Fabric（TPU v4 光可重构互连）
@@ -67,6 +68,11 @@ Jouppi et al., **ISCA 2023**（+ v5p 报告）。paper-deepdive **Day 7**：[raw
 - [Paper Deep-Dive Map](/summaries/paper-deepdive.md)
 - [Hot Chips 2026 TPU 8](/papers/hc2026-google-tpu8.md) — 8t 仍 OCS 切片（9600-chip / 2.4 TB/s ICI）；8i 改 Boardfly（1152-chip，max 7 hops）；Virgo 134,400 TPU
 
+## Flux：按训练图排 OCS 电路（2026-09-25）
+
+[Flux](/papers/flux-ocs-scheduling-llm-training.md)（imec / Antwerp）把 LLM training iteration 的 compute/通信依赖与 OCS 重配置建成同一 MILP，相对 RotorNet/BvN 周期调度：摘要称 iteration 最高 **10×**、峰值 NIC buffer **>三个数量级**。仿真为 Llama 3 8B、8 GPU、2 OCS、800 Gbps、τ 1 μs–1 ms。相对本页 TPU v4「拓扑可软件化」，Flux 的旋钮是 **何时换哪条电路**，并显式重叠重配置与计算。
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-07.md](raw/articles/paper-deepdive-day-07.md) — TPU v4 OCS 精读（Day 7）
+[2] [raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf](raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf) — Troch et al., arXiv:2609.25949；workload-aware OCS MILP

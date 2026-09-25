@@ -11,9 +11,9 @@ tags:
 - distributed
 - noc
 - wse
-timestamp: '2026-09-10T00:00:00Z'
+timestamp: '2026-09-25T00:00:00Z'
 created: 2026-07-13
-updated: 2026-09-22
+updated: 2026-09-25
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -25,6 +25,7 @@ sources:
 - raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf
 - raw/papers/Weave_Dynamic_SM_MoE_Overlap_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
+- raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -150,6 +151,10 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [Entwine](/papers/entwine-tiled-computation-fine-grained-gpu-comm.md) — NVLink 域内 GEMM–RS tile 顺序×SM 通信预算；vs NCCL 1.232× geomean
 - [AI Infra Book Ch.6](/analyses/ai-infra-book/ch06-supernode.md) / [Ch.7](/analyses/ai-infra-book/ch07-datacenter-network.md) — 分层集体与超节点缩放
 
+## Flux：集体通信时刻表驱动光电路（2026-09-25）
+
+[Flux](/papers/flux-ocs-scheduling-llm-training.md) 不改 AllReduce/TP 算法本身，而是让 OCS 电路日程对齐训练图中的通信就绪时刻，避免「无电路却已生产」造成的 NIC 堆积。摘要相对周期 OCS 调度：iteration 最高 **10×**、峰值 NIC buffer **>三个数量级**（Llama 3 8B、8 GPU、2 OCS 仿真）。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -162,3 +167,4 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [8] [raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf](raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf) — Ma et al., arXiv:2609.11562；tile 级 GEMM–RS 重叠
 [9] [Ch.6–7 manuscripts](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》
 [10] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
+[11] [raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf](raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf) — Flux；OCS MILP vs RotorNet/BvN

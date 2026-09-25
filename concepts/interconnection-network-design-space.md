@@ -11,9 +11,9 @@ tags:
 - fabric
 - mesh
 - infrastructure
-timestamp: '2026-09-03T00:00:00Z'
+timestamp: '2026-09-25T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-21
+updated: 2026-09-25
 sources:
 - raw/articles/interconn-study-21d-day-01.md
 - raw/articles/interconn-study-21d-day-03.md
@@ -33,6 +33,7 @@ sources:
 - raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf
 - raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
+- raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf
 ---
 
 # Interconnection Network Design Space（互连网络设计空间）
@@ -147,6 +148,10 @@ sources:
 
 [MeshKV](/papers/meshkv-noc-kv-cache-fabric.md) 把 decode KV 拆成 KV_FETCH / KV_DATA 多播与 PART 单播两类，分到 VN1/VN0，用 Turn Model 限制转弯；相对只加 express 边的 [Budgeted Express-Mesh](/papers/budgeted-express-mesh-noc.md)，旋钮是 **流量类与多播**，不是拓扑边预算。
 
+## Flux：设计空间的时间维——何时重配置（2026-09-25）
+
+[Flux](/papers/flux-ocs-scheduling-llm-training.md) 把应用层训练依赖图直接约束拓扑时间表：重配置延迟 τ 成为一等参数（1 μs–1 ms）。相对只选静态拓扑或周期轮转，它展示「有用电路 + 与计算重叠」比单纯减少重配置次数更重要。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — Dally & Towles Ch.1（Day 1）
@@ -175,3 +180,4 @@ sources:
 [24] [Ch.6–7](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/07-数据中心网络.md) — 李博杰《AI Infra》
 [25] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
 [26] [arXiv:2609.19207](https://arxiv.org/pdf/2609.19207) — MeshKV
+[27] [arXiv:2609.25949](https://arxiv.org/pdf/2609.25949) — Flux OCS scheduling

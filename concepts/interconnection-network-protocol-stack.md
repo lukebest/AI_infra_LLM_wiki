@@ -15,15 +15,16 @@ tags:
 - serdes
 - fec
 - scale-up
-timestamp: '2026-08-20T00:00:00Z'
+timestamp: '2026-09-25T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-22
+updated: 2026-09-25
 sources:
 - raw/articles/interconn-study-21d-day-02.md
 - papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md
 - papers/maia-200-sdla.md
 - raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf
 - raw/papers/COMET_Erasure_Coded_RDMA_WAN_2026.pdf
+- raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf
 ---
 
 # Interconnection Network Protocol Stack（互连网络协议栈）
@@ -103,9 +104,14 @@ NI 决定：哪些 collective 可硬件卸载、哪些需软件参与、注入/e
 - [Maia 200 SDLA](/papers/maia-200-sdla.md) — Ethernet ATLv2 接收端驱动
 - [SAGE](/papers/sage-semantic-aware-geographic-error-recovery.md) — 语义分级重放 / 地理检查点
 
+## Co-Fabric：跨 host 的四层 bus 栈（2026-09-25）
+
+[Co-Fabric](/papers/cofabric-unified-xpu-interconnection.md)（IEIT）给出 Media / Link（credit+链路重传）/ Fabric（Port-ID）/ Semantic（load/store）四层，相对 RoCE 网络栈砍掉独立传输层。64-xPU 3D-Mesh：节点间延迟 **over 50%**↓、带宽 **2–5×**；AllReduce 小包延迟为 RoCE 的 **10%–20%**。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-02.md](raw/articles/interconn-study-21d-day-02.md) — Dally & Towles Ch.2 学习笔记（21 天互连研究 Day 2）
 [2] [papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md](papers/dice-detailed-inter-chiplet-end-to-end-phy-modeling.md) — Aligholipour et al., arXiv:2607.24221
 
 [3] [raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf](raw/papers/SAGE_Semantic_Aware_Geographic_Error_Recovery_AI_2026.pdf) — Hung et al., arXiv:2609.10126；语义错误恢复
+[4] [raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf](raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf) — Peng et al., arXiv:2609.25560；Co-Fabric 四层栈

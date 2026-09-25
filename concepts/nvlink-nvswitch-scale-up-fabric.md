@@ -11,9 +11,9 @@ tags:
 - hopper
 - blackwell
 - gpu
-timestamp: '2026-08-31T00:00:00Z'
+timestamp: '2026-09-25T00:00:00Z'
 created: 2026-07-22
-updated: 2026-09-14
+updated: 2026-09-25
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
@@ -22,6 +22,7 @@ sources:
 - raw/papers/BASP_Batch_Aware_Sequence_Parallelism_2026.pdf
 - raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
+- raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf
 ---
 
 # NVLink / NVSwitch Scale-Up Fabric
@@ -96,6 +97,10 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 - 64 卡设计案例（每卡 6×50 GB/s，TPU v4 ICI 口径）：维序归约环面=交换；均匀 All-to-All 交换约 3×（512 卡 6×）。
 - Ch.7：1024 卡训练里高速域 8→64 卡、出口随卡增长，吞吐约 **+36%**；出口仍按 8×400 Gbit/s 封顶时，64 卡分层归约可能慢于连续环。
 
+## Co-Fabric：跨 host 总线语义对照（2026-09-25）
+
+[Co-Fabric](/papers/cofabric-unified-xpu-interconnection.md) 试图把类总线的 memory 语义做到跨 OS/host，对照本页「域内固定高带宽、跨域走 scale-out」。其评测基线是 64-xPU RoCE 而非 NVLink/NVSwitch；报告相对 RoCE：延迟 **over 50%**↓、带宽 **2–5×**、DeepSeek R1 **+30%–80%**、互连成本约 **−80%**。
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
@@ -105,3 +110,4 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 [5] [raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf](raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf) — Entwine
 [6] [Ch.6 超节点](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》
 [7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
+[8] [raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf](raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf) — Co-Fabric vs RoCE scale-up
