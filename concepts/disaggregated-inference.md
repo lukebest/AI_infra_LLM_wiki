@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-09-24
+updated: 2026-09-28
 sources:
 - raw/articles/bojieli-ai-infra-book.md
 - arXiv:2504.02263
@@ -22,6 +22,7 @@ sources:
 - raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf
 - raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf
 - raw/papers/AInfer_PD_InPlace_Prefill_Decode_MoE_2026.pdf
+- raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
 - raw/papers/Fengshui_Chiplet_Ecosystem_BASIC_Codesign_2026.pdf
 - raw/papers/Composable_CXL_Memory_K8s_LLM_Serving_2026.pdf
 - raw/papers/RoofLang_AI_Driven_LLM_Inference_Architecting_2026.pdf
@@ -177,6 +178,11 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - KV 交接：GQA 8K = 1.125 GiB @ 25 GB/s → **48.3 ms**；紧凑 MLA 549 MiB → 23.0 ms。\(\mu_{PD}=\min(\mu_P,\mu_D,B_{\mathrm{net}}/V_{KV})\)。无前缀复用时经共享池中转多搬一次、多等 48.3 ms，应直传。
 - AF / 专家分离每层 dispatch+combine；稠密逐层 72×8 KiB 由**启动**主导（0.384 ms）。专家复用交点：AVX ~72 行、AMX ~689 行才值得搬权重上 GPU。
 
+## FPGA–GPU 步级解耦投机推理（2026-09-28）
+
+[HeteroReason](/papers/heteroreason-fpga-gpu-speculative-reasoning.md) 把 LRM 的 draft 卸到 FPGA、PRM/target 留在 GPU，并在 FPGA 本地做 prefill–decode 解耦 + step-ahead 管线；相对同构 GPU 延迟 **1.01×–1.42×**、能效 **1.25×–1.57×**（MICRO’26）。
+
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -197,3 +203,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [16] [arXiv:2609.09643](https://arxiv.org/pdf/2609.09643) — UNISON agent KV 近存调度
 [17] [arXiv:2609.16491](https://arxiv.org/pdf/2609.16491) — PipeSwift agentic PP serving
 [18] [arXiv:2609.18849](https://arxiv.org/pdf/2609.18849) — Ask the Tool progress-aware KV
+[19] [arXiv:2609.28717](https://arxiv.org/pdf/2609.28717) — HeteroReason

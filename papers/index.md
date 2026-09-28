@@ -1,5 +1,9 @@
 # Paper
 
+* [HBF-Sim: Extensible HBF Simulator for GPU Memory](hbfsim-extensible-hbf-simulator.md) - 华东师大/上海创智 — 媒体吞吐最高 15.94×；page-service 放大 −41.9%；条带化 kernel 最高 3.94×
+* [HeteroReason: FPGA–GPU Speculative Reasoning](heteroreason-fpga-gpu-speculative-reasoning.md) - Imperial/清华/Bristol — MICRO’26；延迟 1.01–1.42×、能效 1.25–1.57×；回退最高 +4.2%
+* [When Fancy Eviction Fails: Prefix-Cache Replacement](fancy-eviction-llm-prefix-cache.md) - Harvard — 14 算法；partial-node compute-aware vs LRU TTFT −19.9%、prefill +18.8%
+
 * [Flux: OCS Optimal Scheduling for LLM Training](flux-ocs-scheduling-llm-training.md) - imec/Antwerp — vs RotorNet/BvN；iteration 最高 10×、峰值 NIC buffer >1000×
 * [Co-Fabric: Unified xPU Interconnection](cofabric-unified-xpu-interconnection.md) - IEIT — 64-xPU 3D-Mesh vs RoCE；延迟 >50%↓、带宽 2–5×、R1 +30–80%、成本 −80%
 

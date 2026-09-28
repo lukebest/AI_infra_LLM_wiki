@@ -11,8 +11,9 @@ tags:
 - agentic-ai
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-04-16
-updated: 2026-09-16
+updated: 2026-09-28
 sources:
+- raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
 - raw/articles/nvidia-groq3-lpx-blog-2026-04.md
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
@@ -94,6 +95,11 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 
 - [PDD](/papers/pdd-cross-datacenter-prefill-decode-disaggregation.md) — 跨 DC H100/H200 角色映射，BCR 最高 +37.5%
 
+## FPGA–GPU LRM 投机推理（2026-09-28）
+
+除 GPU+LPU 的 prefill/decode 分工外，[HeteroReason](/papers/heteroreason-fpga-gpu-speculative-reasoning.md) 展示 **draft@FPGA + PRM/target@GPU** 的另一条异构轴：相对同构 GPU 延迟最高约 **1.42×**、能效最高约 **1.57×**（U280/V80 × RTX 3090）。
+
+
 # Citations
 
 [PDD] [arXiv:2609.13161](https://arxiv.org/pdf/2609.13161)
@@ -105,3 +111,4 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [5] [raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf](raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf)
 [6] [Ch.9](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/09-分布式推理.md) — 李博杰《AI Infra》
 [7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
+[n] [arXiv:2609.28717](https://arxiv.org/pdf/2609.28717) — HeteroReason

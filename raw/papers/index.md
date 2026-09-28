@@ -1,5 +1,9 @@
 # Other
 
+* [HBF-Sim stub](hbfsim-extensible-hbf-simulator.md) + [PDF](HBFSim_Extensible_HBF_Simulator_GPU_2026.pdf) — arXiv:2609.29246
+* [HeteroReason stub](heteroreason-fpga-gpu-speculative-reasoning.md) + [PDF](HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf) — arXiv:2609.28717
+* [Fancy Eviction stub](fancy-eviction-llm-prefix-cache.md) + [PDF](Fancy_Eviction_LLM_Prefix_Cache_2026.pdf) — arXiv:2609.28870
+
 * [Flux stub](flux-ocs-scheduling-llm-training.md) + [PDF](Flux_OCS_Scheduling_LLM_Training_2026.pdf) — arXiv:2609.25949
 * [Co-Fabric stub](cofabric-unified-xpu-interconnection.md) + [PDF](CoFabric_Unified_xPU_Interconnection_2026.pdf) — arXiv:2609.25560
 

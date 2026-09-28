@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-09-28
+
+### Watch (morning)
+* **Watch**: 2026-09-28 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC 覆盖到 **Wed 9/24**（Fri–Sun 美东列表上海早晨尚未放出）；相对 9/25 早报已扫 Flux/Co-Fabric 与 9/24 HotCold/Crossflow/EMA/Tessera。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。
+* **Ingest**: HBF-Sim PDF + stub（arXiv:2609.29246）；HeteroReason（2609.28717，MICRO’26）；Fancy Eviction（2609.28870）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [HBF-Sim](/papers/hbfsim-extensible-hbf-simulator.md)（媒体 15.94×；page-service −41.9%；条带化 3.94×）；[HeteroReason](/papers/heteroreason-fpga-gpu-speculative-reasoning.md)（延迟 1.01–1.42×；能效 1.25–1.57×；回退 +4.2%）；[Fancy Eviction](/papers/fancy-eviction-llm-prefix-cache.md)（TTFT −19.9%；prefill +18.8%）。
+* **Update**: [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md)、[Disaggregated Inference](/concepts/disaggregated-inference.md)、[DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md)、[Heterogeneous Inference](/concepts/heterogeneous-inference.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: AI Datacenter Hardware Survey (2609.26829，综述有用但今日优先仿真器/异构/生产轨迹三篇)；EAAC compiler–HW co-design (2609.30099，通用加速器栈)；Cross-Model Autoscaling (2609.29160，MaaS 调度软件)；Analytical Power-Aware PD Provisioning (2609.24639，运维配比)；Dynamo Fast Recovery (2609.25451，运行时恢复)；KernelOPT/KREX agent 核优化；GRADE-RTL/AgenticSizing/Agentic-IC3（相对 AHRR 增量弱）；BitNet/Mamba CGLA、Tetris RNB、CXL-SSD KV、SARA、MicroQonv、MVP CV SoC 等 9/25 已跳理由仍适用。
+
+
 ## 2026-09-25
 
 ### Watch (morning)

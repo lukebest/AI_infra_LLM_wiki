@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-09-24
+updated: 2026-09-28
 sources:
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/arch-study-30d-day-22.md
@@ -31,6 +31,8 @@ sources:
 - raw/papers/Fathom_Sparse_Decoding_Offloaded_KV_2026.pdf
 - raw/papers/SPLASH_Sparse_Attention_High_Bandwidth_Flash_2026.pdf
 - raw/papers/HotCold_HBM_HBF_Agentic_LLM_2026.pdf
+- raw/papers/HBFSim_Extensible_HBF_Simulator_GPU_2026.pdf
+- raw/papers/Fancy_Eviction_LLM_Prefix_Cache_2026.pdf
 - raw/papers/EMA_Elastic_Memory_Across_GPUs_2026.pdf
 ---
 
@@ -207,6 +209,12 @@ WSE 简化（无 off-chip）:
 - [Hot–Cold HBM/HBF](/papers/hotcold-hbm-hbf-agentic-llm.md)：agentic 热集驻 HBM、冷池共封装 HBF；14 ms TBT、resume +≈0.1 ms、会话 24×；相对全闪读 −7.6 kW/8-GPU。
 - [EMA](/papers/ema-elastic-memory-across-gpus.md)：机内 peer-HBM 弹性地址空间；吞吐最高 +52%，达 2× 容量静态的 96%。
 
+## 2026-09-28 增量
+
+- [HBF-Sim](/papers/hbfsim-extensible-hbf-simulator.md)：公共 Accel-Sim 集成 GPU–HBF 全路径仿真；媒体吞吐最高 **15.94×**，contiguous 放置 page-service 放大 **−41.9%**，活跃页条带化 kernel 最高 **3.94×**——给 SPLASH/HBFlex/HotCold 类系统设计一个可复现底座。
+- [Fancy Eviction](/papers/fancy-eviction-llm-prefix-cache.md)：生产 prefix-cache 轨迹显示花哨淘汰打不过 LRU；partial-node compute-aware vs LRU 平均 TTFT **−19.9%**、prefill **+18.8%**。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -220,3 +228,5 @@ WSE 简化（无 off-chip）:
 [9] [arXiv:2609.17652](https://arxiv.org/pdf/2609.17652) — Fathom
 [10] [arXiv:2609.19207](https://arxiv.org/pdf/2609.19207) — MeshKV
 [11] [arXiv:2609.23816](https://arxiv.org/pdf/2609.23816) — SPLASH
+[12] [arXiv:2609.29246](https://arxiv.org/pdf/2609.29246) — HBF-Sim
+[13] [arXiv:2609.28870](https://arxiv.org/pdf/2609.28870) — Fancy Eviction

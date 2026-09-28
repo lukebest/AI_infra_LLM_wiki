@@ -10,11 +10,12 @@ tags:
 - scheduling
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-23
+updated: 2026-09-28
 sources:
 - raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf
----
 - raw/papers/SPECTRA_Speculative_Decoding_Reconfigurable_Tiled_2026.pdf
+- raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
+---
 
 # DSpark Speculative Decoding
 
@@ -88,6 +89,12 @@ Sequential stage (Markov/RNN head): 采样 x_k ~ p_k(·|x_0, x_<k)
 
 算法层提高 τ / 缩短无效 verify 之外，[SPECTRA](/papers/spectra-speculative-decoding-tiled.md) 从加速器角度处理 verification 的中间算术强度：20-tile FPGA 上 tile 可重构最高 **2.09×**、系统映射再最高 **1.25×**。
 
+## 异构器件分工：draft@FPGA（2026-09-28）
+
+[HeteroReason](/papers/heteroreason-fpga-gpu-speculative-reasoning.md) 把 speculative **reasoning**（步级 draft–PRM–target）映射到 FPGA–GPU：回退最高 **+4.2%** 精度，系统延迟 **1.01×–1.42×**、能效 **1.25×–1.57×**。与 SPECTRA 的「验证期瓦片可重构」正交——一个拆器件，一个拆算术强度。
+
+
 # Citations
 
 [1] [raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf](raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf) — Cheng et al., DeepSeek-AI / PKU (2026)
+[2] [arXiv:2609.28717](https://arxiv.org/pdf/2609.28717) — HeteroReason
