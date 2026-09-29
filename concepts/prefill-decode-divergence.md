@@ -11,13 +11,14 @@ tags:
 - throughput
 timestamp: '2026-07-17T00:00:00Z'
 created: 2026-06-15
-updated: 2026-09-24
+updated: 2026-09-29
 sources:
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
 - raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf
 - raw/articles/22580 From GPT2 to Kimi3, Explained.md
 - raw/papers/Crossflow_PD_Elasticity_Agentic_2026.pdf
+- raw/papers/EAServe_Encode_Aware_Disaggregated_MLLM_2026.pdf
 ---
 
 # Prefill-Decode Resource Divergence（Prefill vs Decode 资源分歧）
@@ -148,6 +149,11 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 [Crossflow](/papers/crossflow-pd-elasticity-agentic.md) 显示静态 P/D 分池跟不上相位比波动（分钟 peak-to-mean 最高 4.7×；agentic 小时比中位 24.5×）。角色固定、边界用 decode 租约弹性化后，吞吐 geomean +16.2–17.4%。
 
+## Encode 第三轴（MLLM EPD，2026-09-29）
+
+文本侧 Prefill/Decode 正交之外，[EAServe](/papers/easerve-encode-aware-disaggregated-mllm.md) 指出 MLLM **Encode** 再引入短前向、批–延迟敏感的第三轴：入口饥饿与 encode GPU 空转并存；仅加微批会淹没下游（Table 1）。Encode-aware 调度把入口利用率拉到约 **80%**，P99 TTFT（image, Λ=2）相对 Dynamo **233.8→10.8 s**。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
+[2] [arXiv:2609.31551](https://arxiv.org/pdf/2609.31551) — EAServe

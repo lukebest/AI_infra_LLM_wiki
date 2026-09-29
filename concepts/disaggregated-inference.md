@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
 - raw/articles/bojieli-ai-infra-book.md
 - arXiv:2504.02263
@@ -31,6 +31,8 @@ sources:
 - raw/papers/Trillion_Param_MoE_HBF_Memory_Provisioning_2026.pdf
 - raw/papers/PipeSwift_Pipeline_Parallel_Agentic_Serving_2026.pdf
 - raw/papers/Crossflow_PD_Elasticity_Agentic_2026.pdf
+- raw/papers/EAServe_Encode_Aware_Disaggregated_MLLM_2026.pdf
+- raw/papers/DynBranch_Speculative_Subgraph_Agentic_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -183,6 +185,10 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [HeteroReason](/papers/heteroreason-fpga-gpu-speculative-reasoning.md) 把 LRM 的 draft 卸到 FPGA、PRM/target 留在 GPU，并在 FPGA 本地做 prefill–decode 解耦 + step-ahead 管线；相对同构 GPU 延迟 **1.01×–1.42×**、能效 **1.25×–1.57×**（MICRO’26）。
 
 
+## EPD Encode 控制点与 Agentic 分支投机（2026-09-29）
+
+[EAServe](/papers/easerve-encode-aware-disaggregated-mllm.md)（PACT’26）把 MLLM 的 **Encode** 做成 EPD 管线控制点（微批 + 共驻 prefill offload + SM 分区 + HAS），moderate 档 goodput 相对 Dynamo / vLLM 最高 **4.3× / 1.7×**；A100 上 LLaVA-34B 达 **4.91 req/s**（vs EPDServe 4.86×）。[DynBranch](/papers/dynbranch-speculative-subgraph-agentic.md) 不改 P/D 池拓扑，而在 model-API 边界对 agentic **分支决议窗口**做可寻址投机子图与跨请求复用（32B@4×H200 vs 最强基线延迟最高 **−32%**）。
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -204,3 +210,5 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [17] [arXiv:2609.16491](https://arxiv.org/pdf/2609.16491) — PipeSwift agentic PP serving
 [18] [arXiv:2609.18849](https://arxiv.org/pdf/2609.18849) — Ask the Tool progress-aware KV
 [19] [arXiv:2609.28717](https://arxiv.org/pdf/2609.28717) — HeteroReason
+[20] [arXiv:2609.31551](https://arxiv.org/pdf/2609.31551) — EAServe EPD
+[21] [arXiv:2609.31047](https://arxiv.org/pdf/2609.31047) — DynBranch

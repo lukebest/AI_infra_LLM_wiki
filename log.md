@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-09-29
+
+### Watch (morning)
+* **Watch**: 2026-09-29 Asia/Shanghai AI infra 论文巡检。**补扫** arXiv cs.AR/cs.DC 美东列表 **Fri 9/25 + Mon 9/28**（9/28 早报当时只到 Wed 9/24；Sat–Sun 无新增 AR 日栏）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。去重 HBF-Sim/HeteroReason/Fancy Eviction/Flux/Co-Fabric/HotCold/Crossflow/EMA/Tessera/SPECTRA/SPLASH 等。
+* **Ingest**: EAServe PDF + stub（arXiv:2609.31551，PACT’26）；DynBranch（2609.31047）；KV Cache Memory Wall SoK（2609.30854）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [EAServe](/papers/easerve-encode-aware-disaggregated-mllm.md)（goodput vs Dynamo 最高 4.3×、vs vLLM 1.7×；A100 4.91 req/s）；[DynBranch](/papers/dynbranch-speculative-subgraph-agentic.md)（vs 最强基线延迟最高 −32%；vs 无复用底 −46–66%）；[KV Cache Memory Wall](/papers/kv-cache-new-memory-wall-sok.md)（70B@128k +42 GB；crossover b=32→13.4k）。
+* **Update**: [Disaggregated Inference](/concepts/disaggregated-inference.md)、[Prefill-Decode Divergence](/concepts/prefill-decode-divergence.md)、[Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: PipeDRAM (2609.30998，MICRO’26 PUD 通用，非 LLM 主线)；AI Datacenter HW Survey (2609.26829，昨日已跳)；EAAC (2609.30099)；CXL-SSD KV (2609.26828)；PatchKV (2609.26219，后缀编辑 KV 恢复偏软件)；Dynamo Fast Recovery (2609.25451)；Power-Aware PD (2609.24639)；Cross-Model Autoscaling (2609.29160)；KernelOPT/KREX；Blackwell agent 能耗剖析 (2609.29707，测量研究)；Xtrace；GRADE-RTL/AgenticSizing/Agentic-IC3；BitNet/Mamba CGLA 等既有跳过理由仍适用。
+
+
 ## 2026-09-28
 
 ### Watch (morning)

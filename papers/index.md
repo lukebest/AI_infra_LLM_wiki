@@ -1,5 +1,9 @@
 # Paper
 
+* [EAServe: Encode-Aware Disaggregated MLLM Serving](easerve-encode-aware-disaggregated-mllm.md) - UGA 等 — PACT’26；goodput vs Dynamo 最高 4.3×、vs vLLM 1.7×；A100 4.91 req/s
+* [DynBranch: Speculative Subgraph Reuse for Agentic Serving](dynbranch-speculative-subgraph-agentic.md) - NUS — 32B@4×H200；vs 最强基线延迟最高 −32%；vs 无复用底 −46–66%
+* [The KV Cache Is the New Memory Wall (SoK)](kv-cache-new-memory-wall-sok.md) - Singh — 五域 taxonomy；70B@128k +42 GB；H100 crossover b=32→13.4k
+
 * [HBF-Sim: Extensible HBF Simulator for GPU Memory](hbfsim-extensible-hbf-simulator.md) - 华东师大/上海创智 — 媒体吞吐最高 15.94×；page-service 放大 −41.9%；条带化 kernel 最高 3.94×
 * [HeteroReason: FPGA–GPU Speculative Reasoning](heteroreason-fpga-gpu-speculative-reasoning.md) - Imperial/清华/Bristol — MICRO’26；延迟 1.01–1.42×、能效 1.25–1.57×；回退最高 +4.2%
 * [When Fancy Eviction Fails: Prefix-Cache Replacement](fancy-eviction-llm-prefix-cache.md) - Harvard — 14 算法；partial-node compute-aware vs LRU TTFT −19.9%、prefill +18.8%

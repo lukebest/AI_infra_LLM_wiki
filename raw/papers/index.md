@@ -1,5 +1,8 @@
 # Other
 
+* [EAServe stub](easerve-encode-aware-disaggregated-mllm.md) + [PDF](EAServe_Encode_Aware_Disaggregated_MLLM_2026.pdf) — arXiv:2609.31551
+* [DynBranch stub](dynbranch-speculative-subgraph-agentic.md) + [PDF](DynBranch_Speculative_Subgraph_Agentic_2026.pdf) — arXiv:2609.31047
+* [KV Cache Memory Wall SoK stub](kv-cache-new-memory-wall-sok.md) + [PDF](KV_Cache_New_Memory_Wall_SoK_2026.pdf) — arXiv:2609.30854
 * [HBF-Sim stub](hbfsim-extensible-hbf-simulator.md) + [PDF](HBFSim_Extensible_HBF_Simulator_GPU_2026.pdf) — arXiv:2609.29246
 * [HeteroReason stub](heteroreason-fpga-gpu-speculative-reasoning.md) + [PDF](HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf) — arXiv:2609.28717
 * [Fancy Eviction stub](fancy-eviction-llm-prefix-cache.md) + [PDF](Fancy_Eviction_LLM_Prefix_Cache_2026.pdf) — arXiv:2609.28870

@@ -11,7 +11,7 @@ tags:
 - wse
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
 - raw/articles/arch-study-30d-day-13.md
 - raw/articles/arch-study-30d-day-14.md
@@ -20,6 +20,7 @@ sources:
 - raw/articles/arch-study-30d-day-20.md
 - raw/papers/Fancy_Eviction_LLM_Prefix_Cache_2026.pdf
 - raw/papers/HBFSim_Extensible_HBF_Simulator_GPU_2026.pdf
+- raw/papers/KV_Cache_New_Memory_Wall_SoK_2026.pdf
 ---
 
 # Memory Hierarchy and Cache（存储层次与 Cache）
@@ -107,6 +108,10 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 生产 LLM prefix cache 的访问节拍与 Web/块存储不同：[Fancy Eviction](/papers/fancy-eviction-llm-prefix-cache.md) 显示 14 种「花哨」策略在命中率上难超 LRU，而 compute-aware（保护深前缀）才能把 TTFT/prefill 拉开（vLLM 实测平均 TTFT **−19.9%**）。共封装 HBF 则需要页/通道级模型：[HBF-Sim](/papers/hbfsim-extensible-hbf-simulator.md) 把 GPU cache-line 与 NAND page 闭合仿真（媒体吞吐最高 **15.94×**）。
 
 
+## KV Cache Memory Wall SoK（2026-09-29）
+
+[The KV Cache Is the New Memory Wall](/papers/kv-cache-new-memory-wall-sok.md) 给出上下文相关算术强度与 H100/B200/MI300X 拓扑下的 traffic **crossover**（Llama-3-70B BF16：b=1 → 427.2k；b=32 → 13.4k tokens），并统一量化/淘汰/分页/前缀/分层五域；与 [Fancy Eviction](/papers/fancy-eviction-llm-prefix-cache.md) 的前缀生产实证互补。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-13.md](raw/articles/arch-study-30d-day-13.md) — H&P Ch.2 存储层次（Day 13）
@@ -116,3 +121,4 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 [5] [raw/articles/arch-study-30d-day-20.md](raw/articles/arch-study-30d-day-20.md) — SSD/NVMe（Day 20）
 [6] [arXiv:2609.28870](https://arxiv.org/pdf/2609.28870) — Fancy Eviction
 [7] [arXiv:2609.29246](https://arxiv.org/pdf/2609.29246) — HBF-Sim
+[8] [arXiv:2609.30854](https://arxiv.org/pdf/2609.30854) — KV Cache Memory Wall SoK

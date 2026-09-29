@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-09-28
+updated: 2026-09-29
 sources:
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/arch-study-30d-day-22.md
@@ -34,6 +34,7 @@ sources:
 - raw/papers/HBFSim_Extensible_HBF_Simulator_GPU_2026.pdf
 - raw/papers/Fancy_Eviction_LLM_Prefix_Cache_2026.pdf
 - raw/papers/EMA_Elastic_Memory_Across_GPUs_2026.pdf
+- raw/papers/KV_Cache_New_Memory_Wall_SoK_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -215,6 +216,10 @@ WSE 简化（无 off-chip）:
 - [Fancy Eviction](/papers/fancy-eviction-llm-prefix-cache.md)：生产 prefix-cache 轨迹显示花哨淘汰打不过 LRU；partial-node compute-aware vs LRU 平均 TTFT **−19.9%**、prefill **+18.8%**。
 
 
+## Decode KV 主导与多 die 带宽（2026-09-29）
+
+[KV Cache Memory Wall SoK](/papers/kv-cache-new-memory-wall-sok.md)：Llama-3-70B@128k 再加 **≈42 GB** KV；H100 ridge ≈**295 FLOP/B**，长上下文 decode 深陷带宽区。B200/MI300X 上 **条带 vs 钉死** 页放置可把有效带宽从聚合打到 per-die（MI300X 钉死惩罚可达 **8×**）。PCIe Gen5 x16 ≈**50×** 慢于 H100 HBM，解释分层卸荷的适用窗。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -230,3 +235,4 @@ WSE 简化（无 off-chip）:
 [11] [arXiv:2609.23816](https://arxiv.org/pdf/2609.23816) — SPLASH
 [12] [arXiv:2609.29246](https://arxiv.org/pdf/2609.29246) — HBF-Sim
 [13] [arXiv:2609.28870](https://arxiv.org/pdf/2609.28870) — Fancy Eviction
+[14] [arXiv:2609.30854](https://arxiv.org/pdf/2609.30854) — KV Cache Memory Wall SoK
