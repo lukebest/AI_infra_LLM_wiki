@@ -62,6 +62,8 @@ FreeInference：**327.5K** 请求、**10.5B** tokens、7 天；Chutes：**515.8K
 - Offline Belady 界不可在线实现；partial-node 是工程折中。
 - 与 [Ask the Tool](../papers/ask-tool-progress-agent-kv-serving.md)（工具 progress 感知）、[Hot–Cold HBM/HBF](../papers/hotcold-hbm-hbf-agentic-llm.md)（热冷分层）、[EMA](../papers/ema-elastic-memory-across-gpus.md)（跨 GPU 弹性容量）同属 agentic serving 内存管理；概念锚点见 [Memory Hierarchy and Cache](../concepts/memory-hierarchy-cache.md) 与 [End-to-End Memory Data Path](../concepts/end-to-end-memory-data-path.md)。
 
+- [RR-Evict](/papers/rrevict-prefix-cache-eviction-agentic.md) — agentic recency synchronization 下 LRU 失效；轮转尾块 vs LRU P99 TTFT 最高 **−75.4%**
+
 # Citations
 
 1. Liu, Y., Yu, M., Yang, J. “When Fancy Eviction Fails: Rethinking Cache Replacement For LLM Prefix Reuse.” arXiv:2609.28870, 2026. [arXiv](https://arxiv.org/abs/2609.28870)

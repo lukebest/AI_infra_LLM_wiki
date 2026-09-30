@@ -21,6 +21,9 @@ sources:
 - raw/papers/Fancy_Eviction_LLM_Prefix_Cache_2026.pdf
 - raw/papers/HBFSim_Extensible_HBF_Simulator_GPU_2026.pdf
 - raw/papers/KV_Cache_New_Memory_Wall_SoK_2026.pdf
+- raw/papers/RREvict_Prefix_Cache_Eviction_Agentic_2026.pdf
+- raw/papers/SpecStream_Resource_Efficient_Speculative_Decoding_2026.pdf
+- raw/papers/SPIMOE_Hybrid_Sparsity_Reasoning_MoE_PIM_2026.pdf
 ---
 
 # Memory Hierarchy and Cache（存储层次与 Cache）
@@ -112,6 +115,8 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 
 [The KV Cache Is the New Memory Wall](/papers/kv-cache-new-memory-wall-sok.md) 给出上下文相关算术强度与 H100/B200/MI300X 拓扑下的 traffic **crossover**（Llama-3-70B BF16：b=1 → 427.2k；b=32 → 13.4k tokens），并统一量化/淘汰/分页/前缀/分层五域；与 [Fancy Eviction](/papers/fancy-eviction-llm-prefix-cache.md) 的前缀生产实证互补。
 
+[RR-Evict](/papers/rrevict-prefix-cache-eviction-agentic.md) 指出 agentic 前缀匹配造成 **recency synchronization**，节点级 LRU 会整轨迹清空；round-robin 尾块淘汰相对 LRU 把 P99 TTFT / P99 uncached tokens 最高压到 **−75.4% / −65.7%**（vs completion-aware LRU 最高 **−46.9% / −30.6%**），与 [Fancy Eviction](/papers/fancy-eviction-llm-prefix-cache.md) 的「花哨难超 LRU」形成 **agentic 工况反例**。[SpecStream](/papers/specstream-resource-efficient-speculative-decoding.md) 在投机路径上只卸荷已提交历史并以流式块服务 verification；[SPIMOE](/papers/spimoe-hybrid-sparsity-reasoning-moe-pim.md) 在异构 PIM 上做物理 KV block 淘汰服务长推理。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-13.md](raw/articles/arch-study-30d-day-13.md) — H&P Ch.2 存储层次（Day 13）
@@ -122,3 +127,6 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 [6] [arXiv:2609.28870](https://arxiv.org/pdf/2609.28870) — Fancy Eviction
 [7] [arXiv:2609.29246](https://arxiv.org/pdf/2609.29246) — HBF-Sim
 [8] [arXiv:2609.30854](https://arxiv.org/pdf/2609.30854) — KV Cache Memory Wall SoK
+[7] [arXiv:2609.32278](https://arxiv.org/pdf/2609.32278) — RR-Evict
+[8] [arXiv:2609.33184](https://arxiv.org/pdf/2609.33184) — SpecStream
+[9] [arXiv:2609.34612](https://arxiv.org/pdf/2609.34612) — SPIMOE

@@ -35,6 +35,9 @@ sources:
 - raw/papers/Fancy_Eviction_LLM_Prefix_Cache_2026.pdf
 - raw/papers/EMA_Elastic_Memory_Across_GPUs_2026.pdf
 - raw/papers/KV_Cache_New_Memory_Wall_SoK_2026.pdf
+- raw/papers/SpecStream_Resource_Efficient_Speculative_Decoding_2026.pdf
+- raw/papers/SPIMOE_Hybrid_Sparsity_Reasoning_MoE_PIM_2026.pdf
+- raw/papers/RREvict_Prefix_Cache_Eviction_Agentic_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -220,6 +223,8 @@ WSE 简化（无 off-chip）:
 
 [KV Cache Memory Wall SoK](/papers/kv-cache-new-memory-wall-sok.md)：Llama-3-70B@128k 再加 **≈42 GB** KV；H100 ridge ≈**295 FLOP/B**，长上下文 decode 深陷带宽区。B200/MI300X 上 **条带 vs 钉死** 页放置可把有效带宽从聚合打到 per-die（MI300X 钉死惩罚可达 **8×**）。PCIe Gen5 x16 ≈**50×** 慢于 H100 HBM，解释分层卸荷的适用窗。
 
+[SpecStream](/papers/specstream-resource-efficient-speculative-decoding.md)：A800 上 PCIe Gen4×16 ≈**31.5 GB/s** 远低于 HBM **1935 GB/s**，故卸荷必须与计算重叠——分块 H2D + commit 边界约束。[SPIMOE](/papers/spimoe-hybrid-sparsity-reasoning-moe-pim.md) 把 Attention 放到 SRAM-PIM、Expert-FFN 放到 HBM-PIM（4×8 NoC），端到端相对 A100 最高 **8.35×**。[RR-Evict](/papers/rrevict-prefix-cache-eviction-agentic.md) 不改物理层级，而改 **前缀树淘汰分布**，压低 agent 冷预填尾延迟。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -236,3 +241,6 @@ WSE 简化（无 off-chip）:
 [12] [arXiv:2609.29246](https://arxiv.org/pdf/2609.29246) — HBF-Sim
 [13] [arXiv:2609.28870](https://arxiv.org/pdf/2609.28870) — Fancy Eviction
 [14] [arXiv:2609.30854](https://arxiv.org/pdf/2609.30854) — KV Cache Memory Wall SoK
+[15] [arXiv:2609.33184](https://arxiv.org/pdf/2609.33184) — SpecStream
+[16] [arXiv:2609.34612](https://arxiv.org/pdf/2609.34612) — SPIMOE
+[17] [arXiv:2609.32278](https://arxiv.org/pdf/2609.32278) — RR-Evict

@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-09-30
+
+### Watch (morning)
+* **Watch**: 2026-09-30 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC **new = Tue 9/29**（Wed 9/30 美东列表上海早晨尚未放出）。相对 9/29 早报已扫 Fri 9/25+Mon 9/28。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。去重 EAServe/DynBranch/KV-SoK/HBF-Sim/HeteroReason/Fancy Eviction 等。
+* **Ingest**: SpecStream PDF + stub（arXiv:2609.33184）；SPIMOE（2609.34612，ICCAD’26）；RR-Evict（2609.32278）。量化数字均复核自本地原文 PDF。SCHEMA 标签新增 `pim`。
+* **Creation** (papers): [SpecStream](/papers/specstream-resource-efficient-speculative-decoding.md)（vs 卸荷基线 Qwen3 **1.41×** / InternLM2.5 **1.32×**；同 GPU 每 GPU 吞吐均值 **+55.4%**）；[SPIMOE](/papers/spimoe-hybrid-sparsity-reasoning-moe-pim.md)（vs A100 最高 **8.35×**；MoE FFN vs PIMoE 最高 **3.33×**）；[RR-Evict](/papers/rrevict-prefix-cache-eviction-agentic.md)（vs LRU P99 TTFT 最高 **−75.4%**、P99 uncached 最高 **−65.7%**）。
+* **Update**: [DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md)、[Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[Disaggregated Inference](/concepts/disaggregated-inference.md)、[Fancy Eviction](/papers/fancy-eviction-llm-prefix-cache.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: EfficientAgent (2609.33762，KV 卸荷何时划算的特征/策略研究，相对 SpecStream/RR-Evict 增量偏软件)；PackServe (2609.33224，agentic SLO 调度)；CascadeEP (2609.33252，MoE prefill 异步 EP)；Tessera RAG-KV (2609.32999，与既有 Tessera BSA 同名异文，需求驱动 RAG KV)；Hybrid Attention on NPUs (2609.32114)；MpFA Blackwell QK4V8 (2609.33135)；TopoEP (2609.35481)；VarioPath PCIe AlltoAllv (2609.34340)；Torch-PIM / PolyCIM / MorphAtt；AgentReplay；OLED-MoE；TempoKV；WavePP；Spexis；SmartNIC 建模；昨日已列 EAAC/PipeDRAM/CXL-SSD 等仍适用。
+
 ## 2026-09-29
 
 ### Watch (morning)

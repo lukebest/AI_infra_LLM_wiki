@@ -33,6 +33,7 @@ sources:
 - raw/papers/Crossflow_PD_Elasticity_Agentic_2026.pdf
 - raw/papers/EAServe_Encode_Aware_Disaggregated_MLLM_2026.pdf
 - raw/papers/DynBranch_Speculative_Subgraph_Agentic_2026.pdf
+- raw/papers/RREvict_Prefix_Cache_Eviction_Agentic_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -189,6 +190,8 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 
 [EAServe](/papers/easerve-encode-aware-disaggregated-mllm.md)（PACT’26）把 MLLM 的 **Encode** 做成 EPD 管线控制点（微批 + 共驻 prefill offload + SM 分区 + HAS），moderate 档 goodput 相对 Dynamo / vLLM 最高 **4.3× / 1.7×**；A100 上 LLaVA-34B 达 **4.91 req/s**（vs EPDServe 4.86×）。[DynBranch](/papers/dynbranch-speculative-subgraph-agentic.md) 不改 P/D 池拓扑，而在 model-API 边界对 agentic **分支决议窗口**做可寻址投机子图与跨请求复用（32B@4×H200 vs 最强基线延迟最高 **−32%**）。
 
+[RR-Evict](/papers/rrevict-prefix-cache-eviction-agentic.md) 在 **1P3D** PD 解耦编码 agent（Qwen3-8B / SWE-bench @ H100）上验证：轮转尾块淘汰相对 LRU 改善尾部 TTFT / 未缓存 token（对话共置工况摘要最高 **−75.4% / −65.7%**），说明 prefix-cache 策略与 P/D 池拓扑正交。
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -212,3 +215,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [19] [arXiv:2609.28717](https://arxiv.org/pdf/2609.28717) — HeteroReason
 [20] [arXiv:2609.31551](https://arxiv.org/pdf/2609.31551) — EAServe EPD
 [21] [arXiv:2609.31047](https://arxiv.org/pdf/2609.31047) — DynBranch
+[21] [arXiv:2609.32278](https://arxiv.org/pdf/2609.32278) — RR-Evict

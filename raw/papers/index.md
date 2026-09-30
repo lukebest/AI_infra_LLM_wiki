@@ -1,5 +1,9 @@
 # Other
 
+* [SpecStream stub](specstream-resource-efficient-speculative-decoding.md) + [PDF](SpecStream_Resource_Efficient_Speculative_Decoding_2026.pdf) — arXiv:2609.33184
+* [SPIMOE stub](spimoe-hybrid-sparsity-reasoning-moe-pim.md) + [PDF](SPIMOE_Hybrid_Sparsity_Reasoning_MoE_PIM_2026.pdf) — arXiv:2609.34612
+* [RR-Evict stub](rrevict-prefix-cache-eviction-agentic.md) + [PDF](RREvict_Prefix_Cache_Eviction_Agentic_2026.pdf) — arXiv:2609.32278
+
 * [EAServe stub](easerve-encode-aware-disaggregated-mllm.md) + [PDF](EAServe_Encode_Aware_Disaggregated_MLLM_2026.pdf) — arXiv:2609.31551
 * [DynBranch stub](dynbranch-speculative-subgraph-agentic.md) + [PDF](DynBranch_Speculative_Subgraph_Agentic_2026.pdf) — arXiv:2609.31047
 * [KV Cache Memory Wall SoK stub](kv-cache-new-memory-wall-sok.md) + [PDF](KV_Cache_New_Memory_Wall_SoK_2026.pdf) — arXiv:2609.30854

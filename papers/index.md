@@ -1,5 +1,9 @@
 # Paper
 
+* [SpecStream: Resource-Efficient Speculative Decoding with Streamed KV](specstream-resource-efficient-speculative-decoding.md) - 西交大 — A800；vs 卸荷基线吞吐 Qwen3 1.41× / InternLM2.5 1.32×；同 GPU 每 GPU 吞吐均值 +55.4%
+* [SPIMOE: Hybrid Sparse Reasoning MoE on Heterogeneous PIM](spimoe-hybrid-sparsity-reasoning-moe-pim.md) - 北航 — ICCAD’26；vs A100 最高 8.35×；MoE FFN vs PIMoE 最高 3.33×
+* [RR-Evict: Round-Robin Prefix Cache Eviction for Agentic Serving](rrevict-prefix-cache-eviction-agentic.md) - UCSD — vs LRU P99 TTFT 最高 −75.4%；P99 uncached token 最高 −65.7%
+
 * [EAServe: Encode-Aware Disaggregated MLLM Serving](easerve-encode-aware-disaggregated-mllm.md) - UGA 等 — PACT’26；goodput vs Dynamo 最高 4.3×、vs vLLM 1.7×；A100 4.91 req/s
 * [DynBranch: Speculative Subgraph Reuse for Agentic Serving](dynbranch-speculative-subgraph-agentic.md) - NUS — 32B@4×H200；vs 最强基线延迟最高 −32%；vs 无复用底 −46–66%
 * [The KV Cache Is the New Memory Wall (SoK)](kv-cache-new-memory-wall-sok.md) - Singh — 五域 taxonomy；70B@128k +42 GB；H100 crossover b=32→13.4k
