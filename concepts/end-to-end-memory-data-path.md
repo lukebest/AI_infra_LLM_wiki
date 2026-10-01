@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-09-29
+updated: 2026-10-01
 sources:
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/arch-study-30d-day-22.md
@@ -38,6 +38,8 @@ sources:
 - raw/papers/SpecStream_Resource_Efficient_Speculative_Decoding_2026.pdf
 - raw/papers/SPIMOE_Hybrid_Sparsity_Reasoning_MoE_PIM_2026.pdf
 - raw/papers/RREvict_Prefix_Cache_Eviction_Agentic_2026.pdf
+- raw/papers/Janus_Agentic_SSD_Sparse_KV_2026.pdf
+- raw/papers/SPLASH_Switching_Parallel_Layouts_Attention_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -225,6 +227,11 @@ WSE 简化（无 off-chip）:
 
 [SpecStream](/papers/specstream-resource-efficient-speculative-decoding.md)：A800 上 PCIe Gen4×16 ≈**31.5 GB/s** 远低于 HBM **1935 GB/s**，故卸荷必须与计算重叠——分块 H2D + commit 边界约束。[SPIMOE](/papers/spimoe-hybrid-sparsity-reasoning-moe-pim.md) 把 Attention 放到 SRAM-PIM、Expert-FFN 放到 HBM-PIM（4×8 NoC），端到端相对 A100 最高 **8.35×**。[RR-Evict](/papers/rrevict-prefix-cache-eviction-agentic.md) 不改物理层级，而改 **前缀树淘汰分布**，压低 agent 冷预填尾延迟。
 
+
+## SSD 稀疏 KV 与布局侧容量（2026-10-01）
+
+[Janus](/papers/janus-agentic-ssd-sparse-kv.md)：稀疏注意力下 SSD 读易进关键路径；预测重叠 + I/O 整形后 TTFT 最高 **1.57–3.69×**，关键路径 SSD **<6.5%**。[SPLASH-layouts](/papers/splash-switching-parallel-layouts-attention.md) 通过 DOP 在不复制 KV 的前提下提高每卡 KV 容量（**+27–60%**），与 HBF/SSD 介质扩容正交。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -244,3 +251,5 @@ WSE 简化（无 off-chip）:
 [15] [arXiv:2609.33184](https://arxiv.org/pdf/2609.33184) — SpecStream
 [16] [arXiv:2609.34612](https://arxiv.org/pdf/2609.34612) — SPIMOE
 [17] [arXiv:2609.32278](https://arxiv.org/pdf/2609.32278) — RR-Evict
+[18] [arXiv:2609.36938](https://arxiv.org/pdf/2609.36938) — Janus
+[19] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts

@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-01
+
+### Watch (morning)
+* **Watch**: 2026-10-01 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC **new = Wed 9/30**（相对 9/30 早报当时仅到 Tue 9/29）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。去重 SpecStream/SPIMOE/RR-Evict/EAServe/DynBranch/KV-SoK/HBF-Sim 等。
+* **Ingest**: Mixture-of-Kittens PDF + stub（arXiv:2609.36070）；Janus（2609.36938）；Purlin（2609.36954）；SPLASH-layouts（2609.37626，**异文于**既有 HBF-SPLASH 2609.23816）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [Mixture-of-Kittens](/papers/mixture-of-kittens-moe-megakernel-nvl72.md)（vs 最强公开基线最高 **2.37×**；512 GPU 生产 e2e **1.41×**）；[Janus](/papers/janus-agentic-ssd-sparse-kv.md)（TTFT 最高 **1.57–3.69×**，均值 **1.22–1.85×**；关键路径 SSD I/O **<6.5%**）；[Purlin](/papers/purlin-collectives-orchestration-datapath.md)（集体延迟最高 **5.14×**、带宽 **4.50×**；SGLang 离线均值 **1.13×**/最高 **1.37×**，在线交互最高 **2.85×**）；[SPLASH-layouts](/papers/splash-switching-parallel-layouts-attention.md)（吞吐 **1.3–1.73×**；中位切换 **<0.51%** step；DOP KV 容量 **+27–60%**）。
+* **Update**: [NVLink/NVSwitch](/concepts/nvlink-nvswitch-scale-up-fabric.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[Disaggregated Inference](/concepts/disaggregated-inference.md)、[FlashMoE Kernel](/concepts/flashmoe-kernel.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: Cobalt (2609.36959，专家共激活布局；相对 MoK 同日 MoE 训练增量偏 EP 放置)；CadenceRL (2609.36899，异构 RL rollout 调度)；DScale (2609.37532，block-diffusion 投机，相对 SpecStream/SPECTRA/DSpark 增量偏软件)；vSkipper (2609.37062，层跳过 serving 插件)；MEDEM (2609.37399，多引擎加速器 DSE)；MemExplorer (2604.16007 replaced，agentic NPU 异构内存综合)；Scepsy (2604.15186 replaced，agentic 工作流 GPU 分配)；ParaAnya (2609.36522，扩散并行采样缓存)；Joint MoE topology sim (2609.37828，仿真剖析)；FP64/INT8/FP4 Ozaki (2609.37693，数值仿真)；昨日已列 EfficientAgent/PackServe/CascadeEP/TopoEP/VarioPath 等仍适用。
+
 ## 2026-09-30
 
 ### Watch (morning)

@@ -11,9 +11,9 @@ tags:
 - distributed
 - noc
 - wse
-timestamp: '2026-09-25T00:00:00Z'
+timestamp: '2026-10-01T00:00:00Z'
 created: 2026-07-13
-updated: 2026-09-25
+updated: 2026-10-01
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -26,11 +26,13 @@ sources:
 - raw/papers/Weave_Dynamic_SM_MoE_Overlap_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
 - raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf
+- raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf
+- raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
 
-[Weave](../papers/weave-dynamic-sm-moe-overlap.md) 显示 MoE expert parallel 的重叠粒度已从 collective/kernel 边界下沉到 persistent megakernel 内部：通信 SM 数和 chunk 可按层、按 GPU 动态选择，空闲通信 SM 还能临时执行 GEMM tile。
+[Weave](../papers/weave-dynamic-sm-moe-overlap.md) 显示 MoE expert parallel 的重叠粒度已从 collective/kernel 边界下沉到 persistent megakernel 内部：通信 SM 数和 chunk 可按层、按 GPU 动态选择，空闲通信 SM 还能临时执行 GEMM tile。 [Mixture-of-Kittens](/papers/mixture-of-kittens-moe-megakernel-nvl72.md) 进一步把该路径钉在 **NVL72**：pull/push 选型 + 512–32k token 粒度 + 设备环缓冲，相对最强公开基线最高 **2.37×**、生产 512 GPU **1.41×**。[Purlin](/papers/purlin-collectives-orchestration-datapath.md) 则从推理侧把集体 **SNAC 编排** 与代际 Atom datapath 拆开（延迟最高 **5.14×**）。
 
 arch-study **并行篇 Day 27**：H&P Ch.6 + Ch.10——当模型装不进单芯片（GPT-3 175B ≫ WSE 44 GB SRAM），**通信成为训练主瓶颈**。经典 MPI 五算法见 [MPI Reduce/AllReduce](/concepts/mpi-reduce-allreduce-algorithms.md)；本页聚焦 **LLM 训练配方与复杂度直觉**。
 
@@ -155,6 +157,12 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 [Flux](/papers/flux-ocs-scheduling-llm-training.md) 不改 AllReduce/TP 算法本身，而是让 OCS 电路日程对齐训练图中的通信就绪时刻，避免「无电路却已生产」造成的 NIC 堆积。摘要相对周期 OCS 调度：iteration 最高 **10×**、峰值 NIC buffer **>三个数量级**（Llama 3 8B、8 GPU、2 OCS 仿真）。
 
+
+## MoK × Purlin（2026-10-01）
+
+- [Mixture-of-Kittens](/papers/mixture-of-kittens-moe-megakernel-nvl72.md) — NVL72 MoE 训练 megakernel；vs 最强公开基线最高 **2.37×**；生产 e2e **1.41×**
+- [Purlin](/papers/purlin-collectives-orchestration-datapath.md) — 语义/SNAC/Atom 解耦；集体延迟最高 **5.14×**、带宽 **4.50×**；SGLang 在线交互最高 **2.85×**
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -168,3 +176,5 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [9] [Ch.6–7 manuscripts](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》
 [10] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
 [11] [raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf](raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf) — Flux；OCS MILP vs RotorNet/BvN
+[12] [raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf](raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf) — MoK
+[13] [raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf](raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf) — Purlin

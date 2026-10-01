@@ -11,9 +11,9 @@ tags:
 - hopper
 - blackwell
 - gpu
-timestamp: '2026-09-25T00:00:00Z'
+timestamp: '2026-10-01T00:00:00Z'
 created: 2026-07-22
-updated: 2026-09-25
+updated: 2026-10-01
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
@@ -23,6 +23,8 @@ sources:
 - raw/papers/Entwine_Tiled_Computation_Fine_Grained_GPU_Comm_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
 - raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf
+- raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf
+- raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf
 ---
 
 # NVLink / NVSwitch Scale-Up Fabric
@@ -101,6 +103,11 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 
 [Co-Fabric](/papers/cofabric-unified-xpu-interconnection.md) 试图把类总线的 memory 语义做到跨 OS/host，对照本页「域内固定高带宽、跨域走 scale-out」。其评测基线是 64-xPU RoCE 而非 NVLink/NVSwitch；报告相对 RoCE：延迟 **over 50%**↓、带宽 **2–5×**、DeepSeek R1 **+30%–80%**、互连成本约 **−80%**。
 
+
+## MoK / Purlin：NVL72 软件栈（2026-10-01）
+
+[Mixture-of-Kittens](/papers/mixture-of-kittens-moe-megakernel-nvl72.md) 证明为 scale-out 优化的 MoE 系统迁到 NVL72 时常慢于朴素 NCCL；专用 megakernel（push/pull 选型、可调粒度、无 CPU 同步）相对最强公开基线最高 **2.37×**，512 GPU 生产 e2e **1.41×**。[Purlin](/papers/purlin-collectives-orchestration-datapath.md) 则把域内集体的编排与 Atom datapath 解耦，集体延迟最高 **5.14×**、带宽 **4.50×**，SGLang 在线交互过载最高 **2.85×**。
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
@@ -111,3 +118,5 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 [6] [Ch.6 超节点](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》
 [7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
 [8] [raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf](raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf) — Co-Fabric vs RoCE scale-up
+[9] [raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf](raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf) — MoK / NVL72 MoE
+[10] [raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf](raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf) — Purlin collectives

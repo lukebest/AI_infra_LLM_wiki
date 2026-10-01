@@ -1,5 +1,10 @@
 # Paper
 
+* [Mixture-of-Kittens: MoE Megakernel for NVL72s](mixture-of-kittens-moe-megakernel-nvl72.md) - Stanford/Cursor — NVL72；vs 最强公开基线最高 2.37×；512 GPU 生产 e2e 1.41×
+* [Janus: Agentic Serving with SSD-Centric Sparse KV](janus-agentic-ssd-sparse-kv.md) - 上交大等 — TTFT 最高 1.57–3.69×（均值 1.22–1.85×）；关键路径 SSD I/O <6.5%
+* [Purlin: Separating Orchestration from Collectives Datapath](purlin-collectives-orchestration-datapath.md) - Stanford/NVIDIA — 延迟最高 5.14×、带宽 4.50×；SGLang 离线均值 1.13×、在线最高 2.85×
+* [SPLASH: Switching Parallel Layouts of Attention](splash-switching-parallel-layouts-attention.md) - 中科院计算所 — 热切换 TP/DP/CP/DOP；吞吐 1.3–1.73×；中位切换 <0.51% step（异文于 HBF-SPLASH）
+
 * [SpecStream: Resource-Efficient Speculative Decoding with Streamed KV](specstream-resource-efficient-speculative-decoding.md) - 西交大 — A800；vs 卸荷基线吞吐 Qwen3 1.41× / InternLM2.5 1.32×；同 GPU 每 GPU 吞吐均值 +55.4%
 * [SPIMOE: Hybrid Sparse Reasoning MoE on Heterogeneous PIM](spimoe-hybrid-sparsity-reasoning-moe-pim.md) - 北航 — ICCAD’26；vs A100 最高 8.35×；MoE FFN vs PIMoE 最高 3.33×
 * [RR-Evict: Round-Robin Prefix Cache Eviction for Agentic Serving](rrevict-prefix-cache-eviction-agentic.md) - UCSD — vs LRU P99 TTFT 最高 −75.4%；P99 uncached token 最高 −65.7%

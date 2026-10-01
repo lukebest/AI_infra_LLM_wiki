@@ -98,6 +98,11 @@ Serving — [Disaggregated Inference](/concepts/disaggregated-inference.md) + [M
 - [Parallelism Transition Point](/concepts/parallelism-transition-point.md) — MoE hybrid PP+TP
 - [papers/flashmoe-fast-distributed-moe-single-kernel.md](/papers/flashmoe-fast-distributed-moe-single-kernel.md) — 论文摘要
 
+
+## 相关：NVL72 训练 megakernel（2026-10-01）
+
+[Mixture-of-Kittens](/papers/mixture-of-kittens-moe-megakernel-nvl72.md) 同属「单 persistent megakernel 融合 EP 算通」，但面向 **训练 + NVL72**（相对最强公开基线最高 **2.37×**；生产 512 GPU **1.41×**），与 FlashMoE 的推理/通算单核叙事互补。
+
 # Citations
 
 [1] [raw/papers/FlashMoE_Fast_Distributed_MoE_Single_Kernel_2025.pdf](raw/papers/FlashMoE_Fast_Distributed_MoE_Single_Kernel_2025.pdf) — Aimuyo et al., NeurIPS 2025

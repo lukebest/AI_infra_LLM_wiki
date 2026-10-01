@@ -192,6 +192,11 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 
 [RR-Evict](/papers/rrevict-prefix-cache-eviction-agentic.md) 在 **1P3D** PD 解耦编码 agent（Qwen3-8B / SWE-bench @ H100）上验证：轮转尾块淘汰相对 LRU 改善尾部 TTFT / 未缓存 token（对话共置工况摘要最高 **−75.4% / −65.7%**），说明 prefix-cache 策略与 P/D 池拓扑正交。
 
+
+## 运行时并行布局与 SSD 稀疏 KV（2026-10-01）
+
+[SPLASH-layouts](/papers/splash-switching-parallel-layouts-attention.md) 在不停机条件下热切换 TP/DP-attention/CP/DOP，相对固定布局吞吐 **1.3–1.73×**（GLM-5.3@B200），把「并行布局」做成与 P/D 池拓扑正交的服务旋钮。[Janus](/papers/janus-agentic-ssd-sparse-kv.md) 针对 agent append-prefill 的稀疏 KV SSD 路径，TTFT 最高 **1.57–3.69×**。
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -216,3 +221,5 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [20] [arXiv:2609.31551](https://arxiv.org/pdf/2609.31551) — EAServe EPD
 [21] [arXiv:2609.31047](https://arxiv.org/pdf/2609.31047) — DynBranch
 [21] [arXiv:2609.32278](https://arxiv.org/pdf/2609.32278) — RR-Evict
+[22] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts
+[23] [arXiv:2609.36938](https://arxiv.org/pdf/2609.36938) — Janus

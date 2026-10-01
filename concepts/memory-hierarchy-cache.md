@@ -11,7 +11,7 @@ tags:
 - wse
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-29
+updated: 2026-10-01
 sources:
 - raw/articles/arch-study-30d-day-13.md
 - raw/articles/arch-study-30d-day-14.md
@@ -117,6 +117,11 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 
 [RR-Evict](/papers/rrevict-prefix-cache-eviction-agentic.md) 指出 agentic 前缀匹配造成 **recency synchronization**，节点级 LRU 会整轨迹清空；round-robin 尾块淘汰相对 LRU 把 P99 TTFT / P99 uncached tokens 最高压到 **−75.4% / −65.7%**（vs completion-aware LRU 最高 **−46.9% / −30.6%**），与 [Fancy Eviction](/papers/fancy-eviction-llm-prefix-cache.md) 的「花哨难超 LRU」形成 **agentic 工况反例**。[SpecStream](/papers/specstream-resource-efficient-speculative-decoding.md) 在投机路径上只卸荷已提交历史并以流式块服务 verification；[SPIMOE](/papers/spimoe-hybrid-sparsity-reasoning-moe-pim.md) 在异构 PIM 上做物理 KV block 淘汰服务长推理。
 
+
+## Janus SSD 稀疏 KV 与 SPLASH 布局（2026-10-01）
+
+[Janus](/papers/janus-agentic-ssd-sparse-kv.md) 把 agentic 稀疏注意力的 KV 中心放到 **SSD**：用模型 indexer 提前预测选择，使关键路径 SSD I/O **<6.5%** append-prefill，TTFT 最高 **1.57–3.69×**（均值 **1.22–1.85×**）——与 RR-Evict/Fancy 的 DRAM 前缀策略互补，主攻 **介质带宽×选择时机**。[SPLASH-layouts](/papers/splash-switching-parallel-layouts-attention.md)（异文于 HBF-SPLASH）不改介质，而用 **DOP** 释放 KV 容量（相对 DP-attn **+27–60%**）并热切换并行布局。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-13.md](raw/articles/arch-study-30d-day-13.md) — H&P Ch.2 存储层次（Day 13）
@@ -130,3 +135,5 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 [7] [arXiv:2609.32278](https://arxiv.org/pdf/2609.32278) — RR-Evict
 [8] [arXiv:2609.33184](https://arxiv.org/pdf/2609.33184) — SpecStream
 [9] [arXiv:2609.34612](https://arxiv.org/pdf/2609.34612) — SPIMOE
+[10] [arXiv:2609.36938](https://arxiv.org/pdf/2609.36938) — Janus
+[11] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts

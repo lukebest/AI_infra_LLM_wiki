@@ -1,5 +1,10 @@
 # Other
 
+* [Mixture-of-Kittens stub](mixture-of-kittens-moe-megakernel-nvl72.md) + [PDF](MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf) — arXiv:2609.36070
+* [Janus stub](janus-agentic-ssd-sparse-kv.md) + [PDF](Janus_Agentic_SSD_Sparse_KV_2026.pdf) — arXiv:2609.36938
+* [Purlin stub](purlin-collectives-orchestration-datapath.md) + [PDF](Purlin_Collectives_Orchestration_Datapath_2026.pdf) — arXiv:2609.36954
+* [SPLASH-layouts stub](splash-switching-parallel-layouts-attention.md) + [PDF](SPLASH_Switching_Parallel_Layouts_Attention_2026.pdf) — arXiv:2609.37626（异文于 HBF-SPLASH 2609.23816）
+
 * [SpecStream stub](specstream-resource-efficient-speculative-decoding.md) + [PDF](SpecStream_Resource_Efficient_Speculative_Decoding_2026.pdf) — arXiv:2609.33184
 * [SPIMOE stub](spimoe-hybrid-sparsity-reasoning-moe-pim.md) + [PDF](SPIMOE_Hybrid_Sparsity_Reasoning_MoE_PIM_2026.pdf) — arXiv:2609.34612
 * [RR-Evict stub](rrevict-prefix-cache-eviction-agentic.md) + [PDF](RREvict_Prefix_Cache_Eviction_Agentic_2026.pdf) — arXiv:2609.32278
