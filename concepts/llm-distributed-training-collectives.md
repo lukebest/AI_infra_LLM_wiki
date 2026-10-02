@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-10-01T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-01
+updated: 2026-10-02
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -163,6 +163,12 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [Mixture-of-Kittens](/papers/mixture-of-kittens-moe-megakernel-nvl72.md) — NVL72 MoE 训练 megakernel；vs 最强公开基线最高 **2.37×**；生产 e2e **1.41×**
 - [Purlin](/papers/purlin-collectives-orchestration-datapath.md) — 语义/SNAC/Atom 解耦；集体延迟最高 **5.14×**、带宽 **4.50×**；SGLang 在线交互最高 **2.85×**
 
+
+## PCIe EP 与异构 MoE 规划（2026-10-02）
+
+- [ThunderEP](/papers/thunderep-pcie-consumer-gpu-moe.md) — 无 P2P 消费卡上把 host 当作共享通信介质；dispatch/combine vs NCCL **2.00×/1.53×**；prefill 最高 **1.66×**
+- [HAPMoE](/papers/hapmoe-heterogeneity-aware-moe-parallelism.md) — MoE×异构集群六维自动并行；e2e 训练吞吐最高 **3.2×**，非均匀 PP 再最高 **+78%**
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -178,3 +184,5 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [11] [raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf](raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf) — Flux；OCS MILP vs RotorNet/BvN
 [12] [raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf](raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf) — MoK
 [13] [raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf](raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf) — Purlin
+[14] [arXiv:2609.40093](https://arxiv.org/pdf/2609.40093) — ThunderEP
+[15] [arXiv:2609.39350](https://arxiv.org/pdf/2609.39350) — HAPMoE

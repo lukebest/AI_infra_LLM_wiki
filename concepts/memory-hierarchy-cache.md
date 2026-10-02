@@ -11,7 +11,7 @@ tags:
 - wse
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-01
+updated: 2026-10-02
 sources:
 - raw/articles/arch-study-30d-day-13.md
 - raw/articles/arch-study-30d-day-14.md
@@ -122,6 +122,11 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 
 [Janus](/papers/janus-agentic-ssd-sparse-kv.md) 把 agentic 稀疏注意力的 KV 中心放到 **SSD**：用模型 indexer 提前预测选择，使关键路径 SSD I/O **<6.5%** append-prefill，TTFT 最高 **1.57–3.69×**（均值 **1.22–1.85×**）——与 RR-Evict/Fancy 的 DRAM 前缀策略互补，主攻 **介质带宽×选择时机**。[SPLASH-layouts](/papers/splash-switching-parallel-layouts-attention.md)（异文于 HBF-SPLASH）不改介质，而用 **DOP** 释放 KV 容量（相对 DP-attn **+27–60%**）并热切换并行布局。
 
+
+## HBF 扩容与写寿命（2026-10-02）
+
+[Characterizing HBF](/papers/characterizing-hbf-llm-serving.md) 在 agentic 高吞吐设定下量化：HBF 不是被动溢出层——**准入缓冲**把设备命中与写放大绑在一起（10% 余量 → 写 **−69%**，寿命 **4.77→14.82 年**）；与 [Hot–Cold](/papers/hotcold-hbm-hbf-agentic-llm.md)/[HBFlex](/papers/hbflex-flexible-memory-hbf-llm.md) 的放置策略互补。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-13.md](raw/articles/arch-study-30d-day-13.md) — H&P Ch.2 存储层次（Day 13）
@@ -137,3 +142,4 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 [9] [arXiv:2609.34612](https://arxiv.org/pdf/2609.34612) — SPIMOE
 [10] [arXiv:2609.36938](https://arxiv.org/pdf/2609.36938) — Janus
 [11] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts
+[12] [arXiv:2609.39131](https://arxiv.org/pdf/2609.39131) — Characterizing HBF

@@ -11,7 +11,7 @@ tags:
 - agentic-ai
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-04-16
-updated: 2026-09-28
+updated: 2026-10-02
 sources:
 - raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
@@ -100,6 +100,11 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 除 GPU+LPU 的 prefill/decode 分工外，[HeteroReason](/papers/heteroreason-fpga-gpu-speculative-reasoning.md) 展示 **draft@FPGA + PRM/target@GPU** 的另一条异构轴：相对同构 GPU 延迟最高约 **1.42×**、能效最高约 **1.57×**（U280/V80 × RTX 3090）。
 
 
+
+## 消费卡 EP 与异构训练规划（2026-10-02）
+
+[ThunderEP](/papers/thunderep-pcie-consumer-gpu-moe.md) 证明在无 NVLink/P2P 的 RTX 40/50 PCIe 系统上，专用 EP 通信仍可相对 NCCL/vLLM 拉开（dispatch **2.00×**，prefill 最高 **1.66×**）。[HAPMoE](/papers/hapmoe-heterogeneity-aware-moe-parallelism.md) 把异构轴推到 **MoE 训练自动并行**（e2e 最高 **3.2×**）。
+
 # Citations
 
 [PDD] [arXiv:2609.13161](https://arxiv.org/pdf/2609.13161)
@@ -112,3 +117,5 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [6] [Ch.9](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/09-分布式推理.md) — 李博杰《AI Infra》
 [7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
 [n] [arXiv:2609.28717](https://arxiv.org/pdf/2609.28717) — HeteroReason
+[8] [arXiv:2609.40093](https://arxiv.org/pdf/2609.40093) — ThunderEP
+[9] [arXiv:2609.39350](https://arxiv.org/pdf/2609.39350) — HAPMoE

@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-10-01
+updated: 2026-10-02
 sources:
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/arch-study-30d-day-22.md
@@ -232,6 +232,11 @@ WSE 简化（无 off-chip）:
 
 [Janus](/papers/janus-agentic-ssd-sparse-kv.md)：稀疏注意力下 SSD 读易进关键路径；预测重叠 + I/O 整形后 TTFT 最高 **1.57–3.69×**，关键路径 SSD **<6.5%**。[SPLASH-layouts](/papers/splash-switching-parallel-layouts-attention.md) 通过 DOP 在不复制 KV 的前提下提高每卡 KV 容量（**+27–60%**），与 HBF/SSD 介质扩容正交。
 
+
+## HBF 放置×调度共设计（2026-10-02）
+
+[Characterizing HBF for LLM Serving](/papers/characterizing-hbf-llm-serving.md)：HBM–HBF–host 分层 + buffered cache-aware 准入；最快配置相对 HBM-only 完成时间 **−36.1–87.0%**，建模能耗最高 **−55.8%**；预留 **10%** 余量使 HBF KV 写 **−69%**、估计寿命 **4.77→14.82 年**——把写寿命从「介质硬约束」变成可调度量。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -253,3 +258,4 @@ WSE 简化（无 off-chip）:
 [17] [arXiv:2609.32278](https://arxiv.org/pdf/2609.32278) — RR-Evict
 [18] [arXiv:2609.36938](https://arxiv.org/pdf/2609.36938) — Janus
 [19] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts
+[20] [arXiv:2609.39131](https://arxiv.org/pdf/2609.39131) — Characterizing HBF LLM Serving

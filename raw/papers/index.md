@@ -1,5 +1,9 @@
 # Other
 
+* [HBF characterizing stub](characterizing-hbf-llm-serving.md) + [PDF](Characterizing_HBF_LLM_Serving_2026.pdf) — arXiv:2609.39131
+* [ThunderEP stub](thunderep-pcie-consumer-gpu-moe.md) + [PDF](ThunderEP_PCIe_Consumer_GPU_MoE_2026.pdf) — arXiv:2609.40093
+* [HAPMoE stub](hapmoe-heterogeneity-aware-moe-parallelism.md) + [PDF](HAPMoE_Heterogeneity_Aware_MoE_Parallelism_2026.pdf) — arXiv:2609.39350
+
 * [Mixture-of-Kittens stub](mixture-of-kittens-moe-megakernel-nvl72.md) + [PDF](MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf) — arXiv:2609.36070
 * [Janus stub](janus-agentic-ssd-sparse-kv.md) + [PDF](Janus_Agentic_SSD_Sparse_KV_2026.pdf) — arXiv:2609.36938
 * [Purlin stub](purlin-collectives-orchestration-datapath.md) + [PDF](Purlin_Collectives_Orchestration_Datapath_2026.pdf) — arXiv:2609.36954

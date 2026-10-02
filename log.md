@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-02
+
+### Watch (morning)
+* **Watch**: 2026-10-02 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC **new = Thu 10/1**（相对 10/1 早报当时仅到 Wed 9/30）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。去重 MoK/Janus/Purlin/SPLASH-layouts/SpecStream/SPIMOE/RR-Evict 等。
+* **Ingest**: Characterizing HBF PDF + stub（arXiv:2609.39131）；ThunderEP（2609.40093）；HAPMoE（2609.39350）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [Characterizing HBF](/papers/characterizing-hbf-llm-serving.md)（完成时间相对 HBM-only **−36.1–87.0%**；能耗最高 **−55.8%**；寿命 **4.77→14.82 年**）；[ThunderEP](/papers/thunderep-pcie-consumer-gpu-moe.md)（dispatch/combine vs NCCL **2.00×/1.53×**；prefill 最高 **1.66×**、decode 最高 **1.26×**）；[HAPMoE](/papers/hapmoe-heterogeneity-aware-moe-parallelism.md)（e2e 训练吞吐最高 **3.2×**；非均匀 PP 再最高 **+78%**；搜索 **<1 分钟**）。
+* **Update**: [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[Heterogeneous Inference](/concepts/heterogeneous-inference.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: SpecScale (2609.39334，TTS 投机服务；MATH 上吞吐 vs naive/FastTTS **2.18×/1.87×**，相对 SpecStream/SPECTRA/DynBranch 增量偏搜索树服务软件)；Provenance-blind KV (2609.38706，共享 KV 正确性/合约，非体系结构主线)；Cascadia (2609.38697，AIPC 无控制面 serving)；HPC-for-Agents (2609.38723，测量/展望)；Vosti (2609.38981，确定性推理形式化)；NDS (2609.38454，通用近数据 strand)；Cobalt/CadenceRL/DScale/vSkipper/MEDEM/Joint MoE sim 等昨日已列理由仍适用；cs.AR STELLA CGRA / HLS pragma LLM 等非本轮主线。
+
 ## 2026-10-01
 
 ### Watch (morning)

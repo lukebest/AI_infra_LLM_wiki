@@ -1,5 +1,9 @@
 # Paper
 
+* [Characterizing HBF for LLM Serving](characterizing-hbf-llm-serving.md) - Berkeley/Furiosa — HBM–HBF–host + buffered 调度；完成时间 −36.1–87.0%；能耗最高 −55.8%；寿命 4.77→14.82 年
+* [ThunderEP: PCIe Consumer-GPU MoE EP](thunderep-pcie-consumer-gpu-moe.md) - 首尔大学 — dispatch/combine vs NCCL 2.00×/1.53×；prefill 最高 1.66×、decode 最高 1.26×
+* [HAPMoE: Heterogeneity-Aware MoE Parallelism](hapmoe-heterogeneity-aware-moe-parallelism.md) - 异构集群 MoE 自动并行；e2e 吞吐最高 3.2×；非均匀 PP 再 +78%；搜索 <1 分钟
+
 * [Mixture-of-Kittens: MoE Megakernel for NVL72s](mixture-of-kittens-moe-megakernel-nvl72.md) - Stanford/Cursor — NVL72；vs 最强公开基线最高 2.37×；512 GPU 生产 e2e 1.41×
 * [Janus: Agentic Serving with SSD-Centric Sparse KV](janus-agentic-ssd-sparse-kv.md) - 上交大等 — TTFT 最高 1.57–3.69×（均值 1.22–1.85×）；关键路径 SSD I/O <6.5%
 * [Purlin: Separating Orchestration from Collectives Datapath](purlin-collectives-orchestration-datapath.md) - Stanford/NVIDIA — 延迟最高 5.14×、带宽 4.50×；SGLang 离线均值 1.13×、在线最高 2.85×
