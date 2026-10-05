@@ -7,6 +7,7 @@ tags:
 - kernel
 - parallelism
 - moe
+updated: 2026-10-05
 timestamp: '2026-04-28T00:00:00Z'
 created: 2026-04-28
 sources:
@@ -60,6 +61,11 @@ MoE 层的通信时间 < 计算时间 → 融合成 pipeline 后，通信可被�
 - Used in: [Deepseek V4](#DeepSeek-V4)
 - Related: [Tilelang](#TileLang), [Csa Hca](#CSA-HCA), [FlashMoE Kernel](/concepts/flashmoe-kernel.md)
 
+## 后续：倾斜感知复制（2026-10-05）
+
+[MegaFlux](/papers/megaflux-skew-resilient-moe-megakernels.md) 在 TensorRT-LLM CuTeDSL MegaMoE 前向 kernel 上加入 **运行时热专家复制**，并新增 backward megakernel 把副本权重下发与梯度归约流水进持久执行：8×B200 前向/反向几何均值 **1.45×/1.28×**（峰值 **2.14×/2.64×**）；vLLM DeepSeek-V4-Pro prefill 中位 **1.13–1.26×**。对照 [Mixture-of-Kittens](/papers/mixture-of-kittens-moe-megakernel-nvl72.md)。
+
 # Citations
 
 [1] [DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf](DeepSeek_V4---d45f7f3c-196b-473d-8faa-8645ce91ea2f.pdf)
+[2] [arXiv:2610.00671](https://arxiv.org/pdf/2610.00671) — MegaFlux

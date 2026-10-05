@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-05
+
+### Watch (morning)
+* **Watch**: 2026-10-05 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC **new = Fri 10/2**（Mon 10/5 美东列表上海早晨尚未放出；相对 10/2 早报当时仅到 Thu 10/1）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。去重 HBF-char/ThunderEP/HAPMoE/MoK/Purlin 等；cs.AR 交叉列表 2608.24637（晶圆级光互连热调谐）已有页。
+* **Ingest**: MegaFlux PDF + stub（arXiv:2610.00671）；GPU-Initiated Communication Dissected（2610.01380）；RapidMoE（2610.01265，EuroSys'27）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [MegaFlux](/papers/megaflux-skew-resilient-moe-megakernels.md)（8×B200 前向/反向几何均值 **1.45×/1.28×**，峰值 **2.14×/2.64×**；vLLM DeepSeek-V4-Pro prefill 中位 **1.13–1.26×**）；[GPU-Initiated Communication Dissected](/papers/gpu-initiated-communication-dissected.md)（最小 GPU 路径发起 **0.7 µs**/完成 **4.0 µs**；库额外最高 **4.6 µs**；~3000 连接 all-to-all 丢 **59%** NIC 消息率）；[RapidMoE](/papers/rapidmoe-residual-offloading-moe-inference.md)（decode 最高 **3.5×**、prefill 最高 **2.1×**；峰值 DRAM **240 GB** vs KTransformers **385 GB**）。
+* **Update**: [MegaMoE Kernel](/concepts/megamoe-kernel.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[Heterogeneous Inference](/concepts/heterogeneous-inference.md)、[Network Interface and System Design](/concepts/network-interface-and-system-design.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: Leto (2610.00687，训练 in-place 故障恢复；恢复快 **3.6–6.5×**，偏可靠性软件)；MoE-CORE (2610.01950，NPU 内存受限专家驻留/预取，与 RapidMoE 同向但对比口径不齐)；Serving a Revisable World (2610.01160，可中断 agent 的版本化执行，vLLM 控制面软件；修订后 TTFT 中位 −17.1%)；ePACT (2610.01784，能耗承诺跟踪)；ShatterQuant (2610.00207，16nm 块级混合精度脉动 Transformer 加速器，评测在 ViT/DiT 非 LLM)；EdgeDAE (2610.00311，VLA 扩散动作 FPGA-GPU)；Redundancy Meets Synergy (2610.00558，MoE 专家选择算法)；CONFERM CGRA / Catscan / ZTA-Q 等非本轮主线。
+
 ## 2026-10-02
 
 ### Watch (morning)

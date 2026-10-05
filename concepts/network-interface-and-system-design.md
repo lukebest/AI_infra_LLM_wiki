@@ -11,6 +11,7 @@ tags:
 - fairness
 - rdma
 - system-design
+updated: 2026-10-05
 timestamp: '2026-07-21T00:00:00Z'
 created: 2026-07-21
 sources:
@@ -90,6 +91,11 @@ Credit **不解**全局拥塞——全网饱和时只会拖慢所有流并加剧
 - [Cerebras WSE](/entities/cerebras-wse.md) / [Cerebras Color Mechanism](/concepts/cerebras-color-mechanism.md)
 - [Cybernetics and Scientific Methodology](/concepts/cybernetics-and-scientific-methodology.md) — 负反馈 / 通道容量方法论
 
+## GPU 作为 NI 发起者（2026-10-05）
+
+[GPU-Initiated Communication Dissected](/papers/gpu-initiated-communication-dissected.md) 把经典 NI 问题（队列放置、doorbell 顺序、完成语义）搬到 GPU–NIC 边界：库额外发起开销最高 **4.6 µs**，调优 CPU proxy 空闲时可持平 GPU 路径；达到 **260 M msg/s** 需 doorbell 批处理与队列并行。另见 [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-19.md](raw/articles/interconn-study-21d-day-19.md) — D&T Ch.13–14（Day 19）
+[2] [arXiv:2610.01380](https://arxiv.org/pdf/2610.01380) — GPU-Initiated Communication Dissected

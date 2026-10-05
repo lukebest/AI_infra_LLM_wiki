@@ -1,5 +1,8 @@
 # Other
 
+* [MegaFlux stub](megaflux-skew-resilient-moe-megakernels.md) + [PDF](MegaFlux_Skew_Resilient_MoE_Megakernels_2026.pdf) — arXiv:2610.00671
+* [GPU-Initiated Communication stub](gpu-initiated-communication-dissected.md) + [PDF](GPU_Initiated_Communication_Dissected_2026.pdf) — arXiv:2610.01380
+* [RapidMoE stub](rapidmoe-residual-offloading-moe-inference.md) + [PDF](RapidMoE_Residual_Offloading_MoE_Inference_2026.pdf) — arXiv:2610.01265
 * [HBF characterizing stub](characterizing-hbf-llm-serving.md) + [PDF](Characterizing_HBF_LLM_Serving_2026.pdf) — arXiv:2609.39131
 * [ThunderEP stub](thunderep-pcie-consumer-gpu-moe.md) + [PDF](ThunderEP_PCIe_Consumer_GPU_MoE_2026.pdf) — arXiv:2609.40093
 * [HAPMoE stub](hapmoe-heterogeneity-aware-moe-parallelism.md) + [PDF](HAPMoE_Heterogeneity_Aware_MoE_Parallelism_2026.pdf) — arXiv:2609.39350

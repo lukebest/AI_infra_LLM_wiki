@@ -1,5 +1,8 @@
 # Paper
 
+* [MegaFlux: Skew-Resilient MoE Megakernels](megaflux-skew-resilient-moe-megakernels.md) - Princeton+NVIDIA — megakernel 内运行时热专家复制；8×B200 前向/反向几何均值 1.45×/1.28×（峰值 2.14×/2.64×）
+* [GPU-Initiated Communication Dissected](gpu-initiated-communication-dissected.md) - Koç+fal — IBGDA vs CPU proxy；发起 0.7 µs/完成 4.0 µs；库额外最高 4.6 µs；~3000 连接 all-to-all 丢 59% 消息率
+* [RapidMoE: Residual Offloading MoE Inference](rapidmoe-residual-offloading-moe-inference.md) - 清华 EuroSys'27 — 比特级 CPU–GPU 卸载；decode 最高 3.5×、prefill 最高 2.1×
 * [Characterizing HBF for LLM Serving](characterizing-hbf-llm-serving.md) - Berkeley/Furiosa — HBM–HBF–host + buffered 调度；完成时间 −36.1–87.0%；能耗最高 −55.8%；寿命 4.77→14.82 年
 * [ThunderEP: PCIe Consumer-GPU MoE EP](thunderep-pcie-consumer-gpu-moe.md) - 首尔大学 — dispatch/combine vs NCCL 2.00×/1.53×；prefill 最高 1.66×、decode 最高 1.26×
 * [HAPMoE: Heterogeneity-Aware MoE Parallelism](hapmoe-heterogeneity-aware-moe-parallelism.md) - 异构集群 MoE 自动并行；e2e 吞吐最高 3.2×；非均匀 PP 再 +78%；搜索 <1 分钟

@@ -11,7 +11,7 @@ tags:
 - agentic-ai
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-04-16
-updated: 2026-10-02
+updated: 2026-10-05
 sources:
 - raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
@@ -105,6 +105,11 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 
 [ThunderEP](/papers/thunderep-pcie-consumer-gpu-moe.md) 证明在无 NVLink/P2P 的 RTX 40/50 PCIe 系统上，专用 EP 通信仍可相对 NCCL/vLLM 拉开（dispatch **2.00×**，prefill 最高 **1.66×**）。[HAPMoE](/papers/hapmoe-heterogeneity-aware-moe-parallelism.md) 把异构轴推到 **MoE 训练自动并行**（e2e 最高 **3.2×**）。
 
+
+## 比特级 CPU–GPU MoE 卸载（2026-10-05）
+
+[RapidMoE](/papers/rapidmoe-residual-offloading-moe-inference.md)（EuroSys'27）把专家拆为低比特 W^Q（GPU）+ 残差 W^R（CPU），只让少数关键专家在 CPU 补精度：decode 相对 SOTA 卸载系统最高 **3.5×**、prefill 最高 **2.1×**；DeepSeek-V3 峰值 DRAM **240 GB** vs KTransformers **385 GB**。与 [ThunderEP](/papers/thunderep-pcie-consumer-gpu-moe.md) 互补（权重 vs EP 通信）。
+
 # Citations
 
 [PDD] [arXiv:2609.13161](https://arxiv.org/pdf/2609.13161)
@@ -119,3 +124,4 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [n] [arXiv:2609.28717](https://arxiv.org/pdf/2609.28717) — HeteroReason
 [8] [arXiv:2609.40093](https://arxiv.org/pdf/2609.40093) — ThunderEP
 [9] [arXiv:2609.39350](https://arxiv.org/pdf/2609.39350) — HAPMoE
+[10] [arXiv:2610.01265](https://arxiv.org/pdf/2610.01265) — RapidMoE

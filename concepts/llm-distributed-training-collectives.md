@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-10-01T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-02
+updated: 2026-10-05
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -169,6 +169,12 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [ThunderEP](/papers/thunderep-pcie-consumer-gpu-moe.md) — 无 P2P 消费卡上把 host 当作共享通信介质；dispatch/combine vs NCCL **2.00×/1.53×**；prefill 最高 **1.66×**
 - [HAPMoE](/papers/hapmoe-heterogeneity-aware-moe-parallelism.md) — MoE×异构集群六维自动并行；e2e 训练吞吐最高 **3.2×**，非均匀 PP 再最高 **+78%**
 
+
+## MoE megakernel 倾斜与 GPU 发起 RDMA（2026-10-05）
+
+- [MegaFlux](/papers/megaflux-skew-resilient-moe-megakernels.md) — megakernel 内运行时热专家复制；前向/反向几何均值 **1.45×/1.28×**；反向隐藏权重传输+副本梯度归约 **91–100%**
+- [GPU-Initiated Communication Dissected](/papers/gpu-initiated-communication-dissected.md) — IBGDA vs CPU proxy；最小 GPU 路径发起 **0.7 µs**/完成 **4.0 µs**；与 bulk 共享队列延迟升 **1–3 个数量级**；~3000 连接 all-to-all 丢 **59%** NIC 消息率
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -186,3 +192,5 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [13] [raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf](raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf) — Purlin
 [14] [arXiv:2609.40093](https://arxiv.org/pdf/2609.40093) — ThunderEP
 [15] [arXiv:2609.39350](https://arxiv.org/pdf/2609.39350) — HAPMoE
+[16] [arXiv:2610.00671](https://arxiv.org/pdf/2610.00671) — MegaFlux
+[17] [arXiv:2610.01380](https://arxiv.org/pdf/2610.01380) — GPU-Initiated Communication Dissected
