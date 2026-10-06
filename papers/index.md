@@ -1,5 +1,9 @@
 # Paper
 
+* [Divide and Conquer: MCM GPU Disaggregation](mcm-gpu-divide-and-conquer-disaggregation.md) - Cantabria — MCM GPU 扩展策略×拓扑 DSE；16-chiplet Torus/256 SM 性能 2.40×、能耗 −4.45×；Ring 在 64 chiplet 跌破单片 10%
+* [RailWave: EP Rail & Incast Scheduling](railwave-ep-rail-incast-scheduling.md) - 中山大学等 — DeepEP 下 RailBalance + 循环置换波次；GLM-4.5-Air 回放 P50 通信 H800 2.02–5.84×、H20 1.74–4.36×
+* [AFORE: AFD Expert Reconfiguration](afore-afd-expert-reconfiguration.md) - HKUST 等 — AFD 微批级专家重配 + NVLink 迁移重叠；吞吐 +10.1–17.6%、P95 ITL −7.1–9.5% vs 最强基线
+* [EdgeAgent: UMA Multi-Agent Edge Inference](edgeagent-uma-multi-agent-edge-inference.md) - 中山大学+中国移动 ASPLOS'27 — M4 UMA 零拷贝 CPU–GPU TP + 动态草稿 + 工具停顿让出；1.29×/1.77×
 * [MegaFlux: Skew-Resilient MoE Megakernels](megaflux-skew-resilient-moe-megakernels.md) - Princeton+NVIDIA — megakernel 内运行时热专家复制；8×B200 前向/反向几何均值 1.45×/1.28×（峰值 2.14×/2.64×）
 * [GPU-Initiated Communication Dissected](gpu-initiated-communication-dissected.md) - Koç+fal — IBGDA vs CPU proxy；发起 0.7 µs/完成 4.0 µs；库额外最高 4.6 µs；~3000 连接 all-to-all 丢 59% 消息率
 * [RapidMoE: Residual Offloading MoE Inference](rapidmoe-residual-offloading-moe-inference.md) - 清华 EuroSys'27 — 比特级 CPU–GPU 卸载；decode 最高 3.5×、prefill 最高 2.1×

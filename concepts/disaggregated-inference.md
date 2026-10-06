@@ -9,8 +9,9 @@ tags:
 - disaggregated-inference
 timestamp: '2026-08-24T00:00:00Z'
 created: 2026-04-17
-updated: 2026-09-29
+updated: 2026-10-06
 sources:
+- raw/papers/AFORE_AFD_Expert_Reconfiguration_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
 - arXiv:2504.02263
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
@@ -197,6 +198,10 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 
 [SPLASH-layouts](/papers/splash-switching-parallel-layouts-attention.md) 在不停机条件下热切换 TP/DP-attention/CP/DOP，相对固定布局吞吐 **1.3–1.73×**（GLM-5.3@B200），把「并行布局」做成与 P/D 池拓扑正交的服务旋钮。[Janus](/papers/janus-agentic-ssd-sparse-kv.md) 针对 agent append-prefill 的稀疏 KV SSD 路径，TTFT 最高 **1.57–3.69×**。
 
+## AFD 放大专家不均与微批级重配（2026-10-06）
+
+[AFORE](/papers/afore-afd-expert-reconfiguration.md)：AFD 把 FFN 变成独立流水级后，偏斜路由吞吐损失从单体 **−11.9%** 放大到 **−20.1%**。AFORE 利用"下一微批路由在 FFN 前可见"与"前序在飞微批构成迁移窗口"，用 NVLink p2p 复制热专家：GLM-4.5-Air 110B（2×8 A100）吞吐 **+10.1–17.6%**、P95 ITL **−7.1–9.5%**（vs 最强基线），迁移 **0.45–0.50 ms** 全被 **~2 ms** 前瞻窗口隐藏。是 [MegaScale-Infer](/papers/megascale-infer-2504.02263.md) 式 AFD 的动态负载补丁，与 [M2N Communication](/concepts/m2n-communication.md) 相关。
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -223,3 +228,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [21] [arXiv:2609.32278](https://arxiv.org/pdf/2609.32278) — RR-Evict
 [22] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts
 [23] [arXiv:2609.36938](https://arxiv.org/pdf/2609.36938) — Janus
+[24] [arXiv:2610.03203](https://arxiv.org/pdf/2610.03203) — AFORE

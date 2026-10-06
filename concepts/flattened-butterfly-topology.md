@@ -14,7 +14,9 @@ tags:
 - switch
 timestamp: '2026-06-12T00:00:00Z'
 created: 2026-06-12
+updated: 2026-10-06
 sources:
+- raw/papers/MCM_GPU_Divide_and_Conquer_Disaggregation_2026.pdf
 - raw/papers/micro-fbfly-flattened-butterfly.md
 ---
 
@@ -101,6 +103,11 @@ FBFLY 行/列内全互连产生大量 bypass channel（跨过中间路由器的�
 - [Switching Principles](/concepts/switching-principles.md) — 交换原理基础
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 确定性执行与拓扑选择
 
+## MCM GPU chiplet 间网络（2026-10-06）
+
+[Divide and Conquer: MCM GPUs](/papers/mcm-gpu-divide-and-conquer-disaggregation.md) 把 FBFLY 用作 GPU chiplet 间拓扑（UCIe 3.0 链路 512 GB/s/方向）：64 chiplet scale-out 时 Flat-B IPC 约为 Mesh/Torus 的 **2×**、Ring 的 **10×**，GEMM 峰值带宽达 4-chiplet ring 的 **13.5×**（Torus 8.7×、Mesh 7.5×），且是唯一在 64 chiplet 保持单片性能的拓扑；concentration 版 **Flat-4×4**（4 chiplet/路由器）在大 SM 数时能效最优、性能优于更贵的 2D Torus。与 [Mesh/Torus](/concepts/mesh-torus-topology.md) 对照：16 chiplet 时 Torus 才是性能—能效平衡点。
+
 # Citations
 
 [1] [raw/papers/micro-fbfly-flattened-butterfly.md](raw/papers/micro-fbfly-flattened-butterfly.md)
+[2] [arXiv:2610.03061](https://arxiv.org/pdf/2610.03061) — MCM GPU Divide and Conquer

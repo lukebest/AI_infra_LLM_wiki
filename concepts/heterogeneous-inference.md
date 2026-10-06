@@ -11,8 +11,9 @@ tags:
 - agentic-ai
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-04-16
-updated: 2026-10-05
+updated: 2026-10-06
 sources:
+- raw/papers/EdgeAgent_UMA_Multi_Agent_Edge_Inference_2026.pdf
 - raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
 - raw/articles/nvidia-groq3-lpx-blog-2026-04.md
@@ -110,6 +111,10 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 
 [RapidMoE](/papers/rapidmoe-residual-offloading-moe-inference.md)（EuroSys'27）把专家拆为低比特 W^Q（GPU）+ 残差 W^R（CPU），只让少数关键专家在 CPU 补精度：decode 相对 SOTA 卸载系统最高 **3.5×**、prefill 最高 **2.1×**；DeepSeek-V3 峰值 DRAM **240 GB** vs KTransformers **385 GB**。与 [ThunderEP](/papers/thunderep-pcie-consumer-gpu-moe.md) 互补（权重 vs EP 通信）。
 
+## 端侧 UMA 多智能体（2026-10-06）
+
+[EdgeAgent](/papers/edgeagent-uma-multi-agent-edge-inference.md)（ASPLOS'27）：Apple M4 UMA（120 GB/s）上 decode 期 CPU+GPU 共跑因抢同一总线仅 **0.99×**（大矩阵），故改为零拷贝列切分 TP + SME2 kernel（vs Batch-SD **1.29×**）、per-agent 动态草稿预算、工具停顿 suspend-and-yield；[1,100] s 工具延迟下 makespan **1.77×**。与数据中心侧 [RapidMoE](/papers/rapidmoe-residual-offloading-moe-inference.md) 的 CPU–GPU 分工相对照：端侧瓶颈是共享带宽而非 PCIe。
+
 # Citations
 
 [PDD] [arXiv:2609.13161](https://arxiv.org/pdf/2609.13161)
@@ -125,3 +130,4 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [8] [arXiv:2609.40093](https://arxiv.org/pdf/2609.40093) — ThunderEP
 [9] [arXiv:2609.39350](https://arxiv.org/pdf/2609.39350) — HAPMoE
 [10] [arXiv:2610.01265](https://arxiv.org/pdf/2610.01265) — RapidMoE
+[11] [arXiv:2610.03394](https://arxiv.org/pdf/2610.03394) — EdgeAgent

@@ -13,7 +13,7 @@ tags:
 - infrastructure
 timestamp: '2026-09-25T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-25
+updated: 2026-10-06
 sources:
 - raw/articles/interconn-study-21d-day-01.md
 - raw/articles/interconn-study-21d-day-03.md
@@ -152,6 +152,10 @@ sources:
 
 [Flux](/papers/flux-ocs-scheduling-llm-training.md) 把应用层训练依赖图直接约束拓扑时间表：重配置延迟 τ 成为一等参数（1 μs–1 ms）。相对只选静态拓扑或周期轮转，它展示「有用电路 + 与计算重叠」比单纯减少重配置次数更重要。
 
+## MCM GPU：网络可扩展性压过算力密度（2026-10-06）
+
+[Divide and Conquer: MCM GPUs](/papers/mcm-gpu-divide-and-conquer-disaggregation.md) 用 GPGPU-Sim+BookSim 系统扫 scale-out/scale-up/hybrid × Ring/Mesh/Torus/[Flattened Butterfly](/concepts/flattened-butterfly-topology.md)：4-chiplet ring 下 SM 8× 仅换来 **1.23×**；Ring 在 16/64 chiplet 跌破单片 **50%/10%**；16-chiplet Torus（256 SM）相对同算力 SOTA MCM 性能 **2.40×**、能耗 **−4.45×**；64-chiplet 非 ring 配置以 1/2–1/4 算力反超 16-chiplet 1024 SM（最高 **1.39×/2×**）。结论：拓扑（端口数/平均距离）是 chiplet 化 GPU 的一阶设计变量。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-01.md](raw/articles/interconn-study-21d-day-01.md) — Dally & Towles Ch.1（Day 1）
@@ -181,3 +185,4 @@ sources:
 [25] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
 [26] [arXiv:2609.19207](https://arxiv.org/pdf/2609.19207) — MeshKV
 [27] [arXiv:2609.25949](https://arxiv.org/pdf/2609.25949) — Flux OCS scheduling
+[28] [arXiv:2610.03061](https://arxiv.org/pdf/2610.03061) — MCM GPU Divide and Conquer

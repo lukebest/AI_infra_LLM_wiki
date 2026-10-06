@@ -1,5 +1,9 @@
 # Other
 
+* [MCM GPU Divide and Conquer stub](mcm-gpu-divide-and-conquer-disaggregation.md) + [PDF](MCM_GPU_Divide_and_Conquer_Disaggregation_2026.pdf) — arXiv:2610.03061
+* [RailWave stub](railwave-ep-rail-incast-scheduling.md) + [PDF](RailWave_EP_Rail_Incast_Scheduling_2026.pdf) — arXiv:2610.03415
+* [AFORE stub](afore-afd-expert-reconfiguration.md) + [PDF](AFORE_AFD_Expert_Reconfiguration_2026.pdf) — arXiv:2610.03203
+* [EdgeAgent stub](edgeagent-uma-multi-agent-edge-inference.md) + [PDF](EdgeAgent_UMA_Multi_Agent_Edge_Inference_2026.pdf) — arXiv:2610.03394
 * [MegaFlux stub](megaflux-skew-resilient-moe-megakernels.md) + [PDF](MegaFlux_Skew_Resilient_MoE_Megakernels_2026.pdf) — arXiv:2610.00671
 * [GPU-Initiated Communication stub](gpu-initiated-communication-dissected.md) + [PDF](GPU_Initiated_Communication_Dissected_2026.pdf) — arXiv:2610.01380
 * [RapidMoE stub](rapidmoe-residual-offloading-moe-inference.md) + [PDF](RapidMoE_Residual_Offloading_MoE_Inference_2026.pdf) — arXiv:2610.01265

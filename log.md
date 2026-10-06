@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-06
+
+### Watch (morning)
+* **Watch**: 2026-10-06 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC **new = Mon 10/5**（cs.AR 13 新 + 4 交叉 + 3 替换；cs.DC 16 新 + 交叉/替换；Tue 10/6 列表上海 9 点仍未放出）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。去重 MegaFlux/GPU-initiated comm/RapidMoE/HBF/ThunderEP/HAPMoE 等，新候选 grep 均未命中。
+* **Ingest**: Divide and Conquer MCM GPU PDF + stub（arXiv:2610.03061）；RailWave（2610.03415）；AFORE（2610.03203）；EdgeAgent（2610.03394，ASPLOS'27）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [MCM GPU Divide and Conquer](/papers/mcm-gpu-divide-and-conquer-disaggregation.md)（16-chiplet Torus/256 SM vs 同算力 SOTA MCM 性能 **2.40×**、能耗 **−4.45×**；Ring 16/64 chiplet 跌破单片 **50%/10%**）；[RailWave](/papers/railwave-ep-rail-incast-scheduling.md)（P50 通信 H800 **2.02–5.84×**、H20 **1.74–4.36×**；同需求 incast 延迟 **+67.1%**）；[AFORE](/papers/afore-afd-expert-reconfiguration.md)（吞吐 **+10.1–17.6%**、P95 ITL **−7.1–9.5%** vs 最强基线；迁移 0 暴露）；[EdgeAgent](/papers/edgeagent-uma-multi-agent-edge-inference.md)（UMA 执行 **1.29×**、极端工具停顿 makespan **1.77×**）。
+* **Update**: [Flattened Butterfly](/concepts/flattened-butterfly-topology.md)、[Interconnection Network Design Space](/concepts/interconnection-network-design-space.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[Disaggregated Inference](/concepts/disaggregated-inference.md)、[Heterogeneous Inference](/concepts/heterogeneous-inference.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: Hardware-Native Joint Sparse-Quantization for Trillion-Scale MoE (2610.02241，SpTC 稀疏量化 grouped GEMM；B200 kernel 最高 1.65×，偏压缩算法)；FlashAttention on Blackwell Fixed-Shift Softmax (2610.02229，TLX 几何均值 +7.3%，kernel 增量)；Backside Clock Meshes for 2 nm BSPDN (2610.02401，背面时钟网格 skew −45%，物理设计)；RAPID Row-Parallel PIM in DRAM (2610.02502)；Coda coding-agent serving (2610.03088，准入调度软件)；VenusRL agentic RL (2610.03286，最高 4.24× 训练，软件框架)；ServeTwin (2610.02732，分布式 serving 模拟器)；WakeKV (2610.02713)、BCR (2610.02233)、CORE (2610.02235) KV 压缩/复用算法；CUDA→Tenstorrent Blackhole MLIR 迁移 (2610.02658)；100 MW AI 集群功耗管理 (2605.24461 替换版)。
+
 ## 2026-10-05
 
 ### Watch (morning)

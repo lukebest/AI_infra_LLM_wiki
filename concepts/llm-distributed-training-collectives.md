@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-10-01T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-05
+updated: 2026-10-06
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -175,6 +175,10 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [MegaFlux](/papers/megaflux-skew-resilient-moe-megakernels.md) — megakernel 内运行时热专家复制；前向/反向几何均值 **1.45×/1.28×**；反向隐藏权重传输+副本梯度归约 **91–100%**
 - [GPU-Initiated Communication Dissected](/papers/gpu-initiated-communication-dissected.md) — IBGDA vs CPU proxy；最小 GPU 路径发起 **0.7 µs**/完成 **4.0 µs**；与 bulk 共享队列延迟升 **1–3 个数量级**；~3000 连接 all-to-all 丢 **59%** NIC 消息率
 
+## EP all-to-all：Rail 均衡 + incast 波次（2026-10-06）
+
+- [RailWave](/papers/railwave-ep-rail-incast-scheduling.md) — DeepEP 之下源端 RailBalance + 循环置换波次 + 标定选择器；专家负载不均对 Rail 不均线性解释力仅 R² **0.019/0.296**；同需求仅改并发顺序延迟 **+67.1%**；GLM-4.5-Air 回放 P50 通信 H800 **2.02–5.84×**、H20 **1.74–4.36×** vs Native。与 [Multi-Plane Clos](/concepts/multi-plane-clos-topology.md) 的多平面负载均衡同源。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -194,3 +198,4 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [15] [arXiv:2609.39350](https://arxiv.org/pdf/2609.39350) — HAPMoE
 [16] [arXiv:2610.00671](https://arxiv.org/pdf/2610.00671) — MegaFlux
 [17] [arXiv:2610.01380](https://arxiv.org/pdf/2610.01380) — GPU-Initiated Communication Dissected
+[18] [arXiv:2610.03415](https://arxiv.org/pdf/2610.03415) — RailWave
