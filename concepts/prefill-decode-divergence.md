@@ -11,7 +11,7 @@ tags:
 - throughput
 timestamp: '2026-07-17T00:00:00Z'
 created: 2026-06-15
-updated: 2026-09-29
+updated: 2026-10-07
 sources:
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
@@ -153,7 +153,17 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 文本侧 Prefill/Decode 正交之外，[EAServe](/papers/easerve-encode-aware-disaggregated-mllm.md) 指出 MLLM **Encode** 再引入短前向、批–延迟敏感的第三轴：入口饥饿与 encode GPU 空转并存；仅加微批会淹没下游（Table 1）。Encode-aware 调度把入口利用率拉到约 **80%**，P99 TTFT（image, Λ=2）相对 Dynamo **233.8→10.8 s**。
 
+## 并行度也随阶段分歧（2026-10-07）
+
+[并行策略三分账](/papers/llm-inference-parallelism-compute-comm-tradeoffs.md)（Dell，8×A100）：prefill 下 TP8 约 **40%** TTFT 耗在 NCCL，PP 更优；decode 下 PP 气泡主导，TP 更优；decode 有效 NVLink 带宽仅 ~**150 GB/s**（理论 25%），延迟受限。PD 分离后两侧应各选并行度。
+
+## 具身 VLA：瓶颈看动作张量形状（2026-10-07）
+
+[VLA 负载刻画](/papers/vla-workload-characterization-embodied-ai.md)（ASPLOS'27）：batch-1 闭环下，去噪动作头 GEMM 落在 RTX 4090 屋脊点（163.9 FLOP/B）下方，骨干与视频 DiT 在上方——资源分歧由 **动作张量维度** 而非 prefill/decode 阶段决定；自回归 OpenVLA 的 6 次 cached decode 仍占 E2E 67%。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
 [2] [arXiv:2609.31551](https://arxiv.org/pdf/2609.31551) — EAServe
+[3] [arXiv:2610.05305](https://arxiv.org/pdf/2610.05305) — Parallelism compute–comm trade-offs
+[4] [arXiv:2610.05062](https://arxiv.org/pdf/2610.05062) — VLA workload characterization

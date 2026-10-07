@@ -1,5 +1,10 @@
 # Paper
 
+* [VLA Workload Characterization for Embodied AI](vla-workload-characterization-embodied-ai.md) - KAIST ASPLOS'27 — batch-1 闭环 VLA 刻画；动作张量维度定访存/计算受限；Orin 降频省能 24–32%；重叠执行 −56 pp / 3.9× / 5.1× 无 Pareto 最优
+* [HiNa-MoE: CPU AMX MoE Inference](hina-moe-cpu-amx-moe-inference.md) - 国防科大 PACT'26 — AMX 非侵入 MoE 算子；FFN 最高 3.37×、端到端 decode 最高 2.09×
+* [LLM Inference Parallelism: Compute–Comm Trade-offs](llm-inference-parallelism-compute-comm-tradeoffs.md) - Dell — TP/PP/HB 解析模型；prefill 选 PP（TP8 约 40% TTFT 在 NCCL）、decode 选 TP；decode 有效 NVLink ~150 GB/s
+* [Terracotta: Flexible DRAM Interface & Controller](terracotta-flexible-dram-interface-controller.md) - ETH SAFARI MICRO 2026 — 自定义命令 + 可编程内存控制器；>96% 定制收益，面积 0.03%、功耗 0.56%
+
 * [Divide and Conquer: MCM GPU Disaggregation](mcm-gpu-divide-and-conquer-disaggregation.md) - Cantabria — MCM GPU 扩展策略×拓扑 DSE；16-chiplet Torus/256 SM 性能 2.40×、能耗 −4.45×；Ring 在 64 chiplet 跌破单片 10%
 * [RailWave: EP Rail & Incast Scheduling](railwave-ep-rail-incast-scheduling.md) - 中山大学等 — DeepEP 下 RailBalance + 循环置换波次；GLM-4.5-Air 回放 P50 通信 H800 2.02–5.84×、H20 1.74–4.36×
 * [AFORE: AFD Expert Reconfiguration](afore-afd-expert-reconfiguration.md) - HKUST 等 — AFD 微批级专家重配 + NVLink 迁移重叠；吞吐 +10.1–17.6%、P95 ITL −7.1–9.5% vs 最强基线

@@ -9,6 +9,7 @@ tags:
 - kv-cache
 - gpu
 timestamp: '2026-06-15T00:00:00Z'
+updated: 2026-10-07
 created: 2026-06-15
 sources:
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -114,6 +115,11 @@ DeepSeek-R1 的 [MLA](/concepts/csa-hca.md)（Multi-Head Latent Attention）在�
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 异构硬件下的并行度选择
 - [Deepseek V4](/summaries/deepseek-v4.md) — MLA 架构使 PP 在 MoE 场景下可行
 
+## TP↔PP 随阶段切换的机理（2026-10-07）
+
+[并行策略三分账](/papers/llm-inference-parallelism-compute-comm-tradeoffs.md) 把延迟拆成计算 + TP 集体通信 + PP 点对点 + 气泡：prefill 消息大、TP 每层两次 AllReduce 同步贵 → **PP 优**；decode S=1、PP 填充/排空气泡不变 → **TP 优**（TP8 NCCL 最多但 ITL 最低）。与本页规模切换点叠加：先按模型规模定 DP/TP/混合，再按阶段定 TP 与 PP 配比。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
+[2] [arXiv:2610.05305](https://arxiv.org/pdf/2610.05305) — Parallelism compute–comm trade-offs

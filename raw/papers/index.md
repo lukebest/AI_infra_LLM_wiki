@@ -1,5 +1,9 @@
 # Other
 
+* [VLA workload stub](vla-workload-characterization-embodied-ai.md) + [PDF](VLA_Workload_Characterization_Embodied_AI_2026.pdf) — arXiv:2610.05062
+* [HiNa-MoE stub](hina-moe-cpu-amx-moe-inference.md) + [PDF](HiNa_MoE_CPU_AMX_MoE_Inference_2026.pdf) — arXiv:2610.05123
+* [Parallelism trade-offs stub](llm-inference-parallelism-compute-comm-tradeoffs.md) + [PDF](LLM_Inference_Parallelism_Compute_Comm_Tradeoffs_2026.pdf) — arXiv:2610.05305
+* [Terracotta stub](terracotta-flexible-dram-interface-controller.md) + [PDF](Terracotta_Flexible_DRAM_Interface_Controller_2026.pdf) — arXiv:2610.06475
 * [MCM GPU Divide and Conquer stub](mcm-gpu-divide-and-conquer-disaggregation.md) + [PDF](MCM_GPU_Divide_and_Conquer_Disaggregation_2026.pdf) — arXiv:2610.03061
 * [RailWave stub](railwave-ep-rail-incast-scheduling.md) + [PDF](RailWave_EP_Rail_Incast_Scheduling_2026.pdf) — arXiv:2610.03415
 * [AFORE stub](afore-afd-expert-reconfiguration.md) + [PDF](AFORE_AFD_Expert_Reconfiguration_2026.pdf) — arXiv:2610.03203

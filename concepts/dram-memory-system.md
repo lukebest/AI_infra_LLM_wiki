@@ -10,7 +10,7 @@ tags:
 - hbm
 - wse
 timestamp: '2026-08-26T00:00:00Z'
-updated: 2026-08-28
+updated: 2026-10-07
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-17.md
@@ -103,6 +103,11 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 - [OXMIQ HBF](/papers/hc2026-oxmiq-hbf.md) — HBF 是低 α/低 β 容量点；同机柜 ~14× 容量 / ~0.6× 带宽
 - [Pistil](/papers/hc2026-pistil-20-chiplet-slm.md) — 边缘 2.5D RPC-DRAM flower，512 MB / 51.2 GB/s
 
+## 可编程内存控制器（2026-10-07）
+
+[Terracotta](/papers/terracotta-flexible-dram-interface-controller.md)（MICRO 2026）：PuD、低成本维护、子阵列并行（MASA）、降延迟（ChargeCache/CROW）等技术共享"自定义命令 + 控制器状态/触发/更新/动作"结构。DDR5 上一次性标准化命令编码 + 可编程控制器，4 类技术保留 **>96%** 定制收益；DRAM 能耗开销 0.6–3.2%，面积/功耗 0.03%/0.56%。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-17.md](raw/articles/arch-study-30d-day-17.md) — H&P Ch.2 内存技术（Day 17）
+[2] [arXiv:2610.06475](https://arxiv.org/pdf/2610.06475) — Terracotta

@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-07
+
+### Watch (morning)
+* **Watch**: 2026-10-07 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC **new = Tue 10/6**（cs.AR 23 条含交叉/替换；cs.DC 68 条）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。去重：2608.24637（晶圆级光互连热调谐）、2609.39131（HBF）已有页，2609.14643（BigMoMo）log 已提；新候选 grep 均未命中。
+* **Ingest**: VLA workload characterization PDF + stub（arXiv:2610.05062，ASPLOS'27）；HiNa-MoE（2610.05123，PACT'26）；Parallelism compute–comm trade-offs（2610.05305）；Terracotta（2610.06475，MICRO 2026 扩展版）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [VLA Workload Characterization](/papers/vla-workload-characterization-embodied-ai.md)（Orin 降频省能 **24–32%**、Thor **1–4%**；重叠执行精度 **−56 pp**/速度 **3.9×**/能耗 **5.1×**）；[HiNa-MoE](/papers/hina-moe-cpu-amx-moe-inference.md)（FFN 最高 **3.37×**；端到端 decode 最高 **2.09×**）；[Parallelism Trade-offs](/papers/llm-inference-parallelism-compute-comm-tradeoffs.md)（prefill TP8 约 **40%** TTFT 在 NCCL；decode 有效 NVLink ~**150 GB/s**）；[Terracotta](/papers/terracotta-flexible-dram-interface-controller.md)（保留 **>96%** 定制收益；面积 **0.03%**、功耗 **0.56%**）。
+* **Update**: [Heterogeneous Inference](/concepts/heterogeneous-inference.md)、[Prefill-Decode Divergence](/concepts/prefill-decode-divergence.md)、[Parallelism Transition Point](/concepts/parallelism-transition-point.md)、[DRAM and Memory System](/concepts/dram-memory-system.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: PhaseGate (2610.04537，M4 UMA 上按 LLM 阶段准入 CPU 检索；检索吞吐 **2.0×**，NeurIPS workshop，与 EdgeAgent 同向)；Nexus (2610.05709，云-边 agent 执行平台，软件)；SparseCraft (2610.05037，LLM agent 闭环改 Gemmini RTL；周期少 **2.1×**，A3@MICRO workshop，用 agent 做设计而非为 agent 设计硬件)；MOLT (2610.05748，serving 与微调细粒度共享显存)；LearnSched (2610.06212，agent 自进化调度)；RetainZ (2610.05554，ZNS SSD 检查点放置)；RL-PDN (2610.06148，供电网络 RL 优化)；Alkaid (2610.04808)、AID (2610.04801)、CommuteProp (2610.05105)、SyclKittens (2610.04277)、HLS 修复/VHDL 基准等非本轮主线。
+
 ## 2026-10-06
 
 ### Watch (morning)

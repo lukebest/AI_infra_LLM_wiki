@@ -11,7 +11,7 @@ tags:
 - agentic-ai
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-04-16
-updated: 2026-10-06
+updated: 2026-10-07
 sources:
 - raw/papers/EdgeAgent_UMA_Multi_Agent_Edge_Inference_2026.pdf
 - raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
@@ -115,6 +115,10 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 
 [EdgeAgent](/papers/edgeagent-uma-multi-agent-edge-inference.md)（ASPLOS'27）：Apple M4 UMA（120 GB/s）上 decode 期 CPU+GPU 共跑因抢同一总线仅 **0.99×**（大矩阵），故改为零拷贝列切分 TP + SME2 kernel（vs Batch-SD **1.29×**）、per-agent 动态草稿预算、工具停顿 suspend-and-yield；[1,100] s 工具延迟下 makespan **1.77×**。与数据中心侧 [RapidMoE](/papers/rapidmoe-residual-offloading-moe-inference.md) 的 CPU–GPU 分工相对照：端侧瓶颈是共享带宽而非 PCIe。
 
+## AMX CPU 专家执行引擎（2026-10-07）
+
+[HiNa-MoE](/papers/hina-moe-cpu-amx-moe-inference.md)（PACT'26）补的是 CPU–GPU MoE 卸载里 **CPU 那一半的算子**：不改权重布局（与 GPU 库兼容），在页交错下做 NUMA-aware 切分，decode MV→MM 用上 AMX。FFN kernel vs IPEX/KTransformers 平均 **1.73×/1.68×**；双路 6430+A6000 batch-1 decode vs KTransformers 平均 **1.22×**。与 [RapidMoE](/papers/rapidmoe-residual-offloading-moe-inference.md) 的比特级切分可叠加。
+
 # Citations
 
 [PDD] [arXiv:2609.13161](https://arxiv.org/pdf/2609.13161)
@@ -131,3 +135,4 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [9] [arXiv:2609.39350](https://arxiv.org/pdf/2609.39350) — HAPMoE
 [10] [arXiv:2610.01265](https://arxiv.org/pdf/2610.01265) — RapidMoE
 [11] [arXiv:2610.03394](https://arxiv.org/pdf/2610.03394) — EdgeAgent
+[12] [arXiv:2610.05123](https://arxiv.org/pdf/2610.05123) — HiNa-MoE
