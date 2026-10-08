@@ -11,7 +11,7 @@ tags:
 - throughput
 timestamp: '2026-07-17T00:00:00Z'
 created: 2026-06-15
-updated: 2026-10-07
+updated: 2026-10-08
 sources:
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
@@ -161,9 +161,14 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 [VLA 负载刻画](/papers/vla-workload-characterization-embodied-ai.md)（ASPLOS'27）：batch-1 闭环下，去噪动作头 GEMM 落在 RTX 4090 屋脊点（163.9 FLOP/B）下方，骨干与视频 DiT 在上方——资源分歧由 **动作张量维度** 而非 prefill/decode 阶段决定；自回归 OpenVLA 的 6 次 cached decode 仍占 E2E 67%。
 
+## 同一阵列按阶段换形状与量化（2026-10-08）
+
+[DynaCore](/papers/dynacore-shape-adaptive-disaggregated-quantization.md) 不拆两类芯片，而是让脉动阵列在 prefill（方阵、W8A8）与 decode（扁平 1×1024 + Split-K、W4A16）间逐批切换；vs FIGLUT TTFT **3.50×**、TPOT **36.55×**，精度相对 FP16 平均掉 **0.07%**。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
 [2] [arXiv:2609.31551](https://arxiv.org/pdf/2609.31551) — EAServe
 [3] [arXiv:2610.05305](https://arxiv.org/pdf/2610.05305) — Parallelism compute–comm trade-offs
 [4] [arXiv:2610.05062](https://arxiv.org/pdf/2610.05062) — VLA workload characterization
+[5] [arXiv:2610.07443](https://arxiv.org/abs/2610.07443) — DynaCore

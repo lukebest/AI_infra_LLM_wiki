@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-10-02
+updated: 2026-10-08
 sources:
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/arch-study-30d-day-22.md
@@ -237,6 +237,10 @@ WSE 简化（无 off-chip）:
 
 [Characterizing HBF for LLM Serving](/papers/characterizing-hbf-llm-serving.md)：HBM–HBF–host 分层 + buffered cache-aware 准入；最快配置相对 HBM-only 完成时间 **−36.1–87.0%**，建模能耗最高 **−55.8%**；预留 **10%** 余量使 HBF KV 写 **−69%**、估计寿命 **4.77→14.82 年**——把写寿命从「介质硬约束」变成可调度量。
 
+## HBF 写寿命：按 KV 寿命放置（2026-10-08）
+
+[Lachesis](/papers/lachesis-lifetime-aware-kv-hbm-hbf.md) 把 HBM/HBF 放置依据从读写比换成**段寿命**：agent harness 已知推理段在回合末丢弃、子 agent 段在返回后丢弃，短命段进 HBM 让 HBM 块快速周转、替 HBF 吸收写入。trace 模拟下 HBF 寿命 vs HBM-first **1.19–3.13×**（3.3–12.2 device-years），HBM 承接的 KV 写入量 **8.2–19.5×**。含义：HBF 能否承载生成型 KV，取决于 harness 与 engine 之间是否传递生命周期信息。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -259,3 +263,4 @@ WSE 简化（无 off-chip）:
 [18] [arXiv:2609.36938](https://arxiv.org/pdf/2609.36938) — Janus
 [19] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts
 [20] [arXiv:2609.39131](https://arxiv.org/pdf/2609.39131) — Characterizing HBF LLM Serving
+[21] [arXiv:2610.08378](https://arxiv.org/abs/2610.08378) — Lachesis

@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-08
+
+### Watch (morning)
+* **Watch**: 2026-10-08 Asia/Shanghai AI infra 论文巡检。arXiv cs.AR/cs.DC **new = Wed 10/7**（cs.AR 18 新 + 交叉/替换；cs.DC 18 新 + 交叉/替换）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM architecture/interconnect/accelerator/chiplet 与 **agentic AI architecture / chip design**。去重：HBF 已有 characterizing-hbf / hotcold / hbflex / dash 页，Lachesis 放置依据（寿命）不同；Terracotta 2610.06475 昨日已入库；其余新候选 grep 未命中。
+* **Ingest**: Lachesis PDF + stub（arXiv:2610.08378）；DynaCore（2610.07443）；T-CCL（2610.07098，SC'26 Workshops）；NCCL M2N（2610.07516）。量化数字均复核自本地原文 PDF。
+* **Creation** (papers): [Lachesis](/papers/lachesis-lifetime-aware-kv-hbm-hbf.md)（HBF 寿命 vs HBM-first **1.19–3.13×**，**3.3–12.2** device-years）；[DynaCore](/papers/dynacore-shape-adaptive-disaggregated-quantization.md)（TTFT vs FIGLUT/Planaria **3.50×/2.97×**，TPOT **36.55×/8.02×**）；[T-CCL](/papers/t-ccl-tma-collective-communication.md)（vs NCCL 最高 **2.4×**，受限预算 **3.42×**；vLLM 最高 **1.31×**）；[NCCL M2N](/papers/nccl-m2n-layout-topology-aware-resharding.md)（单层最高 **7.9×**；DeepSeek-V3 权重同步 **5.78→2.77 s**）。
+* **Update**: [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[M2N Communication](/concepts/m2n-communication.md)、[DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md)、[Prefill-Decode Divergence](/concepts/prefill-decode-divergence.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: Ofan (2610.07230，胖树目的地感知交换机负载均衡，CCT 膨胀降 16–39×，下轮候选)；fbnic (2610.07644，Meta 自研多主机网卡运维，NSDI'27，偏运维)；NeMo-DCR (2610.08430，agentic RL 增量 bit-exact refit，1T 3% 变化 150 s vs 87.5 min)；TRANSIT (2610.07593，CPU DRAM 透明扩展训练显存)；ECO (2610.08373，AFD 能耗配置 BO，−40.5%)；Cascadia (2610.07219，975B MoE 跑在 11 台 AI PC)；TraceDSE (2610.07191，MLCAD'26，agent 做异构 SoC DSE)；ActTune (2610.08444，VLA 精度/DVFS)；SVRF (2610.07078)、Trail (2610.08483)、gem5 计算型 DRAM (2610.08186)、DySCo (2610.08268)、多 agent 持久记忆评测 (2610.07782) 等非本轮主线。
+
 ## 2026-10-07
 
 ### Watch (morning)

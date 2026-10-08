@@ -1,5 +1,9 @@
 # Other
 
+* [Lachesis stub](lachesis-lifetime-aware-kv-hbm-hbf.md) + [PDF](Lachesis_Lifetime_Aware_KV_HBM_HBF_Agent_Serving_2026.pdf) — arXiv:2610.08378
+* [DynaCore stub](dynacore-shape-adaptive-disaggregated-quantization.md) + [PDF](DynaCore_Shape_Adaptive_Disaggregated_Quantization_2026.pdf) — arXiv:2610.07443
+* [T-CCL stub](t-ccl-tma-collective-communication.md) + [PDF](T_CCL_TMA_Collective_Communication_2026.pdf) — arXiv:2610.07098
+* [NCCL M2N stub](nccl-m2n-layout-topology-aware-resharding.md) + [PDF](NCCL_M2N_Layout_Topology_Aware_Resharding_2026.pdf) — arXiv:2610.07516
 * [VLA workload stub](vla-workload-characterization-embodied-ai.md) + [PDF](VLA_Workload_Characterization_Embodied_AI_2026.pdf) — arXiv:2610.05062
 * [HiNa-MoE stub](hina-moe-cpu-amx-moe-inference.md) + [PDF](HiNa_MoE_CPU_AMX_MoE_Inference_2026.pdf) — arXiv:2610.05123
 * [Parallelism trade-offs stub](llm-inference-parallelism-compute-comm-tradeoffs.md) + [PDF](LLM_Inference_Parallelism_Compute_Comm_Tradeoffs_2026.pdf) — arXiv:2610.05305

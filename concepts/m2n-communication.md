@@ -68,6 +68,11 @@ M2N 是 disaggregated architecture 的典型通信模式，对 scale-up fabric �
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 产生 M2N 通信需求的架构范式
 - [Switching Networks](/concepts/switching-networks.md) — M2N 运行的网络层次
 
+## 另一种 M→N：跨布局权重重分片（2026-10-08）
+
+[NCCL M2N](/papers/nccl-m2n-layout-topology-aware-resharding.md) 处理的是 **M 个源 rank 的张量布局 → N 个目标 rank 的另一布局**（RL 训练→rollout refit），与本页 attention→expert 的 token 流是不同问题但共享结构：发送/接收方是不同组、拓扑不对称。其做法是只传目标布局需要的字节、跨 NVLink 域只传一份再域内复制；单层 FFN-MoE vs 直接点对点最高 **7.9×**。
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
+[2] [arXiv:2610.07516](https://arxiv.org/abs/2610.07516) — NCCL M2N

@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-10-01T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-06
+updated: 2026-10-08
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -179,6 +179,11 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 - [RailWave](/papers/railwave-ep-rail-incast-scheduling.md) — DeepEP 之下源端 RailBalance + 循环置换波次 + 标定选择器；专家负载不均对 Rail 不均线性解释力仅 R² **0.019/0.296**；同需求仅改并发顺序延迟 **+67.1%**；GLM-4.5-Air 回放 P50 通信 H800 **2.02–5.84×**、H20 **1.74–4.36×** vs Native。与 [Multi-Plane Clos](/concepts/multi-plane-clos-topology.md) 的多平面负载均衡同源。
 
+## 集体通信的 SM 账与布局迁移原语（2026-10-08）
+
+- [T-CCL](/papers/t-ccl-tma-collective-communication.md)：节点内集体的搬运和规约都交给 Hopper TMA；128 MB AllGather 平均活跃 SM **6.60 vs NCCL 23.76**，受限 CTA 预算下 vs NCCL 最高 **3.42×**；GEMM 重叠收益 TP=2 从 1.12× 升到 1.25×。说明重叠的瓶颈常是"通信占了多少 SM"，而非链路带宽。
+- [NCCL M2N](/papers/nccl-m2n-layout-topology-aware-resharding.md)：RL 训练→rollout 的权重重分片成为一等集体原语；跨 NVLink 域只传一份、域内复制；DeepSeek-V3 256 GB200 权重同步 **5.78→2.77 s**，step **−12.7%**。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -199,3 +204,5 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [16] [arXiv:2610.00671](https://arxiv.org/pdf/2610.00671) — MegaFlux
 [17] [arXiv:2610.01380](https://arxiv.org/pdf/2610.01380) — GPU-Initiated Communication Dissected
 [18] [arXiv:2610.03415](https://arxiv.org/pdf/2610.03415) — RailWave
+[19] [arXiv:2610.07098](https://arxiv.org/abs/2610.07098) — T-CCL
+[20] [arXiv:2610.07516](https://arxiv.org/abs/2610.07516) — NCCL M2N

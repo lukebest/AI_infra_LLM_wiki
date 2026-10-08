@@ -1,5 +1,10 @@
 # Paper
 
+* [Lachesis: Lifetime-Aware KV Placement across HBM/HBF](lachesis-lifetime-aware-kv-hbm-hbf.md) - SNU/KAIST/UIUC — agent harness 定 KV 寿命，短命进 HBM、长命进 HBF；HBF 寿命 vs HBM-first 1.19–3.13×（3.3–12.2 device-years）
+* [DynaCore: Shape-Adaptive Array + Disaggregated Quantization](dynacore-shape-adaptive-disaggregated-quantization.md) - Duke — 脉动 MEU 非对称重塑 + Split-K，prefill W8A8 / decode W4A16；TTFT vs FIGLUT/Planaria 3.50×/2.97×、TPOT 36.55×/8.02×
+* [T-CCL: TMA-Based Collective Communication](t-ccl-tma-collective-communication.md) - Chalmers SC'26 WS — 搬运+规约交给 TMA；vs NCCL 最高 2.4×（受限预算 3.42×），SM 占用更少；vLLM 最高 1.31×
+* [NCCL M2N: Layout-Aware Tensor Resharding](nccl-m2n-layout-topology-aware-resharding.md) - NVIDIA — RL 权重 M→N 重分片集体；单层 FFN-MoE 最高 7.9×；DeepSeek-V3 256 GB200 权重同步 5.78→2.77 s
+
 * [VLA Workload Characterization for Embodied AI](vla-workload-characterization-embodied-ai.md) - KAIST ASPLOS'27 — batch-1 闭环 VLA 刻画；动作张量维度定访存/计算受限；Orin 降频省能 24–32%；重叠执行 −56 pp / 3.9× / 5.1× 无 Pareto 最优
 * [HiNa-MoE: CPU AMX MoE Inference](hina-moe-cpu-amx-moe-inference.md) - 国防科大 PACT'26 — AMX 非侵入 MoE 算子；FFN 最高 3.37×、端到端 decode 最高 2.09×
 * [LLM Inference Parallelism: Compute–Comm Trade-offs](llm-inference-parallelism-compute-comm-tradeoffs.md) - Dell — TP/PP/HB 解析模型；prefill 选 PP（TP8 约 40% TTFT 在 NCCL）、decode 选 TP；decode 有效 NVLink ~150 GB/s
