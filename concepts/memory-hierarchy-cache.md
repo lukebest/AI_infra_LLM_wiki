@@ -11,7 +11,7 @@ tags:
 - wse
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-02
+updated: 2026-10-12
 sources:
 - raw/articles/arch-study-30d-day-13.md
 - raw/articles/arch-study-30d-day-14.md
@@ -127,6 +127,10 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 
 [Characterizing HBF](/papers/characterizing-hbf-llm-serving.md) 在 agentic 高吞吐设定下量化：HBF 不是被动溢出层——**准入缓冲**把设备命中与写放大绑在一起（10% 余量 → 写 **−69%**，寿命 **4.77→14.82 年**）；与 [Hot–Cold](/papers/hotcold-hbm-hbf-agentic-llm.md)/[HBFlex](/papers/hbflex-flexible-memory-hbf-llm.md) 的放置策略互补。
 
+## 2026-10-12 补充
+
+- [CacheFit](/papers/cachefit-cost-aware-llc-replacement.md)：把电路级成本（HARCOM）放进 LLC 替换策略搜索；Fit-MPPPB 存储 −60.3%、静态功耗 −56.3%，IPC +1.1%。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-13.md](raw/articles/arch-study-30d-day-13.md) — H&P Ch.2 存储层次（Day 13）
@@ -143,3 +147,4 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 [10] [arXiv:2609.36938](https://arxiv.org/pdf/2609.36938) — Janus
 [11] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts
 [12] [arXiv:2609.39131](https://arxiv.org/pdf/2609.39131) — Characterizing HBF
+[CacheFit] [arXiv:2610.10579](https://arxiv.org/abs/2610.10579)

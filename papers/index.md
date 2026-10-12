@@ -1,5 +1,10 @@
 # Paper
 
+* [Ofan: Destination-Aware Switch Load Balancing](ofan-destination-aware-load-balancing-ai-training.md) - UC Berkeley/Technion/NVIDIA — 胖树上目的地无关的包喷洒会出现 Θ(√m) 排队；交换机目的地感知负载均衡 Ofan 做到 O(1)，P4/Tofino 可实现；Llama-3 405B FSDP2 CCT 膨胀降 16–39×
+* [Expert Coupling: Correlated Placement & Token Shuffling](expert-coupling-moe-pretraining-all-to-all.md) - Zyphra — MoE 预训练早期路由已呈专家共现与跨层相关；相关专家同卡放置 + 下一层预测的 token 洗牌，MI300X 上 all-to-all 1.16–2.63×、step 最高 1.41×，不改路由与参数
+* [Zepp: MoE Serving under Relaxed Balance](zepp-distributed-moe-serving-relaxed-balance.md) - UCSD/ETH — 把均衡当约束、以跨节点通信为目标：GPU 约束下副本放置 + NIC 约束下 split/merge 流 + 计算分片重叠；MoE 层 vs 7 个系统最高 6.68×，vs 最快基线最高 2.78×（几何均值 1.86×）
+* [CacheFit: Cost-Aware LLC Replacement Search](cachefit-cost-aware-llc-replacement.md) - NC State — ChampSim + 电路级成本模型 HARCOM + LLM 提议策略，把面积/功耗/延迟预算放进 LLC 替换策略搜索目标；Fit-MPPPB 存储 −60.3%、静态功耗 −56.3%、IPC +1.1%
+
 * [Lachesis: Lifetime-Aware KV Placement across HBM/HBF](lachesis-lifetime-aware-kv-hbm-hbf.md) - SNU/KAIST/UIUC — agent harness 定 KV 寿命，短命进 HBM、长命进 HBF；HBF 寿命 vs HBM-first 1.19–3.13×（3.3–12.2 device-years）
 * [DynaCore: Shape-Adaptive Array + Disaggregated Quantization](dynacore-shape-adaptive-disaggregated-quantization.md) - Duke — 脉动 MEU 非对称重塑 + Split-K，prefill W8A8 / decode W4A16；TTFT vs FIGLUT/Planaria 3.50×/2.97×、TPOT 36.55×/8.02×
 * [T-CCL: TMA-Based Collective Communication](t-ccl-tma-collective-communication.md) - Chalmers SC'26 WS — 搬运+规约交给 TMA；vs NCCL 最高 2.4×（受限预算 3.42×），SM 占用更少；vLLM 最高 1.31×

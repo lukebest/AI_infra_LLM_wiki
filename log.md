@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-12
+
+### Watch (morning)
+* **Watch**: 2026-10-12（周一）Asia/Shanghai 论文巡检，补 10/9 失败欠账。arXiv cs.AR/cs.DC pastweek：**Thu 10/8、Fri 10/9** 两日 new + 交叉（cs.AR 8+9、cs.DC 22+12）；10/7 列表遗留候选 Ofan 一并处理；周一 10/12 新列表上海 9 点前未放出。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器/chiplet、agentic AI 硬件，以及新增超标量微架构、核内非线性运算加速（本轮无合格非线性加速论文）。
+* **Ingest**: Ofan（2610.07230）、Expert Coupling（2610.09372）、Zepp（2610.11158）、CacheFit（2610.10579）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [Ofan](/papers/ofan-destination-aware-load-balancing-ai-training.md)（CCT 膨胀降 **16–39×**）；[Expert Coupling](/papers/expert-coupling-moe-pretraining-all-to-all.md)（all-to-all **1.16–2.63×**，step 最高 **1.41×**）；[Zepp](/papers/zepp-distributed-moe-serving-relaxed-balance.md)（vs 最快基线最高 **2.78×**、几何均值 **1.86×**）；[CacheFit](/papers/cachefit-cost-aware-llc-replacement.md)（Fit-MPPPB 存储 **−60.3%**、IPC **+1.1%**）。
+* **Update**: [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[Clos / Fat-Tree](/concepts/clos-fat-tree-topology.md)、[Memory Hierarchy & Cache](/concepts/memory-hierarchy-cache.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: CHiRP (2610.07685，MICRO'20 旧文上传，TLB 替换 MPKI −28.21%)；DynaTE (2610.11284，扩散 LLM 动态 token 执行)；PageWeaver (2610.11201，稀疏注意力 KV 引导查询合并)；50M token 长期记忆 (2610.10845)；CoMoE (2610.09424，消费级 GPU MoE)；混合 XPU 卸载训练 (2610.09657)；vLLM-Omni 技术报告 (2610.09307)；3D-DRAM PIM 动态规划编译 (2610.09156)；SUSpMV (2610.10403，HBM FPGA SpMV)；BenchmarkAnything (2610.09447，agent 生成微架构基准)；DEX (2610.11748，MSDF 逐位早退)；RFChipAgent (2610.10858)；ReSAFT (2610.09999)；CXDVirt (2610.08899)。
+
 ## 2026-10-08
 
 ### Watch (morning)

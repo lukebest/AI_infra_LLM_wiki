@@ -1,5 +1,9 @@
 # Other
 
+* [Ofan stub](ofan-destination-aware-load-balancing-ai-training.md) + [PDF](Ofan_Destination_Aware_Load_Balancing_AI_Training_2026.pdf) — arXiv:2610.07230
+* [Expert Coupling stub](expert-coupling-moe-pretraining-all-to-all.md) + [PDF](Expert_Coupling_MoE_Pretraining_AllToAll_2026.pdf) — arXiv:2610.09372
+* [Zepp stub](zepp-distributed-moe-serving-relaxed-balance.md) + [PDF](Zepp_Distributed_MoE_Serving_Relaxed_Balance_2026.pdf) — arXiv:2610.11158
+* [CacheFit stub](cachefit-cost-aware-llc-replacement.md) + [PDF](CacheFit_Cost_Aware_LLC_Replacement_2026.pdf) — arXiv:2610.10579
 * [Lachesis stub](lachesis-lifetime-aware-kv-hbm-hbf.md) + [PDF](Lachesis_Lifetime_Aware_KV_HBM_HBF_Agent_Serving_2026.pdf) — arXiv:2610.08378
 * [DynaCore stub](dynacore-shape-adaptive-disaggregated-quantization.md) + [PDF](DynaCore_Shape_Adaptive_Disaggregated_Quantization_2026.pdf) — arXiv:2610.07443
 * [T-CCL stub](t-ccl-tma-collective-communication.md) + [PDF](T_CCL_TMA_Collective_Communication_2026.pdf) — arXiv:2610.07098

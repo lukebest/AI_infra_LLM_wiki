@@ -10,7 +10,7 @@ tags:
 - infrastructure
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-14
+updated: 2026-10-12
 sources:
 - raw/articles/interconn-study-21d-day-07.md
 - raw/articles/bojieli-ai-infra-book.md
@@ -114,8 +114,13 @@ InfiniBand 4096 端扩展至 10 万：二级 Fat-Tree 不足 → 三级 Clos、�
 
 [Ch.7](/analyses/ai-infra-book/ch07-datacenter-network.md) 用 QM9700（k=64, NDR 400 Gbit/s）把 Clos 公式接到训练作业：无阻塞两层 2048 端 / 半分 51.2 TB/s（64 leaf + 32 spine，与 SuperPOD 参考架构一致）；3:1 超售半分掉到 25.6 TB/s，每端跨半 16.7 GB/s。1024 卡分区：1:1 割集 51.2 TB/s，3:1 仅 17.6。跨叶比例 \(f\le1/r\) 才不上联饱和；**rail 对齐**可让配对归约 \(f=0\)。ECMP 在 32 流/32 上联时整组速度可掉到无冲突的 28%。在网归约（SHARP 类）把跨服务器阶段压成一轮——字节模型见书 `clos-cut-in-network` 复算，不在本页展开。
 
+## 2026-10-12 补充
+
+- [Ofan](/papers/ofan-destination-aware-load-balancing-ai-training.md)：胖树"上行可选、下行唯一"导致目的地无关包喷洒在下行两级失衡（排队 Θ(√m)）；目的地感知交换机 LB 达 O(1)，pOfan 适配 Tofino pipe。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-07.md](raw/articles/interconn-study-21d-day-07.md) — D&T Ch.3.6–3.9 间接网络（Day 7）
 [2] [Ch.7](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/07-数据中心网络.md) — 李博杰《AI Infra》
 [3] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
+[4] [arXiv:2610.07230](https://arxiv.org/abs/2610.07230) — Ofan

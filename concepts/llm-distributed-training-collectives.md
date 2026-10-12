@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-10-01T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-08
+updated: 2026-10-12
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -184,6 +184,11 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [T-CCL](/papers/t-ccl-tma-collective-communication.md)：节点内集体的搬运和规约都交给 Hopper TMA；128 MB AllGather 平均活跃 SM **6.60 vs NCCL 23.76**，受限 CTA 预算下 vs NCCL 最高 **3.42×**；GEMM 重叠收益 TP=2 从 1.12× 升到 1.25×。说明重叠的瓶颈常是"通信占了多少 SM"，而非链路带宽。
 - [NCCL M2N](/papers/nccl-m2n-layout-topology-aware-resharding.md)：RL 训练→rollout 的权重重分片成为一等集体原语；跨 NVLink 域只传一份、域内复制；DeepSeek-V3 256 GB200 权重同步 **5.78→2.77 s**，step **−12.7%**。
 
+## 2026-10-12 补充
+
+- [Ofan](/papers/ofan-destination-aware-load-balancing-ai-training.md)：胖树上目的地无关喷洒排队 Θ(√m)，交换机目的地感知 LB 做到 O(1)；Llama-3 405B FSDP2 CCT 膨胀降 16–39×。
+- [Expert Coupling](/papers/expert-coupling-moe-pretraining-all-to-all.md)：利用专家共现做相关放置 + token 洗牌，MI300X 上 EP all-to-all 1.16–2.63×、step 最高 1.41×。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -206,3 +211,5 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [18] [arXiv:2610.03415](https://arxiv.org/pdf/2610.03415) — RailWave
 [19] [arXiv:2610.07098](https://arxiv.org/abs/2610.07098) — T-CCL
 [20] [arXiv:2610.07516](https://arxiv.org/abs/2610.07516) — NCCL M2N
+[21] [arXiv:2610.07230](https://arxiv.org/abs/2610.07230) — Ofan
+[22] [arXiv:2610.09372](https://arxiv.org/abs/2610.09372) — Expert Coupling
