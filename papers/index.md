@@ -1,5 +1,10 @@
 # Paper
 
+* [CacheFlex: Software-Managed L2 Scratchpad for Wide Vectors](cacheflex-l2-scratchpad-scalable-vector.md) - UW/Rutgers MICRO'26 — 私有 L2 部分 way 运行时转 SPM，ISA 扩展 + 双 LSQ；SVE VL=16 GEMM 几何均值 1.44×、访存能耗 −40%，整层 prefill 最高 1.78×，面积为 L2 的 2.02%
+* [PCM: Programmable Congestion Management for RDMA NICs](pcm-programmable-congestion-management-rdma-nic.md) - ETH/Broadcom/Microsoft — 可移植 signal/trigger/control 处理器 + 厂商 shell；11 种 CC/LB，跑通 UET-htsim/UCCL/CX-8/Microsoft 1P；CX-8 1/5 线程 800G 下每 3 个 4 KiB 包一次反应
+* [GraphTok: GPU Tokenization for Agentic Serving](graphtok-gpu-tokenization-agentic-serving.md) - KTH — 前缀命中后分词占 TTFT 最高 67%；整条 BPE 编码做成 CUDA graph，vLLM TTFT 降 2.1–2.4×，Dynamo 单前端 518 req/s（约 56 GPU 峰时负载）
+* [ByteExpress: Deploying RDMA in Production ML](byteexpress-rdma-deployment-inference-training.md) - ByteDance — 分配器零拷贝、QP 复用、接收 credit、软件发送窗口、RPC 层恢复；推理 fetch P99 −43.7%、CPU −10.69%；训练 push P99 −74.0%，无 PFC 暂停
+
 * [Ofan: Destination-Aware Switch Load Balancing](ofan-destination-aware-load-balancing-ai-training.md) - UC Berkeley/Technion/NVIDIA — 胖树上目的地无关的包喷洒会出现 Θ(√m) 排队；交换机目的地感知负载均衡 Ofan 做到 O(1)，P4/Tofino 可实现；Llama-3 405B FSDP2 CCT 膨胀降 16–39×
 * [Expert Coupling: Correlated Placement & Token Shuffling](expert-coupling-moe-pretraining-all-to-all.md) - Zyphra — MoE 预训练早期路由已呈专家共现与跨层相关；相关专家同卡放置 + 下一层预测的 token 洗牌，MI300X 上 all-to-all 1.16–2.63×、step 最高 1.41×，不改路由与参数
 * [Zepp: MoE Serving under Relaxed Balance](zepp-distributed-moe-serving-relaxed-balance.md) - UCSD/ETH — 把均衡当约束、以跨节点通信为目标：GPU 约束下副本放置 + NIC 约束下 split/merge 流 + 计算分片重叠；MoE 层 vs 7 个系统最高 6.68×，vs 最快基线最高 2.78×（几何均值 1.86×）

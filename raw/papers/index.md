@@ -1,5 +1,9 @@
 # Other
 
+* [CacheFlex stub](cacheflex-l2-scratchpad-scalable-vector.md) + [PDF](CacheFlex_L2_Scratchpad_Scalable_Vector_2026.pdf) — arXiv:2610.12940
+* [PCM stub](pcm-programmable-congestion-management-rdma-nic.md) + [PDF](PCM_Programmable_Congestion_Management_RDMA_NIC_2026.pdf) — arXiv:2610.13130
+* [GraphTok stub](graphtok-gpu-tokenization-agentic-serving.md) + [PDF](GraphTok_GPU_Tokenization_Agentic_Serving_2026.pdf) — arXiv:2610.13325
+* [ByteExpress stub](byteexpress-rdma-deployment-inference-training.md) + [PDF](ByteExpress_RDMA_Deployment_Inference_Training_2026.pdf) — arXiv:2610.12815
 * [Ofan stub](ofan-destination-aware-load-balancing-ai-training.md) + [PDF](Ofan_Destination_Aware_Load_Balancing_AI_Training_2026.pdf) — arXiv:2610.07230
 * [Expert Coupling stub](expert-coupling-moe-pretraining-all-to-all.md) + [PDF](Expert_Coupling_MoE_Pretraining_AllToAll_2026.pdf) — arXiv:2610.09372
 * [Zepp stub](zepp-distributed-moe-serving-relaxed-balance.md) + [PDF](Zepp_Distributed_MoE_Serving_Relaxed_Balance_2026.pdf) — arXiv:2610.11158

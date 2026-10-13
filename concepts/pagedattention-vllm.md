@@ -13,6 +13,7 @@ tags:
 - memory-management
 timestamp: '2026-07-07T00:00:00Z'
 created: 2026-07-07
+updated: 2026-10-13
 sources:
 - raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md
 - raw/papers/understanding-inference-scaling-for-llms.md
@@ -73,7 +74,12 @@ GPU 上传统 KV cache 分配的痛点：
 - [Inference Capacity Trap](/concepts/inference-capacity-trap.md) — 容量极限问题
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 跨实例 KV 共享
 
+## 2026-10-13 补充：前缀缓存把瓶颈推到分词
+
+[GraphTok](/papers/graphtok-gpu-tokenization-agentic-serving.md)：agentic 长前缀命中缓存后，CPU 分词占 vLLM 中位 TTFT 从 2% 升到 **67%**（Llama 3.1 8B，130k token）。把整条 BPE 编码流水线做成 GPU 上可重放的 CUDA graph 后，前缀命中下平均 TTFT 降 **2.1–2.4×**，Dynamo 单前端 2 s P99 下可撑 **518 req/s**。另见 [Disaggregated Inference](/concepts/disaggregated-inference.md)。
+
 # Citations
 
 [1] [raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md](raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md) — 综述引用
 [2] [raw/papers/understanding-inference-scaling-for-llms.md](raw/papers/understanding-inference-scaling-for-llms.md) — Inference scaling 视角
+[GraphTok] [arXiv:2610.13325](https://arxiv.org/abs/2610.13325)

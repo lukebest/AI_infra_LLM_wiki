@@ -11,7 +11,7 @@ tags:
 - fairness
 - rdma
 - system-design
-updated: 2026-10-05
+updated: 2026-10-13
 timestamp: '2026-07-21T00:00:00Z'
 created: 2026-07-21
 sources:
@@ -95,7 +95,15 @@ Credit **不解**全局拥塞——全网饱和时只会拖慢所有流并加剧
 
 [GPU-Initiated Communication Dissected](/papers/gpu-initiated-communication-dissected.md) 把经典 NI 问题（队列放置、doorbell 顺序、完成语义）搬到 GPU–NIC 边界：库额外发起开销最高 **4.6 µs**，调优 CPU proxy 空闲时可持平 GPU 路径；达到 **260 M msg/s** 需 doorbell 批处理与队列并行。另见 [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)。
 
+## RDMA NIC 上的拥塞管理分层（2026-10-13）
+
+- [PCM](/papers/pcm-programmable-congestion-management-rdma-nic.md)：拥塞控制/负载均衡写成可移植 signal/trigger/control 处理器，厂商后端生成 shell，同一份源码跑 UET-htsim、UCCL、ConnectX-8 DPA、Microsoft 1P；CX-8 上用 1/5 硬件线程在 800 Gbit/s 下每 3 个 4 KiB 包可反应一次。
+- [ByteExpress](/papers/byteexpress-rdma-deployment-inference-training.md)：字节生产经验，接收 credit 管 posted receive、软件发送窗口管在途字节、DCQCN 管速率、PFC 做链路保护，各司其职；训练 incast 下只靠 DCQCN 时 P99 劣于 TCP，加软件窗口后 push P99 −74.0%。
+- 两者共同点：端点 NI 承担的策略越来越多，流控与拥塞控制需要明确分层，参见 [MRC](/entities/mrc.md) 与 [Ofan](/papers/ofan-destination-aware-load-balancing-ai-training.md)。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-19.md](raw/articles/interconn-study-21d-day-19.md) — D&T Ch.13–14（Day 19）
 [2] [arXiv:2610.01380](https://arxiv.org/pdf/2610.01380) — GPU-Initiated Communication Dissected
+[3] [arXiv:2610.13130](https://arxiv.org/abs/2610.13130) — PCM
+[4] [arXiv:2610.12815](https://arxiv.org/abs/2610.12815) — ByteExpress

@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-13
+
+### Watch (morning)
+* **Watch**: 2026-10-13（周二）Asia/Shanghai 论文巡检。arXiv **Mon 10/12** new + 交叉：cs.AR 6+4、cs.DC 12+7、cs.ET 1+4、cs.PF 1+2、cs.NI 8+2；周二 10/13 列表上海 9:10 仍未放出，留待下轮。WebSearch 补近两周 MICRO'26/非线性单元，命中均为已入库或较早论文。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（本轮非线性方向仅 Threshold Gating 一篇，硬件部分只有参考电路拓扑，未入库）。
+* **Ingest**: CacheFlex（2610.12940）、PCM（2610.13130）、GraphTok（2610.13325）、ByteExpress（2610.12815）PDF + raw 摘要 stub；数字取自原文。
+* **Creation** (papers): [CacheFlex](/papers/cacheflex-l2-scratchpad-scalable-vector.md)（VL=16 GEMM **1.44×**、能耗 **−40%**）；[PCM](/papers/pcm-programmable-congestion-management-rdma-nic.md)（CX-8 **48/256** 线程、UCCL **1.56 Tbit/s**）；[GraphTok](/papers/graphtok-gpu-tokenization-agentic-serving.md)（TTFT **2.1–2.4×**、**518 req/s**）；[ByteExpress](/papers/byteexpress-rdma-deployment-inference-training.md)（推理 P99 **−43.7%**、训练 push P99 **−74.0%**）。
+* **Update**: [Memory Hierarchy & Cache](/concepts/memory-hierarchy-cache.md)、[Out-of-Order Execution](/concepts/out-of-order-execution.md)、[Network Interface & System Design](/concepts/network-interface-and-system-design.md)、[PagedAttention / vLLM](/concepts/pagedattention-vllm.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: Threshold Gating（2607.03148，激活函数统一为阈值门控，模拟存内计算仅给参考拓扑）；Ember（2610.13408，UVM 超订 1.5× 下 6.8–10.6×）；Adaptive DHiSparse（2610.13708，分层稀疏 KV + 投机解码）；SlackSwap（2610.13003，按 host 链路预算换出/重算激活）；CPU-GPU UMA 共享刻画（2610.13125，EuroSys'27）；跨区域 AIDC + OCS 迁移调度（2610.13061）；VortexSynth（2610.12661）；TPCS（2610.13067）；Minions（2610.12970）；CompileMask（2610.13474）。
+
 ## 2026-10-12
 
 ### Watch (morning)

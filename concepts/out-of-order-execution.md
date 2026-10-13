@@ -9,6 +9,7 @@ tags:
 - scheduling
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
+updated: 2026-10-13
 sources:
 - raw/articles/arch-study-30d-day-10.md
 - raw/articles/arch-study-30d-day-12.md
@@ -76,8 +77,13 @@ OoO 是 **通用 CPU 高 IPC 的灵魂**，也是 **功耗与面积的主要来�
 - [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — ROB/issue queue 边际饱和；Constable 跳过 load
 - [Constable Load Elimination](/concepts/constable-load-elimination.md) — likely-stable load 消除（ISCA'24 Best）
 
+## 2026-10-13 补充：乱序核里接入软件管理存储
+
+[CacheFlex](/papers/cacheflex-l2-scratchpad-scalable-vector.md) 给 Cortex-A710 风格核（128 ROB、32 LQ/48 SQ）加一套 SPM LSQ：常规内存↔SPM 的桥接指令同时进两套 LSQ，各域独立保证 RAW/WAW，WAR 交给 ROB 顺序提交；桥接指令像缓冲 store 一样提交即释放 ROB 项。说明向量宽度上去后，访存瓶颈也可以通过 ISA + LSQ 协同，而不只靠加深 ROB/LSQ 掩盖延迟。另见 [Memory Hierarchy & Cache](/concepts/memory-hierarchy-cache.md)。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-10.md](raw/articles/arch-study-30d-day-10.md) — Tomasulo 算法（Day 10）
 [2] [raw/articles/arch-study-30d-day-12.md](raw/articles/arch-study-30d-day-12.md) — 指令窗口量化（Day 12）
 [3] [raw/articles/arch-study-30d-day-19.md](raw/articles/arch-study-30d-day-19.md) — Store Buffer / TSO（Day 19）
+[CacheFlex] [arXiv:2610.12940](https://arxiv.org/abs/2610.12940)

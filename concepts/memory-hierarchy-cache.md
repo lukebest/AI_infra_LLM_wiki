@@ -11,7 +11,7 @@ tags:
 - wse
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-12
+updated: 2026-10-13
 sources:
 - raw/articles/arch-study-30d-day-13.md
 - raw/articles/arch-study-30d-day-14.md
@@ -131,6 +131,10 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 
 - [CacheFit](/papers/cachefit-cost-aware-llc-replacement.md)：把电路级成本（HARCOM）放进 LLC 替换策略搜索；Fit-MPPPB 存储 −60.3%、静态功耗 −56.3%，IPC +1.1%。
 
+## 2026-10-13 补充
+
+- [CacheFlex](/papers/cacheflex-l2-scratchpad-scalable-vector.md)（MICRO'26）：运行时把私有 L2 部分 way 转成软件管理 SPM，绕过翻译/tag/一致性；宽向量 CPU 上 GEMM VL=16 几何均值 **1.44×**、访存能耗 **−40%**，面积为 L2 的 **2.02%**。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-13.md](raw/articles/arch-study-30d-day-13.md) — H&P Ch.2 存储层次（Day 13）
@@ -148,3 +152,4 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 [11] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts
 [12] [arXiv:2609.39131](https://arxiv.org/pdf/2609.39131) — Characterizing HBF
 [CacheFit] [arXiv:2610.10579](https://arxiv.org/abs/2610.10579)
+[CacheFlex] [arXiv:2610.12940](https://arxiv.org/abs/2610.12940)
