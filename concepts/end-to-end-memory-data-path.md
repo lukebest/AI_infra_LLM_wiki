@@ -13,8 +13,9 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-10-08
+updated: 2026-10-14
 sources:
+- raw/papers/Ember_UVM_Oversubscription_Discrete_GPU_2026.pdf
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/arch-study-30d-day-22.md
 - raw/articles/arch-study-30d-day-17.md
@@ -241,6 +242,10 @@ WSE 简化（无 off-chip）:
 
 [Lachesis](/papers/lachesis-lifetime-aware-kv-hbm-hbf.md) 把 HBM/HBF 放置依据从读写比换成**段寿命**：agent harness 已知推理段在回合末丢弃、子 agent 段在返回后丢弃，短命段进 HBM 让 HBM 块快速周转、替 HBF 吸收写入。trace 模拟下 HBF 寿命 vs HBM-first **1.19–3.13×**（3.3–12.2 device-years），HBM 承接的 KV 写入量 **8.2–19.5×**。含义：HBF 能否承载生成型 KV，取决于 harness 与 engine 之间是否传递生命周期信息。
 
+## GPU 显存与 host DRAM 之间的透明放置（2026-10-14）
+
+[Ember](/papers/ember-uvm-oversubscription-discrete-gpu.md) 处理 UVM 超订：分配先映射在 host，GPU 约 256 个硬件访问计数器挑出热区再上提，冷区后台按衰减批量回收，回收因此离开缺页关键路径。约 1.5× 超订下比 stock UVM 快 **6.8–10.6×**；每卡封顶 16 GB 跑 Qwen 14B/32B 生成快 **4.7–16×**，但绝对速率仍不超过 3 tok/s，上限由 PCIe 决定。到 GH200 NVLink-C2C（显存/互连带宽比约 9×）上优势收窄到约 **3.5×**，只读一遍的数据直接映射读取更划算，反复读的数据仍值得搬进显存。含义：数据该不该搬进快层，取决于复用次数与快慢层带宽比，这条规律对 HBM/HBF、CXL 分层同样适用。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -264,3 +269,4 @@ WSE 简化（无 off-chip）:
 [19] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts
 [20] [arXiv:2609.39131](https://arxiv.org/pdf/2609.39131) — Characterizing HBF LLM Serving
 [21] [arXiv:2610.08378](https://arxiv.org/abs/2610.08378) — Lachesis
+[22] [arXiv:2610.13408](https://arxiv.org/abs/2610.13408) — Ember

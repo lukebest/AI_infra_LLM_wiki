@@ -1,5 +1,8 @@
 # Paper
 
+* [Ember: Practical UVM Oversubscription on Discrete GPUs](ember-uvm-oversubscription-discrete-gpu.md) - TUM — 分配先映射 host、GPU 硬件访问计数器挑热区上提、衰减批量回收；1.5× 超订比 UVM 快 6.8–10.6×，16 GB 封顶跑 Qwen 14B/32B 生成快 4.7–16×；GH200 上约 3.5×
+* [Adaptive DHiSparse: Speculative Decoding over Load-Adaptive KV Hierarchy](adaptive-dhisparse-speculative-hierarchical-kv.md) - Umans AI — host 卸荷稀疏 KV 上接 DSpark/DFlash2，驻留随负载伸缩；B300 GLM-5.3 100K/C128 每 decode GPU 793 tok/s（HiSparse 1.45×），同延迟并发最高 4×
+
 * [CacheFlex: Software-Managed L2 Scratchpad for Wide Vectors](cacheflex-l2-scratchpad-scalable-vector.md) - UW/Rutgers MICRO'26 — 私有 L2 部分 way 运行时转 SPM，ISA 扩展 + 双 LSQ；SVE VL=16 GEMM 几何均值 1.44×、访存能耗 −40%，整层 prefill 最高 1.78×，面积为 L2 的 2.02%
 * [PCM: Programmable Congestion Management for RDMA NICs](pcm-programmable-congestion-management-rdma-nic.md) - ETH/Broadcom/Microsoft — 可移植 signal/trigger/control 处理器 + 厂商 shell；11 种 CC/LB，跑通 UET-htsim/UCCL/CX-8/Microsoft 1P；CX-8 1/5 线程 800G 下每 3 个 4 KiB 包一次反应
 * [GraphTok: GPU Tokenization for Agentic Serving](graphtok-gpu-tokenization-agentic-serving.md) - KTH — 前缀命中后分词占 TTFT 最高 67%；整条 BPE 编码做成 CUDA graph，vLLM TTFT 降 2.1–2.4×，Dynamo 单前端 518 req/s（约 56 GPU 峰时负载）

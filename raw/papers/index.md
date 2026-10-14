@@ -1,5 +1,7 @@
 # Other
 
+* [Ember stub](ember-uvm-oversubscription-discrete-gpu.md) + [PDF](Ember_UVM_Oversubscription_Discrete_GPU_2026.pdf) — arXiv:2610.13408
+* [Adaptive DHiSparse stub](adaptive-dhisparse-speculative-hierarchical-kv.md) + [PDF](Adaptive_DHiSparse_Speculative_Hierarchical_KV_2026.pdf) — arXiv:2610.13708
 * [CacheFlex stub](cacheflex-l2-scratchpad-scalable-vector.md) + [PDF](CacheFlex_L2_Scratchpad_Scalable_Vector_2026.pdf) — arXiv:2610.12940
 * [PCM stub](pcm-programmable-congestion-management-rdma-nic.md) + [PDF](PCM_Programmable_Congestion_Management_RDMA_NIC_2026.pdf) — arXiv:2610.13130
 * [GraphTok stub](graphtok-gpu-tokenization-agentic-serving.md) + [PDF](GraphTok_GPU_Tokenization_Agentic_Serving_2026.pdf) — arXiv:2610.13325

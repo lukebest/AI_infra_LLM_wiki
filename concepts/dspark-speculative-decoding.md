@@ -10,8 +10,9 @@ tags:
 - scheduling
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-28
+updated: 2026-10-14
 sources:
+- raw/papers/Adaptive_DHiSparse_Speculative_Hierarchical_KV_2026.pdf
 - raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf
 - raw/papers/SPECTRA_Speculative_Decoding_Reconfigurable_Tiled_2026.pdf
 - raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
@@ -97,8 +98,13 @@ Sequential stage (Markov/RNN head): 采样 x_k ~ p_k(·|x_0, x_<k)
 
 [SpecStream](/papers/specstream-resource-efficient-speculative-decoding.md)（西交大，SGLang@A800）把投机与 **CPU KV 卸荷** 合到同一关键路径：只卸荷 Target 已提交历史、分块流式 verification + 同 GPU Target-priority Draft（TPC）；相对卸荷基线吞吐均值 **1.41× / 1.32×**（Qwen3 / InternLM2.5），相对分卡并行投机每 GPU 吞吐均值 **+55.4%**。与 [HeteroReason](/papers/heteroreason-fpga-gpu-speculative-reasoning.md) 的异构草稿、[SPECTRA](/papers/spectra-speculative-decoding-tiled.md) 的瓦片 datapath 互补。
 
+## 分层稀疏 KV 上的投机（2026-10-14）
+
+[Adaptive DHiSparse](/papers/adaptive-dhisparse-speculative-hierarchical-kv.md) 把 DSpark / DFlash2 接到 HiSparse 式 host 卸荷稀疏 KV 上：验证期多个 query 共享缺失行取回，草稿 KV 用窗口环形缓冲，每会话只多 0.060 GiB 必需状态；同时让 GPU 驻留历史随负载伸缩。B300 上 GLM-5.3 100K/C128 每块 decode GPU **793 tok/s**（HiSparse **1.45×**，其中投机贡献 1.27×）；DeepSeek-V4.1-Flash 500K/C512 + DSpark 达常驻服务 **1.85×**。与 [SpecStream](/papers/specstream-resource-efficient-speculative-decoding.md) 一起说明：长上下文下投机的收益要和 KV 驻留预算一起算。
+
 # Citations
 
 [1] [raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf](raw/papers/DSpark_Confidence-Scheduled_Speculative_Decoding_2026.pdf) — Cheng et al., DeepSeek-AI / PKU (2026)
 [2] [arXiv:2609.28717](https://arxiv.org/pdf/2609.28717) — HeteroReason
 [7] [arXiv:2609.33184](https://arxiv.org/pdf/2609.33184) — SpecStream
+[8] [arXiv:2610.13708](https://arxiv.org/abs/2610.13708) — Adaptive DHiSparse

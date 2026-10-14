@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-14
+
+### Watch (morning)
+* **Watch**: 2026-10-14（周三）Asia/Shanghai 论文巡检。arXiv cs.AR/cs.DC/cs.ET/cs.PF/cs.NI 的 new 与 recent 页上海 9:05 仍停在 **Mon 10/12**，周二、周三列表都未放出（export API 查询超时），本轮改为处理 10/13 遗留候选并用 WebSearch 补查 NoC/chiplet、晶圆级/混合键合、超标量、非线性单元近两月论文，命中均已入库或超出窗口。
+* **Ingest**: Ember（2610.13408）、Adaptive DHiSparse（2610.13708）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [Ember](/papers/ember-uvm-oversubscription-discrete-gpu.md)（1.5× 超订比 UVM **6.8–10.6×**，LLM 生成 **4.7–16×**，GH200 约 **3.5×**）；[Adaptive DHiSparse](/papers/adaptive-dhisparse-speculative-hierarchical-kv.md)（GLM-5.3 每 decode GPU **793 tok/s**，HiSparse **1.45×**；同延迟并发最高 **4×**）。
+* **Update**: [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[DSpark Speculative Decoding](/concepts/dspark-speculative-decoding.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: Helios（2603.04797，MICRO'26 混合键合 3D-DRAM 近存服务加速器，含在线 softmax 单元；预印本 3 月已出，超出窗口）；ATLAS 3D-DRAM 模拟器（MICRO'26，此前已跳过）；LightningRMS（GLSVLSI'26 RMSNorm FPGA 加速器，6 月）；Speculative Branch Resolution（2601.13804，1 月）；SlackSwap、UMA 共享刻画等 10/13 遗留项维持不入库。
+
 ## 2026-10-13
 
 ### Watch (morning)
