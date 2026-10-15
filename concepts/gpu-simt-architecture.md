@@ -14,7 +14,7 @@ tags:
 - npu
 timestamp: '2026-07-07T00:00:00Z'
 created: 2026-07-07
-updated: 2026-09-24
+updated: 2026-10-15
 sources:
 - raw/articles/arch-study-30d-day-24.md
 - raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf
@@ -170,6 +170,12 @@ Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑
 - [Tessera](/papers/tessera-dynamic-block-sparse-attention.md)：动态 BSA 逻辑 mask 与物理 tile 解耦；BSA 最高 6.79×。
 - [EMA](/papers/ema-elastic-memory-across-gpus.md)：同机 GPU HBM 弹性共享（NVLink 预取）。
 
+
+## SM 内固定功能权重生成单元（2026-10-15）
+
+[FORGE](/papers/forge-procedural-weight-generation-sparse-moe.md)（ASPLOS'27）在每个 SM 里加一个 0.032 mm² 的 Rotor Generation Unit，用旋转角种子现场生成 MoE 专家权重 tile，直接写 SMEM 喂 Tensor Core。论文先证明纯 SIMT 软件生成不可行：生成本身比整个基线专家 GEMM 慢 **25.8–45.1×**，指令数多 **76–149×**，SMEM bank 冲突多 2–5 个数量级，原因在于 SIMT 发射口饱和与成对行访问不对齐 bank。换成带离线无冲突调度的专用数据通路后，专家 FFN kernel 快 **2.3–3.2×**。含义：当 decode 里的某类「权重/数据供给」可以用规则算法生成时，SM 内专用单元比 SIMT 软件路径更合适，代价是 ISA 增加一族指令。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-24.md](raw/articles/arch-study-30d-day-24.md) — H&P Ch.4 GPU/SIMT（Day 24）
+[2] [arXiv:2610.16890](https://arxiv.org/abs/2610.16890) — FORGE

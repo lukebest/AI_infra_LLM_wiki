@@ -1,5 +1,10 @@
 # Paper
 
+* [FORGE: On-Chip Procedural Weight Generation for MoE](forge-procedural-weight-generation-sparse-moe.md) - UW-Madison/NVIDIA ASPLOS'27 — 专家权重改为旋转角种子，SM 内 0.032 mm² RGU 现场生成权重 tile；替换 30% MoE 层，专家 FFN 2.3–3.2×、KV 容量 1.2–2.6×、系统吞吐 1.3–2.8×，精度低于同预算 LoRA
+* [HBM2 Power Characterization on Real Chips](hbm2-power-characterization-real-chips.md) - ETH SAFARI MICRO'26 — 36 颗 HBM2 实测：读电流为 refresh 3.1×、BG 总线翻转 +29.4%、构造模式超 JEDEC IDD4R 23.6%；Ayna 模型 MAPE 7.6–8.1%，H200 HBM3E 误差 2.4–5.3%
+* [SP-Allreduce: Symmetric Tree Schedules for Tori](sp-allreduce-symmetric-tree-tori.md) - 环面对称最短路树，轮数约为 Bucket 一半且同类最优；SST 方环面 1.19×、长条环面 1.65×、HyperX 14.82×、spine-leaf 1.72×
+* [API-Level Memory Model for GPU Device Communication](api-level-memory-model-multi-gpu-communication.md) - AMD — rocSHMEM 形式化内存模型 + com_id 定向排序（网络数据 cache bypass、fence 免刷缓存）；MI300X RS 2.48×、GEMM+RS 1.77×、DeepEP 1.18×
+
 * [Ember: Practical UVM Oversubscription on Discrete GPUs](ember-uvm-oversubscription-discrete-gpu.md) - TUM — 分配先映射 host、GPU 硬件访问计数器挑热区上提、衰减批量回收；1.5× 超订比 UVM 快 6.8–10.6×，16 GB 封顶跑 Qwen 14B/32B 生成快 4.7–16×；GH200 上约 3.5×
 * [Adaptive DHiSparse: Speculative Decoding over Load-Adaptive KV Hierarchy](adaptive-dhisparse-speculative-hierarchical-kv.md) - Umans AI — host 卸荷稀疏 KV 上接 DSpark/DFlash2，驻留随负载伸缩；B300 GLM-5.3 100K/C128 每 decode GPU 793 tok/s（HiSparse 1.45×），同延迟并发最高 4×
 

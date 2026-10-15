@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-10-01T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-12
+updated: 2026-10-15
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -189,6 +189,12 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [Ofan](/papers/ofan-destination-aware-load-balancing-ai-training.md)：胖树上目的地无关喷洒排队 Θ(√m)，交换机目的地感知 LB 做到 O(1)；Llama-3 405B FSDP2 CCT 膨胀降 16–39×。
 - [Expert Coupling](/papers/expert-coupling-moe-pretraining-all-to-all.md)：利用专家共现做相关放置 + token 洗牌，MI300X 上 EP all-to-all 1.16–2.63×、step 最高 1.41×。
 
+
+## 环面调度与设备端通信语义（2026-10-15）
+
+- [SP-Allreduce](/papers/sp-allreduce-symmetric-tree-tori.md)：环面上对称最短路树，轮数约为 Bucket 一半；方环面最高 **1.19×**、长条环面 **1.65×**、HyperX **14.82×**（基线每轮只用 4/62 条链路）。
+- [API-level memory model（rocSHMEM）](/papers/api-level-memory-model-multi-gpu-communication.md)：com_id 定向排序让网络数据绕开缓存，fence/wait 不再刷缓存；RS **2.48×**、GEMM+RS **1.77×**、DeepEP **1.18×**（MI300X）。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -213,3 +219,5 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [20] [arXiv:2610.07516](https://arxiv.org/abs/2610.07516) — NCCL M2N
 [21] [arXiv:2610.07230](https://arxiv.org/abs/2610.07230) — Ofan
 [22] [arXiv:2610.09372](https://arxiv.org/abs/2610.09372) — Expert Coupling
+[23] [arXiv:2610.16387](https://arxiv.org/abs/2610.16387) — SP-Allreduce
+[24] [arXiv:2610.16190](https://arxiv.org/abs/2610.16190) — API-level memory models (rocSHMEM)

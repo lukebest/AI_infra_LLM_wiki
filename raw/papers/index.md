@@ -1,5 +1,9 @@
 # Other
 
+* [FORGE stub](forge-procedural-weight-generation-sparse-moe.md) + [PDF](FORGE_Procedural_Weight_Generation_Sparse_MoE_2026.pdf) — arXiv:2610.16890
+* [HBM2 power stub](hbm2-power-characterization-real-chips.md) + [PDF](HBM2_Power_Characterization_Real_Chips_2026.pdf) — arXiv:2610.14244
+* [SP-Allreduce stub](sp-allreduce-symmetric-tree-tori.md) + [PDF](SP_Allreduce_Symmetric_Tree_Tori_2026.pdf) — arXiv:2610.16387
+* [API-level memory model stub](api-level-memory-model-multi-gpu-communication.md) + [PDF](API_Level_Memory_Models_Multi_GPU_Communication_2026.pdf) — arXiv:2610.16190
 * [Ember stub](ember-uvm-oversubscription-discrete-gpu.md) + [PDF](Ember_UVM_Oversubscription_Discrete_GPU_2026.pdf) — arXiv:2610.13408
 * [Adaptive DHiSparse stub](adaptive-dhisparse-speculative-hierarchical-kv.md) + [PDF](Adaptive_DHiSparse_Speculative_Hierarchical_KV_2026.pdf) — arXiv:2610.13708
 * [CacheFlex stub](cacheflex-l2-scratchpad-scalable-vector.md) + [PDF](CacheFlex_L2_Scratchpad_Scalable_Vector_2026.pdf) — arXiv:2610.12940

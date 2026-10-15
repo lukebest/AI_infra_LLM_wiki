@@ -10,7 +10,7 @@ tags:
 - hbm
 - wse
 timestamp: '2026-08-26T00:00:00Z'
-updated: 2026-10-07
+updated: 2026-10-15
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-17.md
@@ -107,7 +107,13 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 
 [Terracotta](/papers/terracotta-flexible-dram-interface-controller.md)（MICRO 2026）：PuD、低成本维护、子阵列并行（MASA）、降延迟（ChargeCache/CROW）等技术共享"自定义命令 + 控制器状态/触发/更新/动作"结构。DDR5 上一次性标准化命令编码 + 可编程控制器，4 类技术保留 **>96%** 定制收益；DRAM 能耗开销 0.6–3.2%，面积/功耗 0.03%/0.56%。
 
+
+## HBM 功耗实测（2026-10-15）
+
+[HBM2 power 实测](/papers/hbm2-power-characterization-real-chips.md)（ETH SAFARI，MICRO 2026）用 36 颗真实 HBM2 测命令电流：读电流是 refresh 的 **3.1×**（平面 DDR3L 里 refresh 最大）；跨 bank group 差 **8.1%**、跨 bank 差 **5.3%**；bank group 总线全翻转比不翻转多耗 **29.4%**；构造的访存模式比 JEDEC 最高功耗测试环 IDD4R 平均高 **23.6%**（最高 35.4%）。新模型 Ayna 单独建模 TSV 与 bank group 总线翻转，MAPE **7.6–8.1%**（现有模型 20–42%），对 H200 HBM3E 高读带宽功耗误差 **2.4–5.3%**；作者实测 H200 显存功耗可达约 **248 W**（约 GPU 预算 35%）。推算 8 Gbps HBM4 读能耗与 6.4 Gbps HBM3E 基本持平，降压后低 1.5–6.0%。含义：HBM 功耗预算要按数据模式与读占比来估，LLM decode 这类读密集负载会落在高功耗区。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-17.md](raw/articles/arch-study-30d-day-17.md) — H&P Ch.2 内存技术（Day 17）
 [2] [arXiv:2610.06475](https://arxiv.org/pdf/2610.06475) — Terracotta
+[3] [arXiv:2610.14244](https://arxiv.org/abs/2610.14244) — HBM2 power characterization

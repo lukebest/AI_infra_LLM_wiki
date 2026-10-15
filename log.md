@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-15
+
+### Watch (morning)
+* **Watch**: 2026-10-15（周四）Asia/Shanghai 论文巡检，补扫前两轮未放出的列表。arXiv pastweek 显示公告日为 Mon 10/12 后直接到 **Wed 10/14**，没有单独的 Tue 10/13 列表（10/14 一期覆盖两天投稿：cs.AR 18+5、cs.DC 42+34、cs.PF 7+9、cs.NI 31）；周四 10/15 列表上海 9:00 仍停在 10/14。cs.LG new 只按硬件/非线性关键词过滤。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（本轮无合格非线性/超标量论文）。
+* **Ingest**: FORGE（2610.16890）、HBM2 power（2610.14244）、SP-Allreduce（2610.16387）、API-level memory model / rocSHMEM（2610.16190）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [FORGE](/papers/forge-procedural-weight-generation-sparse-moe.md)（专家 FFN **2.3–3.2×**，KV 容量 **1.2–2.6×**，系统吞吐 **1.3–2.8×**，RGU **0.032 mm²/SM**）；[HBM2 power](/papers/hbm2-power-characterization-real-chips.md)（读/refresh **3.1×**，超 JEDEC IDD4R **23.6%**，Ayna MAPE **7.6–8.1%**）；[SP-Allreduce](/papers/sp-allreduce-symmetric-tree-tori.md)（方环面 **1.19×**、长条 **1.65×**、HyperX **14.82×**）；[API-level memory model](/papers/api-level-memory-model-multi-gpu-communication.md)（RS **2.48×**、GEMM+RS **1.77×**、DeepEP **1.18×**）。
+* **Update**: [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md)、[DRAM and Memory System](/concepts/dram-memory-system.md)、[Mesh and Torus Topology](/concepts/mesh-torus-topology.md)、[MPI Reduce/AllReduce Algorithms](/concepts/mpi-reduce-allreduce-algorithms.md)、[Memory Consistency Model](/concepts/memory-consistency-model.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: DualColl（2610.15704，分数树打包 AllReduce 近似最优，摘要无实测数字）；LizTail（2610.16159，分段可重构脉动阵列，LLM decode 几何均值 25.67× vs TPU-like）；MCCL（2610.17091，测量闭环 CCL，灰故障下训练最高 4.99×）；FastEEP（2610.18451，EP 组实例内弹性伸缩 4.5–11.7×）；AgentWeave（2610.14804，agent 流分解）；Prorsa（2610.16592，agentic RL 的 PD 分离）；Hybrid 模型 KV/SSM 状态内存组织（2610.15755）；分层 KV 集群性能模型（2610.15366）；DTU 在线数据布局变换（2610.15193）；Graphcore IPU 脉冲网络仿真（2610.18217）；CSNB SDC 检测（2610.18557）；chiplet DSE + LLM 贝叶斯优化（2610.14612）。
+
 ## 2026-10-14
 
 ### Watch (morning)

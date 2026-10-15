@@ -10,6 +10,7 @@ tags:
 - wse
 - deterministic
 timestamp: '2026-06-24T00:00:00Z'
+updated: 2026-10-15
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-19.md
@@ -127,6 +128,12 @@ NPU dataflow 主路径无需 coherence/consistency；**reduction / control-plane
 - [Superscalar CPU Research (2023-2026)](/concepts/superscalar-cpu-research-2023-2026.md) — LR/SC 微架构 Gap；Constable 负面论证
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 同步成本量级（Day 22）
 
+
+## GPU 设备端通信的 API 级内存模型（2026-10-15）
+
+[API-level memory model（AMD rocSHMEM）](/papers/api-level-memory-model-multi-gpu-communication.md) 把一致性模型的方法推到通信库接口：为 SHMEM 设备 API 定义 ilv/lco/rdo/rco/aso 等关系，用 MP、SB、IRIW、WRC、ISA2 等 litmus 测试检验。GPU 上为保证 put/fence/wait_until 的顺序，系统 scope 的 acquire/release 会降成缓存 flush/invalidate；引入 com_id 后只对指定数据排序，这部分数据走 cache bypass，同步只需等计数器。MI300X 上 reduce-scatter 最高 **2.48×**、GEMM+RS **1.77×**、DeepEP **1.18×**。含义：fence 的成本取决于它必须覆盖的数据范围，接口层把范围说清楚，硬件就能少做工作。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-19.md](raw/articles/arch-study-30d-day-19.md) — H&P Ch.5.4–5.6（Day 19）
+[2] [arXiv:2610.16190](https://arxiv.org/abs/2610.16190) — API-level memory models (rocSHMEM)

@@ -11,7 +11,7 @@ tags:
 - wse
 timestamp: '2026-08-13T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-21
+updated: 2026-10-15
 sources:
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/interconn-study-21d-day-06.md
@@ -150,8 +150,14 @@ WSE-3 ~949×949 Mesh：D≈1896 跳；T_r=1 ns + T_w=0.5 ns → 最坏 **~2.8 μ
 
 - [MeshKV](/papers/meshkv-noc-kv-cache-fabric.md) — 8×8 mesh 上 KV 多播/去重；互连流量最高 **−58%**、多流吞吐 **1.9×**
 
+
+## 环面上的带宽最优 allreduce（2026-10-15）
+
+[SP-Allreduce](/papers/sp-allreduce-symmetric-tree-tori.md) 利用环面对称性构造一族最短路树：只走单跳、总量最小、每轮各链路负载相同，轮数 **2d⌊n/2⌋**，约为 Bucket（2d(n−1)）的一半，并在同类算法中最少。SST 模拟中方环面相对 Swing/Bucket/Trivance 最好者最高 **1.19×**，1024 节点长条环面（256×4）最高 **1.65×**，大消息仍可达上界的 **91–97%**。这说明环面越细长，拓扑感知调度的价值越高；TPU、Trainium 这类环面集群和 2D mesh 片上网络都可借鉴。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-06.md](raw/articles/interconn-study-21d-day-06.md) — D&T Ch.3 Mesh & Torus（Day 6）
 [2] [raw/articles/interconn-study-21d-day-09.md](raw/articles/interconn-study-21d-day-09.md) — 拓扑变体与 Dally 1990（Day 9）
 [3] [raw/articles/interconn-study-21d-day-10.md](raw/articles/interconn-study-21d-day-10.md) — 拓扑大综合（Day 10）
+[4] [arXiv:2610.16387](https://arxiv.org/abs/2610.16387) — SP-Allreduce
