@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-16
+
+### Watch (morning)
+* **Watch**: 2026-10-16（周五）Asia/Shanghai 论文巡检。arXiv **Thu 10/15** new 已放出（cs.AR 10、cs.DC 6+交叉；cs.ET/PF/NI 同步扫）；**Fri 10/16** 列表上海约 9:00 仍未单独放出（recent 最新公告日停在 Thu 10/15）。遗留候选 DualColl/LizTail/MCCL/FastEEP 一并深挖。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（本轮无合格非线性/超标量论文）。
+* **Ingest**: LizTail（2610.16159）、FastEEP（2610.18451）、CacheSmith（2610.18925）、Grace–Blackwell UM（2610.20354）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [LizTail](/papers/liztail-segment-reconfigurable-systolic-arrays.md)（LLM decode 几何均值 **25.67×**，CNN **5.02×**，EDP 最高 **38.23×**）；[FastEEP](/papers/fasteep-intra-instance-elastic-ep-moe-serving.md)（相对 vLLM Elastic EP **4.5–11.7×**，几何均值 **7.0×**）；[CacheSmith](/papers/cachesmith-adaptive-kv-reuse-rag-slo.md)（quality-gated SLO 最高 **+27.5%**，P99 TTFT 最高 **−86%**）；[Grace–Blackwell UM](/papers/grace-blackwell-unified-memory-placement-microbenchmarks.md)（HBM triad **3963 GB/s** vs host-mapped **304**；冷 **14.1** vs prefetch/reuse **4606/4504**；125% 超订 **968/1214**）。
+* **Update**: [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[PagedAttention / vLLM](/concepts/pagedattention-vllm.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[DRAM and Memory System](/concepts/dram-memory-system.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: MCCL（2610.17091，测量闭环 CCL，灰故障下训练最高 4.99×，原型热切换 ≈12 ms；本轮优先硬件/EP/KV/UM）；MFSA（2610.19645，多格式脉动 + OBSR，MX 面积开销相对朴素实现 −64.2%）；DualColl（2610.15704，分数树打包 AllReduce 近似最优，无集群实测吞吐）；JointServe（2610.19822，多模型 agent 显存驻留）；ATTUNE（2610.17528）；Scaling LLM Inference Parallelism（2610.19405）；GPU Goldmines WebGPU（2610.17321）；From Prompts to Silicon / AI-HDL（2610.18891，LLM 辅助芯片设计工具链）；TALU（2610.19277）；Primus Projection（2610.19423）。
+
 ## 2026-10-15
 
 ### Watch (morning)

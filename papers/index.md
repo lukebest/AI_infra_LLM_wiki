@@ -1,5 +1,10 @@
 # Paper
 
+* [LizTail: Segment-Reconfigurable Systolic Arrays](liztail-segment-reconfigurable-systolic-arrays.md) - UESTC — 128×128 切 32 段端点回折；LLM decode 几何均值 25.67× vs TPU-like，CNN 5.02×，EDP 最高降 38.23×
+* [FastEEP: Intra-Instance Elastic EP MoE Serving](fasteep-intra-instance-elastic-ep-moe-serving.md) - SJTU IPADS — 实例内改 EP；相对 vLLM Elastic EP 4.5–11.7×（几何均值 7.0×），缩放 4.2–13.4 s
+* [CacheSmith: Adaptive KV Reuse for RAG SLOs](cachesmith-adaptive-kv-reuse-rag-slo.md) - POSTECH/MSR — WarmUp/Probe/Patch + SLO 调度；quality-gated SLO 最高 +27.5%，P99 TTFT 最高 −86%
+* [Grace–Blackwell Unified Memory Microbenchmarks](grace-blackwell-unified-memory-placement-microbenchmarks.md) - UDel — GB200：HBM triad 3963 GB/s vs host-mapped 304；冷 14.1 vs prefetch/reuse 4606/4504；125% 超订 968/1214
+
 * [FORGE: On-Chip Procedural Weight Generation for MoE](forge-procedural-weight-generation-sparse-moe.md) - UW-Madison/NVIDIA ASPLOS'27 — 专家权重改为旋转角种子，SM 内 0.032 mm² RGU 现场生成权重 tile；替换 30% MoE 层，专家 FFN 2.3–3.2×、KV 容量 1.2–2.6×、系统吞吐 1.3–2.8×，精度低于同预算 LoRA
 * [HBM2 Power Characterization on Real Chips](hbm2-power-characterization-real-chips.md) - ETH SAFARI MICRO'26 — 36 颗 HBM2 实测：读电流为 refresh 3.1×、BG 总线翻转 +29.4%、构造模式超 JEDEC IDD4R 23.6%；Ayna 模型 MAPE 7.6–8.1%，H200 HBM3E 误差 2.4–5.3%
 * [SP-Allreduce: Symmetric Tree Schedules for Tori](sp-allreduce-symmetric-tree-tori.md) - 环面对称最短路树，轮数约为 Bucket 一半且同类最优；SST 方环面 1.19×、长条环面 1.65×、HyperX 14.82×、spine-leaf 1.72×

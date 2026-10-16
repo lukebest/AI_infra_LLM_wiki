@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-10-01T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-15
+updated: 2026-10-16
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -195,6 +195,11 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [SP-Allreduce](/papers/sp-allreduce-symmetric-tree-tori.md)：环面上对称最短路树，轮数约为 Bucket 一半；方环面最高 **1.19×**、长条环面 **1.65×**、HyperX **14.82×**（基线每轮只用 4/62 条链路）。
 - [API-level memory model（rocSHMEM）](/papers/api-level-memory-model-multi-gpu-communication.md)：com_id 定向排序让网络数据绕开缓存，fence/wait 不再刷缓存；RS **2.48×**、GEMM+RS **1.77×**、DeepEP **1.18×**（MI300X）。
 
+
+## MoE 服务实例内改 EP 度（2026-10-16）
+
+[FastEEP](/papers/fasteep-intra-instance-elastic-ep-moe-serving.md) 不拆实例，在最大拓扑父通信域上切活跃子组并掩码 NIXL peers，配合地址稳定卸页与 shadow worker。相对 vLLM Elastic EP 伸缩延迟 **4.5–11.7×**（几何均值 **7.0×**），缩容/扩容可到 **4.2 / 7.3 s** 级零输出窗口。集体成员变更从「重建」变成「切换视图」。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -221,3 +226,4 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [22] [arXiv:2610.09372](https://arxiv.org/abs/2610.09372) — Expert Coupling
 [23] [arXiv:2610.16387](https://arxiv.org/abs/2610.16387) — SP-Allreduce
 [24] [arXiv:2610.16190](https://arxiv.org/abs/2610.16190) — API-level memory models (rocSHMEM)
+[25] [arXiv:2610.18451](https://arxiv.org/abs/2610.18451) — FastEEP

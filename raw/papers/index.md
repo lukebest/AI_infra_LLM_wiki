@@ -1,5 +1,10 @@
 # Other
 
+* [LizTail stub](liztail-segment-reconfigurable-systolic-arrays.md) + [PDF](LizTail_Segment_Reconfigurable_Systolic_Arrays_2026.pdf) — arXiv:2610.16159
+* [FastEEP stub](fasteep-intra-instance-elastic-ep-moe-serving.md) + [PDF](FastEEP_Intra_Instance_Elastic_EP_MoE_Serving_2026.pdf) — arXiv:2610.18451
+* [CacheSmith stub](cachesmith-adaptive-kv-reuse-rag-slo.md) + [PDF](CacheSmith_Adaptive_KV_Reuse_RAG_SLO_2026.pdf) — arXiv:2610.18925
+* [Grace–Blackwell UM stub](grace-blackwell-unified-memory-placement-microbenchmarks.md) + [PDF](Grace_Blackwell_Unified_Memory_Placement_Microbenchmarks_2026.pdf) — arXiv:2610.20354
+
 * [FORGE stub](forge-procedural-weight-generation-sparse-moe.md) + [PDF](FORGE_Procedural_Weight_Generation_Sparse_MoE_2026.pdf) — arXiv:2610.16890
 * [HBM2 power stub](hbm2-power-characterization-real-chips.md) + [PDF](HBM2_Power_Characterization_Real_Chips_2026.pdf) — arXiv:2610.14244
 * [SP-Allreduce stub](sp-allreduce-symmetric-tree-tori.md) + [PDF](SP_Allreduce_Symmetric_Tree_Tori_2026.pdf) — arXiv:2610.16387

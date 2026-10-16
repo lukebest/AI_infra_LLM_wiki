@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-10-14
+updated: 2026-10-16
 sources:
 - raw/papers/Ember_UVM_Oversubscription_Discrete_GPU_2026.pdf
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
@@ -246,6 +246,15 @@ WSE 简化（无 off-chip）:
 
 [Ember](/papers/ember-uvm-oversubscription-discrete-gpu.md) 处理 UVM 超订：分配先映射在 host，GPU 约 256 个硬件访问计数器挑出热区再上提，冷区后台按衰减批量回收，回收因此离开缺页关键路径。约 1.5× 超订下比 stock UVM 快 **6.8–10.6×**；每卡封顶 16 GB 跑 Qwen 14B/32B 生成快 **4.7–16×**，但绝对速率仍不超过 3 tok/s，上限由 PCIe 决定。到 GH200 NVLink-C2C（显存/互连带宽比约 9×）上优势收窄到约 **3.5×**，只读一遍的数据直接映射读取更划算，反复读的数据仍值得搬进显存。含义：数据该不该搬进快层，取决于复用次数与快慢层带宽比，这条规律对 HBM/HBF、CXL 分层同样适用。
 
+
+## RAG 上下文 KV 选择性重算（2026-10-16）
+
+[CacheSmith](/papers/cachesmith-adaptive-kv-reuse-rag-slo.md) 把跨 chunk 缺失的 attention 恢复拆成 WarmUp / Probe / Patch，按剩余 TTFT 与质量门动态配预算。相对静态选择性重算基线，quality-gated SLO attainment 最高 **+27.5%**，P99 TTFT 最高 **−86%**。慢存储上通过加深 WarmUp 掩盖 KV 传输，stall 比例可压到 **3–7%**（基线 12–72%）。
+
+## GB200 统一内存路径带宽（2026-10-16）
+
+[Grace–Blackwell UM 微基准](/papers/grace-blackwell-unified-memory-placement-microbenchmarks.md) 在 GB200 上拆开放置：1 GiB triad 本地 HBM **3963 GB/s**、host-mapped **304 GB/s**；256 MiB 冷 first-touch **14.1 GB/s**，prefetch/reuse **4606 / 4504 GB/s**。超订到 CUDA-visible **125%** 时 prefetch/reuse 跌至 **968 / 1214 GB/s**。含义：统一地址下仍要按 residency 与容量压力选路径，与 Ember 的 UVM 超订结论同向。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -270,3 +279,5 @@ WSE 简化（无 off-chip）:
 [20] [arXiv:2609.39131](https://arxiv.org/pdf/2609.39131) — Characterizing HBF LLM Serving
 [21] [arXiv:2610.08378](https://arxiv.org/abs/2610.08378) — Lachesis
 [22] [arXiv:2610.13408](https://arxiv.org/abs/2610.13408) — Ember
+[23] [arXiv:2610.18925](https://arxiv.org/abs/2610.18925) — CacheSmith
+[24] [arXiv:2610.20354](https://arxiv.org/abs/2610.20354) — Grace–Blackwell UM

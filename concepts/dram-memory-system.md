@@ -10,7 +10,7 @@ tags:
 - hbm
 - wse
 timestamp: '2026-08-26T00:00:00Z'
-updated: 2026-10-15
+updated: 2026-10-16
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-17.md
@@ -112,8 +112,14 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 
 [HBM2 power 实测](/papers/hbm2-power-characterization-real-chips.md)（ETH SAFARI，MICRO 2026）用 36 颗真实 HBM2 测命令电流：读电流是 refresh 的 **3.1×**（平面 DDR3L 里 refresh 最大）；跨 bank group 差 **8.1%**、跨 bank 差 **5.3%**；bank group 总线全翻转比不翻转多耗 **29.4%**；构造的访存模式比 JEDEC 最高功耗测试环 IDD4R 平均高 **23.6%**（最高 35.4%）。新模型 Ayna 单独建模 TSV 与 bank group 总线翻转，MAPE **7.6–8.1%**（现有模型 20–42%），对 H200 HBM3E 高读带宽功耗误差 **2.4–5.3%**；作者实测 H200 显存功耗可达约 **248 W**（约 GPU 预算 35%）。推算 8 Gbps HBM4 读能耗与 6.4 Gbps HBM3E 基本持平，降压后低 1.5–6.0%。含义：HBM 功耗预算要按数据模式与读占比来估，LLM decode 这类读密集负载会落在高功耗区。
 
+
+## Grace–Blackwell 主机内存路径（2026-10-16）
+
+[GB200 UM 微基准](/papers/grace-blackwell-unified-memory-placement-microbenchmarks.md)：GPU 经 host-mapped 访问 Grace LPDDR5X 上 1 GiB triad 仅 **304 GB/s**，约为本地 HBM **3963 GB/s** 的 **7.7%**；冷 managed first-touch 与超订换出才是更慢的路径。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-17.md](raw/articles/arch-study-30d-day-17.md) — H&P Ch.2 内存技术（Day 17）
 [2] [arXiv:2610.06475](https://arxiv.org/pdf/2610.06475) — Terracotta
 [3] [arXiv:2610.14244](https://arxiv.org/abs/2610.14244) — HBM2 power characterization
+[4] [arXiv:2610.20354](https://arxiv.org/abs/2610.20354) — Grace–Blackwell UM

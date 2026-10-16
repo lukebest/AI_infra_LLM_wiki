@@ -12,7 +12,7 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-10-08
+updated: 2026-10-16
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
@@ -169,8 +169,14 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 
 [DynaCore](/papers/dynacore-shape-adaptive-disaggregated-quantization.md) 把计算块（MEU）的 m、n、k 都当作可调：32×32 核可平铺到 1×1024 以拉高权重供给，Split-K 把规约维映射进阵列、借现有互连折叠部分和；配 prefill W8A8 / decode W4A16 分离量化。28 nm 模拟下 decode 阶段 vs Planaria / SARA **23.03× / 3.48×**，面积 76.44 mm²。对比：Planaria/SARA 只做对称切分，最小 32×32 / 4×4。
 
+
+## 分段可重构：形状适配 × 空间并行（2026-10-16）
+
+[LizTail](/papers/liztail-segment-reconfigurable-systolic-arrays.md) 把 128×128 切成 32 个 128×4 段，只在端点做 180° 回折与段入口缓冲，组合裁剪 / 拉长 / 多子阵列（子阵列还可本地裁剪或拉长）。相对 TPU-like：**LLM decode 几何均值 25.67×**、CNN **5.02×**，EDP 最高降 **38.23×**；相对已能拉长的 ReDas，三款 LLM 再快 **2.72–3.14×**。面积 31.7 mm²（28 nm），介于 ReDas（20.8）与 SARA（77.3）之间。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-25.md](raw/articles/arch-study-30d-day-25.md) — H&P Ch.7.1–7.5 DSA（Day 25）
 [99] [raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf](raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf) — FlexPosit
 [100] [arXiv:2610.07443](https://arxiv.org/abs/2610.07443) — DynaCore
+[101] [arXiv:2610.16159](https://arxiv.org/abs/2610.16159) — LizTail
