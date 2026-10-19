@@ -11,9 +11,9 @@ tags:
 - vllm
 - virtual-memory
 - memory-management
-timestamp: '2026-07-07T00:00:00Z'
+timestamp: '2026-10-19T00:00:00Z'
 created: 2026-07-07
-updated: 2026-10-16
+updated: 2026-10-19
 sources:
 - raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md
 - raw/papers/understanding-inference-scaling-for-llms.md
@@ -83,9 +83,14 @@ GPU 上传统 KV cache 分配的痛点：
 
 [CacheSmith](/papers/cachesmith-adaptive-kv-reuse-rag-slo.md) 在 vLLM 上实现自适应选择性重算：请求同时满足 TTFT SLO 与质量门才计入 attainment，最高把 quality-gated SLO attainment 抬高 **27.5%**。与 GraphTok 互补——前者压 prefill 重算预算，后者压前缀命中后的分词。
 
+## 2026-10-19 补充：远端 KV 层的盈亏带宽
+
+[Remote KV Tier for PCP Prefill](/papers/remote-kv-tier-context-parallel-prefill.md)：GLM-5.3 FP8 / 8×B300 PCP8 上，LMCache+Valkey 远端命中 0.88 s、重算 0.31 s。命中划算需供给带宽 > B* = sR ≈ **2.53 GB/s**，另有每命中固定 ≈0.33 s，<17k token 的命中在任何带宽下都输给重算。按 PCP rank 分片 + 每 rank 一实例后 GET **10.76 GB/s**（6.3×），命中密集流 p99 **83.32 → 0.67 s**。与 CacheSmith 一起说明：缓存层要和 GPU prefill 速率比，不只看命中率。
+
 # Citations
 
 [1] [raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md](raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md) — 综述引用
 [2] [raw/papers/understanding-inference-scaling-for-llms.md](raw/papers/understanding-inference-scaling-for-llms.md) — Inference scaling 视角
 [GraphTok] [arXiv:2610.13325](https://arxiv.org/abs/2610.13325)
 [CacheSmith] [arXiv:2610.18925](https://arxiv.org/abs/2610.18925)
+[RemoteKV] [arXiv:2610.21500](https://arxiv.org/abs/2610.21500)

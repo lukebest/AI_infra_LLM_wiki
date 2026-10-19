@@ -35,6 +35,7 @@ sources: [raw/articles/source-name.md]
 - 模型: model, architecture, benchmark, training-system, inference-system
 - 技术: compression, sparse, optimization, routing, parallelism, kernel
 - 系统: sandbox, storage, hardware, networking, topology, infrastructure, interconnect, cxl, rdma, supernode, datacenter
+- 微架构/算子（2026-10-19 补）: superscalar, microarchitecture, out-of-order, branch-prediction, smt, performance-analysis, nonlinear, activation, fpga, recommendation, context-parallelism
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 

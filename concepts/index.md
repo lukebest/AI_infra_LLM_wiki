@@ -51,6 +51,7 @@
 * [GPU SIMT Architecture](gpu-simt-architecture.md) - GPU/SIMT；Hopper util / Die Scaling / Tessera BSA / EMA peer-HBM
 * [Heterogeneous Inference](heterogeneous-inference.md) - GPU + LPU 异构推理，分别优化 prefill/decode
 * [High-Radix Clos Adaptive Routing](high-radix-clos-adaptive-routing.md) - Kim/Dally/Abts SC 2006 — high-radix Clos + DisPERoute 自适应；挑战 mesh+DOR 普适最优；负载均衡与死锁自由
+* [In-Core Nonlinear Operator Acceleration](in-core-nonlinear-operator-acceleration.md) - 核内非线性运算加速：softmax/GELU/SiLU/LayerNorm/RMSNorm 与 exp/除法/rsqrt；融合在线算法、专用归约单元、快速内建指令、量化后多阈值比较的路线与案例索引
 * [Inference Capacity Trap](inference-capacity-trap.md) - 推理容量陷阱：KV cache 饱和导致 preemption + recomputation，throughput 崩溃
 * [Instruction-Level Parallelism](instruction-level-parallelism.md) - 指令级并行 ILP：超标量 vs VLIW、真依赖与名称依赖、静态/动态多发射权衡
 * [Interconnection Network Cost Model](interconnection-network-cost-model.md) - 互连网络开销与性能模型：节点/链路/交换成本、零负载延迟公式、注入带宽与二分带宽上界、直连网络 d≈O(log N)

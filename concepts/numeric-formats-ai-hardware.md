@@ -8,7 +8,7 @@ tags:
 - gpu
 - accelerator
 - training
-timestamp: '2026-06-24T00:00:00Z'
+timestamp: '2026-10-19T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-05.md
@@ -61,6 +61,11 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 - [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md) — 精度与带宽协同
 - [Quantitative Architecture Fundamentals](/concepts/quantitative-architecture-fundamentals.md) — 面积/功耗量化思维
 
+## 2026-10-19 补充：低比特让激活成为瓶颈
+
+[Multi-Threshold 非单调激活](/papers/multi-threshold-non-monotonic-activations-finn.md)：权重/MAC 压到极低比特后，激活与浮点 scale 可精确折叠为阈值比较，SiLU 等非单调函数也可表示；LeNet 上可降到 4 级（约 2.32 bit）。总览见 [核内非线性运算加速](/concepts/in-core-nonlinear-operator-acceleration.md)。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-05.md](raw/articles/arch-study-30d-day-05.md) — H&P Appendix J + AI 格式（Day 5）
+[2] [arXiv:2610.21825](https://arxiv.org/abs/2610.21825) — Multi-threshold activations

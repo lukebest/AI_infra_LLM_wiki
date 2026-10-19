@@ -1,5 +1,10 @@
 # Paper
 
+* [Meta × AMD: End-to-End Co-Design for AI Training on MI350X](meta-amd-mi350x-training-codesign.md) - Meta/AMD MICRO'26 — 首份 hyperscaler AMD 生产训练报告：吃满 1.6× HBM、Origami 解析 GEMM 选型 93%、agent 化 kernel 1.6–2×、LL64 AllGather 2×；相对直接移植最高 1.5×，十模型几何均值 101.2% of B200
+* [Remote KV Tiers for Context-Parallel Prefill](remote-kv-tier-context-parallel-prefill.md) - Multiverse — GLM-5.3/8×B300 PCP8：盈亏带宽 B*=sR≈2.53 GB/s、固定 0.33 s → <17k token 命中输给重算；按 rank 分片 GET 6.3×（10.76 GB/s），p99 83.32→0.67 s
+* [Multi-Threshold Operators for Non-Monotonic Quantized Activations](multi-threshold-non-monotonic-activations-finn.md) - Paderborn — SiLU 等非单调激活折叠为带方向阈值并接入 FINN；U55C 非单调只多几百 LUT，图级分解最高 1.5×，细粒度直实现最高 58×
+* [Causal Top-Down Microarchitecture Analysis (CTMA)](causal-top-down-microarchitecture-analysis.md) - ICT CAS — TMA 补两条「负载→指令数」因果路径；CPI 不变耗时变 >100%、过度投机拥塞、ROB→前端填充瓶颈转移、kill -9 幽灵态 SPEC2017 +22.75%
+
 * [LizTail: Segment-Reconfigurable Systolic Arrays](liztail-segment-reconfigurable-systolic-arrays.md) - UESTC — 128×128 切 32 段端点回折；LLM decode 几何均值 25.67× vs TPU-like，CNN 5.02×，EDP 最高降 38.23×
 * [FastEEP: Intra-Instance Elastic EP MoE Serving](fasteep-intra-instance-elastic-ep-moe-serving.md) - SJTU IPADS — 实例内改 EP；相对 vLLM Elastic EP 4.5–11.7×（几何均值 7.0×），缩放 4.2–13.4 s
 * [CacheSmith: Adaptive KV Reuse for RAG SLOs](cachesmith-adaptive-kv-reuse-rag-slo.md) - POSTECH/MSR — WarmUp/Probe/Patch + SLO 调度；quality-gated SLO 最高 +27.5%，P99 TTFT 最高 −86%

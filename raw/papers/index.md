@@ -1,5 +1,10 @@
 # Other
 
+* [Meta × AMD MI350X stub](meta-amd-mi350x-training-codesign.md) + [PDF](Meta_AMD_MI350X_Training_CoDesign_MICRO26.pdf) — arXiv:2610.22230
+* [Remote KV tier PCP prefill stub](remote-kv-tier-context-parallel-prefill.md) + [PDF](Remote_KV_Tier_Context_Parallel_Prefill_2026.pdf) — arXiv:2610.21500
+* [Multi-threshold activations stub](multi-threshold-non-monotonic-activations-finn.md) + [PDF](Multi_Threshold_NonMonotonic_Activations_FINN_2026.pdf) — arXiv:2610.21825
+* [CTMA stub](causal-top-down-microarchitecture-analysis.md) + [PDF](Causal_Top_Down_Microarchitecture_Analysis_2026.pdf) — arXiv:2610.21387
+
 * [LizTail stub](liztail-segment-reconfigurable-systolic-arrays.md) + [PDF](LizTail_Segment_Reconfigurable_Systolic_Arrays_2026.pdf) — arXiv:2610.16159
 * [FastEEP stub](fasteep-intra-instance-elastic-ep-moe-serving.md) + [PDF](FastEEP_Intra_Instance_Elastic_EP_MoE_Serving_2026.pdf) — arXiv:2610.18451
 * [CacheSmith stub](cachesmith-adaptive-kv-reuse-rag-slo.md) + [PDF](CacheSmith_Adaptive_KV_Reuse_RAG_SLO_2026.pdf) — arXiv:2610.18925

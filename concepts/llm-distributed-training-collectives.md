@@ -11,9 +11,9 @@ tags:
 - distributed
 - noc
 - wse
-timestamp: '2026-10-01T00:00:00Z'
+timestamp: '2026-10-19T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-16
+updated: 2026-10-19
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -200,6 +200,10 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 [FastEEP](/papers/fasteep-intra-instance-elastic-ep-moe-serving.md) 不拆实例，在最大拓扑父通信域上切活跃子组并掩码 NIXL peers，配合地址稳定卸页与 shadow worker。相对 vLLM Elastic EP 伸缩延迟 **4.5–11.7×**（几何均值 **7.0×**），缩容/扩容可到 **4.2 / 7.3 s** 级零输出窗口。集体成员变更从「重建」变成「切换视图」。
 
+## 2026-10-19 补充：RCCL 在多 chiplet GPU 上的协议改造
+
+[Meta × AMD MI350X](/papers/meta-amd-mi350x-training-codesign.md)：LL128 的 128 B 写会跨 AMD 64 B cache line，改为 LL64（56 B 载荷 + 8 B 标志，单 cache line 原子）后 AllGather/ReduceScatter **2×**、AllReduce **1.2–1.4×**；Direct AllGather 小消息 **1.4×**；P2P batching 让 128 GPU AllToAll 时延 **−40%**；VGPR 降 46% 使 occupancy 翻倍，ReduceScatter **+63%**、AllReduce **+48%**。整体从比 NCCL 慢 2× 收敛到差 **10–15%**。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -227,3 +231,4 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [23] [arXiv:2610.16387](https://arxiv.org/abs/2610.16387) — SP-Allreduce
 [24] [arXiv:2610.16190](https://arxiv.org/abs/2610.16190) — API-level memory models (rocSHMEM)
 [25] [arXiv:2610.18451](https://arxiv.org/abs/2610.18451) — FastEEP
+[26] [arXiv:2610.22230](https://arxiv.org/abs/2610.22230) — Meta × AMD MI350X co-design

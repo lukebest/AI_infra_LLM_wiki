@@ -11,7 +11,7 @@ tags:
 - risc-v
 - llm
 - wse
-timestamp: '2026-07-03T00:00:00Z'
+timestamp: '2026-10-19T00:00:00Z'
 created: 2026-07-03
 sources:
 - raw/reports/superscalar-cpu-final-report.md
@@ -113,8 +113,13 @@ Constable（ISCA'24 Best Paper）+ Bullseye + Prophet 代表「旁路主表」�
 - [summaries/superscalar-cpu-research-2023-2026.md](/summaries/superscalar-cpu-research-2023-2026.md) — 报告 digest
 - [Constable Load Elimination](/concepts/constable-load-elimination.md) — ISCA'24 Best Paper 精读
 
+## 2026-10-19 补充：评估方法——Top-Down 需要因果模型
+
+[CTMA](/papers/causal-top-down-microarchitecture-analysis.md)（ICT CAS / BenchCouncil）指出 TMA 只看「负载→CPI」路径。在 Skylake-SP / Zen 3 / Kunpeng 920 上：CPI 不变而耗时变化 >100%（leela_r）；分支更准反而性能减半（mcf_r，LFB 溢出、内存控制器拥塞）；ROB 份额压缩对完美拓扑数据集伤 ~23%/~12%、对扭曲拓扑仅 ~9%/~10%（瓶颈转到前端填充率）；Zen 3 op-cache SMT 共享退化 >50%；kill -9 SMT 兄弟后的「幽灵态」让 SPEC CPU2017 虚高 22.75%。对「OoO 深度边际饱和」类结论的启示：先控制住算法路径再归因到后端。
+
 # Citations
 
 [1] [raw/reports/superscalar-cpu-final-report.md](raw/reports/superscalar-cpu-final-report.md) — 最终汇总（2026-07-03）
 [2] [raw/reports/superscalar-cpu-report.md](raw/reports/superscalar-cpu-report.md) — 结构化综述 v2（~2400 字）
 [3] [raw/reports/constable-deepdive.md](raw/reports/constable-deepdive.md) — Constable 精读
+[4] [arXiv:2610.21387](https://arxiv.org/abs/2610.21387) — CTMA

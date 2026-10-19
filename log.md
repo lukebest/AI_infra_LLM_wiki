@@ -1,5 +1,17 @@
 # Bundle Update Log
 
+## 2026-10-19
+
+### Watch (morning)
+* **Watch**: 2026-10-19（周一）Asia/Shanghai 论文巡检。arXiv **Fri 10/16** new 已放出（cs.AR 6、cs.DC 9、cs.ET 1、cs.PF 2、cs.NI 5 + 交叉/替换）；**Mon 10/19** 列表上海约 9:00 未放出，留待下轮。cs.LG new 只按硬件/非线性关键词过滤。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（本轮两个新方向各入库一篇）。
+* **Ingest**: Meta × AMD MI350X（2610.22230，MICRO'26）、Remote KV tier for PCP prefill（2610.21500）、Multi-threshold activations（2610.21825）、CTMA（2610.21387）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [Meta × AMD MI350X](/papers/meta-amd-mi350x-training-codesign.md)（相对直接移植最高 **1.5×**，十模型几何均值 **101.2%** of B200；Origami **93%**；LL64 AllGather/RS **2×**；高争用原子 >**10×** 慢→树归约 **4.34×**）；[Remote KV Tier](/papers/remote-kv-tier-context-parallel-prefill.md)（B*≈**2.53 GB/s**，T0≈**0.33 s**，<17k token 命中输给重算；GET **6.3×** 到 10.76 GB/s；p99 **83.32→0.67 s**）；[Multi-Threshold](/papers/multi-threshold-non-monotonic-activations-finn.md)（非单调只多几百 LUT；图级分解最高 **1.5×**；细粒度直实现 **58×**）；[CTMA](/papers/causal-top-down-microarchitecture-analysis.md)（CPI 不变耗时 >**100%**；幽灵态 SPEC2017 **+22.75%**）。
+* **Creation** (concepts): [In-Core Nonlinear Operator Acceleration](/concepts/in-core-nonlinear-operator-acceleration.md)（新方向概念页，汇总 wiki 内 softmax/GELU/Norm 硬件案例）。
+* **Update**: [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[PagedAttention / vLLM](/concepts/pagedattention-vllm.md)、[Disaggregated Inference](/concepts/disaggregated-inference.md)、[Superscalar CPU Research](/concepts/superscalar-cpu-research-2023-2026.md)、[Out-of-Order Execution](/concepts/out-of-order-execution.md)、[Numeric Formats](/concepts/numeric-formats-ai-hardware.md)。
+* **Schema**: SCHEMA tag taxonomy 新增 superscalar、microarchitecture、out-of-order、branch-prediction、smt、performance-analysis、nonlinear、activation、fpga、recommendation、context-parallelism。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`、`concepts/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: PAGE404（2610.20962，GH200 访问计数器页迁移侧信道，跨 MIG 隐蔽信道约 8,500 bit/s）；ETH 异构流水并行（2610.22035，NSDI'27，最高 2×）；Cyclotron（2610.20981，递推方程编译分布式通信）；GPipe 异构 makespan 精确界（2610.21815）；ReFlow（2610.21640，RL 后训练经验回放 2.06×）；Apple Neural Engine 逆向（2606.22283 替换版，303 页）；Helix Krylov FPGA（2610.21096）；Hardware-Software Leakage Contracts（2610.20754）；Minimum RISC-V FPGA（2610.21552）；LLM 覆盖率闭环数据完整性（2610.21570）；HyCo（2610.21436）；Geo KV 迁移（2610.22172）；PriorityFEC（2610.21390）。遗留 MCCL（2610.17091）、MFSA（2610.19645）、DualColl（2610.15704）继续挂候选。
+
 ## 2026-10-16
 
 ### Watch (morning)

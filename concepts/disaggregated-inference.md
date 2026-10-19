@@ -7,9 +7,9 @@ tags:
 - serving-system
 - moe
 - disaggregated-inference
-timestamp: '2026-08-24T00:00:00Z'
+timestamp: '2026-10-19T00:00:00Z'
 created: 2026-04-17
-updated: 2026-10-06
+updated: 2026-10-19
 sources:
 - raw/papers/AFORE_AFD_Expert_Reconfiguration_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
@@ -202,6 +202,10 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 
 [AFORE](/papers/afore-afd-expert-reconfiguration.md)：AFD 把 FFN 变成独立流水级后，偏斜路由吞吐损失从单体 **−11.9%** 放大到 **−20.1%**。AFORE 利用"下一微批路由在 FFN 前可见"与"前序在飞微批构成迁移窗口"，用 NVLink p2p 复制热专家：GLM-4.5-Air 110B（2×8 A100）吞吐 **+10.1–17.6%**、P95 ITL **−7.1–9.5%**（vs 最强基线），迁移 **0.45–0.50 ms** 全被 **~2 ms** 前瞻窗口隐藏。是 [MegaScale-Infer](/papers/megascale-infer-2504.02263.md) 式 AFD 的动态负载补丁，与 [M2N Communication](/concepts/m2n-communication.md) 相关。
 
+## 2026-10-19 补充：PD 分离下 prefill 侧远端 KV 层
+
+[Remote KV Tier for PCP Prefill](/papers/remote-kv-tier-context-parallel-prefill.md)：上下文并行 prefill 锁步执行，任一 rank 加载卡顿会拖住全部 rank；同步加载使命中密集流成为 ρ≈1.13 的不稳定队列（GPU 仅 7% 忙）。按 rank 拆分远端实例 + 异步加载后，五节点 PD 部署通过 SLA。另见 [PagedAttention / vLLM](/concepts/pagedattention-vllm.md)。
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -229,3 +233,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [22] [arXiv:2609.37626](https://arxiv.org/pdf/2609.37626) — SPLASH-layouts
 [23] [arXiv:2609.36938](https://arxiv.org/pdf/2609.36938) — Janus
 [24] [arXiv:2610.03203](https://arxiv.org/pdf/2610.03203) — AFORE
+[25] [arXiv:2610.21500](https://arxiv.org/abs/2610.21500) — Remote KV tier for PCP prefill
