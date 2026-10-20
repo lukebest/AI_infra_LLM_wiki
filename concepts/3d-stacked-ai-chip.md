@@ -13,7 +13,7 @@ tags:
 - architecture
 timestamp: '2026-08-26T00:00:00Z'
 created: 2026-06-24
-updated: 2026-08-26
+updated: 2026-10-20
 sources:
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
 ---
@@ -105,6 +105,11 @@ Core FLOPS、DRAM BW、NoC BW、SRAM 容量必须协同配置；单纯 scale 任
 - [Network-on-Wafer](/concepts/network-on-wafer.md) — 整晶圆 WoW 与 3.5D chiplet 树
 - [d-Matrix Raptor](/papers/hc2026-dmatrix-raptor-3d-dram.md) — Hot Chips 2026：**1-Hi logic-on-top** 3D DRAM（不是 Voxel 的 DRAM-on-logic 网格）；36 μm F2F；自称 ≈20× BW/mm² vs HBM4
 
+## 编译器侧解 row-buffer 冲突：TileDRAM（2026-10-20）
+- [TileDRAM](/papers/tiledram-tile-to-dram-layouts-3d-dram-gpgpu.md)：CU 本地 3D DRAM（混合键合）上，惯常放置让 MoE FFN tile 访问行冲突率 **75.7%**；把 tile→DRAM 布局做成编译器可选的 F2 线性布局后降到 **15.2%**，几何均值 **1.77×**，六种 3D DRAM 组织 **2.20×**，只靠地址算术（RTX 3090 开销 0.17%）[2]。
+- 与上文 Voxel「row-buffer 冲突占 decode 延迟可达 43.35%」互补：Voxel 量化问题，TileDRAM 在不改硬件的前提下给出放置解法。
+
 # Citations
 
 [1] [raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf](raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf)
+[2] [arXiv:2610.23767](https://arxiv.org/abs/2610.23767) — TileDRAM

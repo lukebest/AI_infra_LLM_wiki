@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-10-16
+updated: 2026-10-20
 sources:
 - raw/papers/Ember_UVM_Oversubscription_Discrete_GPU_2026.pdf
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
@@ -255,6 +255,10 @@ WSE 简化（无 off-chip）:
 
 [Grace–Blackwell UM 微基准](/papers/grace-blackwell-unified-memory-placement-microbenchmarks.md) 在 GB200 上拆开放置：1 GiB triad 本地 HBM **3963 GB/s**、host-mapped **304 GB/s**；256 MiB 冷 first-touch **14.1 GB/s**，prefetch/reuse **4606 / 4504 GB/s**。超订到 CUDA-visible **125%** 时 prefetch/reuse 跌至 **968 / 1214 GB/s**。含义：统一地址下仍要按 residency 与容量压力选路径，与 Ember 的 UVM 超订结论同向。
 
+## agentic 会话驻留规模与 HBF 用法（2026-10-20）
+- 生产侧规模：M365 Deep Research 全会话峰值驻留约 **501.8 TB** HBM，推理只占驻留时间 **5.6%**；1 小时空闲上限降到 140.8 TB；紧预算下把受害会话降成 int4 留在 HBM（MRR），重算率 13.6%，低于 clairvoyant 淘汰的 31.1% [25]。
+- HBF 用法：MBZUAI HBFSim 显示 HBM 放不下时 HBF 比 host DRAM 快 **11.0–19.0×**；HBM 优先留给运行中序列的 KV，按需落 HBF；extent 条带化映射；SLC 100k P/E 假设下寿命 **2.0–6.9 年** [26]。见 [Agentic KV Residency](/papers/agentic-kv-residency-m365-production.md)、[HBFSim (MBZUAI)](/papers/hbfsim-hbm-hbf-llm-memory-hierarchy.md)。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -281,3 +285,5 @@ WSE 简化（无 off-chip）:
 [22] [arXiv:2610.13408](https://arxiv.org/abs/2610.13408) — Ember
 [23] [arXiv:2610.18925](https://arxiv.org/abs/2610.18925) — CacheSmith
 [24] [arXiv:2610.20354](https://arxiv.org/abs/2610.20354) — Grace–Blackwell UM
+[25] [arXiv:2610.22863](https://arxiv.org/abs/2610.22863) — Agentic KV Residency (M365)
+[26] [arXiv:2610.23503](https://arxiv.org/abs/2610.23503) — HBFSim (MBZUAI, RACS 2026)

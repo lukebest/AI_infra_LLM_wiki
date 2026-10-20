@@ -1,5 +1,10 @@
 # Paper
 
+* [Understanding KV Residency in Agentic LLM Workloads](agentic-kv-residency-m365-production.md) - Microsoft M365/IISc — 4 条生产 trace >1.21 亿调用；P99 Research 会话 81.6 GiB 超 H100，全驻留约 501.8 TB（推理只占 5.6%）；1 小时空闲上限 3.6×；1/10 预算下 LRU/FNU/int4 MRR 重算 62.9%/31.1%/13.6%；跨部署复用 88.9%→29.0%
+* [TileDRAM: Tile-to-DRAM Layouts for 3D DRAM GPGPUs](tiledram-tile-to-dram-layouts-3d-dram-gpgpu.md) - 上海科技大学/沐曦 — CU 本地混合键合 3D DRAM；编译器选 tile→DRAM 布局，MoE FFN 行冲突 75.7%→15.2%、1.77×，六种组织 2.20×，地址变换开销 0.17%
+* [ArchAgent: Agentic Heterogeneous System Design](archagent-heterogeneous-system-design.md) - Argonne/UIUC — 多 agent 规划 + 确定性解析评估；1 MW 等功耗混合 AI+HPC 加权几何均值 1.93×，第 18 次评估超爬山法 100 次的 1.65×
+* [HBFSim (MBZUAI): HBF in LLM Memory Hierarchies](hbfsim-hbm-hbf-llm-memory-hierarchy.md) - MBZUAI RACS'26 — HBM 放不下时 HBF 比 host DRAM 快 11.0–19.0×；KV 优先留 HBM；extent 条带映射；SLC 100k P/E 下寿命 2.0–6.9 年
+
 * [Meta × AMD: End-to-End Co-Design for AI Training on MI350X](meta-amd-mi350x-training-codesign.md) - Meta/AMD MICRO'26 — 首份 hyperscaler AMD 生产训练报告：吃满 1.6× HBM、Origami 解析 GEMM 选型 93%、agent 化 kernel 1.6–2×、LL64 AllGather 2×；相对直接移植最高 1.5×，十模型几何均值 101.2% of B200
 * [Remote KV Tiers for Context-Parallel Prefill](remote-kv-tier-context-parallel-prefill.md) - Multiverse — GLM-5.3/8×B300 PCP8：盈亏带宽 B*=sR≈2.53 GB/s、固定 0.33 s → <17k token 命中输给重算；按 rank 分片 GET 6.3×（10.76 GB/s），p99 83.32→0.67 s
 * [Multi-Threshold Operators for Non-Monotonic Quantized Activations](multi-threshold-non-monotonic-activations-finn.md) - Paderborn — SiLU 等非单调激活折叠为带方向阈值并接入 FINN；U55C 非单调只多几百 LUT，图级分解最高 1.5×，细粒度直实现最高 58×

@@ -1,5 +1,10 @@
 # Other
 
+* [Agentic KV residency stub](agentic-kv-residency-m365-production.md) + [PDF](Agentic_KV_Residency_M365_Production_2026.pdf) — arXiv:2610.22863
+* [TileDRAM stub](tiledram-tile-to-dram-layouts-3d-dram-gpgpu.md) + [PDF](TileDRAM_Tile_to_DRAM_Layouts_3D_DRAM_GPGPU_2026.pdf) — arXiv:2610.23767
+* [ArchAgent stub](archagent-heterogeneous-system-design.md) + [PDF](ArchAgent_Heterogeneous_System_Design_2026.pdf) — arXiv:2610.23724
+* [HBFSim (MBZUAI) stub](hbfsim-hbm-hbf-llm-memory-hierarchy.md) + [PDF](HBFSim_HBM_HBF_LLM_Memory_Hierarchy_RACS26.pdf) — arXiv:2610.23503
+
 * [Meta × AMD MI350X stub](meta-amd-mi350x-training-codesign.md) + [PDF](Meta_AMD_MI350X_Training_CoDesign_MICRO26.pdf) — arXiv:2610.22230
 * [Remote KV tier PCP prefill stub](remote-kv-tier-context-parallel-prefill.md) + [PDF](Remote_KV_Tier_Context_Parallel_Prefill_2026.pdf) — arXiv:2610.21500
 * [Multi-threshold activations stub](multi-threshold-non-monotonic-activations-finn.md) + [PDF](Multi_Threshold_NonMonotonic_Activations_FINN_2026.pdf) — arXiv:2610.21825

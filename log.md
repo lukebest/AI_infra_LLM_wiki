@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-10-20
+
+### Watch (morning)
+* **Watch**: 2026-10-20（周二）Asia/Shanghai 论文巡检。arXiv **Mon 10/19** new 已放出（cs.AR 9+3 交叉、cs.DC 10+10 交叉、cs.ET 3、cs.PF 3、cs.NI 7 + 替换）。cs.LG new 只按硬件/非线性关键词过滤，无合格。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（本轮这两个新方向无合格论文）。
+* **Ingest**: Agentic KV Residency（2610.22863）、TileDRAM（2610.23767）、ArchAgent（2610.23724）、HBFSim MBZUAI（2610.23503，RACS'26）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [Agentic KV Residency](/papers/agentic-kv-residency-m365-production.md)（全驻留约 **501.8 TB**，1 小时上限 **3.6×**；1/10 预算 LRU/FNU/MRR **62.9%/31.1%/13.6%**；跨部署复用 **88.9%→29.0%**）；[TileDRAM](/papers/tiledram-tile-to-dram-layouts-3d-dram-gpgpu.md)（行冲突 **75.7%→15.2%**，**1.77×**，六种组织 **2.20×**）；[ArchAgent](/papers/archagent-heterogeneous-system-design.md)（1 MW 等功耗 **1.93×**，第 18 次评估超爬山法 **1.65×**）；[HBFSim (MBZUAI)](/papers/hbfsim-hbm-hbf-llm-memory-hierarchy.md)（比 host DRAM **11.0–19.0×**，寿命 **2.0–6.9 年**）。
+* **Update**: [Disaggregated Inference](/concepts/disaggregated-inference.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md)、[DRAM and Memory System](/concepts/dram-memory-system.md)、[DSA Processor Design Trade-offs](/concepts/dsa-processor-design-tradeoffs.md)。
+* **Schema**: SCHEMA tag taxonomy 新增 dram、workload-characterization、chip-design、design-space-exploration、simulator。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: BaGuaLu-2（2610.23064，万卡 MoE 训练按批精确分配激活内存，12,288 GPU 上 1040B 参数、>2 EFlops、MFU 35%，相对 Megatron-Kuai/AdaPipe 1.14×/1.13×）；MailRail（2610.22890，IA3'26，节点级 credit 流控抗 incast，4096:1 下最高 1132×）；CMM-MP（2610.22716，CXL+以太网内存池设备，延迟 2.7 µs、23 GB/s）；BS-Spec（2610.22877，BFP 位共享自投机解码 + LUT 混合精度加速器，最高 1.9×）；MemLLM（2610.22579，存内 RAG 预计算 KV）；GUMPIM（2610.23406）；qGAMMA（2610.23222）；DIFFLET（2610.23047，Trainium 上 DiT 推理）；PairSight（2610.23086，GPU 共享算子干扰）；LLM 软错误幻觉（2610.22520）；MoA 三厂商 MPI（2610.22769）。遗留 MCCL（2610.17091）、MFSA（2610.19645）、PAGE404（2610.20962）、ETH 异构流水（2610.22035）、DualColl（2610.15704）继续挂候选。
+
 ## 2026-10-19
 
 ### Watch (morning)

@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-10-19T00:00:00Z'
 created: 2026-04-17
-updated: 2026-10-19
+updated: 2026-10-20
 sources:
 - raw/papers/AFORE_AFD_Expert_Reconfiguration_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
@@ -206,6 +206,9 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 
 [Remote KV Tier for PCP Prefill](/papers/remote-kv-tier-context-parallel-prefill.md)：上下文并行 prefill 锁步执行，任一 rank 加载卡顿会拖住全部 rank；同步加载使命中密集流成为 ρ≈1.13 的不稳定队列（GPU 仅 7% 忙）。按 rank 拆分远端实例 + 异步加载后，五节点 PD 部署通过 SLA。另见 [PagedAttention / vLLM](/concepts/pagedattention-vllm.md)。
 
+## 2026-10-20 补充：agentic 会话 KV 驻留与跨部署放置
+- [Agentic KV Residency](/papers/agentic-kv-residency-m365-production.md)（Microsoft M365 生产 trace）：同部署连续调用复用 **88.9%**，同区域换部署后 **29.0%**；KV 视作部署本地时首触重算下限 **5.4% → 20.2%**。PD 分离之外，会话路由要带部署亲和，或者支持 KV 复制/迁移 [26]。
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -234,3 +237,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [23] [arXiv:2609.36938](https://arxiv.org/pdf/2609.36938) — Janus
 [24] [arXiv:2610.03203](https://arxiv.org/pdf/2610.03203) — AFORE
 [25] [arXiv:2610.21500](https://arxiv.org/abs/2610.21500) — Remote KV tier for PCP prefill
+[26] [arXiv:2610.22863](https://arxiv.org/abs/2610.22863) — Agentic KV Residency (M365)

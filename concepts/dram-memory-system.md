@@ -10,7 +10,7 @@ tags:
 - hbm
 - wse
 timestamp: '2026-08-26T00:00:00Z'
-updated: 2026-10-16
+updated: 2026-10-20
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-17.md
@@ -117,9 +117,15 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 
 [GB200 UM 微基准](/papers/grace-blackwell-unified-memory-placement-microbenchmarks.md)：GPU 经 host-mapped 访问 Grace LPDDR5X 上 1 GiB triad 仅 **304 GB/s**，约为本地 HBM **3963 GB/s** 的 **7.7%**；冷 managed first-touch 与超订换出才是更慢的路径。
 
+## 3D 本地栈上的行局部性（2026-10-20）
+- 3D DRAM 贴近 CU 后仍是 bank + row buffer：[TileDRAM](/papers/tiledram-tile-to-dram-layouts-3d-dram-gpgpu.md) 在固定地址映射下按 tile 访问签名选布局，MoE FFN 行冲突 75.7% → 15.2%，几何均值 1.77× [5]。
+- 容量层：HBF 进入 HBM 与 host DRAM 之间，见 [HBFSim (MBZUAI)](/papers/hbfsim-hbm-hbf-llm-memory-hierarchy.md) [6]。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-17.md](raw/articles/arch-study-30d-day-17.md) — H&P Ch.2 内存技术（Day 17）
 [2] [arXiv:2610.06475](https://arxiv.org/pdf/2610.06475) — Terracotta
 [3] [arXiv:2610.14244](https://arxiv.org/abs/2610.14244) — HBM2 power characterization
 [4] [arXiv:2610.20354](https://arxiv.org/abs/2610.20354) — Grace–Blackwell UM
+[5] [arXiv:2610.23767](https://arxiv.org/abs/2610.23767) — TileDRAM
+[6] [arXiv:2610.23503](https://arxiv.org/abs/2610.23503) — HBFSim (MBZUAI)

@@ -11,7 +11,7 @@ tags:
 - compiler
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-09-23
+updated: 2026-10-20
 sources:
 - raw/articles/arch-study-30d-day-16.md
 - raw/articles/arch-study-30d-day-25.md
@@ -106,6 +106,11 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 
 [AHRR](/papers/ahrr-agents-hls-chip-design.md) 用对照实验表明：让 agent 走 HLS 再 RTL 精炼，比直接写 RTL 在 11 任务上几何均值快 **2.6×**——抽象层蒸馏并行意图，降低 agent 手写微架构的失败面。
 
+## 系统组成层的 agentic 设计空间探索（2026-10-20）
+- [ArchAgent](/papers/archagent-heterogeneous-system-design.md)：LLM 规划器 + 芯片/scale-up/scale-out 三个专家 agent，性能全部由确定性解析模型给出；1 MW 等功耗下异构设计加权几何均值 **1.93×**（同构 GPU 基线），第 18 次评估超过爬山法 100 次的 1.65×；常把 2–10% 功耗分给 decode/求解器专用分区 [2]。
+- 与 [AHRR](/papers/ahrr-agents-hls-chip-design.md)（HLS/RTL 层）对照：agent 设计流正在从电路层上移到系统组成层，可信度取决于评估器保真度。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-16.md](raw/articles/arch-study-30d-day-16.md) — 核心篇阶段总结（Day 16）
+[2] [arXiv:2610.23724](https://arxiv.org/abs/2610.23724) — ArchAgent
