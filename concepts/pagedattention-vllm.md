@@ -13,7 +13,7 @@ tags:
 - memory-management
 timestamp: '2026-10-19T00:00:00Z'
 created: 2026-07-07
-updated: 2026-10-19
+updated: 2026-10-21
 sources:
 - raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md
 - raw/papers/understanding-inference-scaling-for-llms.md
@@ -87,6 +87,9 @@ GPU 上传统 KV cache 分配的痛点：
 
 [Remote KV Tier for PCP Prefill](/papers/remote-kv-tier-context-parallel-prefill.md)：GLM-5.3 FP8 / 8×B300 PCP8 上，LMCache+Valkey 远端命中 0.88 s、重算 0.31 s。命中划算需供给带宽 > B* = sR ≈ **2.53 GB/s**，另有每命中固定 ≈0.33 s，<17k token 的命中在任何带宽下都输给重算。按 PCP rank 分片 + 每 rank 一实例后 GET **10.76 GB/s**（6.3×），命中密集流 p99 **83.32 → 0.67 s**。与 CacheSmith 一起说明：缓存层要和 GPU prefill 速率比，不只看命中率。
 
+## 2026-10-21 补充：前缀复用跨地域
+[KVCompass](/papers/kvcompass-internet-scale-prefix-cache-discovery.md) 把前缀缓存复用从单集群扩到多地域：KV 身份与放置解耦，边缘常数时间查表后按复用、负载、网络距离联合选 worker。
+
 # Citations
 
 [1] [raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md](raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md) — 综述引用
@@ -94,3 +97,4 @@ GPU 上传统 KV cache 分配的痛点：
 [GraphTok] [arXiv:2610.13325](https://arxiv.org/abs/2610.13325)
 [CacheSmith] [arXiv:2610.18925](https://arxiv.org/abs/2610.18925)
 [RemoteKV] [arXiv:2610.21500](https://arxiv.org/abs/2610.21500)
+- [arXiv:2610.24179](https://arxiv.org/abs/2610.24179) — KVCompass

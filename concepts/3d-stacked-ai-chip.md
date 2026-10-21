@@ -13,7 +13,7 @@ tags:
 - architecture
 timestamp: '2026-08-26T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-20
+updated: 2026-10-21
 sources:
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
 ---
@@ -109,7 +109,11 @@ Core FLOPS、DRAM BW、NoC BW、SRAM 容量必须协同配置；单纯 scale 任
 - [TileDRAM](/papers/tiledram-tile-to-dram-layouts-3d-dram-gpgpu.md)：CU 本地 3D DRAM（混合键合）上，惯常放置让 MoE FFN tile 访问行冲突率 **75.7%**；把 tile→DRAM 布局做成编译器可选的 F2 线性布局后降到 **15.2%**，几何均值 **1.77×**，六种 3D DRAM 组织 **2.20×**，只靠地址算术（RTX 3090 开销 0.17%）[2]。
 - 与上文 Voxel「row-buffer 冲突占 decode 延迟可达 43.35%」互补：Voxel 量化问题，TileDRAM 在不改硬件的前提下给出放置解法。
 
+## HBM 逻辑 die 内嵌近存计算：DuoPD（2026-10-21）
+HBM4 逻辑 die 约 140.8 mm²，去掉 TSV/PHY 后空余 38.6 mm²；[DuoPD](/papers/duopd-hybrid-gpu-pnm-pd-disaggregation.md) 在其中放 6.51 mm²（7 nm 折算）的 PNM 跑完整 decode，DRAM core die 不改，靠 TSV 层与 GPU 分时共享带宽。
+
 # Citations
 
 [1] [raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf](raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf)
 [2] [arXiv:2610.23767](https://arxiv.org/abs/2610.23767) — TileDRAM
+- [arXiv:2610.26131](https://arxiv.org/abs/2610.26131) — DuoPD

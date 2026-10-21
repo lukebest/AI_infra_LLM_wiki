@@ -1,5 +1,9 @@
 # Paper
 
+* [DuoPD: Hybrid GPU–PNM PD Disaggregation](duopd-hybrid-gpu-pnm-pd-disaggregation.md) - SNU — HBM4 逻辑 die 内 PNM 跑整段 decode、GPU 并发 prefill，TSV 层共享带宽；吞吐比 PD 分离最高 2.23×，PNM 6.51 mm²
+* [MX-Like Tensor Core for NPU](mx-like-tensor-core-npu-codesign.md) - KU Leuven 等 — 126 种块缩放配置 28 nm 综合；FP4 下推荐 UE5M3，比 NVFP4-like 降 25.3% 困惑度劣化，+0.06% 面积 / +0.49% 功耗
+* [KVCompass: Internet-Scale Prefix Cache Discovery](kvcompass-internet-scale-prefix-cache-discovery.md) - UCSC POMACS — 跨地域前缀 KV 发现平面；P99 TTFT 降 1.3–14×，吞吐最高 4.7×
+
 * [Understanding KV Residency in Agentic LLM Workloads](agentic-kv-residency-m365-production.md) - Microsoft M365/IISc — 4 条生产 trace >1.21 亿调用；P99 Research 会话 81.6 GiB 超 H100，全驻留约 501.8 TB（推理只占 5.6%）；1 小时空闲上限 3.6×；1/10 预算下 LRU/FNU/int4 MRR 重算 62.9%/31.1%/13.6%；跨部署复用 88.9%→29.0%
 * [TileDRAM: Tile-to-DRAM Layouts for 3D DRAM GPGPUs](tiledram-tile-to-dram-layouts-3d-dram-gpgpu.md) - 上海科技大学/沐曦 — CU 本地混合键合 3D DRAM；编译器选 tile→DRAM 布局，MoE FFN 行冲突 75.7%→15.2%、1.77×，六种组织 2.20×，地址变换开销 0.17%
 * [ArchAgent: Agentic Heterogeneous System Design](archagent-heterogeneous-system-design.md) - Argonne/UIUC — 多 agent 规划 + 确定性解析评估；1 MW 等功耗混合 AI+HPC 加权几何均值 1.93×，第 18 次评估超爬山法 100 次的 1.65×

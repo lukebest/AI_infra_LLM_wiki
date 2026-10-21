@@ -65,7 +65,11 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 
 [Multi-Threshold 非单调激活](/papers/multi-threshold-non-monotonic-activations-finn.md)：权重/MAC 压到极低比特后，激活与浮点 scale 可精确折叠为阈值比较，SiLU 等非单调函数也可表示；LeNet 上可降到 4 级（约 2.32 bit）。总览见 [核内非线性运算加速](/concepts/in-core-nonlinear-operator-acceleration.md)。
 
+## 2026-10-21 补充：MX/NVFP4 缩放格式的硅代价
+[MX-like Tensor Core](/papers/mx-like-tensor-core-npu-codesign.md)：6 bit 以上 UE8M0 缩放即 Pareto 最优；FP4 下缩放格式决定精度，UE5M3 比 NVFP4-like 的 UE4M3 少 **25.3%** 困惑度劣化，面积 +0.06%、功耗 +0.49%。累加器占 MAC 面积 39–66%。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-05.md](raw/articles/arch-study-30d-day-05.md) — H&P Appendix J + AI 格式（Day 5）
 [2] [arXiv:2610.21825](https://arxiv.org/abs/2610.21825) — Multi-threshold activations
+- [arXiv:2610.26083](https://arxiv.org/abs/2610.26083) — MX-like Tensor Core

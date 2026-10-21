@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-10-19T00:00:00Z'
 created: 2026-04-17
-updated: 2026-10-20
+updated: 2026-10-21
 sources:
 - raw/papers/AFORE_AFD_Expert_Reconfiguration_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
@@ -209,6 +209,10 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 ## 2026-10-20 补充：agentic 会话 KV 驻留与跨部署放置
 - [Agentic KV Residency](/papers/agentic-kv-residency-m365-production.md)（Microsoft M365 生产 trace）：同部署连续调用复用 **88.9%**，同区域换部署后 **29.0%**；KV 视作部署本地时首触重算下限 **5.4% → 20.2%**。PD 分离之外，会话路由要带部署亲和，或者支持 KV 复制/迁移 [26]。
 
+## 2026-10-21 补充：PD 分离搬进同一 GPU-HBM 引擎
+- [DuoPD](/papers/duopd-hybrid-gpu-pnm-pd-disaggregation.md)：decode 整体交给 HBM4 逻辑 die 上的 PNM，GPU 并发做 prefill，TSV 层分时共享带宽；端到端吞吐比常规 PD 分离最高 **2.23×**，SM 切分则必须在 TTFT 与 TPOT 之间二选一。
+- [KVCompass](/papers/kvcompass-internet-scale-prefix-cache-discovery.md)：跨地域前缀 KV 发现与转发，P99 TTFT 降 **1.3–14×**。
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -238,3 +242,5 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [24] [arXiv:2610.03203](https://arxiv.org/pdf/2610.03203) — AFORE
 [25] [arXiv:2610.21500](https://arxiv.org/abs/2610.21500) — Remote KV tier for PCP prefill
 [26] [arXiv:2610.22863](https://arxiv.org/abs/2610.22863) — Agentic KV Residency (M365)
+- [arXiv:2610.26131](https://arxiv.org/abs/2610.26131) — DuoPD
+- [arXiv:2610.24179](https://arxiv.org/abs/2610.24179) — KVCompass

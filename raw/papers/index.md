@@ -1,5 +1,9 @@
 # Other
 
+* [DuoPD stub](duopd-hybrid-gpu-pnm-pd-disaggregation.md) + [PDF](DuoPD_Hybrid_GPU_PNM_PD_Disaggregation_2026.pdf) — arXiv:2610.26131
+* [MX-like Tensor Core stub](mx-like-tensor-core-npu-codesign.md) + [PDF](MX_Like_Tensor_Core_NPU_CoDesign_2026.pdf) — arXiv:2610.26083
+* [KVCompass stub](kvcompass-internet-scale-prefix-cache-discovery.md) + [PDF](KVCompass_Internet_Scale_Prefix_Cache_Discovery_POMACS_2026.pdf) — arXiv:2610.24179
+
 * [Agentic KV residency stub](agentic-kv-residency-m365-production.md) + [PDF](Agentic_KV_Residency_M365_Production_2026.pdf) — arXiv:2610.22863
 * [TileDRAM stub](tiledram-tile-to-dram-layouts-3d-dram-gpgpu.md) + [PDF](TileDRAM_Tile_to_DRAM_Layouts_3D_DRAM_GPGPU_2026.pdf) — arXiv:2610.23767
 * [ArchAgent stub](archagent-heterogeneous-system-design.md) + [PDF](ArchAgent_Heterogeneous_System_Design_2026.pdf) — arXiv:2610.23724

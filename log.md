@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-10-21
+
+### Watch (morning)
+* **Watch**: 2026-10-21（周三）Asia/Shanghai 论文巡检。arXiv **Tue 10/20** new 已放出（cs.AR 10+8 交叉、cs.DC 26+14 交叉、cs.ET 5+5、cs.PF 3+5）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（本轮这两个新方向无合格论文）。
+* **Ingest**: DuoPD（2610.26131）、MX-like Tensor Core（2610.26083）、KVCompass（2610.24179，POMACS）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [DuoPD](/papers/duopd-hybrid-gpu-pnm-pd-disaggregation.md)（吞吐比 PD 分离最高 **2.23×**；PNM **6.51 mm²** / 空余 38.6 mm²）；[MX-like Tensor Core](/papers/mx-like-tensor-core-npu-codesign.md)（UE5M3 比 NVFP4-like 降 **25.3%** ΔPPL，**+0.06%** 面积 / **+0.49%** 功耗）；[KVCompass](/papers/kvcompass-internet-scale-prefix-cache-discovery.md)（P99 TTFT **1.3–14×**，吞吐最高 **4.7×**）。
+* **Update**: [Disaggregated Inference](/concepts/disaggregated-inference.md)、[3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md)、[Numeric Formats](/concepts/numeric-formats-ai-hardware.md)、[PagedAttention / vLLM](/concepts/pagedattention-vllm.md)。
+* **Schema**: SCHEMA tag taxonomy 新增 near-memory-processing、npu、edge、numeric-format、prefix-cache、geo-distributed。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: OCS 可重构拓扑信息几何框架（2610.25173，单作者理论框架，对比整数规划，缺系统级数字）；PlaneZip（2610.25033，PCIe 换出激活的位平面无损压缩，BF16 1.71×、重算开销降 31–47%，引擎 0.036 mm²，训练向）；SigmaTrace（2610.24328，CPU/GPU 发起 RDMA 可观测）；HEL（2610.24830，GPU 常驻运行时编排）；TideKV（2610.24499，分层分块 prefill 延迟淘汰 KV）；Conjugate Compilation（2610.25012，投机解码 agentic 协同编译）；Tiny Tapeout 2×2 int8 脉动 MAC（2610.24326）；SpikeDuet（2610.24677）；Ride/Raise/Wake 多层处理器轻线程放置理论（2610.25546）。遗留 MCCL（2610.17091）、MFSA（2610.19645）、PAGE404（2610.20962）、ETH 异构流水（2610.22035）、DualColl（2610.15704）、BaGuaLu-2（2610.23064）继续挂候选。
+
 ## 2026-10-20
 
 ### Watch (morning)
