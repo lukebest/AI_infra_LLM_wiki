@@ -1,5 +1,9 @@
 # Paper
 
+* [3D-MoE: Complementarity-Guided MoE Decode on 3D NMP](3d-moe-complementarity-nmp-moe-decode.md) - 中科院计算所/爱丁堡 — 专家负载互补分组 + 逻辑 die 局部广播热专家权重；MoE 层比 EP 4.63×，端到端比最强 NMP 基线 1.58–1.86×，面积 +2.11%
+* [The Token-Energy Law of LLM Decode](token-energy-law-llm-decode.md) - NVIDIA/TTU/TACC — 每 token 能耗 = 权重字节项 + KV 字节项 + 时间项；GH200/GB300 留出误差 ≤3.73%
+* [M3D-FLOW: Monolithic 3D PNM for Normalizing Flows](m3d-flow-monolithic-3d-pnm-normalizing-flow.md) - 肯塔基/CSU CASES'26 — Cu-Cu 混合键合 + 随机计算尾数乘法（面积 13×、功耗 46× 省）+ LUT 非线性引擎；比已有 PNM ≥6.6× 性能、3× 能效
+
 * [DuoPD: Hybrid GPU–PNM PD Disaggregation](duopd-hybrid-gpu-pnm-pd-disaggregation.md) - SNU — HBM4 逻辑 die 内 PNM 跑整段 decode、GPU 并发 prefill，TSV 层共享带宽；吞吐比 PD 分离最高 2.23×，PNM 6.51 mm²
 * [MX-Like Tensor Core for NPU](mx-like-tensor-core-npu-codesign.md) - KU Leuven 等 — 126 种块缩放配置 28 nm 综合；FP4 下推荐 UE5M3，比 NVFP4-like 降 25.3% 困惑度劣化，+0.06% 面积 / +0.49% 功耗
 * [KVCompass: Internet-Scale Prefix Cache Discovery](kvcompass-internet-scale-prefix-cache-discovery.md) - UCSC POMACS — 跨地域前缀 KV 发现平面；P99 TTFT 降 1.3–14×，吞吐最高 4.7×

@@ -13,7 +13,7 @@ tags:
 - architecture
 timestamp: '2026-08-26T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-21
+updated: 2026-10-22
 sources:
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
 ---
@@ -112,8 +112,14 @@ Core FLOPS、DRAM BW、NoC BW、SRAM 容量必须协同配置；单纯 scale 任
 ## HBM 逻辑 die 内嵌近存计算：DuoPD（2026-10-21）
 HBM4 逻辑 die 约 140.8 mm²，去掉 TSV/PHY 后空余 38.6 mm²；[DuoPD](/papers/duopd-hybrid-gpu-pnm-pd-disaggregation.md) 在其中放 6.51 mm²（7 nm 折算）的 PNM 跑完整 decode，DRAM core die 不改，靠 TSV 层与 GPU 分时共享带宽。
 
+## MoE decode 负载均衡与单片 3D DRAM（2026-10-22）
+- [3D-MoE](/papers/3d-moe-complementarity-nmp-moe-decode.md)：通道-核瓦片组织下本地便宜、远程贵；利用专家负载跨步反相波动做离线分组，逻辑 die 加局部广播通路（面积 +2.11%），MoE 层比 EP 平均 4.63×，端到端比最强 NMP 基线 1.58–1.86×。
+- [M3D-FLOW](/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md)：单片 3D DRAM 按层延迟分 8 个 tier 放数据，Cu-Cu 混合键合逻辑 die 上用随机计算尾数乘法提升热预算内 MAC 密度。
+
 # Citations
 
 [1] [raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf](raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf)
 [2] [arXiv:2610.23767](https://arxiv.org/abs/2610.23767) — TileDRAM
 - [arXiv:2610.26131](https://arxiv.org/abs/2610.26131) — DuoPD
+- [arXiv:2610.26991](https://arxiv.org/abs/2610.26991) — 3D-MoE
+- [arXiv:2610.27371](https://arxiv.org/abs/2610.27371) — M3D-FLOW

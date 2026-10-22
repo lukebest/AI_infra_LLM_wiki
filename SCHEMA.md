@@ -38,6 +38,7 @@ sources: [raw/articles/source-name.md]
 - 微架构/算子（2026-10-19 补）: superscalar, microarchitecture, out-of-order, branch-prediction, smt, performance-analysis, nonlinear, activation, fpga, recommendation, context-parallelism
 - 方法/存储（2026-10-20 补）: dram, workload-characterization, chip-design, design-space-exploration, simulator
 - 近存/格式/广域（2026-10-21 补）: near-memory-processing, npu, edge, numeric-format, prefix-cache, geo-distributed
+- 能耗/均衡/随机计算（2026-10-22 补）: energy, load-balancing, stochastic-computing
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 

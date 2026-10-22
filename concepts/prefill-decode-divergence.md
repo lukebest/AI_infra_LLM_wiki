@@ -11,7 +11,7 @@ tags:
 - throughput
 timestamp: '2026-07-17T00:00:00Z'
 created: 2026-06-15
-updated: 2026-10-08
+updated: 2026-10-22
 sources:
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
@@ -165,6 +165,9 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 [DynaCore](/papers/dynacore-shape-adaptive-disaggregated-quantization.md) 不拆两类芯片，而是让脉动阵列在 prefill（方阵、W8A8）与 decode（扁平 1×1024 + Split-K、W4A16）间逐批切换；vs FIGLUT TTFT **3.50×**、TPOT **36.55×**，精度相对 FP16 平均掉 **0.07%**。
 
+## decode 能耗按字节记账（2026-10-22）
+[Token-Energy Law](/papers/token-energy-law-llm-decode.md)：dense decode 每 token 板级能耗 = 常数 + 权重字节/有效 batch 项 + KV 字节×(历史+1) 项 + 每 token 耗时项；GH200/GB300 留出验证误差 ≤3.73%。batch 摊薄的只有权重项，KV 项随上下文线性增长，与本页「decode 吃带宽」的判断一致。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -172,3 +175,4 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 [3] [arXiv:2610.05305](https://arxiv.org/pdf/2610.05305) — Parallelism compute–comm trade-offs
 [4] [arXiv:2610.05062](https://arxiv.org/pdf/2610.05062) — VLA workload characterization
 [5] [arXiv:2610.07443](https://arxiv.org/abs/2610.07443) — DynaCore
+- [arXiv:2610.28576](https://arxiv.org/abs/2610.28576) — Token-Energy Law

@@ -13,7 +13,7 @@ tags:
 - attention
 - hardware
 created: 2026-10-19
-updated: 2026-10-19
+updated: 2026-10-22
 timestamp: '2026-10-19T00:00:00Z'
 sources:
   - raw/papers/multi-threshold-non-monotonic-activations-finn.md
@@ -42,6 +42,9 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 - 专用 ASIC/NPU 倾向在矩阵阵列旁加归约/特殊函数单元；FPGA 数据流架构在低比特下可把整条激活数据通路做成比较器（几百 LUT 量级）。
 - 精度契约要跟着格式走：MX/NVFP4 等块缩放格式让「scale 折叠进阈值/归约」成为可行的融合点（参见 [Numeric Formats for AI Hardware](/concepts/numeric-formats-ai-hardware.md)）。
 
+## 案例补充（2026-10-22）
+- [M3D-FLOW](/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md)：近存 PE 内独立 Non-Linear Engine，exp/GeLU/ln/倒数做单周期 LUT，softmax 由 exp LUT → 归约树 → 倒数 LUT → 缩放串起来在 NLE 内完成，中间值不回流乘法阵列[6]。
+
 ## 开放问题
 - 高比特（≥8 bit）激活下，多阈值、分段多项式、查表三种实现的面积/精度交叉点。
 - LLM decode 小 batch 下 RMSNorm/softmax 的行归约延迟如何与 GEMV 重叠；专用归约单元与 SIMT 软件路径的分界。
@@ -58,3 +61,4 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 [3] [papers/hc2026-meta-mtia-400.md](/papers/hc2026-meta-mtia-400.md) — MTIA 400 水平归约
 [4] [papers/hc2026-nvidia-rubin.md](/papers/hc2026-nvidia-rubin.md) — Rubin 稀疏注意力下游 SoftMax
 [5] [concepts/flashattention.md](/concepts/flashattention.md) — online softmax
+[6] [raw/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md](/raw/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md) — Magar et al., arXiv:2610.27371

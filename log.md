@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-10-22
+
+### Watch (morning)
+* **Watch**: 2026-10-22（周四）Asia/Shanghai 论文巡检。arXiv **Wed 10/21** new 已放出（cs.AR 9 新 + 交叉/替换、cs.DC 18 新 + 交叉/替换、cs.ET 4 + 交叉、cs.PF 1 + 交叉/替换）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（超标量本轮无；非线性方向 M3D-FLOW 的 LUT 非线性引擎作为案例补入）。
+* **Ingest**: 3D-MoE（2610.26991）、Token-Energy Law（2610.28576）、M3D-FLOW（2610.27371，CASES'26 / TCAD）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [3D-MoE](/papers/3d-moe-complementarity-nmp-moe-decode.md)（MoE 层比 EP 平均 **4.63×**，端到端比最强 NMP 基线 **1.58–1.86×**，逻辑 die 面积 **+2.11%**）；[Token-Energy Law](/papers/token-energy-law-llm-decode.md)（GH200/GB300 270 次留出执行误差 ≤**3.73%**；权重/KV 分开系数 GB300 最大误差 **0.887–2.137%**）；[M3D-FLOW](/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md)（比已有 PNM ≥**6.6×** 性能、**3×** 能效；随机尾数乘法器面积 **13×**、功耗 **46×** 省）。
+* **Update**: [3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md)、[In-Core Nonlinear Operator Acceleration](/concepts/in-core-nonlinear-operator-acceleration.md)、[Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md)。
+* **Schema**: SCHEMA tag taxonomy 新增 energy、load-balancing、stochastic-computing。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: MLIPS（2610.27438，DSV4-Flash 稀疏注意力索引器跨层共享候选池，vLLM 实测 1.14–1.40×、GPU 能耗降 14.8–27.4%）；KPage（2610.28096，视频 DiT 块稀疏注意力跨块 K/V 页压实，比 NVIDIA BSA 几何均值 1.77×）；多节点 CPU 三值 LLM decode 同步（2610.28620，比 ik_llama.cpp 1.5–2.1×）；PID 推理服务器碳足迹（2610.27345，ICEdge'26）；KatoANN（2610.27508，CPU 矩阵引擎向量检索）；VS-Flash（2610.26960，计算型闪存向量检索）；BitMTP（2610.28500）；Intel Arc INT8 仿 DGEMM（2610.26945）；ZKPU（2610.27530）；Green Light 光子 Transformer 碳感知（2610.27376）；RTL 仿真日志加速（2610.27356）。遗留 MCCL、MFSA、PAGE404、ETH 2610.22035、DualColl、BaGuaLu-2、PlaneZip、OCS 信息几何、TideKV 继续挂候选。
+
 ## 2026-10-21
 
 ### Watch (morning)

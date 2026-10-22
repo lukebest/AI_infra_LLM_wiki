@@ -1,5 +1,9 @@
 # Other
 
+* [3D-MoE stub](3d-moe-complementarity-nmp-moe-decode.md) + [PDF](3D_MoE_Complementarity_NMP_MoE_Decode_2026.pdf) — arXiv:2610.26991
+* [Token-Energy Law stub](token-energy-law-llm-decode.md) + [PDF](Token_Energy_Law_LLM_Decode_2026.pdf) — arXiv:2610.28576
+* [M3D-FLOW stub](m3d-flow-monolithic-3d-pnm-normalizing-flow.md) + [PDF](M3D_FLOW_Monolithic_3D_PNM_Normalizing_Flow_2026.pdf) — arXiv:2610.27371
+
 * [DuoPD stub](duopd-hybrid-gpu-pnm-pd-disaggregation.md) + [PDF](DuoPD_Hybrid_GPU_PNM_PD_Disaggregation_2026.pdf) — arXiv:2610.26131
 * [MX-like Tensor Core stub](mx-like-tensor-core-npu-codesign.md) + [PDF](MX_Like_Tensor_Core_NPU_CoDesign_2026.pdf) — arXiv:2610.26083
 * [KVCompass stub](kvcompass-internet-scale-prefix-cache-discovery.md) + [PDF](KVCompass_Internet_Scale_Prefix_Cache_Discovery_POMACS_2026.pdf) — arXiv:2610.24179
