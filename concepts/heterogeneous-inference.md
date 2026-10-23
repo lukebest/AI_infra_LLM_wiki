@@ -9,9 +9,9 @@ tags:
 - architecture
 - serving
 - agentic-ai
-timestamp: '2026-09-03T00:00:00Z'
+timestamp: '2026-10-23T00:00:00Z'
 created: 2026-04-16
-updated: 2026-10-07
+updated: 2026-10-23
 sources:
 - raw/papers/EdgeAgent_UMA_Multi_Agent_Edge_Inference_2026.pdf
 - raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
@@ -21,6 +21,7 @@ sources:
 - raw/papers/CHIPSMORE_CIM_Chiplets_LLM_Inference_2026.pdf
 - raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf
 - raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf
+- raw/papers/HAWK_GPU_NPU_Heterogeneous_KV_Transfer_2026.pdf
 ---
 
 # Heterogeneous Inference（异构推理）

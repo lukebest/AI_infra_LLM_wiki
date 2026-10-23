@@ -7,9 +7,9 @@ tags:
 - serving-system
 - moe
 - disaggregated-inference
-timestamp: '2026-10-19T00:00:00Z'
+timestamp: '2026-10-23T00:00:00Z'
 created: 2026-04-17
-updated: 2026-10-21
+updated: 2026-10-23
 sources:
 - raw/papers/AFORE_AFD_Expert_Reconfiguration_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
@@ -35,6 +35,8 @@ sources:
 - raw/papers/EAServe_Encode_Aware_Disaggregated_MLLM_2026.pdf
 - raw/papers/DynBranch_Speculative_Subgraph_Agentic_2026.pdf
 - raw/papers/RREvict_Prefix_Cache_Eviction_Agentic_2026.pdf
+- raw/papers/HAWK_GPU_NPU_Heterogeneous_KV_Transfer_2026.pdf
+- raw/papers/NanoCP_Dynamic_Context_Parallelism_MoE_ASPLOS27.pdf
 ---
 
 # Disaggregated Inference（解耦推理）

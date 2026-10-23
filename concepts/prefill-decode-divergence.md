@@ -9,9 +9,9 @@ tags:
 - kv-cache
 - latency
 - throughput
-timestamp: '2026-07-17T00:00:00Z'
+timestamp: '2026-10-23T00:00:00Z'
 created: 2026-06-15
-updated: 2026-10-22
+updated: 2026-10-23
 sources:
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
@@ -19,6 +19,8 @@ sources:
 - raw/articles/22580 From GPT2 to Kimi3, Explained.md
 - raw/papers/Crossflow_PD_Elasticity_Agentic_2026.pdf
 - raw/papers/EAServe_Encode_Aware_Disaggregated_MLLM_2026.pdf
+- raw/papers/HAWK_GPU_NPU_Heterogeneous_KV_Transfer_2026.pdf
+- raw/papers/NanoCP_Dynamic_Context_Parallelism_MoE_ASPLOS27.pdf
 ---
 
 # Prefill-Decode Resource Divergence（Prefill vs Decode 资源分歧）

@@ -1,5 +1,9 @@
 # Paper
 
+* [HAWK: GPU–NPU Heterogeneous KV Transfer](hawk-gpu-npu-heterogeneous-kv-transfer.md) - Georgia Tech/ETRI — GPU prefill + Tenstorrent NPU decode；布局感知 RDMA；同 SLO 吞吐差 ≤7.88%，功耗效率最高 1.26×、成本效率最高 1.72×
+* [MCCL: Measurement-based Collective Communication](mccl-measurement-based-collective-communication.md) - EURECOM 等 PACMNET/CoNEXT'26 — 测量闭环集体；灰障下训练时间最高 4.99×；热切换 ≈12 ms，开销 <2%
+* [NanoCP: Dynamic Context Parallelism for MoE DP–EP](nanocp-dynamic-context-parallelism-moe.md) - 复旦/上交/上海 AI Lab ASPLOS'27 — 按请求动态 CP；99% TPOT-SLO 下可持续请求率最高 3.27×，P99 TPOT 最高降 2.01×
+
 * [3D-MoE: Complementarity-Guided MoE Decode on 3D NMP](3d-moe-complementarity-nmp-moe-decode.md) - 中科院计算所/爱丁堡 — 专家负载互补分组 + 逻辑 die 局部广播热专家权重；MoE 层比 EP 4.63×，端到端比最强 NMP 基线 1.58–1.86×，面积 +2.11%
 * [The Token-Energy Law of LLM Decode](token-energy-law-llm-decode.md) - NVIDIA/TTU/TACC — 每 token 能耗 = 权重字节项 + KV 字节项 + 时间项；GH200/GB300 留出误差 ≤3.73%
 * [M3D-FLOW: Monolithic 3D PNM for Normalizing Flows](m3d-flow-monolithic-3d-pnm-normalizing-flow.md) - 肯塔基/CSU CASES'26 — Cu-Cu 混合键合 + 随机计算尾数乘法（面积 13×、功耗 46× 省）+ LUT 非线性引擎；比已有 PNM ≥6.6× 性能、3× 能效

@@ -11,9 +11,9 @@ tags:
 - distributed
 - noc
 - wse
-timestamp: '2026-10-19T00:00:00Z'
+timestamp: '2026-10-23T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-19
+updated: 2026-10-23
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -28,6 +28,7 @@ sources:
 - raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf
 - raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf
 - raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf
+- raw/papers/MCCL_Measurement_Based_Collective_Communication_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）

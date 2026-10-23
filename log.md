@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-23
+
+### Watch (morning)
+* **Watch**: 2026-10-23（周五）Asia/Shanghai 论文巡检。arXiv **Thu 10/22** new / Fri 列表。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（本轮这两个新方向无合格论文）。
+* **Ingest**: HAWK（2610.29873）、MCCL（2610.17091，PACMNET/CoNEXT'26 replacement）、NanoCP（2605.21100，ASPLOS'27 replacement）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [HAWK](/papers/hawk-gpu-npu-heterogeneous-kv-transfer.md)（同 SLO 吞吐差 ≤**7.88%**，功耗效率最高 **1.26×**、成本效率最高 **1.72×**；相对 host staging 最高 **27.69×**）；[MCCL](/papers/mccl-measurement-based-collective-communication.md)（灰障下训练时间最高 **4.99×**；热切换 ≈**12 ms**，开销 **<2%**、误差 **<1.2%**）；[NanoCP](/papers/nanocp-dynamic-context-parallelism-moe.md)（99% TPOT-SLO 下可持续请求率最高 **3.27×**，P99 TPOT 最高降 **2.01×**）。
+* **Update**: [Heterogeneous Inference](/concepts/heterogeneous-inference.md)、[Disaggregated Inference](/concepts/disaggregated-inference.md)、[Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: Reorienting Vector Axis / FlashAttention long-vector（2610.29489，RISC-V 2KB 向量寄存器 FlashAttention 改写，硅上 1.84–2.08× cycle）；UlaCache（2610.29820，稀疏 LLM serving 统一逻辑地址 KV）；RISK-KV（2610.29544，分布式推理选择性历史 KV 重建）；KVLearn（2610.28637，disaggregated serving 学习式 KV retention）；VHDLBench（纯 LLM 写 VHDL）；生物医学 nanowatt 滤波器 agent。遗留 MFSA、PAGE404、DualColl、BaGuaLu-2、PlaneZip、TideKV、FlashAttention long-vector、UlaCache、RISK-KV、KVLearn 继续挂候选。
+
 ## 2026-10-22
 
 ### Watch (morning)

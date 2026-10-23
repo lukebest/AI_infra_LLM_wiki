@@ -1,5 +1,9 @@
 # Other
 
+* [HAWK stub](hawk-gpu-npu-heterogeneous-kv-transfer.md) + [PDF](HAWK_GPU_NPU_Heterogeneous_KV_Transfer_2026.pdf) — arXiv:2610.29873
+* [MCCL stub](mccl-measurement-based-collective-communication.md) + [PDF](MCCL_Measurement_Based_Collective_Communication_2026.pdf) — arXiv:2610.17091
+* [NanoCP stub](nanocp-dynamic-context-parallelism-moe.md) + [PDF](NanoCP_Dynamic_Context_Parallelism_MoE_ASPLOS27.pdf) — arXiv:2605.21100
+
 * [3D-MoE stub](3d-moe-complementarity-nmp-moe-decode.md) + [PDF](3D_MoE_Complementarity_NMP_MoE_Decode_2026.pdf) — arXiv:2610.26991
 * [Token-Energy Law stub](token-energy-law-llm-decode.md) + [PDF](Token_Energy_Law_LLM_Decode_2026.pdf) — arXiv:2610.28576
 * [M3D-FLOW stub](m3d-flow-monolithic-3d-pnm-normalizing-flow.md) + [PDF](M3D_FLOW_Monolithic_3D_PNM_Normalizing_Flow_2026.pdf) — arXiv:2610.27371
