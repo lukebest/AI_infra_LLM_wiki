@@ -11,7 +11,7 @@ tags:
 - wse
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-13
+updated: 2026-10-26
 sources:
 - raw/articles/arch-study-30d-day-13.md
 - raw/articles/arch-study-30d-day-14.md
@@ -135,6 +135,10 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 
 - [CacheFlex](/papers/cacheflex-l2-scratchpad-scalable-vector.md)（MICRO'26）：运行时把私有 L2 部分 way 转成软件管理 SPM，绕过翻译/tag/一致性；宽向量 CPU 上 GEMM VL=16 几何均值 **1.44×**、访存能耗 **−40%**，面积为 L2 的 **2.02%**。
 
+## 2026-10-26 补充
+
+- [SnakeCharmer](/papers/snakecharmer-gpu-prefetch-backend-control.md)（MICRO'26）：GPU 预取拆成前端地址预测 + 后端效用/时机/放置控制；稀疏应用 L2 预取流量 **36.8%** 是全零数据，零值过滤 + 闲置寄存器堆当预取缓冲，A100 模型上比 Snake 性能 **+12.8%**、能效 **+20.8%**，**2.7 KB/SM**。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-13.md](raw/articles/arch-study-30d-day-13.md) — H&P Ch.2 存储层次（Day 13）
@@ -153,3 +157,4 @@ AMAT = Hit Time + Miss Rate × Miss Penalty
 [12] [arXiv:2609.39131](https://arxiv.org/pdf/2609.39131) — Characterizing HBF
 [CacheFit] [arXiv:2610.10579](https://arxiv.org/abs/2610.10579)
 [CacheFlex] [arXiv:2610.12940](https://arxiv.org/abs/2610.12940)
+[SnakeCharmer] [arXiv:2610.30990](https://arxiv.org/abs/2610.30990)

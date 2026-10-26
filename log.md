@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-10-26
+
+### Watch (morning)
+* **Watch**: 2026-10-26（周一）Asia/Shanghai 论文巡检。arXiv **Fri 10/23** new 列表（cs.AR 6 新 + 交叉/替换，cs.DC 12 新 + 交叉/替换；周一新列表尚未放出）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（非线性方向本轮入 FlashAttention 长向量重排；超标量方向 Proba 预取器只挂候选）。
+* **Ingest**: SnakeCharmer（2610.30990，MICRO'26）、FIGFLEX（2610.30480）、FlashAttention long-vector（2610.29489，上轮候选）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [SnakeCharmer](/papers/snakecharmer-gpu-prefetch-backend-control.md)（比 Snake 性能 **+12.8%**、能效 **+20.8%**，**2.7 KB/SM**、**0.04 mm²**）；[FIGFLEX](/papers/figflex-mixed-precision-fp-int-gemm.md)（3-bit 吞吐/面积比 AxCore **1.56×**、FIGLUT **1.42×**；LLaMA-2-7B PPL **5.85/8.77**）；[FlashAttention long-vector](/papers/flashattention-long-vector-riscv.md)（硅上 cycle 降 **1.84–2.08×**，FP 利用率 **16.2%→29.7%**，FPGA **2.71×**）。
+* **Update**: [In-Core Nonlinear Operator Acceleration](/concepts/in-core-nonlinear-operator-acceleration.md)、[Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md)、[Numeric Formats](/concepts/numeric-formats-ai-hardware.md)。
+* **Schema**: SCHEMA tag taxonomy 新增 prefetch、risc-v、vector-processor。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: uGDS（2610.30868，开源用户态 GPU Direct Storage，batch 读带宽最高 12.12× GDS，LMCache 中位 TTFT 降 62.7%）；Proba（2610.30448，概率式 SMS 预取器，摘要无量化数字）；Apple Silicon 推理优化可移植性（2610.31479，NeurIPS'26 workshop 评测）；太空数据中心 MoE 无线供能（2610.30923）；Ray-by-Ray GPU 光追单元（2610.31630）；DRAM 地址映射逆向（2610.30397）；ARES RTL agent（2607.27879，替换）；MCP vs CLI（纯 agent 应用）。遗留 UlaCache、RISK-KV、KVLearn、MFSA、PAGE404、DualColl、BaGuaLu-2、PlaneZip、TideKV、uGDS 继续挂候选。
+
 ## 2026-10-23
 
 ### Watch (morning)

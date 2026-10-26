@@ -68,8 +68,12 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 ## 2026-10-21 补充：MX/NVFP4 缩放格式的硅代价
 [MX-like Tensor Core](/papers/mx-like-tensor-core-npu-codesign.md)：6 bit 以上 UE8M0 缩放即 Pareto 最优；FP4 下缩放格式决定精度，UE5M3 比 NVFP4-like 的 UE4M3 少 **25.3%** 困惑度劣化，面积 +0.06%、功耗 +0.49%。累加器占 MAC 面积 39–66%。
 
+## 2026-10-26 补充：整数权重比特数怎么换成算力
+[FIGFLEX](/papers/figflex-mixed-precision-fp-int-gemm.md)：FP16 激活 × 低比特整数权重，radix-4 移位加让部分积约减半，PE 吞吐随 INT4→INT1 上升；INT3 配对融合高位回收半车道。3-bit 混合精度下单位面积吞吐比 AxCore **1.56×**、比 FIGLUT **1.42×**，LLaMA-2-7B PPL **5.85**。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-05.md](raw/articles/arch-study-30d-day-05.md) — H&P Appendix J + AI 格式（Day 5）
 [2] [arXiv:2610.21825](https://arxiv.org/abs/2610.21825) — Multi-threshold activations
 - [arXiv:2610.26083](https://arxiv.org/abs/2610.26083) — MX-like Tensor Core
+- [arXiv:2610.30480](https://arxiv.org/abs/2610.30480) — FIGFLEX

@@ -1,5 +1,9 @@
 # Other
 
+* [SnakeCharmer stub](snakecharmer-gpu-prefetch-backend-control.md) + [PDF](SnakeCharmer_GPU_Prefetch_Control_MICRO2026.pdf) — arXiv:2610.30990
+* [FIGFLEX stub](figflex-mixed-precision-fp-int-gemm.md) + [PDF](FIGFLEX_Mixed_Precision_FP_INT_GEMM_2026.pdf) — arXiv:2610.30480
+* [FlashAttention long-vector stub](flashattention-long-vector-riscv.md) + [PDF](FlashAttention_Long_Vector_RISCV_2026.pdf) — arXiv:2610.29489
+
 * [HAWK stub](hawk-gpu-npu-heterogeneous-kv-transfer.md) + [PDF](HAWK_GPU_NPU_Heterogeneous_KV_Transfer_2026.pdf) — arXiv:2610.29873
 * [MCCL stub](mccl-measurement-based-collective-communication.md) + [PDF](MCCL_Measurement_Based_Collective_Communication_2026.pdf) — arXiv:2610.17091
 * [NanoCP stub](nanocp-dynamic-context-parallelism-moe.md) + [PDF](NanoCP_Dynamic_Context_Parallelism_MoE_ASPLOS27.pdf) — arXiv:2605.21100

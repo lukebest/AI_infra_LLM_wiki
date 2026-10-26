@@ -13,7 +13,7 @@ tags:
 - attention
 - hardware
 created: 2026-10-19
-updated: 2026-10-22
+updated: 2026-10-26
 timestamp: '2026-10-19T00:00:00Z'
 sources:
   - raw/papers/multi-threshold-non-monotonic-activations-finn.md
@@ -55,6 +55,9 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 - [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — 阵列外的后处理单元
 - [FP4 QAT](/concepts/fp4-qat.md) — 低比特训练对激活路径的影响
 
+## 案例补充（2026-10-26）
+- [FlashAttention 长向量重排](/papers/flashattention-long-vector-riscv.md)：EPAC RISC-V 长向量核没有硬件 exp，softmax 占 FlashAttention **38%** cycle；软件多项式系数挤占向量寄存器导致溢出，挪到标量寄存器后 softmax 向量访存指令 **−78.7%**；转置分数块后行最大值/行和两处归约消失，整核 cycle 降 **1.84–2.08×**[7]。
+
 # Citations
 [1] [raw/papers/multi-threshold-non-monotonic-activations-finn.md](/raw/papers/multi-threshold-non-monotonic-activations-finn.md) — Berganski et al., arXiv:2610.21825
 [2] [raw/papers/meta-amd-mi350x-training-codesign.md](/raw/papers/meta-amd-mi350x-training-codesign.md) — Zhang et al., MICRO'26, arXiv:2610.22230
@@ -62,3 +65,4 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 [4] [papers/hc2026-nvidia-rubin.md](/papers/hc2026-nvidia-rubin.md) — Rubin 稀疏注意力下游 SoftMax
 [5] [concepts/flashattention.md](/concepts/flashattention.md) — online softmax
 [6] [raw/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md](/raw/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md) — Magar et al., arXiv:2610.27371
+[7] [raw/papers/flashattention-long-vector-riscv.md](/raw/papers/flashattention-long-vector-riscv.md) — Irabor & Casas, arXiv:2610.29489

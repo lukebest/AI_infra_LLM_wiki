@@ -1,5 +1,8 @@
 # Paper
 
+* [SnakeCharmer: GPU Prefetch Backend Control](snakecharmer-gpu-prefetch-backend-control.md) - MICRO'26 — GPU 预取效用/时机/放置联合控制；比 Snake 性能 +12.8%、能效 +20.8%，2.7 KB/SM
+* [FIGFLEX: Mixed-Precision FP-INT GEMM Accelerator](figflex-mixed-precision-fp-int-gemm.md) - UC Irvine — radix-4 + INT3 车道融合，吞吐随比特下降而上升；3-bit 下吞吐/面积比 AxCore 1.56×、FIGLUT 1.42×
+* [Reorienting the Vector Axis: FlashAttention on Long-Vector RISC-V](flashattention-long-vector-riscv.md) - BSC — EPAC 16384-bit 向量核 FlashAttention 重排；硅上 cycle 降 1.84–2.08×，FP 利用率 16.2%→29.7%
 * [HAWK: GPU–NPU Heterogeneous KV Transfer](hawk-gpu-npu-heterogeneous-kv-transfer.md) - Georgia Tech/ETRI — GPU prefill + Tenstorrent NPU decode；布局感知 RDMA；同 SLO 吞吐差 ≤7.88%，功耗效率最高 1.26×、成本效率最高 1.72×
 * [MCCL: Measurement-based Collective Communication](mccl-measurement-based-collective-communication.md) - EURECOM 等 PACMNET/CoNEXT'26 — 测量闭环集体；灰障下训练时间最高 4.99×；热切换 ≈12 ms，开销 <2%
 * [NanoCP: Dynamic Context Parallelism for MoE DP–EP](nanocp-dynamic-context-parallelism-moe.md) - 复旦/上交/上海 AI Lab ASPLOS'27 — 按请求动态 CP；99% TPOT-SLO 下可持续请求率最高 3.27×，P99 TPOT 最高降 2.01×
