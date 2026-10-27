@@ -127,6 +127,9 @@ Host CPU
 
 与 Day 19 [Memory Consistency Model](/concepts/memory-consistency-model.md)：PE 写 KV 到 HBM/外存时的 **atomic ref count** 为实际一致性场景。
 
+## 多存储层并行取 KV 前缀（2026-10-27）
+[KVStream](/papers/kvstream-parallel-storage-kv-cache.md)：长上下文前缀 KV 溢出到存储后，节点 NVMe 单独读只比共享 PFS 快 2.2–3.2×，同盘读写并发慢 6–27%。每块在 NVMe 与 PFS 各存一份、空闲层领下一块，检索距聚合带宽上界 5% 以内；离线吞吐比 LMCache 最高 1.49×，突发负载均值 TTFT 最高降 6.1×。
+
 ## 相关页面
 
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — DRAM/HBM 上一层

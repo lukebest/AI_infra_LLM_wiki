@@ -1,5 +1,9 @@
 # Other
 
+* [TranSAGE stub](transage-spatial-accelerator-generation.md) + [PDF](TranSAGE_Spatial_Accelerator_Generation_ASPLOS2027.pdf) — arXiv:2610.32279
+* [KVStream stub](kvstream-parallel-storage-kv-cache.md) + [PDF](KVStream_Parallel_Storage_KV_Cache_2026.pdf) — arXiv:2610.31827
+* [Embodied Emissions stub](embodied-emissions-2p5d-3d-chiplet-gpu.md) + [PDF](Embodied_Emissions_2p5D_3D_Chiplet_GPU_2026.pdf) — arXiv:2610.32830
+
 * [SnakeCharmer stub](snakecharmer-gpu-prefetch-backend-control.md) + [PDF](SnakeCharmer_GPU_Prefetch_Control_MICRO2026.pdf) — arXiv:2610.30990
 * [FIGFLEX stub](figflex-mixed-precision-fp-int-gemm.md) + [PDF](FIGFLEX_Mixed_Precision_FP_INT_GEMM_2026.pdf) — arXiv:2610.30480
 * [FlashAttention long-vector stub](flashattention-long-vector-riscv.md) + [PDF](FlashAttention_Long_Vector_RISCV_2026.pdf) — arXiv:2610.29489

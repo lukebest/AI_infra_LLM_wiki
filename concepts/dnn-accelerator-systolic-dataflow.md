@@ -12,7 +12,7 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-10-16
+updated: 2026-10-27
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
@@ -173,6 +173,9 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 ## 分段可重构：形状适配 × 空间并行（2026-10-16）
 
 [LizTail](/papers/liztail-segment-reconfigurable-systolic-arrays.md) 把 128×128 切成 32 个 128×4 段，只在端点做 180° 回折与段入口缓冲，组合裁剪 / 拉长 / 多子阵列（子阵列还可本地裁剪或拉长）。相对 TPU-like：**LLM decode 几何均值 25.67×**、CNN **5.02×**，EDP 最高降 **38.23×**；相对已能拉长的 ReDas，三款 LLM 再快 **2.72–3.14×**。面积 31.7 mm²（28 nm），介于 ReDas（20.8）与 SARA（77.3）之间。
+
+## 跨算子流水簇的生成器（2026-10-27）
+[TranSAGE](/papers/transage-spatial-accelerator-generation.md)（ASPLOS'27）把执行单元从单算子换成「多算子流水簇」：DP 图划分决定融合边界，簇内搜分块/展开/循环序，空间架构原语共享 PE/SRAM 并靠 Mux 运行时重配（面积开销 ≤0.11%）。decode 比 A100 吞吐 1.62×、能效 8.57×；但 decode BF16 利用率只有约 3%，带宽墙依旧。
 
 # Citations
 

@@ -15,7 +15,7 @@ tags:
 - noc
 timestamp: '2026-08-26T00:00:00Z'
 created: '2026-07-31'
-updated: 2026-09-10
+updated: 2026-10-27
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
 - raw/articles/3d-noc-study-02-monolithic-vs-tsv.md
@@ -113,6 +113,9 @@ Hot Chips 2026 封装侧：[SK hynix](/papers/hc2026-skhynix-hbm-advanced-packag
 ## 3D NMP 上的 MoE 部署（2026-09）
 
 [HDA-MoE](/papers/hda-moe-3d-nmp-hybrid-parallel.md)（北大/阿里 DAMO）把 **hybrid bonding 垂直叠 DRAM+compute** 的 NMP bank 阵列当推理目标：离线 hybrid TP–EP 放置 + 在线 pre-broadcast / hardware-aware gating。仿真 vs TP **1.1×–3.4×**、vs HD-MoE **1.1×–1.3×**。与 LogicFolding 的「缩短线长」证词正交：这里用的是近存算带宽，旋钮在专家映射与 NoC 链路平衡。
+
+## 隐含碳视角：3D 扩展 vs 2.5D 扩展（2026-10-27）
+imec 用 MI300X 式 chiplet GPU 建模（[Embodied Emissions 2.5D vs 3D](/papers/embodied-emissions-2p5d-3d-chiplet-gpu.md)）：算力与 HBM 容量翻倍，2.5D 摊大封装隐含碳 +141%，3D（hybrid bonding 叠 XCD + 16-Hi HBM）+89%。2.5D 需要两倍 IOD、中介层大 60%，组装良率 78.6% 对 85.1%；性能上 2.5D 仅快 6.8–13.5%。未计翘曲、光罩拼接与热管理。
 
 ## 与 wiki 既有页面的关联
 

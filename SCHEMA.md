@@ -40,6 +40,7 @@ sources: [raw/articles/source-name.md]
 - 近存/格式/广域（2026-10-21 补）: near-memory-processing, npu, edge, numeric-format, prefix-cache, geo-distributed
 - 能耗/均衡/随机计算（2026-10-22 补）: energy, load-balancing, stochastic-computing
 - 预取/向量 ISA（2026-10-26 补）: prefetch, risc-v, vector-processor
+- 可持续（2026-10-27 补）: carbon
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 

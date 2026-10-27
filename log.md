@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-10-27
+
+### Watch (morning)
+* **Watch**: 2026-10-27（周二）Asia/Shanghai 论文巡检。arXiv **Mon 10/26** new 列表（cs.AR 7 新 + 交叉/替换，cs.DC 21 新 + 交叉/替换，cs.NI 无相关）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（这两个新方向本轮无合格论文）。
+* **Ingest**: TranSAGE（2610.32279，ASPLOS'27）、KVStream（2610.31827）、Embodied Emissions 2.5D vs 3D（2610.32830，imec）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [TranSAGE](/papers/transage-spatial-accelerator-generation.md)（decode 比 A100 吞吐 **1.62×**、能效 **8.57×**；比 Gemmini/LEGO 最高 **11.33×**）；[KVStream](/papers/kvstream-parallel-storage-kv-cache.md)（距聚合带宽上界 **5%** 内，离线吞吐比 LMCache **1.49×**，突发 TTFT 降 **6.1×**）；[Embodied Emissions](/papers/embodied-emissions-2p5d-3d-chiplet-gpu.md)（2.5D 隐含碳 **+141%**，3D **+89%**；2.5D 仅快 **6.8–13.5%**）。
+* **Update**: [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md)、[3D Stacking Technologies](/concepts/3d-stacking-technologies.md)、[SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md)。
+* **Schema**: SCHEMA tag taxonomy 新增 carbon。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: Decode Late, Multiply Once（2610.31913，k-bit 权重按码分桶累加、最后乘一次的 SA-PE，作者声明恒等式非新，无 LLM 端到端数字）；PARIS（2610.32410，MSDF 内积并行，45 nm MNIST 级）；HyScale（2610.32057，learned sparse attention 长上下文训练，GLM-5.1 1M token 512×H20 比 Megatron 2.07×，偏系统软件）；Beyond Hotness（2610.32711，ARM SPE 分层内存刻画，摘要无量化）；Open ISA HPC 对比（2610.32632）；InferSlice（2610.32638，电信广域推理参考架构）；KnitTrans（2610.32389，RL 轨迹传输）；Tile-Based Decompression（2610.32695）。遗留 uGDS、UlaCache、RISK-KV、KVLearn、Proba、MFSA、PAGE404、DualColl、BaGuaLu-2、PlaneZip、TideKV 继续挂候选。
+
 ## 2026-10-26
 
 ### Watch (morning)

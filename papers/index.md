@@ -1,5 +1,8 @@
 # Paper
 
+* [TranSAGE: Spatial Accelerator Generation for Transformers](transage-spatial-accelerator-generation.md) - ASPLOS'27 — 多算子流水簇空间加速器生成器；decode 比 A100 吞吐 1.62×、能效 8.57×，比 Gemmini/LEGO 最高 11.33×
+* [KVStream: Parallel Storage Tiers for KV Prefix Retrieval](kvstream-parallel-storage-kv-cache.md) - Argonne 等 — NVMe+PFS 复制与完成驱动路由；离线吞吐比 LMCache 最高 1.49×，突发 TTFT 最高降 6.1×
+* [Embodied Emissions of 2.5D vs 3D Chiplet GPU Scaling](embodied-emissions-2p5d-3d-chiplet-gpu.md) - imec — 算力/HBM 翻倍：2.5D 隐含碳 +141%，3D +89%；2.5D 仅快 6.8–13.5%
 * [SnakeCharmer: GPU Prefetch Backend Control](snakecharmer-gpu-prefetch-backend-control.md) - MICRO'26 — GPU 预取效用/时机/放置联合控制；比 Snake 性能 +12.8%、能效 +20.8%，2.7 KB/SM
 * [FIGFLEX: Mixed-Precision FP-INT GEMM Accelerator](figflex-mixed-precision-fp-int-gemm.md) - UC Irvine — radix-4 + INT3 车道融合，吞吐随比特下降而上升；3-bit 下吞吐/面积比 AxCore 1.56×、FIGLUT 1.42×
 * [Reorienting the Vector Axis: FlashAttention on Long-Vector RISC-V](flashattention-long-vector-riscv.md) - BSC — EPAC 16384-bit 向量核 FlashAttention 重排；硅上 cycle 降 1.84–2.08×，FP 利用率 16.2%→29.7%
