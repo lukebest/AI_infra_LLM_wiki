@@ -12,7 +12,7 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-10-27
+updated: 2026-10-28
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
@@ -177,9 +177,14 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 ## 跨算子流水簇的生成器（2026-10-27）
 [TranSAGE](/papers/transage-spatial-accelerator-generation.md)（ASPLOS'27）把执行单元从单算子换成「多算子流水簇」：DP 图划分决定融合边界，簇内搜分块/展开/循环序，空间架构原语共享 PE/SRAM 并靠 Mux 运行时重配（面积开销 ≤0.11%）。decode 比 A100 吞吐 1.62×、能效 8.57×；但 decode BF16 利用率只有约 3%，带宽墙依旧。
 
+## 边缘三值 + 自适应稀疏（2026-10-28）
+[SPARTA](/papers/sparta-sparse-ternary-edge-llm-accelerator.md) 不做经典脉动切分，而用条件累加统一 PE 同时映射三值 SpMM/SpMV 与 bit-serial QK/PV，并挂 page Top-k + histogram Top-p；28 nm **13.9 mm²** / 1 GHz，相对 FIGLUT/TeLLMe/MCBP 吞吐 **1.6–12.0×**、能效 **2.0–4.2×**、面积效率 **1.3–51.4×**，最大上下文 **32K**。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-25.md](raw/articles/arch-study-30d-day-25.md) — H&P Ch.7.1–7.5 DSA（Day 25）
 [99] [raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf](raw/papers/FlexPosit_Tunable_Fractional_Precision_LLM_2026.pdf) — FlexPosit
 [100] [arXiv:2610.07443](https://arxiv.org/abs/2610.07443) — DynaCore
 [101] [arXiv:2610.16159](https://arxiv.org/abs/2610.16159) — LizTail
+[102] [arXiv:2610.34824](https://arxiv.org/abs/2610.34824) — SPARTA

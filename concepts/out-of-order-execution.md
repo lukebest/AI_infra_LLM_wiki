@@ -9,7 +9,7 @@ tags:
 - scheduling
 timestamp: '2026-10-19T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-19
+updated: 2026-10-28
 sources:
 - raw/articles/arch-study-30d-day-10.md
 - raw/articles/arch-study-30d-day-12.md
@@ -85,6 +85,11 @@ OoO 是 **通用 CPU 高 IPC 的灵魂**，也是 **功耗与面积的主要来�
 
 [CTMA](/papers/causal-top-down-microarchitecture-analysis.md)：cactuBSSN_r 在扭曲数据拓扑下短循环密集、误预测频繁，压缩 ROB 份额几乎无损（~9–10%），瓶颈转到前端填充率；规则拓扑时同一操作损失 ~23%（Intel）。见 [Branch Prediction](/concepts/branch-prediction.md)。
 
+## 2026-10-28 补充：搜 OoO 参数也要 Pareto 反馈
+
+[PaFeDSE](/papers/pafedse-pareto-feedback-microarch-dse.md) 把微架构 DSE 里的「选点」做成 hit/miss 闭环：代理不只估 CPI/功耗/面积，还估会不会抬超体积；对反复 miss 的局部用图记忆惩罚。SPEC CPU 2017 上相对 MoDSE 最高少 **49.0%** 仿真达目标 HV。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-10.md](raw/articles/arch-study-30d-day-10.md) — Tomasulo 算法（Day 10）
@@ -92,3 +97,4 @@ OoO 是 **通用 CPU 高 IPC 的灵魂**，也是 **功耗与面积的主要来�
 [3] [raw/articles/arch-study-30d-day-19.md](raw/articles/arch-study-30d-day-19.md) — Store Buffer / TSO（Day 19）
 [CacheFlex] [arXiv:2610.12940](https://arxiv.org/abs/2610.12940)
 [CTMA] [arXiv:2610.21387](https://arxiv.org/abs/2610.21387)
+[PaFeDSE] [arXiv:2610.34838](https://arxiv.org/abs/2610.34838)

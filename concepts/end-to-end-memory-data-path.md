@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-10-20
+updated: 2026-10-28
 sources:
 - raw/papers/Ember_UVM_Oversubscription_Discrete_GPU_2026.pdf
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
@@ -259,6 +259,11 @@ WSE 简化（无 off-chip）:
 - 生产侧规模：M365 Deep Research 全会话峰值驻留约 **501.8 TB** HBM，推理只占驻留时间 **5.6%**；1 小时空闲上限降到 140.8 TB；紧预算下把受害会话降成 int4 留在 HBM（MRR），重算率 13.6%，低于 clairvoyant 淘汰的 31.1% [25]。
 - HBF 用法：MBZUAI HBFSim 显示 HBM 放不下时 HBF 比 host DRAM 快 **11.0–19.0×**；HBM 优先留给运行中序列的 KV，按需落 HBF；extent 条带化映射；SLC 100k P/E 假设下寿命 **2.0–6.9 年** [26]。见 [Agentic KV Residency](/papers/agentic-kv-residency-m365-production.md)、[HBFSim (MBZUAI)](/papers/hbfsim-hbm-hbf-llm-memory-hierarchy.md)。
 
+## 2026-10-28 补充：压缩态 KV 不回写再读
+
+[ZipFusion](/papers/zipfusion-lossless-kv-attention-fusion.md)：IBP/SplitZip/LZ4 先解压再 attention，解压可占 instrumented decode **32.7–73.8%**，且 HBM 上仍按未压缩字节反复读。融合解压后 attention 直接读压缩块，H100 上相对 FlashInfer 延迟降 **18.5–20.2%**，同显存预算最大 batch 吞吐最高 **+26.3%**。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -287,3 +292,4 @@ WSE 简化（无 off-chip）:
 [24] [arXiv:2610.20354](https://arxiv.org/abs/2610.20354) — Grace–Blackwell UM
 [25] [arXiv:2610.22863](https://arxiv.org/abs/2610.22863) — Agentic KV Residency (M365)
 [26] [arXiv:2610.23503](https://arxiv.org/abs/2610.23503) — HBFSim (MBZUAI, RACS 2026)
+[27] [arXiv:2610.33719](https://arxiv.org/abs/2610.33719) — ZipFusion

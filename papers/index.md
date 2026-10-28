@@ -1,5 +1,9 @@
 # Paper
 
+* [ZipFusion: Lossless KV Decompression Fused into Attention](zipfusion-lossless-kv-attention-fusion.md) - CUHK — FlashInfer 上寄存器内无损重建；H100 attention 1.23–1.25×，8K 最大 batch 吞吐 +26.3%/+25.8%，vs 最佳无损基线最高 2.76×
+* [SPARTA: Sparse Ternary Edge LLM Accelerator](sparta-sparse-ternary-edge-llm-accelerator.md) - 浙大/Veloxis — 28 nm 13.9 mm²；KV 流量 4.1–4.8×，Jetson 吞吐 3.9× / 能效 8.3×，vs FIGLUT/TeLLMe/MCBP 吞吐 1.6–12.0×
+* [PaFeDSE: Pareto-Feedback Microarchitecture DSE](pafedse-pareto-feedback-microarch-dse.md) - KAIST ASP-DAC'27 — OoO DSE；相对 MoDSE 达目标 HV 最高少 49.0% 仿真，探索开销 7.1×，PPA MAPE 0.731%
+
 * [TranSAGE: Spatial Accelerator Generation for Transformers](transage-spatial-accelerator-generation.md) - ASPLOS'27 — 多算子流水簇空间加速器生成器；decode 比 A100 吞吐 1.62×、能效 8.57×，比 Gemmini/LEGO 最高 11.33×
 * [KVStream: Parallel Storage Tiers for KV Prefix Retrieval](kvstream-parallel-storage-kv-cache.md) - Argonne 等 — NVMe+PFS 复制与完成驱动路由；离线吞吐比 LMCache 最高 1.49×，突发 TTFT 最高降 6.1×
 * [Embodied Emissions of 2.5D vs 3D Chiplet GPU Scaling](embodied-emissions-2p5d-3d-chiplet-gpu.md) - imec — 算力/HBM 翻倍：2.5D 隐含碳 +141%，3D +89%；2.5D 仅快 6.8–13.5%

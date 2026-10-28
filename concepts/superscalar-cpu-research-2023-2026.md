@@ -12,6 +12,7 @@ tags:
 - llm
 - wse
 timestamp: '2026-10-19T00:00:00Z'
+updated: 2026-10-28
 created: 2026-07-03
 sources:
 - raw/reports/superscalar-cpu-final-report.md
@@ -117,9 +118,15 @@ Constable（ISCA'24 Best Paper）+ Bullseye + Prophet 代表「旁路主表」�
 
 [CTMA](/papers/causal-top-down-microarchitecture-analysis.md)（ICT CAS / BenchCouncil）指出 TMA 只看「负载→CPI」路径。在 Skylake-SP / Zen 3 / Kunpeng 920 上：CPI 不变而耗时变化 >100%（leela_r）；分支更准反而性能减半（mcf_r，LFB 溢出、内存控制器拥塞）；ROB 份额压缩对完美拓扑数据集伤 ~23%/~12%、对扭曲拓扑仅 ~9%/~10%（瓶颈转到前端填充率）；Zen 3 op-cache SMT 共享退化 >50%；kill -9 SMT 兄弟后的「幽灵态」让 SPEC CPU2017 虚高 22.75%。对「OoO 深度边际饱和」类结论的启示：先控制住算法路径再归因到后端。
 
+## 2026-10-28 补充：Pareto 反馈加速 OoO DSE
+
+[PaFeDSE](/papers/pafedse-pareto-feedback-microarch-dse.md)（ASP-DAC'27）用 HitFormer 预测 Pareto-hit、MissGraph 惩罚 miss 邻域、TCFilter 裁跨轮低优先级候选。gem5+McPAT 22 nm、设计空间 **3,359,232** 点：相对 MoDSE 达目标 HV 最高少 **49.0%** 次仿真，探索开销 **7.1×**，平均 90/95/99% HV 需 **32.9 / 43.3 / 118.8** 次仿真，PPA MAPE **0.731%**。
+
+
 # Citations
 
 [1] [raw/reports/superscalar-cpu-final-report.md](raw/reports/superscalar-cpu-final-report.md) — 最终汇总（2026-07-03）
 [2] [raw/reports/superscalar-cpu-report.md](raw/reports/superscalar-cpu-report.md) — 结构化综述 v2（~2400 字）
 [3] [raw/reports/constable-deepdive.md](raw/reports/constable-deepdive.md) — Constable 精读
 [4] [arXiv:2610.21387](https://arxiv.org/abs/2610.21387) — CTMA
+[5] [arXiv:2610.34838](https://arxiv.org/abs/2610.34838) — PaFeDSE

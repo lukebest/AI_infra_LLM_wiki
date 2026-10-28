@@ -1,5 +1,9 @@
 # Other
 
+* [ZipFusion stub](zipfusion-lossless-kv-attention-fusion.md) + [PDF](ZipFusion_Lossless_KV_Attention_Fusion_2026.pdf) — arXiv:2610.33719
+* [SPARTA stub](sparta-sparse-ternary-edge-llm-accelerator.md) + [PDF](SPARTA_Sparse_Ternary_Edge_LLM_Accelerator_2026.pdf) — arXiv:2610.34824
+* [PaFeDSE stub](pafedse-pareto-feedback-microarch-dse.md) + [PDF](PaFeDSE_Pareto_Feedback_Microarch_DSE_ASPDAC2027.pdf) — arXiv:2610.34838
+
 * [TranSAGE stub](transage-spatial-accelerator-generation.md) + [PDF](TranSAGE_Spatial_Accelerator_Generation_ASPLOS2027.pdf) — arXiv:2610.32279
 * [KVStream stub](kvstream-parallel-storage-kv-cache.md) + [PDF](KVStream_Parallel_Storage_KV_Cache_2026.pdf) — arXiv:2610.31827
 * [Embodied Emissions stub](embodied-emissions-2p5d-3d-chiplet-gpu.md) + [PDF](Embodied_Emissions_2p5D_3D_Chiplet_GPU_2026.pdf) — arXiv:2610.32830

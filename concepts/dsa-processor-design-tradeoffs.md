@@ -11,7 +11,7 @@ tags:
 - compiler
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-20
+updated: 2026-10-28
 sources:
 - raw/articles/arch-study-30d-day-16.md
 - raw/articles/arch-study-30d-day-25.md
@@ -110,7 +110,12 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 - [ArchAgent](/papers/archagent-heterogeneous-system-design.md)：LLM 规划器 + 芯片/scale-up/scale-out 三个专家 agent，性能全部由确定性解析模型给出；1 MW 等功耗下异构设计加权几何均值 **1.93×**（同构 GPU 基线），第 18 次评估超过爬山法 100 次的 1.65×；常把 2–10% 功耗分给 decode/求解器专用分区 [2]。
 - 与 [AHRR](/papers/ahrr-agents-hls-chip-design.md)（HLS/RTL 层）对照：agent 设计流正在从电路层上移到系统组成层，可信度取决于评估器保真度。
 
+## OoO 核 PPA 前沿的高效搜索（2026-10-28）
+[PaFeDSE](/papers/pafedse-pareto-feedback-microarch-dse.md)：在对照 DSA/加速器分区之前，通用 OoO 核自身的 Pareto 前沿也要搜得起。HitFormer + MissGraph + TCFilter 把达目标超体积的仿真最高砍 **49.0%**，探索开销 **7.1×**，PPA MAPE **0.731%**——降低「摸清 CPU 侧基线」的成本。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-16.md](raw/articles/arch-study-30d-day-16.md) — 核心篇阶段总结（Day 16）
 [2] [arXiv:2610.23724](https://arxiv.org/abs/2610.23724) — ArchAgent
+[3] [arXiv:2610.34838](https://arxiv.org/abs/2610.34838) — PaFeDSE

@@ -9,6 +9,7 @@ tags:
 - accelerator
 - training
 timestamp: '2026-10-19T00:00:00Z'
+updated: 2026-10-28
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-05.md
@@ -71,9 +72,15 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 ## 2026-10-26 补充：整数权重比特数怎么换成算力
 [FIGFLEX](/papers/figflex-mixed-precision-fp-int-gemm.md)：FP16 激活 × 低比特整数权重，radix-4 移位加让部分积约减半，PE 吞吐随 INT4→INT1 上升；INT3 配对融合高位回收半车道。3-bit 混合精度下单位面积吞吐比 AxCore **1.56×**、比 FIGLUT **1.42×**，LLaMA-2-7B PPL **5.85**。
 
+## 2026-10-28 补充：三值权重之后 KV 成墙
+
+[SPARTA](/papers/sparta-sparse-ternary-edge-llm-accelerator.md)：{−1,0,+1} ≈1.58-bit 权重把边缘侧权重存压到 8-bit 模型约 1/5 后，长上下文每 token 流量被 KV 主导。芯片用统一 PE 吃三值 SpMM/SpMV + bit-serial attention，再加 ρk=1/4 / p=0.90 自适应稀疏；28 nm **13.9 mm²**，KV 流量相对满注意力 **4.1–4.8×**。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-05.md](raw/articles/arch-study-30d-day-05.md) — H&P Appendix J + AI 格式（Day 5）
 [2] [arXiv:2610.21825](https://arxiv.org/abs/2610.21825) — Multi-threshold activations
 - [arXiv:2610.26083](https://arxiv.org/abs/2610.26083) — MX-like Tensor Core
 - [arXiv:2610.30480](https://arxiv.org/abs/2610.30480) — FIGFLEX
+- [arXiv:2610.34824](https://arxiv.org/abs/2610.34824) — SPARTA

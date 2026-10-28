@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-10-28
+
+### Watch (morning)
+* **Watch**: 2026-10-28（周三）Asia/Shanghai 论文巡检。arXiv **Tue 10/27** new 列表（及挂起候选）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（超标量方向本轮入 PaFeDSE；非线性无单独合格新篇）。
+* **Ingest**: ZipFusion（2610.33719）、SPARTA（2610.34824）、PaFeDSE（2610.34838，ASP-DAC'27）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [ZipFusion](/papers/zipfusion-lossless-kv-attention-fusion.md)（FlashInfer attention **1.23–1.25×**；8K 最大 batch 吞吐 Llama **+26.3%** / Qwen **+25.8%**；vs 最佳无损基线最高 **2.76×**；batch **46→57** / **40→50**）；[SPARTA](/papers/sparta-sparse-ternary-edge-llm-accelerator.md)（28 nm **13.9 mm²**；KV 流量 **4.1–4.8×**；Jetson 吞吐 **3.9×** / 能效 **8.3×**；vs FIGLUT/TeLLMe/MCBP 吞吐 **1.6–12.0×**）；[PaFeDSE](/papers/pafedse-pareto-feedback-microarch-dse.md)（相对 MoDSE 达目标 HV 最高少 **49.0%** 仿真；探索开销 **7.1×**；平均 90/95/99% HV **32.9 / 43.3 / 118.8** 次；PPA MAPE **0.731%**）。
+* **Update**: [PagedAttention / vLLM](/concepts/pagedattention-vllm.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[Numeric Formats](/concepts/numeric-formats-ai-hardware.md)、[DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md)、[Superscalar CPU Research](/concepts/superscalar-cpu-research-2023-2026.md)、[Out-of-Order Execution](/concepts/out-of-order-execution.md)、[DSA Processor Design Trade-offs](/concepts/dsa-processor-design-tradeoffs.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: MCF（2610.34731）、DualPace（2610.33501）、Double KV Apple（2610.33076）、TMA Hopper（2610.34907）、Proba replace（2610.30448）、ChroNoC、MEERKAT、CCAaaS Meta；遗留 uGDS、UlaCache、RISK-KV、KVLearn、MFSA、PAGE404、DualColl、BaGuaLu-2、PlaneZip、TideKV、HyScale 继续挂候选。
+
 ## 2026-10-27
 
 ### Watch (morning)

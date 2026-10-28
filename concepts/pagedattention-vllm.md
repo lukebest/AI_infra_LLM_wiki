@@ -13,7 +13,7 @@ tags:
 - memory-management
 timestamp: '2026-10-19T00:00:00Z'
 created: 2026-07-07
-updated: 2026-10-21
+updated: 2026-10-28
 sources:
 - raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md
 - raw/papers/understanding-inference-scaling-for-llms.md
@@ -89,6 +89,11 @@ GPU 上传统 KV cache 分配的痛点：
 
 ## 2026-10-21 补充：前缀复用跨地域
 [KVCompass](/papers/kvcompass-internet-scale-prefix-cache-discovery.md) 把前缀缓存复用从单集群扩到多地域：KV 身份与放置解耦，边缘常数时间查表后按复用、负载、网络距离联合选 worker。
+
+## 2026-10-28 补充：无损压缩页直接喂 attention
+
+[ZipFusion](/papers/zipfusion-lossless-kv-attention-fusion.md) 在 SGLang 页式 KV（16-token）上把已完成页保持无损压缩，FlashInfer 风格 kernel 在寄存器内还原 BF16，不再为 attention 留未压缩副本；调度器按压缩后的物理余量接新请求。H100 上 decode attention **1.23–1.25×**，最大 batch Llama **46→57** / Qwen **40→50**，相对未压缩 SGLang 最大 batch 吞吐 **+26.3% / +25.8%**。
+
 
 # Citations
 
