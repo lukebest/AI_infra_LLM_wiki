@@ -1,5 +1,11 @@
 # Paper
 
+* [INC-MoE: In-Network Collectives for Expert-Parallel MoE Inference](inc-moe-innetwork-collectives-moe-inference.md) - EP MoE dispatch/combine 卸到交换机 AG 组播 + RS 规约并与 FFN 流水重叠；相对 vLLM 默认 TTFT −20.2–33.1%、prefill 吞吐 +25.3–49.5%
+* [FuseLSE / IntLSE: Speeding up Log-Sum-Exp](fuselse-intlse-logsumexp-neurips2026.md) - NeurIPS'26 — 单遍融合 + 整数近似 LSE；GPU 相对 torch.logsumexp ~10–11× / ~6×，HBM ~6×→1×；CPU IntLSE 再 3–6×
+* [p-DCIM: SRAM DCIM Ising for Near-Memory RAG Selection](pdcim-sram-ising-rag-context-selection.md) - Georgia Tech — 28 nm 0.16 mm² / 0.41 mW；选择 ~0.9 µJ（>6 数量级低于 LLM 重排），整查询能耗 −67%
+
+
+
 * [ZipFusion: Lossless KV Decompression Fused into Attention](zipfusion-lossless-kv-attention-fusion.md) - CUHK — FlashInfer 上寄存器内无损重建；H100 attention 1.23–1.25×，8K 最大 batch 吞吐 +26.3%/+25.8%，vs 最佳无损基线最高 2.76×
 * [SPARTA: Sparse Ternary Edge LLM Accelerator](sparta-sparse-ternary-edge-llm-accelerator.md) - 浙大/Veloxis — 28 nm 13.9 mm²；KV 流量 4.1–4.8×，Jetson 吞吐 3.9× / 能效 8.3×，vs FIGLUT/TeLLMe/MCBP 吞吐 1.6–12.0×
 * [PaFeDSE: Pareto-Feedback Microarchitecture DSE](pafedse-pareto-feedback-microarch-dse.md) - KAIST ASP-DAC'27 — OoO DSE；相对 MoDSE 达目标 HV 最高少 49.0% 仿真，探索开销 7.1×，PPA MAPE 0.731%

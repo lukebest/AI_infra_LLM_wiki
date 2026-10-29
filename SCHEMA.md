@@ -41,6 +41,7 @@ sources: [raw/articles/source-name.md]
 - 能耗/均衡/随机计算（2026-10-22 补）: energy, load-balancing, stochastic-computing
 - 预取/向量 ISA（2026-10-26 补）: prefetch, risc-v, vector-processor
 - 可持续（2026-10-27 补）: carbon
+- 存内计算/RAG/Ising（2026-10-29 补）: cim, rag, ising
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 

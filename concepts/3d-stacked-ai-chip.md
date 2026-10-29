@@ -13,7 +13,7 @@ tags:
 - architecture
 timestamp: '2026-08-26T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-22
+updated: 2026-10-29
 sources:
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
 ---
@@ -115,6 +115,10 @@ HBM4 逻辑 die 约 140.8 mm²，去掉 TSV/PHY 后空余 38.6 mm²；[DuoPD](/p
 ## MoE decode 负载均衡与单片 3D DRAM（2026-10-22）
 - [3D-MoE](/papers/3d-moe-complementarity-nmp-moe-decode.md)：通道-核瓦片组织下本地便宜、远程贵；利用专家负载跨步反相波动做离线分组，逻辑 die 加局部广播通路（面积 +2.11%），MoE 层比 EP 平均 4.63×，端到端比最强 NMP 基线 1.58–1.86×。
 - [M3D-FLOW](/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md)：单片 3D DRAM 按层延迟分 8 个 tier 放数据，Cu-Cu 混合键合逻辑 die 上用随机计算尾数乘法提升热预算内 MAC 密度。
+
+
+## 近存 RAG 选择（2026-10-29）
+[p-DCIM](/papers/pdcim-sram-ising-rag-context-selection.md) 提案把 28 nm SRAM DCIM Ising 宏放在混合 **HBM+HBF** 的逻辑 base-die：集合级证据选择在存储子系统内完成，仅回传 passage ID；选择能耗约 **0.9 µJ**，整查询能耗 **−67%**。与 decode 近存（DuoPD / 3D-MoE）互补——加速的是检索后组合优化而非 GEMV。
 
 # Citations
 

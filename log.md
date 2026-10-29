@@ -1,5 +1,17 @@
 # Bundle Update Log
 
+## 2026-10-29
+
+### Watch (morning)
+* **Watch**: 2026-10-29（周四）Asia/Shanghai 论文巡检。arXiv **Wed 10/28** new 列表（cs.AR 8 新 + 2 交叉 + 4 替换；cs.DC 8 新 + 6 交叉 + 10 替换；并扫挂起候选）。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（非线性方向本轮入 FuseLSE/IntLSE；超标量无单独合格新篇）。
+* **Ingest**: INC-MoE（2610.36339）、FuseLSE/IntLSE（2610.33647，NeurIPS'26）、p-DCIM（2610.37033）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [INC-MoE](/papers/inc-moe-innetwork-collectives-moe-inference.md)（TTFT **−20.2–33.1%**，prefill 吞吐 **+25.3–49.5%**；理论通信缩短 N=4 **33.3%** / N=8 **42.9%**）；[FuseLSE/IntLSE](/papers/fuselse-intlse-logsumexp-neurips2026.md)（GPU **~10–11× / ~6×**，HBM **~6×→1×**；CPU IntLSE **3–6×** vs FuseLSE）；[p-DCIM](/papers/pdcim-sram-ising-rag-context-selection.md)（28 nm **0.16 mm² / 0.41 mW**；选择 **~0.9 µJ**，整查询 **−67%**）。
+* **Update**: [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[In-Core Nonlinear Operator Acceleration](/concepts/in-core-nonlinear-operator-acceleration.md)、[3D-Stacked AI Chip](/concepts/3d-stacked-ai-chip.md)。
+* **Schema**: SCHEMA tag taxonomy 新增 cim、rag、ising。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: MCF（2610.34731，16K prefill 相对 Ring/Zigzag 约 3.1×/2.9×，FPGA 集群路径）；DualPace（2610.33501，吞吐 vs NEO 6.9–43.2%、vs vLLM 11.5–90.6%）；Double KV Apple（2610.33076，M5 Max Metal Polar 46.8 tok/s / 3.64×，32K 塌缩）；TMA Hopper（2610.34907，刻画文）；R2CC（2512.25059，NSDI'27 替换）；TAO / Morph / PipeLink / JustGoal / SLICE-CiM / Kernel DSMEM floorsweep；遗留 uGDS、UlaCache、RISK-KV、KVLearn、Proba、MFSA、PAGE404、DualColl、BaGuaLu-2、PlaneZip、TideKV、HyScale 继续挂候选。
+
+
 ## 2026-10-28
 
 ### Watch (morning)

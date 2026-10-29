@@ -13,11 +13,12 @@ tags:
 - attention
 - hardware
 created: 2026-10-19
-updated: 2026-10-26
+updated: 2026-10-29
 timestamp: '2026-10-19T00:00:00Z'
 sources:
   - raw/papers/multi-threshold-non-monotonic-activations-finn.md
   - raw/papers/meta-amd-mi350x-training-codesign.md
+  - raw/papers/fuselse-intlse-logsumexp-neurips2026.md
 ---
 
 # 核内非线性运算加速
@@ -36,6 +37,7 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 | 量化后多阈值比较 | 低比特下把激活+scale+bias 折成阈值表，硬件只做比较/二分搜索 | [Multi-Threshold 非单调激活](/papers/multi-threshold-non-monotonic-activations-finn.md)（SiLU 用 Lambert W 求阈值；非单调只多几百 LUT） |
 | 跨 CTA 归约 | 行归约跨 CTA 借 DSMEM 完成 | [Credit DSMEM](/papers/credit-dsmem-inter-cta-tiling.md)（LayerNorm、softmax-logits backward 等） |
 | 绕开 softmax | 线性注意力族改写 attention，减少 exp/归一化 | [Linear Attention Evolution](/concepts/linear-attention-evolution.md) |
+| 独立 LSE 原语融合 / 整数近似 | 不绑在 attention 内的 `logsumexp`：单遍融合降 HBM；无 SFU 平台改整数近似 | [FuseLSE / IntLSE](/papers/fuselse-intlse-logsumexp-neurips2026.md)（GPU ~6–11×，CPU IntLSE 再 3–6×） |
 
 ## 当前认知
 - GPU 上的主要手段在 kernel 层：融合、减少 HBM 往返、挑选硬件友好的近似式；同一近似在不同厂商上展开方式不同（tanh 在 AMD 上展开成 2σ(2x)−1）。
@@ -58,6 +60,10 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 ## 案例补充（2026-10-26）
 - [FlashAttention 长向量重排](/papers/flashattention-long-vector-riscv.md)：EPAC RISC-V 长向量核没有硬件 exp，softmax 占 FlashAttention **38%** cycle；软件多项式系数挤占向量寄存器导致溢出，挪到标量寄存器后 softmax 向量访存指令 **−78.7%**；转置分数块后行最大值/行和两处归约消失，整核 cycle 降 **1.84–2.08×**[7]。
 
+
+## 案例补充（2026-10-29）
+- [FuseLSE / IntLSE](/papers/fuselse-intlse-logsumexp-neurips2026.md)：针对独立 `torch.logsumexp`（九子 kernel、~**6×** HBM 往返）。GPU 上融合把流量压到约 **1×**，相对 PyTorch 小/大负载约 **10–11× / 6×**；CPU 上 IntLSE 整数近似再比 FuseLSE **3–6×**（粒子滤波 vs torch **2.8–5.2×**）[8]。
+
 # Citations
 [1] [raw/papers/multi-threshold-non-monotonic-activations-finn.md](/raw/papers/multi-threshold-non-monotonic-activations-finn.md) — Berganski et al., arXiv:2610.21825
 [2] [raw/papers/meta-amd-mi350x-training-codesign.md](/raw/papers/meta-amd-mi350x-training-codesign.md) — Zhang et al., MICRO'26, arXiv:2610.22230
@@ -66,3 +72,4 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 [5] [concepts/flashattention.md](/concepts/flashattention.md) — online softmax
 [6] [raw/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md](/raw/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md) — Magar et al., arXiv:2610.27371
 [7] [raw/papers/flashattention-long-vector-riscv.md](/raw/papers/flashattention-long-vector-riscv.md) — Irabor & Casas, arXiv:2610.29489
+[8] [raw/papers/fuselse-intlse-logsumexp-neurips2026.md](/raw/papers/fuselse-intlse-logsumexp-neurips2026.md) — Yao et al., NeurIPS 2026, arXiv:2610.33647

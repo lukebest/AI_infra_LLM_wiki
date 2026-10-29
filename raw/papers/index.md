@@ -1,5 +1,11 @@
 # Other
 
+* [INC-MoE stub](inc-moe-innetwork-collectives-moe-inference.md) + [PDF](INC_MoE_InNetwork_Collectives_MoE_Inference_2026.pdf) — arXiv:2610.36339
+* [FuseLSE/IntLSE stub](fuselse-intlse-logsumexp-neurips2026.md) + [PDF](FuseLSE_IntLSE_LogSumExp_NeurIPS2026.pdf) — arXiv:2610.33647
+* [p-DCIM stub](pdcim-sram-ising-rag-context-selection.md) + [PDF](pDCIM_SRAM_Ising_RAG_Context_Selection_2026.pdf) — arXiv:2610.37033
+
+
+
 * [ZipFusion stub](zipfusion-lossless-kv-attention-fusion.md) + [PDF](ZipFusion_Lossless_KV_Attention_Fusion_2026.pdf) — arXiv:2610.33719
 * [SPARTA stub](sparta-sparse-ternary-edge-llm-accelerator.md) + [PDF](SPARTA_Sparse_Ternary_Edge_LLM_Accelerator_2026.pdf) — arXiv:2610.34824
 * [PaFeDSE stub](pafedse-pareto-feedback-microarch-dse.md) + [PDF](PaFeDSE_Pareto_Feedback_Microarch_DSE_ASPDAC2027.pdf) — arXiv:2610.34838

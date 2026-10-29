@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-10-23T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-23
+updated: 2026-10-29
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -29,6 +29,7 @@ sources:
 - raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf
 - raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf
 - raw/papers/MCCL_Measurement_Based_Collective_Communication_2026.pdf
+- raw/papers/INC_MoE_InNetwork_Collectives_MoE_Inference_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -205,6 +206,10 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 [Meta × AMD MI350X](/papers/meta-amd-mi350x-training-codesign.md)：LL128 的 128 B 写会跨 AMD 64 B cache line，改为 LL64（56 B 载荷 + 8 B 标志，单 cache line 原子）后 AllGather/ReduceScatter **2×**、AllReduce **1.2–1.4×**；Direct AllGather 小消息 **1.4×**；P2P batching 让 128 GPU AllToAll 时延 **−40%**；VGPR 降 46% 使 occupancy 翻倍，ReduceScatter **+63%**、AllReduce **+48%**。整体从比 NCCL 慢 2× 收敛到差 **10–15%**。
 
+
+## 推理 EP 交换机内集体（2026-10-29）
+[INC-MoE](/papers/inc-moe-innetwork-collectives-moe-inference.md) 把 MoE serving 的 dispatch/combine 写成交换机侧 **AllGather 组播** 与 **ReduceScatter 规约**，并在持久 kernel 里与专家 FFN 做 band 级三阶段重叠。因两条 in-network 集体分吃链路相反方向，重叠相对并发环集体缩短带宽界时间 **(N−2)/(2(N−1))**（N=4 **33.3%** / N=8 **42.9%**）；OLMoE prefill EP=4 相对 vLLM 默认路径 TTFT **−20.2–33.1%**、吞吐 **+25.3–49.5%**。与 [T-CCL](/papers/t-ccl-tma-collective-communication.md)（节点内卸给 TMA）、[MCCL](/papers/mccl-measurement-based-collective-communication.md)（测量换算法）形成「换位置 / 换算法 / 换重叠结构」对照。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -233,3 +238,4 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [24] [arXiv:2610.16190](https://arxiv.org/abs/2610.16190) — API-level memory models (rocSHMEM)
 [25] [arXiv:2610.18451](https://arxiv.org/abs/2610.18451) — FastEEP
 [26] [arXiv:2610.22230](https://arxiv.org/abs/2610.22230) — Meta × AMD MI350X co-design
+[INC] [raw/papers/inc-moe-innetwork-collectives-moe-inference.md](/raw/papers/inc-moe-innetwork-collectives-moe-inference.md) — Stephan et al., arXiv:2610.36339
