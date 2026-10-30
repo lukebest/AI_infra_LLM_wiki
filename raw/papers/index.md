@@ -1,5 +1,9 @@
 # Other
 
+* [DualPace stub](dualpace-decoupled-gpu-cpu-decoding.md) + [PDF](DualPace_Decoupled_GPU_CPU_Decoding_2026.pdf) — arXiv:2610.33501
+* [uGDS stub](ugds-userspace-gpu-direct-storage.md) + [PDF](uGDS_UserSpace_GPU_Direct_Storage_2026.pdf) — arXiv:2610.30868
+* [MCF stub](mcf-memory-communication-aware-long-context.md) + [PDF](MCF_Memory_Communication_Aware_Long_Context_2026.pdf) — arXiv:2610.34731
+
 * [INC-MoE stub](inc-moe-innetwork-collectives-moe-inference.md) + [PDF](INC_MoE_InNetwork_Collectives_MoE_Inference_2026.pdf) — arXiv:2610.36339
 * [FuseLSE/IntLSE stub](fuselse-intlse-logsumexp-neurips2026.md) + [PDF](FuseLSE_IntLSE_LogSumExp_NeurIPS2026.pdf) — arXiv:2610.33647
 * [p-DCIM stub](pdcim-sram-ising-rag-context-selection.md) + [PDF](pDCIM_SRAM_Ising_RAG_Context_Selection_2026.pdf) — arXiv:2610.37033

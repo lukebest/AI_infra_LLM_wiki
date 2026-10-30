@@ -1,5 +1,9 @@
 # Paper
 
+* [DualPace: Decoupled GPU–CPU Decoding](dualpace-decoupled-gpu-cpu-decoding.md) - 浙大宁波 — AMX CPU 独立 decode 引擎；吞吐 vs NEO +6.9–43.2%、vs vLLM +11.5–90.6%；同 P99 ITL 请求率 +7.3–50.5%
+* [uGDS: User-Space GPU Direct Storage](ugds-userspace-gpu-direct-storage.md) - HKUST(GZ) — 用户态 NVMe + P2P；batch 读/写最高 12.12×/30.69× GDS；LMCache TTFT −62.7%、goodput 2.63×
+* [MCF: Memory- and Communication-Aware Long-Context](mcf-memory-communication-aware-long-context.md) - Essex — MARS + FPGA compute-NIC；16K N=16 TTFT 0.62 s，相对 Ring/Zigzag ~3.1×/2.9×
+
 * [INC-MoE: In-Network Collectives for Expert-Parallel MoE Inference](inc-moe-innetwork-collectives-moe-inference.md) - EP MoE dispatch/combine 卸到交换机 AG 组播 + RS 规约并与 FFN 流水重叠；相对 vLLM 默认 TTFT −20.2–33.1%、prefill 吞吐 +25.3–49.5%
 * [FuseLSE / IntLSE: Speeding up Log-Sum-Exp](fuselse-intlse-logsumexp-neurips2026.md) - NeurIPS'26 — 单遍融合 + 整数近似 LSE；GPU 相对 torch.logsumexp ~10–11× / ~6×，HBM ~6×→1×；CPU IntLSE 再 3–6×
 * [p-DCIM: SRAM DCIM Ising for Near-Memory RAG Selection](pdcim-sram-ising-rag-context-selection.md) - Georgia Tech — 28 nm 0.16 mm² / 0.41 mW；选择 ~0.9 µJ（>6 数量级低于 LLM 重排），整查询能耗 −67%

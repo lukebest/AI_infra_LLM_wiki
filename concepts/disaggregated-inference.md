@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-10-23T00:00:00Z'
 created: 2026-04-17
-updated: 2026-10-23
+updated: 2026-10-30
 sources:
 - raw/papers/AFORE_AFD_Expert_Reconfiguration_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
@@ -37,6 +37,8 @@ sources:
 - raw/papers/RREvict_Prefix_Cache_Eviction_Agentic_2026.pdf
 - raw/papers/HAWK_GPU_NPU_Heterogeneous_KV_Transfer_2026.pdf
 - raw/papers/NanoCP_Dynamic_Context_Parallelism_MoE_ASPLOS27.pdf
+- raw/papers/MCF_Memory_Communication_Aware_Long_Context_2026.pdf
+- raw/papers/DualPace_Decoupled_GPU_CPU_Decoding_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -246,3 +248,5 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [26] [arXiv:2610.22863](https://arxiv.org/abs/2610.22863) — Agentic KV Residency (M365)
 - [arXiv:2610.26131](https://arxiv.org/abs/2610.26131) — DuoPD
 - [arXiv:2610.24179](https://arxiv.org/abs/2610.24179) — KVCompass
+- [arXiv:2610.34731](https://arxiv.org/abs/2610.34731) — MCF
+- [arXiv:2610.33501](https://arxiv.org/abs/2610.33501) — DualPace

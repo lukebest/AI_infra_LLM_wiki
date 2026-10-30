@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-10-23T00:00:00Z'
 created: 2026-07-13
-updated: 2026-10-29
+updated: 2026-10-30
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -210,6 +210,10 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 ## 推理 EP 交换机内集体（2026-10-29）
 [INC-MoE](/papers/inc-moe-innetwork-collectives-moe-inference.md) 把 MoE serving 的 dispatch/combine 写成交换机侧 **AllGather 组播** 与 **ReduceScatter 规约**，并在持久 kernel 里与专家 FFN 做 band 级三阶段重叠。因两条 in-network 集体分吃链路相反方向，重叠相对并发环集体缩短带宽界时间 **(N−2)/(2(N−1))**（N=4 **33.3%** / N=8 **42.9%**）；OLMoE prefill EP=4 相对 vLLM 默认路径 TTFT **−20.2–33.1%**、吞吐 **+25.3–49.5%**。与 [T-CCL](/papers/t-ccl-tma-collective-communication.md)（节点内卸给 TMA）、[MCCL](/papers/mccl-measurement-based-collective-communication.md)（测量换算法）形成「换位置 / 换算法 / 换重叠结构」对照。
 
+
+## FPGA compute-NIC 上的推理 KV 集体（2026-10-30）
+[MCF](/papers/mcf-memory-communication-aware-long-context.md) 把组播 / all-to-all / online-softmax 规约做成元数据驱动的 FPGA NIC datapath，与 [INC-MoE](/papers/inc-moe-innetwork-collectives-moe-inference.md) 的交换机内 AG/RS 同属「把集体卸到网络路径」，对象从 EP token 换成长上下文 KV / decode 状态。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -239,3 +243,4 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [25] [arXiv:2610.18451](https://arxiv.org/abs/2610.18451) — FastEEP
 [26] [arXiv:2610.22230](https://arxiv.org/abs/2610.22230) — Meta × AMD MI350X co-design
 [INC] [raw/papers/inc-moe-innetwork-collectives-moe-inference.md](/raw/papers/inc-moe-innetwork-collectives-moe-inference.md) — Stephan et al., arXiv:2610.36339
+- [arXiv:2610.34731](https://arxiv.org/abs/2610.34731) — MCF

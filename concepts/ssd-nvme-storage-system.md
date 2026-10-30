@@ -13,8 +13,10 @@ tags:
 - wse
 timestamp: '2026-07-03T00:00:00Z'
 created: 2026-07-03
+updated: 2026-10-30
 sources:
 - raw/articles/arch-study-30d-day-20.md
+- raw/papers/uGDS_UserSpace_GPU_Direct_Storage_2026.pdf
 ---
 
 # SSD and NVMe Storage System（SSD 与 NVMe 存储系统）
@@ -144,3 +146,4 @@ Host CPU
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-20.md](raw/articles/arch-study-30d-day-20.md) — H&P App.D 存储系统（Day 20）
+[2] [arXiv:2610.30868](https://arxiv.org/abs/2610.30868) — uGDS

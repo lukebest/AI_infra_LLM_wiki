@@ -13,8 +13,9 @@ tags:
 - amat
 timestamp: '2026-07-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-10-28
+updated: 2026-10-30
 sources:
+- raw/papers/uGDS_UserSpace_GPU_Direct_Storage_2026.pdf
 - raw/papers/Ember_UVM_Oversubscription_Discrete_GPU_2026.pdf
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
 - raw/articles/arch-study-30d-day-22.md
@@ -263,6 +264,10 @@ WSE 简化（无 off-chip）:
 
 [ZipFusion](/papers/zipfusion-lossless-kv-attention-fusion.md)：IBP/SplitZip/LZ4 先解压再 attention，解压可占 instrumented decode **32.7–73.8%**，且 HBM 上仍按未压缩字节反复读。融合解压后 attention 直接读压缩块，H100 上相对 FlashInfer 延迟降 **18.5–20.2%**，同显存预算最大 batch 吞吐最高 **+26.3%**。
 
+
+
+## 用户态 GDS 控制路径（2026-10-30）
+[uGDS](/papers/ugds-userspace-gpu-direct-storage.md) 显示 SSD↔GPU P2P 数据路径上，内核控制路径仍可主导小 I/O；用户态队列后 batch 带宽相对 GDS 最高 **12.12×/30.69×**，LMCache 中位 TTFT **−62.7%**。
 
 # Citations
 

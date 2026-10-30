@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-10-30
+
+### Watch (morning)
+* **Watch**: 2026-10-30（周五）Asia/Shanghai 论文巡检。arXiv **Thu 10/29** new 列表（及 Fri 若已放出）+ 挂起候选。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（本轮超标量/非线性无单独合格新篇；增量来自挂起 DualPace/uGDS/MCF）。
+* **Ingest**: DualPace（2610.33501）、uGDS（2610.30868）、MCF（2610.34731）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [DualPace](/papers/dualpace-decoupled-gpu-cpu-decoding.md)（吞吐 vs NEO **+6.9–43.2%**、vs vLLM **+11.5–90.6%**；同级 P99 ITL 请求率 **+7.3–50.5%**）；[uGDS](/papers/ugds-userspace-gpu-direct-storage.md)（batch 读/写最高 **12.12× / 30.69×** GDS；LMCache 中位 TTFT **−62.7%**、goodput **2.63×**）；[MCF](/papers/mcf-memory-communication-aware-long-context.md)（16K N=16 TTFT **0.62 s**，相对 Ring/Zigzag ~**3.1× / 2.9×**；4×KR260 **17.3 tok/s**）。
+* **Update**: [Heterogeneous Inference](/concepts/heterogeneous-inference.md)、[SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md)、[Disaggregated Inference](/concepts/disaggregated-inference.md)、[LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: UlaCache（2610.29820，统一逻辑地址稀疏 KV，B300 TP 最高 2.51× HiSparse）；RISK-KV（2610.29544，选择性 KV 重建，省略 18.2–33.3% KV）；KVLearn（2610.28637，学习式 retention）；Double KV Apple（2610.33076）；TMA Hopper（2610.34907）；PipeLink / Morph / TAO / JustGoal（10/29 列表偏软件编排）；遗留 Proba、MFSA、PAGE404、DualColl、BaGuaLu-2、PlaneZip、TideKV、HyScale、UlaCache、RISK-KV、KVLearn 继续挂候选。
+
+
 ## 2026-10-29
 
 ### Watch (morning)

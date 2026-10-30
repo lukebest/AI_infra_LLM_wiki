@@ -11,7 +11,7 @@ tags:
 - agentic-ai
 timestamp: '2026-10-23T00:00:00Z'
 created: 2026-04-16
-updated: 2026-10-23
+updated: 2026-10-30
 sources:
 - raw/papers/EdgeAgent_UMA_Multi_Agent_Edge_Inference_2026.pdf
 - raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
@@ -22,6 +22,7 @@ sources:
 - raw/papers/LEAP_IMC_NoC_LLM_Inference_2026.pdf
 - raw/papers/DynaNDE_Near_Data_Expert_Scheduling_2026.pdf
 - raw/papers/HAWK_GPU_NPU_Heterogeneous_KV_Transfer_2026.pdf
+- raw/papers/DualPace_Decoupled_GPU_CPU_Decoding_2026.pdf
 ---
 
 # Heterogeneous Inference（异构推理）
@@ -137,3 +138,4 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [10] [arXiv:2610.01265](https://arxiv.org/pdf/2610.01265) — RapidMoE
 [11] [arXiv:2610.03394](https://arxiv.org/pdf/2610.03394) — EdgeAgent
 [12] [arXiv:2610.05123](https://arxiv.org/pdf/2610.05123) — HiNa-MoE
+[13] [arXiv:2610.33501](https://arxiv.org/abs/2610.33501) — DualPace
