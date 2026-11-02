@@ -1,5 +1,9 @@
 # Other
 
+* [UlaCache stub](ulacache-unified-logical-sparse-kv-serving.md) + [PDF](UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf) — arXiv:2610.29820
+* [FlatCake stub](flatcake-flat-kvcache-storage.md) + [PDF](FlatCake_Flat_KVCache_Storage_2026.pdf) — arXiv:2610.38355
+* [GPU–WSE Complementarity stub](gpu-wse-heterogeneity-complementarity.md) + [PDF](GPU_WSE_Heterogeneity_Complementarity_2026.pdf) — arXiv:2610.39222
+
 * [DualPace stub](dualpace-decoupled-gpu-cpu-decoding.md) + [PDF](DualPace_Decoupled_GPU_CPU_Decoding_2026.pdf) — arXiv:2610.33501
 * [uGDS stub](ugds-userspace-gpu-direct-storage.md) + [PDF](uGDS_UserSpace_GPU_Direct_Storage_2026.pdf) — arXiv:2610.30868
 * [MCF stub](mcf-memory-communication-aware-long-context.md) + [PDF](MCF_Memory_Communication_Aware_Long_Context_2026.pdf) — arXiv:2610.34731

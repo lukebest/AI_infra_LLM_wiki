@@ -9,9 +9,9 @@ tags:
 - deterministic
 - inference
 - mesh
-timestamp: '2026-08-26T00:00:00Z'
+timestamp: '2026-11-02T00:00:00Z'
 created: 2026-04-16
-updated: 2026-08-26
+updated: 2026-11-02
 sources:
 - raw/papers/Near-optimal_wafer-scale_reduce.pdf
 - raw/articles/interconn-study-21d-day-01.md
@@ -157,6 +157,10 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 - [Fovea](/papers/fovea-physical-implication-aware-wafer-scale-dse.md) — 同质 repeated-die 仍要按负载选实例；不是 WSE 式固定 field-stitch 模板
 - [Hot Chips 2026 CS-4](/papers/hc2026-cerebras-cs4.md) — 三晶圆机柜 + Direct Wafer Links + CS-6 3D DRAM
 
+
+## 2026-11-02：与 GPU 异构互补边界
+[GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md) 在 WSE-3 + A100 上刻画 DP/PP/PD：decode 侧 WSE 微秒级步进相对 GPU 毫秒–数百毫秒的差距，是 PD 解耦互补的主要来源之一；标准统一微批 PP 难超单平台。
+
 # Citations
 
 [1] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)
@@ -175,3 +179,4 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 [14] [raw/articles/interconn-study-21d-day-13.md](raw/articles/interconn-study-21d-day-13.md) — CDG/Dally、Mesh vs Torus（Day 13）
 [15] [raw/articles/interconn-study-21d-day-14.md](raw/articles/interconn-study-21d-day-14.md) — Duato / 逃逸 VC（Day 14）
 [16] [raw/papers/hc2026-cerebras-cs4.md](raw/papers/hc2026-cerebras-cs4.md) — CS-4 / Nexus, Hot Chips 2026
+- [arXiv:2610.39222](https://arxiv.org/abs/2610.39222) — GPU–WSE Complementarity

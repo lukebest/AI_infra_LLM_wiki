@@ -1,5 +1,9 @@
 # Paper
 
+* [UlaCache: Unified Logical Sparse KV Serving](ulacache-unified-logical-sparse-kv-serving.md) - Scitix.AI — 统一逻辑 KV 地址；相对 HiSparse 投机峰值 8×H200 1.16×/1.70×、8×B300 1.73×/2.51×；B300 TP 无投机 3.51× SGLang
+* [FlatCake: Flat KVCache Storage](flatcake-flat-kvcache-storage.md) - 复旦/北大/沐曦/ICT — DRAM+SSD 对等扁平 KV；命中 94.2–94.6%（Mooncake→64.3%），峰值 TTFT/吞吐 1.6×，SSD 读放大消除 6.5–6.7×
+* [GPU–WSE Heterogeneity Complementarity](gpu-wse-heterogeneity-complementarity.md) - Stevens/Argonne — WSE-3+A100 DP/PP/PD 互补边界；模型中位误差 DP 6.8%/PD 8.2%
+
 * [DualPace: Decoupled GPU–CPU Decoding](dualpace-decoupled-gpu-cpu-decoding.md) - 浙大宁波 — AMX CPU 独立 decode 引擎；吞吐 vs NEO +6.9–43.2%、vs vLLM +11.5–90.6%；同 P99 ITL 请求率 +7.3–50.5%
 * [uGDS: User-Space GPU Direct Storage](ugds-userspace-gpu-direct-storage.md) - HKUST(GZ) — 用户态 NVMe + P2P；batch 读/写最高 12.12×/30.69× GDS；LMCache TTFT −62.7%、goodput 2.63×
 * [MCF: Memory- and Communication-Aware Long-Context](mcf-memory-communication-aware-long-context.md) - Essex — MARS + FPGA compute-NIC；16K N=16 TTFT 0.62 s，相对 Ring/Zigzag ~3.1×/2.9×

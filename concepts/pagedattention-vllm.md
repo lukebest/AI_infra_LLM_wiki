@@ -11,10 +11,12 @@ tags:
 - vllm
 - virtual-memory
 - memory-management
-timestamp: '2026-10-19T00:00:00Z'
+timestamp: '2026-11-02T00:00:00Z'
 created: 2026-07-07
-updated: 2026-10-28
+updated: 2026-11-02
 sources:
+- raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
+- raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
 - raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md
 - raw/papers/understanding-inference-scaling-for-llms.md
 ---
@@ -95,6 +97,11 @@ GPU 上传统 KV cache 分配的痛点：
 [ZipFusion](/papers/zipfusion-lossless-kv-attention-fusion.md) 在 SGLang 页式 KV（16-token）上把已完成页保持无损压缩，FlashInfer 风格 kernel 在寄存器内还原 BF16，不再为 attention 留未压缩副本；调度器按压缩后的物理余量接新请求。H100 上 decode attention **1.23–1.25×**，最大 batch Llama **46→57** / Qwen **40→50**，相对未压缩 SGLang 最大 batch 吞吐 **+26.3% / +25.8%**。
 
 
+
+## 2026-11-02 补充：稀疏逻辑地址与扁平 KV 存储
+
+[UlaCache](/papers/ulacache-unified-logical-sparse-kv-serving.md) 在 SGLang 上用统一逻辑 KV 地址管理稀疏历史：相对 HiSparse，投机 decode 峰值吞吐 8×H200 **1.16×/1.70×**（DP/TP）、8×B300 **1.73×/2.51×**。[FlatCake](/papers/flatcake-flat-kvcache-storage.md) 把 DRAM+SSD 做成 HiCacheStorage 对等介质（FC-GVA/MAS/CIO），Claude Code 负载下命中 **94.2–94.6%**（Mooncake 降至 **64.3%**），峰值 mean TTFT / 吞吐各 **1.6×**。
+
 # Citations
 
 [1] [raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md](raw/papers/llm-inference-acceleration-comprehensive-hardware-survey-2024.md) — 综述引用
@@ -103,3 +110,5 @@ GPU 上传统 KV cache 分配的痛点：
 [CacheSmith] [arXiv:2610.18925](https://arxiv.org/abs/2610.18925)
 [RemoteKV] [arXiv:2610.21500](https://arxiv.org/abs/2610.21500)
 - [arXiv:2610.24179](https://arxiv.org/abs/2610.24179) — KVCompass
+- [arXiv:2610.29820](https://arxiv.org/abs/2610.29820) — UlaCache
+- [arXiv:2610.38355](https://arxiv.org/abs/2610.38355) — FlatCake

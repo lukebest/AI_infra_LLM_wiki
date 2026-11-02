@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-02
+
+### Watch (morning)
+* **Watch**: 2026-11-02（周一）Asia/Shanghai 论文巡检。挂起候选优先 UlaCache / FlatCake / GPU–WSE；并扫周末/周一 new 列表口径（WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速；本轮超标量/非线性无单独合格新篇）。
+* **Ingest**: UlaCache（2610.29820）、FlatCake（2610.38355）、GPU–WSE Complementarity（2610.39222）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [UlaCache](/papers/ulacache-unified-logical-sparse-kv-serving.md)（投机下 vs HiSparse 峰值 **1.16×/1.70×** H200 DP/TP、**1.73×/2.51×** B300；B300 TP 无投机峰值 **3.51×** SGLang；PB-LRU 调度约 **1.5–2.3×**）；[FlatCake](/papers/flatcake-flat-kvcache-storage.md)（命中 **94.2–94.6%** vs Mooncake **87.9%→64.3%**；峰值 mean TTFT **1.6×**、P50 **1.8×**、吞吐 **1.6×**；SSD 读放大消除 **6.5×–6.7×**）；[GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md)（DP 两阈值三区制；标准 PP 未超单平台；架构感知 PP 7B/13B/35B 可超 WSE-only；模型中位误差 DP **6.8%** / PD **8.2%**）。
+* **Update**: [PagedAttention / vLLM](/concepts/pagedattention-vllm.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[SSD and NVMe Storage System](/concepts/ssd-nvme-storage-system.md)、[Disaggregated Inference](/concepts/disaggregated-inference.md)、[Heterogeneous Inference](/concepts/heterogeneous-inference.md)、[Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md)、[Cerebras WSE](/entities/cerebras-wse.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: RISK-KV（2610.29544，选择性 KV 重建，省略 18.2–33.3% KV）；KVLearn（2610.28637，学习式 retention）；ConfluxServe（2610.37810）；PDScope（2610.39216）；Double KV Apple（2610.33076）；TMA Hopper（2610.34907）；Proba（2610.30448）；MFSA；PAGE404；DualColl；BaGuaLu-2；PlaneZip；TideKV；HyScale；NORmal（2610.40000）；FSDP Endgame（2610.38228）。
+
 ## 2026-10-30
 
 ### Watch (morning)

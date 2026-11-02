@@ -11,10 +11,11 @@ tags:
 - io
 - inference
 - wse
-timestamp: '2026-07-03T00:00:00Z'
+timestamp: '2026-11-02T00:00:00Z'
 created: 2026-07-03
-updated: 2026-10-30
+updated: 2026-11-02
 sources:
+- raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
 - raw/articles/arch-study-30d-day-20.md
 - raw/papers/uGDS_UserSpace_GPU_Direct_Storage_2026.pdf
 ---
@@ -143,7 +144,12 @@ Host CPU
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — 软件管理存储 vs 硬件 cache
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 存储篇综合与冷/热数据路径（Day 22）
 
+
+## 扁平 KV：写时落到 SSD（2026-11-02）
+[FlatCake](/papers/flatcake-flat-kvcache-storage.md) 论证驱逐序布局导致 Mooncake SSD 读放大 **6.5×–6.7×**；会话连续层主序 + FC-CIO 合并 GDS 后，峰值 SSD 带宽 **1.9×**、prefetch 延迟 **5.8×** 更低，与 [uGDS](/papers/ugds-userspace-gpu-direct-storage.md) 的控制路径优化正交（FlatCake 先解布局放大）。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-20.md](raw/articles/arch-study-30d-day-20.md) — H&P App.D 存储系统（Day 20）
 [2] [arXiv:2610.30868](https://arxiv.org/abs/2610.30868) — uGDS
+[3] [arXiv:2610.38355](https://arxiv.org/abs/2610.38355) — FlatCake

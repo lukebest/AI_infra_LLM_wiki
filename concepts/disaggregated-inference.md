@@ -7,10 +7,13 @@ tags:
 - serving-system
 - moe
 - disaggregated-inference
-timestamp: '2026-10-23T00:00:00Z'
+timestamp: '2026-11-02T00:00:00Z'
 created: 2026-04-17
-updated: 2026-10-30
+updated: 2026-11-02
 sources:
+- raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
+- raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
+- raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/AFORE_AFD_Expert_Reconfiguration_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
 - arXiv:2504.02263
@@ -217,6 +220,10 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [DuoPD](/papers/duopd-hybrid-gpu-pnm-pd-disaggregation.md)：decode 整体交给 HBM4 逻辑 die 上的 PNM，GPU 并发做 prefill，TSV 层分时共享带宽；端到端吞吐比常规 PD 分离最高 **2.23×**，SM 切分则必须在 TTFT 与 TPOT 之间二选一。
 - [KVCompass](/papers/kvcompass-internet-scale-prefix-cache-discovery.md)：跨地域前缀 KV 发现与转发，P99 TTFT 降 **1.3–14×**。
 
+
+## 2026-11-02 补充：稀疏/扁平 KV 与 GPU–WSE PD
+[UlaCache](/papers/ulacache-unified-logical-sparse-kv-serving.md) 在 DP/TP 下拆分历史 KV 存储角色（统一逻辑地址）。[FlatCake](/papers/flatcake-flat-kvcache-storage.md) 把会话 KV 在 DRAM/SSD 对等放置，服务侧命中率在负载下仍 **94%+**。[GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md) 用 PD 解耦验证：GPU 偏 prefill、WSE decode 微秒级，模型 PD 中位误差 **8.2%**。
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -250,3 +257,6 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [arXiv:2610.24179](https://arxiv.org/abs/2610.24179) — KVCompass
 - [arXiv:2610.34731](https://arxiv.org/abs/2610.34731) — MCF
 - [arXiv:2610.33501](https://arxiv.org/abs/2610.33501) — DualPace
+- [arXiv:2610.29820](https://arxiv.org/abs/2610.29820) — UlaCache
+- [arXiv:2610.38355](https://arxiv.org/abs/2610.38355) — FlatCake
+- [arXiv:2610.39222](https://arxiv.org/abs/2610.39222) — GPU–WSE Complementarity

@@ -9,10 +9,11 @@ tags:
 - architecture
 - serving
 - agentic-ai
-timestamp: '2026-10-23T00:00:00Z'
+timestamp: '2026-11-02T00:00:00Z'
 created: 2026-04-16
-updated: 2026-10-30
+updated: 2026-11-02
 sources:
+- raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/EdgeAgent_UMA_Multi_Agent_Edge_Inference_2026.pdf
 - raw/papers/HeteroReason_FPGA_GPU_Speculative_Reasoning_2026.pdf
 - raw/articles/bojieli-ai-infra-book.md
@@ -121,6 +122,11 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 
 [HiNa-MoE](/papers/hina-moe-cpu-amx-moe-inference.md)（PACT'26）补的是 CPU–GPU MoE 卸载里 **CPU 那一半的算子**：不改权重布局（与 GPU 库兼容），在页交错下做 NUMA-aware 切分，decode MV→MM 用上 AMX。FFN kernel vs IPEX/KTransformers 平均 **1.73×/1.68×**；双路 6430+A6000 batch-1 decode vs KTransformers 平均 **1.22×**。与 [RapidMoE](/papers/rapidmoe-residual-offloading-moe-inference.md) 的比特级切分可叠加。
 
+
+## GPU–WSE 互补边界（2026-11-02）
+
+[GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md)（Stevens/Argonne）在 WSE-3+A100 上给出 DP 两阈值三区制、标准 PP 难超单平台、架构感知 PP 可让 7B/13B/35B 超 WSE-only；解析模型中位误差 DP **6.8%** / PD **8.2%**。把「异构推理」从案例分析推进到**何时划算**。
+
 # Citations
 
 [PDD] [arXiv:2609.13161](https://arxiv.org/pdf/2609.13161)
@@ -139,3 +145,4 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [11] [arXiv:2610.03394](https://arxiv.org/pdf/2610.03394) — EdgeAgent
 [12] [arXiv:2610.05123](https://arxiv.org/pdf/2610.05123) — HiNa-MoE
 [13] [arXiv:2610.33501](https://arxiv.org/abs/2610.33501) — DualPace
+[14] [arXiv:2610.39222](https://arxiv.org/abs/2610.39222) — GPU–WSE Complementarity

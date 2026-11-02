@@ -11,10 +11,12 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-07-06T00:00:00Z'
+timestamp: '2026-11-02T00:00:00Z'
 created: 2026-07-06
-updated: 2026-10-30
+updated: 2026-11-02
 sources:
+- raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
+- raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
 - raw/papers/uGDS_UserSpace_GPU_Direct_Storage_2026.pdf
 - raw/papers/Ember_UVM_Oversubscription_Discrete_GPU_2026.pdf
 - raw/papers/MeshKV_NoC_KV_Cache_Fabric_2026.pdf
@@ -269,6 +271,10 @@ WSE 简化（无 off-chip）:
 ## 用户态 GDS 控制路径（2026-10-30）
 [uGDS](/papers/ugds-userspace-gpu-direct-storage.md) 显示 SSD↔GPU P2P 数据路径上，内核控制路径仍可主导小 I/O；用户态队列后 batch 带宽相对 GDS 最高 **12.12×/30.69×**，LMCache 中位 TTFT **−62.7%**。
 
+
+## 稀疏逻辑地址与扁平 DRAM–SSD（2026-11-02）
+[UlaCache](/papers/ulacache-unified-logical-sparse-kv-serving.md) 把 GPU/可选 CPU KV 放进统一逻辑地址，PB-LRU 共享 GPU 池；投机下相对 HiSparse 峰值吞吐最高 **2.51×**（B300 TP）。[FlatCake](/papers/flatcake-flat-kvcache-storage.md) 取消 DRAM→SSD 迁移分层：写时对等放置 + GDS 合并读，消除 Mooncake SSD 读放大 **6.5×–6.7×**，峰值 mean TTFT **1.6×**。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -298,3 +304,5 @@ WSE 简化（无 off-chip）:
 [25] [arXiv:2610.22863](https://arxiv.org/abs/2610.22863) — Agentic KV Residency (M365)
 [26] [arXiv:2610.23503](https://arxiv.org/abs/2610.23503) — HBFSim (MBZUAI, RACS 2026)
 [27] [arXiv:2610.33719](https://arxiv.org/abs/2610.33719) — ZipFusion
+[28] [arXiv:2610.29820](https://arxiv.org/abs/2610.29820) — UlaCache
+[29] [arXiv:2610.38355](https://arxiv.org/abs/2610.38355) — FlatCake

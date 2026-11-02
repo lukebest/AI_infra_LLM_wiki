@@ -9,10 +9,11 @@ tags:
 - kv-cache
 - latency
 - throughput
-timestamp: '2026-10-23T00:00:00Z'
+timestamp: '2026-11-02T00:00:00Z'
 created: 2026-06-15
-updated: 2026-10-23
+updated: 2026-11-02
 sources:
+- raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
 - raw/papers/Exploring the efficiency of 3D-stacked AI chip architecture for LLM inference with voxel.pdf
 - raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf
@@ -170,6 +171,10 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 ## decode 能耗按字节记账（2026-10-22）
 [Token-Energy Law](/papers/token-energy-law-llm-decode.md)：dense decode 每 token 板级能耗 = 常数 + 权重字节/有效 batch 项 + KV 字节×(历史+1) 项 + 每 token 耗时项；GH200/GB300 留出验证误差 ≤3.73%。batch 摊薄的只有权重项，KV 项随上下文线性增长，与本页「decode 吃带宽」的判断一致。
 
+
+## GPU vs WSE 的 PD 形态（2026-11-02）
+[GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md)：同一分层基准下 GPU 更擅 prefill，WSE decode 单步约数十 µs 且跨长度较稳，GPU decode 随上下文从数十升至数百 ms；PD 模型中位误差 **8.2%**。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -178,3 +183,4 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 [4] [arXiv:2610.05062](https://arxiv.org/pdf/2610.05062) — VLA workload characterization
 [5] [arXiv:2610.07443](https://arxiv.org/abs/2610.07443) — DynaCore
 - [arXiv:2610.28576](https://arxiv.org/abs/2610.28576) — Token-Energy Law
+- [arXiv:2610.39222](https://arxiv.org/abs/2610.39222) — GPU–WSE Complementarity
