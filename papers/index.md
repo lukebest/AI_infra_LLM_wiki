@@ -1,5 +1,10 @@
 # Paper
 
+* [RISK-KV: Selective KV Reconstruction](risk-kv-selective-reconstruction.md) - 哈工大 — 跨层 ridge 重建；省略 18.2–33.3% 历史 KV，PPL 变化 <0.5%；512-token 恢复 1.51–3.31× Token Replay
+* [KVLearn: Disagg KV Retention](kvlearn-disagg-kv-retention.md) - UCLA/Columbia SYSTOR'26 — PRP+CARS+ATC；TTFT 最高 −56%/−38%/−33% vs No-Cache/LRU/Mooncake；传输 −53%；MM 吞吐≈oracle±5%
+* [ConfluxServe: Heterogeneous PD Parallelism](confluxserve-heterogeneous-pd-parallelism.md) - Waterloo — 算子级异构共执行；生产负载 goodput 1.26–1.62×
+* [PDScope: Phase-Aware MoE CPU–GPU](pdscope-phase-aware-moe-cpu-gpu.md) - 国防科大 — 相位感知专家预取/放置；prefill 2.5–10.3×、decode 2.1–6.1×
+
 * [UlaCache: Unified Logical Sparse KV Serving](ulacache-unified-logical-sparse-kv-serving.md) - Scitix.AI — 统一逻辑 KV 地址；相对 HiSparse 投机峰值 8×H200 1.16×/1.70×、8×B300 1.73×/2.51×；B300 TP 无投机 3.51× SGLang
 * [FlatCake: Flat KVCache Storage](flatcake-flat-kvcache-storage.md) - 复旦/北大/沐曦/ICT — DRAM+SSD 对等扁平 KV；命中 94.2–94.6%（Mooncake→64.3%），峰值 TTFT/吞吐 1.6×，SSD 读放大消除 6.5–6.7×
 * [GPU–WSE Heterogeneity Complementarity](gpu-wse-heterogeneity-complementarity.md) - Stevens/Argonne — WSE-3+A100 DP/PP/PD 互补边界；模型中位误差 DP 6.8%/PD 8.2%

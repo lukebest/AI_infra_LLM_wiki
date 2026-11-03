@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-03
+
+### Watch (morning)
+* **Watch**: 2026-11-03（周二）Asia/Shanghai 论文巡检。挂起优先 RISK-KV / KVLearn / ConfluxServe / PDScope；并扫 ARK / HiState / NORmal / FSDP Endgame 等候选。口径含 WSE/NoC/NoW/SoC/3D IC、LLM 架构/互连/加速器、agentic AI 硬件、超标量微架构、核内非线性运算加速（本轮超标量/非线性无单独合格新篇；增量来自挂起四篇）。
+* **Ingest**: RISK-KV（2610.29544）、KVLearn（2610.28637）、ConfluxServe（2610.37810）、PDScope（2610.39216）PDF + raw 摘录 stub；数字取自原文。
+* **Creation** (papers): [RISK-KV](/papers/risk-kv-selective-reconstruction.md)（省略 **18.2–33.3%** 历史 KV，PPL 变化 **<0.5%**；512-token 恢复 **1.51–3.31×**）；[KVLearn](/papers/kvlearn-disagg-kv-retention.md)（TTFT 最高 **−56% / −38% / −33%** vs No-Cache / LRU-Pool / Mooncake；跨节点传输最高 **−53%**；MM-Session 吞吐约在 oracle **~5%** 内）；[ConfluxServe](/papers/confluxserve-heterogeneous-pd-parallelism.md)（生产负载 goodput **1.26–1.62×**）；[PDScope](/papers/pdscope-phase-aware-moe-cpu-gpu.md)（prefill **2.5–10.3×**、decode **2.1–6.1×**）。
+* **Update**: [PagedAttention / vLLM](/concepts/pagedattention-vllm.md)、[Disaggregated Inference](/concepts/disaggregated-inference.md)、[Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md)、[End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md)、[Heterogeneous Inference](/concepts/heterogeneous-inference.md)。
+* **Indexes**: 手动同步 `papers/index.md`、`raw/papers/index.md`；未跑 `generate_indexes.py`。
+* **Considered not ingested**: ARK（2610.41160）；HiState（2610.41508）；NORmal（2610.40000）；FSDP Endgame（2610.38228）；Double KV Apple（2610.33076）；TMA Hopper（2610.34907）；Proba；MFSA；PAGE404；DualColl；BaGuaLu-2；PlaneZip；TideKV；HyScale；Agentic HW/SW（2610.39380）；Caerus（2610.39797）；Blackwell matching（2610.41919）；PhOSv1（2610.39999）；SpecDecode energy（2610.40287）。
+
 ## 2026-11-02
 
 ### Watch (morning)

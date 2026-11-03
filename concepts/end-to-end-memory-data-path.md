@@ -11,9 +11,9 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-11-02T00:00:00Z'
+timestamp: '2026-11-03T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-02
+updated: 2026-11-03
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -44,6 +44,9 @@ sources:
 - raw/papers/RREvict_Prefix_Cache_Eviction_Agentic_2026.pdf
 - raw/papers/Janus_Agentic_SSD_Sparse_KV_2026.pdf
 - raw/papers/SPLASH_Switching_Parallel_Layouts_Attention_2026.pdf
+- raw/papers/RISK-KV_Selective_KV_Reconstruction_2026.pdf
+- raw/papers/PDScope_Phase_Aware_MoE_CPU_GPU_2026.pdf
+- raw/papers/KVLearn_Disagg_KV_Retention_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -272,6 +275,10 @@ WSE 简化（无 off-chip）:
 [uGDS](/papers/ugds-userspace-gpu-direct-storage.md) 显示 SSD↔GPU P2P 数据路径上，内核控制路径仍可主导小 I/O；用户态队列后 batch 带宽相对 GDS 最高 **12.12×/30.69×**，LMCache 中位 TTFT **−62.7%**。
 
 
+## 选择性 KV 重建与 MoE 专家预取（2026-11-03）
+
+[RISK-KV](/papers/risk-kv-selective-reconstruction.md) 用跨层锚点重建省略部分历史 KV（**18.2–33.3%**）。[KVLearn](/papers/kvlearn-disagg-kv-retention.md) 控制解耦池的 admit 传输量（最高 **−53%**）。[PDScope](/papers/pdscope-phase-aware-moe-cpu-gpu.md) 把专家权重预取做成相位感知零拷贝异步 I/O（prefill/decode 最高 **10.3× / 6.1×**）。
+
 ## 稀疏逻辑地址与扁平 DRAM–SSD（2026-11-02）
 [UlaCache](/papers/ulacache-unified-logical-sparse-kv-serving.md) 把 GPU/可选 CPU KV 放进统一逻辑地址，PB-LRU 共享 GPU 池；投机下相对 HiSparse 峰值吞吐最高 **2.51×**（B300 TP）。[FlatCake](/papers/flatcake-flat-kvcache-storage.md) 取消 DRAM→SSD 迁移分层：写时对等放置 + GDS 合并读，消除 Mooncake SSD 读放大 **6.5×–6.7×**，峰值 mean TTFT **1.6×**。
 
@@ -306,3 +313,6 @@ WSE 简化（无 off-chip）:
 [27] [arXiv:2610.33719](https://arxiv.org/abs/2610.33719) — ZipFusion
 [28] [arXiv:2610.29820](https://arxiv.org/abs/2610.29820) — UlaCache
 [29] [arXiv:2610.38355](https://arxiv.org/abs/2610.38355) — FlatCake
+[30] [arXiv:2610.29544](https://arxiv.org/abs/2610.29544) — RISK-KV
+[31] [arXiv:2610.28637](https://arxiv.org/abs/2610.28637) — KVLearn
+[32] [arXiv:2610.39216](https://arxiv.org/abs/2610.39216) — PDScope

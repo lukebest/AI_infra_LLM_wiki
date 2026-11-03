@@ -9,9 +9,9 @@ tags:
 - kv-cache
 - latency
 - throughput
-timestamp: '2026-11-02T00:00:00Z'
+timestamp: '2026-11-03T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-02
+updated: 2026-11-03
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -22,6 +22,8 @@ sources:
 - raw/papers/EAServe_Encode_Aware_Disaggregated_MLLM_2026.pdf
 - raw/papers/HAWK_GPU_NPU_Heterogeneous_KV_Transfer_2026.pdf
 - raw/papers/NanoCP_Dynamic_Context_Parallelism_MoE_ASPLOS27.pdf
+- raw/papers/ConfluxServe_Heterogeneous_PD_Parallelism_2026.pdf
+- raw/papers/PDScope_Phase_Aware_MoE_CPU_GPU_2026.pdf
 ---
 
 # Prefill-Decode Resource Divergence（Prefill vs Decode 资源分歧）
@@ -172,6 +174,10 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 [Token-Energy Law](/papers/token-energy-law-llm-decode.md)：dense decode 每 token 板级能耗 = 常数 + 权重字节/有效 batch 项 + KV 字节×(历史+1) 项 + 每 token 耗时项；GH200/GB300 留出验证误差 ≤3.73%。batch 摊薄的只有权重项，KV 项随上下文线性增长，与本页「decode 吃带宽」的判断一致。
 
 
+## 算子级共执行与 MoE 相位跷跷板（2026-11-03）
+
+[ConfluxServe](/papers/confluxserve-heterogeneous-pd-parallelism.md) 让同一 batch 内 prefill/decode 用不同 SP：线性共批、attention 分路径，goodput **1.26–1.62×**。[PDScope](/papers/pdscope-phase-aware-moe-cpu-gpu.md) 在 CPU–GPU MoE 卸载上拆相位策略，prefill **2.5–10.3×**、decode **2.1–6.1×**。
+
 ## GPU vs WSE 的 PD 形态（2026-11-02）
 [GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md)：同一分层基准下 GPU 更擅 prefill，WSE decode 单步约数十 µs 且跨长度较稳，GPU decode 随上下文从数十升至数百 ms；PD 模型中位误差 **8.2%**。
 
@@ -184,3 +190,5 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 [5] [arXiv:2610.07443](https://arxiv.org/abs/2610.07443) — DynaCore
 - [arXiv:2610.28576](https://arxiv.org/abs/2610.28576) — Token-Energy Law
 - [arXiv:2610.39222](https://arxiv.org/abs/2610.39222) — GPU–WSE Complementarity
+- [arXiv:2610.37810](https://arxiv.org/abs/2610.37810) — ConfluxServe
+- [arXiv:2610.39216](https://arxiv.org/abs/2610.39216) — PDScope

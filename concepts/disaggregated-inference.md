@@ -7,9 +7,9 @@ tags:
 - serving-system
 - moe
 - disaggregated-inference
-timestamp: '2026-11-02T00:00:00Z'
+timestamp: '2026-11-03T00:00:00Z'
 created: 2026-04-17
-updated: 2026-11-02
+updated: 2026-11-03
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -42,6 +42,9 @@ sources:
 - raw/papers/NanoCP_Dynamic_Context_Parallelism_MoE_ASPLOS27.pdf
 - raw/papers/MCF_Memory_Communication_Aware_Long_Context_2026.pdf
 - raw/papers/DualPace_Decoupled_GPU_CPU_Decoding_2026.pdf
+- raw/papers/KVLearn_Disagg_KV_Retention_2026.pdf
+- raw/papers/ConfluxServe_Heterogeneous_PD_Parallelism_2026.pdf
+- raw/papers/RISK-KV_Selective_KV_Reconstruction_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -221,6 +224,10 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [KVCompass](/papers/kvcompass-internet-scale-prefix-cache-discovery.md)：跨地域前缀 KV 发现与转发，P99 TTFT 降 **1.3–14×**。
 
 
+## 2026-11-03 补充：学习式保留与算子级共执行
+
+[KVLearn](/papers/kvlearn-disagg-kv-retention.md) 把解耦 miss 的重算+传输代价写进 keep/admit（TTFT 最高 **−56%/−38%/−33%**，跨节点传输最高 **−53%**）。[ConfluxServe](/papers/confluxserve-heterogeneous-pd-parallelism.md) 走同实例算子级异构共执行，生产 goodput **1.26–1.62×**。[RISK-KV](/papers/risk-kv-selective-reconstruction.md) 降低迁移/恢复时的历史 KV 体积（省略 **18.2–33.3%**）。
+
 ## 2026-11-02 补充：稀疏/扁平 KV 与 GPU–WSE PD
 [UlaCache](/papers/ulacache-unified-logical-sparse-kv-serving.md) 在 DP/TP 下拆分历史 KV 存储角色（统一逻辑地址）。[FlatCake](/papers/flatcake-flat-kvcache-storage.md) 把会话 KV 在 DRAM/SSD 对等放置，服务侧命中率在负载下仍 **94%+**。[GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md) 用 PD 解耦验证：GPU 偏 prefill、WSE decode 微秒级，模型 PD 中位误差 **8.2%**。
 
@@ -260,3 +267,6 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [arXiv:2610.29820](https://arxiv.org/abs/2610.29820) — UlaCache
 - [arXiv:2610.38355](https://arxiv.org/abs/2610.38355) — FlatCake
 - [arXiv:2610.39222](https://arxiv.org/abs/2610.39222) — GPU–WSE Complementarity
+- [arXiv:2610.28637](https://arxiv.org/abs/2610.28637) — KVLearn
+- [arXiv:2610.37810](https://arxiv.org/abs/2610.37810) — ConfluxServe
+- [arXiv:2610.29544](https://arxiv.org/abs/2610.29544) — RISK-KV

@@ -1,5 +1,10 @@
 # Other
 
+* [RISK-KV stub](risk-kv-selective-reconstruction.md) + [PDF](RISK-KV_Selective_KV_Reconstruction_2026.pdf) — arXiv:2610.29544
+* [KVLearn stub](kvlearn-disagg-kv-retention.md) + [PDF](KVLearn_Disagg_KV_Retention_2026.pdf) — arXiv:2610.28637
+* [ConfluxServe stub](confluxserve-heterogeneous-pd-parallelism.md) + [PDF](ConfluxServe_Heterogeneous_PD_Parallelism_2026.pdf) — arXiv:2610.37810
+* [PDScope stub](pdscope-phase-aware-moe-cpu-gpu.md) + [PDF](PDScope_Phase_Aware_MoE_CPU_GPU_2026.pdf) — arXiv:2610.39216
+
 * [UlaCache stub](ulacache-unified-logical-sparse-kv-serving.md) + [PDF](UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf) — arXiv:2610.29820
 * [FlatCake stub](flatcake-flat-kvcache-storage.md) + [PDF](FlatCake_Flat_KVCache_Storage_2026.pdf) — arXiv:2610.38355
 * [GPU–WSE Complementarity stub](gpu-wse-heterogeneity-complementarity.md) + [PDF](GPU_WSE_Heterogeneity_Complementarity_2026.pdf) — arXiv:2610.39222
