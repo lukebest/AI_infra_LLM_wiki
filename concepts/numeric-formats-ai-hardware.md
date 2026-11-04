@@ -9,10 +9,11 @@ tags:
 - accelerator
 - training
 timestamp: '2026-10-19T00:00:00Z'
-updated: 2026-10-28
+updated: 2026-11-04
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-05.md
+- raw/papers/PagedMoE_Cross_Precision_Expert_Cache_2026.pdf
 ---
 
 # Numeric Formats for AI Hardware（AI 硬件数值格式）
@@ -76,6 +77,10 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 
 [SPARTA](/papers/sparta-sparse-ternary-edge-llm-accelerator.md)：{−1,0,+1} ≈1.58-bit 权重把边缘侧权重存压到 8-bit 模型约 1/5 后，长上下文每 token 流量被 KV 主导。芯片用统一 PE 吃三值 SpMM/SpMV + bit-serial attention，再加 ρk=1/4 / p=0.90 自适应稀疏；28 nm **13.9 mm²**，KV 流量相对满注意力 **4.1–4.8×**。
 
+
+## SSD MoE 跨精度前缀（2026-11-04）
+
+[PagedMoE](/papers/pagedmoe-cross-precision-expert-cache.md) 把精度定义为共享专家状态的 refinement depth（树码本+bitplane）；Avg **2.5 bit** 质量接近 GPTQ-INT4/MXFP4，24 GiB 缓存 **8.89 tok/s**。
 
 # Citations
 

@@ -1,5 +1,18 @@
 # Bundle Update Log
 
+## 2026-11-04
+
+### Enrich: NORmal / HiState / PagedMoE / Schnizo（论文早报）
+
+- **ingest 4 篇**：
+  - [NORmal](/papers/normal-3d-fenor-lpddr6-main-memory.md)（2610.40000）— BEOL 3D FeNOR × 未改 LPDDR6；vs UFS **8.9×–28.0×**，相对无限 DRAM **≤0.4%**，>256K vs HBF **2.8×–6.3×** / 能耗/token **8.1×–17.8×**
+  - [HiState](/papers/histate-hybrid-prefix-cache-agent.md)（2610.41508）— 混合 LLM agent 前缀；checkpoint→SSD；p99 TTFT vs Marconi/HiCache 最高 **5.73× / 5.44×**
+  - [PagedMoE](/papers/pagedmoe-cross-precision-expert-cache.md)（2611.03173）— 跨精度专家缓存；Avg **2.5 bit**；24 GiB **8.89 tok/s**（**1.33× / 1.56×**）
+  - [Schnizo / SLP](/papers/superscalar-loop-processors-schnizo.md)（2611.01904，MICRO'26）— 循环轻量多发射；LA **4.4×**、面积效率 **+72%**；理想 IPC/FPU 几何均值 **92%**
+- **concepts**：3d-stacking / end-to-end-memory-data-path / pagedattention-vllm / ssd-nvme / heterogeneous-inference / superscalar-cpu-research-2023-2026 / out-of-order-execution / dsa-processor-design-tradeoffs / numeric-formats-ai-hardware
+- **SCHEMA**：补 flash, nor, fenor, lpddr, hybrid-llm, bitplane
+- **下轮优先**：ARK（2610.41160）、FSDP Endgame/TIDE（2610.38228）、In-DRAM PUD-LLM（2611.02401）、AnchorKV（2611.00117）
+
 ## 2026-11-03
 
 ### Watch (morning)

@@ -11,9 +11,9 @@ tags:
 - vllm
 - virtual-memory
 - memory-management
-timestamp: '2026-11-03T00:00:00Z'
+timestamp: '2026-11-04T00:00:00Z'
 created: 2026-07-07
-updated: 2026-11-03
+updated: 2026-11-04
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -21,6 +21,7 @@ sources:
 - raw/papers/understanding-inference-scaling-for-llms.md
 - raw/papers/RISK-KV_Selective_KV_Reconstruction_2026.pdf
 - raw/papers/KVLearn_Disagg_KV_Retention_2026.pdf
+- raw/papers/HiState_Hybrid_Prefix_Cache_Agent_2026.pdf
 ---
 
 # PagedAttention and vLLM Serving
@@ -100,6 +101,10 @@ GPU 上传统 KV cache 分配的痛点：
 
 
 
+## 2026-11-04 补充：混合模型 agent 前缀分层
+
+[HiState](/papers/histate-hybrid-prefix-cache-agent.md) 针对全注意+循环混合 LLM：快存优先 KV，历史循环 checkpoint 落 SSD；真实 coding-agent 轨迹上 **p99 TTFT** 相对 vLLM-Marconi 最高 **5.73×**、相对 SGLang-HiCache **5.44×**。
+
 ## 2026-11-03 补充：选择性重建与解耦保留
 
 [RISK-KV](/papers/risk-kv-selective-reconstruction.md) 用跨层 ridge 重建可省略层的历史 KV（省略 **18.2–33.3%**，PPL 变化 **<0.5%**）。[KVLearn](/papers/kvlearn-disagg-kv-retention.md) 在解耦 P/D 的全局 KV 池上学习 keep/admit（TTFT 最高 **−56%** vs No-Cache）。
@@ -120,3 +125,4 @@ GPU 上传统 KV cache 分配的痛点：
 - [arXiv:2610.38355](https://arxiv.org/abs/2610.38355) — FlatCake
 - [arXiv:2610.29544](https://arxiv.org/abs/2610.29544) — RISK-KV
 - [arXiv:2610.28637](https://arxiv.org/abs/2610.28637) — KVLearn
+- [arXiv:2610.41508](https://arxiv.org/abs/2610.41508) — HiState

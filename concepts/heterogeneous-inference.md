@@ -9,9 +9,9 @@ tags:
 - architecture
 - serving
 - agentic-ai
-timestamp: '2026-11-03T00:00:00Z'
+timestamp: '2026-11-04T00:00:00Z'
 created: 2026-04-16
-updated: 2026-11-03
+updated: 2026-11-04
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/EdgeAgent_UMA_Multi_Agent_Edge_Inference_2026.pdf
@@ -26,6 +26,7 @@ sources:
 - raw/papers/DualPace_Decoupled_GPU_CPU_Decoding_2026.pdf
 - raw/papers/ConfluxServe_Heterogeneous_PD_Parallelism_2026.pdf
 - raw/papers/PDScope_Phase_Aware_MoE_CPU_GPU_2026.pdf
+- raw/papers/PagedMoE_Cross_Precision_Expert_Cache_2026.pdf
 ---
 
 # Heterogeneous Inference（异构推理）
@@ -125,6 +126,10 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [HiNa-MoE](/papers/hina-moe-cpu-amx-moe-inference.md)（PACT'26）补的是 CPU–GPU MoE 卸载里 **CPU 那一半的算子**：不改权重布局（与 GPU 库兼容），在页交错下做 NUMA-aware 切分，decode MV→MM 用上 AMX。FFN kernel vs IPEX/KTransformers 平均 **1.73×/1.68×**；双路 6430+A6000 batch-1 decode vs KTransformers 平均 **1.22×**。与 [RapidMoE](/papers/rapidmoe-residual-offloading-moe-inference.md) 的比特级切分可叠加。
 
 
+## SSD 常驻跨精度 MoE（2026-11-04）
+
+[PagedMoE](/papers/pagedmoe-cross-precision-expert-cache.md) 把路由专家放 SSD、DRAM 缓存热专家，并用前缀兼容 bitplane 做跨精度复用；Avg **2.5 bit** 时质量接近 GPTQ-INT4/MXFP4，24 GiB 缓存 **8.89 tok/s**（相对独立精度对象 **1.33×**、均匀 4-bit **1.56×**）。
+
 ## 同批异构并行与 CPU–GPU MoE（2026-11-03）
 
 [ConfluxServe](/papers/confluxserve-heterogeneous-pd-parallelism.md) 把异构落在算子级并行配置（线性共批不同 SP）。[PDScope](/papers/pdscope-phase-aware-moe-cpu-gpu.md) 在内存受限 CPU–GPU MoE 上按相位分流专家加载策略，打破 prefill/decode 跷跷板。
@@ -154,3 +159,4 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 [14] [arXiv:2610.39222](https://arxiv.org/abs/2610.39222) — GPU–WSE Complementarity
 [15] [arXiv:2610.37810](https://arxiv.org/abs/2610.37810) — ConfluxServe
 [16] [arXiv:2610.39216](https://arxiv.org/abs/2610.39216) — PDScope
+[17] [arXiv:2611.03173](https://arxiv.org/abs/2611.03173) — PagedMoE

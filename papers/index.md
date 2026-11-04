@@ -1,5 +1,10 @@
 # Paper
 
+* [NORmal: 3D FeNOR as LPDDR6 Main Memory](normal-3d-fenor-lpddr6-main-memory.md) - 北大/IME CAS/港科大广州 — BEOL FeNOR 未改 LPDDR6 rank；vs UFS 8.9×–28.0×，相对无限 DRAM ≤0.4%，>256K vs HBF 2.8×–6.3× / 能耗/token 8.1×–17.8×
+* [HiState: Hybrid Prefix Cache for Agentic Workloads](histate-hybrid-prefix-cache-agent.md) - UCSD — 混合 LLM 前缀分层；历史循环 checkpoint→SSD；p99 TTFT vs Marconi/HiCache 最高 5.73×/5.44×
+* [PagedMoE: Cross-Precision Expert Cache](pagedmoe-cross-precision-expert-cache.md) - 清华 — SSD 常驻 MoE 树码本+bitplane；Avg 2.5-bit≈GPTQ-INT4/MXFP4；24 GiB→8.89 tok/s，1.33×/1.56×
+* [Superscalar Loop Processors (Schnizo)](superscalar-loop-processors-schnizo.md) - ETH Zurich MICRO'26 — 循环轻量多发射；LA 几何均值 4.4×、面积效率 +72%；理想 IPC/FPU 几何均值 92%
+
 * [RISK-KV: Selective KV Reconstruction](risk-kv-selective-reconstruction.md) - 哈工大 — 跨层 ridge 重建；省略 18.2–33.3% 历史 KV，PPL 变化 <0.5%；512-token 恢复 1.51–3.31× Token Replay
 * [KVLearn: Disagg KV Retention](kvlearn-disagg-kv-retention.md) - UCLA/Columbia SYSTOR'26 — PRP+CARS+ATC；TTFT 最高 −56%/−38%/−33% vs No-Cache/LRU/Mooncake；传输 −53%；MM 吞吐≈oracle±5%
 * [ConfluxServe: Heterogeneous PD Parallelism](confluxserve-heterogeneous-pd-parallelism.md) - Waterloo — 算子级异构共执行；生产负载 goodput 1.26–1.62×

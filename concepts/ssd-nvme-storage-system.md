@@ -13,11 +13,13 @@ tags:
 - wse
 timestamp: '2026-11-02T00:00:00Z'
 created: 2026-07-03
-updated: 2026-11-02
+updated: 2026-11-04
 sources:
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
 - raw/articles/arch-study-30d-day-20.md
 - raw/papers/uGDS_UserSpace_GPU_Direct_Storage_2026.pdf
+- raw/papers/HiState_Hybrid_Prefix_Cache_Agent_2026.pdf
+- raw/papers/PagedMoE_Cross_Precision_Expert_Cache_2026.pdf
 ---
 
 # SSD and NVMe Storage System（SSD 与 NVMe 存储系统）
@@ -145,6 +147,10 @@ Host CPU
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 存储篇综合与冷/热数据路径（Day 22）
 
 
+## 混合 checkpoint 与跨精度专家 I/O（2026-11-04）
+
+[HiState](/papers/histate-hybrid-prefix-cache-agent.md) 把历史循环 checkpoint 放到 SSD，命中只取一个与长度无关的 checkpoint，减轻快存压力。[PagedMoE](/papers/pagedmoe-cross-precision-expert-cache.md) 在 SSD 常驻专家上按 bitplane 增量取 refinement，同专家跨精度共享字节，24 GiB 缓存下相对独立精度对象吞吐 **1.33×**。
+
 ## 扁平 KV：写时落到 SSD（2026-11-02）
 [FlatCake](/papers/flatcake-flat-kvcache-storage.md) 论证驱逐序布局导致 Mooncake SSD 读放大 **6.5×–6.7×**；会话连续层主序 + FC-CIO 合并 GDS 后，峰值 SSD 带宽 **1.9×**、prefetch 延迟 **5.8×** 更低，与 [uGDS](/papers/ugds-userspace-gpu-direct-storage.md) 的控制路径优化正交（FlatCake 先解布局放大）。
 
@@ -153,3 +159,5 @@ Host CPU
 [1] [raw/articles/arch-study-30d-day-20.md](raw/articles/arch-study-30d-day-20.md) — H&P App.D 存储系统（Day 20）
 [2] [arXiv:2610.30868](https://arxiv.org/abs/2610.30868) — uGDS
 [3] [arXiv:2610.38355](https://arxiv.org/abs/2610.38355) — FlatCake
+[4] [arXiv:2610.41508](https://arxiv.org/abs/2610.41508) — HiState
+[5] [arXiv:2611.03173](https://arxiv.org/abs/2611.03173) — PagedMoE

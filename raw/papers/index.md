@@ -1,5 +1,10 @@
 # Other
 
+* [NORmal stub](normal-3d-fenor-lpddr6-main-memory.md) + [PDF](NORmal_3D_FeNOR_LPDDR6_Main_Memory_2026.pdf) — arXiv:2610.40000
+* [HiState stub](histate-hybrid-prefix-cache-agent.md) + [PDF](HiState_Hybrid_Prefix_Cache_Agent_2026.pdf) — arXiv:2610.41508
+* [PagedMoE stub](pagedmoe-cross-precision-expert-cache.md) + [PDF](PagedMoE_Cross_Precision_Expert_Cache_2026.pdf) — arXiv:2611.03173
+* [Schnizo/SLP stub](superscalar-loop-processors-schnizo.md) + [PDF](Superscalar_Loop_Processors_Schnizo_MICRO2026.pdf) — arXiv:2611.01904
+
 * [RISK-KV stub](risk-kv-selective-reconstruction.md) + [PDF](RISK-KV_Selective_KV_Reconstruction_2026.pdf) — arXiv:2610.29544
 * [KVLearn stub](kvlearn-disagg-kv-retention.md) + [PDF](KVLearn_Disagg_KV_Retention_2026.pdf) — arXiv:2610.28637
 * [ConfluxServe stub](confluxserve-heterogeneous-pd-parallelism.md) + [PDF](ConfluxServe_Heterogeneous_PD_Parallelism_2026.pdf) — arXiv:2610.37810

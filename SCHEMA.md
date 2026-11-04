@@ -42,6 +42,7 @@ sources: [raw/articles/source-name.md]
 - 预取/向量 ISA（2026-10-26 补）: prefetch, risc-v, vector-processor
 - 可持续（2026-10-27 补）: carbon
 - 存内计算/RAG/Ising（2026-10-29 补）: cim, rag, ising
+- 闪存/混合服务/位平面（2026-11-04 补）: flash, nor, fenor, lpddr, hybrid-llm, bitplane, ssd
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 

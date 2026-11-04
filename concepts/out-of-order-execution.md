@@ -9,13 +9,14 @@ tags:
 - scheduling
 timestamp: '2026-10-19T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-28
+updated: 2026-11-04
 sources:
 - raw/articles/arch-study-30d-day-10.md
 - raw/articles/arch-study-30d-day-12.md
 - raw/articles/arch-study-30d-day-19.md
 - raw/reports/superscalar-cpu-report.md
 - raw/reports/constable-deepdive.md
+- raw/papers/Superscalar_Loop_Processors_Schnizo_MICRO2026.pdf
 ---
 
 # Out-of-Order Execution（乱序执行）
@@ -85,6 +86,10 @@ OoO 是 **通用 CPU 高 IPC 的灵魂**，也是 **功耗与面积的主要来�
 
 [CTMA](/papers/causal-top-down-microarchitecture-analysis.md)：cactuBSSN_r 在扭曲数据拓扑下短循环密集、误预测频繁，压缩 ROB 份额几乎无损（~9–10%），瓶颈转到前端填充率；规则拓扑时同一操作损失 ~23%（Intel）。见 [Branch Prediction](/concepts/branch-prediction.md)。
 
+## 2026-11-04 补充：不用动态 OoO 也能抬循环 IPC
+
+[Schnizo / SLP](/papers/superscalar-loop-processors-schnizo.md) 展示：对规则计算密集循环，可用静态循环结构做轻量多发射，在 tiny in-order 核上把功能单元利用率推到接近理想（多样微核最大问题几何均值 **92%**），同时面积效率相对标量 **+72%**（LA）。说明「抬 IPC」不一定要加深 ROB/issue queue。
+
 ## 2026-10-28 补充：搜 OoO 参数也要 Pareto 反馈
 
 [PaFeDSE](/papers/pafedse-pareto-feedback-microarch-dse.md) 把微架构 DSE 里的「选点」做成 hit/miss 闭环：代理不只估 CPI/功耗/面积，还估会不会抬超体积；对反复 miss 的局部用图记忆惩罚。SPEC CPU 2017 上相对 MoDSE 最高少 **49.0%** 仿真达目标 HV。
@@ -98,3 +103,4 @@ OoO 是 **通用 CPU 高 IPC 的灵魂**，也是 **功耗与面积的主要来�
 [CacheFlex] [arXiv:2610.12940](https://arxiv.org/abs/2610.12940)
 [CTMA] [arXiv:2610.21387](https://arxiv.org/abs/2610.21387)
 [PaFeDSE] [arXiv:2610.34838](https://arxiv.org/abs/2610.34838)
+[Schnizo] [arXiv:2611.01904](https://arxiv.org/abs/2611.01904)

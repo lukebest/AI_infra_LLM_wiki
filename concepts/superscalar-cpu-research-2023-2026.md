@@ -12,12 +12,13 @@ tags:
 - llm
 - wse
 timestamp: '2026-10-19T00:00:00Z'
-updated: 2026-10-28
+updated: 2026-11-04
 created: 2026-07-03
 sources:
 - raw/reports/superscalar-cpu-final-report.md
 - raw/reports/superscalar-cpu-report.md
 - raw/reports/constable-deepdive.md
+- raw/papers/Superscalar_Loop_Processors_Schnizo_MICRO2026.pdf
 ---
 
 # Superscalar CPU Research (2023-2026)
@@ -118,6 +119,10 @@ Constable（ISCA'24 Best Paper）+ Bullseye + Prophet 代表「旁路主表」�
 
 [CTMA](/papers/causal-top-down-microarchitecture-analysis.md)（ICT CAS / BenchCouncil）指出 TMA 只看「负载→CPI」路径。在 Skylake-SP / Zen 3 / Kunpeng 920 上：CPI 不变而耗时变化 >100%（leela_r）；分支更准反而性能减半（mcf_r，LFB 溢出、内存控制器拥塞）；ROB 份额压缩对完美拓扑数据集伤 ~23%/~12%、对扭曲拓扑仅 ~9%/~10%（瓶颈转到前端填充率）；Zen 3 op-cache SMT 共享退化 >50%；kill -9 SMT 兄弟后的「幽灵态」让 SPEC CPU2017 虚高 22.75%。对「OoO 深度边际饱和」类结论的启示：先控制住算法路径再归因到后端。
 
+## 2026-11-04 补充：循环专用轻量多发射（加速器 PE）
+
+[Superscalar Loop Processors / Schnizo](/papers/superscalar-loop-processors-schnizo.md)（MICRO'26，ETH Zurich）面向规则 ML/HPC 循环，在 Snitch 系 tiny RV32I+FP 上做轻量多发射，避开动态 OoO。简单 LA 核相对标量几何均值 **4.4×**、面积效率 **+72%**；多样微核最大问题上可达理想 IPC/FPU 的几何均值 **92%**。与 Constable/CVA6S+「通用核旁路/工业 baseline」对照：Schnizo 专攻 **PE 阵列密度 × 循环 IPC**。
+
 ## 2026-10-28 补充：Pareto 反馈加速 OoO DSE
 
 [PaFeDSE](/papers/pafedse-pareto-feedback-microarch-dse.md)（ASP-DAC'27）用 HitFormer 预测 Pareto-hit、MissGraph 惩罚 miss 邻域、TCFilter 裁跨轮低优先级候选。gem5+McPAT 22 nm、设计空间 **3,359,232** 点：相对 MoDSE 达目标 HV 最高少 **49.0%** 次仿真，探索开销 **7.1×**，平均 90/95/99% HV 需 **32.9 / 43.3 / 118.8** 次仿真，PPA MAPE **0.731%**。
@@ -130,3 +135,4 @@ Constable（ISCA'24 Best Paper）+ Bullseye + Prophet 代表「旁路主表」�
 [3] [raw/reports/constable-deepdive.md](raw/reports/constable-deepdive.md) — Constable 精读
 [4] [arXiv:2610.21387](https://arxiv.org/abs/2610.21387) — CTMA
 [5] [arXiv:2610.34838](https://arxiv.org/abs/2610.34838) — PaFeDSE
+[6] [arXiv:2611.01904](https://arxiv.org/abs/2611.01904) — Superscalar Loop Processors (Schnizo)

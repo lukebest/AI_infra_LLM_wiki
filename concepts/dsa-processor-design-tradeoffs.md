@@ -11,12 +11,13 @@ tags:
 - compiler
 timestamp: '2026-06-24T00:00:00Z'
 created: 2026-06-24
-updated: 2026-10-28
+updated: 2026-11-04
 sources:
 - raw/articles/arch-study-30d-day-16.md
 - raw/articles/arch-study-30d-day-25.md
----
+- raw/papers/Superscalar_Loop_Processors_Schnizo_MICRO2026.pdf
 - raw/papers/AHRR_Agents_Higher_Abstraction_Chip_Design_2026.pdf
+---
 
 # DSA Processor Design Tradeoffs（领域专用处理器设计取舍）
 
@@ -110,6 +111,9 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 - [ArchAgent](/papers/archagent-heterogeneous-system-design.md)：LLM 规划器 + 芯片/scale-up/scale-out 三个专家 agent，性能全部由确定性解析模型给出；1 MW 等功耗下异构设计加权几何均值 **1.93×**（同构 GPU 基线），第 18 次评估超过爬山法 100 次的 1.65×；常把 2–10% 功耗分给 decode/求解器专用分区 [2]。
 - 与 [AHRR](/papers/ahrr-agents-hls-chip-design.md)（HLS/RTL 层）对照：agent 设计流正在从电路层上移到系统组成层，可信度取决于评估器保真度。
 
+## PE 阵列上的循环多发射（2026-11-04）
+[Schnizo](/papers/superscalar-loop-processors-schnizo.md)（MICRO'26）给加速器 PE 一条中间路：保留 tiny 核密度，用 SLP 多发射吃满 FPU；简单 LA 相对标量 **4.4×**、面积效率 **+72%**。与「完整 OoO 通用核」或「纯编译器确定性 DSA」形成对照。
+
 ## OoO 核 PPA 前沿的高效搜索（2026-10-28）
 [PaFeDSE](/papers/pafedse-pareto-feedback-microarch-dse.md)：在对照 DSA/加速器分区之前，通用 OoO 核自身的 Pareto 前沿也要搜得起。HitFormer + MissGraph + TCFilter 把达目标超体积的仿真最高砍 **49.0%**，探索开销 **7.1×**，PPA MAPE **0.731%**——降低「摸清 CPU 侧基线」的成本。
 
@@ -119,3 +123,4 @@ CPU ~80% 面积给 OoO/Cache/预测；PE **100% 给算力**——[Quantitative A
 [1] [raw/articles/arch-study-30d-day-16.md](raw/articles/arch-study-30d-day-16.md) — 核心篇阶段总结（Day 16）
 [2] [arXiv:2610.23724](https://arxiv.org/abs/2610.23724) — ArchAgent
 [3] [arXiv:2610.34838](https://arxiv.org/abs/2610.34838) — PaFeDSE
+[4] [arXiv:2611.01904](https://arxiv.org/abs/2611.01904) — Schnizo / SLP

@@ -15,7 +15,7 @@ tags:
 - noc
 timestamp: '2026-08-26T00:00:00Z'
 created: '2026-07-31'
-updated: 2026-10-27
+updated: 2026-11-04
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
 - raw/articles/3d-noc-study-02-monolithic-vs-tsv.md
@@ -27,6 +27,8 @@ sources:
 - papers/mozart-35d-wafer-scale-moe-training.md
 - papers/thame-3d-memory-enabled-heterogeneous-moe.md
 - raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf
+- raw/papers/NORmal_3D_FeNOR_LPDDR6_Main_Memory_2026.pdf
+- papers/normal-3d-fenor-lpddr6-main-memory.md
 ---
 
 # 3D Stacking Technologies（3D 堆叠工艺路线）
@@ -134,6 +136,10 @@ imec 用 MI300X 式 chiplet GPU 建模（[Embodied Emissions 2.5D vs 3D](/papers
 - [Huawei τ Chip](/papers/huawei-tau-chip-logicfolding-thermal.md) — LogicFolding + W2W HB 功耗证词
 - [HDA-MoE](/papers/hda-moe-3d-nmp-hybrid-parallel.md) — 3D NMP bank 上 MoE hybrid 并行
 
+## BEOL 3D FeNOR 主存（2026-11-04）
+
+[NORmal](/papers/normal-3d-fenor-lpddr6-main-memory.md) 用共制 BEOL 3D FeNOR（MLC+SLC，感知 **sub-7.5 ns**）经 under-array 桥接到未改 LPDDR6 rank，服务手机多代理 200B 级；相对 UFS **8.9×–28.0×**，>256K 相对 HBF **2.8×–6.3×**。与 TSV-HBF 路线对照：NORmal 强调**进标准 DRAM 总线**，无需为闪存重做 SoC 内存控制器。
+
 ## 开放问题
 
 1. **Hybrid Bonding 时代的 3D NoC 拓扑**：full vs partial connected mesh 的现代边界？需仿真验证
@@ -156,3 +162,4 @@ imec 用 MI300X 式 chiplet GPU 建模（[Embodied Emissions 2.5D vs 3D](/papers
 [11] [papers/flint-hbf-llm-inference.md](papers/flint-hbf-llm-inference.md) — TSV-HBF 级联控制器（2026）
 [12] [raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf](raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf) — He, arXiv:2609.04287；Kirin LogicFolding
 [13] [raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf](raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf) — Huang et al., arXiv:2609.08682；3D NMP MoE
+[14] [arXiv:2610.40000](https://arxiv.org/abs/2610.40000) — NORmal（BEOL 3D FeNOR × LPDDR6）

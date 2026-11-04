@@ -11,9 +11,9 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-11-03T00:00:00Z'
+timestamp: '2026-11-04T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-03
+updated: 2026-11-04
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -47,6 +47,9 @@ sources:
 - raw/papers/RISK-KV_Selective_KV_Reconstruction_2026.pdf
 - raw/papers/PDScope_Phase_Aware_MoE_CPU_GPU_2026.pdf
 - raw/papers/KVLearn_Disagg_KV_Retention_2026.pdf
+- raw/papers/NORmal_3D_FeNOR_LPDDR6_Main_Memory_2026.pdf
+- raw/papers/HiState_Hybrid_Prefix_Cache_Agent_2026.pdf
+- raw/papers/PagedMoE_Cross_Precision_Expert_Cache_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -275,6 +278,10 @@ WSE 简化（无 off-chip）:
 [uGDS](/papers/ugds-userspace-gpu-direct-storage.md) 显示 SSD↔GPU P2P 数据路径上，内核控制路径仍可主导小 I/O；用户态队列后 batch 带宽相对 GDS 最高 **12.12×/30.69×**，LMCache 中位 TTFT **−62.7%**。
 
 
+## FeNOR 主存 rank、混合 checkpoint、跨精度专家（2026-11-04）
+
+[NORmal](/papers/normal-3d-fenor-lpddr6-main-memory.md) 把已流片 BEOL 3D FeNOR 接到**未改 LPDDR6** 当主存 rank：相对 UFS **8.9×–28.0×**，相对无限 DRAM 差距 **≤0.4%**；>256K 相对 HBF **2.8×–6.3×** 更快、能耗/token **8.1×–17.8×** 更低。[HiState](/papers/histate-hybrid-prefix-cache-agent.md) 把混合模型历史循环 checkpoint 放 SSD、KV 占快存，p99 TTFT 相对 Marconi/HiCache 最高 **5.73× / 5.44×**。[PagedMoE](/papers/pagedmoe-cross-precision-expert-cache.md) 用树码本+bitplane 做跨精度专家缓存复用：Avg **2.5 bit**，24 GiB 缓存 **8.89 tok/s**（相对独立精度对象 **1.33×**）。
+
 ## 选择性 KV 重建与 MoE 专家预取（2026-11-03）
 
 [RISK-KV](/papers/risk-kv-selective-reconstruction.md) 用跨层锚点重建省略部分历史 KV（**18.2–33.3%**）。[KVLearn](/papers/kvlearn-disagg-kv-retention.md) 控制解耦池的 admit 传输量（最高 **−53%**）。[PDScope](/papers/pdscope-phase-aware-moe-cpu-gpu.md) 把专家权重预取做成相位感知零拷贝异步 I/O（prefill/decode 最高 **10.3× / 6.1×**）。
@@ -316,3 +323,6 @@ WSE 简化（无 off-chip）:
 [30] [arXiv:2610.29544](https://arxiv.org/abs/2610.29544) — RISK-KV
 [31] [arXiv:2610.28637](https://arxiv.org/abs/2610.28637) — KVLearn
 [32] [arXiv:2610.39216](https://arxiv.org/abs/2610.39216) — PDScope
+[33] [arXiv:2610.40000](https://arxiv.org/abs/2610.40000) — NORmal
+[34] [arXiv:2610.41508](https://arxiv.org/abs/2610.41508) — HiState
+[35] [arXiv:2611.03173](https://arxiv.org/abs/2611.03173) — PagedMoE
