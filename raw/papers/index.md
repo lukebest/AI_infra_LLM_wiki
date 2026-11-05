@@ -1,5 +1,10 @@
 # Other
 
+* [ARK stub](ark-kv-path-reservation-disagg.md) + [PDF](ARK_KV_Path_Reservation_Disagg_Inference_2026.pdf) — arXiv:2610.41160
+* [TIDE stub](tide-fsdp-layout-aware-collectives.md) + [PDF](TIDE_FSDP_Layout_Aware_Collectives_2026.pdf) — arXiv:2610.38228
+* [PUD-LLM stub](pud-llm-indram-parallelism-decoding.md) + [PDF](PUD_LLM_InDRAM_Parallelism_Decoding_2026.pdf) — arXiv:2611.02401
+* [AnchorKV stub](anchorkv-residual-anchor-kv.md) + [PDF](AnchorKV_Residual_Anchor_KV_Reconstruction_2026.pdf) — arXiv:2611.00117
+
 * [NORmal stub](normal-3d-fenor-lpddr6-main-memory.md) + [PDF](NORmal_3D_FeNOR_LPDDR6_Main_Memory_2026.pdf) — arXiv:2610.40000
 * [HiState stub](histate-hybrid-prefix-cache-agent.md) + [PDF](HiState_Hybrid_Prefix_Cache_Agent_2026.pdf) — arXiv:2610.41508
 * [PagedMoE stub](pagedmoe-cross-precision-expert-cache.md) + [PDF](PagedMoE_Cross_Precision_Expert_Cache_2026.pdf) — arXiv:2611.03173

@@ -7,9 +7,9 @@ tags:
 - serving-system
 - moe
 - disaggregated-inference
-timestamp: '2026-11-03T00:00:00Z'
+timestamp: '2026-11-05T00:00:00Z'
 created: 2026-04-17
-updated: 2026-11-03
+updated: 2026-11-05
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -45,6 +45,7 @@ sources:
 - raw/papers/KVLearn_Disagg_KV_Retention_2026.pdf
 - raw/papers/ConfluxServe_Heterogeneous_PD_Parallelism_2026.pdf
 - raw/papers/RISK-KV_Selective_KV_Reconstruction_2026.pdf
+- raw/papers/ARK_KV_Path_Reservation_Disagg_Inference_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -223,6 +224,9 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [DuoPD](/papers/duopd-hybrid-gpu-pnm-pd-disaggregation.md)：decode 整体交给 HBM4 逻辑 die 上的 PNM，GPU 并发做 prefill，TSV 层分时共享带宽；端到端吞吐比常规 PD 分离最高 **2.23×**，SM 切分则必须在 TTFT 与 TPOT 之间二选一。
 - [KVCompass](/papers/kvcompass-internet-scale-prefix-cache-discovery.md)：跨地域前缀 KV 发现与转发，P99 TTFT 降 **1.3–14×**。
 
+
+## 2026-11-05 补充：解耦 KV 大象流路径预留
+[ARK](/papers/ark-kv-path-reservation-disagg.md) 在端主机为 PD 解耦的 KV 转移做分布式 spine 预留（选 source port 对齐 ECMP hash），不改交换机：QPS=25 时 mean/P95 FCT **−27.3%/−34.0%**，mean TTFT 最高 **−12.9%**。
 
 ## 2026-11-03 补充：学习式保留与算子级共执行
 

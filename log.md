@@ -1,5 +1,14 @@
 # Bundle Update Log
 
+## 2026-11-05
+
+### Enrich: ARK / TIDE / PUD-LLM / AnchorKV（论文早报）
+- 新增 Paper：[ARK](papers/ark-kv-path-reservation-disagg.md)（2610.41160）、[TIDE](papers/tide-fsdp-layout-aware-collectives.md)（2610.38228）、[PUD-LLM](papers/pud-llm-indram-parallelism-decoding.md)（2611.02401）、[AnchorKV](papers/anchorkv-residual-anchor-kv.md)（2611.00117）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [disaggregated-inference](concepts/disaggregated-inference.md)、[llm-distributed-training-collectives](concepts/llm-distributed-training-collectives.md)、[dram-memory-system](concepts/dram-memory-system.md)、[pagedattention-vllm](concepts/pagedattention-vllm.md)、[end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)
+- SCHEMA taxonomy 补 `fsdp`, `pud`
+- 来源：2026-11-05 AI Infra 论文早报（上轮挂起四篇）
+
 ## 2026-11-04
 
 ### Enrich: NORmal / HiState / PagedMoE / Schnizo（论文早报）

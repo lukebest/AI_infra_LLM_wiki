@@ -1,5 +1,10 @@
 # Paper
 
+* [ARK: KV Path Reservation for Disagg Inference](ark-kv-path-reservation-disagg.md) - Georgia Tech NAIC’26 — 解耦 KV 大象流端侧预留；QPS=25 mean/P95 FCT −27.3%/−34.0%，mean TTFT 最高 −12.9%
+* [TIDE: FSDP2 Layout-Aware Collectives](tide-fsdp-layout-aware-collectives.md) - KlingAI/快手 — 零拷贝 AG/RS；64 GPU step vs Stock −27.1%、vs SymmMem −6.0%；RS SM 12.5–14.5×
+* [PUD-LLM: In-DRAM Parallelism for Decode](pud-llm-indram-parallelism-decoding.md) - 东大/RIKEN — PUD 投影打包 + SIMD/MIMD；vs PUD 最高 1.41×，vs 处理器 2.45×
+* [AnchorKV: Residual-Anchor Lossless KV](anchorkv-residual-anchor-kv.md) - 西南交大 — 残差锚点谱 + cascade；4k 最高 16.3×，32k 容量 5.78–54.0× full-KV
+
 * [NORmal: 3D FeNOR as LPDDR6 Main Memory](normal-3d-fenor-lpddr6-main-memory.md) - 北大/IME CAS/港科大广州 — BEOL FeNOR 未改 LPDDR6 rank；vs UFS 8.9×–28.0×，相对无限 DRAM ≤0.4%，>256K vs HBF 2.8×–6.3× / 能耗/token 8.1×–17.8×
 * [HiState: Hybrid Prefix Cache for Agentic Workloads](histate-hybrid-prefix-cache-agent.md) - UCSD — 混合 LLM 前缀分层；历史循环 checkpoint→SSD；p99 TTFT vs Marconi/HiCache 最高 5.73×/5.44×
 * [PagedMoE: Cross-Precision Expert Cache](pagedmoe-cross-precision-expert-cache.md) - 清华 — SSD 常驻 MoE 树码本+bitplane；Avg 2.5-bit≈GPTQ-INT4/MXFP4；24 GiB→8.89 tok/s，1.33×/1.56×

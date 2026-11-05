@@ -9,12 +9,13 @@ tags:
 - dram
 - hbm
 - wse
-timestamp: '2026-08-26T00:00:00Z'
-updated: 2026-10-20
+timestamp: '2026-11-05T00:00:00Z'
+updated: 2026-11-05
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-17.md
 - raw/articles/arch-study-30d-day-20.md
+- raw/papers/PUD_LLM_InDRAM_Parallelism_Decoding_2026.pdf
 ---
 
 # DRAM and Memory System（DRAM 与内存系统）
@@ -117,6 +118,9 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 
 [GB200 UM 微基准](/papers/grace-blackwell-unified-memory-placement-microbenchmarks.md)：GPU 经 host-mapped 访问 Grace LPDDR5X 上 1 GiB triad 仅 **304 GB/s**，约为本地 HBM **3963 GB/s** 的 **7.7%**；冷 managed first-touch 与超订换出才是更慢的路径。
 
+## 2026-11-05 补充：In-DRAM 并行 decode（PUD）
+[PUD-LLM](/papers/pud-llm-indram-parallelism-decoding.md) 在 Processing-using-DRAM 上做投影打包与 SIMD/MIMD 映射，抬高列/bank 利用率：端到端 decode 相对 PUD 基线最高 **1.41×**，相对处理器 **2.45×**。
+
 ## 3D 本地栈上的行局部性（2026-10-20）
 - 3D DRAM 贴近 CU 后仍是 bank + row buffer：[TileDRAM](/papers/tiledram-tile-to-dram-layouts-3d-dram-gpgpu.md) 在固定地址映射下按 tile 访问签名选布局，MoE FFN 行冲突 75.7% → 15.2%，几何均值 1.77× [5]。
 - 容量层：HBF 进入 HBM 与 host DRAM 之间，见 [HBFSim (MBZUAI)](/papers/hbfsim-hbm-hbf-llm-memory-hierarchy.md) [6]。
@@ -129,3 +133,5 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 [4] [arXiv:2610.20354](https://arxiv.org/abs/2610.20354) — Grace–Blackwell UM
 [5] [arXiv:2610.23767](https://arxiv.org/abs/2610.23767) — TileDRAM
 [6] [arXiv:2610.23503](https://arxiv.org/abs/2610.23503) — HBFSim (MBZUAI)
+
+[7] [arXiv:2611.02401](https://arxiv.org/abs/2611.02401) — PUD-LLM

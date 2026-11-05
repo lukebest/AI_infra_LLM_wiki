@@ -11,9 +11,9 @@ tags:
 - vllm
 - virtual-memory
 - memory-management
-timestamp: '2026-11-04T00:00:00Z'
+timestamp: '2026-11-05T00:00:00Z'
 created: 2026-07-07
-updated: 2026-11-04
+updated: 2026-11-05
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -22,6 +22,7 @@ sources:
 - raw/papers/RISK-KV_Selective_KV_Reconstruction_2026.pdf
 - raw/papers/KVLearn_Disagg_KV_Retention_2026.pdf
 - raw/papers/HiState_Hybrid_Prefix_Cache_Agent_2026.pdf
+- raw/papers/AnchorKV_Residual_Anchor_KV_Reconstruction_2026.pdf
 ---
 
 # PagedAttention and vLLM Serving
@@ -101,6 +102,9 @@ GPU 上传统 KV cache 分配的痛点：
 
 
 
+## 2026-11-05 补充：残差锚点无损再激活
+[AnchorKV](/papers/anchorkv-residual-anchor-kv.md) 用可配置间距的 residual anchor + cascade 重放，在 GQA 等结构上找到 config 可算的 break-even：4k cascade 最高 **16.3×** naive，32k 最深间距可再激活容量 **5.78–54.0×** full-KV，且 bit-exact。
+
 ## 2026-11-04 补充：混合模型 agent 前缀分层
 
 [HiState](/papers/histate-hybrid-prefix-cache-agent.md) 针对全注意+循环混合 LLM：快存优先 KV，历史循环 checkpoint 落 SSD；真实 coding-agent 轨迹上 **p99 TTFT** 相对 vLLM-Marconi 最高 **5.73×**、相对 SGLang-HiCache **5.44×**。
@@ -126,3 +130,4 @@ GPU 上传统 KV cache 分配的痛点：
 - [arXiv:2610.29544](https://arxiv.org/abs/2610.29544) — RISK-KV
 - [arXiv:2610.28637](https://arxiv.org/abs/2610.28637) — KVLearn
 - [arXiv:2610.41508](https://arxiv.org/abs/2610.41508) — HiState
+- [arXiv:2611.00117](https://arxiv.org/abs/2611.00117) — AnchorKV

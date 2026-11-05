@@ -11,9 +11,9 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-11-04T00:00:00Z'
+timestamp: '2026-11-05T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-04
+updated: 2026-11-05
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -50,6 +50,10 @@ sources:
 - raw/papers/NORmal_3D_FeNOR_LPDDR6_Main_Memory_2026.pdf
 - raw/papers/HiState_Hybrid_Prefix_Cache_Agent_2026.pdf
 - raw/papers/PagedMoE_Cross_Precision_Expert_Cache_2026.pdf
+- raw/papers/ARK_KV_Path_Reservation_Disagg_Inference_2026.pdf
+- raw/papers/TIDE_FSDP_Layout_Aware_Collectives_2026.pdf
+- raw/papers/PUD_LLM_InDRAM_Parallelism_Decoding_2026.pdf
+- raw/papers/AnchorKV_Residual_Anchor_KV_Reconstruction_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -278,6 +282,9 @@ WSE 简化（无 off-chip）:
 [uGDS](/papers/ugds-userspace-gpu-direct-storage.md) 显示 SSD↔GPU P2P 数据路径上，内核控制路径仍可主导小 I/O；用户态队列后 batch 带宽相对 GDS 最高 **12.12×/30.69×**，LMCache 中位 TTFT **−62.7%**。
 
 
+## 2026-11-05 补充：KV 网络预留、FSDP 布局、PUD decode、残差锚点
+[ARK](/papers/ark-kv-path-reservation-disagg.md) 把解耦 KV 大象流的 FCT/TTFT 压到 fabric 路径预留（mean FCT 最高 **−27.3%**）。[TIDE](/papers/tide-fsdp-layout-aware-collectives.md) 消掉 FSDP2 布局拷贝与 RS SM 干扰（step 最高 **−27.1%**）。[PUD-LLM](/papers/pud-llm-indram-parallelism-decoding.md) 把 GeMV 留在 DRAM 列/bank 并行内（vs PUD **1.41×**）。[AnchorKV](/papers/anchorkv-residual-anchor-kv.md) 用残差锚点谱换可再激活会话容量（32k **5.78–54.0×**）。
+
 ## FeNOR 主存 rank、混合 checkpoint、跨精度专家（2026-11-04）
 
 [NORmal](/papers/normal-3d-fenor-lpddr6-main-memory.md) 把已流片 BEOL 3D FeNOR 接到**未改 LPDDR6** 当主存 rank：相对 UFS **8.9×–28.0×**，相对无限 DRAM 差距 **≤0.4%**；>256K 相对 HBF **2.8×–6.3×** 更快、能耗/token **8.1×–17.8×** 更低。[HiState](/papers/histate-hybrid-prefix-cache-agent.md) 把混合模型历史循环 checkpoint 放 SSD、KV 占快存，p99 TTFT 相对 Marconi/HiCache 最高 **5.73× / 5.44×**。[PagedMoE](/papers/pagedmoe-cross-precision-expert-cache.md) 用树码本+bitplane 做跨精度专家缓存复用：Avg **2.5 bit**，24 GiB 缓存 **8.89 tok/s**（相对独立精度对象 **1.33×**）。
@@ -326,3 +333,7 @@ WSE 简化（无 off-chip）:
 [33] [arXiv:2610.40000](https://arxiv.org/abs/2610.40000) — NORmal
 [34] [arXiv:2610.41508](https://arxiv.org/abs/2610.41508) — HiState
 [35] [arXiv:2611.03173](https://arxiv.org/abs/2611.03173) — PagedMoE
+[36] [arXiv:2610.41160](https://arxiv.org/abs/2610.41160) — ARK
+[37] [arXiv:2610.38228](https://arxiv.org/abs/2610.38228) — TIDE
+[38] [arXiv:2611.02401](https://arxiv.org/abs/2611.02401) — PUD-LLM
+[39] [arXiv:2611.00117](https://arxiv.org/abs/2611.00117) — AnchorKV
