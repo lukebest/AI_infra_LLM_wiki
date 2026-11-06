@@ -44,6 +44,7 @@ sources: [raw/articles/source-name.md]
 - 存内计算/RAG/Ising（2026-10-29 补）: cim, rag, ising
 - 闪存/混合服务/位平面（2026-11-04 补）: flash, nor, fenor, lpddr, hybrid-llm, bitplane, ssd
 - FSDP/PUD（2026-11-05 补）: fsdp, pud
+- PAIC/UMA/Green Context（2026-11-06 补）: paic, uma, green-context
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 

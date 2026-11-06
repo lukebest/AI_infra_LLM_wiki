@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-06
+
+### Enrich: HyPAIC / OCS Decode / GC-MoE / UMLoad（论文早报）
+- 新增 Paper：[HyPAIC](papers/hypaic-hbf-personal-ai-computer.md)（2611.04144）、[Workload-Static OCS Decode](papers/workload-static-ocs-llm-inference-decode.md)（2611.05104）、[GC-MoE](papers/gc-moe-green-context-expert-parallel.md)（2611.04222）、[UMLoad](papers/umload-unified-memory-model-loading.md)（2611.04253）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[ssd-nvme-storage-system](concepts/ssd-nvme-storage-system.md)、[heterogeneous-inference](concepts/heterogeneous-inference.md)、[dram-memory-system](concepts/dram-memory-system.md)、[tpu-v4-ocs-reconfigurable-fabric](concepts/tpu-v4-ocs-reconfigurable-fabric.md)、[llm-distributed-training-collectives](concepts/llm-distributed-training-collectives.md)、[disaggregated-inference](concepts/disaggregated-inference.md)、[megamoe-kernel](concepts/megamoe-kernel.md)、[flashmoe-kernel](concepts/flashmoe-kernel.md)、[pagedattention-vllm](concepts/pagedattention-vllm.md)、[virtual-memory-tlb](concepts/virtual-memory-tlb.md)
+- SCHEMA taxonomy 补 `paic`, `uma`, `green-context`
+- 来源：2026-11-06 AI Infra 论文早报（上轮挂起四篇）
+- **下轮优先**：可续扫当日 cs.AR/cs.DC 其余候选（由 search agent 补清单）
+
 ## 2026-11-05
 
 ### Enrich: ARK / TIDE / PUD-LLM / AnchorKV（论文早报）

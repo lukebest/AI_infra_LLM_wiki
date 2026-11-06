@@ -11,9 +11,9 @@ tags:
 - topology
 - google
 - llm
-timestamp: '2026-09-25T00:00:00Z'
+timestamp: '2026-11-06T00:00:00Z'
 created: 2026-07-22
-updated: 2026-09-25
+updated: 2026-11-06
 sources:
 - raw/articles/paper-deepdive-day-07.md
 - raw/papers/Flux_OCS_Scheduling_LLM_Training_2026.pdf
@@ -71,6 +71,10 @@ Jouppi et al., **ISCA 2023**（+ v5p 报告）。paper-deepdive **Day 7**：[raw
 ## Flux：按训练图排 OCS 电路（2026-09-25）
 
 [Flux](/papers/flux-ocs-scheduling-llm-training.md)（imec / Antwerp）把 LLM training iteration 的 compute/通信依赖与 OCS 重配置建成同一 MILP，相对 RotorNet/BvN 周期调度：摘要称 iteration 最高 **10×**、峰值 NIC buffer **>三个数量级**。仿真为 Llama 3 8B、8 GPU、2 OCS、800 Gbps、τ 1 μs–1 ms。相对本页 TPU v4「拓扑可软件化」，Flux 的旋钮是 **何时换哪条电路**，并显式重叠重配置与计算。
+
+## 推理 decode 的部署期静态 OCS（2026-11-06）
+[Workload-Static OCS Decode](/papers/workload-static-ocs-llm-inference-decode.md) 在给定部署与并行度后一次配置电路，服务期内复用；576 加速器 / 5T MoE / 5M 上下文下，all-OCS 相对 4:1 EPS 交互性最高 **+65%**、能效最高 **+119%**。相对本页 TPU v4「运行时换拓扑」与 [Flux](/papers/flux-ocs-scheduling-llm-training.md)「训练 iteration 内重配」，旋钮收到 **decode 部署期静态电路**。
+
 
 # Citations
 

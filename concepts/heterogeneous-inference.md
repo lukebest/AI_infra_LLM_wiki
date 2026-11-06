@@ -9,9 +9,9 @@ tags:
 - architecture
 - serving
 - agentic-ai
-timestamp: '2026-11-04T00:00:00Z'
+timestamp: '2026-11-06T00:00:00Z'
 created: 2026-04-16
-updated: 2026-11-04
+updated: 2026-11-06
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/EdgeAgent_UMA_Multi_Agent_Edge_Inference_2026.pdf
@@ -137,6 +137,10 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 ## GPU–WSE 互补边界（2026-11-02）
 
 [GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md)（Stevens/Argonne）在 WSE-3+A100 上给出 DP 两阈值三区制、标准 PP 难超单平台、架构感知 PP 可让 7B/13B/35B 超 WSE-only；解析模型中位误差 DP **6.8%** / PD **8.2%**。把「异构推理」从案例分析推进到**何时划算**。
+
+## PAIC/HBF、Green Context EP 与 UMA 装载（2026-11-06）
+[HyPAIC](/papers/hypaic-hbf-personal-ai-computer.md) 在边缘 PAIC 上做 HBF×LPDDR 异构主存推理。[GC-MoE](/papers/gc-moe-green-context-expert-parallel.md) 用 CUDA Green Context 分区重叠 EP dispatch 与 FP8/FP4 GEMM（8×H20 均值 **1.188×**）。[UMLoad](/papers/umload-unified-memory-model-loading.md) 加速 UMA 多模型按需装载（路由 TTFT **−51.3%–59.3%**）。
+
 
 # Citations
 

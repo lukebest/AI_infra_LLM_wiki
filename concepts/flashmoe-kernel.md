@@ -11,7 +11,7 @@ tags:
 - llm
 - training
 - inference
-timestamp: '2026-06-24T00:00:00Z'
+timestamp: '2026-11-06T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/papers/FlashMoE_Fast_Distributed_MoE_Single_Kernel_2025.pdf
@@ -102,6 +102,10 @@ Serving — [Disaggregated Inference](/concepts/disaggregated-inference.md) + [M
 ## 相关：NVL72 训练 megakernel（2026-10-01）
 
 [Mixture-of-Kittens](/papers/mixture-of-kittens-moe-megakernel-nvl72.md) 同属「单 persistent megakernel 融合 EP 算通」，但面向 **训练 + NVL72**（相对最强公开基线最高 **2.37×**；生产 512 GPU **1.41×**），与 FlashMoE 的推理/通算单核叙事互补。
+
+## 相关：Green Context EP 算子（2026-11-06）
+[GC-MoE](/papers/gc-moe-green-context-expert-parallel.md) 走多 kernel + Green Context 分区重叠（相对 Mega MoE **54** 点全面领先），与 FlashMoE 的单 persistent kernel 叙事互补。
+
 
 # Citations
 

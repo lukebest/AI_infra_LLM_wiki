@@ -11,9 +11,9 @@ tags:
 - distributed
 - noc
 - wse
-timestamp: '2026-11-05T00:00:00Z'
+timestamp: '2026-11-06T00:00:00Z'
 created: 2026-07-13
-updated: 2026-11-05
+updated: 2026-11-06
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -217,6 +217,10 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 ## FPGA compute-NIC 上的推理 KV 集体（2026-10-30）
 [MCF](/papers/mcf-memory-communication-aware-long-context.md) 把组播 / all-to-all / online-softmax 规约做成元数据驱动的 FPGA NIC datapath，与 [INC-MoE](/papers/inc-moe-innetwork-collectives-moe-inference.md) 的交换机内 AG/RS 同属「把集体卸到网络路径」，对象从 EP token 换成长上下文 KV / decode 状态。
+
+## 2026-11-06 补充：decode 拓扑感知集体 × 静态 OCS
+[Workload-Static OCS Decode](/papers/workload-static-ocs-llm-inference-decode.md) 把模型并行、拓扑感知集体日程与 OCS 电路共设计：Megatron 5T 交互性最高 **+52%**、能效 **+102%**；GPT-OSS-5.3-like 可达 **65%/119%**。
+
 
 # Citations
 

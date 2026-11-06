@@ -11,9 +11,9 @@ tags:
 - io
 - inference
 - wse
-timestamp: '2026-11-02T00:00:00Z'
+timestamp: '2026-11-06T00:00:00Z'
 created: 2026-07-03
-updated: 2026-11-04
+updated: 2026-11-06
 sources:
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
 - raw/articles/arch-study-30d-day-20.md
@@ -153,6 +153,10 @@ Host CPU
 
 ## 扁平 KV：写时落到 SSD（2026-11-02）
 [FlatCake](/papers/flatcake-flat-kvcache-storage.md) 论证驱逐序布局导致 Mooncake SSD 读放大 **6.5×–6.7×**；会话连续层主序 + FC-CIO 合并 GDS 后，峰值 SSD 带宽 **1.9×**、prefetch 延迟 **5.8×** 更低，与 [uGDS](/papers/ugds-userspace-gpu-direct-storage.md) 的控制路径优化正交（FlatCake 先解布局放大）。
+
+## HBF 进入 PAIC 主存层（2026-11-06）
+[HyPAIC](/papers/hypaic-hbf-personal-ai-computer.md) 用 High Bandwidth Flash 替代「SSD 卸荷 / 多机 scale-out」路径：容量相对 HBM **>10×**、TB/s 级带宽；权重只读驻 HBF，规避写耐久与页粒度。相对常规 NVMe 冷存储，HBF 直接挂在 GPU 主存地址空间。
+
 
 # Citations
 

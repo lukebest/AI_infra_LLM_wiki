@@ -1,5 +1,10 @@
 # Paper
 
+* [HyPAIC: HBF Personal AI Computer](hypaic-hbf-personal-ai-computer.md) - SK hynix HPCA’27 Rev. — PAIC+HBF；1T MoE 单机 vs 8 基线 E2E 最高 1.04×、TDP 归一 3.59×；小模型 ≥50 tok/s 并发最高 4×
+* [Workload-Static OCS for LLM Decode](workload-static-ocs-llm-inference-decode.md) - Salience Labs/NVIDIA/Heidelberg — 部署期静态 OCS；576 加速器/5T MoE/5M ctx；vs 4:1 EPS 交互性最高 +65%、能效 +119%
+* [GC-MoE: Green Context Expert Parallel](gc-moe-green-context-expert-parallel.md) - 阿里 — Green Context 拆通信/计算；8×H20 均值 1.188×（峰 1.296×/1.353×）；8×B300 1.106×/1.123×；54 点胜 Mega MoE
+* [UMLoad: Unified Memory Model Loading](umload-unified-memory-model-loading.md) - 上交 IPADS — UMA 按需重建；装载 vs vanilla −36.6%–71.9%、vs 流水 −19.9%–62.7%；路由 TTFT −51.3%–59.3%
+
 * [ARK: KV Path Reservation for Disagg Inference](ark-kv-path-reservation-disagg.md) - Georgia Tech NAIC’26 — 解耦 KV 大象流端侧预留；QPS=25 mean/P95 FCT −27.3%/−34.0%，mean TTFT 最高 −12.9%
 * [TIDE: FSDP2 Layout-Aware Collectives](tide-fsdp-layout-aware-collectives.md) - KlingAI/快手 — 零拷贝 AG/RS；64 GPU step vs Stock −27.1%、vs SymmMem −6.0%；RS SM 12.5–14.5×
 * [PUD-LLM: In-DRAM Parallelism for Decode](pud-llm-indram-parallelism-decoding.md) - 东大/RIKEN — PUD 投影打包 + SIMD/MIMD；vs PUD 最高 1.41×，vs 处理器 2.45×

@@ -8,7 +8,7 @@ tags:
 - cpu
 - virtualization
 - wse
-timestamp: '2026-06-24T00:00:00Z'
+timestamp: '2026-11-06T00:00:00Z'
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-15.md
@@ -94,6 +94,10 @@ NoC 无需 [Cache Coherence](/concepts/cache-coherence.md)、TLB shootdown IPI�
 - [DSA Processor Design Tradeoffs](/concepts/dsa-processor-design-tradeoffs.md) — CPU 武器 vs WSE 矩阵
 - [Deterministic Execution](/concepts/deterministic-execution.md) — 显式地址管理
 - [Cerebras WSE](/entities/cerebras-wse.md) — 无虚拟内存实例
+
+## UMA 按需装载与页清零（2026-11-06）
+[UMLoad](/papers/umload-unified-memory-model-loading.md) 把框架逻辑分配与物理页 backing 解耦：按需重建去掉冗余权重拷贝，GPU 辅助页清零加速运行时分配并保留安全语义；装载相对 vanilla **−36.6%–71.9%**。
+
 
 # Citations
 

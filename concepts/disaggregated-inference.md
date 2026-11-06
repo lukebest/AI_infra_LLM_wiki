@@ -7,9 +7,9 @@ tags:
 - serving-system
 - moe
 - disaggregated-inference
-timestamp: '2026-11-05T00:00:00Z'
+timestamp: '2026-11-06T00:00:00Z'
 created: 2026-04-17
-updated: 2026-11-05
+updated: 2026-11-06
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -234,6 +234,10 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 
 ## 2026-11-02 补充：稀疏/扁平 KV 与 GPU–WSE PD
 [UlaCache](/papers/ulacache-unified-logical-sparse-kv-serving.md) 在 DP/TP 下拆分历史 KV 存储角色（统一逻辑地址）。[FlatCake](/papers/flatcake-flat-kvcache-storage.md) 把会话 KV 在 DRAM/SSD 对等放置，服务侧命中率在负载下仍 **94%+**。[GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md) 用 PD 解耦验证：GPU 偏 prefill、WSE decode 微秒级，模型 PD 中位误差 **8.2%**。
+
+## 2026-11-06 补充：大规模 decode 域的静态 OCS
+[Workload-Static OCS Decode](/papers/workload-static-ocs-llm-inference-decode.md) 面向 576 加速器 scale-up decode：电路按部署一次配置，配合并行与集体日程，相对过订阅 EPS 抬高每用户交互性与系统能效。
+
 
 # Citations
 

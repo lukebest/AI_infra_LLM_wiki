@@ -11,9 +11,9 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-11-05T00:00:00Z'
+timestamp: '2026-11-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-05
+updated: 2026-11-06
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -295,6 +295,10 @@ WSE 简化（无 off-chip）:
 
 ## 稀疏逻辑地址与扁平 DRAM–SSD（2026-11-02）
 [UlaCache](/papers/ulacache-unified-logical-sparse-kv-serving.md) 把 GPU/可选 CPU KV 放进统一逻辑地址，PB-LRU 共享 GPU 池；投机下相对 HiSparse 峰值吞吐最高 **2.51×**（B300 TP）。[FlatCake](/papers/flatcake-flat-kvcache-storage.md) 取消 DRAM→SSD 迁移分层：写时对等放置 + GDS 合并读，消除 Mooncake SSD 读放大 **6.5×–6.7×**，峰值 mean TTFT **1.6×**。
+
+## 2026-11-06 补充：HBF PAIC 与 UMA 装载
+[HyPAIC](/papers/hypaic-hbf-personal-ai-computer.md) 把只读权重放到 HBF、可变 KV/激活留在 LPDDR：1T MoE 单机相对八台无 HBF 合计 E2E 最高 **1.04×**、TDP 归一最高 **3.59×**。[UMLoad](/papers/umload-unified-memory-model-loading.md) 在 UMA 上按需重建去掉冗余 H2D，装载相对 vanilla **−36.6%–71.9%**，路由 TTFT **−51.3%–59.3%**。
+
 
 # Citations
 

@@ -9,8 +9,8 @@ tags:
 - dram
 - hbm
 - wse
-timestamp: '2026-11-05T00:00:00Z'
-updated: 2026-11-05
+timestamp: '2026-11-06T00:00:00Z'
+updated: 2026-11-06
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-17.md
@@ -124,6 +124,10 @@ H100 FP16：**1979 TFLOPS** / **3350 GB/s** → Ridge Point ≈ **590 FLOPS/byte
 ## 3D 本地栈上的行局部性（2026-10-20）
 - 3D DRAM 贴近 CU 后仍是 bank + row buffer：[TileDRAM](/papers/tiledram-tile-to-dram-layouts-3d-dram-gpgpu.md) 在固定地址映射下按 tile 访问签名选布局，MoE FFN 行冲突 75.7% → 15.2%，几何均值 1.77× [5]。
 - 容量层：HBF 进入 HBM 与 host DRAM 之间，见 [HBFSim (MBZUAI)](/papers/hbfsim-hbm-hbf-llm-memory-hierarchy.md) [6]。
+
+## 2026-11-06 补充：LPDDR×HBF 与 UMA 装载
+[HyPAIC](/papers/hypaic-hbf-personal-ai-computer.md) 把 LPDDR 专给可变 KV/激活，权重走 HBF。[UMLoad](/papers/umload-unified-memory-model-loading.md) 在统一主存池上消除冗余权重拷贝与加速页清零。
+
 
 # Citations
 

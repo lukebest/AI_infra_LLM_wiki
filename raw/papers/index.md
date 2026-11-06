@@ -1,5 +1,10 @@
 # Other
 
+* [HyPAIC stub](hypaic-hbf-personal-ai-computer.md) + [PDF](HyPAIC_HBF_Personal_AI_Computer_2026.pdf) — arXiv:2611.04144
+* [OCS Decode stub](workload-static-ocs-llm-inference-decode.md) + [PDF](Workload_Static_OCS_LLM_Inference_Decode_2026.pdf) — arXiv:2611.05104
+* [GC-MoE stub](gc-moe-green-context-expert-parallel.md) + [PDF](GC_MoE_Green_Context_Expert_Parallel_2026.pdf) — arXiv:2611.04222
+* [UMLoad stub](umload-unified-memory-model-loading.md) + [PDF](UMLoad_Unified_Memory_Model_Loading_2026.pdf) — arXiv:2611.04253
+
 * [ARK stub](ark-kv-path-reservation-disagg.md) + [PDF](ARK_KV_Path_Reservation_Disagg_Inference_2026.pdf) — arXiv:2610.41160
 * [TIDE stub](tide-fsdp-layout-aware-collectives.md) + [PDF](TIDE_FSDP_Layout_Aware_Collectives_2026.pdf) — arXiv:2610.38228
 * [PUD-LLM stub](pud-llm-indram-parallelism-decoding.md) + [PDF](PUD_LLM_InDRAM_Parallelism_Decoding_2026.pdf) — arXiv:2611.02401

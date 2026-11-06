@@ -11,9 +11,9 @@ tags:
 - vllm
 - virtual-memory
 - memory-management
-timestamp: '2026-11-05T00:00:00Z'
+timestamp: '2026-11-06T00:00:00Z'
 created: 2026-07-07
-updated: 2026-11-05
+updated: 2026-11-06
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -116,6 +116,10 @@ GPU 上传统 KV cache 分配的痛点：
 ## 2026-11-02 补充：稀疏逻辑地址与扁平 KV 存储
 
 [UlaCache](/papers/ulacache-unified-logical-sparse-kv-serving.md) 在 SGLang 上用统一逻辑 KV 地址管理稀疏历史：相对 HiSparse，投机 decode 峰值吞吐 8×H200 **1.16×/1.70×**（DP/TP）、8×B300 **1.73×/2.51×**。[FlatCake](/papers/flatcake-flat-kvcache-storage.md) 把 DRAM+SSD 做成 HiCacheStorage 对等介质（FC-GVA/MAS/CIO），Claude Code 负载下命中 **94.2–94.6%**（Mooncake 降至 **64.3%**），峰值 mean TTFT / 吞吐各 **1.6×**。
+
+## 2026-11-06 补充：UMA 装载与 Green Context MoE
+[UMLoad](/papers/umload-unified-memory-model-loading.md) 在 vLLM 等框架上缩短 UMA 冷启动装载（相对 vanilla **−36.6%–71.9%**，路由 TTFT **−51.3%–59.3%**）。[GC-MoE](/papers/gc-moe-green-context-expert-parallel.md) 加速 EP MoE decode 内核路径（8×H20 均值 **1.188×**）。
+
 
 # Citations
 
