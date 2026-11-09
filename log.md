@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-09
+
+### Enrich: Coffee / AMD data pipelining / CHARM+（论文早报）
+- 新增 Paper：[Coffee / Elastic Precision](papers/coffee-elastic-precision-mixed-precision-llm.md)（2611.00915）、[AMD Scheduling Data to Compute](papers/amd-scheduling-data-to-compute-tdm-sdma.md)（2611.05751）、[CHARM+](papers/charm-plus-cross-hardware-attention.md)（2611.05906）
+- Raw：三份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [numeric-formats-ai-hardware](concepts/numeric-formats-ai-hardware.md)、[dnn-accelerator-systolic-dataflow](concepts/dnn-accelerator-systolic-dataflow.md)、[end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[pagedattention-vllm](concepts/pagedattention-vllm.md)、[mixed-precision-training](concepts/mixed-precision-training.md)、[gpu-simt-architecture](concepts/gpu-simt-architecture.md)、[llm-distributed-training-collectives](concepts/llm-distributed-training-collectives.md)、[flashattention](concepts/flashattention.md)、[nvlink-nvswitch-scale-up-fabric](concepts/nvlink-nvswitch-scale-up-fabric.md)、[heterogeneous-inference](concepts/heterogeneous-inference.md)
+- SCHEMA taxonomy 补 `mixed-precision`, `systolic`, `sdma`, `cdna`, `sequence-parallelism`, `numa`, `pcie`, `nvlink`
+- 来源：2026-11-09 AI Infra 论文早报（上轮挂起三篇）
+- **下轮优先**：CAMP 2611.07707（3D-IMC mapping）；Should You Split Decode 2611.08299（若口径内）
+
 ## 2026-11-06
 
 ### Enrich: HyPAIC / OCS Decode / GC-MoE / UMLoad（论文早报）

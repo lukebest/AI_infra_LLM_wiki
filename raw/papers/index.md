@@ -1,5 +1,9 @@
 # Other
 
+* [Coffee stub](coffee-elastic-precision-mixed-precision-llm.md) + [PDF](Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf) — arXiv:2611.00915
+* [AMD data pipelining stub](amd-scheduling-data-to-compute-tdm-sdma.md) + [PDF](AMD_Scheduling_Data_to_Compute_TDM_SDMA_2026.pdf) — arXiv:2611.05751
+* [CHARM+ stub](charm-plus-cross-hardware-attention.md) + [PDF](CHARM_Plus_Cross_Hardware_Attention_2026.pdf) — arXiv:2611.05906
+
 * [HyPAIC stub](hypaic-hbf-personal-ai-computer.md) + [PDF](HyPAIC_HBF_Personal_AI_Computer_2026.pdf) — arXiv:2611.04144
 * [OCS Decode stub](workload-static-ocs-llm-inference-decode.md) + [PDF](Workload_Static_OCS_LLM_Inference_Decode_2026.pdf) — arXiv:2611.05104
 * [GC-MoE stub](gc-moe-green-context-expert-parallel.md) + [PDF](GC_MoE_Green_Context_Expert_Parallel_2026.pdf) — arXiv:2611.04222

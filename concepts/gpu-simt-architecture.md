@@ -14,12 +14,13 @@ tags:
 - npu
 timestamp: '2026-10-19T00:00:00Z'
 created: 2026-07-07
-updated: 2026-10-19
+updated: 2026-11-09
 sources:
 - raw/articles/arch-study-30d-day-24.md
 - raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf
 - raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf- raw/papers/Tessera_Dynamic_Block_Sparse_Attention_2026.pdf
 - raw/papers/EMA_Elastic_Memory_Across_GPUs_2026.pdf
+- raw/papers/AMD_Scheduling_Data_to_Compute_TDM_SDMA_2026.pdf
 
 ---
 - raw/papers/Die_Scaling_GPU_Fine_Grained_Scheduling_2026.pdf
@@ -178,6 +179,9 @@ Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑
 ## 多 chiplet GPU 的移植代价（2026-10-19）
 
 [Meta × AMD MI350X](/papers/meta-amd-mi350x-training-codesign.md)（MICRO'26）给出 wavefront 64 + 8 XCD 的生产经验：无 TMA 时浅流水（num_stages≈2）更优；原子操作需跨 XCD 一致性，高争用下可比 B200 慢 >**10×**，改 shared memory 树形归约后 20% 违例率下提速 **4.34×**；Origami 解析模型按 L2/LLC 共享建模命中率并做 XCD 感知 swizzle，相对穷举 autotune 达 **93%**。GeLU 改走 sigmoid 形式 + `fast_expf`/`fast_dividef`，见 [核内非线性运算加速](/concepts/in-core-nonlinear-operator-acceleration.md)。
+
+## 2026-11-09 补充：AMD 显式数据流水 ISA
+[AMD Scheduling Data to Compute](/papers/amd-scheduling-data-to-compute-tdm-sdma.md) 在 CDNA 上用 TDM + transpose-load 替代「纯多线程藏延迟」：CSA kernel 几何均值 **1.88×**（峰 **2.74×**），transpose-load **1.19×**。
 
 # Citations
 

@@ -45,6 +45,7 @@ sources: [raw/articles/source-name.md]
 - 闪存/混合服务/位平面（2026-11-04 补）: flash, nor, fenor, lpddr, hybrid-llm, bitplane, ssd
 - FSDP/PUD（2026-11-05 补）: fsdp, pud
 - PAIC/UMA/Green Context（2026-11-06 补）: paic, uma, green-context
+- 混合精度/脉动/AMD DMA/序列并行（2026-11-09 补）: mixed-precision, systolic, sdma, cdna, sequence-parallelism, numa, pcie, nvlink
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 

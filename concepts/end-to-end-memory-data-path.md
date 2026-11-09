@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-11-06T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-06
+updated: 2026-11-09
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -54,6 +54,8 @@ sources:
 - raw/papers/TIDE_FSDP_Layout_Aware_Collectives_2026.pdf
 - raw/papers/PUD_LLM_InDRAM_Parallelism_Decoding_2026.pdf
 - raw/papers/AnchorKV_Residual_Anchor_KV_Reconstruction_2026.pdf
+- raw/papers/Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf
+- raw/papers/AMD_Scheduling_Data_to_Compute_TDM_SDMA_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -299,6 +301,9 @@ WSE 简化（无 off-chip）:
 ## 2026-11-06 补充：HBF PAIC 与 UMA 装载
 [HyPAIC](/papers/hypaic-hbf-personal-ai-computer.md) 把只读权重放到 HBF、可变 KV/激活留在 LPDDR：1T MoE 单机相对八台无 HBF 合计 E2E 最高 **1.04×**、TDP 归一最高 **3.59×**。[UMLoad](/papers/umload-unified-memory-model-loading.md) 在 UMA 上按需重建去掉冗余 H2D，装载相对 vanilla **−36.6%–71.9%**，路由 TTFT **−51.3%–59.3%**。
 
+
+## 2026-11-09 补充：attention 引导 KV 读与 AMD 数据流水
+[Coffee](/papers/coffee-elastic-precision-mixed-precision-llm.md) 用同一混合精度读路径做 attention 引导 KV 读取与 V 跳过，缓解长上下文 decode 带宽。[AMD Scheduling Data to Compute](/papers/amd-scheduling-data-to-compute-tdm-sdma.md) 用 TDM/transpose-load/SDMA/RDMA 把 HBM→片上→跨 GPU 供给做成显式流水。
 
 # Citations
 

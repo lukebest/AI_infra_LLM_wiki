@@ -1,5 +1,9 @@
 # Paper
 
+* [Coffee / Elastic Precision Mixed-Precision LLM](coffee-elastic-precision-mixed-precision-llm.md) - Imperial/Cambridge — flattened systolic 双侧在线位宽；Llama-3-8B Avg4 PPL 6.58 vs PLENA 6.95、Avg 72.23 vs 69.63；vs PLENA 最高 2.55×/2.61×，vs 4×B200 最高 4.96×/12.56×
+* [AMD Scheduling Data to Compute (TDM/SDMA)](amd-scheduling-data-to-compute-tdm-sdma.md) - AMD Primus/Primus-Turbo — 首个吃满 TDM/transpose/SDMA/RDMA；CSA TDM 几何均值 1.88×（峰 2.74×），transpose 1.19×，SDMA 1.16×，分层 DMA 1.33×
+* [CHARM+: Cross-Hardware Attention](charm-plus-cross-hardware-attention.md) - 联想 NeurIPS’26 — RM+ + 跨硬件 QP；PCIe 均值 1.3×/1.7×，NVLink 2.8×/3.9×；H100 最高约 2.72×/4.21×；Megatron E2E 最高 2.17×
+
 * [HyPAIC: HBF Personal AI Computer](hypaic-hbf-personal-ai-computer.md) - SK hynix HPCA’27 Rev. — PAIC+HBF；1T MoE 单机 vs 8 基线 E2E 最高 1.04×、TDP 归一 3.59×；小模型 ≥50 tok/s 并发最高 4×
 * [Workload-Static OCS for LLM Decode](workload-static-ocs-llm-inference-decode.md) - Salience Labs/NVIDIA/Heidelberg — 部署期静态 OCS；576 加速器/5T MoE/5M ctx；vs 4:1 EPS 交互性最高 +65%、能效 +119%
 * [GC-MoE: Green Context Expert Parallel](gc-moe-green-context-expert-parallel.md) - 阿里 — Green Context 拆通信/计算；8×H20 均值 1.188×（峰 1.296×/1.353×）；8×B300 1.106×/1.123×；54 点胜 Mega MoE

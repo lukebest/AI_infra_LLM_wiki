@@ -13,7 +13,7 @@ tags:
 - gpu
 timestamp: '2026-10-01T00:00:00Z'
 created: 2026-07-22
-updated: 2026-10-01
+updated: 2026-11-09
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
@@ -25,6 +25,7 @@ sources:
 - raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf
 - raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf
 - raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf
+- raw/papers/CHARM_Plus_Cross_Hardware_Attention_2026.pdf
 ---
 
 # NVLink / NVSwitch Scale-Up Fabric
@@ -107,6 +108,9 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 ## MoK / Purlin：NVL72 软件栈（2026-10-01）
 
 [Mixture-of-Kittens](/papers/mixture-of-kittens-moe-megakernel-nvl72.md) 证明为 scale-out 优化的 MoE 系统迁到 NVL72 时常慢于朴素 NCCL；专用 megakernel（push/pull 选型、可调粒度、无 CPU 同步）相对最强公开基线最高 **2.37×**，512 GPU 生产 e2e **1.41×**。[Purlin](/papers/purlin-collectives-orchestration-datapath.md) 则把域内集体的编排与 Atom datapath 解耦，集体延迟最高 **5.14×**、带宽 **4.50×**，SGLang 在线交互过载最高 **2.85×**。
+
+## 2026-11-09 补充：跨节点 NVLink 上的 SP attention
+[CHARM+](/papers/charm-plus-cross-hardware-attention.md) 对比双 NUMA PCIe 与双节点 NVLink：相对 Ring-Attention，NVLink 前/反向平均 **2.8×** / **3.9×**（峰值陈述 **3.2×** / **4.3×**），显著高于 PCIe 均值 **1.3×** / **1.7×**。
 
 # Citations
 

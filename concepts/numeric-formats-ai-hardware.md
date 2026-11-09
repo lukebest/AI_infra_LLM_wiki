@@ -9,11 +9,12 @@ tags:
 - accelerator
 - training
 timestamp: '2026-10-19T00:00:00Z'
-updated: 2026-11-04
+updated: 2026-11-09
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-05.md
 - raw/papers/PagedMoE_Cross_Precision_Expert_Cache_2026.pdf
+- raw/papers/Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf
 ---
 
 # Numeric Formats for AI Hardware（AI 硬件数值格式）
@@ -81,6 +82,9 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 ## SSD MoE 跨精度前缀（2026-11-04）
 
 [PagedMoE](/papers/pagedmoe-cross-precision-expert-cache.md) 把精度定义为共享专家状态的 refinement depth（树码本+bitplane）；Avg **2.5 bit** 质量接近 GPTQ-INT4/MXFP4，24 GiB 缓存 **8.89 tok/s**。
+
+## 2026-11-09 补充：运行时双侧混合精度（Coffee）
+[Coffee / Elastic Precision](/papers/coffee-elastic-precision-mixed-precision-llm.md) 在固定平均 bit 预算下，用当前 GEMM **两侧输入**在线分配宽度（最大 INT5）；Llama-3-8B Avg4 WikiText-2 PPL **6.58** vs PLENA **6.95**，Avg zero-shot **72.23** vs **69.63**。
 
 # Citations
 

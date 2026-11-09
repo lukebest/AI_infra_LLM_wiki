@@ -13,7 +13,7 @@ tags:
 - memory-management
 timestamp: '2026-11-06T00:00:00Z'
 created: 2026-07-07
-updated: 2026-11-06
+updated: 2026-11-09
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -23,6 +23,7 @@ sources:
 - raw/papers/KVLearn_Disagg_KV_Retention_2026.pdf
 - raw/papers/HiState_Hybrid_Prefix_Cache_Agent_2026.pdf
 - raw/papers/AnchorKV_Residual_Anchor_KV_Reconstruction_2026.pdf
+- raw/papers/Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf
 ---
 
 # PagedAttention and vLLM Serving
@@ -120,6 +121,9 @@ GPU 上传统 KV cache 分配的痛点：
 ## 2026-11-06 补充：UMA 装载与 Green Context MoE
 [UMLoad](/papers/umload-unified-memory-model-loading.md) 在 vLLM 等框架上缩短 UMA 冷启动装载（相对 vanilla **−36.6%–71.9%**，路由 TTFT **−51.3%–59.3%**）。[GC-MoE](/papers/gc-moe-green-context-expert-parallel.md) 加速 EP MoE decode 内核路径（8×H20 均值 **1.188×**）。
 
+
+## 2026-11-09 补充：硬件侧稀疏/引导 KV 读
+[Coffee](/papers/coffee-elastic-precision-mixed-precision-llm.md) 在 NPU 读路径上按注意力重要性取 KV，对照软件侧 paged/sparse KV 服务栈。
 
 # Citations
 

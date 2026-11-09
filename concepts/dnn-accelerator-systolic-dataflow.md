@@ -12,14 +12,15 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-10-28
+updated: 2026-11-09
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
 - raw/papers/Vortex_Extreme_Compression_LLM_Inference_2026.pdf
 - raw/papers/CARDAN_Multi_Engine_MoE_Scratchpad_Dataflow_2026.pdf
----
+- raw/papers/Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf
 - raw/papers/SPECTRA_Speculative_Decoding_Reconfigurable_Tiled_2026.pdf
+---
 
 # DNN Accelerator Systolic Dataflow（DNN 加速器与脉动数据流）
 
@@ -180,6 +181,9 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 ## 边缘三值 + 自适应稀疏（2026-10-28）
 [SPARTA](/papers/sparta-sparse-ternary-edge-llm-accelerator.md) 不做经典脉动切分，而用条件累加统一 PE 同时映射三值 SpMM/SpMV 与 bit-serial QK/PV，并挂 page Top-k + histogram Top-p；28 nm **13.9 mm²** / 1 GHz，相对 FIGLUT/TeLLMe/MCBP 吞吐 **1.6–12.0×**、能效 **2.0–4.2×**、面积效率 **1.3–51.4×**，最大上下文 **32K**。
 
+
+## 2026-11-09 补充：flattened systolic 上的在线位宽（Coffee）
+[Coffee](/papers/coffee-elastic-precision-mixed-precision-llm.md) 沿用 PLENA 风格 flattened systolic，把双侧误差估计与选宽叠进阵列子阵列；系统模型长上下文 decode 相对重配 PLENA 最高 **2.55×** 吞吐 / **2.61×** 能效。
 
 # Citations
 

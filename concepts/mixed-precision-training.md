@@ -11,9 +11,10 @@ tags:
 - gpu
 timestamp: '2026-07-17T00:00:00Z'
 created: 2026-07-17
-updated: 2026-07-17
+updated: 2026-11-09
 sources:
 - raw/papers/Mixed_Precision_Training_2018.pdf
+- raw/papers/Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf
 ---
 
 # Mixed Precision Training
@@ -44,6 +45,9 @@ sources:
 - [FlashAttention-3](/concepts/flashattention-3.md) — 低精度 attention 推理/训练加速
 - [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子强度与精度选择
 - [GPU SIMT Architecture](/concepts/gpu-simt-architecture.md) — Tensor Core 承载混合精度
+
+## 2026-11-09 补充：推理侧在线混合精度对照
+训练混合精度（FP16/BF16/TF32）是默认假设；[Coffee](/papers/coffee-elastic-precision-mixed-precision-llm.md) 把思路推到推理：按 tile 双侧输入在线分配 INT 宽度，服务长上下文 decode。
 
 # Citations
 

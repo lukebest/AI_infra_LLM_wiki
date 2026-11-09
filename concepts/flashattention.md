@@ -12,9 +12,12 @@ tags:
 - prefill
 - memory-hierarchy
 timestamp: '2026-06-24T00:00:00Z'
+updated: 2026-11-09
 created: 2026-06-24
 sources:
 - raw/papers/FlashAttention_Fast_IO_Aware_Attention_2022.pdf
+- raw/papers/CHARM_Plus_Cross_Hardware_Attention_2026.pdf
+- raw/papers/AMD_Scheduling_Data_to_Compute_TDM_SDMA_2026.pdf
 ---
 
 # FlashAttention
@@ -90,6 +93,9 @@ FA:    HBM ←→ Q,K,V blocks → SRAM 内 online softmax + PV → O
 - [Memory Hierarchy and Cache](/concepts/memory-hierarchy-cache.md) — HBM/SRAM 层次类比
 - [DRAM and Memory System](/concepts/dram-memory-system.md) — 带宽 bound
 - [papers/flashattention-io-aware-exact-attention.md](/papers/flashattention-io-aware-exact-attention.md) — 论文摘要
+
+## 2026-11-09 补充：CSA 与分布式 attention
+[AMD Scheduling Data to Compute](/papers/amd-scheduling-data-to-compute-tdm-sdma.md) 把 FlashAttention 式片上状态 + 流式 KV 做到 DeepSeek V4 风格 CSA，并用 TDM 喂 tile。[CHARM+](/papers/charm-plus-cross-hardware-attention.md) 在序列并行 Ring-Attention 上做 Re-Merge 多流，数值对齐 FlashAttention 量级。
 
 # Citations
 

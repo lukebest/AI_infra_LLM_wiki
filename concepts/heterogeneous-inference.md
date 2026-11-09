@@ -11,7 +11,7 @@ tags:
 - agentic-ai
 timestamp: '2026-11-06T00:00:00Z'
 created: 2026-04-16
-updated: 2026-11-06
+updated: 2026-11-09
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/EdgeAgent_UMA_Multi_Agent_Edge_Inference_2026.pdf
@@ -27,6 +27,7 @@ sources:
 - raw/papers/ConfluxServe_Heterogeneous_PD_Parallelism_2026.pdf
 - raw/papers/PDScope_Phase_Aware_MoE_CPU_GPU_2026.pdf
 - raw/papers/PagedMoE_Cross_Precision_Expert_Cache_2026.pdf
+- raw/papers/CHARM_Plus_Cross_Hardware_Attention_2026.pdf
 ---
 
 # Heterogeneous Inference（异构推理）
@@ -141,6 +142,9 @@ MoE 稀疏性 → 每个 expert effective batch 小 → 解耦后 GPU HBM 全给
 ## PAIC/HBF、Green Context EP 与 UMA 装载（2026-11-06）
 [HyPAIC](/papers/hypaic-hbf-personal-ai-computer.md) 在边缘 PAIC 上做 HBF×LPDDR 异构主存推理。[GC-MoE](/papers/gc-moe-green-context-expert-parallel.md) 用 CUDA Green Context 分区重叠 EP dispatch 与 FP8/FP4 GEMM（8×H20 均值 **1.188×**）。[UMLoad](/papers/umload-unified-memory-model-loading.md) 加速 UMA 多模型按需装载（路由 TTFT **−51.3%–59.3%**）。
 
+
+## 2026-11-09 补充：跨硬件带宽不均下的 attention 调度
+[CHARM+](/papers/charm-plus-cross-hardware-attention.md) 虽主打训练/长序列 SP，但其 Cross-Hardware Query Parallelism 直接针对 NUMA/跨节点带宽失衡与同步拖尾，可与异构推理中的跨域调度对照。
 
 # Citations
 

@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-11-06T00:00:00Z'
 created: 2026-07-13
-updated: 2026-11-06
+updated: 2026-11-09
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -31,6 +31,8 @@ sources:
 - raw/papers/MCCL_Measurement_Based_Collective_Communication_2026.pdf
 - raw/papers/INC_MoE_InNetwork_Collectives_MoE_Inference_2026.pdf
 - raw/papers/TIDE_FSDP_Layout_Aware_Collectives_2026.pdf
+- raw/papers/AMD_Scheduling_Data_to_Compute_TDM_SDMA_2026.pdf
+- raw/papers/CHARM_Plus_Cross_Hardware_Attention_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -221,6 +223,9 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 ## 2026-11-06 补充：decode 拓扑感知集体 × 静态 OCS
 [Workload-Static OCS Decode](/papers/workload-static-ocs-llm-inference-decode.md) 把模型并行、拓扑感知集体日程与 OCS 电路共设计：Megatron 5T 交互性最高 **+52%**、能效 **+102%**；GPT-OSS-5.3-like 可达 **65%/119%**。
 
+
+## 2026-11-09 补充：SDMA/RDMA 重叠与 Ring-Attention 重排
+[AMD Scheduling Data to Compute](/papers/amd-scheduling-data-to-compute-tdm-sdma.md)：SDMA 重叠区平均 **1.16×**；分层 SDMA+RDMA 使 16/32 GPU 重叠 GEMM 相对 CU 集体平均 **1.33×**。[CHARM+](/papers/charm-plus-cross-hardware-attention.md) 用 RM+ 重排 Ring-Attention 通信，双节点 NVLink 前/反向平均 **2.8×** / **3.9×**。
 
 # Citations
 
