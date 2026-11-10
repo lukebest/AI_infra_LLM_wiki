@@ -1,5 +1,10 @@
 # Paper
 
+* [MeshRT: Compile-Time Governed Wafer-Scale Runtime](meshrt-wafer-scale-runtime.md) - Edinburgh/MSR SOSP’26 — WSE-3 编译期治理运行时动态；相对 WaferLLM 吞吐最高约 56×，匹配配置每 token 多 25–40 µs（7.6–9.5%）；相对单实例 SGLang@H200 延迟 4.5–7.0× 更低，功率匹配集群投影 decode 系统吞吐 1.7–13.0×
+* [CAMP: 3D-IMC Mapping and Placement](camp-3d-imc-mapping-placement.md) - IBM Research — 冲突矩阵 + profiling + 剪枝束搜索；3D-IMC 利用率 42.4%→60.3%；相对 SOTA mapping 最高 2.0× 3D-IMC 吞吐、1.74× E2E 吞吐
+* [SiliconForge: Should You Split Decode?](siliconforge-should-you-split-decode.md) - Hadidi — 独立优化 P/D vs P/D+AFD；SLO goodput/kW 无稳健 AFD 部署级优势，多数名义结果偏 P/D；固定硬件承诺中位损失 36%→重优化映射/池后 9%
+
+
 * [Coffee / Elastic Precision Mixed-Precision LLM](coffee-elastic-precision-mixed-precision-llm.md) - Imperial/Cambridge — flattened systolic 双侧在线位宽；Llama-3-8B Avg4 PPL 6.58 vs PLENA 6.95、Avg 72.23 vs 69.63；vs PLENA 最高 2.55×/2.61×，vs 4×B200 最高 4.96×/12.56×
 * [AMD Scheduling Data to Compute (TDM/SDMA)](amd-scheduling-data-to-compute-tdm-sdma.md) - AMD Primus/Primus-Turbo — 首个吃满 TDM/transpose/SDMA/RDMA；CSA TDM 几何均值 1.88×（峰 2.74×），transpose 1.19×，SDMA 1.16×，分层 DMA 1.33×
 * [CHARM+: Cross-Hardware Attention](charm-plus-cross-hardware-attention.md) - 联想 NeurIPS’26 — RM+ + 跨硬件 QP；PCIe 均值 1.3×/1.7×，NVLink 2.8×/3.9×；H100 最高约 2.72×/4.21×；Megatron E2E 最高 2.17×

@@ -9,9 +9,9 @@ tags:
 - deterministic
 - inference
 - mesh
-timestamp: '2026-11-02T00:00:00Z'
+timestamp: '2026-11-10T00:00:00Z'
 created: 2026-04-16
-updated: 2026-11-02
+updated: 2026-11-10
 sources:
 - raw/papers/Near-optimal_wafer-scale_reduce.pdf
 - raw/articles/interconn-study-21d-day-01.md
@@ -30,6 +30,7 @@ sources:
 - raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf
 - raw/articles/arch-study-30d-day-26.md
 - raw/papers/hc2026-cerebras-cs4.md
+- raw/papers/MeshRT_Wafer_Scale_Runtime_2026.pdf
 ---
 
 # Cerebras WSE (Wafer-Scale Engine)
@@ -161,6 +162,10 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 ## 2026-11-02：与 GPU 异构互补边界
 [GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md) 在 WSE-3 + A100 上刻画 DP/PP/PD：decode 侧 WSE 微秒级步进相对 GPU 毫秒–数百毫秒的差距，是 PD 解耦互补的主要来源之一；标准统一微批 PP 难超单平台。
 
+## 2026-11-10：MeshRT 编译期治理运行时动态
+
+[MeshRT](/papers/meshrt-wafer-scale-runtime.md)（SOSP’26，Edinburgh/MSR）在 WSE-3 / CS-3 上把连续批处理、MoE 路由和微批流水的动态事件编译进每核日程，再以安全增量物化做死锁无关的片上重配。相对 WaferLLM，匹配配置每 token 多 **25–40 µs**（**7.6–9.5%**），峰值系统吞吐最高约 **56×**（Table 3 GPT-OSS-120B **55.8×**）；相对单实例 SGLang@H200 延迟向每用户吞吐 **4.5–7.0×**，功率匹配集群投影下 decode 系统吞吐 **1.7–13.0×**。文中把 WSE-3 写作约 90 万 PE 的 **762×1172** 阵列、**44 GB** SRAM、**21 PB/s** 聚合带宽。
+
 # Citations
 
 [1] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)
@@ -180,3 +185,4 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 [15] [raw/articles/interconn-study-21d-day-14.md](raw/articles/interconn-study-21d-day-14.md) — Duato / 逃逸 VC（Day 14）
 [16] [raw/papers/hc2026-cerebras-cs4.md](raw/papers/hc2026-cerebras-cs4.md) — CS-4 / Nexus, Hot Chips 2026
 - [arXiv:2610.39222](https://arxiv.org/abs/2610.39222) — GPU–WSE Complementarity
+- [arXiv:2611.08508](https://arxiv.org/abs/2611.08508) — MeshRT（SOSP’26）

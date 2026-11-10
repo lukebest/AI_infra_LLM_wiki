@@ -13,13 +13,14 @@ tags:
 - noc
 - plmr
 - kv-cache
-timestamp: '2026-07-17T00:00:00Z'
+timestamp: '2026-11-10T00:00:00Z'
 created: 2026-07-07
-updated: 2026-07-30
+updated: 2026-11-10
 sources:
 - raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf
 - raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf
 - raw/articles/22580 From GPT2 to Kimi3, Explained.md
+- raw/papers/MeshRT_Wafer_Scale_Runtime_2026.pdf
 ---
 
 # WaferLLM System
@@ -153,6 +154,11 @@ SpaDA 报告 WSE-2 **82× GEMV vs A100**（HPDC'24 手写 CSL baseline）；Wafe
 - [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子基础（AI、Roofline、Prefill/Decode）
 - [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md) — 606× GEMV 的带宽边界与 Amdahl（Day 26）
 
+## 2026-11-10：MeshRT 在同一栈上治理动态
+
+[MeshRT](/papers/meshrt-wafer-scale-runtime.md) 是同一作者组（He / Mai / MSR）在 WaferLLM 之后的运行时：保留晶圆级低延迟，同时用编译期治理支持连续批处理与 MoE 等运行时动态。匹配映射下治理开销为每 decode token **25–40 µs**（**7.6–9.5%**），峰值系统吞吐相对静态 WaferLLM 最高 **55.8×**（摘要作约 **56×**）。
+
 # Citations
 
 [1] [raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf](raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf) — He et al. (2025)
+- [arXiv:2611.08508](https://arxiv.org/abs/2611.08508) — MeshRT

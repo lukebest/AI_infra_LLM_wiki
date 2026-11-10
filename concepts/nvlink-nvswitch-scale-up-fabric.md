@@ -11,9 +11,9 @@ tags:
 - hopper
 - blackwell
 - gpu
-timestamp: '2026-10-01T00:00:00Z'
+timestamp: '2026-11-10T00:00:00Z'
 created: 2026-07-22
-updated: 2026-11-09
+updated: 2026-11-10
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
@@ -112,6 +112,11 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 ## 2026-11-09 补充：跨节点 NVLink 上的 SP attention
 [CHARM+](/papers/charm-plus-cross-hardware-attention.md) 对比双 NUMA PCIe 与双节点 NVLink：相对 Ring-Attention，NVLink 前/反向平均 **2.8×** / **3.9×**（峰值陈述 **3.2×** / **4.3×**），显著高于 PCIe 均值 **1.3×** / **1.7×**。
 
+## 2026-11-10：scale-up 域粒度与 AFD
+
+[SiliconForge](/papers/siliconforge-should-you-split-decode.md) 比较电学与光子两种 fabric，并改变 scale-up 域大小：KV-heavy 方向在共置专家池跨越多个小 scale-up 域时 AFD 有名义领先；更大域或双方都用高速互联会削弱该领先。文中结论是 prefill 供给、decode 内存带宽、链路与池粒度比「要不要拆 decode」本身更能决定部署。
+
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
@@ -124,3 +129,4 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 [8] [raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf](raw/papers/CoFabric_Unified_xPU_Interconnection_2026.pdf) — Co-Fabric vs RoCE scale-up
 [9] [raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf](raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf) — MoK / NVL72 MoE
 [10] [raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf](raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf) — Purlin collectives
+- [arXiv:2611.08299](https://arxiv.org/abs/2611.08299) — SiliconForge / Should You Split Decode

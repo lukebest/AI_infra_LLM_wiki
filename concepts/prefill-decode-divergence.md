@@ -9,9 +9,9 @@ tags:
 - kv-cache
 - latency
 - throughput
-timestamp: '2026-11-03T00:00:00Z'
+timestamp: '2026-11-10T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-03
+updated: 2026-11-10
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -181,6 +181,11 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 ## GPU vs WSE 的 PD 形态（2026-11-02）
 [GPU–WSE Complementarity](/papers/gpu-wse-heterogeneity-complementarity.md)：同一分层基准下 GPU 更擅 prefill，WSE decode 单步约数十 µs 且跨长度较稳，GPU decode 随上下文从数十升至数百 ms；PD 模型中位误差 **8.2%**。
 
+## 2026-11-10：再拆 decode 的代价
+
+[SiliconForge](/papers/siliconforge-should-you-split-decode.md) 把 decode 内部分成 attention（读增长 KV）与 FFN（流权重/专家），与 prefill 一并作为三个角色。映射固定时内存带宽翻倍使 TPOT **−39–49%**，FLOPs 翻倍最多 **−1.8%**；评测部署里内存读占 TPOT 的 **57–95%**。AFD 每个 MoE 层每步把激活跨池交换两次（DeepSeek-V3 为 **116** 次）。独立优化后，SLO goodput/kW 未见稳健的 AFD 部署级优势。
+
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -192,3 +197,4 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2610.39222](https://arxiv.org/abs/2610.39222) — GPU–WSE Complementarity
 - [arXiv:2610.37810](https://arxiv.org/abs/2610.37810) — ConfluxServe
 - [arXiv:2610.39216](https://arxiv.org/abs/2610.39216) — PDScope
+- [arXiv:2611.08299](https://arxiv.org/abs/2611.08299) — SiliconForge / Should You Split Decode

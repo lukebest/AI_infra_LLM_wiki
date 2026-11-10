@@ -13,9 +13,9 @@ tags:
 - chiplet
 - wse
 - noc
-timestamp: '2026-08-26T00:00:00Z'
+timestamp: '2026-11-10T00:00:00Z'
 created: '2026-07-31'
-updated: 2026-11-04
+updated: 2026-11-10
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
 - raw/articles/3d-noc-study-02-monolithic-vs-tsv.md
@@ -147,6 +147,11 @@ imec 用 MI300X 式 chiplet GPU 建模（[Embodied Emissions 2.5D vs 3D](/papers
 3. **Monolithic 长期**：学术实验能否走入产品线？observation：3 年内不可能
 4. **3D NoC 设计与编译器协同**：3D 集成下 GEMV / GEMM 调度应改进哪部分？
 
+## 2026-11-10：3D-IMC 权重映射与层间互斥
+
+[CAMP](/papers/camp-3d-imc-mapping-placement.md)（IBM Research）指出 3D AIMC 垂直层不能同时访问，权重放置决定单次 MVM 的 TP 与跨 MVM 的 BP/EP。冲突矩阵 + profiling + 剪枝束搜索把 3D-IMC 利用率从 **42.4%** 提到 **60.3%**，相对 Greedy-Util 等 SOTA mapping 最高 **2.0×** 3D-IMC 吞吐、摘要所称最高 **1.74×** E2E 吞吐。评测假定 **512×512、320 层** AIMC tile，70B/Mixtral-8×7B 需 **1,024** tile。
+
+
 # Citations
 
 [1] [raw/articles/3d-noc-study-02-monolithic-vs-tsv.md](raw/articles/3d-noc-study-02-monolithic-vs-tsv.md) — Monolithic vs TSV 学记
@@ -163,3 +168,4 @@ imec 用 MI300X 式 chiplet GPU 建模（[Embodied Emissions 2.5D vs 3D](/papers
 [12] [raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf](raw/papers/Huawei_Tau_Chip_LogicFolding_Thermal_2026.pdf) — He, arXiv:2609.04287；Kirin LogicFolding
 [13] [raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf](raw/papers/HDA_MoE_3D_NMP_Hybrid_Parallel_2026.pdf) — Huang et al., arXiv:2609.08682；3D NMP MoE
 [14] [arXiv:2610.40000](https://arxiv.org/abs/2610.40000) — NORmal（BEOL 3D FeNOR × LPDDR6）
+- [arXiv:2611.07707](https://arxiv.org/abs/2611.07707) — CAMP（3D-IMC mapping）

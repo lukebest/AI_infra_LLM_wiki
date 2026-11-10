@@ -16,9 +16,9 @@ tags:
 - packaging
 - fabric
 - architecture
-timestamp: '2026-08-26T00:00:00Z'
+timestamp: '2026-11-10T00:00:00Z'
 created: 2026-08-18
-updated: 2026-09-10
+updated: 2026-11-10
 sources:
 - raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/network-design-wafer-scale-wow-hybrid-bonding.md
@@ -104,6 +104,10 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 
 [Ch.6](/analyses/ai-infra-book/ch06-supernode.md) 用 OpenTallas 对 V4.1 Flash 的等硅面积分析（**未流片**）：权重进掩模 ROM 后，单用户速度由片上 AllReduce 决定（200K、batch-1：4070 tok/s，通信占比 65%）；片上 SRAM 44 GB（WSE-3 口径）装不下 510 GB checkpoint。这是「晶圆当超节点」时五问里 **搬什么/谁等它** 的极端：权重通路与 KV 通路分离后，NoW 集体延迟变成单用户上限。数字勿与已量产 WSE 混用。
 
+## 2026-11-10：晶圆 mesh 上的编译期动态治理
+
+[MeshRT](/papers/meshrt-wafer-scale-runtime.md) 把运行时动态（连续批处理、MoE 路由、微批流水）编进 WSE-3 每核日程，并在核资源预算内做安全增量物化与死锁无关重配，避免回落到 host（文中约 7000 cycle）或芯片级同步。这是 field-stitch 均匀 mesh 上控制面也必须本地化的系统层证据。
+
 # Citations
 
 [1] [raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf](raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf) — Iff et al. 2026
@@ -114,3 +118,4 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 [5] [raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf](raw/papers/WaferTrans_IOMMU_free_Wafer_Scale_GPU_2026.pdf) — Tang et al., arXiv:2609.06125；IOMMU-free 翻译
 [6] [Ch.6.7.4](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》ROM 晶圆对照
 [7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
+- [arXiv:2611.08508](https://arxiv.org/abs/2611.08508) — MeshRT

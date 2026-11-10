@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-11-10
+
+### Enrich: MeshRT / CAMP / SiliconForge（论文早报）
+- 新增 Paper：[MeshRT](papers/meshrt-wafer-scale-runtime.md)（2611.08508，SOSP’26）、[CAMP](papers/camp-3d-imc-mapping-placement.md)（2611.07707）、[SiliconForge / Should You Split Decode](papers/siliconforge-should-you-split-decode.md)（2611.08299）
+- Raw：三份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [cerebras-wse](entities/cerebras-wse.md)、[waferllm-system](concepts/waferllm-system.md)、[network-on-wafer](concepts/network-on-wafer.md)、[3d-stacking-technologies](concepts/3d-stacking-technologies.md)、[end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[disaggregated-inference](concepts/disaggregated-inference.md)、[prefill-decode-divergence](concepts/prefill-decode-divergence.md)、[nvlink-nvswitch-scale-up-fabric](concepts/nvlink-nvswitch-scale-up-fabric.md)
+- SCHEMA taxonomy 补 `afd`, `imc`, `aimc`
+- 来源：2026-11-10 AI Infra 论文早报（全部 NEW）
+- **下轮优先**：FastAFD 2611.07149、flash-comm 2611.06634
+
+
 ## 2026-11-09
 
 ### Enrich: Coffee / AMD data pipelining / CHARM+（论文早报）

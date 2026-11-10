@@ -46,6 +46,7 @@ sources: [raw/articles/source-name.md]
 - FSDP/PUD（2026-11-05 补）: fsdp, pud
 - PAIC/UMA/Green Context（2026-11-06 补）: paic, uma, green-context
 - 混合精度/脉动/AMD DMA/序列并行（2026-11-09 补）: mixed-precision, systolic, sdma, cdna, sequence-parallelism, numa, pcie, nvlink
+- 解耦边界/存内计算（2026-11-10 补）: afd, imc, aimc
 
 Rule: every tag on a page must appear in this taxonomy. If a new tag is needed, add it here first, then use it.
 

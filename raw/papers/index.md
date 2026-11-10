@@ -1,5 +1,10 @@
 # Other
 
+* [MeshRT stub](meshrt-wafer-scale-runtime.md) + [PDF](MeshRT_Wafer_Scale_Runtime_2026.pdf) — arXiv:2611.08508
+* [CAMP stub](camp-3d-imc-mapping-placement.md) + [PDF](CAMP_3D_IMC_Mapping_Placement_2026.pdf) — arXiv:2611.07707
+* [SiliconForge stub](siliconforge-should-you-split-decode.md) + [PDF](SiliconForge_Should_You_Split_Decode_2026.pdf) — arXiv:2611.08299
+
+
 * [Coffee stub](coffee-elastic-precision-mixed-precision-llm.md) + [PDF](Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf) — arXiv:2611.00915
 * [AMD data pipelining stub](amd-scheduling-data-to-compute-tdm-sdma.md) + [PDF](AMD_Scheduling_Data_to_Compute_TDM_SDMA_2026.pdf) — arXiv:2611.05751
 * [CHARM+ stub](charm-plus-cross-hardware-attention.md) + [PDF](CHARM_Plus_Cross_Hardware_Attention_2026.pdf) — arXiv:2611.05906

@@ -7,9 +7,9 @@ tags:
 - serving-system
 - moe
 - disaggregated-inference
-timestamp: '2026-11-06T00:00:00Z'
+timestamp: '2026-11-10T00:00:00Z'
 created: 2026-04-17
-updated: 2026-11-06
+updated: 2026-11-10
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -239,6 +239,11 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [Workload-Static OCS Decode](/papers/workload-static-ocs-llm-inference-decode.md) 面向 576 加速器 scale-up decode：电路按部署一次配置，配合并行与集体日程，相对过订阅 EPS 抬高每用户交互性与系统能效。
 
 
+## 2026-11-10：独立优化 P/D 与 P/D+AFD
+
+[SiliconForge](/papers/siliconforge-should-you-split-decode.md) 把服务分解（是否再拆 decode attention/FFN）与硬件指派做成两个独立轴，在 **128 kW** 预算下分别优化映射与池大小。主比较里 SLO goodput/kW 未见稳健的部署级 AFD 优势，多数名义结果偏向 P/D；单类上加 A/FFN 边界的变动为 **−10.4% 到 +8.1%**（Fig 4）。KV-heavy 且共置专家池跨多个小 scale-up 域时 AFD 有名义领先。提前锁定硬件的中位归一化 goodput 损失约 **36%**，同硬件重优化映射/池后约 **9%**。
+
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -278,3 +283,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [arXiv:2610.28637](https://arxiv.org/abs/2610.28637) — KVLearn
 - [arXiv:2610.37810](https://arxiv.org/abs/2610.37810) — ConfluxServe
 - [arXiv:2610.29544](https://arxiv.org/abs/2610.29544) — RISK-KV
+- [arXiv:2611.08299](https://arxiv.org/abs/2611.08299) — SiliconForge / Should You Split Decode

@@ -11,9 +11,9 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-11-06T00:00:00Z'
+timestamp: '2026-11-10T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-09
+updated: 2026-11-10
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -305,6 +305,11 @@ WSE 简化（无 off-chip）:
 ## 2026-11-09 补充：attention 引导 KV 读与 AMD 数据流水
 [Coffee](/papers/coffee-elastic-precision-mixed-precision-llm.md) 用同一混合精度读路径做 attention 引导 KV 读取与 V 跳过，缓解长上下文 decode 带宽。[AMD Scheduling Data to Compute](/papers/amd-scheduling-data-to-compute-tdm-sdma.md) 用 TDM/transpose-load/SDMA/RDMA 把 HBM→片上→跨 GPU 供给做成显式流水。
 
+## 2026-11-10 补充：3D-IMC 权重驻留与映射冲突
+
+[CAMP](/papers/camp-3d-imc-mapping-placement.md) 把静态权重留在 3D AIMC 阵列内做 MVM，消除权重搬运；同一垂直栈不能并发访问，映射决定哪些 MVM 能并行。利用率 **42.4%→60.3%**，3D-IMC 吞吐最高 **2.0×**（Qwen-72B）。长上下文时 attention/KV 仍主导 E2E：A100 attention + seq=4096 时映射优化收益有限，综合策略下相对 GPU 基线从 Greedy-Util 的 **12.7×** 升到 **16.3×**。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -346,3 +351,4 @@ WSE 简化（无 off-chip）:
 [37] [arXiv:2610.38228](https://arxiv.org/abs/2610.38228) — TIDE
 [38] [arXiv:2611.02401](https://arxiv.org/abs/2611.02401) — PUD-LLM
 [39] [arXiv:2611.00117](https://arxiv.org/abs/2611.00117) — AnchorKV
+- [arXiv:2611.07707](https://arxiv.org/abs/2611.07707) — CAMP
