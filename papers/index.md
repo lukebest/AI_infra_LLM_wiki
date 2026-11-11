@@ -1,5 +1,10 @@
 # Paper
 
+* [FastAFD: When Does AFD Pay on Rack-Scale NVLink?](fastafd-attention-ffn-disaggregation-nvl72.md) - UCSD Hao AI Lab — GB200 NVL72 调优 AFD；相对每负载调优 vLLM wide EP，Qwen3 最高 1.17×、Qwen3.5 最高 1.16×，MiniMax-M2.5 持平；模型均值误差 2.9%；投机再加约 8%
+* [flash-comm: Self-Synchronizing Collectives for Decode](flash-comm-self-synchronizing-collectives.md) - ScitiX.AI — 自同步传输 + 代价引导选择器；八卡 B300 相对 custom AR v2，all-reduce 中位 −28.8%、最高 −43.7%；all-gather 中位 −23.8%、最高 −58.9%；E2E TPOT −1.7–6.8%
+* [RVV vs CGRA SoCs for Non-Linear Functions](rvv-cgra-nonlinear-functions-soc.md) - Fujitsu H2RC@SC26 — 同配 Gemmini；SiLU 激活阶段 CGRA 最高 7.12×，softmax 上 RVV 最高 9.8×；整块 FFN 对应 3.16× / 4.24×
+* [NCCL-EP Dispatch Offload under DBO](nccl-ep-moe-dispatch-offload-dbo.md) - NVIDIA — GPI / GPI-MC / GDAKI Free Flow 提前释放 dispatch send；GB300 NVL72 相对默认 GDAKI 中位 TPOT −15–25%，相对 DeepEP v1 −16–42%
+
 * [MeshRT: Compile-Time Governed Wafer-Scale Runtime](meshrt-wafer-scale-runtime.md) - Edinburgh/MSR SOSP’26 — WSE-3 编译期治理运行时动态；相对 WaferLLM 吞吐最高约 56×，匹配配置每 token 多 25–40 µs（7.6–9.5%）；相对单实例 SGLang@H200 延迟 4.5–7.0× 更低，功率匹配集群投影 decode 系统吞吐 1.7–13.0×
 * [CAMP: 3D-IMC Mapping and Placement](camp-3d-imc-mapping-placement.md) - IBM Research — 冲突矩阵 + profiling + 剪枝束搜索；3D-IMC 利用率 42.4%→60.3%；相对 SOTA mapping 最高 2.0× 3D-IMC 吞吐、1.74× E2E 吞吐
 * [SiliconForge: Should You Split Decode?](siliconforge-should-you-split-decode.md) - Hadidi — 独立优化 P/D vs P/D+AFD；SLO goodput/kW 无稳健 AFD 部署级优势，多数名义结果偏 P/D；固定硬件承诺中位损失 36%→重优化映射/池后 9%

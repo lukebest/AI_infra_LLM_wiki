@@ -18,7 +18,7 @@ tags:
 - parallelism
 - latency
 created: 2026-11-10
-updated: 2026-11-10
+updated: 2026-11-11
 timestamp: '2026-11-10T00:00:00Z'
 paper_author: [Ramyad Hadidi]
 year: 2026
@@ -27,6 +27,7 @@ arxiv: '2611.08299'
 sources:
   - raw/papers/SiliconForge_Should_You_Split_Decode_2026.pdf
   - raw/papers/siliconforge-should-you-split-decode.md
+  - raw/papers/FastAFD_When_Does_AFD_Pay_NVL72_2026.pdf
 ---
 
 # SiliconForge：还要不要再拆 Decode？
@@ -52,7 +53,7 @@ Ramyad Hadidi 提出校准模型 **SiliconForge**，把服务分解（P/D vs P/D
 | Finding II | KV-heavy 且共置专家池跨越多个小 scale-up 域时 AFD 有名义领先；更大域或双方都用高速互联会削弱该领先 |
 | 映射固定时的灵敏度 | 内存带宽翻倍使 TPOT **−39–49%**；FLOPs 翻倍最多 **−1.8%**。评测部署里内存读占 TPOT 的 **57–95%** |
 | 提前锁定硬件（摘要 / §IV-D） | 中位归一化 goodput 损失 **36%**（精确值 **35.7%**）；同硬件重优化映射与池大小后 **9%**（**9.3%**）；25% 冗余降到 **5.1%** |
-| 相对 FastAFD 的对照建模 | FastAFD 报告每 GPU decode 吞吐 **1.35–1.45×**；在其 GPU 预算内独立优化两边后，模型给出 **0.94×**（8K 与 16K） |
+| 相对 FastAFD 的对照建模 | FastAFD 此前发表声称每 GPU decode 吞吐 **1.35–1.45×**；在其 GPU 预算内独立优化两边后，模型给出 **0.94×**（8K 与 16K）。同日入库的 [FastAFD 论文](/papers/fastafd-attention-ffn-disaggregation-nvl72.md)（arXiv:2611.07149）在 GB200 NVL72 上相对调优 wide EP 的实测 Sall 上限为 **1.17×** |
 
 作者因此认为：prefill 供给、decode 内存带宽、链路和池粒度比「要不要再拆 decode」本身更能决定部署；映射与池大小应保持可调，让边界和硬件选择跟随模型需求。
 
@@ -60,11 +61,12 @@ Ramyad Hadidi 提出校准模型 **SiliconForge**，把服务分解（P/D vs P/D
 - [Disaggregated Inference](/concepts/disaggregated-inference.md) — 把 P/D 与 AFD 分成可独立优化的两级边界
 - [Prefill-Decode Resource Divergence](/concepts/prefill-decode-divergence.md) — decode 内再分为读 KV 的 attention 与流权重的 FFN
 - [NVLink NVSwitch Scale-Up Fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md) — scale-up 域粒度改变 AFD 名义领先
+- [FastAFD](/papers/fastafd-attention-ffn-disaggregation-nvl72.md) — GB200 NVL72 上相对调优 wide EP 的实测（Sall 最高 1.17×）
 - [AFORE](/papers/afore-afd-expert-reconfiguration.md) — AFD 放大专家不均后的微批级重配对照
 - [MegaScale-Infer](/papers/megascale-infer-2504.02263.md) — 生产向 AFD / 异池 MoE 服务对照
 
 ## 开放问题
-- 结论来自校准模型而非大规模生产 A/B；对 FastAFD 等已发表对照，独立优化两边后名义 AFD 增益可以消失（0.94×）。
+- 结论来自校准模型而非大规模生产 A/B；对 FastAFD 此前 1.35–1.45× 声称，独立优化两边后名义 AFD 增益可以消失（0.94×）。FastAFD 论文随后给出的 NVL72 实测 Sall 上限为 1.17×，与校准模型的目标（SLO goodput/kW）仍不是同一指标。
 - 9% 包络是作者自设的稳健性门槛；包络内的名义领先仍可能在特定 SLA 下有运营意义。
 - 目录与规格角会随路线图更新；文中建议持续重跑映射与池大小，而不是一次性锁定加速器类别。
 

@@ -12,13 +12,17 @@ tags:
 - quantization
 - attention
 - hardware
+- cgra
+- risc-v
+- soc
 created: 2026-10-19
-updated: 2026-10-29
-timestamp: '2026-10-19T00:00:00Z'
+updated: 2026-11-11
+timestamp: '2026-11-11T00:00:00Z'
 sources:
   - raw/papers/multi-threshold-non-monotonic-activations-finn.md
   - raw/papers/meta-amd-mi350x-training-codesign.md
   - raw/papers/fuselse-intlse-logsumexp-neurips2026.md
+  - raw/papers/RVV_vs_CGRA_Nonlinear_Functions_AI_2026.pdf
 ---
 
 # 核内非线性运算加速
@@ -64,6 +68,11 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 ## 案例补充（2026-10-29）
 - [FuseLSE / IntLSE](/papers/fuselse-intlse-logsumexp-neurips2026.md)：针对独立 `torch.logsumexp`（九子 kernel、~**6×** HBM 往返）。GPU 上融合把流量压到约 **1×**，相对 PyTorch 小/大负载约 **10–11× / 6×**；CPU 上 IntLSE 整数近似再比 FuseLSE **3–6×**（粒子滤波 vs torch **2.8–5.2×**）[8]。
 
+
+## 案例补充（2026-11-11）
+- [RVV vs CGRA 非线性 SoC](/papers/rvv-cgra-nonlinear-functions-soc.md)：同一套 Gemmini 矩阵单元上比较 Saturn RVV 与弹性 RIKEN CGRA。点式 SiLU 激活阶段 CGRA 最高 **7.12×**（空间流水、硬件 exp）；带归约的 softmax 上 RVV 最高 **9.8×**（向量访存更高效，CGRA 需两次加载且通信计算串行）。整块前馈对应 **3.16×** / **4.24×**[9]。
+
+
 # Citations
 [1] [raw/papers/multi-threshold-non-monotonic-activations-finn.md](/raw/papers/multi-threshold-non-monotonic-activations-finn.md) — Berganski et al., arXiv:2610.21825
 [2] [raw/papers/meta-amd-mi350x-training-codesign.md](/raw/papers/meta-amd-mi350x-training-codesign.md) — Zhang et al., MICRO'26, arXiv:2610.22230
@@ -73,3 +82,4 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 [6] [raw/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md](/raw/papers/m3d-flow-monolithic-3d-pnm-normalizing-flow.md) — Magar et al., arXiv:2610.27371
 [7] [raw/papers/flashattention-long-vector-riscv.md](/raw/papers/flashattention-long-vector-riscv.md) — Irabor & Casas, arXiv:2610.29489
 [8] [raw/papers/fuselse-intlse-logsumexp-neurips2026.md](/raw/papers/fuselse-intlse-logsumexp-neurips2026.md) — Yao et al., NeurIPS 2026, arXiv:2610.33647
+[9] [raw/papers/rvv-cgra-nonlinear-functions-soc.md](/raw/papers/rvv-cgra-nonlinear-functions-soc.md) — Deshmukh et al., H2RC@SC26, arXiv:2611.12435

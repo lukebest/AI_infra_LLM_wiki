@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-11-11
+
+### Enrich: FastAFD / flash-comm / RVV-CGRA 非线性 / NCCL-EP dispatch offload（论文早报）
+- 新增 Paper：[FastAFD](papers/fastafd-attention-ffn-disaggregation-nvl72.md)（2611.07149）、[flash-comm](papers/flash-comm-self-synchronizing-collectives.md)（2611.06634）、[RVV vs CGRA 非线性](papers/rvv-cgra-nonlinear-functions-soc.md)（2611.12435，H2RC@SC26）、[NCCL-EP dispatch offload](papers/nccl-ep-moe-dispatch-offload-dbo.md)（2611.12362）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [disaggregated-inference](concepts/disaggregated-inference.md)、[prefill-decode-divergence](concepts/prefill-decode-divergence.md)、[nvlink-nvswitch-scale-up-fabric](concepts/nvlink-nvswitch-scale-up-fabric.md)、[llm-distributed-training-collectives](concepts/llm-distributed-training-collectives.md)、[mpi-reduce-allreduce-algorithms](concepts/mpi-reduce-allreduce-algorithms.md)、[in-core-nonlinear-operator-acceleration](concepts/in-core-nonlinear-operator-acceleration.md)；并在 [SiliconForge](papers/siliconforge-should-you-split-decode.md) 补 FastAFD 实测 1.17× 交叉注释
+- SCHEMA taxonomy 补 `cgra`, `soc`
+- 来源：2026-11-11 AI Infra 论文早报（上轮优先两篇 + 11/10 新上两篇；全部 NEW）
+- **下轮优先**：Evolving Infra 2611.12304；Relief 2611.11402；When Is HBF Cost-Effective 2611.11036（若需与既有 HBF 页对照）
+
+
 ## 2026-11-10
 
 ### Enrich: MeshRT / CAMP / SiliconForge（论文早报）

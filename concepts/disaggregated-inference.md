@@ -7,9 +7,9 @@ tags:
 - serving-system
 - moe
 - disaggregated-inference
-timestamp: '2026-11-10T00:00:00Z'
+timestamp: '2026-11-11T00:00:00Z'
 created: 2026-04-17
-updated: 2026-11-10
+updated: 2026-11-11
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -46,6 +46,8 @@ sources:
 - raw/papers/ConfluxServe_Heterogeneous_PD_Parallelism_2026.pdf
 - raw/papers/RISK-KV_Selective_KV_Reconstruction_2026.pdf
 - raw/papers/ARK_KV_Path_Reservation_Disagg_Inference_2026.pdf
+- raw/papers/FastAFD_When_Does_AFD_Pay_NVL72_2026.pdf
+- raw/papers/NCCL_EP_Offload_MoE_Dispatch_DBO_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -244,6 +246,12 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [SiliconForge](/papers/siliconforge-should-you-split-decode.md) 把服务分解（是否再拆 decode attention/FFN）与硬件指派做成两个独立轴，在 **128 kW** 预算下分别优化映射与池大小。主比较里 SLO goodput/kW 未见稳健的部署级 AFD 优势，多数名义结果偏向 P/D；单类上加 A/FFN 边界的变动为 **−10.4% 到 +8.1%**（Fig 4）。KV-heavy 且共置专家池跨多个小 scale-up 域时 AFD 有名义领先。提前锁定硬件的中位归一化 goodput 损失约 **36%**，同硬件重优化映射/池后约 **9%**。
 
 
+
+## 2026-11-11：NVL72 上实测 AFD vs wide EP
+
+[FastAFD](/papers/fastafd-attention-ffn-disaggregation-nvl72.md) 在 GB200 NVL72 上把调优过的 AFD 对照每负载调优的 vLLM wide EP。标准 decode 全 GPU 计入的 Sall：Qwen3-235B 最高 **1.17×**（16K），Qwen3.5 最高 **1.16×**（4K），MiniMax-M2.5 **1.00–1.02×**。加速比拆成 batch gain、overlap gain 与 disaggregation cost；只吃 colocated 画像的模型均值误差 **2.9%**。[NCCL-EP dispatch offload](/papers/nccl-ep-moe-dispatch-offload-dbo.md) 则在 2P2D 解耦服务的 decode 侧，把 DBO 里 dispatch send 的占用提前释放，中位 TPOT 相对默认 GDAKI **−15–25%**。
+
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -284,3 +292,5 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [arXiv:2610.37810](https://arxiv.org/abs/2610.37810) — ConfluxServe
 - [arXiv:2610.29544](https://arxiv.org/abs/2610.29544) — RISK-KV
 - [arXiv:2611.08299](https://arxiv.org/abs/2611.08299) — SiliconForge / Should You Split Decode
+- [arXiv:2611.07149](https://arxiv.org/abs/2611.07149) — FastAFD
+- [arXiv:2611.12362](https://arxiv.org/abs/2611.12362) — NCCL-EP dispatch offload

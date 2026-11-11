@@ -1,5 +1,10 @@
 # Other
 
+* [FastAFD stub](fastafd-attention-ffn-disaggregation-nvl72.md) + [PDF](FastAFD_When_Does_AFD_Pay_NVL72_2026.pdf) — arXiv:2611.07149
+* [flash-comm stub](flash-comm-self-synchronizing-collectives.md) + [PDF](flash-comm_Self_Synchronizing_Collective_2026.pdf) — arXiv:2611.06634
+* [RVV vs CGRA stub](rvv-cgra-nonlinear-functions-soc.md) + [PDF](RVV_vs_CGRA_Nonlinear_Functions_AI_2026.pdf) — arXiv:2611.12435
+* [NCCL-EP dispatch offload stub](nccl-ep-moe-dispatch-offload-dbo.md) + [PDF](NCCL_EP_Offload_MoE_Dispatch_DBO_2026.pdf) — arXiv:2611.12362
+
 * [MeshRT stub](meshrt-wafer-scale-runtime.md) + [PDF](MeshRT_Wafer_Scale_Runtime_2026.pdf) — arXiv:2611.08508
 * [CAMP stub](camp-3d-imc-mapping-placement.md) + [PDF](CAMP_3D_IMC_Mapping_Placement_2026.pdf) — arXiv:2611.07707
 * [SiliconForge stub](siliconforge-should-you-split-decode.md) + [PDF](SiliconForge_Should_You_Split_Decode_2026.pdf) — arXiv:2611.08299

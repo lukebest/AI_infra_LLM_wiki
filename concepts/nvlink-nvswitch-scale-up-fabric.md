@@ -11,9 +11,9 @@ tags:
 - hopper
 - blackwell
 - gpu
-timestamp: '2026-11-10T00:00:00Z'
+timestamp: '2026-11-11T00:00:00Z'
 created: 2026-07-22
-updated: 2026-11-10
+updated: 2026-11-11
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
@@ -26,6 +26,9 @@ sources:
 - raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf
 - raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf
 - raw/papers/CHARM_Plus_Cross_Hardware_Attention_2026.pdf
+- raw/papers/FastAFD_When_Does_AFD_Pay_NVL72_2026.pdf
+- raw/papers/flash-comm_Self_Synchronizing_Collective_2026.pdf
+- raw/papers/NCCL_EP_Offload_MoE_Dispatch_DBO_2026.pdf
 ---
 
 # NVLink / NVSwitch Scale-Up Fabric
@@ -117,6 +120,12 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 [SiliconForge](/papers/siliconforge-should-you-split-decode.md) 比较电学与光子两种 fabric，并改变 scale-up 域大小：KV-heavy 方向在共置专家池跨越多个小 scale-up 域时 AFD 有名义领先；更大域或双方都用高速互联会削弱该领先。文中结论是 prefill 供给、decode 内存带宽、链路与池粒度比「要不要拆 decode」本身更能决定部署。
 
 
+
+## 2026-11-11：NVL72 上的 AFD 与集体/EP 通信
+
+[FastAFD](/papers/fastafd-attention-ffn-disaggregation-nvl72.md) 在 GB200 NVL72 域内对照 AFD 与 wide EP。[flash-comm](/papers/flash-comm-self-synchronizing-collectives.md) 标定 NVLink 4/5 上 barrier 与组播斜率：B300 净 barrier 是 1 KB all-reduce 的 **1.30×**，组播吞吐与单播接近（H100/H200 上组播大约只有单播的三分之一）。[NCCL-EP dispatch offload](/papers/nccl-ep-moe-dispatch-offload-dbo.md) 在 GB300 NVL72 上评估 GPI / GDAKI Free Flow，把 dispatch send 从 SM 上提前释放。
+
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
@@ -130,3 +139,6 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 [9] [raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf](raw/papers/MixtureOfKittens_MoE_Megakernel_NVL72_2026.pdf) — MoK / NVL72 MoE
 [10] [raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf](raw/papers/Purlin_Collectives_Orchestration_Datapath_2026.pdf) — Purlin collectives
 - [arXiv:2611.08299](https://arxiv.org/abs/2611.08299) — SiliconForge / Should You Split Decode
+- [arXiv:2611.07149](https://arxiv.org/abs/2611.07149) — FastAFD
+- [arXiv:2611.06634](https://arxiv.org/abs/2611.06634) — flash-comm
+- [arXiv:2611.12362](https://arxiv.org/abs/2611.12362) — NCCL-EP dispatch offload

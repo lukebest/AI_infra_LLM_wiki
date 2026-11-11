@@ -11,11 +11,12 @@ tags:
 - hpc
 - ring
 - topology
-timestamp: '2026-06-24T00:00:00Z'
-updated: 2026-10-15
+timestamp: '2026-11-11T00:00:00Z'
+updated: 2026-11-11
 created: 2026-06-24
 sources:
 - raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf
+- raw/papers/flash-comm_Self_Synchronizing_Collective_2026.pdf
 ---
 
 # MPI Reduce/AllReduce Algorithms
@@ -125,7 +126,14 @@ Inverse broadcast / binary tree (短向量)
 
 在 Rabenseifner 的 α–β 框架下，[SP-Allreduce](/papers/sp-allreduce-symmetric-tree-tori.md) 定义「完全带宽最优」（无带宽冗余、无多跳流量放大、每轮负载均衡），证明在 d 维环面上这类算法的最少轮数约为 2d⌊n/2⌋，并给出达到它的对称树构造；k-SP 版本限定树深，用少量多跳流量换更少轮数以照顾小消息。64 KiB 时相对 Bucket **1.74–2.00×**，与轮数减半对应。
 
+
+## 2026-11-11：自同步 all-reduce / all-gather
+
+[flash-comm](/papers/flash-comm-self-synchronizing-collectives.md) 用块级就绪证据替换 group-wide bookend barrier，并把传输顺序与归约顺序分开。八卡 B300 上相对 custom AR v2，all-reduce 中位 **−28.8%**（最高 **−43.7%**），all-gather 中位 **−23.8%**（最高 **−58.9%**）。协议选择按代校准：B300 上 barrier 相对 1 KB all-reduce 的比值升到 **1.30**，组播斜率也与 Hopper 不同。
+
+
 # Citations
 
 [1] [raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf](raw/papers/Rabenseifner_Collective_Reduction_Operations_2004.pdf) — Rabenseifner, ICCS 2004
 [2] [arXiv:2610.16387](https://arxiv.org/abs/2610.16387) — SP-Allreduce
+- [arXiv:2611.06634](https://arxiv.org/abs/2611.06634) — flash-comm
