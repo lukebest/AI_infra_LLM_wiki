@@ -1,5 +1,11 @@
 # Paper
 
+* [Evolving Infra: Agent-Adaptive LLM Serving](evolving-infra-agent-adaptive-llm-serving.md) - Georgia Tech/UIUC/Berkeley/NVIDIA/OpenAI/MIT — 智能体自适应 PD 与 KV；最多 256×GB300，相对 Dynamo v1.5.1 均值 E2E 最高 4.12×、P95 TTFT 最高 13.92×；吞吐最高 2.73×
+* [Relief: Per-Step EP Load-Balancing Engine](relief-per-step-ep-load-balancing.md) - HKU/HKUST — 逐步副本拆分替代逐步 LP；CUDA/FPGA/片上引擎；硅实现达逐步最优 99.5%，相对静态放置最多回收 37.3 个百分点，求解 0.75–0.79 µs
+* [When Is HBF Cost-Effective for LLM Inference?](when-is-hbf-cost-effective-llm-inference.md) - UC Merced — 468 组扫描把 GPU 数、可服务性、购入成本与吞吐拆开；98 组降低最少 GPU 数，每栈半价 GPU 时 63 组仍划算；100 张 4090 规模卡上三家大 MoE 离线 16.4–26.5×
+* [Tri-Stack-PIM: Heterogeneous 3D PIM for LLM Inference](tri-stack-pim-heterogeneous-3d-llm.md) - BUPT/复旦 ICCAD’26 — 顶层 DRAM + 45 nm buffer（PHY/非线性/UBAR）+ 7 nm SIMD MAC；相对边缘 GPU/AttAcc/H2-LLM 几何均值 4.95×/2.57×/1.68×；EDP 相对朴素参数 33–66×
+
+
 * [FastAFD: When Does AFD Pay on Rack-Scale NVLink?](fastafd-attention-ffn-disaggregation-nvl72.md) - UCSD Hao AI Lab — GB200 NVL72 调优 AFD；相对每负载调优 vLLM wide EP，Qwen3 最高 1.17×、Qwen3.5 最高 1.16×，MiniMax-M2.5 持平；模型均值误差 2.9%；投机再加约 8%
 * [flash-comm: Self-Synchronizing Collectives for Decode](flash-comm-self-synchronizing-collectives.md) - ScitiX.AI — 自同步传输 + 代价引导选择器；八卡 B300 相对 custom AR v2，all-reduce 中位 −28.8%、最高 −43.7%；all-gather 中位 −23.8%、最高 −58.9%；E2E TPOT −1.7–6.8%
 * [RVV vs CGRA SoCs for Non-Linear Functions](rvv-cgra-nonlinear-functions-soc.md) - Fujitsu H2RC@SC26 — 同配 Gemmini；SiLU 激活阶段 CGRA 最高 7.12×，softmax 上 RVV 最高 9.8×；整块 FFN 对应 3.16× / 4.24×

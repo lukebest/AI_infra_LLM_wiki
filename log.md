@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-11-12
+
+### Enrich: Evolving Infra / Relief / HBF 成本判据 / Tri-Stack-PIM（论文早报）
+- 新增 Paper：[Evolving Infra](papers/evolving-infra-agent-adaptive-llm-serving.md)（2611.12304）、[Relief](papers/relief-per-step-ep-load-balancing.md)（2611.11402）、[When Is HBF Cost-Effective](papers/when-is-hbf-cost-effective-llm-inference.md)（2611.11036）、[Tri-Stack-PIM](papers/tri-stack-pim-heterogeneous-3d-llm.md)（2611.13644，ICCAD’26）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [disaggregated-inference](concepts/disaggregated-inference.md)、[prefill-decode-divergence](concepts/prefill-decode-divergence.md)、[3d-stacking-technologies](concepts/3d-stacking-technologies.md)、[in-core-nonlinear-operator-acceleration](concepts/in-core-nonlinear-operator-acceleration.md)、[end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)；并在 [Characterizing HBF](papers/characterizing-hbf-llm-serving.md)、[HBFSim (MBZUAI)](papers/hbfsim-hbm-hbf-llm-memory-hierarchy.md)、[HyPAIC](papers/hypaic-hbf-personal-ai-computer.md) 补成本扫描交叉
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-12 AI Infra 论文早报（上轮优先三篇全部入选 + Wed 11 Nov 新上 Tri-Stack-PIM）
+- **下轮优先**：NVLinkOneSided 2611.13188（NVLink 域一侧 EP all-to-all，相对 DeepEP dispatch/combine 1.2–3.0×）；SFU-Sim 2611.13879（NVIDIA MUFU 比特级反演）；SHADOWPREFILL 2611.13176；SlackTier / Engram 表放置 2611.13413；Decode Token Parallelism 2611.13293
+
+
 ## 2026-11-11
 
 ### Enrich: FastAFD / flash-comm / RVV-CGRA 非线性 / NCCL-EP dispatch offload（论文早报）

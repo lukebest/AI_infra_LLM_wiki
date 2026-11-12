@@ -1,5 +1,11 @@
 # Other
 
+* [Evolving Infra stub](evolving-infra-agent-adaptive-llm-serving.md) + [PDF](Evolving_Infra_Agent_Adaptive_LLM_Serving_2026.pdf) — arXiv:2611.12304
+* [Relief stub](relief-per-step-ep-load-balancing.md) + [PDF](Relief_Per_Step_EP_Load_Balancing_2026.pdf) — arXiv:2611.11402
+* [When Is HBF Cost-Effective stub](when-is-hbf-cost-effective-llm-inference.md) + [PDF](When_Is_HBF_Cost_Effective_LLM_Inference_2026.pdf) — arXiv:2611.11036
+* [Tri-Stack-PIM stub](tri-stack-pim-heterogeneous-3d-llm.md) + [PDF](Tri_Stack_PIM_3D_LLM_Inference_2026.pdf) — arXiv:2611.13644
+
+
 * [FastAFD stub](fastafd-attention-ffn-disaggregation-nvl72.md) + [PDF](FastAFD_When_Does_AFD_Pay_NVL72_2026.pdf) — arXiv:2611.07149
 * [flash-comm stub](flash-comm-self-synchronizing-collectives.md) + [PDF](flash-comm_Self_Synchronizing_Collective_2026.pdf) — arXiv:2611.06634
 * [RVV vs CGRA stub](rvv-cgra-nonlinear-functions-soc.md) + [PDF](RVV_vs_CGRA_Nonlinear_Functions_AI_2026.pdf) — arXiv:2611.12435

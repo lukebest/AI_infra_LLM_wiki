@@ -14,7 +14,7 @@ tags:
 - storage
 - simulator
 created: 2026-10-20
-updated: 2026-10-20
+updated: 2026-11-12
 timestamp: '2026-10-20T00:00:00Z'
 paper_author: [Jinheng Li, Guosheng Wang, Hongchao Du, Shangyu Wu, Qiao Li, Chun Jason Xue]
 year: 2026
@@ -58,5 +58,8 @@ HBF 能给加速器多一个数量级的本地容量，但只有在用法贴合�
 - HBF 时序与寿命参数仍是假设，作者说明会随公开器件数据更新 artifact。
 - 只评测 decode；prefill 写入与 KV 交接对寿命的影响未覆盖。
 
+- [When Is HBF Cost-Effective](/papers/when-is-hbf-cost-effective-llm-inference.md) — 2026-11-12 补：把最少 GPU 数、购入成本回收与吞吐增益分开扫描，与本页的性能/寿命/形态刻画交叉
+
 # Citations
 - Li et al., "HBFSim: A Simulator for Exploring HBF in Memory Hierarchies for LLMs", RACS 2026, arXiv:2610.23503. [raw](/raw/papers/hbfsim-hbm-hbf-llm-memory-hierarchy.md) · [PDF](/raw/papers/HBFSim_HBM_HBF_LLM_Memory_Hierarchy_RACS26.pdf)
+- [arXiv:2611.11036](https://arxiv.org/abs/2611.11036) — When Is HBF Cost-Effective

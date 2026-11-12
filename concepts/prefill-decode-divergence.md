@@ -11,7 +11,7 @@ tags:
 - throughput
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-11
+updated: 2026-11-12
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -193,6 +193,11 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 [FastAFD](/papers/fastafd-attention-ffn-disaggregation-nvl72.md) 给出 decode 内再拆之后、相对调优 wide EP 的实测：标准 decode Sall 从持平到 **1.17×**，取决于专家是否够重、overlap 能否盖住 FFN。投机解码放大 overlap gain，轻专家 MiniMax 从持平升到 **1.08×**。文中把 Sall 写成 batch、overlap 与把 GPU 分给专家的成本三项乘积。
 
 
+## 2026-11-12：智能体任务会把最佳 PD 比推到相反两端
+
+[Evolving Infra](/papers/evolving-infra-agent-adaptive-llm-serving.md) 在同一套 36–256×GB300 上对照：OSWorld 计算机使用任务每步追加截图，planner 收敛到 **8P1D**；Putnam 数学任务偏长 decode，只留 1–2 个 prefill 节点；Claude Code 夹着子智能体与暂停。负载从 Putnam 切到 OSWorld 时，在线拆分相对 Dynamo 均值 E2E **2.15×**、P95 TTFT **3.58×**。256 卡上静态 PD 的 P95 TTFT 从 36 卡的 **142 s** 升到 **418 s**，在线系统维持 **10–14 s**。
+
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -206,3 +211,4 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2610.39216](https://arxiv.org/abs/2610.39216) — PDScope
 - [arXiv:2611.08299](https://arxiv.org/abs/2611.08299) — SiliconForge / Should You Split Decode
 - [arXiv:2611.07149](https://arxiv.org/abs/2611.07149) — FastAFD
+- [arXiv:2611.12304](https://arxiv.org/abs/2611.12304) — Evolving Infra

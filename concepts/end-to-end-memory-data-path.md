@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-11-10T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-10
+updated: 2026-11-12
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -310,6 +310,11 @@ WSE 简化（无 off-chip）:
 [CAMP](/papers/camp-3d-imc-mapping-placement.md) 把静态权重留在 3D AIMC 阵列内做 MVM，消除权重搬运；同一垂直栈不能并发访问，映射决定哪些 MVM 能并行。利用率 **42.4%→60.3%**，3D-IMC 吞吐最高 **2.0×**（Qwen-72B）。长上下文时 attention/KV 仍主导 E2E：A100 attention + seq=4096 时映射优化收益有限，综合策略下相对 GPU 基线从 Greedy-Util 的 **12.7×** 升到 **16.3×**。
 
 
+## 2026-11-12：HBF 的成本账与 3D PIM 的栈内带宽
+
+[When Is HBF Cost-Effective](/papers/when-is-hbf-cost-effective-llm-inference.md) 把「更少 GPU」「可服务性」「购入成本」「吞吐」分开扫描：98 组降低最少 GPU 数，每栈半价 GPU 时 63 组仍划算；100 张 4090 规模卡上三家大 MoE 离线吞吐 **16.4–26.5×**。工具会话上 GPU 数胜场为 0/108。[Tri-Stack-PIM](/papers/tri-stack-pim-heterogeneous-3d-llm.md) 则把权重/KV 带宽收进三层混合键合栈，非线性不再走 host。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -352,3 +357,5 @@ WSE 简化（无 off-chip）:
 [38] [arXiv:2611.02401](https://arxiv.org/abs/2611.02401) — PUD-LLM
 [39] [arXiv:2611.00117](https://arxiv.org/abs/2611.00117) — AnchorKV
 - [arXiv:2611.07707](https://arxiv.org/abs/2611.07707) — CAMP
+- [arXiv:2611.11036](https://arxiv.org/abs/2611.11036) — When Is HBF Cost-Effective
+- [arXiv:2611.13644](https://arxiv.org/abs/2611.13644) — Tri-Stack-PIM

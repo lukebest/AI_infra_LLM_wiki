@@ -17,7 +17,7 @@ tags:
 - llm
 - throughput
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-12
 timestamp: '2026-11-06T00:00:00Z'
 paper_author: [Minho Ha, Myunghyun Rhee, Euiseok Kim, Hoshik Kim]
 year: 2026
@@ -64,6 +64,9 @@ SK hynix 提出 HyPAIC：在 PAIC 上接入 High Bandwidth Flash，**只读权�
 - HBF 规格仍在演进；散热与写耐久在更广写路径上仍是落地约束。
 - 仿真未细模 wear leveling / GC / ECC 等设备管理开销。
 
+- [When Is HBF Cost-Effective](/papers/when-is-hbf-cost-effective-llm-inference.md) — 2026-11-12 补：把最少 GPU 数、购入成本回收与吞吐增益分开扫描，与本页的性能/寿命/形态刻画交叉
+
 # Citations
 - [arXiv:2611.04144](https://arxiv.org/abs/2611.04144) — Ha, Rhee, Kim, Kim, SK hynix, HPCA 2027 Revision #545
 - [raw stub](/raw/papers/hypaic-hbf-personal-ai-computer.md)
+- [arXiv:2611.11036](https://arxiv.org/abs/2611.11036) — When Is HBF Cost-Effective

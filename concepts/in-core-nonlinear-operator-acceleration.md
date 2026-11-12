@@ -16,7 +16,7 @@ tags:
 - risc-v
 - soc
 created: 2026-10-19
-updated: 2026-11-11
+updated: 2026-11-12
 timestamp: '2026-11-11T00:00:00Z'
 sources:
   - raw/papers/multi-threshold-non-monotonic-activations-finn.md
@@ -73,6 +73,11 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 - [RVV vs CGRA 非线性 SoC](/papers/rvv-cgra-nonlinear-functions-soc.md)：同一套 Gemmini 矩阵单元上比较 Saturn RVV 与弹性 RIKEN CGRA。点式 SiLU 激活阶段 CGRA 最高 **7.12×**（空间流水、硬件 exp）；带归约的 softmax 上 RVV 最高 **9.8×**（向量访存更高效，CGRA 需两次加载且通信计算串行）。整块前馈对应 **3.16×** / **4.24×**[9]。
 
 
+## 2026-11-12：softmax 留在 3D PIM 的成熟节点 buffer die
+
+[Tri-Stack-PIM](/papers/tri-stack-pim-heterogeneous-3d-llm.md) 把非线性从 host 收回栈内：NanGate 45 nm 上的 SRE 为 **0.47 mm²**、**1.1–9.5 pJ/softmax op**。作者将 H2-LLM 的落后部分归到 host 侧 softmax 同步。这与 [RVV vs CGRA](/papers/rvv-cgra-nonlinear-functions-soc.md) 问的是同一类非 GEMM 节奏问题，落点分别在 3D 栈中层与 SoC 上的向量/CGRA。
+
+
 # Citations
 [1] [raw/papers/multi-threshold-non-monotonic-activations-finn.md](/raw/papers/multi-threshold-non-monotonic-activations-finn.md) — Berganski et al., arXiv:2610.21825
 [2] [raw/papers/meta-amd-mi350x-training-codesign.md](/raw/papers/meta-amd-mi350x-training-codesign.md) — Zhang et al., MICRO'26, arXiv:2610.22230
@@ -83,3 +88,4 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 [7] [raw/papers/flashattention-long-vector-riscv.md](/raw/papers/flashattention-long-vector-riscv.md) — Irabor & Casas, arXiv:2610.29489
 [8] [raw/papers/fuselse-intlse-logsumexp-neurips2026.md](/raw/papers/fuselse-intlse-logsumexp-neurips2026.md) — Yao et al., NeurIPS 2026, arXiv:2610.33647
 [9] [raw/papers/rvv-cgra-nonlinear-functions-soc.md](/raw/papers/rvv-cgra-nonlinear-functions-soc.md) — Deshmukh et al., H2RC@SC26, arXiv:2611.12435
+- [arXiv:2611.13644](https://arxiv.org/abs/2611.13644) — Tri-Stack-PIM

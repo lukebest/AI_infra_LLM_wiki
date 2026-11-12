@@ -17,7 +17,7 @@ tags:
 - throughput
 - gpu
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-11-12
 timestamp: '2026-10-02T00:00:00Z'
 paper_author: [Zack Yu, Chloe Wong, Coleman Hooper, Minjae Lee, Wonjun Kang, Youngjin Cho, Michael W. Mahoney, Yakun Sophia Shao, Kurt Keutzer, Amir Gholami]
 year: 2026
@@ -64,7 +64,10 @@ sources:
 - [HBF-Sim](/papers/hbfsim-extensible-hbf-simulator.md) — 仿真器底座；本文是 serving 策略表征
 - [Janus](/papers/janus-agentic-ssd-sparse-kv.md) — SSD 中心稀疏 KV；本文主攻 **近端 HBF 层级**
 
+- [When Is HBF Cost-Effective](/papers/when-is-hbf-cost-effective-llm-inference.md) — 2026-11-12 补：把最少 GPU 数、购入成本回收与吞吐增益分开扫描，与本页的性能/寿命/形态刻画交叉
+
 # Citations
 
 [1] [arXiv PDF](https://arxiv.org/pdf/2609.39131) — Yu et al., arXiv:2609.39131
 [2] [raw stub](raw/papers/characterizing-hbf-llm-serving.md)
+- [arXiv:2611.11036](https://arxiv.org/abs/2611.11036) — When Is HBF Cost-Effective

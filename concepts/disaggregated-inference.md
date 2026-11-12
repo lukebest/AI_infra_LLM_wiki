@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-04-17
-updated: 2026-11-11
+updated: 2026-11-12
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -252,6 +252,11 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [FastAFD](/papers/fastafd-attention-ffn-disaggregation-nvl72.md) 在 GB200 NVL72 上把调优过的 AFD 对照每负载调优的 vLLM wide EP。标准 decode 全 GPU 计入的 Sall：Qwen3-235B 最高 **1.17×**（16K），Qwen3.5 最高 **1.16×**（4K），MiniMax-M2.5 **1.00–1.02×**。加速比拆成 batch gain、overlap gain 与 disaggregation cost；只吃 colocated 画像的模型均值误差 **2.9%**。[NCCL-EP dispatch offload](/papers/nccl-ep-moe-dispatch-offload-dbo.md) 则在 2P2D 解耦服务的 decode 侧，把 DBO 里 dispatch send 的占用提前释放，中位 TPOT 相对默认 GDAKI **−15–25%**。
 
 
+## 2026-11-12：智能体负载下的在线 PD 与可迁移 KV
+
+[Evolving Infra](/papers/evolving-infra-agent-adaptive-llm-serving.md) 把节点的计算角色与 KV 管理拆开：对称引擎就地切换 P/D，共享 host-memory KV 池让其他节点可读切换节点上的 KV。在最多 256×GB300 上服务 GLM-5.2 / Kimi K2.6 的智能体负载，相对 Dynamo v1.5.1 均值 E2E 最高 **4.12×**、P95 TTFT 最高 **13.92×**；相切换平均 **6.2 s**，Dynamo 重启动平均 **754 s**。
+
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -294,3 +299,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [arXiv:2611.08299](https://arxiv.org/abs/2611.08299) — SiliconForge / Should You Split Decode
 - [arXiv:2611.07149](https://arxiv.org/abs/2611.07149) — FastAFD
 - [arXiv:2611.12362](https://arxiv.org/abs/2611.12362) — NCCL-EP dispatch offload
+- [arXiv:2611.12304](https://arxiv.org/abs/2611.12304) — Evolving Infra
