@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-07-13
-updated: 2026-11-11
+updated: 2026-11-13
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -35,6 +35,7 @@ sources:
 - raw/papers/CHARM_Plus_Cross_Hardware_Attention_2026.pdf
 - raw/papers/flash-comm_Self_Synchronizing_Collective_2026.pdf
 - raw/papers/NCCL_EP_Offload_MoE_Dispatch_DBO_2026.pdf
+- raw/papers/NVLinkOneSided_EP_AllToAll_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -235,6 +236,11 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [flash-comm](/papers/flash-comm-self-synchronizing-collectives.md) 把就绪同步融进数据块，八卡 B300 上相对 custom AR v2，all-reduce 中位 **−28.8%**、all-gather 中位 **−23.8%**，E2E TPOT **−1.7–6.8%**（该画像里 AR 占 decode **11.4%**）。[NCCL-EP dispatch offload](/papers/nccl-ep-moe-dispatch-offload-dbo.md) 不改 DBO 重叠日程，只缩短 dispatch send 占住 GPU 的时间，可靠 DBO 区中位 TPOT 相对默认 GDAKI **−15–25%**。
 
 
+## 2026-11-13：NVLink 域一侧 EP all-to-all
+
+[NVLinkOneSided](/papers/nvlinkonesided-ep-all-to-all.md) 把 dispatch/combine 做成无先行元数据的一侧推送，Fence / Sentinel 分别服务大批次与 decode 小批次。相对 DeepEP V2.5，八张 B300 上往返在不超过 128 token/rank 时 **1.75–3.00×**，整层相对 DeepEP+DeepGEMM 最高 **2.4×**。与 [NCCL-EP dispatch offload](/papers/nccl-ep-moe-dispatch-offload-dbo.md) 同属 NVIDIA 的 EP 通信工作，对象分别是 NVLink 域内一侧协议与 DBO 下提前释放 dispatch send。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -267,3 +273,4 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [arXiv:2610.34731](https://arxiv.org/abs/2610.34731) — MCF
 - [arXiv:2611.06634](https://arxiv.org/abs/2611.06634) — flash-comm
 - [arXiv:2611.12362](https://arxiv.org/abs/2611.12362) — NCCL-EP dispatch offload
+- [arXiv:2611.13188](https://arxiv.org/abs/2611.13188) — NVLinkOneSided

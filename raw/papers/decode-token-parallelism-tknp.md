@@ -1,0 +1,26 @@
+---
+type: Raw Source
+title: "Decode Token Parallelism: Memory-Efficient Distributed Attention Parallelism for Scalable LLM Decoding"
+source_url: https://arxiv.org/abs/2611.13293
+pdf: Decode_Token_Parallelism_TKNP_2026.pdf
+retrieved: 2026-11-13
+ingested: 2026-11-13
+org: NVIDIA / Texas A&M University
+venue: arXiv preprint
+---
+
+# Abstract (verbatim gist, arXiv:2611.13293)
+
+Serving large language models at high concurrency with long contexts requires KV-cache capacity and attention bandwidth that grow with the decode pool. Existing parallelization strategies trade one against the other: data parallelism replicates model weights, limiting KV capacity; tensor parallelism stops scaling attention at the model’s KV-head count and pushes dense collectives across nodes; and decode context parallelism (DCP) recovers capacity by sharding the sequence but adds cross-node aggregation of partial attention results. We observe that during decode, dense layers and attention scale differently: dense layers amortize weight reads across the batch and run efficiently within a single NVLink domain, whereas attention cost grows with every active request’s KV cache. We present Decode Token Parallelism (TKNP), a decode-pool architecture that decouples weight placement from attention ownership. TKNP distributes a single model copy across nodes in balanced layer blocks. The active node holding a block executes its projections and MLP for the full batch using intra-node tensor parallelism, while every node computes attention for its own requests against locally resident KV cache. This extends request-local attention across nodes without replicating weights: only current-token activations cross the network, dense all-reduces remain within NVLink, and attention requires no cross-node merging of partial results. Implemented in vLLM and evaluated on Llama 3.1 405B and Nemotron-4 340B on up to 64 H100 GPUs, TKNP improves completion throughput for long-context, high-concurrency workloads by up to 1.7× over DCP and by up to 2.06× over data parallelism at matched GPU count.
+
+# Excerpts / key facts
+
+- Authors: Susav Shrestha (NVIDIA, Santa Clara), Brad Settlemyer (NVIDIA), Narasimha Reddy (Texas A&M University). Correspondence: sshrestha@nvidia.com. arXiv:2611.13293, submitted 9 Nov 2026, cs.DC / cs.CL / cs.LG. PDF/abstract do not name a conference. Mark as preprint.
+- Motivation (Fig 1): Llama 3.1 405B, 8×H100 TP8, 32K context; attention accounts for nearly **70%** of summed single-layer decode component latency at batch 128, while MLP/projection stay relatively stable.
+- Design: one weight copy placed in balanced layer blocks across the decode pool. The node holding the current block is the active root: intra-node TP for projections and MLP on the full batch; every node does request-local attention on its own KV. Only current-token activations cross the inter-node network; dense all-reduces stay inside NVLink. Dual-active-root microbatching (optional, ≥8 nodes): each node stores two blocks (~2/N of weights); shared workers alternate attention to overlap the other root’s dense work. KV is neither migrated nor replicated.
+- Setup (§5.1): prefill–decode disaggregation; two prefill nodes (TP8×DP2, shared across comparisons) and a decode pool of 4 or 8 nodes. Each node: 8×80 GB H100, 4th-gen NVLink, dual Sapphire Rapids, 8×400 Gb/s InfiniBand. Llama 3.1 405B and Nemotron-4 340B; FP8 with selected parameters in BF16; BF16 KV; CUDA graphs; vLLM 0.19.0, FlashAttention-3, PyTorch 2.9.1, CUDA 12.9, NCCL 2.27.5. Baselines at matched decode GPU count: DP (N independent TP8 replicas), TP (TP across all 8N GPUs), DCP (TP8N + DCPN; vLLM DCP reuses the TP group), PP (TP8 × N stages). Completion throughput includes admission, waves, and drain. Under greedy decoding, TKNP tokens match the DP baseline. Prefix sharing disabled. Nemotron uses linear RoPE scaling beyond its original window; results characterize decode performance rather than long-context accuracy.
+- Llama 405B, 32 H100 decode (Fig 8): up to **2.06×** completion throughput over DP on large-batch, long-sequence workloads (caption). DP leads at low concurrency. Fig 9 (64K): at high concurrency TKNP reduces queueing and mean completion time; admitted-request ITL of DP/TP can look better because resident batches are smaller.
+- Eight-node, 64 H100, 32K (Fig 11 / §5.3): single-copy TKNP up to **1.53×** over DCP; dual-active-root microbatching raises this to **1.7×**. Microbatching itself improves throughput by up to **11.1%**. Scaling the same 128-request 32K workload from 4 to 8 decode nodes: single-copy TKNP **1.81×** (90.5% scaling efficiency) vs DCP **1.37×**.
+- Nemotron-4 340B, 32 H100, 64K (Fig 10 / §5.2): up to **1.54×** over DP and **1.32×** over DCP.
+- Mixed-length serving (Fig 12, §5.4): L-Eval + LongBench v1/v2, lengths 8,223–126,848 (mean 32,898). 100 ms/output-token SLO (arrival-to-completion, including queueing): TKNP reaches full attainment at 1 req/s, while DP and DCP fall below 90%. Highest throughput at every arrival rate.
+- Limitations (§6): small batches or short contexts can let communication outweigh the benefit; evaluation is H100 + InfiniBand, and larger NVLink domains would shift the intra-/inter-node balance.

@@ -11,7 +11,7 @@ tags:
 - throughput
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-12
+updated: 2026-11-13
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -25,6 +25,8 @@ sources:
 - raw/papers/ConfluxServe_Heterogeneous_PD_Parallelism_2026.pdf
 - raw/papers/PDScope_Phase_Aware_MoE_CPU_GPU_2026.pdf
 - raw/papers/FastAFD_When_Does_AFD_Pay_NVL72_2026.pdf
+- raw/papers/Decode_Token_Parallelism_TKNP_2026.pdf
+- raw/papers/SlackTier_Engram_Prefetch_Deadlines_2026.pdf
 ---
 
 # Prefill-Decode Resource Divergence（Prefill vs Decode 资源分歧）
@@ -198,6 +200,11 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 [Evolving Infra](/papers/evolving-infra-agent-adaptive-llm-serving.md) 在同一套 36–256×GB300 上对照：OSWorld 计算机使用任务每步追加截图，planner 收敛到 **8P1D**；Putnam 数学任务偏长 decode，只留 1–2 个 prefill 节点；Claude Code 夹着子智能体与暂停。负载从 Putnam 切到 OSWorld 时，在线拆分相对 Dynamo 均值 E2E **2.15×**、P95 TTFT **3.58×**。256 卡上静态 PD 的 P95 TTFT 从 36 卡的 **142 s** 升到 **418 s**，在线系统维持 **10–14 s**。
 
 
+## 2026-11-13：decode 里稠密层与注意力不同速扩展
+
+[TKNP](/papers/decode-token-parallelism-tknp.md) 在 Llama 3.1 405B、32K、batch 128 上测到注意力约占单层 decode 分项延迟的 **70%**，MLP / 投影相对平稳，并据此把节点内 TP 留给稠密层、把跨节点并行留给请求本地注意力。[SlackTier](/papers/slaktier-engram-prefetch-deadlines.md) 则把 Engram 查找嵌进 decode CUDA graph 的旁路流，按各层窗口决定表的存储层级。
+
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -212,3 +219,5 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2611.08299](https://arxiv.org/abs/2611.08299) — SiliconForge / Should You Split Decode
 - [arXiv:2611.07149](https://arxiv.org/abs/2611.07149) — FastAFD
 - [arXiv:2611.12304](https://arxiv.org/abs/2611.12304) — Evolving Infra
+- [arXiv:2611.13293](https://arxiv.org/abs/2611.13293) — Decode Token Parallelism (TKNP)
+- [arXiv:2611.13413](https://arxiv.org/abs/2611.13413) — SlackTier

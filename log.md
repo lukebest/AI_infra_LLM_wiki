@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-11-13
+
+### Enrich: NVLinkOneSided / SFU-Sim / SlackTier / TKNP（论文早报）
+- 新增 Paper：[NVLinkOneSided](papers/nvlinkonesided-ep-all-to-all.md)（2611.13188）、[SFU-Sim](papers/sfu-sim-nvidia-mufu-bit-exact.md)（2611.13879）、[SlackTier](papers/slaktier-engram-prefetch-deadlines.md)（2611.13413）、[Decode Token Parallelism](papers/decode-token-parallelism-tknp.md)（2611.13293）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [nvlink-nvswitch-scale-up-fabric](concepts/nvlink-nvswitch-scale-up-fabric.md)、[llm-distributed-training-collectives](concepts/llm-distributed-training-collectives.md)、[in-core-nonlinear-operator-acceleration](concepts/in-core-nonlinear-operator-acceleration.md)、[end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[disaggregated-inference](concepts/disaggregated-inference.md)、[prefill-decode-divergence](concepts/prefill-decode-divergence.md)
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-13 AI Infra 论文早报（上轮优先五篇评完，入选四篇；SHADOWPREFILL 2611.13176 留待下轮。Fri 09:00 时段 arXiv `/new` 仍显示 Wednesday 11 November 2026，Thu 12 列表尚未切换）
+- **下轮优先**：SHADOWPREFILL 2611.13176（智能体逐步换模型时的影子 prefill）；并重扫 Thu 12 / Fri 13 新公告（若仍延迟则以实际页面为准）
+
+
 ## 2026-11-12
 
 ### Enrich: Evolving Infra / Relief / HBF 成本判据 / Tri-Stack-PIM（论文早报）

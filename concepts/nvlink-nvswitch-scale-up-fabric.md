@@ -13,7 +13,7 @@ tags:
 - gpu
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-07-22
-updated: 2026-11-11
+updated: 2026-11-13
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
@@ -29,6 +29,8 @@ sources:
 - raw/papers/FastAFD_When_Does_AFD_Pay_NVL72_2026.pdf
 - raw/papers/flash-comm_Self_Synchronizing_Collective_2026.pdf
 - raw/papers/NCCL_EP_Offload_MoE_Dispatch_DBO_2026.pdf
+- raw/papers/NVLinkOneSided_EP_AllToAll_2026.pdf
+- raw/papers/Decode_Token_Parallelism_TKNP_2026.pdf
 ---
 
 # NVLink / NVSwitch Scale-Up Fabric
@@ -126,6 +128,11 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 [FastAFD](/papers/fastafd-attention-ffn-disaggregation-nvl72.md) 在 GB200 NVL72 域内对照 AFD 与 wide EP。[flash-comm](/papers/flash-comm-self-synchronizing-collectives.md) 标定 NVLink 4/5 上 barrier 与组播斜率：B300 净 barrier 是 1 KB all-reduce 的 **1.30×**，组播吞吐与单播接近（H100/H200 上组播大约只有单播的三分之一）。[NCCL-EP dispatch offload](/papers/nccl-ep-moe-dispatch-offload-dbo.md) 在 GB300 NVL72 上评估 GPI / GDAKI Free Flow，把 dispatch send 从 SM 上提前释放。
 
 
+## 2026-11-13：NVLink 域一侧 EP 与 decode 池内的节点内集体
+
+[NVLinkOneSided](/papers/nvlinkonesided-ep-all-to-all.md) 在单一 NVLink 域内用直接 store 做 EP dispatch/combine，八张 B300 上相对 DeepEP V2.5 往返最高 **3.00×**，并在 GB200 NVL72 把 Sentinel 的 1-token 往返维持在 **16.6–17.8 µs**（8–64 GPU）。[TKNP](/papers/decode-token-parallelism-tknp.md) 则把稠密 all-reduce 留在节点内 NVLink，跨节点只走当前 token 激活，在最多 64 张 H100 的 decode 池上相对 DCP 完成吞吐最高 **1.7×**。
+
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
@@ -142,3 +149,5 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 - [arXiv:2611.07149](https://arxiv.org/abs/2611.07149) — FastAFD
 - [arXiv:2611.06634](https://arxiv.org/abs/2611.06634) — flash-comm
 - [arXiv:2611.12362](https://arxiv.org/abs/2611.12362) — NCCL-EP dispatch offload
+- [arXiv:2611.13188](https://arxiv.org/abs/2611.13188) — NVLinkOneSided
+- [arXiv:2611.13293](https://arxiv.org/abs/2611.13293) — Decode Token Parallelism (TKNP)

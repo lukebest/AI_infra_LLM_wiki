@@ -1,5 +1,11 @@
 # Other
 
+* [NVLinkOneSided stub](nvlinkonesided-ep-all-to-all.md) + [PDF](NVLinkOneSided_EP_AllToAll_2026.pdf) — arXiv:2611.13188
+* [SFU-Sim stub](sfu-sim-nvidia-mufu-bit-exact.md) + [PDF](SFU_Sim_NVIDIA_MUFU_Bit_Exact_2026.pdf) — arXiv:2611.13879
+* [SlackTier stub](slaktier-engram-prefetch-deadlines.md) + [PDF](SlackTier_Engram_Prefetch_Deadlines_2026.pdf) — arXiv:2611.13413
+* [TKNP stub](decode-token-parallelism-tknp.md) + [PDF](Decode_Token_Parallelism_TKNP_2026.pdf) — arXiv:2611.13293
+
+
 * [Evolving Infra stub](evolving-infra-agent-adaptive-llm-serving.md) + [PDF](Evolving_Infra_Agent_Adaptive_LLM_Serving_2026.pdf) — arXiv:2611.12304
 * [Relief stub](relief-per-step-ep-load-balancing.md) + [PDF](Relief_Per_Step_EP_Load_Balancing_2026.pdf) — arXiv:2611.11402
 * [When Is HBF Cost-Effective stub](when-is-hbf-cost-effective-llm-inference.md) + [PDF](When_Is_HBF_Cost_Effective_LLM_Inference_2026.pdf) — arXiv:2611.11036

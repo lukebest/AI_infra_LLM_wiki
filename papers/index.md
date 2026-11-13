@@ -1,5 +1,11 @@
 # Paper
 
+* [NVLinkOneSided: One-Sided EP All-to-All over NVLink](nvlinkonesided-ep-all-to-all.md) - NVIDIA — Fence/Sentinel 一侧 dispatch/combine；8×B300 相对 DeepEP V2.5 在 ≤128 token 时 1.75–3.00×、从 256 token 起 1.17–1.63×；MoE 层相对 DE+DG 最高 2.4×
+* [SFU-Sim: Bit-Exact NVIDIA MUFU](sfu-sim-nvidia-mufu-bit-exact.md) - 中山大学 — 黑盒反演 MUFU 并补 PTX 外围；A100 / RTX 4060 / RTX PRO 5000 上 12 条常见路径全输入域 0 mismatch；8 个 FP32 函数系数不到 10 KB
+* [SlackTier: Placing LLM Lookup Tables by Prefetch Deadlines](slaktier-engram-prefetch-deadlines.md) - Microsoft — V4.1 Engram 窗口 0.27 vs 9.35 ms；四盘 NVMe 相对未改 SGLang 均值 TPOT 最多 +1.4%，宿主内存 212→34 GiB；省下内存做 host KV 时中位吞吐 +36%
+* [Decode Token Parallelism (TKNP)](decode-token-parallelism-tknp.md) - NVIDIA / 德州农工 — 权重放置与注意力所有权分离；vLLM 上 405B/340B，decode 池最多 64×H100，完成吞吐相对 DCP 最高 1.7×、相对 DP 最高 2.06×
+
+
 * [Evolving Infra: Agent-Adaptive LLM Serving](evolving-infra-agent-adaptive-llm-serving.md) - Georgia Tech/UIUC/Berkeley/NVIDIA/OpenAI/MIT — 智能体自适应 PD 与 KV；最多 256×GB300，相对 Dynamo v1.5.1 均值 E2E 最高 4.12×、P95 TTFT 最高 13.92×；吞吐最高 2.73×
 * [Relief: Per-Step EP Load-Balancing Engine](relief-per-step-ep-load-balancing.md) - HKU/HKUST — 逐步副本拆分替代逐步 LP；CUDA/FPGA/片上引擎；硅实现达逐步最优 99.5%，相对静态放置最多回收 37.3 个百分点，求解 0.75–0.79 µs
 * [When Is HBF Cost-Effective for LLM Inference?](when-is-hbf-cost-effective-llm-inference.md) - UC Merced — 468 组扫描把 GPU 数、可服务性、购入成本与吞吐拆开；98 组降低最少 GPU 数，每栈半价 GPU 时 63 组仍划算；100 张 4090 规模卡上三家大 MoE 离线 16.4–26.5×

@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-04-17
-updated: 2026-11-12
+updated: 2026-11-13
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -48,6 +48,7 @@ sources:
 - raw/papers/ARK_KV_Path_Reservation_Disagg_Inference_2026.pdf
 - raw/papers/FastAFD_When_Does_AFD_Pay_NVL72_2026.pdf
 - raw/papers/NCCL_EP_Offload_MoE_Dispatch_DBO_2026.pdf
+- raw/papers/Decode_Token_Parallelism_TKNP_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -257,6 +258,11 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [Evolving Infra](/papers/evolving-infra-agent-adaptive-llm-serving.md) 把节点的计算角色与 KV 管理拆开：对称引擎就地切换 P/D，共享 host-memory KV 池让其他节点可读切换节点上的 KV。在最多 256×GB300 上服务 GLM-5.2 / Kimi K2.6 的智能体负载，相对 Dynamo v1.5.1 均值 E2E 最高 **4.12×**、P95 TTFT 最高 **13.92×**；相切换平均 **6.2 s**，Dynamo 重启动平均 **754 s**。
 
 
+## 2026-11-13：decode 池内的权重–注意力拆分
+
+[TKNP](/papers/decode-token-parallelism-tknp.md) 在已经 PD 解耦的 decode 池里，再把一份权重按层块放在各节点，注意力按请求留在本地 KV。Llama 3.1 405B 上相对 DCP 完成吞吐最高 **1.7×**，相对 DP 最高 **2.06×**（最多 64 张 H100）。
+
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -300,3 +306,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [arXiv:2611.07149](https://arxiv.org/abs/2611.07149) — FastAFD
 - [arXiv:2611.12362](https://arxiv.org/abs/2611.12362) — NCCL-EP dispatch offload
 - [arXiv:2611.12304](https://arxiv.org/abs/2611.12304) — Evolving Infra
+- [arXiv:2611.13293](https://arxiv.org/abs/2611.13293) — Decode Token Parallelism (TKNP)

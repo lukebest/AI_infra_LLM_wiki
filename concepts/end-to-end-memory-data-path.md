@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-11-10T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-12
+updated: 2026-11-13
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -56,6 +56,7 @@ sources:
 - raw/papers/AnchorKV_Residual_Anchor_KV_Reconstruction_2026.pdf
 - raw/papers/Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf
 - raw/papers/AMD_Scheduling_Data_to_Compute_TDM_SDMA_2026.pdf
+- raw/papers/SlackTier_Engram_Prefetch_Deadlines_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -315,6 +316,11 @@ WSE 简化（无 off-chip）:
 [When Is HBF Cost-Effective](/papers/when-is-hbf-cost-effective-llm-inference.md) 把「更少 GPU」「可服务性」「购入成本」「吞吐」分开扫描：98 组降低最少 GPU 数，每栈半价 GPU 时 63 组仍划算；100 张 4090 规模卡上三家大 MoE 离线吞吐 **16.4–26.5×**。工具会话上 GPU 数胜场为 0/108。[Tri-Stack-PIM](/papers/tri-stack-pim-heterogeneous-3d-llm.md) 则把权重/KV 带宽收进三层混合键合栈，非线性不再走 host。
 
 
+## 2026-11-13：按层预取窗口下沉 Engram 表
+
+[SlackTier](/papers/slaktier-engram-prefetch-deadlines.md) 把 DeepSeek-V4.1 的 203 GB Engram 表按层窗口放到 NVMe 或远端内存：第 14 层窗口 **9.35 ms**，可以无缓存走 NVMe；第 1 层只有 **0.27 ms**，需要缓存或更快的 RDMA。四盘放置后服务进程宿主内存从 **212 GiB** 降到 **34 GiB**，相对未修改 SGLang 的均值 TPOT 最多高 **1.4%**；省下的内存在 GPU KV 偏紧时做 host KV，中位吞吐 **+36%**。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -359,3 +365,4 @@ WSE 简化（无 off-chip）:
 - [arXiv:2611.07707](https://arxiv.org/abs/2611.07707) — CAMP
 - [arXiv:2611.11036](https://arxiv.org/abs/2611.11036) — When Is HBF Cost-Effective
 - [arXiv:2611.13644](https://arxiv.org/abs/2611.13644) — Tri-Stack-PIM
+- [arXiv:2611.13413](https://arxiv.org/abs/2611.13413) — SlackTier / Engram prefetch deadlines

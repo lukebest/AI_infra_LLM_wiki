@@ -16,13 +16,14 @@ tags:
 - risc-v
 - soc
 created: 2026-10-19
-updated: 2026-11-12
+updated: 2026-11-13
 timestamp: '2026-11-11T00:00:00Z'
 sources:
   - raw/papers/multi-threshold-non-monotonic-activations-finn.md
   - raw/papers/meta-amd-mi350x-training-codesign.md
   - raw/papers/fuselse-intlse-logsumexp-neurips2026.md
   - raw/papers/RVV_vs_CGRA_Nonlinear_Functions_AI_2026.pdf
+  - raw/papers/SFU_Sim_NVIDIA_MUFU_Bit_Exact_2026.pdf
 ---
 
 # 核内非线性运算加速
@@ -78,6 +79,11 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 [Tri-Stack-PIM](/papers/tri-stack-pim-heterogeneous-3d-llm.md) 把非线性从 host 收回栈内：NanGate 45 nm 上的 SRE 为 **0.47 mm²**、**1.1–9.5 pJ/softmax op**。作者将 H2-LLM 的落后部分归到 host 侧 softmax 同步。这与 [RVV vs CGRA](/papers/rvv-cgra-nonlinear-functions-soc.md) 问的是同一类非 GEMM 节奏问题，落点分别在 3D 栈中层与 SoC 上的向量/CGRA。
 
 
+## 2026-11-13：NVIDIA MUFU 的逐比特可计算模型
+
+[SFU-Sim](/papers/sfu-sim-nvidia-mufu-bit-exact.md) 在 A100、RTX 4060 Laptop 与 RTX PRO 5000 上对 MUFU 做黑盒反演，并补上 PTX 外围运算。12 条常见路径在各自输入域上逐比特 **0 mismatch**（FP32 覆盖全部 2³² 编码）；8 个 FP32 函数系数合计不到 **10 KB**。这把本页已有的「误差上界 / 近似单元」讨论推进到可复现的比特级参照。
+
+
 # Citations
 [1] [raw/papers/multi-threshold-non-monotonic-activations-finn.md](/raw/papers/multi-threshold-non-monotonic-activations-finn.md) — Berganski et al., arXiv:2610.21825
 [2] [raw/papers/meta-amd-mi350x-training-codesign.md](/raw/papers/meta-amd-mi350x-training-codesign.md) — Zhang et al., MICRO'26, arXiv:2610.22230
@@ -89,3 +95,4 @@ GEMM 之外、按元素或按行执行的非线性算子：softmax（exp + 行�
 [8] [raw/papers/fuselse-intlse-logsumexp-neurips2026.md](/raw/papers/fuselse-intlse-logsumexp-neurips2026.md) — Yao et al., NeurIPS 2026, arXiv:2610.33647
 [9] [raw/papers/rvv-cgra-nonlinear-functions-soc.md](/raw/papers/rvv-cgra-nonlinear-functions-soc.md) — Deshmukh et al., H2RC@SC26, arXiv:2611.12435
 - [arXiv:2611.13644](https://arxiv.org/abs/2611.13644) — Tri-Stack-PIM
+- [arXiv:2611.13879](https://arxiv.org/abs/2611.13879) — SFU-Sim
