@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-04-17
-updated: 2026-11-13
+updated: 2026-11-16
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -49,6 +49,7 @@ sources:
 - raw/papers/FastAFD_When_Does_AFD_Pay_NVL72_2026.pdf
 - raw/papers/NCCL_EP_Offload_MoE_Dispatch_DBO_2026.pdf
 - raw/papers/Decode_Token_Parallelism_TKNP_2026.pdf
+- raw/papers/ShadowPrefill_Per_Step_Model_Routing_2026.pdf
 ---
 
 # Disaggregated Inference（解耦推理）
@@ -263,6 +264,11 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [TKNP](/papers/decode-token-parallelism-tknp.md) 在已经 PD 解耦的 decode 池里，再把一份权重按层块放在各节点，注意力按请求留在本地 KV。Llama 3.1 405B 上相对 DCP 完成吞吐最高 **1.7×**，相对 DP 最高 **2.06×**（最多 64 张 H100）。
 
 
+## 2026-11-16：PD 解耦上收割空隙会改写能量账
+
+[ShadowPrefill](/papers/shadowprefill-per-step-model-routing.md) 把影子 prefill 接到 PD 解耦集群：共置部署上每请求能量只升 **0.4%**，因为影子搭在本来就要跑的迭代上；解耦之后影子会唤醒本来空闲的 prefill GPU，能量升高 **11.5%**。
+
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -307,3 +313,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [arXiv:2611.12362](https://arxiv.org/abs/2611.12362) — NCCL-EP dispatch offload
 - [arXiv:2611.12304](https://arxiv.org/abs/2611.12304) — Evolving Infra
 - [arXiv:2611.13293](https://arxiv.org/abs/2611.13293) — Decode Token Parallelism (TKNP)
+- [arXiv:2611.13176](https://arxiv.org/abs/2611.13176) — SHADOWPREFILL

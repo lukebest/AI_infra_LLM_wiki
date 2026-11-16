@@ -1,5 +1,10 @@
 # Other
 
+* [SHADOWPREFILL stub](shadowprefill-per-step-model-routing.md) + [PDF](ShadowPrefill_Per_Step_Model_Routing_2026.pdf) — arXiv:2611.13176
+* [SlipStream stub](slipstream-hbf-gpu-prefetch.md) + [PDF](SlipStream_HBF_GPU_Prefetch_HPCA2027.pdf) — arXiv:2611.14776
+* [Starscream stub](starscream-amd-gpu-partitioning.md) + [PDF](Starscream_AMD_GPU_Partitioning_2026.pdf) — arXiv:2611.15951
+* [Host-Tier KV stub](host-tier-kv-npu-agent-workflows.md) + [PDF](Host_Tier_KV_NPU_Agent_Workflows_2026.pdf) — arXiv:2611.15126
+
 * [NVLinkOneSided stub](nvlinkonesided-ep-all-to-all.md) + [PDF](NVLinkOneSided_EP_AllToAll_2026.pdf) — arXiv:2611.13188
 * [SFU-Sim stub](sfu-sim-nvidia-mufu-bit-exact.md) + [PDF](SFU_Sim_NVIDIA_MUFU_Bit_Exact_2026.pdf) — arXiv:2611.13879
 * [SlackTier stub](slaktier-engram-prefetch-deadlines.md) + [PDF](SlackTier_Engram_Prefetch_Deadlines_2026.pdf) — arXiv:2611.13413

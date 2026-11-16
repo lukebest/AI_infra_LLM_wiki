@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-07-13
-updated: 2026-11-13
+updated: 2026-11-16
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -36,6 +36,7 @@ sources:
 - raw/papers/flash-comm_Self_Synchronizing_Collective_2026.pdf
 - raw/papers/NCCL_EP_Offload_MoE_Dispatch_DBO_2026.pdf
 - raw/papers/NVLinkOneSided_EP_AllToAll_2026.pdf
+- raw/papers/Starscream_AMD_GPU_Partitioning_2026.pdf
 ---
 
 # LLM Distributed Training Collectives（分布式训练与集体通信）
@@ -241,6 +242,11 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [NVLinkOneSided](/papers/nvlinkonesided-ep-all-to-all.md) 把 dispatch/combine 做成无先行元数据的一侧推送，Fence / Sentinel 分别服务大批次与 decode 小批次。相对 DeepEP V2.5，八张 B300 上往返在不超过 128 token/rank 时 **1.75–3.00×**，整层相对 DeepEP+DeepGEMM 最高 **2.4×**。与 [NCCL-EP dispatch offload](/papers/nccl-ep-moe-dispatch-offload-dbo.md) 同属 NVIDIA 的 EP 通信工作，对象分别是 NVLink 域内一侧协议与 DBO 下提前释放 dispatch send。
 
 
+## 2026-11-16：集合通信按卡内 NUMA 分层
+
+[Starscream](/papers/starscream-amd-gpu-partitioning.md) 把张量并行的 all-reduce 拆成卡内 reduce-scatter、卡间对等 XCD 的 all-reduce、再卡内 all-gather，并把输出直接写到目标 NUMA，与计算重叠。这是把集合通信从平坦拓扑接到 chiplet GPU 的分区模式上。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -274,3 +280,4 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [arXiv:2611.06634](https://arxiv.org/abs/2611.06634) — flash-comm
 - [arXiv:2611.12362](https://arxiv.org/abs/2611.12362) — NCCL-EP dispatch offload
 - [arXiv:2611.13188](https://arxiv.org/abs/2611.13188) — NVLinkOneSided
+- [arXiv:2611.15951](https://arxiv.org/abs/2611.15951) — Starscream

@@ -11,7 +11,7 @@ tags:
 - throughput
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-13
+updated: 2026-11-16
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -27,6 +27,8 @@ sources:
 - raw/papers/FastAFD_When_Does_AFD_Pay_NVL72_2026.pdf
 - raw/papers/Decode_Token_Parallelism_TKNP_2026.pdf
 - raw/papers/SlackTier_Engram_Prefetch_Deadlines_2026.pdf
+- raw/papers/ShadowPrefill_Per_Step_Model_Routing_2026.pdf
+- raw/papers/Host_Tier_KV_NPU_Agent_Workflows_2026.pdf
 ---
 
 # Prefill-Decode Resource Divergence（Prefill vs Decode 资源分歧）
@@ -205,6 +207,11 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 [TKNP](/papers/decode-token-parallelism-tknp.md) 在 Llama 3.1 405B、32K、batch 128 上测到注意力约占单层 decode 分项延迟的 **70%**，MLP / 投影相对平稳，并据此把节点内 TP 留给稠密层、把跨节点并行留给请求本地注意力。[SlackTier](/papers/slaktier-engram-prefetch-deadlines.md) 则把 Engram 查找嵌进 decode CUDA graph 的旁路流，按各层窗口决定表的存储层级。
 
 
+## 2026-11-16：换模型与恢复前缀都会改写 prefill 账
+
+[ShadowPrefill](/papers/shadowprefill-per-step-model-routing.md) 测量到切换调用的前缀命中从 80–89% 降到 44–65%，时延升到同模型的 **1.5–3.2×**；用正常流量的 SLO 空隙给「这次没选中」的模型做影子 prefill 后，切换 TTFT 降低 **44.1%/47.0%**。[Host-Tier KV](/papers/host-tier-kv-npu-agent-workflows.md) 说明在静态图 NPU 上，从宿主恢复与 prefill/decode 抢同一条引擎线程，fork 工作流的 P99 会因此升高 **16–18%**。
+
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -221,3 +228,5 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2611.12304](https://arxiv.org/abs/2611.12304) — Evolving Infra
 - [arXiv:2611.13293](https://arxiv.org/abs/2611.13293) — Decode Token Parallelism (TKNP)
 - [arXiv:2611.13413](https://arxiv.org/abs/2611.13413) — SlackTier
+- [arXiv:2611.13176](https://arxiv.org/abs/2611.13176) — SHADOWPREFILL
+- [arXiv:2611.15126](https://arxiv.org/abs/2611.15126) — Host-Tier KV on ATOM+

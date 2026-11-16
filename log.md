@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-16
+
+### Enrich: SHADOWPREFILL / SlipStream / Starscream / Host-Tier KV（论文早报）
+- 新增 Paper：[SHADOWPREFILL](papers/shadowprefill-per-step-model-routing.md)（2611.13176）、[SlipStream](papers/slipstream-hbf-gpu-prefetch.md)（2611.14776，HPCA’27）、[Starscream](papers/starscream-amd-gpu-partitioning.md)（2611.15951）、[Host-Tier KV on ATOM+](papers/host-tier-kv-npu-agent-workflows.md)（2611.15126）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[prefill-decode-divergence](concepts/prefill-decode-divergence.md)、[disaggregated-inference](concepts/disaggregated-inference.md)、[gpu-simt-architecture](concepts/gpu-simt-architecture.md)、[llm-distributed-training-collectives](concepts/llm-distributed-training-collectives.md)
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-16 AI Infra 论文早报（上轮留下的 SHADOWPREFILL + 补扫 Fri 13 Nov 公告。Veterans Day 导致无 Thu 12 列表；本轮扫描至 08:58 Asia/Shanghai，周一 /new 仍显示 Friday 13 November 2026，周一列表尚未切换）
+- **下轮优先**：Optical Broadcast Memory / Broadcast Don’t Replicate（2611.17097，Uppsala，光纤广播权重、取消复制 HBM）；SubGPU Pipelining（2611.14904，NVIDIA，B200 卡内空间流水）；Tideway（2611.14848，消费级 MoE 分层内存）；并重扫 Mon 16 新公告（若仍延迟则以实际页面为准）
+
 ## 2026-11-13
 
 ### Enrich: NVLinkOneSided / SFU-Sim / SlackTier / TKNP（论文早报）

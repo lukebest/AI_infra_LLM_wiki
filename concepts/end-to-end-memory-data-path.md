@@ -11,9 +11,9 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-11-10T00:00:00Z'
+timestamp: '2026-11-16T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-13
+updated: 2026-11-16
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -57,6 +57,8 @@ sources:
 - raw/papers/Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf
 - raw/papers/AMD_Scheduling_Data_to_Compute_TDM_SDMA_2026.pdf
 - raw/papers/SlackTier_Engram_Prefetch_Deadlines_2026.pdf
+- raw/papers/SlipStream_HBF_GPU_Prefetch_HPCA2027.pdf
+- raw/papers/Host_Tier_KV_NPU_Agent_Workflows_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -321,6 +323,11 @@ WSE 简化（无 off-chip）:
 [SlackTier](/papers/slaktier-engram-prefetch-deadlines.md) 把 DeepSeek-V4.1 的 203 GB Engram 表按层窗口放到 NVMe 或远端内存：第 14 层窗口 **9.35 ms**，可以无缓存走 NVMe；第 1 层只有 **0.27 ms**，需要缓存或更快的 RDMA。四盘放置后服务进程宿主内存从 **212 GiB** 降到 **34 GiB**，相对未修改 SGLang 的均值 TPOT 最多高 **1.4%**；省下的内存在 GPU KV 偏紧时做 host KV，中位吞吐 **+36%**。
 
 
+## 2026-11-16：HBF 预取把 20 µs 延迟藏进 16–40 MB 缓冲
+
+[SlipStream](/papers/slipstream-hbf-gpu-prefetch.md)（HPCA’27）按 kernel 需求顺序做页级预取，STAGE 表项等到需求首次碰到该页才退役。40 MB 暂存达到理想 HBF 性能的 **92.4%**，16 MB 为 **88.8%**；H3 即使用 320 MB 也只有 **43.1%**。[Host-Tier KV](/papers/host-tier-kv-npu-agent-workflows.md) 则在静态图 NPU 上把被赶走的前缀放回宿主 DRAM：崩溃时规划器已执行 prompt token 的 **89.5%** 是重复物化，两个过载条件上 SLO 达成从 22.8%/9.4% 升到 100%/99.8%。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -366,3 +373,5 @@ WSE 简化（无 off-chip）:
 - [arXiv:2611.11036](https://arxiv.org/abs/2611.11036) — When Is HBF Cost-Effective
 - [arXiv:2611.13644](https://arxiv.org/abs/2611.13644) — Tri-Stack-PIM
 - [arXiv:2611.13413](https://arxiv.org/abs/2611.13413) — SlackTier / Engram prefetch deadlines
+- [arXiv:2611.14776](https://arxiv.org/abs/2611.14776) — SlipStream
+- [arXiv:2611.15126](https://arxiv.org/abs/2611.15126) — Host-Tier KV on ATOM+

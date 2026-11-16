@@ -1,5 +1,10 @@
 # Paper
 
+* [SHADOWPREFILL: Warm Prefix Cache for Per-Step Routing](shadowprefill-per-step-model-routing.md) - 微软 Azure — 用正常流量 SLO 空隙做影子 prefill；24 对模型上切换时延基准 −10.4%、编程轨迹 −14.3%（单对最高 −21.4%），路由 token 费用 −28.5%/−32.0%，能量 +0.4%
+* [SlipStream: Demand-Paced HBF Prefetch for GPUs](slipstream-hbf-gpu-prefetch.md) - Georgia Tech/NVIDIA/Stanford HPCA’27 — 40 MB 达到理想 HBF 的 92.4%，H3 即使用 320 MB 也只有 43.1%；16 MB 相对 40 MB 只差 4%；MoE 40 MB 为 91.2%
+* [Starscream: LLM Sharding on AMD GPU Partitioning](starscream-amd-gpu-partitioning.md) - AMD Research — MI300X/MI355X 沿正交维做卡内切分；相对不感知 chiplet 的基线，注意力最高 4×，融合 GEMM 1.43×
+* [Host-Tier KV on Static-Graph NPU](host-tier-kv-npu-agent-workflows.md) - Korea University 通讯 — ATOM+ 上同步宿主 KV；规划器重复 prefill 占已执行 prompt token 的 89.5%；两个过载条件 SLO 从 22.8%/9.4% 升到 100%/99.8%
+
 * [NVLinkOneSided: One-Sided EP All-to-All over NVLink](nvlinkonesided-ep-all-to-all.md) - NVIDIA — Fence/Sentinel 一侧 dispatch/combine；8×B300 相对 DeepEP V2.5 在 ≤128 token 时 1.75–3.00×、从 256 token 起 1.17–1.63×；MoE 层相对 DE+DG 最高 2.4×
 * [SFU-Sim: Bit-Exact NVIDIA MUFU](sfu-sim-nvidia-mufu-bit-exact.md) - 中山大学 — 黑盒反演 MUFU 并补 PTX 外围；A100 / RTX 4060 / RTX PRO 5000 上 12 条常见路径全输入域 0 mismatch；8 个 FP32 函数系数不到 10 KB
 * [SlackTier: Placing LLM Lookup Tables by Prefetch Deadlines](slaktier-engram-prefetch-deadlines.md) - Microsoft — V4.1 Engram 窗口 0.27 vs 9.35 ms；四盘 NVMe 相对未改 SGLang 均值 TPOT 最多 +1.4%，宿主内存 212→34 GiB；省下内存做 host KV 时中位吞吐 +36%

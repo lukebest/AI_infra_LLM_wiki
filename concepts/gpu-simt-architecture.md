@@ -14,14 +14,14 @@ tags:
 - npu
 timestamp: '2026-10-19T00:00:00Z'
 created: 2026-07-07
-updated: 2026-11-09
+updated: 2026-11-16
 sources:
 - raw/articles/arch-study-30d-day-24.md
 - raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf
 - raw/papers/Dissecting_GPU_Utilization_LLM_Inference_Hopper_2026.pdf- raw/papers/Tessera_Dynamic_Block_Sparse_Attention_2026.pdf
 - raw/papers/EMA_Elastic_Memory_Across_GPUs_2026.pdf
 - raw/papers/AMD_Scheduling_Data_to_Compute_TDM_SDMA_2026.pdf
-
+- raw/papers/Starscream_AMD_GPU_Partitioning_2026.pdf
 ---
 - raw/papers/Die_Scaling_GPU_Fine_Grained_Scheduling_2026.pdf
 
@@ -183,8 +183,14 @@ Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑
 ## 2026-11-09 补充：AMD 显式数据流水 ISA
 [AMD Scheduling Data to Compute](/papers/amd-scheduling-data-to-compute-tdm-sdma.md) 在 CDNA 上用 TDM + transpose-load 替代「纯多线程藏延迟」：CSA kernel 几何均值 **1.88×**（峰 **2.74×**），transpose-load **1.19×**。
 
+## 2026-11-16：把 GPU 分区当成一等执行模式
+
+[Starscream](/papers/starscream-amd-gpu-partitioning.md) 在 MI300X 的 CPX/NPS4 与 MI355X 的 DPX/NPS2 上，沿正交维做卡内切分，而不是把逻辑 GPU 当成更多独立设备。相对不感知 chiplet 的基线，注意力最高 **4×**，融合 GEMM **1.43×**。与 [Meta × AMD MI350X](/papers/meta-amd-mi350x-training-codesign.md) 记录的 8 XCD 训练移植代价相邻：这边是推理切分与分层集合通信。
+
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-24.md](raw/articles/arch-study-30d-day-24.md) — H&P Ch.4 GPU/SIMT（Day 24）
 [2] [arXiv:2610.16890](https://arxiv.org/abs/2610.16890) — FORGE
 [3] [arXiv:2610.22230](https://arxiv.org/abs/2610.22230) — Meta × AMD MI350X co-design
+- [arXiv:2611.15951](https://arxiv.org/abs/2611.15951) — Starscream
