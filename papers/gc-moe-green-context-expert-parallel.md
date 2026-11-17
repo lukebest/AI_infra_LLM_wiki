@@ -15,7 +15,7 @@ tags:
 - llm
 - parallelism
 created: 2026-11-06
-updated: 2026-11-06
+updated: 2026-11-17
 timestamp: '2026-11-06T00:00:00Z'
 paper_author: [Yong Li, Kan Liu, Tao Lan]
 year: 2026
@@ -54,11 +54,15 @@ sources:
 - [FlashMoE Kernel](/concepts/flashmoe-kernel.md) — 单 persistent EP kernel 路线；与 Green Context 分区正交
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — EP 服务中的算通共调度
 - [PagedAttention / vLLM](/concepts/pagedattention-vllm.md) — 生产 MoE serving 栈语境
+- [SubGPU Pipelining](/papers/subgpu-pipelining-intra-gpu-spatial.md) — 同样用 Green Contexts 做 SM 分区，对象是 decode 算子图的卡内空间流水
 
 ## 开放问题
 - 分区比例随 batch / 机型的自适应策略仍可扩展。
 - 与交换机内集体（如 INC-MoE）的联合部署空间未展开。
 
+
+
 # Citations
 - [arXiv:2611.04222](https://arxiv.org/abs/2611.04222) — Li, Liu, Lan, Alibaba；https://github.com/Bruce-Lee-LY/gc-moe
 - [raw stub](/raw/papers/gc-moe-green-context-expert-parallel.md)
+- [arXiv:2611.14904](https://arxiv.org/abs/2611.14904) — SubGPU Pipelining

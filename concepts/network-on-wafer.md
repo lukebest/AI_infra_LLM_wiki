@@ -18,7 +18,7 @@ tags:
 - architecture
 timestamp: '2026-11-10T00:00:00Z'
 created: 2026-08-18
-updated: 2026-11-10
+updated: 2026-11-17
 sources:
 - raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/network-design-wafer-scale-wow-hybrid-bonding.md
@@ -108,6 +108,10 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 
 [MeshRT](/papers/meshrt-wafer-scale-runtime.md) 把运行时动态（连续批处理、MoE 路由、微批流水）编进 WSE-3 每核日程，并在核资源预算内做安全增量物化与死锁无关重配，避免回落到 host（文中约 7000 cycle）或芯片级同步。这是 field-stitch 均匀 mesh 上控制面也必须本地化的系统层证据。
 
+## 2026-11-17：把 WSE color 约束交给 FPGA 风格布局布线
+
+[WaferTetris](/papers/wafertetris-freeform-wafer-mapping.md) 把 color 映射为 routing track，并在每个 PE 加 per-color gate，使同一 color 上进出或穿过该 PE 的流都经过该门，从而把冲突暴露为普通拥塞；实验把织物划分为 **8×4** 网格做 P&R。这样可以沿用现有 FPGA 布局布线算法，同时保留原有 PE-task 代码。
+
 # Citations
 
 [1] [raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf](raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf) — Iff et al. 2026
@@ -119,3 +123,4 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 [6] [Ch.6.7.4](https://github.com/bojieli/ai-infra-book/blob/main/manuscripts/06-超节点.md) — 李博杰《AI Infra》ROM 晶圆对照
 [7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
 - [arXiv:2611.08508](https://arxiv.org/abs/2611.08508) — MeshRT
+- [arXiv:2611.18527](https://arxiv.org/abs/2611.18527) — WaferTetris

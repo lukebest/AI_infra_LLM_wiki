@@ -13,6 +13,7 @@ tags:
 - communication
 timestamp: '2026-05-29T00:00:00Z'
 created: 2026-05-29
+updated: 2026-11-17
 sources:
 - US10515303B2
 - raw/papers/Near-optimal_wafer-scale_reduce.pdf
@@ -170,7 +171,12 @@ Data Structure Descriptor 中与 Color 相关的字段：
 - [Æthereal NoC](/concepts/aethereal-noc.md) — TDM slot 预约 vs Color 静态配置（对照）
 - [Switching Principles](/concepts/switching-principles.md) — 电路交换 vs 分组交换，Color 本质是电路交换思想
 
+## 2026-11-17：Per-color gate 把路由冲突暴露为拥塞
+
+[WaferTetris](/papers/wafertetris-freeform-wafer-mapping.md) 在每个 PE 为每个 color 设一个单位容量门，同一 color 上进入、离开或穿过该 PE 的流都必须经过该门。这样 WSE 的 color 冲突可以交给普通的 FPGA 拥塞模型来处理。文中应用可用 21 个 color。
+
 # Citations
 
 [1] [US10515303B2](US10515303B2)
 [2] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)
+- [arXiv:2611.18527](https://arxiv.org/abs/2611.18527) — WaferTetris

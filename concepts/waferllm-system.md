@@ -15,12 +15,13 @@ tags:
 - kv-cache
 timestamp: '2026-11-10T00:00:00Z'
 created: 2026-07-07
-updated: 2026-11-10
+updated: 2026-11-17
 sources:
 - raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf
 - raw/papers/MOCAP_Wafer_Scale_Chunked_Pipelining_Prefill_2026.pdf
 - raw/articles/22580 From GPT2 to Kimi3, Explained.md
 - raw/papers/MeshRT_Wafer_Scale_Runtime_2026.pdf
+- raw/papers/WaferTetris_Freeform_Wafer_Mapping_2026.pdf
 ---
 
 # WaferLLM System
@@ -153,12 +154,18 @@ SpaDA 报告 WSE-2 **82× GEMV vs A100**（HPDC'24 手写 CSL baseline）；Wafe
 - [MOCAP Prefill Pipelining](/papers/mocap-wafer-scale-chunked-pipelining.md) — prefill-only WSC chunked pipeline（MBKR/LBCP）
 - [GEMM vs GEMV in LLM Inference](/concepts/gemm-vs-gemv.md) — 算子基础（AI、Roofline、Prefill/Decode）
 - [WSE Quantitative Architecture Analysis](/concepts/wse-quantitative-architecture-analysis.md) — 606× GEMV 的带宽边界与 Amdahl（Day 26）
+- [WaferTetris](/papers/wafertetris-freeform-wafer-mapping.md) — 自由形映射；相对 WaferLLM per-user 1.04–1.10×，LLaMA3.1-8B 上下文 80k vs 44k
 
 ## 2026-11-10：MeshRT 在同一栈上治理动态
 
 [MeshRT](/papers/meshrt-wafer-scale-runtime.md) 是同一作者组（He / Mai / MSR）在 WaferLLM 之后的运行时：保留晶圆级低延迟，同时用编译期治理支持连续批处理与 MoE 等运行时动态。匹配映射下治理开销为每 decode token **25–40 µs**（**7.6–9.5%**），峰值系统吞吐相对静态 WaferLLM 最高 **55.8×**（摘要作约 **56×**）。
 
+## 2026-11-17：WaferTetris 去掉矩形 island，把可服务上下文从 44k 提到 80k
+
+[WaferTetris](/papers/wafertetris-freeform-wafer-mapping.md)（Edinburgh / Waterloo / Toronto，含 Congjie He 与 Luo Mai）在保留 WaferLLM PE-task 的前提下去掉矩形 island 约束，用复发吞吐模型和 per-color gate 把 FPGA 布局布线约束到 WSE 路由。评测在商用 WSE-3 上进行。对手工 WaferLLM，双方都能跑的配置上 per-user 吞吐 **1.04–1.10×**，LLaMA3.1-8B 最大成功上下文从 **44k** 提到 **80k**（**1.8×**，WSE-2 与 WSE-3 预算皆然）。对重实现的模板自动映射 CU.POKer，系统吞吐为 **3.24–4.42×**。
+
 # Citations
 
 [1] [raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf](raw/papers/WaferLLM_LLM_Inference_at_Wafer_Scale_2025.pdf) — He et al. (2025)
 - [arXiv:2611.08508](https://arxiv.org/abs/2611.08508) — MeshRT
+- [arXiv:2611.18527](https://arxiv.org/abs/2611.18527) — WaferTetris

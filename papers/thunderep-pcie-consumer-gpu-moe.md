@@ -17,7 +17,7 @@ tags:
 - kernel
 - throughput
 created: 2026-10-02
-updated: 2026-10-02
+updated: 2026-11-17
 timestamp: '2026-10-02T00:00:00Z'
 paper_author: [Jaehwan Lee, Sangmin Lee, Chaewon Kim, Junsik Shin, Jaejin Lee]
 year: 2026
@@ -64,8 +64,12 @@ sources:
 - [Purlin](/papers/purlin-collectives-orchestration-datapath.md) — 集体 datapath 可换；ThunderEP 专攻 **PCIe+host 介质**
 - [MoK](/papers/mixture-of-kittens-moe-megakernel-nvl72.md) / [Weave](/papers/weave-dynamic-sm-moe-overlap.md) — NVL72/H100 EP；本文是消费卡落点
 - [Heterogeneous Inference](/concepts/heterogeneous-inference.md) — 非数据中心 GPU 上的 MoE 可达性
+- [Tideway](/papers/tideway-phase-aware-tiered-moe.md) — 同为消费级 GPU 上的 MoE；Tideway 攻 VRAM/RAM/SSD 分层内存
+
+
 
 # Citations
 
 [1] [arXiv PDF](https://arxiv.org/pdf/2609.40093) — Lee et al., arXiv:2609.40093
 [2] [raw stub](raw/papers/thunderep-pcie-consumer-gpu-moe.md)
+- [arXiv:2611.14848](https://arxiv.org/abs/2611.14848) — Tideway

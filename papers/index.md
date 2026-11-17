@@ -1,5 +1,10 @@
 # Paper
 
+* [Optical Broadcast Memory](optical-broadcast-memory-obm.md) - Uppsala — 80,000 加速器建模；split-port 相对 HBM3e，Llama-3.1-405B / Llama-4-Maverick / DeepSeek-V4-Pro 吞吐 0.96× / 0.97× / 1.57×，能量 0.90× / 0.90× / 0.58×，去掉 4.05 / 4.00 / 8.44 PB 权重 HBM
+* [SubGPU Pipelining](subgpu-pipelining-intra-gpu-spatial.md) - NVIDIA — 仿真 Pareto 匹配每 GPU 吞吐时 per-user 最高 2.2×、匹配 per-user 时每 GPU 最高 1.9×；硅上单卡 B200 模拟 32 卡 rank，36 层迭代 14.970→13.424 ms（−10.33%），DRAM 71.8%→83.6%
+* [Tideway](tideway-phase-aware-tiered-moe.md) - Duke — RTX 5090 实测；270 个固定形状端到端平均 1.97×、最高 3.18×；TraceLab TTFT 平均 2.40×（1.15×–9.04×），decode 吞吐平均 1.61×（1.20×–2.28×）
+* [WaferTetris](wafertetris-freeform-wafer-mapping.md) - Edinburgh / Waterloo / Toronto — 商用 WSE-3 实测；相对重实现 CU.POKer 系统吞吐 3.24–4.42×；相对 WaferLLM per-user 1.04–1.10×，LLaMA3.1-8B 上下文 80k vs 44k（1.8×）
+
 * [SHADOWPREFILL: Warm Prefix Cache for Per-Step Routing](shadowprefill-per-step-model-routing.md) - 微软 Azure — 用正常流量 SLO 空隙做影子 prefill；24 对模型上切换时延基准 −10.4%、编程轨迹 −14.3%（单对最高 −21.4%），路由 token 费用 −28.5%/−32.0%，能量 +0.4%
 * [SlipStream: Demand-Paced HBF Prefetch for GPUs](slipstream-hbf-gpu-prefetch.md) - Georgia Tech/NVIDIA/Stanford HPCA’27 — 40 MB 达到理想 HBF 的 92.4%，H3 即使用 320 MB 也只有 43.1%；16 MB 相对 40 MB 只差 4%；MoE 40 MB 为 91.2%
 * [Starscream: LLM Sharding on AMD GPU Partitioning](starscream-amd-gpu-partitioning.md) - AMD Research — MI300X/MI355X 沿正交维做卡内切分；相对不感知 chiplet 的基线，注意力最高 4×，融合 GEMM 1.43×

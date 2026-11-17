@@ -1,5 +1,10 @@
 # Other
 
+* [OBM stub](optical-broadcast-memory-obm.md) + [PDF](Broadcast_Dont_Replicate_OBM_2026.pdf) — arXiv:2611.17097
+* [SubGPU stub](subgpu-pipelining-intra-gpu-spatial.md) + [PDF](SubGPU_Pipelining_LLM_Inference_2026.pdf) — arXiv:2611.14904
+* [Tideway stub](tideway-phase-aware-tiered-moe.md) + [PDF](Tideway_Phase_Aware_Tiered_MoE_2026.pdf) — arXiv:2611.14848
+* [WaferTetris stub](wafertetris-freeform-wafer-mapping.md) + [PDF](WaferTetris_Freeform_Wafer_Mapping_2026.pdf) — arXiv:2611.18527
+
 * [SHADOWPREFILL stub](shadowprefill-per-step-model-routing.md) + [PDF](ShadowPrefill_Per_Step_Model_Routing_2026.pdf) — arXiv:2611.13176
 * [SlipStream stub](slipstream-hbf-gpu-prefetch.md) + [PDF](SlipStream_HBF_GPU_Prefetch_HPCA2027.pdf) — arXiv:2611.14776
 * [Starscream stub](starscream-amd-gpu-partitioning.md) + [PDF](Starscream_AMD_GPU_Partitioning_2026.pdf) — arXiv:2611.15951

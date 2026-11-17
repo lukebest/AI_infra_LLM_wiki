@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-11-06T00:00:00Z'
 created: 2026-07-03
-updated: 2026-11-06
+updated: 2026-11-17
 sources:
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
 - raw/articles/arch-study-30d-day-20.md
@@ -157,6 +157,9 @@ Host CPU
 ## HBF 进入 PAIC 主存层（2026-11-06）
 [HyPAIC](/papers/hypaic-hbf-personal-ai-computer.md) 用 High Bandwidth Flash 替代「SSD 卸荷 / 多机 scale-out」路径：容量相对 HBM **>10×**、TB/s 级带宽；权重只读驻 HBF，规避写耐久与页粒度。相对常规 NVMe 冷存储，HBF 直接挂在 GPU 主存地址空间。
 
+## 2026-11-17：消费级 MoE 把 SSD 当作只读专家后备
+
+[Tideway](/papers/tideway-phase-aware-tiered-moe.md) 在 RTX 5090 + SN850X 桌面上把 SSD 用作统一内存池的只读后备，writeback 走 PCIe 上的 VRAM↔RAM。测得 SSD 读 **6.8 GB/s**。权重不得不落盘时，固定形状端到端加速拉到 **1.95×–3.18×**。
 
 # Citations
 
@@ -165,3 +168,4 @@ Host CPU
 [3] [arXiv:2610.38355](https://arxiv.org/abs/2610.38355) — FlatCake
 [4] [arXiv:2610.41508](https://arxiv.org/abs/2610.41508) — HiState
 [5] [arXiv:2611.03173](https://arxiv.org/abs/2611.03173) — PagedMoE
+- [arXiv:2611.14848](https://arxiv.org/abs/2611.14848) — Tideway

@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-17
+
+### Enrich: OBM / SubGPU / Tideway / WaferTetris（论文早报）
+- 新增 Paper：[Optical Broadcast Memory](papers/optical-broadcast-memory-obm.md)（2611.17097）、[SubGPU Pipelining](papers/subgpu-pipelining-intra-gpu-spatial.md)（2611.14904）、[Tideway](papers/tideway-phase-aware-tiered-moe.md)（2611.14848）、[WaferTetris](papers/wafertetris-freeform-wafer-mapping.md)（2611.18527）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[prefill-decode-divergence](concepts/prefill-decode-divergence.md)、[gpu-simt-architecture](concepts/gpu-simt-architecture.md)、[waferllm-system](concepts/waferllm-system.md)、[cerebras-wse](entities/cerebras-wse.md)、[network-on-wafer](concepts/network-on-wafer.md)、[cerebras-color-mechanism](concepts/cerebras-color-mechanism.md)、[ssd-nvme-storage-system](concepts/ssd-nvme-storage-system.md)、[dnn-accelerator-systolic-dataflow](concepts/dnn-accelerator-systolic-dataflow.md)；并在 [GC-MoE](papers/gc-moe-green-context-expert-parallel.md)、[ThunderEP](papers/thunderep-pcie-consumer-gpu-moe.md) 补交叉
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-17 AI Infra 论文早报（上轮优先三篇全部入选 + Mon 16 新上 WaferTetris。本轮扫描至约 09:00 Asia/Shanghai，周二 `/new` 仍显示 Monday 16 November 2026）
+- **下轮优先**：Mutable Inference / LWS（2611.18523，推理期学习加速器）；Zero-SM NCCL（2611.18075，GB200 NVL72 / B200 NVL8）；Obaleth（2611.18145，编译器纳入 GPU-initiated 通信）；Callo（2611.18459，PD 解耦下用失效 KV 做投机）；并重扫 Tue 17 新公告（若仍延迟则以实际页面为准）
+
 ## 2026-11-16
 
 ### Enrich: SHADOWPREFILL / SlipStream / Starscream / Host-Tier KV（论文早报）

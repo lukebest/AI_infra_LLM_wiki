@@ -11,7 +11,7 @@ tags:
 - throughput
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-16
+updated: 2026-11-17
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -211,6 +211,9 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 [ShadowPrefill](/papers/shadowprefill-per-step-model-routing.md) 测量到切换调用的前缀命中从 80–89% 降到 44–65%，时延升到同模型的 **1.5–3.2×**；用正常流量的 SLO 空隙给「这次没选中」的模型做影子 prefill 后，切换 TTFT 降低 **44.1%/47.0%**。[Host-Tier KV](/papers/host-tier-kv-npu-agent-workflows.md) 说明在静态图 NPU 上，从宿主恢复与 prefill/decode 抢同一条引擎线程，fork 工作流的 P99 会因此升高 **16–18%**。
 
+## 2026-11-17：消费级 MoE 按阶段改布局，decode 短 kernel 在卡内做空间流水
+
+[Tideway](/papers/tideway-phase-aware-tiered-moe.md) 给 prefill 扫描和 decode 驻留各准备一套内存布局，并在阶段切换时收回借出的 VRAM；TraceLab 上 TTFT 平均 **2.40×**，decode 吞吐平均 **1.61×**。[SubGPU Pipelining](/papers/subgpu-pipelining-intra-gpu-spatial.md) 针对 decode 一层内数十个短 kernel 的带宽突发，把算子图绑到互不相交的 SM 池；硅上 36 层迭代从 **14.970 ms** 降到 **13.424 ms**（**−10.33%**）。
 
 # Citations
 
@@ -230,3 +233,5 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2611.13413](https://arxiv.org/abs/2611.13413) — SlackTier
 - [arXiv:2611.13176](https://arxiv.org/abs/2611.13176) — SHADOWPREFILL
 - [arXiv:2611.15126](https://arxiv.org/abs/2611.15126) — Host-Tier KV on ATOM+
+- [arXiv:2611.14848](https://arxiv.org/abs/2611.14848) — Tideway
+- [arXiv:2611.14904](https://arxiv.org/abs/2611.14904) — SubGPU Pipelining

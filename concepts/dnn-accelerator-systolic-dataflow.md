@@ -12,7 +12,7 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-11-09
+updated: 2026-11-17
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
@@ -185,6 +185,10 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 ## 2026-11-09 补充：flattened systolic 上的在线位宽（Coffee）
 [Coffee](/papers/coffee-elastic-precision-mixed-precision-llm.md) 沿用 PLENA 风格 flattened systolic，把双侧误差估计与选宽叠进阵列子阵列；系统模型长上下文 decode 相对重配 PLENA 最高 **2.55×** 吞吐 / **2.61×** 能效。
 
+## 2026-11-17：激活静止脉动，权重从光纤直接流入
+
+[Optical Broadcast Memory](/papers/optical-broadcast-memory-obm.md) 采用激活静止脉动阵列：权重从仅接收 CPO 直接进入计算织物，激活、部分和与 KV 留在本地 SRAM/HBM。每加速器摄入 **3.2 TB/s**，对照 H100 SXM 的 3.35 TB/s HBM3。推送流不可暂停，评估把 GEMM 效率折到 η=0.85，硬上限 \(b^*=263\) token / 加速器 / 权重趟。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-25.md](raw/articles/arch-study-30d-day-25.md) — H&P Ch.7.1–7.5 DSA（Day 25）
@@ -192,3 +196,4 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 [100] [arXiv:2610.07443](https://arxiv.org/abs/2610.07443) — DynaCore
 [101] [arXiv:2610.16159](https://arxiv.org/abs/2610.16159) — LizTail
 [102] [arXiv:2610.34824](https://arxiv.org/abs/2610.34824) — SPARTA
+- [arXiv:2611.17097](https://arxiv.org/abs/2611.17097) — Optical Broadcast Memory

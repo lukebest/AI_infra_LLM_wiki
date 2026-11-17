@@ -11,7 +11,7 @@ tags:
 - mesh
 timestamp: '2026-11-10T00:00:00Z'
 created: 2026-04-16
-updated: 2026-11-10
+updated: 2026-11-17
 sources:
 - raw/papers/Near-optimal_wafer-scale_reduce.pdf
 - raw/articles/interconn-study-21d-day-01.md
@@ -166,6 +166,10 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 
 [MeshRT](/papers/meshrt-wafer-scale-runtime.md)（SOSP’26，Edinburgh/MSR）在 WSE-3 / CS-3 上把连续批处理、MoE 路由和微批流水的动态事件编译进每核日程，再以安全增量物化做死锁无关的片上重配。相对 WaferLLM，匹配配置每 token 多 **25–40 µs**（**7.6–9.5%**），峰值系统吞吐最高约 **56×**（Table 3 GPT-OSS-120B **55.8×**）；相对单实例 SGLang@H200 延迟向每用户吞吐 **4.5–7.0×**，功率匹配集群投影下 decode 系统吞吐 **1.7–13.0×**。文中把 WSE-3 写作约 90 万 PE 的 **762×1172** 阵列、**44 GB** SRAM、**21 PB/s** 聚合带宽。
 
+## 2026-11-17：自由形映射把闲置 PE 收回来
+
+[WaferTetris](/papers/wafertetris-freeform-wafer-mapping.md) 在商用 WSE-3 上测量（WSE-2 组只限制可用区域）。文中沿用约 **900k** PE、**762×1172** 阵列；讨论指出出货晶圆在 970,000 物理核中激活 900,000，约 **7.2%** 因缺陷容错未激活，缺陷感知放置列为后续工作。相对矩形模板 CU.POKer，LLM 解码系统吞吐 **3.24–4.42×**，LLaMA 上 PE 利用率达 **98.0%**。
+
 # Citations
 
 [1] [raw/papers/Near-optimal_wafer-scale_reduce.pdf](raw/papers/Near-optimal_wafer-scale_reduce.pdf)
@@ -186,3 +190,4 @@ WSE-3 经 **PCIe Gen5 ×16**（~64 GB/s）连接 **memoryX**：约 **4× NVMe SS
 [16] [raw/papers/hc2026-cerebras-cs4.md](raw/papers/hc2026-cerebras-cs4.md) — CS-4 / Nexus, Hot Chips 2026
 - [arXiv:2610.39222](https://arxiv.org/abs/2610.39222) — GPU–WSE Complementarity
 - [arXiv:2611.08508](https://arxiv.org/abs/2611.08508) — MeshRT（SOSP’26）
+- [arXiv:2611.18527](https://arxiv.org/abs/2611.18527) — WaferTetris
