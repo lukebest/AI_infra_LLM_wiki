@@ -12,7 +12,7 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-11-17
+updated: 2026-11-18
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
@@ -189,6 +189,13 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 
 [Optical Broadcast Memory](/papers/optical-broadcast-memory-obm.md) 采用激活静止脉动阵列：权重从仅接收 CPO 直接进入计算织物，激活、部分和与 KV 留在本地 SRAM/HBM。每加速器摄入 **3.2 TB/s**，对照 H100 SXM 的 3.35 TB/s HBM3。推送流不可暂停，评估把 GEMM 效率折到 η=0.85，硬上限 \(b^*=263\) token / 加速器 / 权重趟。
 
+
+
+
+## 2026-11-18：把模型写进数据通路，以及在已有 MAC 阵列上做推理期学习
+
+[Exstill](/papers/exstill-single-chip-next-token.md) 把单一模型架构固定在数据通路里（权重仍可加载），并在门级搜索环里同时改模型与电路；保持 Qwen3-1.7B 不变时预硅设计做到地板的 **3.4×**，协同设计后到新地板的 **1.8×**。[LWS](/papers/lws-learning-while-serving.md) 在已有 MAC 阵列上用可恢复规约块共享 Prediction 与 Learning，16 nm 综合显示不必再加一块阵列，含 SRAM 后数据中心 NPU 核心面积增加 **1.5%**。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-25.md](raw/articles/arch-study-30d-day-25.md) — H&P Ch.7.1–7.5 DSA（Day 25）
@@ -197,3 +204,5 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 [101] [arXiv:2610.16159](https://arxiv.org/abs/2610.16159) — LizTail
 [102] [arXiv:2610.34824](https://arxiv.org/abs/2610.34824) — SPARTA
 - [arXiv:2611.17097](https://arxiv.org/abs/2611.17097) — Optical Broadcast Memory
+- [arXiv:2611.18859](https://arxiv.org/abs/2611.18859) — Exstill
+- [arXiv:2611.18523](https://arxiv.org/abs/2611.18523) — LWS / Mutable Inference

@@ -14,7 +14,7 @@ tags:
 - npu
 timestamp: '2026-10-19T00:00:00Z'
 created: 2026-07-07
-updated: 2026-11-17
+updated: 2026-11-18
 sources:
 - raw/articles/arch-study-30d-day-24.md
 - raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf
@@ -191,6 +191,13 @@ Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑
 
 [SubGPU Pipelining](/papers/subgpu-pipelining-intra-gpu-spatial.md) 在 B200 上用 CUDA Green Contexts 把互不相交的 SM 池绑到 decode 算子图的连续段，再让 microbatch 流过。硅上 Macro 两级配置为全注意力 FMHA **68 SM**、其余算子 **80 SM**，相对 148 SM 全池 Temporal，36 层迭代 **−10.33%**，平均活跃 SM 吞吐从 **85.9%** 降到 **71.7%**（单 kernel 用更少 SM，重叠缩短端到端）。
 
+
+
+
+## 2026-11-18：通信不再占满 SM
+
+[Zero-SM NCCL](/papers/zero-sm-nccl.md) 的域内路径用 copy engine 搬数据，不启动 SM kernel。在 B200 上，144 MiB/rank 的 Qwen AllGather 把重叠 GEMM 的中位减速从 legacy 的 **32.9%** 降到 **3.9%**。[SURMA](/papers/surma-scale-up-rma-engine.md) 进一步把提交做成片上引擎：512 B 粒度只需 **1** 个 SM 就能吃满可达带宽，SM 驱动的 NVLink 传输需要超过 **14%** 的计算核。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-24.md](raw/articles/arch-study-30d-day-24.md) — H&P Ch.4 GPU/SIMT（Day 24）
@@ -198,3 +205,5 @@ Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑
 [3] [arXiv:2610.22230](https://arxiv.org/abs/2610.22230) — Meta × AMD MI350X co-design
 - [arXiv:2611.15951](https://arxiv.org/abs/2611.15951) — Starscream
 - [arXiv:2611.14904](https://arxiv.org/abs/2611.14904) — SubGPU Pipelining
+- [arXiv:2611.18075](https://arxiv.org/abs/2611.18075) — Zero-SM NCCL
+- [arXiv:2611.21274](https://arxiv.org/abs/2611.21274) — SURMA

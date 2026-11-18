@@ -1,5 +1,10 @@
 # Other
 
+* [Exstill stub](exstill-single-chip-next-token.md) + [PDF](Exstill_Single_Chip_Next_Token_2026.pdf) — arXiv:2611.18859
+* [Zero-SM NCCL stub](zero-sm-nccl.md) + [PDF](Zero_SM_NCCL_2026.pdf) — arXiv:2611.18075
+* [SURMA stub](surma-scale-up-rma-engine.md) + [PDF](SURMA_Scale_Up_RMA_SuperPOD_2026.pdf) — arXiv:2611.21274
+* [LWS stub](lws-learning-while-serving.md) + [PDF](Mutable_Inference_LWS_2026.pdf) — arXiv:2611.18523
+
 * [OBM stub](optical-broadcast-memory-obm.md) + [PDF](Broadcast_Dont_Replicate_OBM_2026.pdf) — arXiv:2611.17097
 * [SubGPU stub](subgpu-pipelining-intra-gpu-spatial.md) + [PDF](SubGPU_Pipelining_LLM_Inference_2026.pdf) — arXiv:2611.14904
 * [Tideway stub](tideway-phase-aware-tiered-moe.md) + [PDF](Tideway_Phase_Aware_Tiered_MoE_2026.pdf) — arXiv:2611.14848

@@ -13,7 +13,7 @@ tags:
 - gpu
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-07-22
-updated: 2026-11-13
+updated: 2026-11-18
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
@@ -133,6 +133,11 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 [NVLinkOneSided](/papers/nvlinkonesided-ep-all-to-all.md) 在单一 NVLink 域内用直接 store 做 EP dispatch/combine，八张 B300 上相对 DeepEP V2.5 往返最高 **3.00×**，并在 GB200 NVL72 把 Sentinel 的 1-token 往返维持在 **16.6–17.8 µs**（8–64 GPU）。[TKNP](/papers/decode-token-parallelism-tknp.md) 则把稠密 all-reduce 留在节点内 NVLink，跨节点只走当前 token 激活，在最多 64 张 H100 的 decode 池上相对 DCP 完成吞吐最高 **1.7×**。
 
 
+
+## 2026-11-18：NVL72 上的无 SM 集体，以及 SuperPOD 片上 RMA
+
+[Zero-SM NCCL](/papers/zero-sm-nccl.md) 在 GB200 NVL72 的 72 卡 NVLink 域内全程走 copy engine，跨 B200 节点则走分层 AllGather 与 pipelined rail schedule；域内 4 GiB 为 **714–746 GB/s**，跨 4/8 节点接近 NIC 界（**503 / 436 GB/s**）。[SURMA](/papers/surma-scale-up-rma-engine.md) 针对 NVL576 这类更长 RTT、以及 576 B 级 KV 项，把 scale-up 远端访存做成片上引擎；占用与面积在 Hopper 8-GPU 服务器和双 FPGA 原型上评估。
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
@@ -151,3 +156,5 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 - [arXiv:2611.12362](https://arxiv.org/abs/2611.12362) — NCCL-EP dispatch offload
 - [arXiv:2611.13188](https://arxiv.org/abs/2611.13188) — NVLinkOneSided
 - [arXiv:2611.13293](https://arxiv.org/abs/2611.13293) — Decode Token Parallelism (TKNP)
+- [arXiv:2611.18075](https://arxiv.org/abs/2611.18075) — Zero-SM NCCL
+- [arXiv:2611.21274](https://arxiv.org/abs/2611.21274) — SURMA

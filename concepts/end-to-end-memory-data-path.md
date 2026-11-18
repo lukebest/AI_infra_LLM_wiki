@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-11-17T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-17
+updated: 2026-11-18
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -331,6 +331,13 @@ WSE 简化（无 off-chip）:
 
 [Optical Broadcast Memory](/papers/optical-broadcast-memory-obm.md) 把只读权重从每卡复制的 HBM 收到层次化 Tap-and-Amplify 光纤广播；80,000 加速器的建模里，split-port 相对 HBM3e 在 405B / Maverick / V4-Pro 上去掉 **4.05 / 4.00 / 8.44 PB** 权重 HBM，吞吐 **0.96× / 0.97× / 1.57×**。[Tideway](/papers/tideway-phase-aware-tiered-moe.md) 把消费级 VRAM 与主机 RAM 收成统一池，并按 prefill / decode 改布局，RTX 5090 上 270 个固定形状端到端平均 **1.97×**。[SubGPU Pipelining](/papers/subgpu-pipelining-intra-gpu-spatial.md) 在一块 B200 上把平均 DRAM 读写从峰值的 **71.8%** 抬到 **83.6%**。
 
+
+
+
+## 2026-11-18：把权重和 KV 留在算术旁边，以及把 Learning 流量放进空闲带宽
+
+[Exstill](/papers/exstill-single-chip-next-token.md) 把权重与每路对话的 KV 全部放在片上、挨着算术单元，用预硅 5 nm class 设计把 Qwen3-1.7B 的搬运从 decode 路径里拿掉；协同设计后 12 路 16K 上下文每 token **0.52 mJ**。[LWS](/papers/lws-learning-while-serving.md) 让推理期学习的梯度与权重流量走 Prediction 留下的空闲 DRAM 带宽，从而不必把 Learning 放到前向的关键路径上。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -381,3 +388,5 @@ WSE 简化（无 off-chip）:
 - [arXiv:2611.17097](https://arxiv.org/abs/2611.17097) — Optical Broadcast Memory
 - [arXiv:2611.14848](https://arxiv.org/abs/2611.14848) — Tideway
 - [arXiv:2611.14904](https://arxiv.org/abs/2611.14904) — SubGPU Pipelining
+- [arXiv:2611.18859](https://arxiv.org/abs/2611.18859) — Exstill
+- [arXiv:2611.18523](https://arxiv.org/abs/2611.18523) — LWS / Mutable Inference

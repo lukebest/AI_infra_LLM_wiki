@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-07-13
-updated: 2026-11-16
+updated: 2026-11-18
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -247,6 +247,11 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 [Starscream](/papers/starscream-amd-gpu-partitioning.md) 把张量并行的 all-reduce 拆成卡内 reduce-scatter、卡间对等 XCD 的 all-reduce、再卡内 all-gather，并把输出直接写到目标 NUMA，与计算重叠。这是把集合通信从平坦拓扑接到 chiplet GPU 的分区模式上。
 
 
+
+## 2026-11-18：无 SM 集体与片上 RMA 引擎
+
+[Zero-SM NCCL](/papers/zero-sm-nccl.md) 把 host-initiated AllGather / AlltoAll 和一侧 put 从 SM kernel 挪到 copy engine 与按流排序的 CPU proxy，在 GB200 NVL72 与 B200 NVL8 上实测。域内 4 GiB AllGather 达到 **714–746 GB/s**，Qwen GEMM 重叠中位减速从 **32.9%** 降到 **3.9%**；GPU-bound FSDP 最高 **+3.5%**，深流水线一侧 put 最高 **+14.9%**。小消息延迟更高，host-bound 配方会亏。[SURMA](/papers/surma-scale-up-rma-engine.md) 走另一条路：把细粒度 scale-up RMA 做成 GPU 裸片上的引擎，512 B 粒度只需 1 个 SM 提交，轨迹回放上四模型推理 **1.05–1.26×**。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -281,3 +286,5 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [arXiv:2611.12362](https://arxiv.org/abs/2611.12362) — NCCL-EP dispatch offload
 - [arXiv:2611.13188](https://arxiv.org/abs/2611.13188) — NVLinkOneSided
 - [arXiv:2611.15951](https://arxiv.org/abs/2611.15951) — Starscream
+- [arXiv:2611.18075](https://arxiv.org/abs/2611.18075) — Zero-SM NCCL
+- [arXiv:2611.21274](https://arxiv.org/abs/2611.21274) — SURMA

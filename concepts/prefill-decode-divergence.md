@@ -11,7 +11,7 @@ tags:
 - throughput
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-17
+updated: 2026-11-18
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -215,6 +215,13 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 [Tideway](/papers/tideway-phase-aware-tiered-moe.md) 给 prefill 扫描和 decode 驻留各准备一套内存布局，并在阶段切换时收回借出的 VRAM；TraceLab 上 TTFT 平均 **2.40×**，decode 吞吐平均 **1.61×**。[SubGPU Pipelining](/papers/subgpu-pipelining-intra-gpu-spatial.md) 针对 decode 一层内数十个短 kernel 的带宽突发，把算子图绑到互不相交的 SM 池；硅上 36 层迭代从 **14.970 ms** 降到 **13.424 ms**（**−10.33%**）。
 
+
+
+
+## 2026-11-18：只比 decode 的单芯片，以及只评 chunked prefill 的 ITL 加速器
+
+[Exstill](/papers/exstill-single-chip-next-token.md) 的 B300 对照只覆盖 decode，prefill 在预硅设计与 GPU 两侧都排除；12 用户时每路 **50 µs** 对 **5.35 ms**。[LWS](/papers/lws-learning-while-serving.md) 的评测落在单条长上下文的 chunked prefill，批量服务与自回归 decode 明确不在范围。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -235,3 +242,5 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2611.15126](https://arxiv.org/abs/2611.15126) — Host-Tier KV on ATOM+
 - [arXiv:2611.14848](https://arxiv.org/abs/2611.14848) — Tideway
 - [arXiv:2611.14904](https://arxiv.org/abs/2611.14904) — SubGPU Pipelining
+- [arXiv:2611.18859](https://arxiv.org/abs/2611.18859) — Exstill
+- [arXiv:2611.18523](https://arxiv.org/abs/2611.18523) — LWS / Mutable Inference

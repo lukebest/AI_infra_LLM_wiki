@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-11-18
+
+### Enrich: Exstill / Zero-SM NCCL / SURMA / LWS（论文早报）
+- 新增 Paper：[Exstill](papers/exstill-single-chip-next-token.md)（2611.18859）、[Zero-SM NCCL](papers/zero-sm-nccl.md)（2611.18075）、[SURMA](papers/surma-scale-up-rma-engine.md)（2611.21274）、[LWS / Mutable Inference](papers/lws-learning-while-serving.md)（2611.18523）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[prefill-decode-divergence](concepts/prefill-decode-divergence.md)、[gpu-simt-architecture](concepts/gpu-simt-architecture.md)、[llm-distributed-training-collectives](concepts/llm-distributed-training-collectives.md)、[nvlink-nvswitch-scale-up-fabric](concepts/nvlink-nvswitch-scale-up-fabric.md)、[in-core-nonlinear-operator-acceleration](concepts/in-core-nonlinear-operator-acceleration.md)、[dnn-accelerator-systolic-dataflow](concepts/dnn-accelerator-systolic-dataflow.md)
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-18 AI Infra 论文早报（上轮优先的 Zero-SM NCCL 与 LWS + 周二新公告中的 Exstill、SURMA。本轮扫描时 cs.AR / cs.DC `/new` 已切换到 Tuesday 17 November 2026；周三 18 日列表尚未切换）
+- **下轮优先**：Obaleth（2611.18145，编译器纳入 GPU-initiated 通信）；Callo（2611.18459，PD 解耦下用失效 KV 做投机）；OptiDecode（2611.19279，自由空间光学再生 KV）；HBF-EventLab（2611.19861）；GNoF（2611.21288）；并重扫 Wed 18 新公告（若仍延迟则以实际页面为准）
+
+
 ## 2026-11-17
 
 ### Enrich: OBM / SubGPU / Tideway / WaferTetris（论文早报）

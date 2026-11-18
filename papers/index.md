@@ -1,5 +1,11 @@
 # Paper
 
+* [Exstill](exstill-single-chip-next-token.md) - Exstill — 预硅 5 nm class；Qwen3-1.7B@16K 算术地板 0.89 mJ/token，同构模型上 3.0 mJ（3.4×地板）；协同设计后地板 0.29 mJ、token 0.52 mJ，12 用户各 50 µs；相对实测 B300 同 12 用户 110× 更快、能量 690× 更低（作者估计手调软件栈约收窄一半）
+* [Zero-SM NCCL](zero-sm-nccl.md) - ETH Zurich / NVIDIA — GB200 NVL72 与 B200 NVL8 实测；域内 4 GiB AllGather 714–746 GB/s（摘要称相对 legacy 最高 1.36×）；Qwen GEMM 重叠中位减速 32.9%→3.9%；Megatron-LM 上 GPU-bound FSDP 最高 +3.5%，深流水线 one-sided put 最高 +14.9%
+* [SURMA](surma-scale-up-rma-engine.md) - 清华大学 / 腾讯 / 港科大 — 双 FPGA 原型 + 两台 8-GPU Hopper；512 B 粒度单 SM 吃满可达带宽，NVLink 需超过 14% SM；共享队列把提交从 1.2 µs 降到 400 ns；512-GPU 估计占 GPU 面积不到 0.5%；轨迹回放上四模型推理 1.05–1.26×
+* [LWS / Mutable Inference](lws-learning-while-serving.md) - 弗吉尼亚大学 — 建模数据中心/边缘 NPU（预算对标 TPU v5e / Jetson AGX Orin）；九模型平均相对串行 1.6×、相对最强共执行基线 1.3× 且保持 Prediction-only 吞吐；TTT-E2E 3B@128K 保留 fully fresh 质量收益的 99.3%；16 nm 综合，含 SRAM 后核心面积 +1.5% / +2.7%
+
+
 * [Optical Broadcast Memory](optical-broadcast-memory-obm.md) - Uppsala — 80,000 加速器建模；split-port 相对 HBM3e，Llama-3.1-405B / Llama-4-Maverick / DeepSeek-V4-Pro 吞吐 0.96× / 0.97× / 1.57×，能量 0.90× / 0.90× / 0.58×，去掉 4.05 / 4.00 / 8.44 PB 权重 HBM
 * [SubGPU Pipelining](subgpu-pipelining-intra-gpu-spatial.md) - NVIDIA — 仿真 Pareto 匹配每 GPU 吞吐时 per-user 最高 2.2×、匹配 per-user 时每 GPU 最高 1.9×；硅上单卡 B200 模拟 32 卡 rank，36 层迭代 14.970→13.424 ms（−10.33%），DRAM 71.8%→83.6%
 * [Tideway](tideway-phase-aware-tiered-moe.md) - Duke — RTX 5090 实测；270 个固定形状端到端平均 1.97×、最高 3.18×；TraceLab TTFT 平均 2.40×（1.15×–9.04×），decode 吞吐平均 1.61×（1.20×–2.28×）
