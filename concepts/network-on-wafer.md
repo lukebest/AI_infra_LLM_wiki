@@ -112,6 +112,8 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 
 [WaferTetris](/papers/wafertetris-freeform-wafer-mapping.md) 把 color 映射为 routing track，并在每个 PE 加 per-color gate，使同一 color 上进出或穿过该 PE 的流都经过该门，从而把冲突暴露为普通拥塞；实验把织物划分为 **8×4** 网格做 P&R。这样可以沿用现有 FPGA 布局布线算法，同时保留原有 PE-task 代码。
 
+2026-11-19：[LASH-PAT](/papers/lash-pat-inter-chiplet-routing.md) 把不规则网络路由函数评到 HexaMesh、FoldedHexaTorus、Kite、ButterDonut 等 ICI / 晶圆级芯粒拓扑上，并给出带路径多样性的分层最短路。
+
 # Citations
 
 [1] [raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf](raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf) — Iff et al. 2026
@@ -124,3 +126,4 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 [7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
 - [arXiv:2611.08508](https://arxiv.org/abs/2611.08508) — MeshRT
 - [arXiv:2611.18527](https://arxiv.org/abs/2611.18527) — WaferTetris
+- [arXiv:2611.22937](https://arxiv.org/abs/2611.22937) — LASH-PAT

@@ -1,5 +1,10 @@
 # Paper
 
+* [LASH-PAT](lash-pat-inter-chiplet-routing.md) - ETH Zurich — BookSim2 评十个不规则 ICI 拓扑；相对每组最好基线，吞吐 +21.15%、每包能量 −12.77%，负载下延迟 −1.33%
+* [LaFlash](laflash-qlc-hbf-coding-agents.md) - GIST / KAIST / Stanford — QLC-HBF 上用容量保留编程智能体的休眠 KV；相对 SLC-HBF+BE 平均 7.04× 吞吐、10.96× 能量效率（HBFSim）
+* [Chimera](chimera-fpga-llm-decode.md) - UC Irvine — Alveo U280 实测十个设计；同板 Llama-3.2-1B W4 相对 FlexLLM 2.08×；相对四篇先前 FPGA 几何均值 1.6×，tok/J 相对 3090/A100 为 3.0×/1.5×（batch 1）
+* [Obaleth](obaleth-gpu-initiated-networking.md) - Koç / fal — 把 GPU-initiated 通信编进 kernel IR；256 卡 all-to-all 相对 NVSHMEM/NCCL GIN 为 1.25×/2.3×；vLLM 上 16×B200 服务 Qwen3-235B，请求延迟相对 DeepEP 最高 1.29×（TTFT p95 更高）
+
 * [Exstill](exstill-single-chip-next-token.md) - Exstill — 预硅 5 nm class；Qwen3-1.7B@16K 算术地板 0.89 mJ/token，同构模型上 3.0 mJ（3.4×地板）；协同设计后地板 0.29 mJ、token 0.52 mJ，12 用户各 50 µs；相对实测 B300 同 12 用户 110× 更快、能量 690× 更低（作者估计手调软件栈约收窄一半）
 * [Zero-SM NCCL](zero-sm-nccl.md) - ETH Zurich / NVIDIA — GB200 NVL72 与 B200 NVL8 实测；域内 4 GiB AllGather 714–746 GB/s（摘要称相对 legacy 最高 1.36×）；Qwen GEMM 重叠中位减速 32.9%→3.9%；Megatron-LM 上 GPU-bound FSDP 最高 +3.5%，深流水线 one-sided put 最高 +14.9%
 * [SURMA](surma-scale-up-rma-engine.md) - 清华大学 / 腾讯 / 港科大 — 双 FPGA 原型 + 两台 8-GPU Hopper；512 B 粒度单 SM 吃满可达带宽，NVLink 需超过 14% SM；共享队列把提交从 1.2 µs 降到 400 ns；512-GPU 估计占 GPU 面积不到 0.5%；轨迹回放上四模型推理 1.05–1.26×

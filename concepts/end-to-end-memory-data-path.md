@@ -338,6 +338,8 @@ WSE 简化（无 off-chip）:
 
 [Exstill](/papers/exstill-single-chip-next-token.md) 把权重与每路对话的 KV 全部放在片上、挨着算术单元，用预硅 5 nm class 设计把 Qwen3-1.7B 的搬运从 decode 路径里拿掉；协同设计后 12 路 16K 上下文每 token **0.52 mJ**。[LWS](/papers/lws-learning-while-serving.md) 让推理期学习的梯度与权重流量走 Prediction 留下的空闲 DRAM 带宽，从而不必把 Learning 放到前向的关键路径上。
 
+2026-11-19：[LaFlash](/papers/laflash-qlc-hbf-coding-agents.md) 把 QLC-HBF 的容量分给编程智能体的休眠 KV 保留，并用会话分组与快页分配维持读并行；[Chimera](/papers/chimera-fpga-llm-decode.md) 在多裸片 FPGA 上用 HBM Proxy Ports 和 DDR4 / 主机 / NVMe 四级存放超出 HBM 的专家权重。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -390,3 +392,5 @@ WSE 简化（无 off-chip）:
 - [arXiv:2611.14904](https://arxiv.org/abs/2611.14904) — SubGPU Pipelining
 - [arXiv:2611.18859](https://arxiv.org/abs/2611.18859) — Exstill
 - [arXiv:2611.18523](https://arxiv.org/abs/2611.18523) — LWS / Mutable Inference
+- [arXiv:2611.22746](https://arxiv.org/abs/2611.22746) — LaFlash
+- [arXiv:2611.21677](https://arxiv.org/abs/2611.21677) — Chimera

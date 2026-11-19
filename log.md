@@ -1,5 +1,16 @@
 # Bundle Update Log
 
+## 2026-11-19
+
+### Enrich: LASH-PAT / LaFlash / Chimera / Obaleth（论文早报）
+- 新增 Paper：[LASH-PAT](papers/lash-pat-inter-chiplet-routing.md)（2611.22937）、[LaFlash](papers/laflash-qlc-hbf-coding-agents.md)（2611.22746）、[Chimera](papers/chimera-fpga-llm-decode.md)（2611.21677）、[Obaleth](papers/obaleth-gpu-initiated-networking.md)（2611.18145）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [adaptive-routing-noc](concepts/adaptive-routing-noc.md)、[deadlock-free-routing-cdg-dally](concepts/deadlock-free-routing-cdg-dally.md)、[network-on-wafer](concepts/network-on-wafer.md)、[end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[llm-distributed-training-collectives](concepts/llm-distributed-training-collectives.md)、[nvlink-nvswitch-scale-up-fabric](concepts/nvlink-nvswitch-scale-up-fabric.md)、[prefill-decode-divergence](concepts/prefill-decode-divergence.md)
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-19 AI Infra 论文早报（上轮优先的 Obaleth + 周三 18 日新公告中的 LASH-PAT、LaFlash、Chimera。本轮扫描时 cs.AR / cs.DC `/new` 已切换到 Wednesday 18 November 2026；周四 19 日列表尚未切换）
+- **下轮优先**：PAISF（2611.22772，与 LASH-PAT 同组的保序选择函数）；XM-Sparse（2611.22280，稀疏注意力在 scale-up 内存池上卸载）；Callo（2611.18459）；OptiDecode（2611.19279）；HBF-EventLab（2611.19861）；GNoF（2611.21288）；并重扫 Thu 19 新公告（若仍延迟则以实际页面为准）
+
+
 ## 2026-11-18
 
 ### Enrich: Exstill / Zero-SM NCCL / SURMA / LWS（论文早报）

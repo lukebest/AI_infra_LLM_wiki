@@ -222,6 +222,8 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 [Exstill](/papers/exstill-single-chip-next-token.md) 的 B300 对照只覆盖 decode，prefill 在预硅设计与 GPU 两侧都排除；12 用户时每路 **50 µs** 对 **5.35 ms**。[LWS](/papers/lws-learning-while-serving.md) 的评测落在单条长上下文的 chunked prefill，批量服务与自回归 decode 明确不在范围。
 
+2026-11-19：[Chimera](/papers/chimera-fpga-llm-decode.md) 在 Alveo U280 上针对 batch 1 decode 做计算–访存–布局协同设计，同板 Llama-3.2-1B W4 相对 FlexLLM 为 2.08×；能量对照也限定在 batch 1、上下文最长 4K。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -244,3 +246,4 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2611.14904](https://arxiv.org/abs/2611.14904) — SubGPU Pipelining
 - [arXiv:2611.18859](https://arxiv.org/abs/2611.18859) — Exstill
 - [arXiv:2611.18523](https://arxiv.org/abs/2611.18523) — LWS / Mutable Inference
+- [arXiv:2611.21677](https://arxiv.org/abs/2611.21677) — Chimera

@@ -1,5 +1,10 @@
 # Other
 
+* [LASH-PAT stub](lash-pat-inter-chiplet-routing.md) + [PDF](LASH_PAT_Inter_Chiplet_Routing_2026.pdf) — arXiv:2611.22937
+* [LaFlash stub](laflash-qlc-hbf-coding-agents.md) + [PDF](LaFlash_QLC_HBF_Coding_Agents_2026.pdf) — arXiv:2611.22746
+* [Chimera stub](chimera-fpga-llm-decode.md) + [PDF](Chimera_FPGA_LLM_Decode_2026.pdf) — arXiv:2611.21677
+* [Obaleth stub](obaleth-gpu-initiated-networking.md) + [PDF](Obaleth_GPU_Initiated_Networking_2026.pdf) — arXiv:2611.18145
+
 * [Exstill stub](exstill-single-chip-next-token.md) + [PDF](Exstill_Single_Chip_Next_Token_2026.pdf) — arXiv:2611.18859
 * [Zero-SM NCCL stub](zero-sm-nccl.md) + [PDF](Zero_SM_NCCL_2026.pdf) — arXiv:2611.18075
 * [SURMA stub](surma-scale-up-rma-engine.md) + [PDF](SURMA_Scale_Up_RMA_SuperPOD_2026.pdf) — arXiv:2611.21274

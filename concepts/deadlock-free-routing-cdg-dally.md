@@ -108,6 +108,9 @@ LLM 推理强同步：丢包 → 整批卡住；片上重传缓冲/协议代价�
 - [NoC Router 微架构](/concepts/noc-router-microarchitecture.md) — VC / wormhole
 - [Cerebras WSE](/entities/cerebras-wse.md) — Mesh + DOR 工业实例
 
+2026-11-19：[LASH-PAT](/papers/lash-pat-inter-chiplet-routing.md) 把路径段细粒度划到虚拟层，在 4 个 VC 下于全部十个评测拓扑上建立起最短路；同条件下 A-LASH 有八个拓扑因 VC 不足无法适用。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-13.md](raw/articles/interconn-study-21d-day-13.md) — D&T Ch.8.1–8.4（Day 13）
+- [arXiv:2611.22937](https://arxiv.org/abs/2611.22937) — LASH-PAT
