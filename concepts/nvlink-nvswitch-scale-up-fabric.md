@@ -13,7 +13,7 @@ tags:
 - gpu
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-07-22
-updated: 2026-11-18
+updated: 2026-11-20
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
@@ -140,6 +140,8 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 
 2026-11-19：[Obaleth](/papers/obaleth-gpu-initiated-networking.md) 的 all-to-all 在节点内走 NVLink、跨节点走 RDMA；H100 评测里门铃经主机转发，B200 上改为 GPU 直接门铃后，相对 NCCL GIN 的优势收窄到 1.11–1.16×（256 B，16/32 卡）。
 
+2026-11-20：[XM-Sparse](/papers/xm-sparse-scale-up-memory-pool.md) 在八张 B300 上用每卡 900 GB/s 的 NVLink 5.0 仿真 scale-up 内存池（四卡当内存节点），并与 PCIe / CXL / NVLink-C2C 的带宽–容量位置对照。
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
@@ -161,3 +163,4 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 - [arXiv:2611.18075](https://arxiv.org/abs/2611.18075) — Zero-SM NCCL
 - [arXiv:2611.21274](https://arxiv.org/abs/2611.21274) — SURMA
 - [arXiv:2611.18145](https://arxiv.org/abs/2611.18145) — Obaleth
+- [arXiv:2611.22280](https://arxiv.org/abs/2611.22280) — XM-Sparse

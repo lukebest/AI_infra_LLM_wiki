@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-20
+
+### Enrich: PAISF / XM-Sparse / HETEROVLM / KIWI（论文早报）
+- 新增 Paper：[PAISF](papers/paisf-in-order-selection-function.md)（2611.22772）、[XM-Sparse](papers/xm-sparse-scale-up-memory-pool.md)（2611.22280）、[HETEROVLM](papers/heterovlm-versal-aie-vlm-serving.md)（2611.23878）、[KIWI](papers/kiwi-reverse-offload-gpu-initiated.md)（2611.23848）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [adaptive-routing-noc](concepts/adaptive-routing-noc.md)、[deadlock-free-routing-cdg-dally](concepts/deadlock-free-routing-cdg-dally.md)、[network-on-wafer](concepts/network-on-wafer.md)、[end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[prefill-decode-divergence](concepts/prefill-decode-divergence.md)、[nvlink-nvswitch-scale-up-fabric](concepts/nvlink-nvswitch-scale-up-fabric.md)、[llm-distributed-training-collectives](concepts/llm-distributed-training-collectives.md)、[disaggregated-inference](concepts/disaggregated-inference.md)；并在 [LASH-PAT](papers/lash-pat-inter-chiplet-routing.md)、[Chimera](papers/chimera-fpga-llm-decode.md)、[Obaleth](papers/obaleth-gpu-initiated-networking.md) 补交叉
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-20 AI Infra 论文早报（上轮优先的 PAISF 与 XM-Sparse + 周四 19 日新公告中的 HETEROVLM、KIWI。本轮扫描时 cs.AR / cs.DC `/new` 已切换到 Thursday 19 November 2026；周五 20 日列表尚未切换）
+- **下轮优先**：OptiDecode（2611.19279，自由空间光学再生 KV）；HBF-EventLab（2611.19861）；GNoF（2611.21288）；Callo（2611.18459，PD 解耦下用失效 KV 做投机）；并重扫 Fri 20 新公告（若仍延迟则以实际页面为准）。周四还记下但未深挖：GPCPlace（2611.24458）、VLA 精度随 flow step 上升的加速器（2611.24234）、DexAttention（2611.23512）、BubbleTea（2611.24496）
+
 ## 2026-11-19
 
 ### Enrich: LASH-PAT / LaFlash / Chimera / Obaleth（论文早报）

@@ -16,7 +16,7 @@ tags:
 - communication
 - programming-model
 created: 2026-11-19
-updated: 2026-11-19
+updated: 2026-11-20
 timestamp: '2026-11-19T00:00:00Z'
 paper_author: [Javid Baydamirli, Ismayil Ismayilov, Kaan Oktay, Didem Unat]
 year: 2026
@@ -58,6 +58,7 @@ Obaleth 把通信做成与后端无关的 Queue IR，规划完成点以匹配缓
 Wiki 已有 [Zero-SM NCCL](/papers/zero-sm-nccl.md)、[NVLinkOneSided](/papers/nvlinkonesided-ep-all-to-all.md)、[NCCL-EP Dispatch Offload](/papers/nccl-ep-moe-dispatch-offload-dbo.md) 等库内或一侧通信路径上的工作。本篇把特化从手写库函数移到编译器：通信进入 kernel IR，按本次调用的形状和缓冲区寿命生成队列与完成规划。vLLM 对照是同一构建里的 DeepEP 2.5.0；小消息、decode 步长上的优势更明显，更大 token 数时 DeepEP 的手写核可以反过来领先。
 
 ## 与 wiki 的关系
+- [KIWI](/papers/kiwi-reverse-offload-gpu-initiated.md) — 在 MI300X 上把反向卸载做成可编程接口，作为另一条 GPU-initiated 通信路线
 - [LLM Distributed Training Collectives](/concepts/llm-distributed-training-collectives.md) — 把 all-to-all / dispatch-combine 从通用库特化到编译产物
 - [NVLink / NVSwitch Scale-up Fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md) — 节点内走 NVLink、跨节点走 RDMA 的混合 all-to-all
 - [Zero-SM NCCL](/papers/zero-sm-nccl.md) — 同属降低通信占用 SM / 主机往返的路径，本篇走编译器特化
@@ -73,3 +74,4 @@ Wiki 已有 [Zero-SM NCCL](/papers/zero-sm-nccl.md)、[NVLinkOneSided](/papers/n
 - [arXiv:2611.18145](https://arxiv.org/abs/2611.18145) — Baydamirli, Ismayilov（共同一作）；Oktay, Unat（Koç University / fal）
 - [raw stub](/raw/papers/obaleth-gpu-initiated-networking.md)
 - [PDF](/raw/papers/Obaleth_GPU_Initiated_Networking_2026.pdf)
+- [arXiv:2611.23848](https://arxiv.org/abs/2611.23848) — KIWI

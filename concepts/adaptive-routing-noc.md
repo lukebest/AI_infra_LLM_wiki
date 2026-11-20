@@ -13,6 +13,7 @@ tags:
 - wse
 timestamp: '2026-07-07T00:00:00Z'
 created: 2026-07-07
+updated: 2026-11-20
 sources:
 - raw/articles/interconn-study-21d-day-12.md
 ---
@@ -136,7 +137,10 @@ VC0 高优先级（barrier/control），VC1 数据；**strict priority** 仲裁 
 
 2026-11-19：[LASH-PAT](/papers/lash-pat-inter-chiplet-routing.md) 在十个不规则 ICI / 晶圆级芯粒拓扑上，把分层最短路与按本地拥塞选择的多条最短路合在一起；相对每组最好基线，BookSim2 上吞吐平均 +21.15%。
 
+2026-11-20：[PAISF](/papers/paisf-in-order-selection-function.md) 用报文熵值哈希选择下一跳，并在此之上按本地拥塞做有限自适应，专门处理保序投递；BookSim2 上相对已有保序方法，饱和吞吐平均 +15.2%。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-12.md](raw/articles/interconn-study-21d-day-12.md) — D&T Ch.6–7 Adaptive（Day 12）
 - [arXiv:2611.22937](https://arxiv.org/abs/2611.22937) — LASH-PAT
+- [arXiv:2611.22772](https://arxiv.org/abs/2611.22772) — PAISF

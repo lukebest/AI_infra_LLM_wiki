@@ -9,7 +9,7 @@ tags:
 - disaggregated-inference
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-04-17
-updated: 2026-11-16
+updated: 2026-11-20
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -269,6 +269,8 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 [ShadowPrefill](/papers/shadowprefill-per-step-model-routing.md) 把影子 prefill 接到 PD 解耦集群：共置部署上每请求能量只升 **0.4%**，因为影子搭在本来就要跑的迭代上；解耦之后影子会唤醒本来空闲的 prefill GPU，能量升高 **11.5%**。
 
 
+2026-11-20：[KIWI](/papers/kiwi-reverse-offload-gpu-initiated.md) 把 KIWI-EP 接到 vLLM 的 decode 侧，prefill 仍用 MORI-EP；在 GLM-5.3、PD 解耦的多节点部署上，八节点 TPOT 最高降低 29%。
+
 # Citations
 
 [1] [arXiv:2504.02263](arXiv:2504.02263)
@@ -314,3 +316,4 @@ disaggregation 引入额外通信 → 需要用 pipeline 并行掩盖延迟。�
 - [arXiv:2611.12304](https://arxiv.org/abs/2611.12304) — Evolving Infra
 - [arXiv:2611.13293](https://arxiv.org/abs/2611.13293) — Decode Token Parallelism (TKNP)
 - [arXiv:2611.13176](https://arxiv.org/abs/2611.13176) — SHADOWPREFILL
+- [arXiv:2611.23848](https://arxiv.org/abs/2611.23848) — KIWI

@@ -11,7 +11,7 @@ tags:
 - throughput
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-18
+updated: 2026-11-20
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -224,6 +224,8 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 2026-11-19：[Chimera](/papers/chimera-fpga-llm-decode.md) 在 Alveo U280 上针对 batch 1 decode 做计算–访存–布局协同设计，同板 Llama-3.2-1B W4 相对 FlexLLM 为 2.08×；能量对照也限定在 batch 1、上下文最长 4K。
 
+2026-11-20：[HETEROVLM](/papers/heterovlm-versal-aie-vlm-serving.md) 按权重复用把 encoder / prefill / attention 放在 Versal AIE，把小步 decode 放到紧挨 DDR 的 PL GEMV，并在 VC1902 上给出多请求与抢占的板上数字；[XM-Sparse](/papers/xm-sparse-scale-up-memory-pool.md) 针对长上下文 decode 的 HBM 容量，把热 KV 取回与 K-index 预取分成两套 I/O。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -247,3 +249,5 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2611.18859](https://arxiv.org/abs/2611.18859) — Exstill
 - [arXiv:2611.18523](https://arxiv.org/abs/2611.18523) — LWS / Mutable Inference
 - [arXiv:2611.21677](https://arxiv.org/abs/2611.21677) — Chimera
+- [arXiv:2611.23878](https://arxiv.org/abs/2611.23878) — HETEROVLM
+- [arXiv:2611.22280](https://arxiv.org/abs/2611.22280) — XM-Sparse

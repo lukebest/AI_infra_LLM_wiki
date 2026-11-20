@@ -15,7 +15,7 @@ tags:
 - simulator
 - wafer-on-wafer
 created: 2026-11-19
-updated: 2026-11-19
+updated: 2026-11-20
 timestamp: '2026-11-19T00:00:00Z'
 paper_author: [Patrick Iff, Torsten Hoefler]
 year: 2026
@@ -52,9 +52,10 @@ LASH-PAT 扩展分层最短路（LASH 一族）：为同一对端点保留多条
 | 路由表面积（作者估计） | 最坏约 **20 Kbit**；22 nm 约 0.003 mm²，7 nm 约 0.001 mm² | §V-G |
 
 ## 与已有页的增量
-Wiki 里已有 [自适应路由](/concepts/adaptive-routing-noc.md)、[无死锁路由与 CDG](/concepts/deadlock-free-routing-cdg-dally.md)、[维序路由](/concepts/deterministic-routing-dor.md) 和一批 mesh/晶圆级拓扑讨论，评测对象多是规则 mesh 或数据中心 Clos。本篇把转弯限制与分层最短路这两类不规则网络函数，系统地放到新近 ICI / 晶圆级芯粒拓扑上，并给出一条能同时保留最短路与路径多样性的函数。同日还有同一组的选择函数短文 PAISF（2611.22772），处理保序投递，本轮先记下，未深挖。
+Wiki 里已有 [自适应路由](/concepts/adaptive-routing-noc.md)、[无死锁路由与 CDG](/concepts/deadlock-free-routing-cdg-dally.md)、[维序路由](/concepts/deterministic-routing-dor.md) 和一批 mesh/晶圆级拓扑讨论，评测对象多是规则 mesh 或数据中心 Clos。本篇把转弯限制与分层最短路这两类不规则网络函数，系统地放到新近 ICI / 晶圆级芯粒拓扑上，并给出一条能同时保留最短路与路径多样性的函数。同一组的选择函数短文见 [PAISF](/papers/paisf-in-order-selection-function.md)（2611.22772），处理同一类不规则拓扑上的保序投递。
 
 ## 与 wiki 的关系
+- [PAISF](/papers/paisf-in-order-selection-function.md) — 同一组的保序选择函数，对照中也包括 LASH-TOR
 - [Adaptive Routing for NoC](/concepts/adaptive-routing-noc.md) — 按本地拥塞在多条最短路之间选择
 - [Deadlock-Free Routing CDG and Dally Theorem](/concepts/deadlock-free-routing-cdg-dally.md) — 用虚拟层划分路径段来维持无死锁
 - [Network-on-Wafer](/concepts/network-on-wafer.md) — 评测包括 HexaMesh、FoldedHexaTorus 等面向晶圆级 / ICI 的拓扑
@@ -70,3 +71,4 @@ Wiki 里已有 [自适应路由](/concepts/adaptive-routing-noc.md)、[无死锁
 - [arXiv:2611.22937](https://arxiv.org/abs/2611.22937) — Iff, Hoefler（ETH Zurich）
 - [raw stub](/raw/papers/lash-pat-inter-chiplet-routing.md)
 - [PDF](/raw/papers/LASH_PAT_Inter_Chiplet_Routing_2026.pdf)
+- [arXiv:2611.22772](https://arxiv.org/abs/2611.22772) — PAISF

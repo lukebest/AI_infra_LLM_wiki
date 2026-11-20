@@ -18,7 +18,7 @@ tags:
 - architecture
 timestamp: '2026-11-10T00:00:00Z'
 created: 2026-08-18
-updated: 2026-11-17
+updated: 2026-11-20
 sources:
 - raw/papers/network-design-wafer-scale-wow-hybrid-bonding.md
 - papers/network-design-wafer-scale-wow-hybrid-bonding.md
@@ -114,6 +114,8 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 
 2026-11-19：[LASH-PAT](/papers/lash-pat-inter-chiplet-routing.md) 把不规则网络路由函数评到 HexaMesh、FoldedHexaTorus、Kite、ButterDonut 等 ICI / 晶圆级芯粒拓扑上，并给出带路径多样性的分层最短路。
 
+2026-11-20：[PAISF](/papers/paisf-in-order-selection-function.md) 把保序选择函数评到计算晶圆加互连晶圆的间接 WSI 拓扑（约 188–318 个路由器、约 64 个端点）；这里的吞吐收益最小（平均 +7.8%），注入率 0.1 时延迟还略增 1.2%。
+
 # Citations
 
 [1] [raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf](raw/papers/Network_Design_Wafer_Scale_WoW_Hybrid_Bonding_2026.pdf) — Iff et al. 2026
@@ -127,3 +129,4 @@ Samsung [zHBM](/papers/hc2026-samsung-hbm-base-die.md)（Hot Chips 2026）也写
 - [arXiv:2611.08508](https://arxiv.org/abs/2611.08508) — MeshRT
 - [arXiv:2611.18527](https://arxiv.org/abs/2611.18527) — WaferTetris
 - [arXiv:2611.22937](https://arxiv.org/abs/2611.22937) — LASH-PAT
+- [arXiv:2611.22772](https://arxiv.org/abs/2611.22772) — PAISF

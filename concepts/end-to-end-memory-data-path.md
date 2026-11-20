@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-11-17T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-18
+updated: 2026-11-20
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -340,6 +340,8 @@ WSE 简化（无 off-chip）:
 
 2026-11-19：[LaFlash](/papers/laflash-qlc-hbf-coding-agents.md) 把 QLC-HBF 的容量分给编程智能体的休眠 KV 保留，并用会话分组与快页分配维持读并行；[Chimera](/papers/chimera-fpga-llm-decode.md) 在多裸片 FPGA 上用 HBM Proxy Ports 和 DDR4 / 主机 / NVMe 四级存放超出 HBM 的专家权重。
 
+2026-11-20：[XM-Sparse](/papers/xm-sparse-scale-up-memory-pool.md) 把稀疏注意力的 KV 与 K-index 都卸到仿真的 scale-up 内存池，用织物带宽换 HBM 容量；[HETEROVLM](/papers/heterovlm-versal-aie-vlm-serving.md) 让并发请求共享一次权重读取，并把暂停请求的中间结果留在 DDR 以便抢占恢复。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -394,3 +396,5 @@ WSE 简化（无 off-chip）:
 - [arXiv:2611.18523](https://arxiv.org/abs/2611.18523) — LWS / Mutable Inference
 - [arXiv:2611.22746](https://arxiv.org/abs/2611.22746) — LaFlash
 - [arXiv:2611.21677](https://arxiv.org/abs/2611.21677) — Chimera
+- [arXiv:2611.22280](https://arxiv.org/abs/2611.22280) — XM-Sparse
+- [arXiv:2611.23878](https://arxiv.org/abs/2611.23878) — HETEROVLM

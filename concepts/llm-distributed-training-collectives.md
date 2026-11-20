@@ -13,7 +13,7 @@ tags:
 - wse
 timestamp: '2026-11-11T00:00:00Z'
 created: 2026-07-13
-updated: 2026-11-18
+updated: 2026-11-20
 sources:
 - raw/articles/arch-study-30d-day-27.md
 - raw/papers/HCCL_Collective_Communication_Meta_MTIA_300_2026.pdf
@@ -254,6 +254,8 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 
 2026-11-19：[Obaleth](/papers/obaleth-gpu-initiated-networking.md) 把 GPU-initiated 通信编进 kernel IR，在 256 卡 H100 上以 256 B/peer 做 all-to-all，相对 NVSHMEM / NCCL GIN 为 1.25× / 2.3×，并作为 vLLM 的 EP 后端接到 16×B200 上的 Qwen3-235B。
 
+2026-11-20：[KIWI](/papers/kiwi-reverse-offload-gpu-initiated.md) 把 MoE dispatch / combine 的组播 put、计数 all-to-all 和 barrier 做成主机回调，在 MI300X + RoCE 上相对最好已有 EP 后端，通信延迟最高低 2.3×。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-27.md](raw/articles/arch-study-30d-day-27.md) — H&P Ch.6/10 + LLM collectives（Day 27）
@@ -291,3 +293,4 @@ T_comm ≫ T_compute → 压互联、压缩梯度、重叠通信
 - [arXiv:2611.18075](https://arxiv.org/abs/2611.18075) — Zero-SM NCCL
 - [arXiv:2611.21274](https://arxiv.org/abs/2611.21274) — SURMA
 - [arXiv:2611.18145](https://arxiv.org/abs/2611.18145) — Obaleth
+- [arXiv:2611.23848](https://arxiv.org/abs/2611.23848) — KIWI

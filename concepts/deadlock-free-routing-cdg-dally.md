@@ -14,6 +14,7 @@ tags:
 - dally
 timestamp: '2026-07-09T00:00:00Z'
 created: 2026-07-09
+updated: 2026-11-20
 sources:
 - raw/articles/interconn-study-21d-day-13.md
 ---
@@ -110,7 +111,10 @@ LLM 推理强同步：丢包 → 整批卡住；片上重传缓冲/协议代价�
 
 2026-11-19：[LASH-PAT](/papers/lash-pat-inter-chiplet-routing.md) 把路径段细粒度划到虚拟层，在 4 个 VC 下于全部十个评测拓扑上建立起最短路；同条件下 A-LASH 有八个拓扑因 VC 不足无法适用。
 
+2026-11-20：[PAISF](/papers/paisf-in-order-selection-function.md) 把无死锁留给底层路由函数，选择函数只在其合法下一跳中挑选；对照里的 Multi 在轨迹负载上多次出现消息级死锁，(PA)ISF 用同一熵值走同一路径来保证保序。
+
 # Citations
 
 [1] [raw/articles/interconn-study-21d-day-13.md](raw/articles/interconn-study-21d-day-13.md) — D&T Ch.8.1–8.4（Day 13）
 - [arXiv:2611.22937](https://arxiv.org/abs/2611.22937) — LASH-PAT
+- [arXiv:2611.22772](https://arxiv.org/abs/2611.22772) — PAISF

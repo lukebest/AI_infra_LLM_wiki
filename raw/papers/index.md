@@ -1,5 +1,10 @@
 # Other
 
+* [PAISF stub](paisf-in-order-selection-function.md) + [PDF](PAISF_In_Order_Selection_Function_2026.pdf) — arXiv:2611.22772
+* [XM-Sparse stub](xm-sparse-scale-up-memory-pool.md) + [PDF](XM_Sparse_Scale_Up_Memory_Pool_2026.pdf) — arXiv:2611.22280
+* [HETEROVLM stub](heterovlm-versal-aie-vlm-serving.md) + [PDF](HETEROVLM_Versal_AIE_VLM_Serving_2026.pdf) — arXiv:2611.23878
+* [KIWI stub](kiwi-reverse-offload-gpu-initiated.md) + [PDF](KIWI_Reverse_Offload_GPU_Initiated_2026.pdf) — arXiv:2611.23848
+
 * [LASH-PAT stub](lash-pat-inter-chiplet-routing.md) + [PDF](LASH_PAT_Inter_Chiplet_Routing_2026.pdf) — arXiv:2611.22937
 * [LaFlash stub](laflash-qlc-hbf-coding-agents.md) + [PDF](LaFlash_QLC_HBF_Coding_Agents_2026.pdf) — arXiv:2611.22746
 * [Chimera stub](chimera-fpga-llm-decode.md) + [PDF](Chimera_FPGA_LLM_Decode_2026.pdf) — arXiv:2611.21677

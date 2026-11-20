@@ -14,7 +14,7 @@ tags:
 - llm
 - serving
 created: 2026-11-19
-updated: 2026-11-19
+updated: 2026-11-20
 timestamp: '2026-11-19T00:00:00Z'
 paper_author: [Zhiheng Chen, Yifan Zhang, Yu-An Chou, Ye Qiao, Sitao Huang]
 year: 2026
@@ -55,6 +55,7 @@ UC Irvine 在 AMD Alveo U280 上实现了可配置的 LLM decode 加速器 Chime
 Wiki 里 decode 加速器与解耦推理的讨论，多数落在 GPU / NPU / 预硅 ASIC 上，例如 [Exstill](/papers/exstill-single-chip-next-token.md)、[SiliconForge](/papers/siliconforge-should-you-split-decode.md)。本篇提供一块带 HBM 的多裸片 FPGA 上的可复现板上结果，并覆盖 MoE 与混合注意力，以及专家超出 HBM 时的四级存储。与 GPU 的能量对照限定在 batch 1、上下文最长 4K；1.6× 的 FPGA 几何均值里，有三项对照的模型或板卡与本设计不同，宜与同板 FlexLLM 的 2.08× 一起读。
 
 ## 与 wiki 的关系
+- [HETEROVLM](/papers/heterovlm-versal-aie-vlm-serving.md) — 同一组在 Versal AIE + PL 上做多请求 VLM 服务与抢占
 - [Prefill–Decode Divergence](/concepts/prefill-decode-divergence.md) — 针对单请求 decode 带宽墙做定制数据通路
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — HBM Proxy Ports 与 DDR4 / 主机 / NVMe 四级专家存储
 - [DNN Accelerator Systolic Dataflow](/concepts/dnn-accelerator-systolic-dataflow.md) — FPGA 上的可配置计算道与布局约束
@@ -70,3 +71,4 @@ Wiki 里 decode 加速器与解耦推理的讨论，多数落在 GPU / NPU / 预
 - [arXiv:2611.21677](https://arxiv.org/abs/2611.21677) — Chen, Zhang, Chou, Qiao, Huang（UC Irvine）
 - [raw stub](/raw/papers/chimera-fpga-llm-decode.md)
 - [PDF](/raw/papers/Chimera_FPGA_LLM_Decode_2026.pdf)
+- [arXiv:2611.23878](https://arxiv.org/abs/2611.23878) — HETEROVLM

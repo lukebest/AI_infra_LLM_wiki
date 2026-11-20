@@ -1,5 +1,10 @@
 # Paper
 
+* [PAISF](paisf-in-order-selection-function.md) - ETH Zurich — BookSim2 评 NoC / ICI / WSI 不规则拓扑上的保序选择函数；相对已有保序方法，饱和吞吐平均 +15.2%、每包能量 −12.1%、负载下延迟 −11.3%
+* [XM-Sparse](xm-sparse-scale-up-memory-pool.md) - Netpreme / 港科大 / 新加坡国立 — SGLang 上稀疏注意力卸载到仿真 scale-up 内存池；相对 PCIe 上的 ECHO / HiSparse，decode 吞吐最高 4.98× / 4.52×，相对同平台朴素接入最高 1.34×
+* [HETEROVLM](heterovlm-versal-aie-vlm-serving.md) - UC Irvine — Versal VC1902 实测 LFM2.5-VL-3B；单请求 decode 相对 T4 / Orin Nano 为 1.3× / 4.0×，每 token 能量为二者的 61% / 73%、为 3090 Ti 的 51%
+* [KIWI](kiwi-reverse-offload-gpu-initiated.md) - AMD — MI300X + RoCE 实测；反向卸载队列 RTT 中位 1.92 µs；EP 通信延迟相对最好已有后端最高 2.3×，vLLM 上 GLM-5.3 的 TPOT 最高降低 29%
+
 * [LASH-PAT](lash-pat-inter-chiplet-routing.md) - ETH Zurich — BookSim2 评十个不规则 ICI 拓扑；相对每组最好基线，吞吐 +21.15%、每包能量 −12.77%，负载下延迟 −1.33%
 * [LaFlash](laflash-qlc-hbf-coding-agents.md) - GIST / KAIST / Stanford — QLC-HBF 上用容量保留编程智能体的休眠 KV；相对 SLC-HBF+BE 平均 7.04× 吞吐、10.96× 能量效率（HBFSim）
 * [Chimera](chimera-fpga-llm-decode.md) - UC Irvine — Alveo U280 实测十个设计；同板 Llama-3.2-1B W4 相对 FlexLLM 2.08×；相对四篇先前 FPGA 几何均值 1.6×，tok/J 相对 3090/A100 为 3.0×/1.5×（batch 1）
