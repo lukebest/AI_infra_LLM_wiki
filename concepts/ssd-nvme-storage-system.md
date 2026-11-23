@@ -11,9 +11,9 @@ tags:
 - io
 - inference
 - wse
-timestamp: '2026-11-06T00:00:00Z'
+timestamp: '2026-11-23T00:00:00Z'
 created: 2026-07-03
-updated: 2026-11-17
+updated: 2026-11-23
 sources:
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
 - raw/articles/arch-study-30d-day-20.md
@@ -161,6 +161,11 @@ Host CPU
 
 [Tideway](/papers/tideway-phase-aware-tiered-moe.md) 在 RTX 5090 + SN850X 桌面上把 SSD 用作统一内存池的只读后备，writeback 走 PCIe 上的 VRAM↔RAM。测得 SSD 读 **6.8 GB/s**。权重不得不落盘时，固定形状端到端加速拉到 **1.95×–3.18×**。
 
+
+## 2026-11-23：GPU 原生的 NVMe-oF 完成路径
+
+[GNoF](/papers/gnof-gpu-native-nvme-of.md) 在未改动的 SPDK 目标上，把建囊、门铃和收完成放到 GPU 线程，200 Gb/s InfiniBand 上每客户端最高约 1.77 M 4 KB 读 IOPS，SM throughput 占用 0.03–1.07%；列扫描冷启动相对整图装载为 10–22×。8.5 GB 图 BFS 上粗粒度装载仍然更快。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-20.md](raw/articles/arch-study-30d-day-20.md) — H&P App.D 存储系统（Day 20）
@@ -169,3 +174,4 @@ Host CPU
 [4] [arXiv:2610.41508](https://arxiv.org/abs/2610.41508) — HiState
 [5] [arXiv:2611.03173](https://arxiv.org/abs/2611.03173) — PagedMoE
 - [arXiv:2611.14848](https://arxiv.org/abs/2611.14848) — Tideway
+- [arXiv:2611.21288](https://arxiv.org/abs/2611.21288) — GNoF

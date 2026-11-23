@@ -20,7 +20,7 @@ tags:
 - expert-parallelism
 - decode
 created: 2026-11-17
-updated: 2026-11-17
+updated: 2026-11-23
 timestamp: '2026-11-17T00:00:00Z'
 paper_author: [Hannah Atmer, Yuan Yao, Thiemo Voigt, Stefanos Kaxiras]
 year: 2026
@@ -72,7 +72,10 @@ Ring (TP) 在 405B 同样达到 0.96× / 0.90×（假定跨缆 skew 被主动校
 - 跨缆 deskew 的硬件成本同样留待后续；敏感性中，未校正的 10 K 热漂移使 Ring (TP) 在 405B 的相对吞吐从 0.96× 降到 0.94×。
 - 输出长度分布为作者假设（中位 200）；Ring 上「在全部 8 缆重复每个 token 都用的权重」的布局未评估。
 
+2026-11-23：[OptiDecode](/papers/optidecode-fso-kv-regeneration.md) 把自由空间光学用在 decode 注意力的 KV 再生上，对照是等带宽的理想 GPU KV 读取；与本页的硅光广播权重路径层次不同。
+
 # Citations
 - [arXiv:2611.17097](https://arxiv.org/abs/2611.17097) — Atmer, Yao, Voigt, Kaxiras；Uppsala University
 - [arXiv:2607.08407](https://arxiv.org/abs/2607.08407) — Fiber Memory Ring（HotNets’26，同一作者组先驱）
 - [raw stub](/raw/papers/optical-broadcast-memory-obm.md)
+- [arXiv:2611.19279](https://arxiv.org/abs/2611.19279) — OptiDecode

@@ -11,9 +11,9 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-11-17T00:00:00Z'
+timestamp: '2026-11-23T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-20
+updated: 2026-11-23
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -342,6 +342,11 @@ WSE 简化（无 off-chip）:
 
 2026-11-20：[XM-Sparse](/papers/xm-sparse-scale-up-memory-pool.md) 把稀疏注意力的 KV 与 K-index 都卸到仿真的 scale-up 内存池，用织物带宽换 HBM 容量；[HETEROVLM](/papers/heterovlm-versal-aie-vlm-serving.md) 让并发请求共享一次权重读取，并把暂停请求的中间结果留在 DDR 以便抢占恢复。
 
+
+## 2026-11-23：激活缓存上的光学再生，以及 GPU 原生的远端 NVMe-oF
+
+[OptiDecode](/papers/optidecode-fso-kv-regeneration.md) 把历史路径从反复读 KV 改成读激活再光学再生，主对照是等峰值 HBM 带宽的理想 KV 读取。[GNoF](/papers/gnof-gpu-native-nvme-of.md) 让 GPU 直接走 NVMe-oF/RDMA 完成路径，200 Gb/s 织物上达到约 1.77 M 4 KB IOPS，主机 CPU 0.37%。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -398,3 +403,5 @@ WSE 简化（无 off-chip）:
 - [arXiv:2611.21677](https://arxiv.org/abs/2611.21677) — Chimera
 - [arXiv:2611.22280](https://arxiv.org/abs/2611.22280) — XM-Sparse
 - [arXiv:2611.23878](https://arxiv.org/abs/2611.23878) — HETEROVLM
+- [arXiv:2611.19279](https://arxiv.org/abs/2611.19279) — OptiDecode
+- [arXiv:2611.21288](https://arxiv.org/abs/2611.21288) — GNoF

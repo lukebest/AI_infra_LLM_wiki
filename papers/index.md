@@ -1,5 +1,10 @@
 # Paper
 
+* [OptiDecode](optidecode-fso-kv-regeneration.md) - 新加坡国立 / Lumai — 架构流水线模型；相对等峰值 HBM 带宽的理想 GPU KV 读取基线，30B–175B 稠密 MHA 在 32K 上下文下 decode 注意力 1.92–1.99×
+* [GNoF](gnof-gpu-native-nvme-of.md) - 国防科大 — 200 Gb/s InfiniBand 实测；每客户端最高约 1.77 M 4 KB IOPS，主机 CPU 0.37%、SM throughput 占用约 1%；列扫描相对整图装载 10–22×
+* [Rising-Precision VLA Accelerator](rising-precision-vla-accelerator.md) - KU Leuven MICAS — LPDDR5X 时序下的 RTL；GR00T N1.6 的 [2,3,3,4] 为 8.02 ms / 78 mJ，在 Thor 一半带宽下相对 Thor 与 FlashRT NVFP4 为 1.7×，能量为后者的 1/9.1
+* [Kameleo](kameleo-bit-serial-activation-precision.md) - KU Leuven MICAS — 四模型七数据集上，1% PPL 预算内把 prefill MXU 周期降到 2.11–2.34×；选择硬件使 16 nm 加速器面积 +3.7%
+
 * [PAISF](paisf-in-order-selection-function.md) - ETH Zurich — BookSim2 评 NoC / ICI / WSI 不规则拓扑上的保序选择函数；相对已有保序方法，饱和吞吐平均 +15.2%、每包能量 −12.1%、负载下延迟 −11.3%
 * [XM-Sparse](xm-sparse-scale-up-memory-pool.md) - Netpreme / 港科大 / 新加坡国立 — SGLang 上稀疏注意力卸载到仿真 scale-up 内存池；相对 PCIe 上的 ECHO / HiSparse，decode 吞吐最高 4.98× / 4.52×，相对同平台朴素接入最高 1.34×
 * [HETEROVLM](heterovlm-versal-aie-vlm-serving.md) - UC Irvine — Versal VC1902 实测 LFM2.5-VL-3B；单请求 decode 相对 T4 / Orin Nano 为 1.3× / 4.0×，每 token 能量为二者的 61% / 73%、为 3090 Ti 的 51%

@@ -9,9 +9,9 @@ tags:
 - kv-cache
 - latency
 - throughput
-timestamp: '2026-11-11T00:00:00Z'
+timestamp: '2026-11-23T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-20
+updated: 2026-11-23
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -226,6 +226,11 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 2026-11-20：[HETEROVLM](/papers/heterovlm-versal-aie-vlm-serving.md) 按权重复用把 encoder / prefill / attention 放在 Versal AIE，把小步 decode 放到紧挨 DDR 的 PL GEMV，并在 VC1902 上给出多请求与抢占的板上数字；[XM-Sparse](/papers/xm-sparse-scale-up-memory-pool.md) 针对长上下文 decode 的 HBM 容量，把热 KV 取回与 K-index 预取分成两套 I/O。
 
+
+## 2026-11-23：用光学再生把 decode 的历史 KV 流量减半，以及把激活尾数留到 prefill 当场选
+
+[OptiDecode](/papers/optidecode-fso-kv-regeneration.md) 在 decode 阶段缓存激活并用自由空间光学按 HBM 取回速率再生历史 KV；相对等带宽的理想 GPU KV 读取基线，30B–175B 稠密 MHA 在 32K 上下文下达到 1.92–1.99×。[Kameleo](/papers/kameleo-bit-serial-activation-precision.md) 的吞吐数字落在 prefill 的 MXU 周期，注意力 GEMM 保持满尾数。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -251,3 +256,5 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2611.21677](https://arxiv.org/abs/2611.21677) — Chimera
 - [arXiv:2611.23878](https://arxiv.org/abs/2611.23878) — HETEROVLM
 - [arXiv:2611.22280](https://arxiv.org/abs/2611.22280) — XM-Sparse
+- [arXiv:2611.19279](https://arxiv.org/abs/2611.19279) — OptiDecode
+- [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Kameleo

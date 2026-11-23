@@ -64,7 +64,10 @@ sources:
 - 只覆盖 NVIDIA 平台（4090/Thor/Orin），没有 NPU 或专用机器人 SoC；仿真闭环（MuJoCo/LIBERO）非真机。
 - 硬件启示：VLA 专用 SoC 应按动作头（访存）与骨干/DiT（计算）分别配资源；运行时需要 SLO 感知的工作点选择，而不是静态配置。
 
+2026-11-23：[Rising-Precision VLA Accelerator](/papers/rising-precision-vla-accelerator.md) 按 flow step 上升权重位宽，并在 7 nm RTL 上给出相对 Jetson AGX Thor 的动作头时间和能量。
+
 # Citations
 
 [1] [arXiv PDF](https://arxiv.org/pdf/2610.05062) — Jung et al., arXiv:2610.05062（ASPLOS '27）
 [2] [raw stub](raw/papers/vla-workload-characterization-embodied-ai.md)
+- [arXiv:2611.24234](https://arxiv.org/abs/2611.24234) — Rising-Precision VLA Accelerator

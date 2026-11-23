@@ -65,7 +65,10 @@ sub-5-bit 权重下接近 FP16 PPL。**综合/仿真**，非流片实测。
 2. 更大模型（70B+）的敏感度剖析成本？
 3. 与真实 HBM/NoC 带宽耦合后，iso-area 吞吐优势还剩多少？
 
+2026-11-23：[Kameleo](/papers/kameleo-bit-serial-activation-precision.md) 在 bit-serial MXU 上按当前数据当场选择激活尾数，1% PPL 预算内把 prefill MXU 周期降到 2.11–2.34×。
+
 # Citations
 
 [1] [arXiv PDF](https://arxiv.org/pdf/2609.04724) — Gao et al., arXiv:2609.04724
 [2] [raw/papers/flexposit-tunable-fractional-precision-llm.md](raw/papers/flexposit-tunable-fractional-precision-llm.md) — ingest stub
+- [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Kameleo

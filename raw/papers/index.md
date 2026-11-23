@@ -1,5 +1,10 @@
 # Other
 
+* [OptiDecode stub](optidecode-fso-kv-regeneration.md) + [PDF](OptiDecode_FSO_KV_Regeneration_2026.pdf) — arXiv:2611.19279
+* [GNoF stub](gnof-gpu-native-nvme-of.md) + [PDF](GNoF_GPU_Native_NVMeoF_2026.pdf) — arXiv:2611.21288
+* [Rising-Precision VLA Accelerator stub](rising-precision-vla-accelerator.md) + [PDF](Rising_Precision_VLA_Accelerator_2026.pdf) — arXiv:2611.24234
+* [Kameleo stub](kameleo-bit-serial-activation-precision.md) + [PDF](Kameleo_Bit_Serial_Activation_Precision_2026.pdf) — arXiv:2611.25971
+
 * [PAISF stub](paisf-in-order-selection-function.md) + [PDF](PAISF_In_Order_Selection_Function_2026.pdf) — arXiv:2611.22772
 * [XM-Sparse stub](xm-sparse-scale-up-memory-pool.md) + [PDF](XM_Sparse_Scale_Up_Memory_Pool_2026.pdf) — arXiv:2611.22280
 * [HETEROVLM stub](heterovlm-versal-aie-vlm-serving.md) + [PDF](HETEROVLM_Versal_AIE_VLM_Serving_2026.pdf) — arXiv:2611.23878

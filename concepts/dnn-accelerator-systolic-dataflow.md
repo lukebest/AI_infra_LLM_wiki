@@ -12,7 +12,7 @@ tags:
 - roofline
 - dsa
 timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-11-18
+updated: 2026-11-23
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
@@ -196,6 +196,11 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 
 [Exstill](/papers/exstill-single-chip-next-token.md) 把单一模型架构固定在数据通路里（权重仍可加载），并在门级搜索环里同时改模型与电路；保持 Qwen3-1.7B 不变时预硅设计做到地板的 **3.4×**，协同设计后到新地板的 **1.8×**。[LWS](/papers/lws-learning-while-serving.md) 在已有 MAC 阵列上用可恢复规约块共享 Prediction 与 Learning，16 nm 综合显示不必再加一块阵列，含 SRAM 后数据中心 NPU 核心面积增加 **1.5%**。
 
+
+## 2026-11-23：随传输比特缩放的 VLA 织物，以及带当场选择的 bit-serial MXU
+
+[Rising-Precision VLA Accelerator](/papers/rising-precision-vla-accelerator.md) 用 bit-serial 子阵列按 flow step 的位宽跑动作头，LPDDR5X 时序下 GR00T N1.6 的 [2,3,3,4] 为 8.02 ms，时间高出 DRAM 地板 14–20%。[Kameleo](/papers/kameleo-bit-serial-activation-precision.md) 在 16 nm 的 bit-serial MXU 上增加选择逻辑，加速器面积 +3.7%，用局部代理锁定每个 GEMM 的激活尾数。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-25.md](raw/articles/arch-study-30d-day-25.md) — H&P Ch.7.1–7.5 DSA（Day 25）
@@ -206,3 +211,5 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 - [arXiv:2611.17097](https://arxiv.org/abs/2611.17097) — Optical Broadcast Memory
 - [arXiv:2611.18859](https://arxiv.org/abs/2611.18859) — Exstill
 - [arXiv:2611.18523](https://arxiv.org/abs/2611.18523) — LWS / Mutable Inference
+- [arXiv:2611.24234](https://arxiv.org/abs/2611.24234) — Rising-Precision VLA Accelerator
+- [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Kameleo

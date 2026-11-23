@@ -59,6 +59,9 @@ GDS 去掉了 host staging，但控制路径仍每次进内核，stream-ordered 
 - 跨 root-port / IOMMU 拓扑下 P2P 可达性依赖平台；多盘 RAID/文件系统语义未作为主评测。
 - 与 Mooncake 等远端 KV 平面的组合未做端到端对照。
 
+2026-11-23：[GNoF](/papers/gnof-gpu-native-nvme-of.md) 把 NVMe-oF 客户端的完成路径放到 GPU 线程上，在 200 Gb/s InfiniBand 上给出相对 kernel nvme-rdma 与 BaM 的实测；本页的编排仍在主机用户态。
+
 # Citations
 - [arXiv:2610.30868](https://arxiv.org/abs/2610.30868) — Wei et al., 2026
 - [raw stub](/raw/papers/ugds-userspace-gpu-direct-storage.md)
+- [arXiv:2611.21288](https://arxiv.org/abs/2611.21288) — GNoF

@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-23
+
+### Enrich: OptiDecode / GNoF / Rising-Precision VLA Accelerator / Kameleo（论文早报）
+- 新增 Paper：[OptiDecode](papers/optidecode-fso-kv-regeneration.md)（2611.19279）、[GNoF](papers/gnof-gpu-native-nvme-of.md)（2611.21288）、[Rising-Precision VLA Accelerator](papers/rising-precision-vla-accelerator.md)（2611.24234）、[Kameleo](papers/kameleo-bit-serial-activation-precision.md)（2611.25971）
+- Raw：四份 stub + PDF 入 raw/papers/；更新 papers/index.md、raw/papers/index.md
+- Concepts：补 [prefill-decode-divergence](concepts/prefill-decode-divergence.md)、[end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[ssd-nvme-storage-system](concepts/ssd-nvme-storage-system.md)、[dnn-accelerator-systolic-dataflow](concepts/dnn-accelerator-systolic-dataflow.md)、[numeric-formats-ai-hardware](concepts/numeric-formats-ai-hardware.md)；并在 [Optical Broadcast Memory](papers/optical-broadcast-memory-obm.md)、[uGDS](papers/ugds-userspace-gpu-direct-storage.md)、[VLA Workload Characterization](papers/vla-workload-characterization-embodied-ai.md)、[FlexPosit](papers/flexposit-tunable-fractional-precision-llm.md) 补交叉
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-23 AI Infra 论文早报（上轮优先的 OptiDecode 与 GNoF + 周四记下的 VLA 加速器 + 周五 20 日新公告中的 Kameleo。本轮扫描时 cs.AR / cs.DC /new 已切换到 Friday 20 November 2026；周一 23 日列表尚未切换）
+- **下轮优先**：TripleKV（2611.25112，智能体 KV 的预测/预取/保护）；GPCPlace（2611.24458，GPC 端口争用）；ScaleWire（2611.26086，scale-up Ethernet 仿真）；HBF-EventLab（2611.19861）；并重扫 Mon 23 新公告（若仍延迟则以实际页面为准）。周五还记下但未深挖：Twindex（2611.25078）、TideCache（2611.26619）、Aggron（2611.26435）、BLOOM / MiracleGro（2611.26517，乱序核）、Callo（2611.18459）、FlashX（2611.25580）、Splice-Core（2611.25617）、CAIMS（2611.25141）、Towards Scale-Up Networking（2611.26156）、DexAttention（2611.23512）、BubbleTea（2611.24496）、LazyWeights（2611.17108）
+
 ## 2026-11-20
 
 ### Enrich: PAISF / XM-Sparse / HETEROVLM / KIWI（论文早报）
