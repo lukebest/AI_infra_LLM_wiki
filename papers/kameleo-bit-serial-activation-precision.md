@@ -66,6 +66,9 @@ KU Leuven MICAS 的 Kameleo 把激活尾数长度的选择从离线、靠全模�
 - 综合节点是 TSMC 16 nm、250 MHz，与同文复现的 ANDA 对齐；和 7 nm 的 VLA 加速器页不宜直接比面积。
 - 层间分析画在 Llama2-7B 上，主表是另外四套模型。
 
+
+2026-11-24：[CarrierKV](/papers/carrierkv-positional-carrier-kv.md) 在边缘加速器上处理 4-bit KV 的位置载波，与本页的激活尾数选择是同一条低比特数据通路上的不同对象。
+
 # Citations
 - [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Geens, Debelle, Verhelst, Fang（KU Leuven MICAS）
 - [raw stub](/raw/papers/kameleo-bit-serial-activation-precision.md)

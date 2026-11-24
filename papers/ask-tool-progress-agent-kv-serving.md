@@ -67,6 +67,9 @@ sources:
 2. 与 PipeSwift 式 PP/MTP 调度的联合控制面。
 3. 跨租户公平性与 progress 操纵抗性。
 
+
+2026-11-24：[TripleKV](/papers/triplekv-predict-prefetch-protect-agent-kv.md) 同样利用工具执行信息，但把预取目标放在主机 DRAM，并用时延预测把 SSD 读取藏进工具窗口。
+
 # Citations
 
 [1] [arXiv PDF](https://arxiv.org/pdf/2609.18849) — Liu et al., arXiv:2609.18849

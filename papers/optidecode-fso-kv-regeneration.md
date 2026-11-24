@@ -68,6 +68,9 @@ sources:
 - 设计保留独立 KV 头与全历史稠密 MHA。作者指出 GQA 会缩小激活缓存的收益，稀疏注意力与潜在向量缓存是后续方向。
 - 光学 tile 规格来自设计讨论，文中未对应到某一款已交付的 DMD 产品。
 
+
+2026-11-24：[CarrierKV](/papers/carrierkv-positional-carrier-kv.md) 从量化与位置载波入手减少边缘侧 KV 流量；本页走的是光学再生历史 KV。
+
 # Citations
 - [arXiv:2611.19279](https://arxiv.org/abs/2611.19279) — Bagchi, Gao, Spall, Pietrak, Wong, Mitra（NUS / Lumai Ltd.）
 - [raw stub](/raw/papers/optidecode-fso-kv-regeneration.md)

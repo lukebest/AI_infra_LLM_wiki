@@ -119,6 +119,9 @@ sources:
 4. 寿命是 P/E 扫描，不是厂商 HBF 耐久规格。
 5. 掉电重装 6.7 min，不保非易失驻留。
 
+
+2026-11-24：[FOREST](/papers/forest-hbf-rram-hbm-speculative.md) 把 HBF 树专门用于投机解码的目标模型校验，并配上 RRAM 起草树与 HBM 注意力树（架构模型，非硅测）。
+
 # Citations
 
 [1] [arXiv PDF](https://arxiv.org/pdf/2608.25062) — Oliveira, Tavakkol et al., arXiv:2608.25062

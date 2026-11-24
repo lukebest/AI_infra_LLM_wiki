@@ -11,9 +11,9 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-11-23T00:00:00Z'
+timestamp: '2026-11-24T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-23
+updated: 2026-11-24
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -347,6 +347,11 @@ WSE 简化（无 off-chip）:
 
 [OptiDecode](/papers/optidecode-fso-kv-regeneration.md) 把历史路径从反复读 KV 改成读激活再光学再生，主对照是等峰值 HBM 带宽的理想 KV 读取。[GNoF](/papers/gnof-gpu-native-nvme-of.md) 让 GPU 直接走 NVMe-oF/RDMA 完成路径，200 Gb/s 织物上达到约 1.77 M 4 KB IOPS，主机 CPU 0.37%。
 
+
+## 2026-11-24：智能体三层 KV 预取，以及 HBF/RRAM/HBM 与边缘 4-bit Key
+
+[TripleKV](/papers/triplekv-predict-prefetch-protect-agent-kv.md) 在 H100 NVL 上把智能体下一轮所需的 KV 从 SSD 预取到主机 DRAM，临界路径 SSD 读取从 45–76% 降到 10% 以下，P95 TTFT 相对带三层存储的 vLLM 最高降 49%。[FOREST](/papers/forest-hbf-rram-hbm-speculative.md) 用 HBF、3D RRAM 与 HBM 三棵树分担投机解码的校验、起草和注意力。[CarrierKV](/papers/carrierkv-positional-carrier-kv.md) 在边缘加速器上先去掉 Key 的位置载波再做 4-bit 量化。[ScaleWire](/papers/scalewire-scale-up-ethernet-simulation.md) 则把 scale-up Ethernet 网卡的片上缓存一并算进端到端路径。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -405,3 +410,7 @@ WSE 简化（无 off-chip）:
 - [arXiv:2611.23878](https://arxiv.org/abs/2611.23878) — HETEROVLM
 - [arXiv:2611.19279](https://arxiv.org/abs/2611.19279) — OptiDecode
 - [arXiv:2611.21288](https://arxiv.org/abs/2611.21288) — GNoF
+- [arXiv:2611.25112](https://arxiv.org/abs/2611.25112) — TripleKV
+- [arXiv:2611.27701](https://arxiv.org/abs/2611.27701) — FOREST
+- [arXiv:2611.26857](https://arxiv.org/abs/2611.26857) — CarrierKV
+- [arXiv:2611.26086](https://arxiv.org/abs/2611.26086) — ScaleWire

@@ -9,9 +9,9 @@ tags:
 - kv-cache
 - latency
 - throughput
-timestamp: '2026-11-23T00:00:00Z'
+timestamp: '2026-11-24T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-23
+updated: 2026-11-24
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -231,6 +231,11 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 [OptiDecode](/papers/optidecode-fso-kv-regeneration.md) 在 decode 阶段缓存激活并用自由空间光学按 HBM 取回速率再生历史 KV；相对等带宽的理想 GPU KV 读取基线，30B–175B 稠密 MHA 在 32K 上下文下达到 1.92–1.99×。[Kameleo](/papers/kameleo-bit-serial-activation-precision.md) 的吞吐数字落在 prefill 的 MXU 周期，注意力 GEMM 保持满尾数。
 
+
+## 2026-11-24：投机解码里 prefill 仍可能压过 decode 收益，以及归队智能体的 TTFT
+
+[FOREST](/papers/forest-hbf-rram-hbm-speculative.md) 在 GLM-4.5-Air 上相对 A800 投机解码端到端 5.5×，但 Llama 3.1-405B 上四卡 A800 仍快 1.32×，作者归到计算密集的 prefill；更长的生成更能摊掉这段开销。[TripleKV](/papers/triplekv-predict-prefetch-protect-agent-kv.md) 则表明，智能体从工具返回时的 TTFT 会被 L3 读取拉长，把 SSD 读藏进工具执行后，P95 TTFT 最高降 49%。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -258,3 +263,5 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2611.22280](https://arxiv.org/abs/2611.22280) — XM-Sparse
 - [arXiv:2611.19279](https://arxiv.org/abs/2611.19279) — OptiDecode
 - [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Kameleo
+- [arXiv:2611.27701](https://arxiv.org/abs/2611.27701) — FOREST
+- [arXiv:2611.25112](https://arxiv.org/abs/2611.25112) — TripleKV

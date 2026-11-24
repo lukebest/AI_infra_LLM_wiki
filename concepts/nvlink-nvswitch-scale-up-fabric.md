@@ -11,9 +11,9 @@ tags:
 - hopper
 - blackwell
 - gpu
-timestamp: '2026-11-11T00:00:00Z'
+timestamp: '2026-11-24T00:00:00Z'
 created: 2026-07-22
-updated: 2026-11-20
+updated: 2026-11-24
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
@@ -142,6 +142,11 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 
 2026-11-20：[XM-Sparse](/papers/xm-sparse-scale-up-memory-pool.md) 在八张 B300 上用每卡 900 GB/s 的 NVLink 5.0 仿真 scale-up 内存池（四卡当内存节点），并与 PCIe / CXL / NVLink-C2C 的带宽–容量位置对照。
 
+
+## 2026-11-24：开放 scale-up Ethernet 网卡的缓存配额
+
+[ScaleWire](/papers/scalewire-scale-up-ethernet-simulation.md) 用包级仿真加资源探索，对照 ETH-X 四主机原型（全互连吞吐 MAPE 3.0%）。在 32 个 XPU 的模型里，DeepSeek-R1 dispatch 上六种网卡设计的每 XPU 存储预算相差 4.5×。这是专有 NVLink 域之外、面向开放以太网 scale-up 的一块补全。
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
@@ -164,3 +169,4 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 - [arXiv:2611.21274](https://arxiv.org/abs/2611.21274) — SURMA
 - [arXiv:2611.18145](https://arxiv.org/abs/2611.18145) — Obaleth
 - [arXiv:2611.22280](https://arxiv.org/abs/2611.22280) — XM-Sparse
+- [arXiv:2611.26086](https://arxiv.org/abs/2611.26086) — ScaleWire

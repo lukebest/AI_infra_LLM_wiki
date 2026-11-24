@@ -11,9 +11,9 @@ tags:
 - io
 - inference
 - wse
-timestamp: '2026-11-23T00:00:00Z'
+timestamp: '2026-11-24T00:00:00Z'
 created: 2026-07-03
-updated: 2026-11-23
+updated: 2026-11-24
 sources:
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
 - raw/articles/arch-study-30d-day-20.md
@@ -166,6 +166,11 @@ Host CPU
 
 [GNoF](/papers/gnof-gpu-native-nvme-of.md) 在未改动的 SPDK 目标上，把建囊、门铃和收完成放到 GPU 线程，200 Gb/s InfiniBand 上每客户端最高约 1.77 M 4 KB 读 IOPS，SM throughput 占用 0.03–1.07%；列扫描冷启动相对整图装载为 10–22×。8.5 GB 图 BFS 上粗粒度装载仍然更快。
 
+
+## 2026-11-24：智能体 KV 的 SSD 层预取
+
+[TripleKV](/papers/triplekv-predict-prefetch-protect-agent-kv.md) 把 SSD 当作 L3，用 1 TiB RAID 和 `O_DIRECT` 在工具执行期间把块预取进 64 GiB 主机 DRAM；相对带同一 L3 的 vLLM，临界路径读盘请求从 45–76% 降到 10% 以下。覆盖在 20 个并发、受保护需求碰到 DRAM 上限时会下降。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-20.md](raw/articles/arch-study-30d-day-20.md) — H&P App.D 存储系统（Day 20）
@@ -175,3 +180,4 @@ Host CPU
 [5] [arXiv:2611.03173](https://arxiv.org/abs/2611.03173) — PagedMoE
 - [arXiv:2611.14848](https://arxiv.org/abs/2611.14848) — Tideway
 - [arXiv:2611.21288](https://arxiv.org/abs/2611.21288) — GNoF
+- [arXiv:2611.25112](https://arxiv.org/abs/2611.25112) — TripleKV

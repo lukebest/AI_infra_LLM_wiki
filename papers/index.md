@@ -1,5 +1,10 @@
 # Paper
 
+* [TripleKV](triplekv-predict-prefetch-protect-agent-kv.md) - UIUC / IBM Research / NTUA — 单卡 H100 NVL + vLLM 实测；相对带 DRAM/SSD 层的 vLLM，P95 TTFT 在四套智能体负载上最高降 49%；临界路径 SSD 读取从 45–76% 降到 10% 以下
+* [FOREST](forest-hbf-rram-hbm-speculative.md) - 紫光国芯 / 北京大学 — 架构模型（A800 投机轨迹 + 22 nm 综合 + 存储器模型）；相对 A800 GPU 投机解码，GLM-4.5-Air 在 4096 输出 token 时端到端 5.5×，decode 吞吐最高 11.46×、decode 能效最高 16.5×
+* [CarrierKV](carrierkv-positional-carrier-kv.md) - Brown / Google Research — 22 nm FDSOI 综合；与 NVFP4 相同缓存体积下，Qwen3-4B 的 32K RULER 从 79.4 升到 91.1，面积 +2.9%，20K token 推理请求能量 +0.12%
+* [ScaleWire](scalewire-scale-up-ethernet-simulation.md) - 中科院信工所 / 微电子所 — 相对 ETH-X 四主机实测，全互连吞吐 MAPE 3.0%；DeepSeek-R1 dispatch 上六种网卡设计的片上存储预算相差 4.5×（862–3,858 KiB/XPU）
+
 * [OptiDecode](optidecode-fso-kv-regeneration.md) - 新加坡国立 / Lumai — 架构流水线模型；相对等峰值 HBM 带宽的理想 GPU KV 读取基线，30B–175B 稠密 MHA 在 32K 上下文下 decode 注意力 1.92–1.99×
 * [GNoF](gnof-gpu-native-nvme-of.md) - 国防科大 — 200 Gb/s InfiniBand 实测；每客户端最高约 1.77 M 4 KB IOPS，主机 CPU 0.37%、SM throughput 占用约 1%；列扫描相对整图装载 10–22×
 * [Rising-Precision VLA Accelerator](rising-precision-vla-accelerator.md) - KU Leuven MICAS — LPDDR5X 时序下的 RTL；GR00T N1.6 的 [2,3,3,4] 为 8.02 ms / 78 mJ，在 Thor 一半带宽下相对 Thor 与 FlashRT NVFP4 为 1.7×，能量为后者的 1/9.1

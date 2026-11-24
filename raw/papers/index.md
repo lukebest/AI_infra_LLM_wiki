@@ -1,5 +1,10 @@
 # Other
 
+* [TripleKV stub](triplekv-predict-prefetch-protect-agent-kv.md) + [PDF](TripleKV_Predict_Prefetch_Protect_2026.pdf) — arXiv:2611.25112
+* [FOREST stub](forest-hbf-rram-hbm-speculative.md) + [PDF](FOREST_HBF_RRAM_HBM_Speculative_2026.pdf) — arXiv:2611.27701
+* [CarrierKV stub](carrierkv-positional-carrier-kv.md) + [PDF](CarrierKV_Positional_Carrier_Decomposition_2026.pdf) — arXiv:2611.26857
+* [ScaleWire stub](scalewire-scale-up-ethernet-simulation.md) + [PDF](ScaleWire_Scale_Up_Ethernet_Simulation_2026.pdf) — arXiv:2611.26086
+
 * [OptiDecode stub](optidecode-fso-kv-regeneration.md) + [PDF](OptiDecode_FSO_KV_Regeneration_2026.pdf) — arXiv:2611.19279
 * [GNoF stub](gnof-gpu-native-nvme-of.md) + [PDF](GNoF_GPU_Native_NVMeoF_2026.pdf) — arXiv:2611.21288
 * [Rising-Precision VLA Accelerator stub](rising-precision-vla-accelerator.md) + [PDF](Rising_Precision_VLA_Accelerator_2026.pdf) — arXiv:2611.24234

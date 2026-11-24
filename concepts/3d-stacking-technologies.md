@@ -13,9 +13,9 @@ tags:
 - chiplet
 - wse
 - noc
-timestamp: '2026-11-10T00:00:00Z'
+timestamp: '2026-11-24T00:00:00Z'
 created: '2026-07-31'
-updated: 2026-11-12
+updated: 2026-11-24
 sources:
 - raw/articles/3d-noc-study-01-tsv-process-tech.md
 - raw/articles/3d-noc-study-02-monolithic-vs-tsv.md
@@ -157,6 +157,11 @@ imec 用 MI300X 式 chiplet GPU 建模（[Embodied Emissions 2.5D vs 3D](/papers
 [Tri-Stack-PIM](/papers/tri-stack-pim-heterogeneous-3d-llm.md)（ICCAD’26）把 3D PIM 拆成顶层 DRAM、中层 45 nm buffer die（PHY / DMA / 非线性 / UBAR）和底层 7 nm SIMD MAC，避开混合键合 keep-out 对计算 floorplan 的切割。相对边缘 GPU / AttAcc / H2-LLM 几何均值 **4.95× / 2.57× / 1.68×**；仅 PHY 一项单位晶圆成本降 **4.7×**（7 nm 晶圆 $9,346 对 45 nm $2,000）。
 
 
+
+## 2026-11-24：HBF、RRAM 与 HBM 三树封装
+
+[FOREST](/papers/forest-hbf-rram-hbm-speculative.md) 把投机解码拆到三棵存储–计算树上：HBF 做目标校验，3D 堆叠 RRAM 做草稿起草，HBM 做 KV 注意力。22 nm 综合加存储器模型给出的三树封装投影约 424.92 mm²、系统功率 101.35 W。
+
 # Citations
 
 [1] [raw/articles/3d-noc-study-02-monolithic-vs-tsv.md](raw/articles/3d-noc-study-02-monolithic-vs-tsv.md) — Monolithic vs TSV 学记
@@ -175,3 +180,4 @@ imec 用 MI300X 式 chiplet GPU 建模（[Embodied Emissions 2.5D vs 3D](/papers
 [14] [arXiv:2610.40000](https://arxiv.org/abs/2610.40000) — NORmal（BEOL 3D FeNOR × LPDDR6）
 - [arXiv:2611.07707](https://arxiv.org/abs/2611.07707) — CAMP（3D-IMC mapping）
 - [arXiv:2611.13644](https://arxiv.org/abs/2611.13644) — Tri-Stack-PIM（ICCAD’26）
+- [arXiv:2611.27701](https://arxiv.org/abs/2611.27701) — FOREST

@@ -8,8 +8,8 @@ tags:
 - gpu
 - accelerator
 - training
-timestamp: '2026-10-19T00:00:00Z'
-updated: 2026-11-23
+timestamp: '2026-11-24T00:00:00Z'
+updated: 2026-11-24
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-05.md
@@ -91,6 +91,11 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 
 [Rising-Precision VLA Accelerator](/papers/rising-precision-vla-accelerator.md) 用普通逐通道取整，让动作头权重从 2-bit 升到 4-bit；[2,3,3,4] 相对逐步 4-bit 少传 25% 比特，并在八套闭环仿真里的五套上保持成功率。[Kameleo](/papers/kameleo-bit-serial-activation-precision.md) 把 LLM 激活尾数留到加速器上按当前数据选择，1% PPL 预算内 prefill MXU 周期为 2.11–2.34×；离线校准换数据后，42 次迁移里有 18 次越界。
 
+
+## 2026-11-24：去掉位置载波后再量化 Key
+
+[CarrierKV](/papers/carrierkv-positional-carrier-kv.md) 指出 NVFP4 的共享缩放会被 RoPE 转出来的位置载波定住，内容残差大约损失 5 dB。在 RoPE 之前去掉每头一个常向量后，Qwen3-4B 的 32K RULER 从 79.4 升到 91.1，22 nm 下相对 NVFP4 加速器面积 +2.9%。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-05.md](raw/articles/arch-study-30d-day-05.md) — H&P Appendix J + AI 格式（Day 5）
@@ -100,3 +105,4 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 - [arXiv:2610.34824](https://arxiv.org/abs/2610.34824) — SPARTA
 - [arXiv:2611.24234](https://arxiv.org/abs/2611.24234) — Rising-Precision VLA Accelerator
 - [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Kameleo
+- [arXiv:2611.26857](https://arxiv.org/abs/2611.26857) — CarrierKV

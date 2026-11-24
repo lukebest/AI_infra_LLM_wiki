@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-24
+
+### Enrich: TripleKV / FOREST / CarrierKV / ScaleWire（论文早报）
+- 新增 Paper：[TripleKV](papers/triplekv-predict-prefetch-protect-agent-kv.md)（2611.25112）、[FOREST](papers/forest-hbf-rram-hbm-speculative.md)（2611.27701）、[CarrierKV](papers/carrierkv-positional-carrier-kv.md)（2611.26857）、[ScaleWire](papers/scalewire-scale-up-ethernet-simulation.md)（2611.26086）
+- Raw：四份 stub + PDF 入 `raw/papers/`；更新 `papers/index.md`、`raw/papers/index.md`
+- Concepts：补 [end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)、[ssd-nvme-storage-system](concepts/ssd-nvme-storage-system.md)、[numeric-formats-ai-hardware](concepts/numeric-formats-ai-hardware.md)、[nvlink-nvswitch-scale-up-fabric](concepts/nvlink-nvswitch-scale-up-fabric.md)、[3d-stacking-technologies](concepts/3d-stacking-technologies.md)、[prefill-decode-divergence](concepts/prefill-decode-divergence.md)
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-24 AI Infra 论文早报（上轮优先的 TripleKV 与 ScaleWire + 周一 23 日新公告中的 FOREST、CarrierKV。本轮扫描时 cs.AR / cs.DC / cs.ET `/new` 已切换到 Monday 23 November 2026）
+- **下轮优先**：GPCPlace（2611.24458，GPC 端口争用）；HBF-EventLab（2611.19861）；BLOOM / MiracleGro（2611.26517，乱序核 + 超标量）；Cruella（2611.27323，FPGA 上统一 MXFP4/BF16 点积单元）。周一还记下但未深挖：BitPrefill（2611.26657）、3D-NAND-CIM（2611.27479，混合键合 3D NAND 模拟存内计算）、Contexture（2611.26980，智能体上下文驱逐）、Weave（2611.27765，MoE megakernel 运行时 warp 调度）、VQACC（2611.27561）、PIVOT（2611.27010）。更早仍挂：Twindex（2611.25078）、TideCache（2611.26619）、Aggron（2611.26435）、Callo（2611.18459）、FlashX（2611.25580）、Splice-Core（2611.25617）、CAIMS（2611.25141）、Towards Scale-Up Networking（2611.26156）、DexAttention（2611.23512）、BubbleTea（2611.24496）、LazyWeights（2611.17108）
+
 ## 2026-11-23
 
 ### Enrich: OptiDecode / GNoF / Rising-Precision VLA Accelerator / Kameleo（论文早报）

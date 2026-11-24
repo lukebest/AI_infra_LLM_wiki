@@ -78,6 +78,9 @@ SuperPOD 的 scale-up 带宽与往返时间一起变大（文中：每 GPU 单�
 - 1.8 GHz 带宽是按时钟线性外推。
 - 评测服务器是 Hopper（450 / 200 GB/s NVLink），对 NVL72 / NVL576 的更长 RTT 与更高带宽，文中主要用模型论证必要性。
 
+
+2026-11-24：[ScaleWire](/papers/scalewire-scale-up-ethernet-simulation.md) 从网卡机制和片上缓存配额的角度仿真 scale-up Ethernet，可与本页的 RMA 引擎对照。
+
 # Citations
 - [arXiv:2611.21274](https://arxiv.org/abs/2611.21274) — Shang, Zhang 等；清华大学 / 腾讯 / 香港科技大学
 - [raw stub](/raw/papers/surma-scale-up-rma-engine.md)
