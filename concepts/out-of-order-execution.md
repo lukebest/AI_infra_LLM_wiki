@@ -7,9 +7,9 @@ tags:
 - cpu
 - pipeline
 - scheduling
-timestamp: '2026-10-19T00:00:00Z'
+timestamp: '2026-11-25T00:00:00Z'
 created: 2026-06-24
-updated: 2026-11-04
+updated: 2026-11-25
 sources:
 - raw/articles/arch-study-30d-day-10.md
 - raw/articles/arch-study-30d-day-12.md
@@ -95,6 +95,10 @@ OoO 是 **通用 CPU 高 IPC 的灵魂**，也是 **功耗与面积的主要来�
 [PaFeDSE](/papers/pafedse-pareto-feedback-microarch-dse.md) 把微架构 DSE 里的「选点」做成 hit/miss 闭环：代理不只估 CPI/功耗/面积，还估会不会抬超体积；对反复 miss 的局部用图记忆惩罚。SPEC CPU 2017 上相对 MoDSE 最高少 **49.0%** 仿真达目标 HV。
 
 
+## 2026-11-25：改乱序核时要把频率放进目标函数
+
+[MiracleGro / BLOOM](/papers/bloom-miraclegro-ooo-core.md) 给 BOOM 加宽取指、改分支配、LSQ、预取与唤醒等特性。只盯 IPC 时，合并步 m16c0 相对基线 IPC +74%，关键路径变为 2.5 倍。把目标改为墙钟后，BLOOM 在 Sky130 上频率约 +27%，FireSim 完整 intspeed 的几何均值 IPC 为 1.85×、墙钟 2.34×。商业 16 nm 上同一设计的关键路径比基线大约长 14%。说明加深或改写 OoO 结构时，实现时序与 IPC 必须一起看。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-10.md](raw/articles/arch-study-30d-day-10.md) — Tomasulo 算法（Day 10）
@@ -104,3 +108,4 @@ OoO 是 **通用 CPU 高 IPC 的灵魂**，也是 **功耗与面积的主要来�
 [CTMA] [arXiv:2610.21387](https://arxiv.org/abs/2610.21387)
 [PaFeDSE] [arXiv:2610.34838](https://arxiv.org/abs/2610.34838)
 [Schnizo] [arXiv:2611.01904](https://arxiv.org/abs/2611.01904)
+- [arXiv:2611.26517](https://arxiv.org/abs/2611.26517) — MiracleGro / BLOOM

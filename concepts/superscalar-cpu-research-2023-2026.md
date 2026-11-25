@@ -11,8 +11,8 @@ tags:
 - risc-v
 - llm
 - wse
-timestamp: '2026-10-19T00:00:00Z'
-updated: 2026-11-04
+timestamp: '2026-11-25T00:00:00Z'
+updated: 2026-11-25
 created: 2026-07-03
 sources:
 - raw/reports/superscalar-cpu-final-report.md
@@ -128,6 +128,10 @@ Constable（ISCA'24 Best Paper）+ Bullseye + Prophet 代表「旁路主表」�
 [PaFeDSE](/papers/pafedse-pareto-feedback-microarch-dse.md)（ASP-DAC'27）用 HitFormer 预测 Pareto-hit、MissGraph 惩罚 miss 邻域、TCFilter 裁跨轮低优先级候选。gem5+McPAT 22 nm、设计空间 **3,359,232** 点：相对 MoDSE 达目标 HV 最高少 **49.0%** 次仿真，探索开销 **7.1×**，平均 90/95/99% HV 需 **32.9 / 43.3 / 118.8** 次仿真，PPA MAPE **0.731%**。
 
 
+## 2026-11-25：用智能体在 RTL 上改乱序核，并且把综合 QoR 放进循环
+
+[MiracleGro / BLOOM](/papers/bloom-miraclegro-ooo-core.md)（UC Berkeley）在 CHIA 里自动分析 BOOM 的周期精确行为与 SkyWater 130nm 综合结果，并把微架构改动写回 RTL。最佳设计 BLOOM 在 FireSim 完整 SPEC CPU2017 intspeed 上几何均值 IPC 为 **1.85×**，频率 69.85→88.37 MHz，墙钟 **2.34×**，面积约 **+33%**。只优化 IPC 时关键路径可以变成 2.5 倍。循环外在商业 16 nm 上，关键路径比基线大约长 **14%**，面积大约多 **21%**——开源工艺上的墙钟胜利没有自动迁到受许可保护的现代 PDK。与 [PaFeDSE](/papers/pafedse-pareto-feedback-microarch-dse.md) 的参数搜索、[Schnizo](/papers/superscalar-loop-processors-schnizo.md) 的循环专用多发射对照：这边改的是通用乱序应用核的 RTL。
+
 # Citations
 
 [1] [raw/reports/superscalar-cpu-final-report.md](raw/reports/superscalar-cpu-final-report.md) — 最终汇总（2026-07-03）
@@ -136,3 +140,4 @@ Constable（ISCA'24 Best Paper）+ Bullseye + Prophet 代表「旁路主表」�
 [4] [arXiv:2610.21387](https://arxiv.org/abs/2610.21387) — CTMA
 [5] [arXiv:2610.34838](https://arxiv.org/abs/2610.34838) — PaFeDSE
 [6] [arXiv:2611.01904](https://arxiv.org/abs/2611.01904) — Superscalar Loop Processors (Schnizo)
+- [arXiv:2611.26517](https://arxiv.org/abs/2611.26517) — MiracleGro / BLOOM

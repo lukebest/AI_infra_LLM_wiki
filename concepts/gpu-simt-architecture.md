@@ -12,9 +12,9 @@ tags:
 - warp
 - wse
 - npu
-timestamp: '2026-10-19T00:00:00Z'
+timestamp: '2026-11-25T00:00:00Z'
 created: 2026-07-07
-updated: 2026-11-18
+updated: 2026-11-25
 sources:
 - raw/articles/arch-study-30d-day-24.md
 - raw/papers/CREDIT_DSMEM_Inter_CTA_Tiling_2026.pdf
@@ -198,6 +198,10 @@ Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑
 
 [Zero-SM NCCL](/papers/zero-sm-nccl.md) 的域内路径用 copy engine 搬数据，不启动 SM kernel。在 B200 上，144 MiB/rank 的 Qwen AllGather 把重叠 GEMM 的中位减速从 legacy 的 **32.9%** 降到 **3.9%**。[SURMA](/papers/surma-scale-up-rma-engine.md) 进一步把提交做成片上引擎：512 B 粒度只需 **1** 个 SM 就能吃满可达带宽，SM 驱动的 NVLink 传输需要超过 **14%** 的计算核。
 
+## 2026-11-25：Green Contexts 把负载铺开后，争用会落到 GPC 端口
+
+[GPCPlace](/papers/gpcplace-sm-partitioned-gpu.md) 在 14 张 NVIDIA GPU 上测量：同一 GPC 内的 SM 共用一条通往 L2 的交叉开关端口。CUDA Green Contexts 默认把负载铺开到多个 GPC，时延关键请求会在共享端口上排队；打进专用 GPC 能避开排队，但又会减少可用端口。运行时在驱动里改 TPC mask、保持 SM 数量不变。相对 Green Contexts，各卡 112 个用例的平均加速最高 **1.15×**（Ada 四卡 **1.11×–1.15×**），单用例最高 **2.38×**，中位 STP 为 **1.00×**。A800 与 H20 上平均为 **1.00×–1.01×**。与 [SubGPU Pipelining](/papers/subgpu-pipelining-intra-gpu-spatial.md)、[GC-MoE](/papers/gc-moe-green-context-expert-parallel.md) 同属 Green Context 分区，这边决定的是这些 SM 落在哪些 GPC。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-24.md](raw/articles/arch-study-30d-day-24.md) — H&P Ch.4 GPU/SIMT（Day 24）
@@ -207,3 +211,4 @@ Hopper 起 CTA 可组成 cluster，经 **DSMEM** 直接访问 peer SMEM（逻辑
 - [arXiv:2611.14904](https://arxiv.org/abs/2611.14904) — SubGPU Pipelining
 - [arXiv:2611.18075](https://arxiv.org/abs/2611.18075) — Zero-SM NCCL
 - [arXiv:2611.21274](https://arxiv.org/abs/2611.21274) — SURMA
+- [arXiv:2611.24458](https://arxiv.org/abs/2611.24458) — GPCPlace

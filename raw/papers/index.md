@@ -1,5 +1,10 @@
 # Other
 
+* [GPCPlace stub](gpcplace-sm-partitioned-gpu.md) + [PDF](GPCPlace_SM_Partitioned_GPU_2026.pdf) — arXiv:2611.24458
+* [BLOOM / MiracleGro stub](bloom-miraclegro-ooo-core.md) + [PDF](BLOOM_MiracleGro_OOO_Core_2026.pdf) — arXiv:2611.26517
+* [Cruella stub](cruella-mxfp4-bf16-dot-product-fpga.md) + [PDF](Cruella_MXFP4_BF16_Dot_Product_FPGA_2026.pdf) — arXiv:2611.27323
+* [Synapse stub](synapse-hbm-hbf-nmc-agentic.md) + [PDF](Synapse_HBM_HBF_NMC_Agentic_2026.pdf) — arXiv:2611.29901
+
 * [TripleKV stub](triplekv-predict-prefetch-protect-agent-kv.md) + [PDF](TripleKV_Predict_Prefetch_Protect_2026.pdf) — arXiv:2611.25112
 * [FOREST stub](forest-hbf-rram-hbm-speculative.md) + [PDF](FOREST_HBF_RRAM_HBM_Speculative_2026.pdf) — arXiv:2611.27701
 * [CarrierKV stub](carrierkv-positional-carrier-kv.md) + [PDF](CarrierKV_Positional_Carrier_Decomposition_2026.pdf) — arXiv:2611.26857

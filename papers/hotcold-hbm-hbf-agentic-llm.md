@@ -17,8 +17,8 @@ tags:
 - agentic-ai
 - 3d
 created: 2026-09-24
-updated: 2026-09-24
-timestamp: '2026-09-24T00:00:00Z'
+updated: 2026-11-25
+timestamp: '2026-11-25T00:00:00Z'
 paper_author: [Jongjin Baek, Won Ji, Seungjae Yoo, Joo-Young Kim]
 year: 2026
 arxiv: '2609.25782'
@@ -65,7 +65,12 @@ sources:
 - [UNISON](/papers/unison-near-memory-scheduler-llm-agents.md) — 近存调度谁该留快层；本文给 **物理 HBM/HBF 分层**
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 封装内热冷路径
 
+## 2026-11-25 交叉
+
+[Synapse](/papers/synapse-hbm-hbf-nmc-agentic.md) 由同一通讯作者组给出：在 HBM/HBF 分层之上，把注意力与专家计算放到 HBF 近存单元，并与 GPU 跨智能体重叠。评估是 H100 测 GPU 时间加 HBF 仿真。
+
 # Citations
 
 [1] [arXiv PDF](https://arxiv.org/pdf/2609.25782) — Baek et al., arXiv:2609.25782
 [2] [raw stub](raw/papers/hotcold-hbm-hbf-agentic-llm.md)
+- [arXiv:2611.29901](https://arxiv.org/abs/2611.29901) — Synapse

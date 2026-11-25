@@ -19,8 +19,8 @@ tags:
 - memory-bandwidth
 - hbm
 created: 2026-11-17
-updated: 2026-11-17
-timestamp: '2026-11-17T00:00:00Z'
+updated: 2026-11-25
+timestamp: '2026-11-25T00:00:00Z'
 paper_author: [Muralidhar Andoorveedu, Marius Juston, Tingkai Liu, Sanjay Patel]
 year: 2026
 venue: arXiv preprint
@@ -76,6 +76,11 @@ Decode 一层内会连续启动数十个短 kernel。在 B200 一类 GPU 上，�
 - 仿真用于搜索机会，作者写明不用于预测实测；外推到端到端部署前需要敏感性分析与实测 kernel 校准。
 - batch 太小或大块计算受限 kernel 已经高效用满 GPU 时，重叠机会变小；microbatch 若不能把并发段工作集留在 L2，重复 HBM 流量可能抵消空间重叠。prefetch、动态重配置与 persistent kernel 列为后续工作。
 
+## 2026-11-25 交叉
+
+[GPCPlace](/papers/gpcplace-sm-partitioned-gpu.md) 同样使用 SM 分区，进一步选择这些 SM 落在哪些 GPC，以处理交叉开关端口争用。
+
 # Citations
 - [arXiv:2611.14904](https://arxiv.org/abs/2611.14904) — Andoorveedu, Juston, Liu, Patel；NVIDIA
 - [raw stub](/raw/papers/subgpu-pipelining-intra-gpu-spatial.md)
+- [arXiv:2611.24458](https://arxiv.org/abs/2611.24458) — GPCPlace

@@ -14,8 +14,8 @@ tags:
 - llm
 - serving
 created: 2026-11-19
-updated: 2026-11-20
-timestamp: '2026-11-19T00:00:00Z'
+updated: 2026-11-25
+timestamp: '2026-11-25T00:00:00Z'
 paper_author: [Zhiheng Chen, Yifan Zhang, Yu-An Chou, Ye Qiao, Sitao Huang]
 year: 2026
 venue: preprint
@@ -67,8 +67,13 @@ Wiki 里 decode 加速器与解耦推理的讨论，多数落在 GPU / NPU / 预
 - Qwen3-Coder 在 A100 上专家仍能放进显存（158.4 tok/s），U280 为 26.8 tok/s，容量墙在 GPU 侧并不对称。
 - 配置分析在专家落到 HBM 之外时，若改用标称峰值带宽，误差会升到 23–35%。
 
+## 2026-11-25 交叉
+
+[Cruella](/papers/cruella-mxfp4-bf16-dot-product-fpga.md) 在 Alveo U55C 上用统一点积单元同时执行 MXFP4×BF16 与 BF16×BF16，板测是单请求 decode，上下文到 16K。
+
 # Citations
 - [arXiv:2611.21677](https://arxiv.org/abs/2611.21677) — Chen, Zhang, Chou, Qiao, Huang（UC Irvine）
 - [raw stub](/raw/papers/chimera-fpga-llm-decode.md)
 - [PDF](/raw/papers/Chimera_FPGA_LLM_Decode_2026.pdf)
 - [arXiv:2611.23878](https://arxiv.org/abs/2611.23878) — HETEROVLM
+- [arXiv:2611.27323](https://arxiv.org/abs/2611.27323) — Cruella

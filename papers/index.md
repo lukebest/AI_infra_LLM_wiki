@@ -1,5 +1,10 @@
 # Paper
 
+* [GPCPlace](gpcplace-sm-partitioned-gpu.md) - 港科大广州 / 清华 — 14 张 NVIDIA GPU 实测；相对 CUDA Green Contexts，各卡 112 个用例的平均加速最高 1.15×，单用例最高 2.38×，中位 STP 为 1.00×
+* [MiracleGro / BLOOM](bloom-miraclegro-ooo-core.md) - UC Berkeley — FireSim 跑完整 SPEC CPU2017 intspeed；SkyWater 130nm 上 IPC 几何均值 1.85×、频率 69.85→88.37 MHz，墙钟 2.34×，面积约 +33%；商业 16 nm 上关键路径大约长 14%
+* [Cruella](cruella-mxfp4-bf16-dot-product-fpga.md) - HyperAccel / KAIST / NTU / Yonsei — Alveo U55C 板测；相对同板 BF16 权重，decode 1.15×–1.87×；相对等吞吐分离单元少 23% DSP、36% LUT；A40 更快，每 token 能量为板卡的 0.92×–2.01×
+* [Synapse](synapse-hbm-hbf-nmc-agentic.md) - KAIST — H100 测 GPU 时间、HBF 按 OCP 参数仿真；相对 Passive HBF，三模型端到端延迟降低 48.92–66.60%，吞吐最高 2.98×，建模每 token 能量最高降低 64.48%；磨损仿真寿命大约长 46%
+
 * [TripleKV](triplekv-predict-prefetch-protect-agent-kv.md) - UIUC / IBM Research / NTUA — 单卡 H100 NVL + vLLM 实测；相对带 DRAM/SSD 层的 vLLM，P95 TTFT 在四套智能体负载上最高降 49%；临界路径 SSD 读取从 45–76% 降到 10% 以下
 * [FOREST](forest-hbf-rram-hbm-speculative.md) - 紫光国芯 / 北京大学 — 架构模型（A800 投机轨迹 + 22 nm 综合 + 存储器模型）；相对 A800 GPU 投机解码，GLM-4.5-Air 在 4096 输出 token 时端到端 5.5×，decode 吞吐最高 11.46×、decode 能效最高 16.5×
 * [CarrierKV](carrierkv-positional-carrier-kv.md) - Brown / Google Research — 22 nm FDSOI 综合；与 NVFP4 相同缓存体积下，Qwen3-4B 的 32K RULER 从 79.4 升到 91.1，面积 +2.9%，20K token 推理请求能量 +0.12%

@@ -11,9 +11,9 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-11-24T00:00:00Z'
+timestamp: '2026-11-25T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-24
+updated: 2026-11-25
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -352,6 +352,10 @@ WSE 简化（无 off-chip）:
 
 [TripleKV](/papers/triplekv-predict-prefetch-protect-agent-kv.md) 在 H100 NVL 上把智能体下一轮所需的 KV 从 SSD 预取到主机 DRAM，临界路径 SSD 读取从 45–76% 降到 10% 以下，P95 TTFT 相对带三层存储的 vLLM 最高降 49%。[FOREST](/papers/forest-hbf-rram-hbm-speculative.md) 用 HBF、3D RRAM 与 HBM 三棵树分担投机解码的校验、起草和注意力。[CarrierKV](/papers/carrierkv-positional-carrier-kv.md) 在边缘加速器上先去掉 Key 的位置载波再做 4-bit 量化。[ScaleWire](/papers/scalewire-scale-up-ethernet-simulation.md) 则把 scale-up Ethernet 网卡的片上缓存一并算进端到端路径。
 
+## 2026-11-25：HBF 近存计算与 GPU 跨智能体重叠，以及 GPC 端口上的排队
+
+[Synapse](/papers/synapse-hbm-hbf-nmc-agentic.md) 把就绪的注意力和专家计算放到 HBF 近存单元上，与 GPU 上其他智能体的工作重叠。GPU 时间在 H100 上测量，HBF 侧按 OCP 参数仿真。相对 Passive HBF，三模型端到端延迟降低 48.92–66.60%，吞吐最高 2.98×，建模每 token 能量最高降低 64.48%。[GPCPlace](/papers/gpcplace-sm-partitioned-gpu.md) 则指出，SM 分区之后，时延关键请求仍可能在 GPC 到 L2 的共享交叉开关端口上排队。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -414,3 +418,5 @@ WSE 简化（无 off-chip）:
 - [arXiv:2611.27701](https://arxiv.org/abs/2611.27701) — FOREST
 - [arXiv:2611.26857](https://arxiv.org/abs/2611.26857) — CarrierKV
 - [arXiv:2611.26086](https://arxiv.org/abs/2611.26086) — ScaleWire
+- [arXiv:2611.29901](https://arxiv.org/abs/2611.29901) — Synapse
+- [arXiv:2611.24458](https://arxiv.org/abs/2611.24458) — GPCPlace

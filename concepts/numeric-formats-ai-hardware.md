@@ -8,8 +8,8 @@ tags:
 - gpu
 - accelerator
 - training
-timestamp: '2026-11-24T00:00:00Z'
-updated: 2026-11-24
+timestamp: '2026-11-25T00:00:00Z'
+updated: 2026-11-25
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-05.md
@@ -96,6 +96,10 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 
 [CarrierKV](/papers/carrierkv-positional-carrier-kv.md) 指出 NVFP4 的共享缩放会被 RoPE 转出来的位置载波定住，内容残差大约损失 5 dB。在 RoPE 之前去掉每头一个常向量后，Qwen3-4B 的 32K RULER 从 79.4 升到 91.1，22 nm 下相对 NVFP4 加速器面积 +2.9%。
 
+## 2026-11-25：FPGA 上用同一套 DSP 阵列跑 MXFP4×BF16 与 BF16×BF16
+
+[Cruella](/papers/cruella-mxfp4-bf16-dot-product-fpga.md) 指出，MXFP4 检查点在 MLP / 专家上走 MXFP4×BF16，在注意力、BF16 层与 BF16 KV 上走 BF16×BF16；后者可占数据通路时间的 56%–77%。统一点积单元把两种乘积放在一组 DSP 阵列和一条归约流水线上，预对齐使 PPL 变化至多 0.7%。Alveo U55C 板上，相对同板 BF16 权重，decode 为 1.15×–1.87×；相对等吞吐的分离单元少 23% DSP、36% LUT。同机 A40 读相同 MXFP4 字节时 decode 更快，每 token 能量为板卡的 0.92×–2.01×。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-05.md](raw/articles/arch-study-30d-day-05.md) — H&P Appendix J + AI 格式（Day 5）
@@ -106,3 +110,4 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 - [arXiv:2611.24234](https://arxiv.org/abs/2611.24234) — Rising-Precision VLA Accelerator
 - [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Kameleo
 - [arXiv:2611.26857](https://arxiv.org/abs/2611.26857) — CarrierKV
+- [arXiv:2611.27323](https://arxiv.org/abs/2611.27323) — Cruella

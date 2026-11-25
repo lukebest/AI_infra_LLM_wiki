@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-25
+
+### Enrich: GPCPlace / MiracleGro·BLOOM / Cruella / Synapse（论文早报）
+- 新增 Paper：[GPCPlace](papers/gpcplace-sm-partitioned-gpu.md)（2611.24458）、[MiracleGro / BLOOM](papers/bloom-miraclegro-ooo-core.md)（2611.26517）、[Cruella](papers/cruella-mxfp4-bf16-dot-product-fpga.md)（2611.27323）、[Synapse](papers/synapse-hbm-hbf-nmc-agentic.md)（2611.29901）
+- Raw：四份 stub + PDF 入 raw/papers/；更新 papers/index.md、raw/papers/index.md
+- Concepts：补 [gpu-simt-architecture](concepts/gpu-simt-architecture.md)、[superscalar-cpu-research-2023-2026](concepts/superscalar-cpu-research-2023-2026.md)、[out-of-order-execution](concepts/out-of-order-execution.md)、[numeric-formats-ai-hardware](concepts/numeric-formats-ai-hardware.md)、[end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)；并在 [SubGPU Pipelining](papers/subgpu-pipelining-intra-gpu-spatial.md)、[Chimera](papers/chimera-fpga-llm-decode.md)、[Hot–Cold HBM/HBF](papers/hotcold-hbm-hbf-agentic-llm.md) 补交叉
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-25 AI Infra 论文早报（上轮优先的 GPCPlace、BLOOM / MiracleGro、Cruella + 周二 24 日新公告中的 Synapse。本轮扫描时 cs.AR / cs.DC recent 已切换到 Tuesday 24 November 2026；周三 25 日列表在上海 8:56 尚未到达公告时刻）
+- **下轮优先**：ProtoBridge（2611.30191，HPCA 2027，superpod 互连的 LLM-to-packet 仿真）；ANOR（2611.30417，GPU–PNM 稀疏注意力）；IndexerStage（2611.28625，16+16 H800 上暂存 Indexer-K）；HBF-EventLab（2611.19861）。周二还记下但未深挖：EdgeALM（2611.30216）、Gossamer（2611.29497）、HLWalk（2611.30505，2.5D/3D 热分析）、GC-MoE K3（2611.30542，已有 GC-MoE 页的 K3 续作）、Pudding（2611.30446）。更早仍挂：BitPrefill（2611.26657）、3D-NAND-CIM（2611.27479）、Contexture（2611.26980）、Weave（2611.27765，与已有 2609.21483 Weave 不是同一篇）、VQACC（2611.27561）、PIVOT（2611.27010）、Twindex（2611.25078）、TideCache（2611.26619）、Aggron（2611.26435）、Callo（2611.18459）、FlashX（2611.25580）、Splice-Core（2611.25617）、CAIMS（2611.25141）、Towards Scale-Up Networking（2611.26156）、DexAttention（2611.23512）、BubbleTea（2611.24496）、LazyWeights（2611.17108）
+
 ## 2026-11-24
 
 ### Enrich: TripleKV / FOREST / CarrierKV / ScaleWire（论文早报）
