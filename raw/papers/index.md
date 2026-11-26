@@ -1,5 +1,10 @@
 # Other
 
+* [ProtoBridge stub](protobridge-superpod-interconnect-sim.md) + [PDF](ProtoBridge_LLM_to_Packet_Superpod_2026.pdf) — arXiv:2611.30191
+* [ANOR stub](anor-gpu-pnm-sparse-attention.md) + [PDF](ANOR_GPU_PNM_Sparse_Attention_2026.pdf) — arXiv:2611.30417
+* [IndexerStage stub](indexerstage-indexerk-memory-tiers.md) + [PDF](IndexerStage_IndexerK_Memory_Tiers_2026.pdf) — arXiv:2611.28625
+* [Mayfly stub](mayfly-lifecycle-aware-hbf-rsi.md) + [PDF](Mayfly_Lifecycle_Aware_HBF_RSI_2026.pdf) — arXiv:2611.32264
+
 * [GPCPlace stub](gpcplace-sm-partitioned-gpu.md) + [PDF](GPCPlace_SM_Partitioned_GPU_2026.pdf) — arXiv:2611.24458
 * [BLOOM / MiracleGro stub](bloom-miraclegro-ooo-core.md) + [PDF](BLOOM_MiracleGro_OOO_Core_2026.pdf) — arXiv:2611.26517
 * [Cruella stub](cruella-mxfp4-bf16-dot-product-fpga.md) + [PDF](Cruella_MXFP4_BF16_Dot_Product_FPGA_2026.pdf) — arXiv:2611.27323

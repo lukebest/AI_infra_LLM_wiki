@@ -13,7 +13,7 @@ tags:
 - amat
 timestamp: '2026-11-25T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-25
+updated: 2026-11-26
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -420,3 +420,7 @@ WSE 简化（无 off-chip）:
 - [arXiv:2611.26086](https://arxiv.org/abs/2611.26086) — ScaleWire
 - [arXiv:2611.29901](https://arxiv.org/abs/2611.29901) — Synapse
 - [arXiv:2611.24458](https://arxiv.org/abs/2611.24458) — GPCPlace
+- [arXiv:2611.30191](https://arxiv.org/abs/2611.30191) — ProtoBridge
+- [arXiv:2611.30417](https://arxiv.org/abs/2611.30417) — ANOR
+- [arXiv:2611.28625](https://arxiv.org/abs/2611.28625) — IndexerStage
+- [arXiv:2611.32264](https://arxiv.org/abs/2611.32264) — Mayfly

@@ -16,7 +16,7 @@ tags:
 - energy
 - memory
 created: 2026-11-25
-updated: 2026-11-25
+updated: 2026-11-26
 timestamp: '2026-11-25T00:00:00Z'
 paper_author: [Juhyeong Jin, Hyunjun Cho, Joo-Young Kim]
 year: 2026
@@ -70,6 +70,7 @@ Table 1：5×16 GB HBM2e（80 GB）；5×512 GiB HBF（2.5 TiB）；主机 512 G
 - [FLINT](/papers/flint-hbf-llm-inference.md) — HBF 容量扩展与面积比例的来源之一
 - [LaFlash](/papers/laflash-qlc-hbf-coding-agents.md) — QLC-HBF 上的休眠 KV；Synapse 处理的是活跃多智能体的执行重叠
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 把 HBF 近存计算与 GPU 流水记到同一条数据路径上
+- [Mayfly](/papers/mayfly-lifecycle-aware-hbf-rsi.md) — 按 RSI 一代会话的爆发与回落管理 HBF 上的就绪 KV 与写放大
 - [HBF-Sim](/papers/hbfsim-extensible-hbf-simulator.md) — GPU–HBF 请求路径仿真底座；本文是应用架构模型
 
 # Citations
@@ -77,3 +78,4 @@ Table 1：5×16 GB HBM2e（80 GB）；5×512 GiB HBF（2.5 TiB）；主机 512 G
 - [raw stub](/raw/papers/synapse-hbm-hbf-nmc-agentic.md)
 - [PDF](/raw/papers/Synapse_HBM_HBF_NMC_Agentic_2026.pdf)
 - [arXiv:2609.25782](https://arxiv.org/abs/2609.25782) — Hot–Cold HBM/HBF
+- [arXiv:2611.32264](https://arxiv.org/abs/2611.32264) — Mayfly

@@ -17,7 +17,7 @@ tags:
 - agentic-ai
 - 3d
 created: 2026-09-24
-updated: 2026-11-25
+updated: 2026-11-26
 timestamp: '2026-11-25T00:00:00Z'
 paper_author: [Jongjin Baek, Won Ji, Seungjae Yoo, Joo-Young Kim]
 year: 2026
@@ -69,8 +69,11 @@ sources:
 
 [Synapse](/papers/synapse-hbm-hbf-nmc-agentic.md) 由同一通讯作者组给出：在 HBM/HBF 分层之上，把注意力与专家计算放到 HBF 近存单元，并与 GPU 跨智能体重叠。评估是 H100 测 GPU 时间加 HBF 仿真。
 
+[Mayfly](/papers/mayfly-lifecycle-aware-hbf-rsi.md) 把停车策略当作 HBF-Park 基线，继续处理递归自我改进里就绪 KV 溢出时的就地读、回落迁回和写放大。评估是 H200 校准的离散事件仿真，HBF 路径为模型。
+
 # Citations
 
 [1] [arXiv PDF](https://arxiv.org/pdf/2609.25782) — Baek et al., arXiv:2609.25782
 [2] [raw stub](raw/papers/hotcold-hbm-hbf-agentic-llm.md)
 - [arXiv:2611.29901](https://arxiv.org/abs/2611.29901) — Synapse
+- [arXiv:2611.32264](https://arxiv.org/abs/2611.32264) — Mayfly

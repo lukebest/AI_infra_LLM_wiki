@@ -12,7 +12,7 @@ tags:
 - fabric
 timestamp: '2026-05-08T00:00:00Z'
 created: 2026-05-08
-updated: 2026-09-04
+updated: 2026-11-26
 sources:
 - raw/articles/GTC 2026 – The Inference Kingdom Expands.md
 - raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf
@@ -60,7 +60,10 @@ NVIDIA 在 GTC 2026 公布了 CPO 用于 scale-up 网络的路线图。核心原
 - **但制造、成本、可靠性**使得 copper-to-switch 仍为必要
 - CPO 首先用于 switch-to-switch（rack 间），非 GPU-to-switch
 
+[ProtoBridge](/papers/protobridge-superpod-interconnect-sim.md) 用代理加包级精修扫 CPO 通道数、速率与预 FEC BER。相对光电互连，128×800 Gb/s、BER 10^{-9} 时 GLM-5.2 的 prefill 通信加快 3.55–24.8×，TTFT 降低 0.42–7.58%；DeepSeek-V3 / GLM-5.2 的 TPOT 降低 2.93% / 9.36%，Qwen3-235B 的 TPOT 升高 2.50%。decode 侧对转换延迟和差错处理更敏感。
+
 ## 相关页面
+- [ProtoBridge](/papers/protobridge-superpod-interconnect-sim.md) — 超节点探索里的全光 CPO 案例
 - [Kyber Rack](/entities/kyber-rack.md) — Kyber rack 架构（CPO 的主要载体）
 - [Nvidia Vera Rubin Nvl72](/entities/nvidia-vera-rubin-nvl72.md) — Oberon rack
 - [Nvidia Groq 3 Lpx](/entities/nvidia-groq-3-lpx.md) — LPX rack
@@ -69,3 +72,4 @@ NVIDIA 在 GTC 2026 公布了 CPO 用于 scale-up 网络的路线图。核心原
 
 [1] [raw/articles/GTC 2026 – The Inference Kingdom Expands.md](raw/articles/GTC 2026 – The Inference Kingdom Expands.md)
 [2] [raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf](raw/papers/Scaling_Inference_Prefill_High_Radix_Photonic_2026.pdf) — arXiv:2609.01821；1152 光学 pod prefill
+- [arXiv:2611.30191](https://arxiv.org/abs/2611.30191) — ProtoBridge CPO / 内存池案例

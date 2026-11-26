@@ -17,7 +17,7 @@ tags:
 - architecture
 - hardware
 created: 2026-11-24
-updated: 2026-11-24
+updated: 2026-11-26
 timestamp: '2026-11-24T00:00:00Z'
 paper_author: [Kai Ma, Quanfeng Lv, Bowei Dai, Jingguo Ge, Kefan Ruan, Ruoqi Li]
 year: 2026
@@ -63,6 +63,7 @@ sources:
 - [NVLink / NVSwitch Scale-Up Fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md) — 专有 scale-up 织物的对照面
 - [SURMA](/papers/surma-scale-up-rma-engine.md) — scale-up 一侧通信引擎
 - [Zero-SM NCCL](/papers/zero-sm-nccl.md) — 域内集体通信的硅测
+- [ProtoBridge](/papers/protobridge-superpod-interconnect-sim.md) — 在 NVLink / MetaXLink 上做协议显式的包级仿真，并扫 CPO 与 scale-up 内存池
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 网卡片上缓存也是端到端路径的一部分
 
 ## 开放问题
@@ -75,3 +76,4 @@ sources:
 - [arXiv:2611.26086](https://arxiv.org/abs/2611.26086) — Ma, Lv, Dai, Ge, Ruan, Li（中国科学院信息工程研究所 / 微电子研究所 / 国科大）
 - [raw stub](/raw/papers/scalewire-scale-up-ethernet-simulation.md)
 - [PDF](/raw/papers/ScaleWire_Scale_Up_Ethernet_Simulation_2026.pdf)
+- [arXiv:2611.30191](https://arxiv.org/abs/2611.30191) — ProtoBridge

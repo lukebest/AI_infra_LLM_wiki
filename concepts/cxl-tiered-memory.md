@@ -13,7 +13,7 @@ tags:
 - latency
 timestamp: '2026-09-03T00:00:00Z'
 created: 2026-07-17
-updated: 2026-09-18
+updated: 2026-11-26
 sources:
 - raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf
 - raw/papers/CosMoS_Disaggregated_Memory_Data_Movement_2025.pdf
@@ -66,6 +66,8 @@ sources:
 - [UNISON](/papers/unison-near-memory-scheduler-llm-agents.md) — agent 会话级近存驻留调度
 - [Fathom](/papers/fathom-sparse-decoding-offloaded-kv.md) — **host 卸荷** KV 上 per-query bit-plane 扫（非 CXL，同属冷层扫带宽问题）
 
+- [ANOR](/papers/anor-gpu-pnm-sparse-attention.md) — 把 CXL-PNM 当作稀疏注意力缺失的计算层：命中留在 GPU 缓存，缺失在近存上算完再有界更新；评估为 H100 NVL 剖析加 LLMServingSim / M2NDP 建模
+
 # Citations
 
 [1] [raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf](raw/papers/M5_CXL_Tiered_Memory_Page_Migration_2025.pdf)
@@ -77,3 +79,4 @@ sources:
 [7] [AI-Infra-Book.pdf](https://github.com/bojieli/ai-infra-book/releases/latest/download/AI-Infra-Book.pdf)
 [8] [arXiv:2609.13592](https://arxiv.org/pdf/2609.13592) — BOOST
 [9] [arXiv:2609.09643](https://arxiv.org/pdf/2609.09643) — UNISON
+- [arXiv:2611.30417](https://arxiv.org/abs/2611.30417) — ANOR

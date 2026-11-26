@@ -1,5 +1,10 @@
 # Paper
 
+* [ProtoBridge](protobridge-superpod-interconnect-sim.md) - 清华 / MetaX / 无问芯穹 / 港科大 / 上交 — 集体通信对照 H200 NVLink4 平均延迟误差 17.76%、C500 MetaXLink 10.33%；代理模型把延迟-带宽模型的 MAPE 从 55.7% 降到 11.8%，单次操作评估 20.5 µs；一小时探索 38,232 个超节点设计
+* [ANOR](anor-gpu-pnm-sparse-attention.md) - KAIST / SK hynix / Penn State — LLMServingSim（H100 NVL 剖析 GPU kernel、PNM 按 M2NDP 建模）；离线最大 batch 上相对 HiSparse，Qwen3-4B / 30B-A3B 平均吞吐 2.6× / 2.1×，相对 PNM 基线 2.3× / 1.7×
+* [IndexerStage](indexerstage-indexerk-memory-tiers.md) - 湖南大学 / 腾讯 — 16+16 张 H800、SGLang 实测 DeepSeek-V3.2；相对主机内存 backing 的 HiSparse，静态 16K–64K 上 batch 增加 12.28–23.08%、decode TPS 为 1.08–1.14×；动态混合长度到达下 decode TPS 为 1.31×
+* [Mayfly](mayfly-lifecycle-aware-hbf-rsi.md) - 新加坡国立 / 华中科大 — H200 校准的离散事件仿真、HBF 路径建模；128 会话 / 四个 HBF 位点上，相对 HBF-Park 提前 34% 结束、相对满 HBM 就读 HBF 提前 23%；256 会话 / 八个位点上相对停车提前 55%
+
 * [GPCPlace](gpcplace-sm-partitioned-gpu.md) - 港科大广州 / 清华 — 14 张 NVIDIA GPU 实测；相对 CUDA Green Contexts，各卡 112 个用例的平均加速最高 1.15×，单用例最高 2.38×，中位 STP 为 1.00×
 * [MiracleGro / BLOOM](bloom-miraclegro-ooo-core.md) - UC Berkeley — FireSim 跑完整 SPEC CPU2017 intspeed；SkyWater 130nm 上 IPC 几何均值 1.85×、频率 69.85→88.37 MHz，墙钟 2.34×，面积约 +33%；商业 16 nm 上关键路径大约长 14%
 * [Cruella](cruella-mxfp4-bf16-dot-product-fpga.md) - HyperAccel / KAIST / NTU / Yonsei — Alveo U55C 板测；相对同板 BF16 权重，decode 1.15×–1.87×；相对等吞吐分离单元少 23% DSP、36% LUT；A40 更快，每 token 能量为板卡的 0.92×–2.01×

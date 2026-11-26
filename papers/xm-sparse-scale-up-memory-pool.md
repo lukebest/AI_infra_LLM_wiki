@@ -19,7 +19,7 @@ tags:
 - pcie
 - nvlink
 created: 2026-11-20
-updated: 2026-11-20
+updated: 2026-11-26
 timestamp: '2026-11-20T00:00:00Z'
 paper_author: [Yijun Sun, Xudong Liao, Zhuobin Huang, Kai Chen, Nikita Lazarev, Zhizhen Zhong]
 year: 2026
@@ -62,6 +62,9 @@ XM-Sparse 把 KV 与 K-index 都主动外置，用织物带宽换 HBM 容量、�
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 用 scale-up 织物带宽换 HBM 容量，热 KV 与 K-index 分层驻留
 - [Prefill–Decode Divergence](/concepts/prefill-decode-divergence.md) — 长上下文 decode 的容量与取回延迟
 - [NVLink NVSwitch Scale-Up Fabric](/concepts/nvlink-nvswitch-scale-up-fabric.md) — 评测用每卡 900 GB/s 的 NVLink 5.0，并与 PCIe / CXL / NVLink-C2C 对照
+- [IndexerStage](/papers/indexerstage-indexerk-memory-tiers.md) — 在真实 16+16 H800 上暂存 Indexer-K，并单独对齐了 latent-KV backing 路径
+- [ANOR](/papers/anor-gpu-pnm-sparse-attention.md) — 把稀疏注意力缺失放到建模的 CXL-PNM 上计算
+- [ProtoBridge](/papers/protobridge-superpod-interconnect-sim.md) — 128 卡探索里，稀疏模型挂 HBF KV 池可把交互性与 TGS 推到 1.31×
 - [Adaptive DHiSparse](/papers/adaptive-dhisparse-speculative-hierarchical-kv.md) — 主机卸荷稀疏 KV 的前序路线
 
 ## 开放问题
@@ -74,3 +77,6 @@ XM-Sparse 把 KV 与 K-index 都主动外置，用织物带宽换 HBM 容量、�
 - [arXiv:2611.22280](https://arxiv.org/abs/2611.22280) — Sun, Liao, Huang, Chen, Lazarev, Zhong（Netpreme / HKUST / NUS；Sun 与 Huang 在 Netpreme 实习期间完成）
 - [raw stub](/raw/papers/xm-sparse-scale-up-memory-pool.md)
 - [PDF](/raw/papers/XM_Sparse_Scale_Up_Memory_Pool_2026.pdf)
+- [arXiv:2611.28625](https://arxiv.org/abs/2611.28625) — IndexerStage
+- [arXiv:2611.30417](https://arxiv.org/abs/2611.30417) — ANOR
+- [arXiv:2611.30191](https://arxiv.org/abs/2611.30191) — ProtoBridge

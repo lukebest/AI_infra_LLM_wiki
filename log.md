@@ -1,5 +1,15 @@
 # Bundle Update Log
 
+## 2026-11-26
+
+### Enrich: ProtoBridge / ANOR / IndexerStage / Mayfly（论文早报）
+- 新增 Paper：[ProtoBridge](papers/protobridge-superpod-interconnect-sim.md)（2611.30191，HPCA 2027）、[ANOR](papers/anor-gpu-pnm-sparse-attention.md)（2611.30417）、[IndexerStage](papers/indexerstage-indexerk-memory-tiers.md)（2611.28625）、[Mayfly](papers/mayfly-lifecycle-aware-hbf-rsi.md)（2611.32264）
+- Raw：四份 stub + PDF 入 raw/papers/；更新 papers/index.md、raw/papers/index.md
+- Concepts：补 [nvlink-nvswitch-scale-up-fabric](concepts/nvlink-nvswitch-scale-up-fabric.md)、[nvidia-cpo-roadmap](concepts/nvidia-cpo-roadmap.md)、[cxl-tiered-memory](concepts/cxl-tiered-memory.md)、[end-to-end-memory-data-path](concepts/end-to-end-memory-data-path.md)；并在 [ScaleWire](papers/scalewire-scale-up-ethernet-simulation.md)、[XM-Sparse](papers/xm-sparse-scale-up-memory-pool.md)、[Hot–Cold HBM/HBF](papers/hotcold-hbm-hbf-agentic-llm.md)、[Synapse](papers/synapse-hbm-hbf-nmc-agentic.md) 补交叉
+- SCHEMA taxonomy 无新标签
+- 来源：2026-11-26 AI Infra 论文早报（上轮优先的 ProtoBridge、ANOR、IndexerStage + 周三 25 日新公告中的 Mayfly。本轮扫描时 cs.AR / cs.DC recent 已切换到 Wednesday 25 November 2026）
+- **下轮优先**：HBF-EventLab（2611.19861，OCP HBF 离散事件仿真）；EdgeALM（2611.30216，U50 上音频语言模型加速器）；Gossamer（2611.29497，推理 LLM 的恒定预算 KV 压缩架构）。周三还记下但未深挖：RISC-V 块量化矩阵乘与 KV 驻留（2611.31937）、模拟存内计算扩散语言模型（2611.32223，DATE 2027）、RePrism（2611.32545，智能体请求与表示联合调度）、RankServe（2611.31869）、TokenJoule（能量模型）、FlashQLA（2611.32039）、Pudding（2611.30446）、HLWalk（2611.30505）、GC-MoE K3（2611.30542）。更早仍挂：BitPrefill（2611.26657）、3D-NAND-CIM（2611.27479）、Contexture（2611.26980）、Weave（2611.27765，与已有 2609.21483 Weave 不是同一篇）、VQACC（2611.27561）、PIVOT（2611.27010）、Twindex（2611.25078）、TideCache（2611.26619）、Aggron（2611.26435）、Callo（2611.18459）、FlashX（2611.25580）、Splice-Core（2611.25617）、CAIMS（2611.25141）、Towards Scale-Up Networking（2611.26156）、DexAttention（2611.23512）、BubbleTea（2611.24496）、LazyWeights（2611.17108）
+
 ## 2026-11-25
 
 ### Enrich: GPCPlace / MiracleGro·BLOOM / Cruella / Synapse（论文早报）

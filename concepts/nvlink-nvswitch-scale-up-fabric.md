@@ -13,7 +13,7 @@ tags:
 - gpu
 timestamp: '2026-11-24T00:00:00Z'
 created: 2026-07-22
-updated: 2026-11-24
+updated: 2026-11-26
 sources:
 - raw/articles/paper-deepdive-day-08.md
 - raw/papers/hc2026-nvidia-rubin.md
@@ -147,6 +147,8 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 
 [ScaleWire](/papers/scalewire-scale-up-ethernet-simulation.md) 用包级仿真加资源探索，对照 ETH-X 四主机原型（全互连吞吐 MAPE 3.0%）。在 32 个 XPU 的模型里，DeepSeek-R1 dispatch 上六种网卡设计的每 XPU 存储预算相差 4.5×。这是专有 NVLink 域之外、面向开放以太网 scale-up 的一块补全。
 
+[ProtoBridge](/papers/protobridge-superpod-interconnect-sim.md) 在 ns-3 上把 scale-up 协议效应写成 OTP/PEX 两层，集体通信对照 H200 NVLink4 平均延迟误差 17.76%、NVL72 开源数据 1.76%。[IndexerStage](/papers/indexerstage-indexerk-memory-tiers.md) 用 NVLink/NVSwitch 把 16 张模型 H800 与 16 张 backing H800 一对一相连，实测 Indexer-K 暂存。
+
 # Citations
 
 [1] [raw/articles/paper-deepdive-day-08.md](raw/articles/paper-deepdive-day-08.md) — Hopper/Blackwell NVLink 精读（Day 8）
@@ -170,3 +172,5 @@ WSE 路径第三极：单晶圆 Mesh，无 NVSwitch/OCS——见 [Cerebras WSE](
 - [arXiv:2611.18145](https://arxiv.org/abs/2611.18145) — Obaleth
 - [arXiv:2611.22280](https://arxiv.org/abs/2611.22280) — XM-Sparse
 - [arXiv:2611.26086](https://arxiv.org/abs/2611.26086) — ScaleWire
+- [arXiv:2611.30191](https://arxiv.org/abs/2611.30191) — ProtoBridge
+- [arXiv:2611.28625](https://arxiv.org/abs/2611.28625) — IndexerStage
