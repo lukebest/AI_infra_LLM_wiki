@@ -21,8 +21,8 @@ tags:
 - throughput
 - nvidia
 created: 2026-11-26
-updated: 2026-11-26
-timestamp: '2026-11-26T00:00:00Z'
+updated: 2026-11-27
+timestamp: '2026-11-27T00:00:00Z'
 paper_author: [Hyunsu Ye, Hyunmin Choi, Jaehong Cho, Jaeseo Lee, Hyeongseok Gwak, Joohee Lee, Donguk Moon, Woosuk Chung, Hoshik Kim, Kiwan Maeng, Jongse Park]
 year: 2026
 venue: preprint
@@ -79,6 +79,9 @@ ANOR 利用「刚被选中的条目稍后还可能再被选中」这一局部性
 - [CXL Tiered Memory](/concepts/cxl-tiered-memory.md) — 把 CXL 从容量层推进到「缺失在近存上算完再更新 GPU 缓存」
 - [End-to-End Memory Data Path](/concepts/end-to-end-memory-data-path.md) — 记录 GPU 缓存、PCIe / CXL 链路与 PNM DRAM 之间的临界路径划分
 - [Synapse](/papers/synapse-hbm-hbf-nmc-agentic.md) — 近存计算放在 HBF 上与 GPU 重叠；ANOR 的近存对象是 CXL-PNM 上的稀疏注意力缺失
+
+
+2026-11-27：[L2C2](/papers/l2c2-chiplet-sparse-distributed-attention.md) 同样处理稀疏注意力下的 KV 访问，把分布式注意力放到封装上的芯粒阵列，并用上下文并行保存完整 KV 块。
 
 # Citations
 - [arXiv:2611.30417](https://arxiv.org/abs/2611.30417) — Ye 等（KAIST / SK hynix / Penn State）

@@ -14,8 +14,8 @@ tags:
 - llm
 - serving
 created: 2026-11-19
-updated: 2026-11-25
-timestamp: '2026-11-25T00:00:00Z'
+updated: 2026-11-27
+timestamp: '2026-11-27T00:00:00Z'
 paper_author: [Zhiheng Chen, Yifan Zhang, Yu-An Chou, Ye Qiao, Sitao Huang]
 year: 2026
 venue: preprint
@@ -70,6 +70,9 @@ Wiki 里 decode 加速器与解耦推理的讨论，多数落在 GPU / NPU / 预
 ## 2026-11-25 交叉
 
 [Cruella](/papers/cruella-mxfp4-bf16-dot-product-fpga.md) 在 Alveo U55C 上用统一点积单元同时执行 MXFP4×BF16 与 BF16×BF16，板测是单请求 decode，上下文到 16K。
+
+
+2026-11-27：[EdgeALM](/papers/edgealm-fpga-audio-language-model.md) 同样在 HBM FPGA 上做生成式 decode，板卡换成功耗上限 75 W 的 U50，并加上音频模态与卷积引擎。
 
 # Citations
 - [arXiv:2611.21677](https://arxiv.org/abs/2611.21677) — Chen, Zhang, Chou, Qiao, Huang（UC Irvine）

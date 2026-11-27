@@ -8,13 +8,15 @@ tags:
 - gpu
 - accelerator
 - training
-timestamp: '2026-11-25T00:00:00Z'
-updated: 2026-11-25
+timestamp: '2026-11-27T00:00:00Z'
+updated: 2026-11-27
 created: 2026-06-24
 sources:
 - raw/articles/arch-study-30d-day-05.md
 - raw/papers/PagedMoE_Cross_Precision_Expert_Cache_2026.pdf
 - raw/papers/Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf
+- raw/papers/Gossamer_Constant_Budget_KV_Compression_2026.pdf
+- raw/papers/ISTS_Bit_Slice_Steiner_LLM_Accelerator_2026.pdf
 ---
 
 # Numeric Formats for AI Hardware（AI 硬件数值格式）
@@ -100,6 +102,11 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 
 [Cruella](/papers/cruella-mxfp4-bf16-dot-product-fpga.md) 指出，MXFP4 检查点在 MLP / 专家上走 MXFP4×BF16，在注意力、BF16 层与 BF16 KV 上走 BF16×BF16；后者可占数据通路时间的 56%–77%。统一点积单元把两种乘积放在一组 DSP 阵列和一条归约流水线上，预对齐使 PPL 变化至多 0.7%。Alveo U55C 板上，相对同板 BF16 权重，decode 为 1.15×–1.87×；相对等吞吐的分离单元少 23% DSP、36% LUT。同机 A40 读相同 MXFP4 字节时 decode 更快，每 token 能量为板卡的 0.92×–2.01×。
 
+
+## 2026-11-27：恒定预算下的混合精度 KV，以及密集低位切片上的 Steiner 复用
+
+[Gossamer](/papers/gossamer-constant-budget-kv-compression.md) 在恒定 KV 预算里并存全精度条目与量化条目（画图默认 75%/25%），并把量化当作与合并、驱逐并列的硬件动作。[ISTS](/papers/ists-bit-slice-steiner-llm-accelerator.md) 指出低比特 LLM 里低位切片可占处理功耗的 50.5%–70.2%，于是用 Hamming 近邻上的 Steiner 点复用部分和，把低位切片里仍然密集的计算也纳入复用。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-05.md](raw/articles/arch-study-30d-day-05.md) — H&P Appendix J + AI 格式（Day 5）
@@ -111,3 +118,5 @@ Value = (-1)^sign × 1.mantissa × 2^(exponent - bias)
 - [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Kameleo
 - [arXiv:2611.26857](https://arxiv.org/abs/2611.26857) — CarrierKV
 - [arXiv:2611.27323](https://arxiv.org/abs/2611.27323) — Cruella
+- [arXiv:2611.29497](https://arxiv.org/abs/2611.29497) — Gossamer
+- [arXiv:2611.34630](https://arxiv.org/abs/2611.34630) — ISTS

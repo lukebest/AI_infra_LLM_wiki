@@ -16,8 +16,8 @@ tags:
 - architecture
 - hardware
 created: 2026-11-24
-updated: 2026-11-24
-timestamp: '2026-11-24T00:00:00Z'
+updated: 2026-11-27
+timestamp: '2026-11-27T00:00:00Z'
 paper_author: [Junyi Luo, Xinting Jiang, Ruichen Qi, Gregory Kielian, Quan Cheng, Mehdi Saligane]
 year: 2026
 venue: preprint
@@ -69,6 +69,9 @@ sources:
 - 任务准确率是在 H100 上用软件模拟加速器格式得到的；面积来自 22 nm 综合，时延与能量来自 SCALE-Sim + Ramulator，不是板级芯片。
 - RULER 用了 13 项中的 7 项 KV 敏感子任务；思考模式表是 Qwen3-8B。
 - LPDDR5 占请求能量约 96%，所以面积开销几乎不反映到能量上；换一套更靠近计算的存储器会改变这笔账。
+
+
+2026-11-27：[Gossamer](/papers/gossamer-constant-budget-kv-compression.md) 把量化放到恒定 KV 预算下的效用选择里，与本页在去掉位置载波后再量化 Key 是同一条低比特 KV 数据通路上的不同切入点。
 
 # Citations
 - [arXiv:2611.26857](https://arxiv.org/abs/2611.26857) — Luo, Jiang, Qi, Kielian, Cheng, Saligane（Brown University / Google Research）

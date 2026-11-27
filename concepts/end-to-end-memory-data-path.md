@@ -11,9 +11,9 @@ tags:
 - noc
 - wse
 - amat
-timestamp: '2026-11-25T00:00:00Z'
+timestamp: '2026-11-27T00:00:00Z'
 created: 2026-07-06
-updated: 2026-11-26
+updated: 2026-11-27
 sources:
 - raw/papers/UlaCache_Unified_Logical_Sparse_KV_Serving_2026.pdf
 - raw/papers/FlatCake_Flat_KVCache_Storage_2026.pdf
@@ -59,6 +59,9 @@ sources:
 - raw/papers/SlackTier_Engram_Prefetch_Deadlines_2026.pdf
 - raw/papers/SlipStream_HBF_GPU_Prefetch_HPCA2027.pdf
 - raw/papers/Host_Tier_KV_NPU_Agent_Workflows_2026.pdf
+- raw/papers/L2C2_Chiplet_Sparse_Distributed_Attention_2026.pdf
+- raw/papers/Gossamer_Constant_Budget_KV_Compression_2026.pdf
+- raw/papers/EdgeALM_FPGA_Audio_Language_Model_2026.pdf
 ---
 
 # End-to-End Memory Data Path（端到端存储数据路径）
@@ -356,6 +359,11 @@ WSE 简化（无 off-chip）:
 
 [Synapse](/papers/synapse-hbm-hbf-nmc-agentic.md) 把就绪的注意力和专家计算放到 HBF 近存单元上，与 GPU 上其他智能体的工作重叠。GPU 时间在 H100 上测量，HBF 侧按 OCP 参数仿真。相对 Passive HBF，三模型端到端延迟降低 48.92–66.60%，吞吐最高 2.98×，建模每 token 能量最高降低 64.48%。[GPCPlace](/papers/gpcplace-sm-partitioned-gpu.md) 则指出，SM 分区之后，时延关键请求仍可能在 GPC 到 L2 的共享交叉开关端口上排队。
 
+
+## 2026-11-27：芯粒上的稀疏 KV 访问，以及恒定预算压缩
+
+[L2C2](/papers/l2c2-chiplet-sparse-distributed-attention.md) 在 8×8 MCM 上用上下文并行保存完整 KV 块，部分 prefill 用 NoI 换访存，decode 再用交织分配与敏捷迁移平衡各秩访问。[Gossamer](/papers/gossamer-constant-budget-kv-compression.md) 把 KV 足迹锁在恒定预算里，用混合精度条目换更大的 batch 和更少的注意力流量。[EdgeALM](/papers/edgealm-fpga-audio-language-model.md) 在 8 GB HBM 的 U50 上靠量化与词表裁剪放下 13B 级音频语言模型，并测到 94% 的带宽利用率。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-22.md](raw/articles/arch-study-30d-day-22.md) — 存储篇阶段总结（Day 22）
@@ -424,3 +432,6 @@ WSE 简化（无 off-chip）:
 - [arXiv:2611.30417](https://arxiv.org/abs/2611.30417) — ANOR
 - [arXiv:2611.28625](https://arxiv.org/abs/2611.28625) — IndexerStage
 - [arXiv:2611.32264](https://arxiv.org/abs/2611.32264) — Mayfly
+- [arXiv:2611.33691](https://arxiv.org/abs/2611.33691) — L2C2
+- [arXiv:2611.29497](https://arxiv.org/abs/2611.29497) — Gossamer
+- [arXiv:2611.30216](https://arxiv.org/abs/2611.30216) — EdgeALM

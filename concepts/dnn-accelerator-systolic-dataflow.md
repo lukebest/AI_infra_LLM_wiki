@@ -11,8 +11,8 @@ tags:
 - npu
 - roofline
 - dsa
-timestamp: '2026-07-09T00:00:00Z'
-updated: 2026-11-23
+timestamp: '2026-11-27T00:00:00Z'
+updated: 2026-11-27
 created: 2026-07-09
 sources:
 - raw/articles/arch-study-30d-day-25.md
@@ -20,6 +20,8 @@ sources:
 - raw/papers/CARDAN_Multi_Engine_MoE_Scratchpad_Dataflow_2026.pdf
 - raw/papers/Coffee_Elastic_Precision_Mixed_Precision_LLM_2026.pdf
 - raw/papers/SPECTRA_Speculative_Decoding_Reconfigurable_Tiled_2026.pdf
+- raw/papers/EdgeALM_FPGA_Audio_Language_Model_2026.pdf
+- raw/papers/ISTS_Bit_Slice_Steiner_LLM_Accelerator_2026.pdf
 ---
 
 # DNN Accelerator Systolic Dataflow（DNN 加速器与脉动数据流）
@@ -201,6 +203,11 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 
 [Rising-Precision VLA Accelerator](/papers/rising-precision-vla-accelerator.md) 用 bit-serial 子阵列按 flow step 的位宽跑动作头，LPDDR5X 时序下 GR00T N1.6 的 [2,3,3,4] 为 8.02 ms，时间高出 DRAM 地板 14–20%。[Kameleo](/papers/kameleo-bit-serial-activation-precision.md) 在 16 nm 的 bit-serial MXU 上增加选择逻辑，加速器面积 +3.7%，用局部代理锁定每个 GEMM 的激活尾数。
 
+
+## 2026-11-27：边缘 FPGA 上的双引擎拆分，以及比特切片阵列上的 Steiner 引擎
+
+[EdgeALM](/papers/edgealm-fpga-audio-language-model.md) 把矩阵乘与卷积拆到可并发的专用引擎，并用粗粒度 ISA 把规律搬运收进计算指令，在 U50 上测到 94% 带宽利用率。[ISTS](/papers/ists-bit-slice-steiner-llm-accelerator.md) 用 32×32 PE 阵列配合 Steiner 引擎共享部分和，28 nm 仿真下相对 ANT 等五套比特级基线给出平均加速与能效。
+
 # Citations
 
 [1] [raw/articles/arch-study-30d-day-25.md](raw/articles/arch-study-30d-day-25.md) — H&P Ch.7.1–7.5 DSA（Day 25）
@@ -213,3 +220,5 @@ GPU Tensor Core = 小矩阵×多实例；脉动阵列 = 大网格×少实例—�
 - [arXiv:2611.18523](https://arxiv.org/abs/2611.18523) — LWS / Mutable Inference
 - [arXiv:2611.24234](https://arxiv.org/abs/2611.24234) — Rising-Precision VLA Accelerator
 - [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Kameleo
+- [arXiv:2611.30216](https://arxiv.org/abs/2611.30216) — EdgeALM
+- [arXiv:2611.34630](https://arxiv.org/abs/2611.34630) — ISTS

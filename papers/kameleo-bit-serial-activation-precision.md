@@ -15,8 +15,8 @@ tags:
 - architecture
 - hardware
 created: 2026-11-23
-updated: 2026-11-23
-timestamp: '2026-11-23T00:00:00Z'
+updated: 2026-11-27
+timestamp: '2026-11-27T00:00:00Z'
 paper_author: [Robin Geens, Thomas Debelle, Marian Verhelst, Chao Fang]
 year: 2026
 venue: preprint
@@ -68,6 +68,9 @@ KU Leuven MICAS 的 Kameleo 把激活尾数长度的选择从离线、靠全模�
 
 
 2026-11-24：[CarrierKV](/papers/carrierkv-positional-carrier-kv.md) 在边缘加速器上处理 4-bit KV 的位置载波，与本页的激活尾数选择是同一条低比特数据通路上的不同对象。
+
+
+2026-11-27：[ISTS](/papers/ists-bit-slice-steiner-llm-accelerator.md) 同样面向低比特 LLM 的比特级数据通路，但复用对象是 Hamming 近邻上的 Steiner 部分和，评测是 28 nm 仿真而不是激活尾数选择。
 
 # Citations
 - [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Geens, Debelle, Verhelst, Fang（KU Leuven MICAS）

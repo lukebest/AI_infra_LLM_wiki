@@ -15,8 +15,8 @@ tags:
 - simulator
 - wafer-on-wafer
 created: 2026-11-19
-updated: 2026-11-20
-timestamp: '2026-11-19T00:00:00Z'
+updated: 2026-11-27
+timestamp: '2026-11-27T00:00:00Z'
 paper_author: [Patrick Iff, Torsten Hoefler]
 year: 2026
 venue: preprint
@@ -66,6 +66,9 @@ Wiki 里已有 [自适应路由](/concepts/adaptive-routing-noc.md)、[无死锁
 - 应用轨迹截断到 100K 事件；LLM 训练轨迹来自 Llama-7B，规模与当代训练全集通信有差距。
 - 默认 4 VC、直连网络（concentration = 1）；更高浓度、不同报文长度或真实芯片的表项/面积约束还需要另评。
 - 路由表相对部分基线更大，作者认为在 64 芯粒量级、单芯粒面积足够时可以接受，更大系统还要再看。
+
+
+2026-11-27：[L2C2](/papers/l2c2-chiplet-sparse-distributed-attention.md) 假设 mesh 形状的封装上网络，讨论的是稀疏注意力在上下文并行下如何用高带宽互连换访存，与本页的不规则 ICI 路由函数互补。
 
 # Citations
 - [arXiv:2611.22937](https://arxiv.org/abs/2611.22937) — Iff, Hoefler（ETH Zurich）

@@ -1,5 +1,10 @@
 # Paper
 
+* [L2C2](l2c2-chiplet-sparse-distributed-attention.md) - 北京大学 — ASTRA-sim + NS3 + Ramulator 2.0 + Timeloop，8×8 MCM 与资源对齐的 32 GPU 对照；P=512k、N=512 时 Split-Comm 相对 Ring Attention 部分 prefill 1.45×；交织分配与敏捷缓存均衡合在一起，decode 在 MCM / GPU-basic / GPU-NVL72 上平均 1.53× / 1.32× / 1.36×
+* [Gossamer](gossamer-constant-budget-kv-compression.md) - Duke / Intel — MICRO 2026；SCALEsim-v2 周期精确仿真 + 28 nm 综合；8192 token 端到端吞吐相对未压缩最高 16.7×，相对 Oaken / Ecco / R-KV 为 5.5× / 4.9× / 1.8×；定制模块 1.46 mm²、811 mW，约占基线系统面积 0.68%、功耗 0.65%
+* [EdgeALM](edgealm-fpga-audio-language-model.md) - 中山大学集成电路学院 — Alveo U50 装在普通台式主机上板测；8 GB HBM 内可跑到 13B 参数 ALM；Mini-Omni 音频到文本 decode 峰值 169.5 token/s，平均板功耗 26 W、带宽利用率 94%
+* [ISTS](ists-bit-slice-steiner-llm-accelerator.md) - 中国科学技术大学 — 28 nm RTL 综合 + 基于 ANT 的周期精确仿真（DRAMSim3 DDR4，并与 RTL 对时序交叉验证）；相对 ANT / BBS / LUTA / TA-D / MCBP-BRCR 平均加速 3.09× / 2.41× / 2.18× / 1.27× / 1.41×，能效 1.67× / 1.52× / 1.41× / 1.17× / 1.22×
+
 * [ProtoBridge](protobridge-superpod-interconnect-sim.md) - 清华 / MetaX / 无问芯穹 / 港科大 / 上交 — 集体通信对照 H200 NVLink4 平均延迟误差 17.76%、C500 MetaXLink 10.33%；代理模型把延迟-带宽模型的 MAPE 从 55.7% 降到 11.8%，单次操作评估 20.5 µs；一小时探索 38,232 个超节点设计
 * [ANOR](anor-gpu-pnm-sparse-attention.md) - KAIST / SK hynix / Penn State — LLMServingSim（H100 NVL 剖析 GPU kernel、PNM 按 M2NDP 建模）；离线最大 batch 上相对 HiSparse，Qwen3-4B / 30B-A3B 平均吞吐 2.6× / 2.1×，相对 PNM 基线 2.3× / 1.7×
 * [IndexerStage](indexerstage-indexerk-memory-tiers.md) - 湖南大学 / 腾讯 — 16+16 张 H800、SGLang 实测 DeepSeek-V3.2；相对主机内存 backing 的 HiSparse，静态 16K–64K 上 batch 增加 12.28–23.08%、decode TPS 为 1.08–1.14×；动态混合长度到达下 decode TPS 为 1.31×

@@ -9,9 +9,9 @@ tags:
 - kv-cache
 - latency
 - throughput
-timestamp: '2026-11-24T00:00:00Z'
+timestamp: '2026-11-27T00:00:00Z'
 created: 2026-06-15
-updated: 2026-11-24
+updated: 2026-11-27
 sources:
 - raw/papers/GPU_WSE_Heterogeneity_Complementarity_2026.pdf
 - raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf
@@ -29,6 +29,8 @@ sources:
 - raw/papers/SlackTier_Engram_Prefetch_Deadlines_2026.pdf
 - raw/papers/ShadowPrefill_Per_Step_Model_Routing_2026.pdf
 - raw/papers/Host_Tier_KV_NPU_Agent_Workflows_2026.pdf
+- raw/papers/L2C2_Chiplet_Sparse_Distributed_Attention_2026.pdf
+- raw/papers/Gossamer_Constant_Budget_KV_Compression_2026.pdf
 ---
 
 # Prefill-Decode Resource Divergence（Prefill vs Decode 资源分歧）
@@ -236,6 +238,11 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 
 [FOREST](/papers/forest-hbf-rram-hbm-speculative.md) 在 GLM-4.5-Air 上相对 A800 投机解码端到端 5.5×，但 Llama 3.1-405B 上四卡 A800 仍快 1.32×，作者归到计算密集的 prefill；更长的生成更能摊掉这段开销。[TripleKV](/papers/triplekv-predict-prefetch-protect-agent-kv.md) 则表明，智能体从工具返回时的 TTFT 会被 L3 读取拉长，把 SSD 读藏进工具执行后，P95 TTFT 最高降 49%。
 
+
+## 2026-11-27：同一套上下文并行在部分 prefill 与 decode 上走不同策略
+
+[L2C2](/papers/l2c2-chiplet-sparse-distributed-attention.md) 把多轮智能体拆成部分 prefill 与 decode：前者在中等新输入长度上用 Split-Comm 换 KV 访问，过长输入改回 Ring Attention；后者用交织分配和敏捷均衡处理 CP 秩间的稀疏访存不均。[Gossamer](/papers/gossamer-constant-budget-kv-compression.md) 则表明，长输出推理里 KV 增长会同时抬高每步注意力流量并压低可服务 batch，恒定预算压缩把这两头一起放松。
+
 # Citations
 
 [1] [raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf](raw/papers/Understanding_Inference_Scaling_for_LLMs.pdf)
@@ -265,3 +272,5 @@ Agent 工作负载将推理从单条长链变为**多步有状态执行**：
 - [arXiv:2611.25971](https://arxiv.org/abs/2611.25971) — Kameleo
 - [arXiv:2611.27701](https://arxiv.org/abs/2611.27701) — FOREST
 - [arXiv:2611.25112](https://arxiv.org/abs/2611.25112) — TripleKV
+- [arXiv:2611.33691](https://arxiv.org/abs/2611.33691) — L2C2
+- [arXiv:2611.29497](https://arxiv.org/abs/2611.29497) — Gossamer

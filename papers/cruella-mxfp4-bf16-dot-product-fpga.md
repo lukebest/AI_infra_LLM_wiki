@@ -13,8 +13,8 @@ tags:
 - energy
 - hbm
 created: 2026-11-25
-updated: 2026-11-25
-timestamp: '2026-11-25T00:00:00Z'
+updated: 2026-11-27
+timestamp: '2026-11-27T00:00:00Z'
 paper_author: [Jinho Yang, Taehyeong Kim, Mincheol Cha, Hyeoncheol Kim, Donggeun Kim, Nahye Kim, Yujin Lee, Ryeowook Ko, Woong Gyu Park, Jiwoong Park, Junsoo Kim, Tae-Hyoung Kim, Yongjun Park, Seongmin Hong, Joo-Young Kim]
 year: 2026
 venue: preprint
@@ -56,6 +56,9 @@ UDPU 的原则是让两种模式共用从 DSP 乘法到累加的每一级。MX-F
 - [Chimera](/papers/chimera-fpga-llm-decode.md) — 同属 HBM FPGA 上的 decode 加速器，Chimera 在 U280 上走 W4 与多级专家存储
 - [Kameleo](/papers/kameleo-bit-serial-activation-precision.md) — 运行时选择激活尾数；Cruella 在板上同时执行两种已发布格式
 - [HETEROVLM](/papers/heterovlm-versal-aie-vlm-serving.md) — Versal AIE 上的 VLM 服务，与 U55C 点积单元对照
+
+
+2026-11-27：[EdgeALM](/papers/edgealm-fpga-audio-language-model.md) 是另一块 HBM FPGA 上的生成加速（U50、音频语言模型）；[ISTS](/papers/ists-bit-slice-steiner-llm-accelerator.md) 则走 ASIC 风格的比特切片数据通路，用 Steiner 点复用部分和。
 
 # Citations
 - [arXiv:2611.27323](https://arxiv.org/abs/2611.27323) — Yang et al.（HyperAccel / KAIST / NTU / Yonsei）

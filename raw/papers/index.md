@@ -1,5 +1,10 @@
 # Other
 
+* [L2C2 stub](l2c2-chiplet-sparse-distributed-attention.md) + [PDF](L2C2_Chiplet_Sparse_Distributed_Attention_2026.pdf) — arXiv:2611.33691
+* [Gossamer stub](gossamer-constant-budget-kv-compression.md) + [PDF](Gossamer_Constant_Budget_KV_Compression_2026.pdf) — arXiv:2611.29497
+* [EdgeALM stub](edgealm-fpga-audio-language-model.md) + [PDF](EdgeALM_FPGA_Audio_Language_Model_2026.pdf) — arXiv:2611.30216
+* [ISTS stub](ists-bit-slice-steiner-llm-accelerator.md) + [PDF](ISTS_Bit_Slice_Steiner_LLM_Accelerator_2026.pdf) — arXiv:2611.34630
+
 * [ProtoBridge stub](protobridge-superpod-interconnect-sim.md) + [PDF](ProtoBridge_LLM_to_Packet_Superpod_2026.pdf) — arXiv:2611.30191
 * [ANOR stub](anor-gpu-pnm-sparse-attention.md) + [PDF](ANOR_GPU_PNM_Sparse_Attention_2026.pdf) — arXiv:2611.30417
 * [IndexerStage stub](indexerstage-indexerk-memory-tiers.md) + [PDF](IndexerStage_IndexerK_Memory_Tiers_2026.pdf) — arXiv:2611.28625
